@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="9fc2d2d2-fae3-4eae-97c7-2712b90a65a2" name="SingletonDesignPattern" linkedPackageId="0522d995-818e-4bbc-be80-c5976b6ea47b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="f1c85d2b-92f9-40ca-aa07-ccb99f67053e">
+      <profileInstance Id="3a9dd9f3-55cd-47f1-ad99-699e4dc9a9b8" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="fddea982-fbf2-41c7-aa0a-7246f8cb3d41">
+      <profileInstance Id="dbdfb560-ddf0-4cc3-820e-111ee0fea4f8" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="953032cd-cc0c-47e3-9716-52e5035520ef" name="BingMainPage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ae42dd90-f4a7-4b71-86b1-80837f876a43" />
+        <targetEnds>
+          <association Id="c7803c7d-8174-4f3f-8174-b4f51a4e3d0e" isDerived="false" sourceEndRoleName="BingMainPage" targetEndRoleName="BasePage&lt;S, M, V&gt;" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5cef7728-2e14-44d0-bd4c-a891f86ac0eb" LastKnownName="BasePage&lt;S, M, V&gt;" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e0e24863-0b65-4bf5-9f69-a8ffe12d2aed" name="BingMainPage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="529cb813-11c9-4956-b86d-5aa719669b0b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="acf15d4a-648c-4705-a4cb-60e8b62d75d3" name="BasePage&lt;S, M, V&gt;" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fcfa0934-dd45-435d-8038-b741afbd8f5b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="74b665da-8fae-4558-89c3-66e20c7a3710" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="d14da283-bc24-4d59-9513-45bdfd047449" name="Search" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bd4d7cf7-e6f7-427f-adf4-c2bc83aeba40" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5cef7728-2e14-44d0-bd4c-a891f86ac0eb" name="BasePage&lt;S, M, V&gt;" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="35c6e36e-d9c4-4a57-a24e-fe00661ee5d1" />
+        <targetEnds>
+          <association Id="ca9c7a36-37b7-4358-824b-740aded71b89" isDerived="false" sourceEndRoleName="BasePage&lt;S, M, V&gt;" targetEndRoleName="BasePage&lt;S, M&gt;" isLeaf="false" isAbstract="false">
+            <classMoniker Id="2c58309a-e64e-4130-bb97-6d699b143bc8" LastKnownName="BasePage&lt;S, M&gt;" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8d22032a-276a-49a2-9b1f-79bac6b0c6e1" name="BasePage&lt;S, M, V&gt;" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e8dd7cc1-2826-4297-8755-69c7acd3feb6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1c176e5e-b776-43fe-aadb-bb04e8da2475" name="BasePage&lt;S, M&gt;" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0a9c6924-8135-4a3b-95dd-875234b8b65c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a034b26f-d0b5-4b47-bfcf-5f2bdb5a8645" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="751a081b-fb54-4591-80e4-0e91194fa9f3" name="Validate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b41e31a8-d2b3-459e-ba0e-b06553f7c84b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2c58309a-e64e-4130-bb97-6d699b143bc8" name="BasePage&lt;S, M&gt;" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0e048ce2-6119-445e-8412-ca7bd21a862d" />
+        <targetEnds>
+          <association Id="c855a1b6-1941-43db-982f-781983e402a3" isDerived="false" sourceEndRoleName="BasePage&lt;S, M&gt;" targetEndRoleName="BaseSingleton" isLeaf="false" isAbstract="false">
+            <classMoniker Id="311e63fd-34e9-4a64-8400-3be325c84f9f" LastKnownName="BaseSingleton" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b1b4b852-69a5-4340-866a-68d488011012" name="BasePage&lt;S, M&gt;" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b655bc21-7582-4f70-a25d-a2fe29267b4d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="779d06f6-b58e-4ed6-b897-3c7ccee3465f" name="BaseSingleton" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ea6775e6-da5e-497a-bc54-212e1bd6170f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="291ff868-af81-4a9a-bca9-dff27916e2e7" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="fc099a9f-28f1-4936-a879-25e4e21b5d13" name="Map" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="82de204d-e807-442b-bdae-ff8d9bf656d7" />
+          </property>
+          <property Id="4b137a61-0f28-4244-a492-90a1cbccc7eb" name="Url" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e053bb32-3482-4ca8-b23f-a3c972510a33" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="865e5150-78be-4368-9c74-1d0e73588e81" name="Navigate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="944310d3-6d55-4fff-bcd7-8cc528ca3b8d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="311e63fd-34e9-4a64-8400-3be325c84f9f" name="BaseSingleton" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f220feaa-89d0-4ecc-9808-ba44304211c2" />
+        <ownedAttributesInternal>
+          <property Id="b90f527e-ee0f-45cd-921e-bc1ba2a9f8f3" name="Instance" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0b4db9e3-e883-48c9-907d-e7ce175dedf2" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="0522d995-818e-4bbc-be80-c5976b6ea47b" name="ModelingProject1">
+    <elementDefinition Id="71304b90-dec2-48cf-aa25-61ab4fe1335d" />
+  </package>
+</logicalClassDesignerModel>

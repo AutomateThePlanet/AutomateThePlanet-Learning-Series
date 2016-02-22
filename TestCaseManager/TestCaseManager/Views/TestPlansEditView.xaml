@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="TestCaseManagerApp.Views.TestPlansEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:local="clr-namespace:TestCaseManagerApp.Views"
+             xmlns:entities="clr-namespace:TestCaseManagerCore.BusinessLogic.Entities;assembly=TestCaseManagerCore"       
+             mc:Ignorable="d" Loaded="TestCaseExecutionArrangmentView_Loaded">
+    <Grid>
+        <Grid.CommandBindings>
+       
+        </Grid.CommandBindings>
+        <ProgressBar Name="progressBar" Minimum="0" Maximum="1" Height="16" IsIndeterminate="True" Margin="0,0,0,16" />
+
+        <Grid Name="mainGrid" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Add|Delete Test Plans" Margin="10,0,10,30" Height="Auto" Width="Auto" FontWeight="Bold" FontSize="26" HorizontalAlignment="Left" Grid.Row="0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Button Content="_Add" Width="80" Height="30" Margin="5" VerticalAlignment="Center" Name="btnAddTestPlan"  Click="btnAddTestPlan_Click"/>
+                <Button Content="_Delete" Width="80" Height="30" Margin="5" VerticalAlignment="Center" Name="btnDeleteTestPlan"  Click="btnDeleteTestPlan_Click"/>
+            </StackPanel>
+            <DataGrid ItemsSource="{Binding Path=ObservableTestPlans}" AutoGenerateColumns="False" Name="dgTestPlans" Grid.Row="2"
+                      IsReadOnly="True" SelectionMode="Extended"  SelectionUnit="FullRow" TabIndex="5" Margin="{StaticResource SplitRight}" MaxWidth="800" HorizontalAlignment="Left">
+                
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID"  Binding="{Binding Id}" Width="0.6*">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
+                                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="6*">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
+                                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Owner" Binding="{Binding OwnerDisplayName}" Width="1*">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
+                                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+        </DataGrid>
+            <StackPanel Orientation="Horizontal"  Grid.Row="3">
+                <Button Content="_Finish" Width="80" Height="30"  Margin="0,20,0,20" VerticalAlignment="Center" IsDefault="True" Name="btnFinish"  Click="btnFinish_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

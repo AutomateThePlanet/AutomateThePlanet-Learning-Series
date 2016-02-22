@@ -1,0 +1,655 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fidely.Framework</name>
+    </assembly>
+    <members>
+        <member name="T:Fidely.Framework.Integration.MatchingMode">
+            <summary>
+            Represents the matching mode that is used to determine whether or not show the autocomplete item.
+            </summary>
+        </member>
+        <member name="F:Fidely.Framework.Integration.MatchingMode.Partial">
+            <summary>
+            Represents partial matching mode.
+            </summary>
+        </member>
+        <member name="F:Fidely.Framework.Integration.MatchingMode.Prefix">
+            <summary>
+            Represents prefix search mode.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Compilation.Evaluators.DynamicVariableEvaluator">
+            <summary>
+            Represents the operand evaluator that maps a dynamically changing variable name to a value generator.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Compilation.Evaluators.OperandEvaluator">
+            <summary>
+            Represents the operand evaluator.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.OperandEvaluator.#ctor">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.OperandEvaluator.Clone">
+            <summary>
+            Creates the clone instance.
+            </summary>
+            <returns>The cloned instance.</returns>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.OperandEvaluator.Evaluate(System.Linq.Expressions.Expression,System.String)">
+            <summary>
+            Builds up an expression to evaluates the specified value.
+            </summary>
+            <param name="current">The expression that represents the current element of the collection.</param>
+            <param name="value">The evaluatee.</param>
+            <returns>The operand that wraps the built expression.</returns>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.OperandEvaluator.Register(Fidely.Framework.Integration.IAutoCompleteItem)">
+            <summary>
+            Registers the specified autocomplete item.
+            </summary>
+            <param name="item">The autocomplete item.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.OperandEvaluator.Warn(System.String,System.Object[])">
+            <summary>
+            Notifies warning message.
+            </summary>
+            <param name="format">The format string.</param>
+            <param name="args">The object array that contains zero or more objects to format.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.DynamicVariableEvaluator.#ctor(Fidely.Framework.Compilation.Evaluators.IOperandBuilder)">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+            <param name="builder">The operand builder to build up a new operand from any object.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.DynamicVariableEvaluator.RegisterVariable(System.String,System.Func{System.Text.RegularExpressions.Match,System.Object},Fidely.Framework.Integration.RegexAutoCompleteItem)">
+            <summary>
+            Registers a new mapping between a pattern of regular expression and a value generator.
+            </summary>
+            <param name="pattern">The pattern of regular expression to find out a variable.</param>
+            <param name="procedure">The value generator.</param>
+            <param name="item">The autocomplete item.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.DynamicVariableEvaluator.RegisterVariable(System.Text.RegularExpressions.Regex,System.Func{System.Text.RegularExpressions.Match,System.Object},Fidely.Framework.Integration.RegexAutoCompleteItem)">
+            <summary>
+            Registers a new mapping between a regular expression and a value generator.
+            </summary>
+            <param name="regex">The regular expression to find out a variable.</param>
+            <param name="procedure">The value generator.</param>
+            <param name="item">The autocomplete item.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.DynamicVariableEvaluator.Evaluate(System.Linq.Expressions.Expression,System.String)">
+            <summary>
+            Builds up a constant expression that consists of the value that is mapped to the specified value.
+            </summary>
+            <param name="current">The expression that represents the current element of the collection.</param>
+            <param name="value">The evaluatee.</param>
+            <returns>The constant expression that consists of the value that is mapped to the specified value.</returns>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.DynamicVariableEvaluator.Clone">
+            <summary>
+            Creates the clone instance.
+            </summary>
+            <returns>The cloned instance.</returns>
+        </member>
+        <member name="T:Fidely.Framework.Compilation.Evaluators.GuardianEvaluator">
+            <summary>
+            Represents the guardian operand evaluator.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.GuardianEvaluator.Evaluate(System.Linq.Expressions.Expression,System.String)">
+            <summary>
+            Builds up a constant expression that consists of the specified value.
+            </summary>
+            <param name="current">The expression that represents the current element of the collection.</param>
+            <param name="value">The evaluatee.</param>
+            <returns>The constant expression that consists of the specified value.</returns>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.GuardianEvaluator.Clone">
+            <summary>
+            Creates the clone instance.
+            </summary>
+            <returns>The cloned instance.</returns>
+        </member>
+        <member name="T:Fidely.Framework.WarningNotifiedEventArgs">
+            <summary>
+            Provides data for the WarningNotified event of the search query compiler.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.WarningNotifiedEventArgs.NotifiedBy">
+            <summary>
+            The type of the instance that notified warning.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.WarningNotifiedEventArgs.Symbol">
+            <summary>
+            The symbol that represents the instance that notified warning.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.WarningNotifiedEventArgs.Message">
+            <summary>
+            The warning message.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.NotEvaluateAttribute">
+            <summary>
+            The attribute ot represent a property that isn't used to filter a collection object.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.EvaluatorCollection">
+            <summary>
+            Represents the collection of operand evaluators.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.EvaluatorCollection.#ctor">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.EvaluatorCollection.Add(Fidely.Framework.Compilation.Evaluators.OperandEvaluator)">
+            <summary>
+            Adds the specified operand evaluator of this collection.
+            </summary>
+            <param name="item">The operand evaluator.</param>
+        </member>
+        <member name="M:Fidely.Framework.EvaluatorCollection.GetEnumerator">
+            <summary>
+            Returns the enumerator that iterates through the collection.
+            </summary>
+            <returns>The enumerator that iterates through the collection.</returns>
+        </member>
+        <member name="M:Fidely.Framework.EvaluatorCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns the enumerator that iterates through the collection.
+            </summary>
+            <returns>The enumerator that iterates through the collection.</returns>
+        </member>
+        <member name="T:Fidely.Framework.OperatorCollection">
+            <summary>
+            Represents the collection of operators.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.OperatorCollection.#ctor">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.OperatorCollection.Add(Fidely.Framework.Compilation.Operators.FidelyOperator)">
+            <summary>
+            Adds the specified operator of this collection.
+            </summary>
+            <param name="item">The operator.</param>
+        </member>
+        <member name="M:Fidely.Framework.OperatorCollection.GetEnumerator">
+            <summary>
+            Returns the enumerator that iterates through the collection.
+            </summary>
+            <returns>The enumerator that iterates through the collection.</returns>
+        </member>
+        <member name="M:Fidely.Framework.OperatorCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns the enumerator that iterates through the collection.
+            </summary>
+            <returns>The enumerator that iterates through the collection.</returns>
+        </member>
+        <member name="T:Fidely.Framework.IDescribable">
+            <summary>
+            Represents the feature to describe itself.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.IDescribable.Description">
+            <summary>
+            The description.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.SearchQueryCompiler`1">
+            <summary>
+            Provides the feature to compile a search query string into an expression tree to filter a collection object.
+            </summary>
+            <typeparam name="T">The type of an elements in a collection that is filtered by a generated expression.</typeparam>
+        </member>
+        <member name="M:Fidely.Framework.SearchQueryCompiler`1.Compile(System.String)">
+            <summary>
+            Compiles the specified query string into an expression tree to filter a collection object.
+            </summary>
+            <param name="query">The query string that is compiled.</param>
+            <returns>The expression tree that is generated from the specified query string.</returns>
+        </member>
+        <member name="E:Fidely.Framework.SearchQueryCompiler`1.WarningNotified">
+            <summary>
+            Occurs when a warning message is notified on tokenizing, parsing or compiling process.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Integration.IAutoCompleteItem">
+            <summary>
+            Represents the autocomplete item that is displayed autocomplete box.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Integration.IAutoCompleteItem.IsMatch(System.String,Fidely.Framework.Integration.MatchingOption)">
+            <summary>
+            Checks the specified value whether or not can be completed by this item.
+            </summary>
+            <param name="value">The target value.</param>
+            <param name="matchingOption">The option to specify matching rule.</param>
+            <returns>True if the specified value can be completed by this item, otherwise false.</returns>
+        </member>
+        <member name="M:Fidely.Framework.Integration.IAutoCompleteItem.Complete(System.String,Fidely.Framework.Integration.MatchingOption)">
+            <summary>
+            Get the completed value.
+            </summary>
+            <param name="value">The target value.</param>
+            <param name="matchingOption">The option to specify matching rule.</param>
+            <returns>The completed value.</returns>
+        </member>
+        <member name="P:Fidely.Framework.Integration.IAutoCompleteItem.DisplayName">
+            <summary>
+            The display name of the autocomplete item.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.Integration.IAutoCompleteItem.Description">
+            <summary>
+            The description of the autocomplete item.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.AliasAttribute">
+            <summary>
+            The attribute that specifies an alias name of a property.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.AliasAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of this class with the specified alias name.
+            </summary>
+            <param name="name">The alias name.</param>
+        </member>
+        <member name="P:Fidely.Framework.AliasAttribute.Name">
+            <summary>
+            The alias name.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.AliasAttribute.Description">
+            <summary>
+            The description of alias.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Compilation.Operand">
+            <summary>
+            Represents the operand.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Operand.#ctor(System.Linq.Expressions.Expression,System.Type)">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+            <param name="expression">The expression to get value of this operand.</param>
+            <param name="operandType">The type of the value of this operand.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Operand.ToString">
+            <summary>
+            Returns the string representation of an instance of this class.
+            </summary>
+            <returns>The string representation of an instance of this class.</returns>
+        </member>
+        <member name="P:Fidely.Framework.Compilation.Operand.Expression">
+            <summary>
+            The expression to get value of this operand.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.Compilation.Operand.OperandType">
+            <summary>
+            The type of the value of this operand.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.CompilerSetting">
+            <summary>
+            Represents the compiler setting.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.CompilerSetting.#ctor">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.CompilerSetting.ExtractAutoCompleteItems">
+            <summary>
+            Extracts autocomplete items.
+            </summary>
+            <returns>The collection of the extracted autocomplete items.</returns>
+        </member>
+        <member name="M:Fidely.Framework.CompilerSetting.GetOperatorDescription(Fidely.Framework.Compilation.Operators.FidelyOperator)">
+            <summary>
+            Gets the description from the specified operator.
+            </summary>
+            <param name="op">The operator.</param>
+            <returns>The description of the specified operator.</returns>
+        </member>
+        <member name="P:Fidely.Framework.CompilerSetting.CacheSize">
+            <summary>
+            The cache size.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.CompilerSetting.Operators">
+            <summary>
+            The operators colleciton.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.CompilerSetting.Evaluators">
+            <summary>
+            The operand evaluators collection.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.SearchQueryCompilerBuilder">
+            <summary>
+            Provides the feature to build up a search query compiler.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.SearchQueryCompilerBuilder.BuildUpCompiler``1(Fidely.Framework.CompilerSetting)">
+            <summary>
+            Builds up a new search query compiler with the specified compiler setting.
+            </summary>
+            <typeparam name="T">The type of an elements in a collection that is filtered by a generated expression.</typeparam>
+            <param name="setting">The compiler setting.</param>
+            <returns>The built up search query compiler.</returns>
+        </member>
+        <member name="P:Fidely.Framework.SearchQueryCompilerBuilder.Instance">
+            <summary>
+            The instance of search query compiler builder.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Constants">
+            <summary>
+            Defines the constants that relates to Fidely Framework.
+            </summary>
+        </member>
+        <member name="F:Fidely.Framework.Constants.ProductName">
+            <summary>
+            The product name of Fidely Framework.
+            </summary>
+        </member>
+        <member name="F:Fidely.Framework.Constants.ProductVersion">
+            <summary>
+            The product version of Fidely Framework.
+            </summary>
+        </member>
+        <member name="F:Fidely.Framework.Constants.Copyright">
+            <summary>
+            The copyright of Fidely Framework.
+            </summary>
+        </member>
+        <member name="F:Fidely.Framework.Constants.Description">
+            <summary>
+            The description of Fidely Framework.
+            </summary>
+        </member>
+        <member name="F:Fidely.Framework.Constants.AssemblyVersion">
+            <summary>
+            The assembly version of assemblies that are contained Fidely Framework.
+            </summary>
+        </member>
+        <member name="F:Fidely.Framework.Constants.FileVersion">
+            <summary>
+            The file version of assemblies that are contained Fidely Framework.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Compilation.Operators.FidelyOperator">
+            <summary>
+            Represents the operator.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Operators.FidelyOperator.#ctor(System.String,Fidely.Framework.Compilation.Operators.OperatorIndependency)">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+            <param name="symbol">The symbol of this class.</param>
+            <param name="independency">The independency of this operator.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Operators.FidelyOperator.Clone">
+            <summary>
+            Creates the clone instance.
+            </summary>
+            <returns>The cloned instance.</returns>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Operators.FidelyOperator.Warn(System.String,System.Object[])">
+            <summary>
+            Notifies warning message.
+            </summary>
+            <param name="format">The format string.</param>
+            <param name="args">The object array that contains zero or more objects to format.</param>
+        </member>
+        <member name="P:Fidely.Framework.Compilation.Operators.FidelyOperator.Symbol">
+            <summary>
+            The symbol of this operator.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.Compilation.Operators.FidelyOperator.Independency">
+            <summary>
+            The independency of this operator.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Compilation.Operators.OperatorIndependency">
+            <summary>
+            Represents operator independency.
+            </summary>
+        </member>
+        <member name="F:Fidely.Framework.Compilation.Operators.OperatorIndependency.Strong">
+            <summary>
+            Represents strong independent operator.
+            </summary>
+        </member>
+        <member name="F:Fidely.Framework.Compilation.Operators.OperatorIndependency.Weak">
+            <summary>
+            Represents weak independent operator.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Integration.RegexAutoCompleteItem">
+            <summary>
+            Represents the autocomplete item that is displayed autocomplete box.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Integration.RegexAutoCompleteItem.#ctor(System.String,System.String,System.Func{System.String,Fidely.Framework.Integration.MatchingOption,System.Boolean},System.Func{System.String,Fidely.Framework.Integration.MatchingOption,System.String})">
+            <summary>
+             Initializes a new instance of this class.
+            </summary>
+            <param name="displayName">The display name of the autocomplete item.</param>
+            <param name="description">The description of the autocomplete item.</param>
+            <param name="isMatchProcedure">The procedure to check the specified value whether or not can be completed by this item.</param>
+            <param name="completeProcedure">The procedure to get the completed value.</param>
+        </member>
+        <member name="M:Fidely.Framework.Integration.RegexAutoCompleteItem.IsMatch(System.String,Fidely.Framework.Integration.MatchingOption)">
+            <summary>
+            Checks the specified value whether or not can be completed by this item.
+            </summary>
+            <param name="value">The target value.</param>
+            <param name="matchingOption">The option to specify matching rule.</param>
+            <returns>True if the specified value can be completed by this item, otherwise false.</returns>
+        </member>
+        <member name="M:Fidely.Framework.Integration.RegexAutoCompleteItem.Complete(System.String,Fidely.Framework.Integration.MatchingOption)">
+            <summary>
+            Get the completed value.
+            </summary>
+            <param name="value">The target value.</param>
+            <param name="matchingOption">The option to specify matching rule.</param>
+            <returns>The completed value.</returns>
+        </member>
+        <member name="P:Fidely.Framework.Integration.RegexAutoCompleteItem.DisplayName">
+            <summary>
+            The display name of the autocomplete item.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.Integration.RegexAutoCompleteItem.Description">
+            <summary>
+            The description of the autocomplete item.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Compilation.BlankOperand">
+            <summary>
+            Represents the blank operand.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Integration.MatchingOption">
+            <summary>
+            The option to specify matching rule.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.Integration.MatchingOption.Mode">
+            <summary>
+            The matching mode that is used to determine whether or not show the autocomplete item.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Integration.AutoCompleteItem">
+            <summary>
+            Represents the autocomplete item that is displayed autocomplete box.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Integration.AutoCompleteItem.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of this class with the specified display name and description.
+            </summary>
+            <param name="displayName">The display name of the autocomplete item.</param>
+            <param name="description">The description of the autocomplete item.</param>
+        </member>
+        <member name="M:Fidely.Framework.Integration.AutoCompleteItem.IsMatch(System.String,Fidely.Framework.Integration.MatchingOption)">
+            <summary>
+            Checks the specified value whether or not can be completed by this item.
+            </summary>
+            <param name="value">The target value.</param>
+            <param name="matchingOption">The option to specify matching rule.</param>
+            <returns>True if the specified value can be completed by this item, otherwise false.</returns>
+        </member>
+        <member name="M:Fidely.Framework.Integration.AutoCompleteItem.Complete(System.String,Fidely.Framework.Integration.MatchingOption)">
+            <summary>
+            Get the completed value.
+            </summary>
+            <param name="value">The target value.</param>
+            <param name="matchingOption">The option to specify matching rule.</param>
+            <returns>The completed value.</returns>
+        </member>
+        <member name="P:Fidely.Framework.Integration.AutoCompleteItem.DisplayName">
+            <summary>
+            The display name of the autocomplete item.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.Integration.AutoCompleteItem.Description">
+            <summary>
+            The description of the autocomplete item.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Compilation.Operators.CalculatingOperator">
+            <summary>
+            Represents the calculating operator.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Operators.CalculatingOperator.#ctor(System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+            <param name="symbol">The symbol of this operator.</param>
+            <param name="priority">The priority of this operator.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Operators.CalculatingOperator.#ctor(System.String,System.Int32,Fidely.Framework.Compilation.Operators.OperatorIndependency)">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+            <param name="symbol">The symbol of this operator.</param>
+            <param name="priority">The priority of this operator.</param>
+            <param name="independency">The independency of this operator.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Operators.CalculatingOperator.Calculate(Fidely.Framework.Compilation.Operand,Fidely.Framework.Compilation.Operand)">
+            <summary>
+            Builds up an expression to calculate with the specified oprands.
+            </summary>
+            <param name="left">The left operand.</param>
+            <param name="right">The right operand.</param>
+            <returns>The operand that wraps the built expression.</returns>
+        </member>
+        <member name="P:Fidely.Framework.Compilation.Operators.CalculatingOperator.Priority">
+            <summary>
+            The priority of this operator.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Compilation.Evaluators.StaticVariableEvaluator">
+            <summary>
+            Represents the operand evaluator that maps a statically defined variable name to a value generator.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.StaticVariableEvaluator.#ctor(Fidely.Framework.Compilation.Evaluators.IOperandBuilder)">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+            <param name="builder">The operand builder to build up a new operand from any object.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.StaticVariableEvaluator.RegisterVariable(System.String,System.Func{System.Object})">
+            <summary>
+            Registers a new mapping between a variable name and a value generator.
+            </summary>
+            <param name="name">The variable name.</param>
+            <param name="procedure">The value generator.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.StaticVariableEvaluator.RegisterVariable(System.String,System.Func{System.Object},System.String)">
+            <summary>
+            Registers a new mapping between a variable name and a value generator.
+            </summary>
+            <param name="name">The variable name.</param>
+            <param name="procedure">The value generator.</param>
+            <param name="description">The description of the registered variable.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.StaticVariableEvaluator.Evaluate(System.Linq.Expressions.Expression,System.String)">
+            <summary>
+            Builds up a constant expression that consists of the value that is mapped to the specified value.
+            </summary>
+            <param name="current">The expression that represents the current element of the collection.</param>
+            <param name="value">The evaluatee.</param>
+            <returns>The constant expression that consists of the value that is mapped to the specified value.</returns>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.StaticVariableEvaluator.Clone">
+            <summary>
+            Creates the clone instance.
+            </summary>
+            <returns>The cloned instance.</returns>
+        </member>
+        <member name="T:Fidely.Framework.Compilation.Operators.ComparativeOperator">
+            <summary>
+            Represents the comparative operator.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Operators.ComparativeOperator.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+            <param name="symbol">The symbol of this operator.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Operators.ComparativeOperator.#ctor(System.String,Fidely.Framework.Compilation.Operators.OperatorIndependency)">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+            <param name="symbol">The symbol of this operator.</param>
+            <param name="independency">The independency of this operator.</param>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Operators.ComparativeOperator.Compare(System.Linq.Expressions.Expression,Fidely.Framework.Compilation.Operand,Fidely.Framework.Compilation.Operand)">
+            <summary>
+            Builds up an expression to compare the specified operators.
+            </summary>
+            <param name="current">The expression that represents the current element of the collection.</param>
+            <param name="left">The left operand.</param>
+            <param name="right">The right operand.</param>
+            <returns>The operand that wraps the built expression.</returns>
+        </member>
+        <member name="T:Fidely.Framework.Compilation.Evaluators.IOperandBuilder">
+            <summary>
+            Provides the feature to build up a new operand from any object.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Compilation.Evaluators.IOperandBuilder.BuildUp(System.Object)">
+            <summary>
+            Builds up a new operand from the specified object.
+            </summary>
+            <param name="value">The object that is used to build up a new operand.</param>
+            <returns>The new operand that is built up from the specified object.</returns>
+        </member>
+    </members>
+</doc>

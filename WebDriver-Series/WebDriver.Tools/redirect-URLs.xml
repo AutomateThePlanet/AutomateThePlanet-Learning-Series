@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sites>
+  <site url="http://automatetheplanet.com/" name="AutomateThePlanet">
+    <redirects>
+      <redirect from="http://automatetheplanet.com/singleton-design-pattern-design-patterns-in-automation-testing/" to="/singleton-design-pattern/" />
+      <redirect from="/advanced-strategy-design-pattern-design-patterns-in-automation-testing/" to="/advanced-strategy-design-pattern/" />
+    </redirects>
+  </site>
+</sites>

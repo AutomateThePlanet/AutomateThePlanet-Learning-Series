@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FC64BA5A-3CF4-49B8-BDFF-48AC305AA7D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fidely.Framework.Compilation.Objects.Tests</RootNamespace>
+    <AssemblyName>Fidely.Framework.Compilation.Objects.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Properties\fidely.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Evaluators\OperandBuilderTest.cs" />
+    <Compile Include="Evaluators\PropertyEvaluatorTest.cs" />
+    <Compile Include="Evaluators\TypeConversionEvaluatorTest.cs" />
+    <Compile Include="Instrumentation\BaseTestCaseDataGenerator.cs" />
+    <Compile Include="Instrumentation\CustomEntity.cs" />
+    <Compile Include="Instrumentation\OperandBuilder.cs" />
+    <Compile Include="Instrumentation\TestCaseDataBuilder.cs" />
+    <Compile Include="Operators\AddTest.cs" />
+    <Compile Include="Operators\BaseBuiltInCalculatingOperatorTest.cs" />
+    <Compile Include="Operators\BaseBuiltInComparativeOperatorTest.cs" />
+    <Compile Include="Operators\DivideTest.cs" />
+    <Compile Include="Operators\EqualTest.cs" />
+    <Compile Include="Operators\GreaterThanOrEqualTest.cs" />
+    <Compile Include="Operators\GreaterThanTest.cs" />
+    <Compile Include="Operators\LessThanOrEqualTest.cs" />
+    <Compile Include="Operators\LessThanTest.cs" />
+    <Compile Include="Operators\MultiplyTest.cs" />
+    <Compile Include="Operators\NotEqualTest.cs" />
+    <Compile Include="Operators\PartialMatchTest.cs" />
+    <Compile Include="Operators\PrefixSearchTest.cs" />
+    <Compile Include="Operators\SubtractTest.cs" />
+    <Compile Include="Operators\SuffixSearchTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Compilation.Objects\Compilation.Objects.csproj">
+      <Project>{85E86CA6-C0B1-4EF9-885A-6232B3E5717C}</Project>
+      <Name>Compilation.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{0EE48C01-A8F7-46CE-8E51-50DE88E88180}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\fidely.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

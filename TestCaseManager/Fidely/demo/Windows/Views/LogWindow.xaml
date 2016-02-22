@@ -1,0 +1,23 @@
+﻿<Window x:Class="Fidely.Demo.Windows.Views.LogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LogViewerWindow" Height="600" Width="900">
+    <Grid>
+        <ListView ItemsSource="{Binding Logs}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Category" DisplayMemberBinding="{Binding Category}" Width="100"/>
+                    <GridViewColumn Header="Timestamp" DisplayMemberBinding="{Binding Timestamp, StringFormat=yyyy-MM-dd hh:mm:ss.fff zzz}" Width="200"/>
+                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="150"/>
+                    <GridViewColumn Header="Message" Width="400">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Message}" TextWrapping="Wrap"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

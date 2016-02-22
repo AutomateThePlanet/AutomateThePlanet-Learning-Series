@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fidely.Framework.Integration.WPF</name>
+    </assembly>
+    <members>
+        <member name="T:Fidely.Framework.Integration.WPF.DependencyObjectExtension">
+            <summary>
+            Provides a set of extension methods to process a dependency object.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Integration.WPF.DependencyObjectExtension.FindDescendents``1(System.Windows.DependencyObject)">
+            <summary>
+            Finds descendent dependency objects that are type of T.
+            </summary>
+            <typeparam name="T">The type that is used to find descendent dependency objects.</typeparam>
+            <param name="instance">The root dependency object.</param>
+            <returns>The collection that contains the found dependency objects.</returns>
+        </member>
+        <member name="T:Fidely.Framework.Integration.WPF.SearchExecutedEventArgs">
+            <summary>
+            Provides data for the SearchExecuted event of the autocomplete box.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Integration.WPF.SearchExecutedEventArgs.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+            <param name="query">The search query string.</param>
+        </member>
+        <member name="P:Fidely.Framework.Integration.WPF.SearchExecutedEventArgs.Query">
+            <summary>
+            The search query string.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Integration.WPF.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.Integration.WPF.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.Integration.WPF.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:Fidely.Framework.Integration.WPF.AutoCompleteBox">
+            <summary>
+            The Fidely autocomplete box for WPF.
+            </summary>
+        </member>
+        <member name="F:Fidely.Framework.Integration.WPF.AutoCompleteBox.SearchCommandProperty">
+            <summary>
+            Identifies the SearchCommand dependency property.
+            </summary>
+        </member>
+        <member name="F:Fidely.Framework.Integration.WPF.AutoCompleteBox.AutoCompleteItemsProperty">
+            <summary>
+            Identifies the AutoCompleteItems dependency property.
+            </summary>
+        </member>
+        <member name="F:Fidely.Framework.Integration.WPF.AutoCompleteBox.MatchingModeProperty">
+            <summary>
+            Identifies the MatchingMode dependency property.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Integration.WPF.AutoCompleteBox.#ctor">
+            <summary>
+            Initializes a new instance of this class.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Integration.WPF.AutoCompleteBox.OnApplyTemplate">
+            <summary>
+            Registers event handlers to events of list box to show autocomplete items.
+            </summary>
+        </member>
+        <member name="M:Fidely.Framework.Integration.WPF.AutoCompleteBox.OnPreviewKeyDown(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Handles the key down event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="E:Fidely.Framework.Integration.WPF.AutoCompleteBox.SearchExecuted">
+            <summary>
+            Occurs when search is executed.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.Integration.WPF.AutoCompleteBox.SearchCommand">
+            <summary>
+            The search command.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.Integration.WPF.AutoCompleteBox.AutoCompleteItems">
+            <summary>
+            The autocomplete items.
+            </summary>
+        </member>
+        <member name="P:Fidely.Framework.Integration.WPF.AutoCompleteBox.MatchingMode">
+            <summary>
+            The matching mode that is used to determine whether or not show the autocomplete item.
+            </summary>
+        </member>
+    </members>
+</doc>

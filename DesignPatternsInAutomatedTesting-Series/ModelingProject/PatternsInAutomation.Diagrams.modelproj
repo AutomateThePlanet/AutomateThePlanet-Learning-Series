@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{fca718c0-de23-40b4-832b-4f67c176ecd6}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>PatternsInAutomation.Diagrams</Name>
+    <RootNamespace>ModelingProject1</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Content Include="DecoratorPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DecoratorPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DecoratorPattern.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="DecoratorPatternAbstract.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DecoratorPatternAbstract.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DecoratorPatternAbstract.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="DecoratorPatternClassExplosion.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DecoratorPatternClassExplosion.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DecoratorPatternClassExplosion.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ExtensionMethodsSpecificationDesignPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ExtensionMethodsSpecificationDesignPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ExtensionMethodsSpecificationDesignPattern.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="FacadeDesignPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="FacadeDesignPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>FacadeDesignPattern.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="FluentPageObjectPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="FluentPageObjectPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>FluentPageObjectPattern.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="IocPageObjectPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="IocPageObjectPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>IocPageObjectPattern.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="LinqSpecificationDesignPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="LinqSpecificationDesignPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>LinqSpecificationDesignPattern.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ObserverDesignPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ObserverDesignPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ObserverDesignPattern.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ObserverDesignPatternEventsDelegates.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ObserverDesignPatternEventsDelegates.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ObserverDesignPatternEventsDelegates.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ObserverDesignPatternIObserverInterfaces.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ObserverDesignPatternIObserverInterfaces.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ObserverDesignPatternIObserverInterfaces.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="PageObjects.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PageObjects.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>PageObjects.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="RulesDesignPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RulesDesignPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RulesDesignPattern.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="SingletonDesignPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SingletonDesignPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>SingletonDesignPattern.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="SpecificationDesignPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SpecificationDesignPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>SpecificationDesignPattern.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="StrategyDesignPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="StrategyDesignPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>StrategyDesignPattern.classdiagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\ModelingProject1.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="402f3acb-7897-4c0f-be08-2deb62d1b1d3" name="StrategyDesignPattern" linkedPackageId="6c56d4a3-aab9-4540-86fb-b2f3e49e490d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="3e23e6d2-5f85-4039-bdc4-57014ec44951">
+      <profileInstance Id="4a32819b-3032-4b8b-9008-60a6bc3b7f78" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="7104772a-cdd8-44a8-afdc-926f37f3b61a">
+      <profileInstance Id="c86ca13e-3043-478a-ae03-10697913edc1" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="50d2c7d2-96e9-4a26-b186-32f28f63aca8" name="IOrderValidationStrategy" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cb35f600-943b-4bf0-8c21-603fbdc1b93f" />
+        <ownedOperations>
+          <operation Id="5d094cf8-df58-4319-a5bc-f1ea26f45e4c" name="ValidateOrderSummary" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1043388b-d1f3-43db-b911-a03c9b994501" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="47bebbf5-9c9e-4c60-8324-56ec75b3f920" name="string itemPrice" direction="In" isUnique="false">
+                  <elementDefinition Id="be7251a0-a189-487b-a6f8-cd430790ced5" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="601706d5-5969-4573-90f4-ef582c0e4ec3" name="ClientPurchaseInfo clientPurchaseInfo" direction="In" isUnique="false">
+                  <elementDefinition Id="b71c9806-1fab-4798-b7a8-c9be9da81765" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6860f86d-c79d-479f-98cb-d178c6e69de8" name="PurchaseContext" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f5db0f3f-e0cb-44d0-930f-49c29b426997" />
+        <suppliersInternal>
+          <dependency Id="3e0af28d-5214-4e30-b201-e875fa1e5ecd">
+            <interfaceMoniker Id="50d2c7d2-96e9-4a26-b186-32f28f63aca8" LastKnownName="IOrderValidationStrategy" />
+            <elementDefinition Id="cb99c01f-2e7c-443a-8670-2581e59b8d3f" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="82da7057-30dc-4966-9b60-d930e1b5b0b2" name="PurchaseContext(IOrderValidationStrategy orderValidationStrategy)" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a654f706-c17c-4ebe-b409-dc22dec2dda8" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="6b516475-c56a-40b6-a411-48a1f975625e" name="PurchaseItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="04d7895e-2668-4579-8b6b-8c7578fad29b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="decdeac7-7201-4f8b-b6ed-2e27fbbb97aa" name="string itemUrl" direction="In" isUnique="false">
+                  <elementDefinition Id="89e651c0-2d42-468d-a135-fa5d6ef21670" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dde1155e-34aa-4b90-a8ef-278ec7e8e2b6" name="string itemPrice" direction="In" isUnique="false">
+                  <elementDefinition Id="755b5054-facb-4d95-958b-9effd4408c17" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e96cb3c7-419e-461c-bd67-da3fd45380d4" name="ClientLoginInfo clientLoginInfo" direction="In" isUnique="false">
+                  <elementDefinition Id="e359d178-2829-4bb0-bbae-0c848008454a" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="effac30a-068e-493c-a5c1-2531ddbb38e1" name="ClientPurchaseInfo clientPurchaseInfo" direction="In" isUnique="false">
+                  <elementDefinition Id="cc5ff5fb-78e3-44bd-8e27-56bb3c2bc660" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="cda6f34d-e27d-444e-8f0d-87a49fad76d3" name="SalesTaxOrderValidationStrategy" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8172a8c9-35d1-49bf-8c34-4e65abb00bfe" />
+        <suppliersInternal>
+          <interfaceRealization Id="1dc56ec0-e288-42bc-a6b1-687eae9556ec">
+            <interfaceMoniker Id="50d2c7d2-96e9-4a26-b186-32f28f63aca8" LastKnownName="IOrderValidationStrategy" />
+            <elementDefinition Id="d4433605-2cae-4bc8-ba57-66e0c2cb1813" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="c41265ae-1a79-411f-b67a-d21a9ee54888" name="ValidateOrderSummary" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="12955840-e174-4c95-9eb0-e84350df5c63" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="68c91ac3-4a46-4235-94a4-9dd8b6f9dc03" name="string itemsPrice" direction="In" isUnique="false">
+                  <elementDefinition Id="54588c89-29f3-4746-a9aa-747958c0df72" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5d1029f1-f9b8-4ac9-84e9-6a39c3f3d4e9" name="ClientPurchaseInfo clientPurchaseInfo" direction="In" isUnique="false">
+                  <elementDefinition Id="8eb4f4fc-942d-41f2-86ac-1d421a1d537c" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4ad8cb18-9921-4457-9f8b-00da918dfa0a" name="NoTaxesOrderValidationStrategy" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d6ab564d-830d-4c70-8d6e-5e4989e9f9e0" />
+        <suppliersInternal>
+          <interfaceRealization Id="5ca7786b-56c3-479c-8e3d-51de5c98f694">
+            <interfaceMoniker Id="50d2c7d2-96e9-4a26-b186-32f28f63aca8" LastKnownName="IOrderValidationStrategy" />
+            <elementDefinition Id="a0633379-03ce-4d95-8808-3240625374fe" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="18ab59fb-40e3-48c3-af8a-36341bb85ae6" name="ValidateOrderSummary" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="53932aa1-e1ac-4bf8-b10d-ad3f6496bd57" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1c737942-3b57-40b4-894d-ec712d91091b" name="string itemsPrice" direction="In" isUnique="false">
+                  <elementDefinition Id="adb5dab9-070c-4c0f-8788-4d094aba26e2" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a637cdf5-d166-4f49-ac26-48067c8ee804" name="ClientPurchaseInfo clientPurchaseInfo" direction="In" isUnique="false">
+                  <elementDefinition Id="8770f594-147f-4f62-a48e-2770b22b6e4a" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1b68140b-73d8-40d2-9d77-2757668a68b3" name="VatTaxCalculationService" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fbdcdb43-a675-4c02-80ca-e86eccdc0082" />
+        <suppliersInternal>
+          <interfaceRealization Id="433e97cf-4d4b-41db-90a0-d71b07618c7c">
+            <interfaceMoniker Id="50d2c7d2-96e9-4a26-b186-32f28f63aca8" LastKnownName="IOrderValidationStrategy" />
+            <elementDefinition Id="6a307a81-a56a-4c4d-ae68-3b8e2babb787" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="5ebb9bb5-e952-4798-8bda-c4f657251869" name="ValidateOrderSummary" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f81b1252-c671-43d6-90a7-7bfecb545b87" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1391f0fd-1667-472a-9868-11c8db8f7db9" name="string itemsPrice" direction="In" isUnique="false">
+                  <elementDefinition Id="512a189d-2a91-4013-977d-260d6b6c7bb3" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="98dad3c0-3627-41df-bb43-b2dcad9cc61d" name="ClientPurchaseInfo clientPurchaseInfo" direction="In" isUnique="false">
+                  <elementDefinition Id="6a0258ab-30bd-4349-bfde-64ccdc8e3dd8" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="6c56d4a3-aab9-4540-86fb-b2f3e49e490d" name="ModelingProject1">
+    <elementDefinition Id="71304b90-dec2-48cf-aa25-61ab4fe1335d" />
+  </package>
+</logicalClassDesignerModel>

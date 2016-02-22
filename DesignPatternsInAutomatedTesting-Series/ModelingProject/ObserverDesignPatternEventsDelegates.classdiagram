@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="8a529320-0226-4bad-84c2-3801ced5347d" name="ObserverDesignPatternEventsDelegates" linkedPackageId="45b5f5db-1af0-4c66-af12-4a314cc53bf9" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="1db5f8a4-f8a0-416c-b282-49ade9c9a323">
+      <profileInstance Id="f24d3563-6811-4288-9e97-60597b557bfd" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="828c0b61-1479-4112-88b6-3138d81c7017">
+      <profileInstance Id="767cd622-a2aa-44ec-adb6-9ec002f0c588" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="277ca783-dc98-42c1-b8f4-e0f9e34966f2" name="BaseTest" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a6cfa5b0-f51b-4ca8-9a05-68ff45c109b6" />
+        <targetEnds>
+          <association Id="cffe4e58-4836-447d-b0b2-91f03cd9b59c" isDerived="false" sourceEndRoleName="BaseTest" targetEndRoleName="MSTestExecutionProvider" isLeaf="false" isAbstract="false">
+            <classMoniker Id="93ac9e2d-6920-4ff4-873b-3d31e3f16824" LastKnownName="MSTestExecutionProvider" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c5881b7d-8d83-4622-b54c-597c767029a7" name="BaseTest" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5b8897f5-0d47-4044-91f8-9d9b45ad3dbf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="76d2ec22-a4b3-49a4-a021-78acf12fabc4" name="MSTestExecutionProvider" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0f90a962-b915-4d62-ab93-d40735142981" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e847ce95-81d0-4aec-953e-8ed0b77a41c7" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="6570ad35-d68f-418e-9ba8-b9d3edbf1947" name="currentTestExecutionProvider" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="62a51bda-1841-4da2-ab68-9164526bf744" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="0defbecc-bbbf-4652-b7b2-a5edbf1e2639" name="CoreTestCleanup" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d05d4c90-e17c-485c-a130-2b338d4bfa85" />
+          </operation>
+          <operation Id="7ee51773-31ce-4015-a968-b2aee362ea55" name="CoreTestInit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="47a35a34-ae7e-42e7-91c2-08486d6dae03" />
+          </operation>
+          <operation Id="98169b49-1ae3-495b-a0fc-4eddb853a7a0" name="TestCleanup" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ecbbcdbf-eea3-4b73-9652-0d7dcaf4b09b" />
+          </operation>
+          <operation Id="3f0ac81a-d5fe-4bb9-af8d-a942e0288822" name="TestInit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b169942d-4a31-4767-99d3-7c26821ed6b3" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="93ac9e2d-6920-4ff4-873b-3d31e3f16824" name="MSTestExecutionProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2343e802-a51d-48dd-981b-b8d54a2917ed" />
+        <suppliersInternal>
+          <dependency Id="bb7e7c62-982a-4451-9b1e-afaadbb480fd">
+            <classMoniker Id="105b2444-7935-4d17-a927-2590724350a2" LastKnownName="TestExecutionEventArgs" />
+            <elementDefinition Id="0ea563d1-921f-472a-b6cd-840ab5bc00c2" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="40b498c0-7c03-4d90-b4ed-01ef24b3f239" name="TestInstantiatedEvent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="da8ac370-466a-4122-b93b-5b6c00c7393e" />
+          </property>
+          <property Id="8e3fd4c8-254c-4c85-af44-9685a992dff3" name="PreTestInitEvent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a88bdedf-74fa-44b4-8e12-5e44c4c0a1c1" />
+          </property>
+          <property Id="44aebd16-860d-4387-b4a6-532b8f013a67" name="PostTestInitEvent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d7d95d72-f831-4c76-8c5e-a3da45a58aff" />
+          </property>
+          <property Id="3f049a57-1d5c-4207-a292-b10882b1c061" name="PreTestCleanupEvent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="25c378e4-275e-498e-946d-86536ea986e9" />
+          </property>
+          <property Id="f38d40ef-c55e-4b46-ae55-04b032c1c847" name="PostTestCleanupEvent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1caddc89-b26c-44d5-8e4f-3c33850cb05e" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="04536fe9-6139-4eb6-87d6-fa88c33d41b9" name="PostTestCleanup" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="288eca7a-3ae6-4736-9c37-7ca3d829b056" />
+          </operation>
+          <operation Id="bd15ed25-4bd4-4cdc-b6c8-78cc9204c739" name="PostTestInit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="61db0254-b87e-4d26-b1ff-9bd1789f9df0" />
+          </operation>
+          <operation Id="ba112e8e-cbc5-4024-ab67-75a8d49d8430" name="PreTestCleanup" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="07a27de3-d9a6-4071-a663-5e1294ccf082" />
+          </operation>
+          <operation Id="0ef4e01f-043e-438d-80b0-934273e0d39a" name="PreTestInit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f1f9b7f8-6ff4-4a1a-b90a-36cc21835472" />
+          </operation>
+          <operation Id="1713943b-1ff2-4816-894e-dc510f1cca98" name="TestInstantiated" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="08f7be62-f0d4-475a-a028-5a2ff673b0ea" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="ccb8bd54-c01f-43a5-ab56-203c534db023" name="IExecutionProvider" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="301acbcf-72d3-4ef9-a25e-467ba3560f4b" />
+        <suppliersInternal>
+          <dependency Id="77c16760-8ff0-4002-aa2b-ff7b5c6b7313">
+            <classMoniker Id="93ac9e2d-6920-4ff4-873b-3d31e3f16824" LastKnownName="MSTestExecutionProvider" />
+            <elementDefinition Id="ff984f6c-ddc5-4ac5-b596-ad221674debf" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributes>
+          <property Id="8a20725b-bfdf-4775-ac94-c411ea41451a" name="TestInstantiatedEvent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c87d5807-e13d-4e47-8c9d-a2318c9fcfc9" />
+          </property>
+          <property Id="f4d9a96d-8ef1-4328-b75a-6f696de02b9b" name="PreTestInitEvent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6148a15b-8e0f-41d4-a979-d7bc73e3f549" />
+          </property>
+          <property Id="13256779-0073-43fd-b937-fd83069826e7" name="PostTestInitEvent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8a6bea31-ca60-4919-badb-ad5794ce354c" />
+          </property>
+          <property Id="9cf44793-3167-468e-83aa-bbd9e214bcc9" name="PreTestCleanupEvent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d5f3173d-f4d6-46e1-bad9-b0a29ba71384" />
+          </property>
+          <property Id="d405c089-6547-47e5-9bf0-25000ad3d6c7" name="PostTestCleanupEvent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2ed89693-ea01-41b8-ba1d-6c5af1f0f909" />
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="66279174-dfb6-4743-ab31-47539005fc70" name="BaseTestBehaviorObserver" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a7fabee5-6800-4277-a7cd-8d0dc30dcafd" />
+        <suppliersInternal>
+          <dependency Id="f8d5f5e6-fdd7-45aa-a040-bb05b95cd2c9">
+            <classMoniker Id="105b2444-7935-4d17-a927-2590724350a2" LastKnownName="TestExecutionEventArgs" />
+            <elementDefinition Id="69037b2a-cbcc-470b-89e4-2ef47a70ae4d" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="6816030b-d15b-4e28-81de-69f0b77ade58" isDerived="false" sourceEndRoleName="BaseTestBehaviorObserver" targetEndRoleName="MSTestExecutionProvider" isLeaf="false" isAbstract="false">
+            <classMoniker Id="93ac9e2d-6920-4ff4-873b-3d31e3f16824" LastKnownName="MSTestExecutionProvider" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1845cd9c-ffc7-4816-ae0f-fca8302d0282" name="BaseTestBehaviorObserver" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="66522741-b1a7-4c46-95f7-f394f6dee153" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4a70322d-d3e5-4736-932f-8f9067f9a4b6" name="MSTestExecutionProvider" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="82eb203a-0618-4459-9186-9efcc528546d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="83fc15d2-e47e-439d-a80b-c21401da6ac9" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="108b4190-03bd-4833-9a12-4c731e94d6a0" name="Subscribe" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0d92a2d5-4f32-4889-ba81-74cd10d85558" />
+          </operation>
+          <operation Id="1e260920-2a0d-4ff6-9f32-8cbc57560ab9" name="Unsubscribe" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7bdfd1b3-8862-4b22-914b-f639990cafbc" />
+          </operation>
+          <operation Id="7bc095d6-1d5e-497e-9e6b-25141ccde47d" name="TestInstantiated" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="48160db6-4370-4c23-b06f-233df7fde27e" />
+          </operation>
+          <operation Id="5c1161e4-5906-473c-a62b-1fb2e3b29caa" name="PreTestInit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cafb7bcb-3b36-4039-89a0-cbd5d9ea7e4c" />
+          </operation>
+          <operation Id="49ac35ac-f71d-49ea-b559-281b22786cb1" name="PostTestInit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="433818de-b3dd-416b-a07e-d3fc9f98ef8e" />
+          </operation>
+          <operation Id="24a75006-771e-4112-b220-38bc692fd008" name="PreTestCleanup" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4cc66b8c-8c71-493f-ac49-381b5e761247" />
+          </operation>
+          <operation Id="879cae71-646c-4997-be59-d62acf619ca0" name="PostTestCleanup" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bf5005f6-5bda-4c52-8028-47bce8bc369f" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="62ed307c-aa76-4698-b47a-99d10e3c2c9f" name="AssociatedBugTestBehaviorObserver" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8b7cd5c7-62bf-4e52-8bca-09237ba15266" />
+        <generalsInternal>
+          <generalization Id="d56d5793-1925-4021-9d58-527b35cec008" isSubstitutable="false">
+            <classMoniker Id="66279174-dfb6-4743-ab31-47539005fc70" LastKnownName="BaseTestBehaviorObserver" />
+            <elementDefinition Id="3a9b24b7-486e-4116-9859-64be669da637" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="e5d937c0-da15-4241-862e-fee57a9861d1" name="PostTestCleanup" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="32ffe15c-b7c3-4320-a07a-3eb98b3bde67" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e23dabc8-0332-44fe-a1bf-44af50abd08e" name="BrowserLaunchTestBehaviorObserver" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1c6549ed-96fb-4e8c-9663-f730f81349b6" />
+        <generalsInternal>
+          <generalization Id="0111460a-f588-4245-b712-cecd9b35d925" isSubstitutable="false">
+            <classMoniker Id="66279174-dfb6-4743-ab31-47539005fc70" LastKnownName="BaseTestBehaviorObserver" />
+            <elementDefinition Id="309ffb23-6248-4781-96fb-6ccfac5ea37e" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="f4ed9d61-2806-440c-a8e7-1f96670a2c8d" name="PreTestInit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="dc1487b1-ab7f-4a79-8aa1-f0b110c52f52" />
+          </operation>
+          <operation Id="b3f33fc8-3d91-4f61-82b4-96b9a310e98d" name="PostTestCleanup" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0e038163-dc10-4453-9d57-f62f56ebb405" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="aa9c106f-47ac-4754-a21b-7a6e3794eba7" name="OwnerTestBehaviorObserver" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d5e9c8f8-c5f4-4fd3-b0de-819d91063c49" />
+        <generalsInternal>
+          <generalization Id="d6b38b8a-df6d-45bd-ab4b-1bb4be249446" isSubstitutable="false">
+            <classMoniker Id="66279174-dfb6-4743-ab31-47539005fc70" LastKnownName="BaseTestBehaviorObserver" />
+            <elementDefinition Id="5f36656b-0dd0-4f96-af46-b5545bb26cc8" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="e901a350-d05b-4e4b-96bc-341eba52a2f6" name="PreTestInit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0de48366-85fb-4807-b8ec-857b30fbc64d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="105b2444-7935-4d17-a927-2590724350a2" name="TestExecutionEventArgs" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c3b2cbaa-5870-4049-bfe5-c6131297b6a0" />
+        <ownedAttributesInternal>
+          <property Id="d27619b8-7b05-41d5-b703-6e4532acf1de" name="MemberInfo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b02b6428-e99a-4d8f-b4e5-8641ad58f4b1" />
+          </property>
+          <property Id="27f9bd74-bb62-465c-b519-822573425408" name="TestContext" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1a275329-9a50-476f-aa2e-140a616643cc" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="45b5f5db-1af0-4c66-af12-4a314cc53bf9" name="ModelingProject1">
+    <elementDefinition Id="71304b90-dec2-48cf-aa25-61ab4fe1335d" />
+  </package>
+</logicalClassDesignerModel>

@@ -1,0 +1,6 @@
+# git ignore file
+*.dll
+*.suo
+*.baml
+TestCaseManager\obj\Debug*/
+TestCasesManager.Installer\TestCasesManager.Installer\Express\DVD-5\Reports*/

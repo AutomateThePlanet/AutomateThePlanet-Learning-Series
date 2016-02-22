@@ -1,0 +1,22 @@
+﻿<Window x:Class="Fidely.Demo.DBViewer.Views.ConnectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Connect To..."
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Height="120" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0">Connection String :</Label>
+        <TextBox Grid.Row="1"/>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Width="60" Margin="5">Connect</Button>
+            <Button Width="60" Margin="5">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>

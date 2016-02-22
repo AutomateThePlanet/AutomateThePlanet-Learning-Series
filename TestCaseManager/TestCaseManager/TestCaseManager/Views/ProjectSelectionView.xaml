@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="TestCaseManagerApp.Views.ProjectSelectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:helpers="clr-namespace:AAngelov.Utilities.UI.ControlExtensions;assembly=AAngelov.Utilities.UI"
+             mc:Ignorable="d" Loaded="UserControl_Loaded">
+    <Grid>
+        <ProgressBar Name="progressBar" Minimum="0" Maximum="1" Height="16" IsIndeterminate="True" Margin="0,0,0,16" />
+
+        <Grid Name="mainGrid" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3.5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.6*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.4*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <Label Content="Select Team Project" FontWeight="Bold" FontSize="26" Margin="10"  Height="Auto"/>
+                <!--<mui:ModernButton Name="btnInfo" HorizontalAlignment="Left" Grid.Row="0" Margin="10,5,0,0" Click="btnInfo_Click" IconData="F1 M 38,19C 48.4934,19 57,27.5066 57,38C 57,48.4934 48.4934,57 38,57C 27.5066,57 19,48.4934 19,38C 19,27.5066 27.5066,19 38,19 Z M 33.25,33.25L 33.25,36.4167L 36.4166,36.4167L 36.4166,47.5L 33.25,47.5L 33.25,50.6667L 44.3333,50.6667L 44.3333,47.5L 41.1666,47.5L 41.1666,36.4167L 41.1666,33.25L 33.25,33.25 Z M 38.7917,25.3333C 37.48,25.3333 36.4167,26.3967 36.4167,27.7083C 36.4167,29.02 37.48,30.0833 38.7917,30.0833C 40.1033,30.0833 41.1667,29.02 41.1667,27.7083C 41.1667,26.3967 40.1033,25.3333 38.7917,25.3333 Z "/>-->
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+                <Label Content="Team Foundation Server Project" FontWeight="Bold" FontSize="12" Margin="10"/>
+                <Label Content="Test Plan" FontWeight="Bold" FontSize="12" Margin="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                <TextBox Margin="10" Name="tbTfsProject" Text="{Binding FullTeamProjectName}"/>
+                <ComboBox Margin="10" ItemsSource="{Binding ObservableTestPlans}" Name="cbTestPlans" helpers:ComboBoxDropdownExtensions.OpenDropDownAutomatically="True" MouseMove="cbTestPlans_MouseMove" SelectedIndex="0"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="2"  Grid.Row="1">
+                <Button Content="Browse" Margin="10" Width="100" Height="24" Click="BrowseButton_Click" />
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Edit Test Plans" Name="btnEditTestPlans" Margin="10,100,10,10" Width="Auto" Height="50" Click="btnEditTestPlans_Click"/>
+                    <Button Content="Display" Name="btnDisplay" Margin="10,100,10,10" Width="100" Height="50" Click="DisplayButton_Click" IsDefault="True"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

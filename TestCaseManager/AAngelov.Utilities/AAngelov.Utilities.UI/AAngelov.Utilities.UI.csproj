@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C547F875-DB0A-41B6-8C42-10FBC1EDF711}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AAngelov.Utilities.UI</RootNamespace>
+    <AssemblyName>AAngelov.Utilities.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VisualStudio_2012|AnyCPU'">
+    <OutputPath>bin\VisualStudio_2012\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VisualStudio_2013|AnyCPU'">
+    <OutputPath>bin\VisualStudio_2013\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FirstFloor.ModernUI">
+      <HintPath>..\packages\ModernUI.WPF.1.0.5\lib\net45\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.1\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControlExtensions\ComboBoxDropdownExtensions.cs" />
+    <Compile Include="ControlExtensions\RichTextBoxExtensions.cs" />
+    <Compile Include="ControlExtensions\TextBoxExtensions.cs" />
+    <Compile Include="Converters\EnumMatchToBooleanConverter.cs" />
+    <Compile Include="Core\BaseNavigator.cs" />
+    <Compile Include="Core\BaseNotifyPropertyChanged.cs" />
+    <Compile Include="Core\CheckedItem.cs" />
+    <Compile Include="Enums\FileType.cs" />
+    <Compile Include="Managers\BaseFileTypeManager.cs" />
+    <Compile Include="Managers\BaseLogManager.cs" />
+    <Compile Include="Managers\CheckedItemManager.cs" />
+    <Compile Include="Managers\FileDialogManager.cs" />
+    <Compile Include="Managers\FolderBrowseDialogManager.cs" />
+    <Compile Include="Managers\FragmentManager.cs" />
+    <Compile Include="Managers\UIRegistryManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.log4net.cs" />
+    <Compile Include="ViewModels\PromptDialogViewModel.cs" />
+    <Compile Include="ViewModels\BaseSettingsViewModel.cs" />
+    <Compile Include="Views\PrompCheckboxListDialogWindow.xaml.cs">
+      <DependentUpon>PrompCheckboxListDialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrompDialogRichTextBoxUserControl.xaml.cs">
+      <DependentUpon>PrompDialogRichTextBoxUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrompDialogRichTextBoxWindow.xaml.cs">
+      <DependentUpon>PrompDialogRichTextBoxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrompDialogUserControl.xaml.cs">
+      <DependentUpon>PrompDialogUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrompDialogWindow.xaml.cs">
+      <DependentUpon>PrompDialogWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Licenses\TestCaseManager.License.rtf" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AAngelov.Utilities\AAngelov.Utilities.csproj">
+      <Project>{6649be16-8e52-47ce-a870-6b2c9de35bd8}</Project>
+      <Name>AAngelov.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\background.kitty.png" />
+    <Content Include="Assets\background.love.jpg" />
+    <Content Include="Assets\background.snowflakes.jpg" />
+    <Content Include="Icons\Quality.ico" />
+    <Content Include="Icons\Registration.ico" />
+    <Content Include="Icons\ViewResults.ico" />
+    <Content Include="Licenses\ModernUI\Icons.License.txt" />
+    <Content Include="Licenses\ModernUI\ModernUI.License.txt" />
+    <Content Include="Licenses\ModernUI\RelativeAnimatingContentControl.License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Assets\ModernUI.HelloKitty.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ModernUI.Love.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ModernUI.Snowflakes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PrompCheckboxListDialogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PrompDialogRichTextBoxUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PrompDialogRichTextBoxWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PrompDialogUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PrompDialogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

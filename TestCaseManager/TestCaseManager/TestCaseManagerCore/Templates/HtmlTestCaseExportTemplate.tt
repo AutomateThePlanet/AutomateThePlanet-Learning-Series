@@ -1,0 +1,991 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="TestCaseManagerCore.BusinessLogic.Entities" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="TestCaseManagerCore.BusinessLogic.Managers" #>
+<#@ import namespace="AAngelov.Utilities.UI.Managers" #>
+<#@ parameter name="FullTestCases" type="System.Collections.Generic.List<TestCaseManagerCore.BusinessLogic.Entities.TestCaseFull>" #>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+	<style type="text/css">
+	
+/*======================================
+               RESET
+======================================*/
+html, body, div, ul, li, table, thead, tbody, tfoot, tr, th, td, hr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-family: Tahoma;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+    color: #000;
+}
+
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input {
+    vertical-align: middle;
+}
+
+/*======================================
+               COMMON STYLES
+======================================*/
+.Collapsed {
+    display: none;
+}
+
+.ContentWrapper {
+    width: 98%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/*======================================
+           MAIN MENU STYLES
+======================================*/
+input[type="button"] {
+    border: 2px solid #000;
+    background-color: #fff;
+    font-weight: bolder;
+}
+
+    input[type="button"]:hover {
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+    }
+
+.MenuWrapper {
+    width: 100%;
+    height: 10%;
+    min-height: 30px;
+    position: fixed;
+    top: 0;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    background-color: #fff;
+    z-index: 1;
+    vertical-align: middle;
+}
+
+#footer {
+    width: 100%;
+    height: 7%;
+    min-height: 30px;
+    position: fixed;
+    bottom: 0;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    background-color: #fff;
+    z-index: 1;
+    vertical-align: middle;
+}
+
+    #footer ul {
+        margin-left: 1%;
+        width: 100%;
+    }
+
+        #footer ul li {
+            vertical-align: middle;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            display: inline-block;
+            padding-right: 2%;
+            margin-left: 2%;
+            border-right: 2px solid #000;
+            width: 27%;
+            font-size: 1.1em;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+            #footer ul li:first-child {
+                margin-left: 0;
+            }
+
+            #footer ul li:last-child {
+                border-right: 0;
+            }
+
+/*======================================
+        FILTER MENU STYLES
+======================================*/
+#filterMenu {
+    margin-top: 0.5%;
+    margin-left: 1%;
+}
+
+    #filterMenu > li {
+        display: inline-block;
+        border: 2px solid #000;
+        font-weight: bolder;
+        padding: 1%;
+        position: relative;
+    }
+
+        #filterMenu > li:hover {
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+
+            #filterMenu > li:hover ul {
+                display: inline-block;
+                position: absolute;
+            }
+
+        #filterMenu > li > ul {
+            position: relative;
+            left: -1.0%;
+            margin-top: 10%;
+            display: none;
+            z-index: 2;
+            background-color: #fff;
+            border: 2px solid #000;
+            width: 100%;
+        }
+
+.Filter {
+    color: #000;
+    border-bottom: 2px solid #000;
+    padding: 10%;
+}
+
+    .Filter:last-child {
+        border-bottom: none;
+    }
+
+#filterMenu > li > ul > li:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/*======================================
+        TEST CASE STYLES
+======================================*/
+.TestCaseListWrapper {
+    margin-top: 6%;
+    margin-bottom: 6%;
+}
+
+.TestCaseList > li {
+    border-bottom: 2px solid #fff;
+}
+
+    .TestCaseList > li:last-child {
+        border: none;
+    }
+
+.TestStatusIndicator {
+    border: 2px solid #000;
+    width: 1%;
+    height: 10px;
+    display: inline-block;
+}
+
+.TestCaseContent {
+    margin-left: 2%;
+}
+
+
+.TestCaseContent {
+    margin-bottom: 2%;
+}
+
+li > div:first-child {
+    padding: 1%;
+}
+
+    li > div:first-child:hover {
+        cursor: pointer;
+        background-color: #000;
+        color: #fff;
+    }
+
+/*======================================
+        TEST CASE PROPERTIES STYLES
+======================================*/
+.TestCasePropertiesList {
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+    .TestCasePropertiesList li {
+        margin-bottom: 0.5%;
+    }
+
+        .TestCasePropertiesList li > span:first-child {
+            font-weight: bolder;
+        }
+
+.AutomationInfo {
+	margin-left: 2%;
+}
+
+/*======================================
+        TEST CASE COMMENT STYLES
+======================================*/
+.TestCaseComment {
+    margin-left: 2%;
+    background-color: #fff;
+    border: 2px solid #339933;
+    padding: 1%;
+    margin-top: 1%;
+}
+
+/*======================================
+        TEST CASE STEPS STYLES
+======================================*/
+table {
+    vertical-align: middle;
+    width: 98%;
+}
+
+table thead {
+    text-align: center;
+}
+
+td:first-child, th:first-child {
+    width: 3%;
+}
+
+td:nth-child(2), th:nth-child(2) {
+    width: 52%;
+}
+
+td:nth-child(3), th:nth-child(3) {
+    width: 45%;
+}
+
+.TestCaseSteps {
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+td, th {
+    border: 2px solid #000;
+    padding: 1%;
+}
+
+tbody tr {
+    background-color: #fff;
+}
+
+    tbody tr:nth-of-type(2n+1) {
+        background-color: #bfe9bf;
+    }
+
+thead tr {
+    background-color: #339933;
+    font-weight: bolder;
+}
+
+/*======================================
+      STATUSES PREDEFINED COLORS
+======================================*/
+.Active {
+    background-color: #397DD6;
+}
+
+.Passed {
+    background-color: #26C155;
+}
+
+.Failed {
+    background-color: #ff0000;
+}
+
+.Blocked {
+    background-color: #FF7510;
+}
+
+.NotApplicable {
+    background-color: #9B9B9B;
+}
+
+.DefaultStatus {
+    background-color: #fff;
+}
+
+.Hidden {
+	display: none;
+}
+/*======================================
+               STYLES END
+======================================*/
+
+    </style>
+</head>
+<body>
+
+<#
+	string checkedProperties = UIRegistryManager.Instance.ReadCheckedPropertiesToBeExported();
+
+	BuildHeader(checkedProperties);
+	BuildBody(checkedProperties);
+	BuildFooter(checkedProperties);
+#>
+
+<script>
+
+(function () {
+    var index = 0;
+    var STATUS_ACTIVE = "Active";
+    var STATUS_PASSED = "Passed";
+    var STATUS_FAILED = "Failed";
+    var STATUS_BLOCKED = "Blocked";
+    var STATUS_NOT_APPLICABLE = "NotApplicable";
+    var STATUS_DEFAULT = "DefaultStatus";
+    var STATE_EXPANDED = "Expanded";
+    var STATE_COLLAPSED = "Collapsed";
+    var STATE_FILTERED = "Filtered";
+    var STATE_NOT_FILTERED = "NotFiltered";
+    var STATUS = "Status"
+    var PRIORITY = "Priority";
+    var SIGN_EXPANDED = "▼";
+    var SIGN_COLLAPSED = "▶";
+    var STATE_NONE = "None";
+    var testCaseList = document.getElementsByClassName("TestCase");
+    var userCriteriaChoice = {
+        status: STATE_NONE,
+        priority: STATE_NONE
+    };
+
+    function hasClassName(element, className) {
+        if (element.className.indexOf(className) != -1) {
+            return true;
+        }
+
+        return false;
+    }
+
+    // Changes the sign ▶ / ▼ of a given item
+    function changeSign(itemToChangeSign) {
+        var childrenList = itemToChangeSign.parentNode.children;
+
+        for (var i = 0; i < childrenList.length; i++) {
+
+            if (childrenList[i].tagName === "DIV") {
+                var elementSign = childrenList[i];
+
+                if (elementSign.innerHTML.indexOf(SIGN_COLLAPSED) != -1) {
+                    elementSign.innerHTML = elementSign.innerHTML.replace(SIGN_COLLAPSED, SIGN_EXPANDED);
+                } else if (elementSign.innerHTML.indexOf(SIGN_EXPANDED) != -1) {
+                    elementSign.innerHTML = elementSign.innerHTML.replace(SIGN_EXPANDED, SIGN_COLLAPSED);
+                }
+            }
+        }
+    }
+
+    // Changes the class Expanded/Collapsed of a given item
+    function changeClass(itemToChangeClass) {
+        if (itemToChangeClass.className.indexOf(STATE_EXPANDED) != -1) {
+            itemToChangeClass.className = String(itemToChangeClass.className).replace(STATE_EXPANDED, STATE_COLLAPSED);
+        } else if (itemToChangeClass.className.indexOf(STATE_COLLAPSED) != -1) {
+            itemToChangeClass.className = String(itemToChangeClass.className).replace(STATE_COLLAPSED, STATE_EXPANDED);
+        }
+    }
+
+    // Changes the class & sign of a given item
+    function changeVisibilityItem(item) {
+        changeSign(item);
+        changeClass(item);
+    }
+
+    // Changes the class & sign of clicked item
+    function changeVisibilityClickedIem(event) {
+        var elementSwitchVisibility = event.target;
+        elementSwitchVisibility = elementSwitchVisibility.nextElementSibling;
+
+        changeVisibilityItem(elementSwitchVisibility);
+    }
+
+    function shallowCopy(collection) {
+        var coppiedCollection = [];
+
+        for (index = 0; index < collection.length; index++) {
+            coppiedCollection.push(collection[index]);
+        }
+
+        return coppiedCollection;
+    }
+
+    // Changes class & sign of all items in a given list of items. Deep copy is made because of reference copy bugs
+    function changeVisibilityEachItem(testCaseList) {
+        var tempList = [];
+
+        tempList = shallowCopy(testCaseList);
+
+        for (index = 0; index < tempList.length; index++) {
+            changeVisibilityItem(tempList[index]);
+        }
+    }
+
+    // Changes class & sign from "Collapsed" => "Expanded" of all items (Expand All button)
+    function changeVisibilityExpandedAll() {
+        var expandedOnly = [];
+
+        for (index = 0; index < testCaseList.length; index++) {
+            var isNotFiltered = testCaseList[index].className.indexOf(STATE_COLLAPSED) === -1;
+
+            if (isNotFiltered) {
+                var itemsToExpandCurrentTestCase = testCaseList[index].getElementsByClassName(STATE_COLLAPSED);
+                for (var i = 0; i < itemsToExpandCurrentTestCase.length; i++) {
+                    expandedOnly.push(itemsToExpandCurrentTestCase[i]);
+                }
+            }
+        }
+
+        changeVisibilityEachItem(expandedOnly);
+    }
+
+    // Changes class & sign from "Expanded" => "Collapsed" of all items (Collapse All button)
+    function changeVisibilityCollapsedAll() {
+        var testCaseList = document.getElementsByClassName(STATE_EXPANDED);
+        changeVisibilityEachItem(testCaseList);
+    }
+
+    // Gets the status state of a given test case
+    function getStatusState(testCase) {
+		var statusState = testCase.getElementsByClassName("Status")[0];
+		
+		if(statusState != null)
+		{
+			statusState = statusState.getElementsByClassName("TestCasePropertyValue")[0].innerHTML;
+		}
+
+        return statusState;
+    }
+
+    function getPriorityState(testCase) {
+        return testCase.getElementsByClassName("Priority")[0].getElementsByClassName("TestCasePropertyValue")[0].innerHTML;
+    }
+
+    function concatClassNameOfGivenElement(element, className) {
+        element.className = element.className + className;
+    }
+
+    // Change the background color of the status <p> depending on the state
+    function changeStatusPropertyBackgroundColor(testCase) {
+        var state = getStatusState(testCase);
+
+		if(state != null)
+		{
+			var statusLi = testCase.getElementsByClassName("Status")[0];
+			var statusPropertyValue = statusLi.getElementsByClassName("TestCasePropertyValue")[0];
+			var testCaseTitle = testCase.getElementsByClassName("TestCaseTitle")[0];
+			var testStatusIndicator = testCase.getElementsByClassName("TestStatusIndicator")[0];
+
+			switch (state) {
+
+				case STATUS_ACTIVE:
+					concatClassNameOfGivenElement(statusPropertyValue, " " + STATUS_ACTIVE);
+					concatClassNameOfGivenElement(testStatusIndicator, " " + STATUS_ACTIVE);
+					return;
+
+				case STATUS_PASSED:
+					concatClassNameOfGivenElement(statusPropertyValue, " " + STATUS_PASSED);
+					concatClassNameOfGivenElement(testStatusIndicator, " " + STATUS_PASSED);
+					return;
+
+				case STATUS_FAILED:
+					concatClassNameOfGivenElement(testStatusIndicator, " " + STATUS_FAILED);
+					concatClassNameOfGivenElement(statusPropertyValue, " " + STATUS_FAILED);
+					return;
+
+				case STATUS_BLOCKED:
+					concatClassNameOfGivenElement(testStatusIndicator, " " + STATUS_BLOCKED);
+					concatClassNameOfGivenElement(statusPropertyValue, " " + STATUS_BLOCKED);
+					return;
+
+				case STATUS_NOT_APPLICABLE:
+					concatClassNameOfGivenElement(testStatusIndicator, " " + STATUS_NOT_APPLICABLE);
+					concatClassNameOfGivenElement(statusPropertyValue, " " + STATUS_NOT_APPLICABLE);
+					return;
+
+				default:
+					concatClassNameOfGivenElement(testStatusIndicator, " " + STATUS_DEFAULT);
+					concatClassNameOfGivenElement(statusPropertyValue, " " + STATUS_DEFAULT);
+					return;
+			}
+		}
+    }
+
+    function getFilterCriteria(event) {
+        var clickedItem = event.target;
+        return clickedItem.innerHTML;
+    }
+
+    function setTestCasesCounter() {
+        var testCasesListNotFiltered = document.getElementsByClassName(STATE_NOT_FILTERED);
+        var testCaseCounter = document.getElementById("currentTestCaseCount");
+        testCaseCounter.innerHTML = testCasesListNotFiltered.length;
+    }
+
+    function resetTestCasesClass() {
+        var testCaseListToClear = shallowCopy(document.getElementsByClassName("TestCase"));
+
+        for (var index = 0; index < testCaseListToClear.length; index++) {
+            testCaseListToClear[index].className = "TestCase NotFiltered";
+        }
+    }
+
+    function setCurrentFilterLabels(userCriteriaChoice) {
+        var statusLabel = document.getElementById("currentFilterStatus");
+        var priorityLabel = document.getElementById("currentFilterPriority");
+		
+		if(statusLabel != null)
+		{
+			statusLabel.innerHTML = " " + userCriteriaChoice.status;
+		}
+
+		if(priorityLabel != null)
+		{
+			priorityLabel.innerHTML = " " + userCriteriaChoice.priority;
+		}
+    }
+
+    function clearFilters() {
+        userCriteriaChoice = {
+            status: STATE_NONE,
+            priority: STATE_NONE
+        };
+        setCurrentFilterLabels(userCriteriaChoice);
+        resetTestCasesClass();
+        setTestCasesCounter();
+    }
+
+
+
+    function filter(event) {
+        resetTestCasesClass();
+
+        if (hasClassName(event.target, STATUS)) {
+            userCriteriaChoice.status = getFilterCriteria(event);
+        } else if (hasClassName(event.target, PRIORITY)) {
+            userCriteriaChoice.priority = getFilterCriteria(event);
+        }
+        setCurrentFilterLabels(userCriteriaChoice);
+        var testCaseListToFilter = shallowCopy(document.getElementsByClassName(STATE_NOT_FILTERED));
+
+        for (index = 0; index < testCaseListToFilter.length; index++) {
+            var currentTestCase = testCaseListToFilter[index];
+
+            if (userCriteriaChoice.status != STATE_NONE) {
+                var currentTestCaseStatus = getStatusState(currentTestCase);
+                if (userCriteriaChoice.status != currentTestCaseStatus) {
+                    currentTestCase.className = String(currentTestCase.className).replace(STATE_NOT_FILTERED, STATE_FILTERED);
+                    concatClassNameOfGivenElement(currentTestCase, " " + STATE_COLLAPSED);
+                }
+            }
+
+            if (userCriteriaChoice.priority != STATE_NONE) {
+                var currentTestCasePriority = getPriorityState(currentTestCase);
+                if (userCriteriaChoice.priority != currentTestCasePriority) {
+                    currentTestCase.className = String(currentTestCase.className).replace(STATE_NOT_FILTERED, STATE_FILTERED);
+                    concatClassNameOfGivenElement(currentTestCase, " " + STATE_COLLAPSED);
+                }
+            }
+        }
+
+        setTestCasesCounter();
+    }
+
+    function initialize() {
+        var testCaseList = document.getElementsByClassName("TestCase");
+
+        // iterates between the test cases and chage the background of the status and test case title
+        for (index = 0; index < testCaseList.length; index++) {
+            changeStatusPropertyBackgroundColor(testCaseList[index]);
+        }
+
+        setTestCasesCounter();
+
+        // attach events
+        var testCaseList = document.getElementsByClassName("TestCaseList")[0];
+        testCaseList.addEventListener("click", changeVisibilityClickedIem, false);
+
+        var expandAllButton = document.getElementById("expandAll");
+        expandAllButton.addEventListener("click", changeVisibilityExpandedAll, false);
+
+        var collapseAllButton = document.getElementById("collapseAll");
+        collapseAllButton.addEventListener("click", changeVisibilityCollapsedAll, false);
+
+        var filterByStatusUL = document.getElementById("filterByStatus");
+        if(filterByStatusUL != null)
+		{
+			filterByStatusUL.addEventListener("click", filter, false);
+		}
+
+        var filterByPriorityUL = document.getElementById("filterByPriority");
+		if(filterByPriorityUL != null)
+		{
+			filterByPriorityUL.addEventListener("click", filter, false);
+		}
+
+        var clearFiltersButton = document.getElementById("clearFilters");
+		if(clearFiltersButton != null)
+		{
+			clearFiltersButton.addEventListener("click", clearFilters, false);
+		}
+    }
+
+    initialize();
+}());
+    </script>
+</body>
+</html>
+<#+
+public void BuildHeader(string checkedProperties)
+{
+	WriteLine(@"<div class=""MenuWrapper"">");
+		WriteLine(@"<ul id=""filterMenu"">");
+		if (checkedProperties.IndexOf("Status") != -1)
+		{
+		 		WriteLine(@"<li>Filter By Status");
+					WriteLine(@"<ul id=""filterByStatus"">");
+						WriteLine(@"<li class=""Filter Status Active"">Active</li>");
+						WriteLine(@"<li class=""Filter Status Passed"">Passed</li>");    
+						WriteLine(@"<li class=""Filter Status Failed"">Failed</li>");    
+						WriteLine(@"<li class=""Filter Status Blocked"">Blocked</li>");    
+						WriteLine(@"<li class=""Filter Status NotApplicable"">NotApplicable</li>");    
+					WriteLine(@"</ul>");    
+				WriteLine(@"</li>");    
+		}
+
+        if (checkedProperties.IndexOf("Priority") != -1)
+        {
+			 WriteLine(@"<li>Filter By Priority");
+					WriteLine(@"<ul id=""filterByPriority"">");
+						WriteLine(@"<li class=""Filter Priority VeryHigh"">VeryHigh</li>");
+						WriteLine(@"<li class=""Filter Priority High"">High</li>");    
+						WriteLine(@"<li class=""Filter Priority Medium"">Medium</li>");    
+						WriteLine(@"<li class=""Filter Priority Low"">Low</li>");    
+					WriteLine(@"</ul>");    
+				WriteLine(@"</li>");    
+        }
+        
+		if (checkedProperties.IndexOf("Status") != -1 || checkedProperties.IndexOf("Priority") != -1)
+		{
+			WriteLine(@"<li id=""clearFilters"">Clear Filters</li>");
+		}
+            
+        WriteLine(@"<li id=""expandAll"">Expand All</li>");
+        WriteLine(@"<li id=""collapseAll"">Collapse All</li>");
+    WriteLine(@"</ul>");
+WriteLine(@"</div>");
+
+WriteLine(@"<div class=""ContentWrapper"">");
+WriteLine(@"<div class=""TestCaseListWrapper"">");	    
+WriteLine(@"<ul class=""TestCaseList"">");        
+}
+
+
+public void BuildFooter(string checkedProperties)
+{
+	WriteLine(@"</ul>");
+	WriteLine(@"</div>");
+	WriteLine(@"</div>");
+
+    WriteLine(@"<div id=""footer"">");
+		WriteLine(@"<ul class=""filterInfo"">");
+		if (checkedProperties.IndexOf("Status") != -1)
+		{
+			WriteLine(@"<li>Filtered By Status:<span id=""currentFilterStatus""> None</span></li>");
+		}
+
+		if (checkedProperties.IndexOf("Priority") != -1)
+        {
+			WriteLine(@"<li>Filtered By Priority:<span id=""currentFilterPriority""> None</span></li>");
+        }
+
+		WriteLine(@"<li>Test Case Count: <span id=""currentTestCaseCount"">...</span></li>");
+		WriteLine("</ul>");
+    WriteLine("</div>");
+}
+
+
+public void BuildBody(string checkedProperties)
+{
+	foreach (TestCaseFull currentFullTestCase in FullTestCases)
+	{
+		TestCase(currentFullTestCase.TestCase, currentFullTestCase, currentFullTestCase.ExecutionComment, currentFullTestCase.MostRecentResult, checkedProperties);
+	} 
+}
+
+public void TestCase(TestCase testCase,TestCaseFull testCaseFull, string comment, string status, string checkedProperties)
+{
+	WriteLine(@"<li class=""TestCase NotFiltered"">");
+	TestCaseTitle(testCase, checkedProperties);
+	WriteLine(@"   <ul class=""TestCaseContent Collapsed"">");
+	TestCaseProperties(testCase, status, checkedProperties);
+	TestCaseComment(comment, checkedProperties);
+	TestCaseSteps(testCaseFull, checkedProperties);
+	WriteLine("</ul>");
+	WriteLine("</li>");
+}
+public void TestCaseTitle(TestCase testCase, string checkedProperties)
+{
+	WriteLine(@" <div class=""TestCaseTitle"">");
+
+    if (checkedProperties.IndexOf("Status")!=-1)
+    {
+		WriteLine(@"<div class=""TestStatusIndicator""></div>");
+    }
+    else
+    {
+		WriteLine(@"<div class=""TestStatusIndicator Hidden""></div>");  
+    }
+	
+	WriteLine(@"▶ {0} </div>", testCase.Title);
+}
+
+public void TestCaseProperties(TestCase testCase, string status, string checkedProperties)
+{
+    if (!string.IsNullOrEmpty(checkedProperties))
+    {
+		WriteLine(@"<li class=""TestCasePropertiesWrapper"">");
+		WriteLine(@"<div>▶ Test Case Properties</div>");
+		WriteLine(@"<ul class=""TestCasePropertiesList Collapsed"">");
+
+		if(testCase.ITestSuiteBase != null && checkedProperties.IndexOf("Suite")!=-1)
+		{
+			Write(@"<li class=""Suite""><span class=""TestCasePropertyName Suite"">Suite: </span><span class=""TestCasePropertyValue"">");
+			Write(testCase.ITestSuiteBase.Title);
+			WriteLine("</span></li>");
+		}
+
+		if(testCase.Area != null && checkedProperties.IndexOf("Area")!=-1)
+		{
+			Write(@"<li class=""Area""><span class=""TestCasePropertyName Area"">Area: </span><span class=""TestCasePropertyValue"">");
+			Write(testCase.Area);
+			WriteLine("</span></li>");
+		}
+
+		if(testCase.Priority != null  && checkedProperties.IndexOf("Priority")!=-1)
+		{
+			Write(@"<li class=""Priority""><span class=""TestCasePropertyName Priority"">Priority: </span><span class=""TestCasePropertyValue"">");
+			Write(testCase.Priority.ToString());
+			WriteLine("</span></li>");
+		}
+
+		if(testCase.ITestCase != null && checkedProperties.IndexOf("Automated")!=-1)
+		{
+			Write(@"<li class=""Automated""><span class=""TestCasePropertyName Automated"">Automated: </span><span class=""TestCasePropertyValue"">");
+			Write(testCase.ITestCase.IsAutomated.ToString());
+			WriteLine("</span></li>");
+		}
+
+		if(testCase.ITestCase != null && testCase.ITestCase.IsAutomated)
+		{
+			if (testCase.ITestCase.IsAutomated)
+			{
+				var automationInfo = testCase.ITestCase.GetAssociatedAutomation();
+				Write(@"<li class=""AutomationInfo""><span class=""TestCasePropertyName Assembly"">Assembly: </span><span class=""TestCasePropertyValue"">");
+				Write(automationInfo.Assembly);
+				WriteLine("</span></li>");
+
+				Write(@"<li class=""AutomationInfo""><span class=""TestCasePropertyName Type"">Type: </span><span class=""TestCasePropertyValue"">");
+				Write(automationInfo.Type);
+				WriteLine("</span></li>");
+
+				Write(@"<li class=""AutomationInfo""><span class=""TestCasePropertyName TestName"">TestName: </span><span class=""TestCasePropertyValue"">");
+				Write(automationInfo.TestName);
+				WriteLine("</span></li>");
+			}
+		}
+
+		if(testCase.OwnerDisplayName != null  && checkedProperties.IndexOf("AssignedTo")!=-1)
+		{
+			Write(@"<li class=""Assigned""><span class=""TestCasePropertyName Assigned"">Assigned To: </span><span class=""TestCasePropertyValue"">");
+			Write(testCase.OwnerDisplayName);
+			WriteLine("</span></li>");
+		}
+
+		if(status != null && checkedProperties.IndexOf("Status")!=-1)
+		{
+			Write(@"<li class=""Status""><span class=""TestCasePropertyName Status"">Status: </span><span class=""TestCasePropertyValue"">");
+			Write(status);
+			WriteLine("</span></li>");
+		}
+		else if (status != null && checkedProperties.IndexOf("Status")==-1)
+		{
+			Write(@"<li class=""Status Hidden""><span class=""TestCasePropertyName Status"">Status: </span><span class=""TestCasePropertyValue"">");
+			Write(status);
+			WriteLine("</span></li>");
+		}
+
+		WriteLine("</ul>");
+		WriteLine("</li>");
+    }
+}
+
+public void TestCaseComment(string comment, string checkedProperties)
+{
+	comment = comment.Replace("<","&lt;").Replace(">","&gt;").Replace("\r\n","<br>").Replace("\n","<br>");
+
+    if (checkedProperties.IndexOf("Comment")!=-1)
+    {
+		WriteLine(@"<li class=""TestCaseCommentWrapper"">");
+		if(!string.IsNullOrEmpty(comment) || !string.IsNullOrWhiteSpace(comment))
+        {
+			WriteLine(@" <div>▶ Test Case Comment</div><div class=""TestCaseComment Collapsed"">{0}</div>", comment);
+        }
+		else
+        {
+			WriteLine(@" <div>▶ Test Case Comment</div><div class=""TestCaseComment Collapsed"">Comment Not Provided</div>");
+        }
+		WriteLine("</li>"); 
+    }
+}
+
+public void TestCaseSteps(TestCaseFull testCaseFull, string checkedProperties)
+{
+	if (checkedProperties.IndexOf("Steps")!=-1)
+    {       
+		WriteLine(@"<li class=""TestCaseStepsWrapper"">");
+		WriteLine(@"<div>▶ Test Case Steps</div>");
+		WriteLine(@"<table class=""TestCaseSteps Collapsed"">");
+		WriteLine(@"<thead>
+						<tr>
+							<th>No</th>
+							<th>Actions</th>
+							<th>Expected Results</th>
+						</tr>
+					</thead>");
+		WriteLine("<tbody>");
+        if (testCaseFull.TestSteps.Count > 0)
+        {
+			 int count = 1;
+			foreach (TestStep currentTestStep in testCaseFull.TestSteps)
+				{		
+					WriteLine(@"<tr>");
+					WriteLine(string.Format("<td>{0}</td>", count++));
+					string currentTestStepActionTitle = currentTestStep.ActionTitle.Replace("<","&lt;").Replace(">","&gt;").Replace("\r\n","<br>").Replace("\n","<br>"); 
+					string currentTestStepActionExpectedResult = currentTestStep.ActionExpectedResult.Replace("<","&lt;").Replace(">","&gt;").Replace("\r\n","<br>").Replace("\n","<br>");
+					WriteLine(string.Format("<td>{0}</td>", currentTestStepActionTitle));
+					WriteLine(string.Format("<td>{0}</td>", currentTestStepActionExpectedResult));
+					WriteLine(@"</tr>");
+				}	
+        }
+		else
+        {
+			WriteLine(@"<tr>");
+			WriteLine(@"<td></td>");
+			WriteLine("<td>No Test Case Steps Available</td>");
+			WriteLine("<td>No Test Case Steps Available</td>");
+			WriteLine(@"</tr>");
+        }
+		
+		WriteLine("</tbody>");
+		WriteLine("</table></li>");
+    }
+}
+
+public void BuildTestCaseProperties(TestCase testCase, string comment, string status)
+{	
+	WriteLine(@"<li>");
+	WriteLine(@"<span class=""testCaseProps""><span>Title: </span>");
+	WriteLine(testCase.ITestCase.Title);
+	WriteLine(@"</span>");
+	WriteLine(@"<span class=""testCaseProps""><span>Suite: </span>");
+	if(testCase.ITestSuiteBase != null)
+    {
+		WriteLine(testCase.ITestSuiteBase.Title);
+    }
+	
+	WriteLine(@"</span>");
+	WriteLine(@"<span class=""testCaseProps""><span>Area: </span>");
+	WriteLine(testCase.Area);
+	WriteLine(@"</span>");
+	WriteLine(@"<span class=""testCaseProps""><span>Priority: </span>");
+	WriteLine(testCase.Priority.ToString());
+	WriteLine(@"</span>");
+	WriteLine(@"<span class=""testCaseProps""><span>Automated: </span>");
+	if(testCase.ITestCase != null)
+    {
+		WriteLine(testCase.ITestCase.IsAutomated.ToString());
+    }	
+	WriteLine(@"</span>");
+	WriteLine(@"<span class=""testCaseProps""><span>Assigned To: </span>");
+	WriteLine(testCase.OwnerDisplayName);
+	WriteLine(@"</span>");	
+    WriteLine(@"<span class=""testCaseProps status"">Status: {0}</span>", status);
+	WriteLine(@"<br>");
+	WriteLine(@"<button name='collapsed'> + </button> <span>Show</span><span> steps</span>");
+	WriteLine(@"<br>");
+	WriteLine(@"<button class='collapsedButton'> + </button> <span>Show</span><span> comment</span>");
+	WriteLine(@"<div class='comment collapsed'>{0}</div>", comment);
+}
+
+public void BuildTestCaseTestStepsTable(List<TestStep> testSteps)
+{	
+	if(testSteps.Count > 0)
+    {
+		WriteLine(@"<table cellpadding=""0"" cellspacing=""0"">");
+		PushIndent("\t");
+		WriteLine(@"<thead>");
+		PushIndent("\t");
+		int count = 1;
+		WriteLine(@"<tr>");
+		PushIndent("\t");
+		WriteLine(@"<th>Number</th>");
+		WriteLine(@"<th>Actions</th>");
+		WriteLine(@"<th>Expected Results</th>");
+		PopIndent();
+		WriteLine(@"</tr>");
+		WriteLine(@"</thead>");
+		WriteLine(@"<tbody>");
+		PushIndent("\t");
+
+		foreach (TestStep currentTestStep in testSteps)
+		{		
+			WriteLine(@"<tr>");
+			WriteLine(string.Format("<td>{0}</td>", count++));
+			string currentTestStepActionTitle = currentTestStep.ActionTitle.Replace("\r\n","<br>").Replace("\n","<br>"); 
+			string currentTestStepActionExpectedResult = currentTestStep.ActionExpectedResult.Replace("\r\n","<br>").Replace("\n","<br>");
+			WriteLine(string.Format("<td>{0}</td>", currentTestStepActionTitle));
+			WriteLine(string.Format("<td>{0}</td>", currentTestStepActionExpectedResult));
+			WriteLine(@"</tr>");
+		}	
+    }
+	else
+    {
+		WriteLine(@"<table cellpadding=""0"" cellspacing=""0"">");
+		PushIndent("\t");
+		WriteLine(@"<tbody>");
+		PushIndent("\t");
+		WriteLine(@"<tr>");
+		PushIndent("\t");
+		WriteLine("<td>No Test Steps Available</td>");
+		PushIndent("\t");
+		WriteLine(@"</tr>");
+    }   
+	PopIndent();
+	WriteLine(@"</tbody>");
+	PopIndent();
+	WriteLine(@"</table>");
+	WriteLine(@"</li>");
+	WriteLine(@"<hr />");
+}
+#>

@@ -1,0 +1,7 @@
+﻿<mui:ModernWindow x:Class="TestCaseManagerApp.Views.PrompCheckboxListDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        Title="PrompDialog" Height="Auto" Width="Auto" SizeToContent="WidthAndHeight" ContentSource="/Views/PrompCheckboxListDialogControl.xaml" WindowStartupLocation="CenterOwner" Closing="ModernWindow_Closing">
+  
+</mui:ModernWindow>

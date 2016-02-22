@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PatternsInAutomation.Tests.Conference.Pages.BingMain.BingMainPage">
+    <Position X="3" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAgAAA=</HashCode>
+      <FileName>Conference\Pages\BingMain\BingMainPage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.8" />
+  </Class>
+  <Class Name="PatternsInAutomation.Tests.Conference.Pages.BingMain.BingMainPageAsserter">
+    <Position X="8" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Conference\Pages\BingMain\BingMainPageAsserter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatternsInAutomation.Tests.Conference.Pages.BingMain.BingMainPageMap">
+    <Position X="5.75" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAEAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Conference\Pages\BingMain\BingMainPageMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatternsInAutomation.Tests.Conference.Base.BaseElementMap" Collapsed="true">
+    <Position X="5.75" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Conference\Base\BaseElementMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatternsInAutomation.Tests.Conference.Base.BasePage&lt;TMap&gt;">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAABAAIAAAAAAAAACAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Conference\Base\BasePage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="PatternsInAutomation.Tests.Conference.Pages.BingMain.IBingMainPage">
+    <Position X="3" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Conference\Pages\BingMain\IBingMainPage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PatternsInAutomation.Tests.Conference.IPage" Collapsed="true">
+    <Position X="3" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Conference\Base\IPage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

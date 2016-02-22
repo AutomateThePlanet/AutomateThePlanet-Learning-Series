@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="TestCaseManagerApp.ReleaseNotesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel >
+                <TextBlock Text="Release Notes" FontSize="26" Height="Auto" Margin="0,0,0,15"/>
+                <mui:BBCodeBlock BBCode="[b]Version[/b]: 1.0.9.1     [b]Date[/b]: 18.04.2014" Margin="0,0,10,15"/>
+                <mui:BBCodeBlock BBCode="-fix short key bug rename suite on F2" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix add new suite, OK Button with Enter bug" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug unchecked 'Show Test Cases In Subsuites' checked box not saved" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix Show Test Cases in Subsuites label" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug duplicate shared step from Edit Test Case View" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug crashing application when cancel TFS dialog" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix warning message Migration View" Margin="0,0,0,15" />
+                
+                <mui:BBCodeBlock BBCode="[b]Version[/b]: 1.0.9.0     [b]Date[/b]: 13.04.2014" Margin="0,0,10,15"/>
+                <mui:BBCodeBlock BBCode="-add feature to migrate test cases, shared steps, suites from one TFS to another" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add button display test cases without suites when you click the All node Test Cases Initial View" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-Optimize the overall performance" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix Test Cases Initial View to display test cases only in the current Team Project" Margin="0,0,0,15" />
+                
+                <mui:BBCodeBlock BBCode="[b]Version[/b]: 1.0.8.6     [b]Date[/b]: 10.12.2013" Margin="0,0,10,15"/>
+                <mui:BBCodeBlock BBCode="-add feature if the test plan is loaded for the first time first suite in the plan is selected instead the All node" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add fast button Change Test Cases in the Initial View" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug clear Undo/Redo operation if you click Cancel- Cancel - Save Changes Dialog - Edit Mode" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add checkbox show test cases in subsuites" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add feature to save the state of the show test cases in subsuites option between views and runs of the app" Margin="0,0,0,15" />
+                
+                <mui:BBCodeBlock BBCode="[b]Version[/b]: 1.0.8.5     [b]Date[/b]: 12.11.2013" Margin="0,0,10,15"/>
+                <mui:BBCodeBlock BBCode="-add export selection properties dialog" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add new test cases export report v2.0" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-improve All Test Cases Performance" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add alphabetically suites sorting" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add possibility to use 1-9 and '-' symbols in the names of the parameteres of the parameterized shared steps" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-hide execution statuses radio buttons- All Test Cases" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-hide execution statuses context menu items- All Test Cases" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-hide 'Show Test Cases Without Suites' buttons- All Test Cases" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix export errors if some of the selected test cases was never executed" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix 'associate test case' bug if the tests dll has dependency dlls exceptions" Margin="0,0,0,15" />
+                
+                <mui:BBCodeBlock BBCode="[b]Version[/b]: 1.0.8.1     [b]Date[/b]: 20.10.2013" Margin="0,0,10,15"/>
+                <mui:BBCodeBlock BBCode="-add TestcaseArrangeView" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add logic to change test cases order in static suite" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add initial View test case arrange buttons" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-hide arrange buttons if All node is clicked or if the suite is not static" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add Test Plans Edit view" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add Test Plans Edit button ProjectSelectionView" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add saved label TestCase/SharedStep Edit Mode" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add validation message if the content in the prompt dialog is empty" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add Preview button TestCaseEditView" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add logic to stop shared steps refresh on View quit" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-change test case export to add only selected ones in the grid" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-hide Export button if no test cases are selected" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-make action title and expected result selectable TestCasePreview" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug if you click no save dialog option and try to exit the app the dialog is shown again if there are undo/redo operation Edit Mode" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug blocked test cases not refreshed" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix Object Reference Exception on Save- Arrange View- Windows 8" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug app not responding if you enter empty comment" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug if you close promt dialog from x - app not responsive" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug if you enter empty content in promt dialog - app not responsive" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug in test case report- not correct displaying multiple rows" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug losing shared steps filtering after 30 secs refresh TestCaseEditView" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug not correct replacing generic steps" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug not skipping initialization shared steps in preview mode/export" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug not correct lining in export" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug NullReference Exception if you paste in empty test case and select the empty test step" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug no shared steps shown if the grid after search and refresh TestCaseEditView" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug invoking shared steps refresh for shared steps views" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug stop refreshing shared steps if you come back from SharedStepEditView" Margin="0,0,0,15" />
+
+                <mui:BBCodeBlock BBCode="[b]Version[/b]: 1.0.8.0     [b]Date[/b]: 19.10.2013" Margin="0,20,10,15"/>
+                <mui:BBCodeBlock BBCode="-add shared step duplicate context menu option Test Case Edit Mode" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add shard steps backgroud refresh on 30 secs Test Case Edit Mode" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add suite rename on F2 key press" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add shared steps sorting by title All Shared Steps" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add shared steps sorting by title Edit Mode" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-remove initialization steps from test case export report" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-remove initialization steps from preview mode" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add smooth scrolling to edit test steps grids Edit Test Case Mode" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add smooth scrolling to test steps grids Preview Test Case Mode" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add active,pass, blocked, failed context menus Intial View" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add active,pass, blocked, failed fast commands Intial View" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add active,pass, blocked, failed publish logic to TFS- new test runs" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add title validation max 255 symbols" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-remove trim end spaces on save test step operation" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-change the default location of the test case manager log to be %USERPROFILE%\Documents\TestCaseManager folder" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add non-namespace initialization option" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add larger margin and height of the edit test case gridsplitter" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-select whole shared step after paste" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug not correct selction after delete insert" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug not correct selection after delete" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug original title, expected result lost after paste" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug not get variables with special symbols" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug not correct handling multiple params shared steps replacing" Margin="0,0,0,15" />
+                                
+                <mui:BBCodeBlock BBCode="[b]Version[/b]: 1.0.7.6     [b]Date[/b]: 14.10.2013" Margin="0,20,10,15"/>
+                <mui:BBCodeBlock BBCode="-add test case execution status to export" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add new improved template for export testcases" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add no test cases selected warning both change|duplicates views" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-add shared step name to Detailed view" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug NullReference exception if you leave rows in text replace pairs empty" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug not correct change shared steps" Margin="0,0,0,15" />
+                <mui:BBCodeBlock BBCode="-fix bug if you click another change|duplicate nothing happens" Margin="0,0,0,15" />               
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="6129f73f-0fdb-4c91-9484-a0eb9521ce14" name="RulesDesignPattern" linkedPackageId="8b661b6f-ba33-4325-a15a-61af99153939" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="af54058e-d443-45ee-a697-01080da8fd6e">
+      <elementDefinition Id="6bad18be-1c9c-4ed2-b7cc-b6a555aec13c" />
+      <body>Abstract Rule</body>
+    </comment>
+    <comment Id="64fe4358-0871-42ef-b6e2-a94374fff36f">
+      <elementDefinition Id="a30bbc2f-a54a-4071-be5a-18b485e0d4f2" />
+      <body>Concrete Rule</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="9fd71043-5dce-48b7-a843-bc9a132ad91a">
+      <profileInstance Id="76452b91-d129-4372-b764-15234002eafb" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="d19bfbd7-f52e-4dc4-947c-06bc7237055d">
+      <profileInstance Id="7ea74f8c-76d0-49dc-b9bf-c882d0ff78bd" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c8fe8a56-3b4e-48e5-9232-2c703d579728" name="BaseRule" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b7e53d0c-da9e-400d-abdb-99e2e798e9ea" />
+        <suppliersInternal>
+          <interfaceRealization Id="71b53fc7-f177-4abb-bf40-3b4fe938b8ac">
+            <interfaceMoniker Id="7bbbb13a-91dd-4582-94b1-3f68ce176e06" LastKnownName="IRule" />
+            <elementDefinition Id="85022ab0-ba61-471c-b3e0-eddca6b15cb2" />
+          </interfaceRealization>
+          <dependency Id="a4e425bf-2dc8-4418-bbf9-151592a85bd5">
+            <interfaceMoniker Id="a417cb1a-72ed-4fa9-b3ba-de5aec44c4b1" LastKnownName="IRuleResult" />
+            <elementDefinition Id="af457faa-1a63-4072-94d1-c2e707b53ec7" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="14c2ae49-08b2-4013-8f4e-a2995a1da399" name="IRuleResult Eval" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="01679261-92b9-4ddd-b9a1-7f61e0cf0efe" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="7bbbb13a-91dd-4582-94b1-3f68ce176e06" name="IRule" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="00b5d2a3-08ed-4be5-b500-a8576b27cede" />
+        <suppliersInternal>
+          <dependency Id="0cdd2f5e-178e-45e7-854e-70acfce7a61b">
+            <interfaceMoniker Id="a417cb1a-72ed-4fa9-b3ba-de5aec44c4b1" LastKnownName="IRuleResult" />
+            <elementDefinition Id="589b1c5f-7bb7-4a77-baf9-ceb714f98fe8" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperations>
+          <operation Id="47c46477-a3db-4a77-98e0-a8aaa8934773" name="IRuleResult Eval" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6914759c-826c-4cb8-92cf-f5e4ea492740" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="98929157-0b05-42e8-b6f6-128f44a236d7" name="RulesEvaluator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bb9c8784-c04e-406d-9608-43fbd411d14c" />
+        <targetEnds>
+          <association Id="d500430e-e582-4c05-aad0-029cac9271fc" isDerived="false" sourceEndRoleName="RulesEvaluator" targetEndRoleName="RulesChain" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ece97460-5d74-4200-9ec2-4caa5dfbeb85" LastKnownName="RulesChain" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="65b5d9b5-5d60-4af4-bb98-c9089ff6fda9" name="RulesEvaluator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a5199c47-ba98-4973-a8f0-299c39509e21" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="24157366-9ecc-440c-8589-89d71de0a67b" name="RulesChain" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="a55d9ee5-cd31-481c-b9ca-8c057e6d241e" name="Lower" value="*">
+                      <elementDefinition Id="0f54b19e-a088-4856-917b-4769337a6ab3" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="f9db6137-ef55-4fd8-bae4-8e55db953547" name="Upper" value="*">
+                      <elementDefinition Id="48fb1721-21e2-4996-9916-ab7522135621" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="5c9e6589-5ce7-4460-baba-337e32fdf2cf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="938ab0fd-0404-47fc-8af3-c42d809eb343" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="56b3f3fa-1527-4128-b205-979c689fd95e" name="RulesChain Eval" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="79b27eb7-0e44-4e92-835b-8540e5e9df2f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="241f8d8b-5da5-4bec-96f5-72b97c5efc7e" name="IRule rule" direction="In" isUnique="false">
+                  <elementDefinition Id="182a20a6-bba0-4a94-87b4-d30940457117" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7dc404b5-5e26-42c3-831c-0e2c27848344" name="OtherwiseEval" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bed5ddb3-fdf9-41a1-915d-f1ace7ff1682" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ad36c398-d17b-4713-a854-469fb034c247" name="IRule alternativeRule" direction="In" isUnique="false">
+                  <elementDefinition Id="a856bf81-591f-4ff6-a46e-c2bc18641b32" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="098b533a-ba04-44cc-8f7a-b99e30519791" name="OtherwiseDo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1ef863ff-2e62-444e-aaee-ab87db2008ce" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="276f3344-d847-4a78-9f05-5a494cff3e7b" name="Action otherwiseAction" direction="In" isUnique="false">
+                  <elementDefinition Id="0a5854db-d29a-45dc-93b0-20cc75956b31" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4f9b120f-3b80-4d48-86b5-c3d84e387f16" name="EvaluateRulesChains" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="72f801ee-4d5c-4604-80b0-7643ce181eb4" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5a61ccbe-eb14-4372-a97b-4c0b21d8ccc6" name="Rule" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="67597f65-98e4-4882-b491-42f6ace5185b" />
+        <generalsInternal>
+          <generalization Id="ffa97c2b-c0de-47ec-a236-f23666a3194a" isSubstitutable="false">
+            <classMoniker Id="c8fe8a56-3b4e-48e5-9232-2c703d579728" LastKnownName="BaseRule" />
+            <elementDefinition Id="04a59d34-7af2-4e5a-a2b8-96e44f02ea55" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="65fab570-2eac-4777-9439-6545ca80ca0d" name="IRuleResult Eval" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c1b5b31e-535b-4d13-85da-8a8cb0bea1f2" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="a417cb1a-72ed-4fa9-b3ba-de5aec44c4b1" name="IRuleResult" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="41f18efd-9524-4584-a4f3-77ddc93b59e8" />
+        <ownedAttributes>
+          <property Id="5dc3e792-db46-40c0-8d85-bf830cccafe4" name="IsSuccess" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a40e56eb-878f-4a9b-85d4-dbfed62cfe67" />
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation Id="64cace88-2549-4a1e-adbd-6cec7e60969b" name="Execute" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2805fe11-727c-411e-aac8-2ba830fe5e68" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ece97460-5d74-4200-9ec2-4caa5dfbeb85" name="RulesChain" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f61d991c-004f-4110-8c75-0c53ec7acaf7" />
+        <targetEnds>
+          <association Id="bdad737f-29a0-4b12-a841-3c237f2a0fe5" isDerived="false" sourceEndRoleName="RulesChain" targetEndRoleName="IRule" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="7bbbb13a-91dd-4582-94b1-3f68ce176e06" LastKnownName="IRule" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4d691419-e54d-46f9-9996-55d9c76e340d" name="RulesChain" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5aca205b-5a07-406e-948e-877955bcee8c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ba7e4ff0-0747-484c-ac23-e6c07e408945" name="IRule" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="73bd3310-cc39-43ab-8859-c76d8af0f3f1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1361ae5b-4b2e-4183-b65e-e3cec7601cf0" />
+          </association>
+          <association Id="b44ca632-ed31-4610-898c-7826a34c95d1" isDerived="false" sourceEndRoleName="RulesChain" targetEndRoleName="RulesChain" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ece97460-5d74-4200-9ec2-4caa5dfbeb85" LastKnownName="RulesChain" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="828cae5e-5dcf-44e1-a36e-2ca927ba19b1" name="RulesChain" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="854fd630-e22c-4fda-a909-a1dd05898e49" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5023c304-0b0a-4a3e-9e12-bfef759df470" name="RulesChain" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="53bddc96-fee3-449f-acff-5342d51487df" name="Lower" value="*">
+                      <elementDefinition Id="154c398a-2af1-4913-bf11-0ac0a1687e4e" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="7258d0a4-a913-47f8-86e4-f7292a411805" name="Upper" value="*">
+                      <elementDefinition Id="98d34625-25a6-4e98-8722-be58cc3f165d" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="23c3726f-6b64-4725-b0b5-b01a17f9e275" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2a39539d-29a2-4e54-921a-cb41937589b0" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="e42d048b-0d18-4021-b442-0b221125e620" name="IRule Rule" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="57f37f85-bfc7-4fb4-8e77-48ef4342c0f0" />
+          </property>
+          <property Id="26f9e32c-c59b-4d50-8d7f-017ae6716c2a" name="List&lt;RulesChain&gt; ElseRules" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="18822aed-ec11-44ee-92d8-7a407750298e" />
+          </property>
+          <property Id="be70a17e-45dc-4b5a-b61e-72d6e974dfa9" name="IsLastInChain" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5c66ccfc-9161-4ce8-b1a7-59fdc57dee77" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="8b661b6f-ba33-4325-a15a-61af99153939" name="ModelingProject1">
+    <elementDefinition Id="71304b90-dec2-48cf-aa25-61ab4fe1335d" />
+  </package>
+</logicalClassDesignerModel>

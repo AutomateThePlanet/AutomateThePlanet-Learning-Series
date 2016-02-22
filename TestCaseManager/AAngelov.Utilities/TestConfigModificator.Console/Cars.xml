@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<testsConfiguration>
+  <cars>
+    <car name="Audi" price="10000" color="Red"/>
+    <car name="BMW" price="20000" color="White"/>
+  </cars>  
+</testsConfiguration>

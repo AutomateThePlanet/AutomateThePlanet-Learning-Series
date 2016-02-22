@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E4E4E04-3409-4454-998A-38BCBE3779CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PatternsInAutomation.Tests</RootNamespace>
+    <AssemblyName>PatternsInAutomation.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="WebDriver, Version=2.52.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Selenium.WebDriver.2.52.0\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=2.52.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Selenium.Support.2.52.0\lib\net40\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Advanced\AdvancedBingSingletonTests.cs" />
+    <Compile Include="Advanced\Core\BasePageSingleton.cs" />
+    <Compile Include="Advanced\Core\Fluent\BaseFluentPageSingleton.cs" />
+    <Compile Include="Advanced\Core\Fluent\BasePageElementMap.cs" />
+    <Compile Include="Advanced\Core\Fluent\BasePageValidator.cs" />
+    <Compile Include="Advanced\Decorator\Advanced\Base\PurchaseContext.cs" />
+    <Compile Include="Advanced\Decorator\Advanced\Strategies\GiftOrderPurchaseStrategy.cs" />
+    <Compile Include="Advanced\Decorator\Advanced\Strategies\OrderPurchaseStrategyDecorator.cs" />
+    <Compile Include="Advanced\Decorator\Advanced\Strategies\TotalPriceOrderPurchaseStrategy.cs" />
+    <Compile Include="Advanced\Decorator\Advanced\Strategies\OrderPurchaseStrategy.cs" />
+    <Compile Include="Advanced\Decorator\Advanced\Strategies\NoTaxesOrderPurchaseStrategy.cs" />
+    <Compile Include="Advanced\Decorator\Advanced\Strategies\SalesTaxOrderPurchaseStrategy.cs" />
+    <Compile Include="Advanced\Decorator\Advanced\Strategies\VatTaxOrderPurchaseStrategy.cs" />
+    <Compile Include="Advanced\Decorator\Data\ClientAddressInfo.cs" />
+    <Compile Include="Advanced\Decorator\Data\ClientLoginInfo.cs" />
+    <Compile Include="Advanced\Decorator\Data\ClientPurchaseInfo.cs" />
+    <Compile Include="Advanced\Decorator\Enums\Countries.cs" />
+    <Compile Include="Advanced\Decorator\Enums\GiftWrappingStyles.cs" />
+    <Compile Include="Advanced\Decorator\Enums\States.cs" />
+    <Compile Include="Advanced\Decorator\Pages\ItemPage\ItemPage.cs" />
+    <Compile Include="Advanced\Decorator\Pages\ItemPage\ItemPageMap.cs" />
+    <Compile Include="Advanced\Decorator\Pages\ItemPage\ItemPageValidator.cs" />
+    <Compile Include="Advanced\Decorator\Pages\PlaceOrderPage\PlaceOrderPage.cs" />
+    <Compile Include="Advanced\Decorator\Pages\PlaceOrderPage\PlaceOrderPageMap.cs" />
+    <Compile Include="Advanced\Decorator\Pages\PlaceOrderPage\PlaceOrderPageValidator.cs" />
+    <Compile Include="Advanced\Decorator\Pages\PreviewShoppingCartPage\PreviewShoppingCartPage.cs" />
+    <Compile Include="Advanced\Decorator\Pages\PreviewShoppingCartPage\PreviewShoppingCartPageMap.cs" />
+    <Compile Include="Advanced\Decorator\Pages\ShippingAddressPage\ShippingAddressPage.cs" />
+    <Compile Include="Advanced\Decorator\Pages\ShippingAddressPage\ShippingAddressPageMap.cs" />
+    <Compile Include="Advanced\Decorator\Pages\ShippingPaymentPage\ShippingPaymentPage.cs" />
+    <Compile Include="Advanced\Decorator\Pages\ShippingPaymentPage\ShippingPaymentPageMap.cs" />
+    <Compile Include="Advanced\Decorator\Pages\SignInPage\SignInPage.cs" />
+    <Compile Include="Advanced\Decorator\Pages\SignInPage\SignInPageMap.cs" />
+    <Compile Include="Advanced\Decorator\Services\GiftWrappingPriceCalculationService.cs" />
+    <Compile Include="Advanced\Decorator\Services\OrderSummaryCalculator.cs" />
+    <Compile Include="Advanced\Decorator\Services\SalesTaxCalculationService.cs" />
+    <Compile Include="Advanced\Decorator\Services\ShippingCostsCalculationService.cs" />
+    <Compile Include="Advanced\Decorator\Services\VatTaxCalculationService.cs" />
+    <Compile Include="Advanced\Decorator\Tests\AmazonPurchase_DecoratedStrategies_Tests.cs" />
+    <Compile Include="Advanced\Observer\Advanced\DotNetEvents\BaseTest.cs" />
+    <Compile Include="Advanced\Observer\Advanced\DotNetEvents\BaseTestBehaviorObserver.cs" />
+    <Compile Include="Advanced\Observer\Advanced\DotNetEvents\Behaviors\AssociatedBugTestBehaviorObserver.cs" />
+    <Compile Include="Advanced\Observer\Advanced\DotNetEvents\Behaviors\BrowserLaunchTestBehaviorObserver.cs" />
+    <Compile Include="Advanced\Observer\Advanced\DotNetEvents\Behaviors\OwnerTestBehaviorObserver.cs" />
+    <Compile Include="Advanced\Observer\Advanced\DotNetEvents\BingTestsDotNetEvents.cs" />
+    <Compile Include="Advanced\Observer\Advanced\DotNetEvents\IExecutionProvider.cs" />
+    <Compile Include="Advanced\Observer\Advanced\DotNetEvents\MSTestExecutionProvider.cs" />
+    <Compile Include="Advanced\Observer\Advanced\DotNetEvents\TestExecutionEventArgs.cs" />
+    <Compile Include="Advanced\Observer\Advanced\ObservableObserver\BaseTest.cs" />
+    <Compile Include="Advanced\Observer\Advanced\ObservableObserver\BaseTestBehaviorObserver.cs" />
+    <Compile Include="Advanced\Observer\Advanced\ObservableObserver\Behaviors\AssociatedBugTestBehaviorObserver.cs" />
+    <Compile Include="Advanced\Observer\Advanced\ObservableObserver\Behaviors\BrowserLaunchTestBehaviorObserver.cs" />
+    <Compile Include="Advanced\Observer\Advanced\ObservableObserver\Behaviors\OwnerTestBehaviorObserver.cs" />
+    <Compile Include="Advanced\Observer\Advanced\ObservableObserver\Enums\ExecutionPhases.cs" />
+    <Compile Include="Advanced\Observer\Advanced\ObservableObserver\ExecutionStatus.cs" />
+    <Compile Include="Advanced\Observer\Advanced\ObservableObserver\ITestExecutionProvider.cs" />
+    <Compile Include="Advanced\Observer\Advanced\ObservableObserver\MSTestExecutionProvider.cs" />
+    <Compile Include="Advanced\Observer\Advanced\ObservableObserver\Unsubscriber.cs" />
+    <Compile Include="Advanced\Observer\Attributes\ExecutionBrowserAttribute.cs" />
+    <Compile Include="Advanced\Observer\Attributes\KnownIssueAttribute.cs" />
+    <Compile Include="Advanced\Observer\Classic\BaseTestBehaviorObserver.cs" />
+    <Compile Include="Advanced\Observer\Classic\Behaviors\OwnerTestBehaviorObserver.cs" />
+    <Compile Include="Advanced\Observer\Classic\Behaviors\AssociatedBugTestBehaviorObserver.cs" />
+    <Compile Include="Advanced\Observer\Classic\Behaviors\BrowserLaunchTestBehaviorObserver.cs" />
+    <Compile Include="Advanced\Observer\Classic\BingTestsClassicObserver.cs" />
+    <Compile Include="Advanced\Observer\Classic\ITestExecutionSubject.cs" />
+    <Compile Include="Advanced\Observer\Classic\MSTestExecutionSubject.cs" />
+    <Compile Include="Advanced\Observer\Classic\BaseTest.cs" />
+    <Compile Include="Advanced\Observer\Classic\ITestBehaviorObserver.cs" />
+    <Compile Include="Advanced\PageObjectv2.2\Base\BaseElementMap.cs" />
+    <Compile Include="Advanced\PageObjectv2.2\Base\BasePage.cs" />
+    <Compile Include="Advanced\PageObjectv2.2\BingTests.cs" />
+    <Compile Include="Advanced\PageObjectv2.2\Pages\BingMain\BingMainPage.Map.cs" />
+    <Compile Include="Advanced\PageObjectv2.2\Pages\BingMain\BingMainPage.cs" />
+    <Compile Include="Advanced\PageObjectv2.2\Pages\BingMain\BingMainPageAsserter.cs" />
+    <Compile Include="Advanced\PageObjectv2.2\Pages\BingMain\BingMainPageMap.cs" />
+    <Compile Include="Advanced\PageObjectv2.1\Base\BaseElementMap.cs" />
+    <Compile Include="Advanced\PageObjectv2.1\Base\BasePage.cs" />
+    <Compile Include="Advanced\PageObjectv2.1\BingTests.cs" />
+    <Compile Include="Advanced\PageObjectv2.1\Pages\BingMain\BingMainPage.cs" />
+    <Compile Include="Advanced\PageObjectv2.1\Pages\BingMain\BingMainPageAsserter.cs" />
+    <Compile Include="Advanced\PageObjectv2.1\Pages\BingMain\BingMainPageMap.cs" />
+    <Compile Include="Advanced\PageObjectv2.0\Base\BaseElementMap.cs" />
+    <Compile Include="Advanced\PageObjectv2.0\Base\BasePage.cs" />
+    <Compile Include="Advanced\PageObjectv2.0\Base\IPage.cs" />
+    <Compile Include="Advanced\PageObjectv2.0\BingTests.cs" />
+    <Compile Include="Advanced\PageObjectv2.0\Pages\BingMain\BingMainPage.cs" />
+    <Compile Include="Advanced\PageObjectv2.0\Pages\BingMain\BingMainPageAsserter.cs" />
+    <Compile Include="Advanced\PageObjectv2.0\Pages\BingMain\BingMainPageMap.cs" />
+    <Compile Include="Advanced\PageObjectv2.0\Pages\BingMain\IBingMainPage.cs" />
+    <Compile Include="Advanced\Rules\BaseRule.cs" />
+    <Compile Include="Advanced\Specifications\Base\BaseElementMap.cs" />
+    <Compile Include="Advanced\Rules\PromotionalPurchaseRule.cs" />
+    <Compile Include="Advanced\Rules\CreditCardChargeRule[TRuleResult].cs" />
+    <Compile Include="Advanced\Rules\Data\PurchaseTestInput.cs" />
+    <Compile Include="Advanced\Rules\CreditCardChargeRule.cs" />
+    <Compile Include="Advanced\Rules\CreditCardChargeRuleAssertResult.cs" />
+    <Compile Include="Advanced\Rules\CreditCardChargeRuleRuleResult.cs" />
+    <Compile Include="Advanced\Rules\IRule.cs" />
+    <Compile Include="Advanced\Rules\IRuleResult.cs" />
+    <Compile Include="Advanced\Rules\NullRule.cs" />
+    <Compile Include="Advanced\Rules\RuleResult.cs" />
+    <Compile Include="Advanced\Rules\RulesChain.cs" />
+    <Compile Include="Advanced\Rules\RulesEvaluator.cs" />
+    <Compile Include="Advanced\Rules\RulesEvaluatorTests.cs" />
+    <Compile Include="Advanced\Specifications\AndSpecification.cs" />
+    <Compile Include="Advanced\Specifications\Base\BasePage.cs" />
+    <Compile Include="Advanced\Specifications\BingMain\BingMainPage.cs" />
+    <Compile Include="Advanced\Specifications\BingMain\BingMainPage.Map.cs" />
+    <Compile Include="Advanced\Specifications\BingMain\BingMainPageAsserter.cs" />
+    <Compile Include="Advanced\Specifications\BingMain\BingMainPageMap.cs" />
+    <Compile Include="Advanced\Specifications\ExpressionSpecification.cs" />
+    <Compile Include="Advanced\Specifications\LinqPlaceOrderPage\LinqPlaceOrderPage.cs" />
+    <Compile Include="Advanced\Specifications\LinqPlaceOrderPage\LinqPlaceOrderPage.Map.cs" />
+    <Compile Include="Advanced\Specifications\LinqPlaceOrderPage\LinqPlaceOrderPageAsserter.cs" />
+    <Compile Include="Advanced\Specifications\SpecificationsExtensionMethods.cs" />
+    <Compile Include="Advanced\Specifications\FreePurchaseSpecification.cs" />
+    <Compile Include="Advanced\Specifications\OrderTestContextConfigurator.cs" />
+    <Compile Include="Advanced\Specifications\OrderTestContext.cs" />
+    <Compile Include="Advanced\Specifications\PlaceOrderPage\PlaceOrderPage.cs" />
+    <Compile Include="Advanced\Specifications\PlaceOrderPage\PlaceOrderPage.Map.cs" />
+    <Compile Include="Advanced\Specifications\PlaceOrderPage\PlaceOrderPageAsserter.cs" />
+    <Compile Include="Advanced\Specifications\PromotionalPurchaseSpecification.cs" />
+    <Compile Include="Advanced\Specifications\WiretransferSpecification.cs" />
+    <Compile Include="Advanced\Specifications\CreditCardSpecification.cs" />
+    <Compile Include="Advanced\Specifications\Data\PurchaseTestInput.cs" />
+    <Compile Include="Advanced\Specifications\ISpecification.cs" />
+    <Compile Include="Advanced\Specifications\NotSpecification.cs" />
+    <Compile Include="Advanced\Specifications\OrSpecification.cs" />
+    <Compile Include="Advanced\Specifications\SourceOrderDetailIsActiveForChaining.cs" />
+    <Compile Include="Advanced\Specifications\Specification.cs" />
+    <Compile Include="Advanced\Strategy\Advanced\Base\IOrderPurchaseStrategy.cs" />
+    <Compile Include="Advanced\Strategy\Advanced\Base\PurchaseContext.cs" />
+    <Compile Include="Advanced\Strategy\Advanced\Base\PurchaseFacade.cs" />
+    <Compile Include="Advanced\Strategy\Advanced\Strategies\GiftOrderPurchaseStrategy.cs" />
+    <Compile Include="Advanced\Strategy\Advanced\Strategies\NoTaxesOrderPurchaseStrategy.cs" />
+    <Compile Include="Advanced\Strategy\Advanced\Strategies\SalesTaxOrderPurchaseStrategy.cs" />
+    <Compile Include="Advanced\Strategy\Advanced\Strategies\VatTaxOrderPurchaseStrategy.cs" />
+    <Compile Include="Advanced\Strategy\Basic\Base\PurchaseFacade.cs" />
+    <Compile Include="Advanced\Strategy\Data\ClientAddressInfo.cs" />
+    <Compile Include="Advanced\Strategy\Data\ClientLoginInfo.cs" />
+    <Compile Include="Advanced\Strategy\Data\ClientPurchaseInfo.cs" />
+    <Compile Include="Advanced\Strategy\Enums\Countries.cs" />
+    <Compile Include="Advanced\Strategy\Enums\GiftWrappingStyles.cs" />
+    <Compile Include="Advanced\Strategy\Enums\States.cs" />
+    <Compile Include="Advanced\Strategy\Services\GiftWrappingPriceCalculationService.cs" />
+    <Compile Include="Advanced\Strategy\Services\OrderSummaryCalculator.cs" />
+    <Compile Include="Advanced\Strategy\Services\SalesTaxCalculationService.cs" />
+    <Compile Include="Advanced\Strategy\Services\ShippingCostsCalculationService.cs" />
+    <Compile Include="Advanced\Strategy\Basic\Strategies\GiftOrderValidationStrategy.cs" />
+    <Compile Include="Advanced\Strategy\Basic\Base\IOrderValidationStrategy.cs" />
+    <Compile Include="Advanced\Strategy\Basic\Strategies\NoTaxesOrderValidationStrategy.cs" />
+    <Compile Include="Advanced\Strategy\Pages\PlaceOrderPage\PlaceOrderPage.cs" />
+    <Compile Include="Advanced\Strategy\Pages\PlaceOrderPage\PlaceOrderPageMap.cs" />
+    <Compile Include="Advanced\Strategy\Pages\PlaceOrderPage\PlaceOrderPageValidator.cs" />
+    <Compile Include="Advanced\Strategy\Pages\ItemPage\ItemPage.cs" />
+    <Compile Include="Advanced\Strategy\Pages\ItemPage\ItemPageMap.cs" />
+    <Compile Include="Advanced\Strategy\Pages\ItemPage\ItemPageValidator.cs" />
+    <Compile Include="Advanced\Strategy\Pages\PreviewShoppingCartPage\PreviewShoppingCartPage.cs" />
+    <Compile Include="Advanced\Strategy\Pages\PreviewShoppingCartPage\PreviewShoppingCartPageMap.cs" />
+    <Compile Include="Advanced\Strategy\Pages\ShippingPaymentPage\ShippingPaymentPage.cs" />
+    <Compile Include="Advanced\Strategy\Pages\ShippingPaymentPage\ShippingPaymentPageMap.cs" />
+    <Compile Include="Advanced\Strategy\Pages\ShippingAddressPage\ShippingAddressPage.cs" />
+    <Compile Include="Advanced\Strategy\Pages\ShippingAddressPage\ShippingAddressPageMap.cs" />
+    <Compile Include="Advanced\Strategy\Pages\SignInPage\SignInPage.cs" />
+    <Compile Include="Advanced\Strategy\Pages\SignInPage\SignInPageMap.cs" />
+    <Compile Include="Advanced\Strategy\Basic\Base\PurchaseContext.cs" />
+    <Compile Include="Advanced\Strategy\Basic\Strategies\SalesTaxOrderValidationStrategy.cs" />
+    <Compile Include="Advanced\Strategy\Basic\Strategies\VatTaxOrderValidationStrategy.cs" />
+    <Compile Include="Advanced\Strategy\Services\VatTaxCalculationService.cs" />
+    <Compile Include="Advanced\Strategy\Tests\AmazonPurchase_AdvancedPurchaseStrategy_Tests.cs" />
+    <Compile Include="Advanced\Strategy\Tests\AmazonPurchase_PurchaseStrategy_Tests.cs" />
+    <Compile Include="Advanced\UnityWikipediaTests.cs" />
+    <Compile Include="Advanced\FluentBingTests.cs" />
+    <Compile Include="Advanced\Base\ThreadSafeNestedContructorsBaseSingleton.cs" />
+    <Compile Include="Advanced\Base\ThreadSafeLazyBaseSingleton.cs" />
+    <Compile Include="Advanced\Base\ThreadSafeBaseSingleton.cs" />
+    <Compile Include="Advanced\Base\NonThreadSafeBaseSingleton.cs" />
+    <Compile Include="Advanced\BingMainPageSingletonDerived\BingMainPage.cs" />
+    <Compile Include="Advanced\BingMainPageSingletonDerived\BingMainPageElementMap.cs" />
+    <Compile Include="Advanced\BingMainPageSingletonDerived\BingMainPageValidator.cs" />
+    <Compile Include="Advanced\BingMainPageSingletonBuiltIn\BingMainPage.cs" />
+    <Compile Include="Advanced\BingMainPageSingletonBuiltIn\BingMainPageElementMap.cs" />
+    <Compile Include="Advanced\BingMainPageSingletonBuiltIn\BingMainPageValidator.cs" />
+    <Compile Include="Advanced\BingMainPage\BingMainPage.cs" />
+    <Compile Include="Advanced\BingMainPage\BingMainPageElementMap.cs" />
+    <Compile Include="Advanced\BingMainPage\BingMainPageValidator.cs" />
+    <Compile Include="Advanced\Core\BasePageSingletonDerived.cs" />
+    <Compile Include="Advanced\Core\BrowserTypes.cs" />
+    <Compile Include="Advanced\Core\Driver.cs" />
+    <Compile Include="Advanced\Core\BasePage.cs" />
+    <Compile Include="Advanced\Core\BasePageElementMap.cs" />
+    <Compile Include="Advanced\Core\BasePageValidator.cs" />
+    <Compile Include="Advanced\EbayPurchase_Without_PurchaseFaceade_Tests.cs" />
+    <Compile Include="Advanced\Ebay\Data\ClientInfo.cs" />
+    <Compile Include="Advanced\Ebay\Pages\CheckoutPage\CheckoutPage.cs" />
+    <Compile Include="Advanced\Ebay\Pages\CheckoutPage\CheckoutPageMap.cs" />
+    <Compile Include="Advanced\Ebay\Pages\CheckoutPage\CheckoutPageValidator.cs" />
+    <Compile Include="Advanced\Ebay\Pages\ShippingAddressPage\ShippingAddressPage.cs" />
+    <Compile Include="Advanced\Ebay\Pages\ShippingAddressPage\ShippingAddressPageMap.cs" />
+    <Compile Include="Advanced\Ebay\Pages\ShippingAddressPage\ShippingAddressPageValidator.cs" />
+    <Compile Include="Advanced\Ebay\Pages\SignInPage\SignInPage.cs" />
+    <Compile Include="Advanced\Ebay\Pages\SignInPage\SignInPageMap.cs" />
+    <Compile Include="Advanced\Ebay\Pages\SignInPage\SignInPageValidator.cs" />
+    <Compile Include="Advanced\Ebay\Pages\ItemPage\ItemPage.cs" />
+    <Compile Include="Advanced\Ebay\Pages\ItemPage\ItemPageMap.cs" />
+    <Compile Include="Advanced\Ebay\Pages\ItemPage\ItemPageValidator.cs" />
+    <Compile Include="Advanced\Ebay\PurchaseFacade.cs" />
+    <Compile Include="Advanced\EbayPurchase_PurchaseFaceade_Tests.cs" />
+    <Compile Include="Advanced\AdvancedBingTests.cs" />
+    <Compile Include="Advanced\Fluent\BingMainPage\BingMainPage.cs" />
+    <Compile Include="Advanced\Fluent\BingMainPage\BingMainPageElementMap.cs" />
+    <Compile Include="Advanced\Fluent\BingMainPage\BingMainPageValidator.cs" />
+    <Compile Include="Advanced\Fluent\Enums\Licenses.cs" />
+    <Compile Include="Advanced\Fluent\Enums\Dates.cs" />
+    <Compile Include="Advanced\Fluent\Enums\People.cs" />
+    <Compile Include="Advanced\Fluent\Enums\Layouts.cs" />
+    <Compile Include="Advanced\Fluent\Enums\Types.cs" />
+    <Compile Include="Advanced\Fluent\Enums\Colors.cs" />
+    <Compile Include="Advanced\Fluent\Enums\Sizes.cs" />
+    <Compile Include="Advanced\Unity\Base\BasePage.cs" />
+    <Compile Include="Advanced\Unity\Base\BasePageElementMap.cs" />
+    <Compile Include="Advanced\Unity\Base\BasePageValidator.cs" />
+    <Compile Include="Advanced\Unity\Base\IPage.cs" />
+    <Compile Include="Advanced\Unity\Base\PageFactory.cs" />
+    <Compile Include="Advanced\Unity\BingMainPage\BingMainPage.cs" />
+    <Compile Include="Advanced\Unity\BingMainPage\BingMainPageElementMap.cs" />
+    <Compile Include="Advanced\Unity\BingMainPage\BingMainPageValidator.cs" />
+    <Compile Include="Advanced\Unity\BingMainPage\HardCore\IBingMainPage.cs" />
+    <Compile Include="Advanced\Unity\BingMainPage\IBingMainPage.cs" />
+    <Compile Include="Advanced\Unity\Enums\Colors.cs" />
+    <Compile Include="Advanced\Unity\Enums\Dates.cs" />
+    <Compile Include="Advanced\Unity\Enums\Layouts.cs" />
+    <Compile Include="Advanced\Unity\Enums\Licenses.cs" />
+    <Compile Include="Advanced\Unity\Enums\People.cs" />
+    <Compile Include="Advanced\Unity\Enums\Sizes.cs" />
+    <Compile Include="Advanced\Unity\Enums\Types.cs" />
+    <Compile Include="Advanced\Unity\WikipediaMainPage\WikipediaMainPage.cs" />
+    <Compile Include="Advanced\Unity\WikipediaMainPage\WikipediaMainPageMap.cs" />
+    <Compile Include="Advanced\Unity\WikipediaMainPage\WikipediaMainPageValidator.cs" />
+    <Compile Include="Advanced\Unity\WikipediaMainPage\HardCore\IWikipediaMainPage.cs" />
+    <Compile Include="Advanced\Unity\WikipediaMainPage\IWikipediaMainPage.cs" />
+    <Compile Include="Beginners\Pages\BingMainPage\BingMainPage.cs" />
+    <Compile Include="Beginners\Pages\BingMainPage\BingMainPageValidator.cs" />
+    <Compile Include="Beginners\Pages\BingMainPage\BingMainPageElementMap.cs" />
+    <Compile Include="Beginners\Selenium\Bing\Pages\BingMainPage.cs" />
+    <Compile Include="Beginners\BingTests.cs" />
+    <Compile Include="Conference\Base\BasePage.cs" />
+    <Compile Include="Conference\Base\BaseElementMap.cs" />
+    <Compile Include="Conference\ShoppingCartTests.cs" />
+    <Compile Include="Conference\Data\ClientInfo.cs" />
+    <Compile Include="Conference\Pages\BingMain\BingMainPage.cs" />
+    <Compile Include="Conference\Pages\BingMain\BingMainPageMap.cs" />
+    <Compile Include="Conference\Pages\BingMain\BingMainPageAsserter.cs" />
+    <Compile Include="Conference\BingTests.cs" />
+    <Compile Include="Conference\Base\IPage.cs" />
+    <Compile Include="Conference\Base\ShoppingCartFactory.cs" />
+    <Compile Include="Conference\Pages\BingMain\IBingMainPage.cs" />
+    <Compile Include="Conference\Pages\Checkout\CheckoutPage.cs" />
+    <Compile Include="Conference\Pages\Checkout\CheckoutPageMap.cs" />
+    <Compile Include="Conference\Pages\Checkout\CheckoutPageAsserter.cs" />
+    <Compile Include="Conference\Pages\Checkout\ICheckoutPage.cs" />
+    <Compile Include="Conference\Pages\Item\IItemPage.cs" />
+    <Compile Include="Conference\Pages\ShippingAddress\IShippingAddressPage.cs" />
+    <Compile Include="Conference\Pages\SignIn\ISignInPage.cs" />
+    <Compile Include="Conference\Pages\Item\ItemPage.cs" />
+    <Compile Include="Conference\Pages\Item\ItemPageMap.cs" />
+    <Compile Include="Conference\Pages\Item\ItemPageAsserter.cs" />
+    <Compile Include="Conference\Pages\ShippingAddress\ShippingAddressPage.cs" />
+    <Compile Include="Conference\Pages\ShippingAddress\ShippingAddressPageMap.cs" />
+    <Compile Include="Conference\Pages\ShippingAddress\ShippingAddressPageAsserter.cs" />
+    <Compile Include="Conference\Pages\SignIn\SignInPage.cs" />
+    <Compile Include="Conference\Pages\SignIn\SignInPageMap.cs" />
+    <Compile Include="Conference\Base\ShoppingCart.cs" />
+    <Compile Include="Conference\Base\IFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PageObjectDesignPattern-Class-Diagram.cd" />
+    <None Include="packages.config" />
+    <None Include="unity.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

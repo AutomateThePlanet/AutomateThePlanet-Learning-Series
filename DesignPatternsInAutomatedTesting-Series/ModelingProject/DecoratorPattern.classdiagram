@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="26f16893-302c-4831-8fdb-4da25f456126" name="DecoratorPattern" linkedPackageId="2ceda1ec-1a2b-44fd-bbd1-a8eeed318687" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="37648853-bd50-413c-b025-284074806ae4">
+      <elementDefinition Id="c9ccbc56-9593-40dd-ae9f-0a8a1ce428f2" />
+      <body>Abstract Component</body>
+    </comment>
+    <comment Id="2bd78368-f364-46b8-9f7c-93a541ca32f1">
+      <elementDefinition Id="18dfba48-d865-437a-9ac5-4551d53a740b" />
+      <body>Concrete Component</body>
+    </comment>
+    <comment Id="7a92290a-60a1-4b8b-b4fd-2b003591f3f0">
+      <elementDefinition Id="652c0eb2-3c87-49db-9220-500e226c2826" />
+      <body>Component Decorator
+</body>
+    </comment>
+    <comment Id="fe1bef51-baab-4a0a-b2c1-62a31cd895a2">
+      <elementDefinition Id="5d60d00b-148c-4011-893a-fad3ba6a324b" />
+      <body>Concrete Decorators</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="9675ac5a-8b6a-42d7-9c5e-2b53d8f33707">
+      <profileInstance Id="a7086fc3-d3e6-4b18-9e03-e1877e0f8294" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="fe54ef85-6bda-493b-82e1-8b726d025aa6">
+      <profileInstance Id="1e81db96-df15-4763-a150-5df88234b396" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8513afc7-1fef-439a-af73-d135ed91f171" name="PurchaseContext" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="37c629c6-6511-46d0-8bab-cd1504c9f000" />
+        <targetEnds>
+          <association Id="c46464e9-db29-4312-80d4-a408c61efddd" isDerived="false" sourceEndRoleName="PurchaseContext" targetEndRoleName="OrderPurchaseStrategy" isLeaf="false" isAbstract="false">
+            <classMoniker Id="fa3574ef-9ad4-4fbd-8ae9-0ea029f3b25a" LastKnownName="OrderPurchaseStrategy" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ff391c99-ed10-481a-9e96-9485aa5f4410" name="PurchaseContext" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="27ebca24-a388-4d09-811b-b8748f955b79" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d2022318-b509-4899-b7d4-a279c3dd0eb9" name="OrderPurchaseStrategy" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="9479a1e7-34a4-44e5-9ffe-28ab15704820" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="49f974b2-39e2-4b2e-b0af-1197a3e271d3" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="97a04224-0487-4590-937b-68cf3243c089" name="orderPurchaseStrategy" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e13419d1-440a-4004-bea1-3b0a52b91426" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="72064e75-6c78-47e6-b38e-c40203529c7f" name="PurchaseItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0bd9d129-e2e2-40df-874d-d1f3962fa2ec" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9b99edd1-8b80-4977-a829-29c58f424637" name="string itemUrl" direction="In" isUnique="false">
+                  <elementDefinition Id="0a50a15d-5d86-45e1-961c-20fc8e1af21e" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3e19ad16-451c-45bb-945a-356c3932eb9e" name="string itemPrice" direction="In" isUnique="false">
+                  <elementDefinition Id="a8d1459e-733f-450b-b274-0e895e8ffdce" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="32adc09e-9b17-4eb8-988e-968c1227122b" name="ClientLoginInfo clientLoginInfo" direction="In" isUnique="false">
+                  <elementDefinition Id="275f5cf1-dcff-48fd-ba5d-202b1fcc1b14" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="95920644-d7f1-498d-b476-d85e3d62c11f" name="ClientPurchaseInfo clientPurchaseInfo" direction="In" isUnique="false">
+                  <elementDefinition Id="1c83d4a5-d323-486b-b133-fe1baa09dc53" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fa3574ef-9ad4-4fbd-8ae9-0ea029f3b25a" name="OrderPurchaseStrategy" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ffe503f9-cd35-4b64-bece-53b0cceb3f98" />
+        <ownedOperationsInternal>
+          <operation Id="6615e425-64bc-41de-ba9d-23b95b611c1b" name="CalculateTotalPrice" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6480bc11-5fc1-4d9b-9a2d-f261d5d7e4ff" />
+          </operation>
+          <operation Id="98f8d8a5-800b-46a1-8f4c-f4345307b5b0" name="ValidateOrderSummary" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b297ff7b-1b7e-46a3-a02a-c9496e04b0dc" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7fd9a1ec-e283-42fb-bb3e-332b15fff779" name="decimal totalPrice" direction="In" isUnique="false">
+                  <elementDefinition Id="9c7995a6-1499-4f50-8c1a-010d44dafbf8" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="97595d9e-d13d-4de9-8977-a907a42eb098" name="TotalPriceOrderPurchaseStrategy" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6dfa589c-4cf9-4b4b-8457-3d3c7b5b0fb3" />
+        <generalsInternal>
+          <generalization Id="6a26838a-cb54-4480-8ccb-5e595f37cafb" isSubstitutable="false">
+            <classMoniker Id="fa3574ef-9ad4-4fbd-8ae9-0ea029f3b25a" LastKnownName="OrderPurchaseStrategy" />
+            <elementDefinition Id="e61bea8a-9b5b-4aee-9ef9-025875f2368d" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="6673997c-0390-4317-a64e-7a9281b19bad" name="CalculateTotalPrice" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="83f4ad13-ded3-4566-b927-fe412a871b18" />
+          </operation>
+          <operation Id="bacb447f-878b-4541-a302-b0a9cc1e90a3" name="ValidateOrderSummary" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="aa565767-2d0d-42bc-8842-08da5d24a9b2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3d7e871e-6b0c-4418-ad46-b785fba2a772" name="decimal totalPrice" direction="In" isUnique="false">
+                  <elementDefinition Id="f88c44c9-424c-4b7e-b67c-93bb37a9b722" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e406da7e-f81e-4411-b968-93131c19e64c" name="GiftOrderPurchaseStrategy" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cfd3a1b7-af0c-4493-a0f8-82a54ad5ff7c" />
+        <generalsInternal>
+          <generalization Id="0a53fe31-241e-4bd4-81af-535ce9a2d682" isSubstitutable="false">
+            <classMoniker Id="9919d051-68c2-426e-9f32-ca64bd98c31b" LastKnownName="OrderPurchaseStrategyDecorator" />
+            <elementDefinition Id="5eff3485-689f-4073-a14b-78615ddb2746" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="cf7d2a5e-39a6-4434-b1df-02cbdc1777d1" name="giftWrappingPriceCalculationService" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3e5668d4-d807-40cf-8f96-c2c5757e2479" />
+          </property>
+          <property Id="7684a146-459f-45d3-aae6-2379d4b41d6f" name="giftWrapPrice" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cf81b469-b358-4229-bc22-8295cc9e05c9" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="bc53e159-c8a5-4c03-b9fc-e7d6e6238519" name="CalculateTotalPrice" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="51bcc47e-83f0-478c-b7e2-4f8d793237a2" />
+          </operation>
+          <operation Id="c4e95a3e-58e7-4d0f-8e93-4006cc670210" name="ValidateOrderSummary" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c541d7aa-58d3-4c2f-bf29-6c7726313667" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b38908f8-d810-4c31-b454-642fa330164c" name="decimal totalPrice" direction="In" isUnique="false">
+                  <elementDefinition Id="7415a797-56b2-4da4-b3a3-6e654f033a5a" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9919d051-68c2-426e-9f32-ca64bd98c31b" name="OrderPurchaseStrategyDecorator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="27e3e95e-554b-4bbc-a7a9-9242a3be3353" />
+        <generalsInternal>
+          <generalization Id="74456c72-49fd-4b40-b229-7c5ef3f6a30d" isSubstitutable="false">
+            <classMoniker Id="fa3574ef-9ad4-4fbd-8ae9-0ea029f3b25a" LastKnownName="OrderPurchaseStrategy" />
+            <elementDefinition Id="a1c4ca5f-74f7-481f-9dce-72551440e5d3" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="f21074ef-9b42-4973-9308-0c27896921e8" isDerived="false" sourceEndRoleName="OrderPurchaseStrategyDecorator" targetEndRoleName="OrderPurchaseStrategy" isLeaf="false" isAbstract="false">
+            <classMoniker Id="fa3574ef-9ad4-4fbd-8ae9-0ea029f3b25a" LastKnownName="OrderPurchaseStrategy" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c422089e-fbc0-47b9-a50a-188f1fe35402" name="OrderPurchaseStrategyDecorator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="94b0c780-e85d-45f8-9572-76c14c586dee" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d0a49295-214d-4f37-b1f0-b9c764c92480" name="OrderPurchaseStrategy" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="fbde5d82-5ad3-4dc4-b4d8-f5252aa52ac7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b85a8975-ac3e-4b3d-8f0d-0d6331d8ab09" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="70e77c8f-bbff-4f5e-b02d-c92b127fc01f" name="orderPurchaseStrategy" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="960bcf3d-855b-4a5a-a72e-811491420176" />
+          </property>
+          <property Id="3f2779af-ffe6-43f1-9c9b-0f8837c57f66" name="clientPurchaseInfo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f1c45043-903f-4d72-8920-f2bb601f530b" />
+          </property>
+          <property Id="0d5e38ad-5400-4322-99a5-89daf90a459a" name="itemsPrice" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="652d13eb-70d9-4e15-8ed3-20030b1c0040" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="2d0b2a6c-d64f-4819-a6ca-b5d416306613" name="CalculateTotalPrice" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="54cfcda1-19e7-441b-9016-e8d6833f1f56" />
+          </operation>
+          <operation Id="68f9dde1-e2ab-48f1-b3d4-93fb83249420" name="ValidateOrderSummary" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e7d3a902-af7e-4e9b-a307-8626499198f0" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f951e387-26ee-4eeb-b994-c1141a0163c8" name="decimal totalPrice" direction="In" isUnique="false">
+                  <elementDefinition Id="a2a84f48-de13-48f5-9c7e-cfa55ba719ee" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3c416a17-fe4a-42b0-9e85-6ac62020b41e" name="NoTaxesOrderPurchaseStrategy" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="859f96f5-9724-450c-85c5-57bb7f583b16" />
+        <generalsInternal>
+          <generalization Id="8dc030fa-bf2e-40aa-935a-90af5e2dd136" isSubstitutable="false">
+            <classMoniker Id="9919d051-68c2-426e-9f32-ca64bd98c31b" LastKnownName="OrderPurchaseStrategyDecorator" />
+            <elementDefinition Id="ff1bba3d-8ae2-4b29-88d2-0e4d1e3dfe80" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="2cf30be8-d437-4cee-9291-26a640ebb2f8" name="ValidateOrderSummary" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="73857153-adca-418a-8803-35a179e4ef44" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="460fdf07-391c-4af6-a38a-4abaf95a0df0" name="decimal totalPrice" direction="In" isUnique="false">
+                  <elementDefinition Id="de0b84d4-f456-4331-9fa9-0cd0d44c055d" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fa320938-2aac-4370-89db-0e9e5ca2e0ca" name="VatTaxOrderPurchaseStrategy" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="988b4d57-b3a0-4b7c-aa9d-a07e6e822c92" />
+        <generalsInternal>
+          <generalization Id="01faf70f-e6e7-4a92-a8a8-a228de95c496" isSubstitutable="false">
+            <classMoniker Id="9919d051-68c2-426e-9f32-ca64bd98c31b" LastKnownName="OrderPurchaseStrategyDecorator" />
+            <elementDefinition Id="59b54e8e-362d-4a54-ac19-1bd52be59bf4" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="fe88699a-7d72-474f-a3ab-be5d6f03b5bb" name="vatTaxCalculationService" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5c757f24-c481-4020-b792-6b2f5c53be2c" />
+          </property>
+          <property Id="d195e1e0-8037-407b-974e-30913ff4a14d" name="vatTax" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3790054d-d827-4378-b5ce-dcb253a6d568" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="d3e8d598-2e4b-4871-aaf4-5e0c61f4851b" name="CalculateTotalPrice" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3f11bb81-95d3-4c3a-90a7-b9772ca9f406" />
+          </operation>
+          <operation Id="b44ab55d-e720-4072-bbea-10f7f54c03df" name="ValidateOrderSummary" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5d1ae1b3-110d-4f49-9c15-91fd6da7ba11" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c85303a8-1b12-4368-bbf1-d88dfb0fa401" name="decimal totalPrice" direction="In" isUnique="false">
+                  <elementDefinition Id="9a15b6a8-1a0a-49ed-a28f-bc0159e59682" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1b7199d8-c2a3-4487-9936-78e5479cbfb6" name="SalesTaxOrderPurchaseStrategy" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a2ab1ee0-0301-492c-af15-b3091aba7446" />
+        <generalsInternal>
+          <generalization Id="d1bd079b-4cc3-440f-b9bf-bd1b2b590a11" isSubstitutable="false">
+            <classMoniker Id="9919d051-68c2-426e-9f32-ca64bd98c31b" LastKnownName="OrderPurchaseStrategyDecorator" />
+            <elementDefinition Id="aff32cc4-866e-4817-9d46-25830bd1e61c" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="6212749c-f497-4f61-9eaf-4b5bb0369bda" name="salesTaxCalculationService" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cd52ec9f-6434-4f45-8a7d-7fb69f947755" />
+          </property>
+          <property Id="618b3e58-0393-4f20-9735-c2418e13f789" name="salesTax" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dd15681a-808a-4fef-bc52-025c5b7a45a1" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="cea7079c-9d20-4cbb-b46e-9c85d871008f" name="CalculateTotalPrice" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a07177d9-8f0b-484b-ac2d-df12bd50a3cc" />
+          </operation>
+          <operation Id="b2e6d93a-2005-4776-8b20-f9938e9ab4ed" name="ValidateOrderSummary" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="37f334c7-61bd-4827-b4a3-0eb56f0e9d21" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9b138b34-813a-4ea3-b02b-520f7fd3e732" name="decimal totalPrice" direction="In" isUnique="false">
+                  <elementDefinition Id="5c533ef9-adc2-43c2-8ce2-e4ac5afc159f" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="2ceda1ec-1a2b-44fd-bbd1-a8eeed318687" name="ModelingProject1">
+    <elementDefinition Id="71304b90-dec2-48cf-aa25-61ab4fe1335d" />
+  </package>
+</logicalClassDesignerModel>

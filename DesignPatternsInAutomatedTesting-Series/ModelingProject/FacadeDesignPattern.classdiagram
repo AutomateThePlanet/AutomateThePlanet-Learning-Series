@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="17aeea13-1f24-4898-a095-0adaa06b037e" name="UMLClassDiagram1" linkedPackageId="017e94ef-f6c5-47e5-b28b-db4d378ceaec" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="21925c6d-8a5b-4fcf-a6b2-7bfa9b126908">
+      <profileInstance Id="cba5d677-adf3-4198-a323-ac1d68e45b8d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="4bb3afca-2086-4300-8cb7-869f5fe28601">
+      <profileInstance Id="6c41ec89-97f0-4506-af56-17a666dded7b" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1650e6d8-66e7-4c36-afe5-39e1fd37770f" name="PurchaseFacade" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="be73d5a2-e222-45c9-8a61-cb5722d508f5" />
+        <targetEnds>
+          <association Id="042f7ab0-bc3a-4c4b-8df4-83e793591854" isDerived="false" sourceEndRoleName="PurchaseFacade" targetEndRoleName="CheckoutPage" isLeaf="false" isAbstract="false">
+            <classMoniker Id="a7f55b9a-939b-4fb6-9a9e-208c73cccaf2" LastKnownName="CheckoutPage" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="aa4ff225-c472-41b6-b5b5-dfd5c7a46ab7" name="PurchaseFacade" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="342ee2b9-9be9-40fd-8084-53ecfb7b09f8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e96e0e13-0751-4bae-ad00-ead4182c242a" name="CheckoutPage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bbb91ed3-1b22-4272-b2d7-7c82fb96f719" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1264607f-beba-460e-8fcd-dd51a6fc8207" />
+          </association>
+          <association Id="60617422-458b-4c18-b28f-a807fd3a492a" isDerived="false" sourceEndRoleName="PurchaseFacade" targetEndRoleName="SignInPage" isLeaf="false" isAbstract="false">
+            <classMoniker Id="6af8ed37-6e41-49d2-8fc4-522729cd5de9" LastKnownName="SignInPage" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="00d96fed-3ffe-43dc-9a02-271060fed9df" name="PurchaseFacade" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="10fe4b0d-27ee-474d-86f6-7b5d832d9b3b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="50e7661c-a06a-4379-9f9c-38041a540c12" name="SignInPage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3cac537b-35f1-453b-9c9f-a9109a1c1696" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="00626c9a-e663-466c-9aaf-43e1ceab049e" />
+          </association>
+          <association Id="ef76fec6-4eb3-4230-a54f-62e52f531d39" isDerived="false" sourceEndRoleName="PurchaseFacade" targetEndRoleName="ItemPage" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d45f4a7a-2d13-496b-b3a5-0e4a7a8e35cc" LastKnownName="ItemPage" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bd33c8e4-c6f1-4f7c-adbc-2a4154e3c5b5" name="PurchaseFacade" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="464525dd-c7ab-49d7-8312-f4a05335d077" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="90b1788b-aa5d-4ce5-b0f8-1f186c27654c" name="ItemPage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="06669791-3579-4d41-968d-004f9db4b129" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="29efde62-4b69-48e4-8056-0407c8923f4f" />
+          </association>
+          <association Id="0281b0cc-ff58-4cfc-9ee7-b895c11f3f98" isDerived="false" sourceEndRoleName="PurchaseFacade" targetEndRoleName="ShippingAddressPage" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b2245d3d-4e29-4449-9706-b2e74b671bb4" LastKnownName="ShippingAddressPage" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3c6b006c-d8f1-430b-bd06-dd30ed580d9f" name="PurchaseFacade" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3a4b4a34-a35a-4184-a857-3e046a10dbf0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dde129a5-07dd-4420-9f62-c368b7c81323" name="ShippingAddressPage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="00d33b51-c032-4b0a-8dfa-95026658aef8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="548b15f4-f81d-4c0f-afb6-2c9c58a73890" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="902596a5-bff7-42e0-a770-70cb223fadab" name="checkoutPage" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="46b57e80-9d9c-45c8-b0e6-6e48c192e861" />
+          </property>
+          <property Id="c3bdef1d-f02f-4b56-a887-5eb56e90d175" name="itemPage" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="34c73ab7-a73a-4794-847d-d7cdfaca4f11" />
+          </property>
+          <property Id="183995fc-ee7c-4164-9828-7ea14c6af910" name="shippingAddressPage" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bfa398c6-1899-4f19-a28c-87c51047cd8c" />
+          </property>
+          <property Id="0dd2db81-eb7b-4b8d-9e28-036f012a0189" name="signInPage" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ed4569a2-9c5a-48d6-a317-b830c067ec61" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="7e7bb0f3-367e-40be-bd7f-8c9bcb9757be" name="PurchaseItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e5e75728-8bd4-47e7-9e02-5f3dedd721f2" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a7f55b9a-939b-4fb6-9a9e-208c73cccaf2" name="CheckoutPage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="df8e2c61-2472-4ec2-aa79-3a311bf2304b" />
+        <ownedOperationsInternal>
+          <operation Id="c6e9143c-4fd1-4ff4-a947-21c64d879c49" name="ValidateSubtotal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="185a6834-49a6-4925-b835-529a14de77ce" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6af8ed37-6e41-49d2-8fc4-522729cd5de9" name="SignInPage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="27a45a98-377f-440b-b809-75a2e6a46330" />
+        <ownedOperationsInternal>
+          <operation Id="d7d60f6d-d13b-422f-826c-50c8044b322c" name="ClickContinueAsGuestButton" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4a7b78c8-c638-44db-a86d-9de1b7ad8bb7" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d45f4a7a-2d13-496b-b3a5-0e4a7a8e35cc" name="ItemPage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="26d4772c-9a70-4d65-8ce8-be14f9dc0a50" />
+        <ownedOperationsInternal>
+          <operation Id="ee27a004-f2c2-4ed3-8700-7f7380a70f3a" name="Navigate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d058616d-ff27-403f-80ab-1940f252e456" />
+          </operation>
+          <operation Id="e64f3fe3-5840-4c6a-8d31-3ce8c0838c76" name="ValiudatePrice" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d4c1a067-1277-4deb-8f6c-92e09d11f5df" />
+          </operation>
+          <operation Id="039e5966-9a91-4c63-97fc-19374ad4c390" name="ClickBuyNowButton" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="373969b6-44c2-4ce3-b08f-19b5ca729d2f" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b2245d3d-4e29-4449-9706-b2e74b671bb4" name="ShippingAddressPage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1d9f3629-e21f-45aa-b5b0-74851e88e730" />
+        <ownedOperationsInternal>
+          <operation Id="7a6204bb-df11-4840-a497-e3579911aa66" name="FillShippingInfo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bc2d45f9-9008-4c61-beec-3edc67e50e8e" />
+          </operation>
+          <operation Id="c40620a8-4713-40b8-8362-8fd87459a0db" name="ValidateSubtotal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1abd1a79-b51a-4184-9e88-5981c6dd223a" />
+          </operation>
+          <operation Id="a31dffb3-90e8-49b0-831c-91b92cb750d4" name="ClickContinueButton" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="63d4e33f-0ccd-44d0-8631-48eb6a3d8835" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="870c565a-8e93-4c32-b140-321dabce1a34" name="EbayPurchaseTests" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5857beba-5a3d-469a-aa16-3a4804d4731e" />
+        <targetEnds>
+          <association Id="24ad7e0b-dfc8-4714-ac44-4cecd80df6fa" isDerived="false" sourceEndRoleName="EbayPurchaseTests" targetEndRoleName="PurchaseFacade" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1650e6d8-66e7-4c36-afe5-39e1fd37770f" LastKnownName="PurchaseFacade" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e758af52-625b-40f6-bb91-cf4916692710" name="EbayPurchaseTests" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0ecf04b5-3672-4fd1-b9de-25ec6000aae8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c561304c-f999-4c44-9a4e-d13315ec84fe" name="PurchaseFacade" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5935310b-aaa3-4713-8657-40062fd5b578" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="002c50a9-5d4c-4a5f-bc57-ebe89f7c98c3" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="a8503c27-0f0d-4860-81aa-0b5a8dfef750" name="Purchase_Casio_Watch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c9d7f07b-2803-467e-9ab0-85a5cda0ee66" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="017e94ef-f6c5-47e5-b28b-db4d378ceaec" name="ModelingProject1">
+    <elementDefinition Id="71304b90-dec2-48cf-aa25-61ab4fe1335d" />
+  </package>
+</logicalClassDesignerModel>

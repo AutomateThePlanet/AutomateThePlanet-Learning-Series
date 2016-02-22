@@ -1,0 +1,98 @@
+﻿<Window x:Class="Fidely.Demo.Windows.Views.FeadReaderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Fidely RSS Reader - Fidely Demo Application 1.0.0"
+        xmlns:exttoolkit="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit.Extended"
+        xmlns:fidely.controls="clr-namespace:Fidely.Framework.Integration.WPF;assembly=Fidely.Framework.Integration.WPF"
+        x:Name="root"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="650" Height="650" MinWidth="900" Width="900">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ImageButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <DockPanel.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#FAFAFA" Offset="0.35"/>
+                    <GradientStop Color="#F0F0F0" Offset="0.95"/>
+                    <GradientStop Color="#FAFAFA" Offset="1"/>
+                </LinearGradientBrush>
+            </DockPanel.Background>
+            <Button DockPanel.Dock="Left" Style="{StaticResource ImageButtonStyle}" ToolTip="Subscribe New Feed">
+                <Image Source="/Resources/Add.png" Height="20" Width="20"/>
+            </Button>
+            <Button DockPanel.Dock="Left" Style="{StaticResource ImageButtonStyle}" ToolTip="Unsubscribe Feed">
+                <Image Source="/Resources/Remove.png" Height="20" Width="20"/>
+            </Button>
+            <Button DockPanel.Dock="Left" Style="{StaticResource ImageButtonStyle}" ToolTip="Reload">
+                <Image Source="/Resources/Reload.png" Height="20" Width="20"/>
+            </Button>
+            <Button DockPanel.Dock="Right" Style="{StaticResource ImageButtonStyle}" ToolTip="Setting">
+                <Image Source="/Resources/Setting.png" Height="20" Width="20"/>
+            </Button>
+            <Border Margin="3" Background="White" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray">
+                <StackPanel>
+                    <fidely.controls:AutoCompleteBox SearchCommand="{Binding SearchCommand}">
+                        <!--<fidely.controls:AutoCompleteBox.Resources>
+                            <Style TargetType="TextBox">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="TextBox">
+                                            <exttoolkit:WatermarkTextBox Watermark="Search Query" BorderThickness="0" Margin="2" HorizontalAlignment="Stretch"/>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </fidely.controls:AutoCompleteBox.Resources>-->
+                        <!--<exttoolkit:WatermarkTextBox Name="searchTextBox" Watermark="Search Query" BorderThickness="0" Margin="2" HorizontalAlignment="Stretch"/>-->
+                    </fidely.controls:AutoCompleteBox>
+                </StackPanel>
+            </Border>
+        </DockPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox Grid.Column="0" ItemsSource="{Binding FeedsCollectionView}" IsSynchronizedWithCurrentItem="True" BorderThickness="0">
+                <ListBox.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold" FontStyle="Italic" Margin="2"/>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
+                </ListBox.GroupStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Title}" Margin="5"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <GridSplitter Grid.Column="1" ResizeBehavior="PreviousAndNext" ResizeDirection="Columns" Width="2"/>
+            <ListBox Grid.Column="2" Name="entriesListBox" DataContext="{Binding FeedsCollectionView}" ItemsSource="{Binding Entries}" BorderThickness="0" SelectionMode="Single" Control.MouseDoubleClick="OnEntryDoubleClicked">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Width="{Binding ViewportWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ScrollViewer}}">
+                            <TextBlock Text="{Binding DatePublished}" FontSize="11" Margin="2,2,0,0"/>
+                            <TextBlock FontWeight="Bold" Text="{Binding Title}" TextWrapping="Wrap" Margin="2,0,4,0"/>
+                            <TextBlock Text="{Binding Author, StringFormat=Published by {0}}" FontSize="11" HorizontalAlignment="Right" Margin="0,0,4,2"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <exttoolkit:ChildWindow Grid.Column="0" Grid.ColumnSpan="3" Name="contentWindow" DataContext="{Binding SelectedItem, ElementName=entriesListBox}" Caption="{Binding Title}" WindowStartupLocation="Center" Height="540"  Width="690" IsModal="True">
+                <Grid>
+                    <TextBlock Text="{Binding Content}" TextWrapping="Wrap"/>
+                </Grid>
+            </exttoolkit:ChildWindow>
+        </Grid>
+    </DockPanel>
+</Window>

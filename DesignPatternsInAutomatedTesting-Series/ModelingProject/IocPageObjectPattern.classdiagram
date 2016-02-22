@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="c5d95659-4f26-49aa-85f7-8d833c8cab14" name="IocPageObjectPattern" linkedPackageId="6fc95c73-b92c-4178-88a1-ae596607cd1f" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="842c1e97-c5fc-4529-9cf2-a6a9d4c1b1fa">
+      <profileInstance Id="37b25dd7-861b-41e6-b9dc-48c587d45ed1" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="ff9f19b3-5528-45ca-91e3-c8ec9c6c59ad">
+      <profileInstance Id="9b761359-a10a-4d01-9f81-43eb02b4bb61" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="53d0e12d-0960-4734-8c66-247f750a9fc3" name="WikipediaMainPage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="687e77f9-5537-479d-aadd-be54f5f677e1" />
+        <suppliersInternal>
+          <interfaceRealization Id="44c8e413-6df4-43e7-886c-6a146fd63599">
+            <interfaceMoniker Id="6cd96ff2-6b80-4416-895a-942b41796d5b" LastKnownName="IWikipediaMainPage" />
+            <elementDefinition Id="8cf86f21-2cff-45a5-b9e2-b86d8c9281b6" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="f01edf5c-cc82-4c5d-8ee3-ed8f75a98f06" isSubstitutable="false">
+            <classMoniker Id="91962631-506c-4185-9819-d924d8eaba83" LastKnownName="BasePage&lt;M, V&gt;" />
+            <elementDefinition Id="a2846bc6-ad17-4f84-9f06-bdf90813e63f" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="43ccaad8-6d04-4609-a4d4-69caa6916cbd" isDerived="false" sourceEndRoleName="WikipediaMainPage" targetEndRoleName="WikipediaMainPageMap" isLeaf="false" isAbstract="false">
+            <classMoniker Id="58d50560-22c7-4c9a-a4fa-6dca5b95ca68" LastKnownName="WikipediaMainPageMap" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="39544819-e05f-41b9-93d9-c33d7d4e61fb" name="WikipediaMainPage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="220b80a4-831a-4b51-9214-421bc41255cf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ea909253-81b7-4d18-b506-aaff3bc15c9f" name="WikipediaMainPageMap" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c6751afe-cb67-46ff-9568-fe92126f0f61" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="27d4bea8-4780-4b4b-a376-a22856c9e8af" />
+          </association>
+          <association Id="d83977b9-4cf1-4e15-9f60-bde6feb28d6b" isDerived="false" sourceEndRoleName="WikipediaMainPage" targetEndRoleName="WikipediaMainPageValidator" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8b0722ef-d3c5-46fe-b453-04579bfca15e" LastKnownName="WikipediaMainPageValidator" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c54bc597-b2e3-47a7-b733-824205708bf4" name="WikipediaMainPage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b3be433e-01cb-48e3-82bc-fa75895efb36" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cae123ee-7fbc-49a7-9fa3-cd030ff05ae9" name="WikipediaMainPageValidator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="dd22e6e3-656b-42d1-b740-0b63b038c454" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fcfb8ad2-4b50-4cf3-91df-0db6cb351b01" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="99f000b6-faac-4431-86d2-65707bf320ab" name="Search" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="327125c9-7696-485a-af55-2b5abebc70b5" />
+          </operation>
+          <operation Id="4c76ddb0-c9a4-4765-86e7-b2e59d227998" name="ToggleContents" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a0dce896-e98c-4b9e-a7a3-8922f7ae4019" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="58d50560-22c7-4c9a-a4fa-6dca5b95ca68" name="WikipediaMainPageMap" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d5b87e5e-7eeb-4ed8-bf1a-7ac6f244618d" />
+        <generalsInternal>
+          <generalization Id="95382b11-c6a2-4d40-8f74-92154b201467" isSubstitutable="false">
+            <classMoniker Id="e67e46d7-bf42-4ea4-817d-79ad24c53c16" LastKnownName="BaseElementMap" />
+            <elementDefinition Id="f363c5f7-41f3-4b8d-95c7-ef5d541e7f4c" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="90ff60b0-1655-4f30-8fd9-ee47d43f498f" name="SearchBox" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0b1daf58-afdc-49d7-8482-cce9da80c882" />
+          </property>
+          <property Id="6d71dbbb-6e28-4e73-841e-092870f28417" name="SearchButton" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a437bafc-09f0-462e-bafb-c1d621764f2b" />
+          </property>
+          <property Id="405cf10b-9e30-42cd-be70-51ddab0c3c24" name="ContentsToggleLink" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="46edd784-7789-4621-82e6-84d8fb76f7f9" />
+          </property>
+          <property Id="dbea154e-a7d7-4f5a-ba8c-b0ee15d4ea9b" name="ContentsList" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f12d8d9b-ed10-41bc-8bc1-be2f5cea4268" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8b0722ef-d3c5-46fe-b453-04579bfca15e" name="WikipediaMainPageValidator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="11cda5aa-7cac-4fbf-b969-aab61780110d" />
+        <generalsInternal>
+          <generalization Id="b2490d77-9720-41a6-8df3-d9c1cb437578" isSubstitutable="false">
+            <classMoniker Id="be27516a-4d40-4e27-9229-4ab7a2d07a8b" LastKnownName="BasePageValidator&lt;M&gt;" />
+            <elementDefinition Id="1b0e03b2-c807-4009-8328-e4ec9a01b17f" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="2e4da5d7-b35d-43e2-9812-767868cbcb49" name="ToogleLinkTextShow" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="814fd64c-6315-4c27-8eac-4d724938284f" />
+          </operation>
+          <operation Id="5be2d8a2-57c3-4648-8177-709d32874715" name="ToogleLinkTextHide" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cc9ec7f1-db1f-40b9-9d5c-2de6f8f19c4e" />
+          </operation>
+          <operation Id="46ba48be-d17f-4a72-a789-3fb1e341afd2" name="ContentsListHidden" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="026ac56b-b8f6-44ad-8b47-8735a1bafd67" />
+          </operation>
+          <operation Id="0d9c27d3-937d-4180-bd1f-964a763ce8bd" name="ContentsListVisible" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8b00d7a9-90b5-4215-9434-61ee9ce27dae" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="91962631-506c-4185-9819-d924d8eaba83" name="BasePage&lt;M, V&gt;" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f88c534a-e680-4748-8c9a-c3aaa1339d0f" />
+        <generalsInternal>
+          <generalization Id="25708473-a904-4013-8921-9c4d90da6084" isSubstitutable="false">
+            <classMoniker Id="76484263-ab04-4d7d-8620-1795b9119835" LastKnownName="BasePage&lt;M&gt;" />
+            <elementDefinition Id="cfb13c9a-0921-4f1d-8e6f-c77bb98a8da1" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="f190c04f-1ebc-49a6-9e4b-6f4aa92af07f" name="Validate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="97f8b4ee-a113-48aa-9d69-29dee1bd7d13" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="76484263-ab04-4d7d-8620-1795b9119835" name="BasePage&lt;M&gt;" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="48af730c-86f3-4a82-a88e-af3332a17d53" />
+        <ownedAttributesInternal>
+          <property Id="0c9e1da5-2c09-4b47-95c5-252906198ee0" name="Map" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="96fcb56c-b96c-40ac-81d9-87ad6c377714" />
+          </property>
+          <property Id="87251ba2-c22d-4f35-ad26-95653585a315" name="Url" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4a32daf7-c9a2-4173-8498-3ef6e3cbf686" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="2dff2b43-803f-42bd-9d5c-f53f75c90093" name="Navigate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a18f2369-c59f-4245-aa55-11f10682cc96" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e67e46d7-bf42-4ea4-817d-79ad24c53c16" name="BaseElementMap" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="723c00d4-ebe2-4571-a463-45653662925b" />
+        <ownedOperationsInternal>
+          <operation Id="c2c2e455-2465-44a3-82d7-b392e23bd13b" name="SwitchToDefault" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fccd8656-31e1-41c2-94d2-a96ce16adac5" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="be27516a-4d40-4e27-9229-4ab7a2d07a8b" name="BasePageValidator&lt;M&gt;" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cfa62ee8-7a20-46f3-ae9b-01b0336c0866" />
+        <ownedAttributesInternal>
+          <property Id="adc0bf07-4c09-4598-8762-ecb6a2a22c88" name="Map" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f85c1a7c-ccda-431c-a0bf-af102231d4e0" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="6cd96ff2-6b80-4416-895a-942b41796d5b" name="IWikipediaMainPage" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6056bf67-77e8-4a56-8e4a-b98a0a9074dd" />
+        <ownedOperations>
+          <operation Id="0842b75a-abfc-44e5-b507-1ab70837d17a" name="Search" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1139d8a5-fbb8-4992-a088-2b6ad6a648cc" />
+          </operation>
+          <operation Id="b4f9381f-8a37-4187-b1b8-8e120a2d22f2" name="ToggleContents" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7a5de0f9-db44-4444-9d9e-348c7732a1fe" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="1ac80f4b-e011-4f81-8d06-e7987708ed0e" name="IPage&lt;M,V&gt;" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8449a80c-8cce-4580-8f1a-d89ef9d18fd8" />
+        <ownedOperations>
+          <operation Id="b56685be-bbfd-426b-8a1e-7d2dee13fd3a" name="Validate" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="442b66ad-fc19-43f9-ad5f-e0c1ebcf794a" />
+          </operation>
+          <operation Id="d5ca3601-a8e3-4c74-b841-5cd7fe19950c" name="Navigate" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2730cd02-6146-4e47-9a2b-bb8d3d391e07" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="48359ea1-f806-4ee8-a168-05b195fa9aed" name="IWikipediaMainPage&lt;M, V&gt;" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="109c3418-53dc-4d24-b558-2a7bcb663b15" />
+        <ownedOperations>
+          <operation Id="1ec2ce66-e2e3-4fe9-8b5c-abb3fead1f92" name="Search" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cec73e9e-f650-4b8b-8b1f-24cbc1ab1c08" />
+          </operation>
+          <operation Id="69dc66d8-bf4a-4b5d-8f7e-16bd5ae81e91" name="ToggleContents" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f1e489f7-0385-4acf-9abf-878ebb54ad9e" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="6fc95c73-b92c-4178-88a1-ae596607cd1f" name="ModelingProject1">
+    <elementDefinition Id="71304b90-dec2-48cf-aa25-61ab4fe1335d" />
+  </package>
+</logicalClassDesignerModel>
