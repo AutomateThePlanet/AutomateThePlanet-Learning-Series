@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.Specifications
+namespace PatternsInAutomatedTests.Advanced.Specifications
 {
     public partial class LinqPlaceOrderPage
     {

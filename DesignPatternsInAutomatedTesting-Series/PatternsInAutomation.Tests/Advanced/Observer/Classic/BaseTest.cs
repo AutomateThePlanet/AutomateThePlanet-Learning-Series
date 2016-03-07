@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Advanced.Observer.Classic.Behaviors;
+using PatternsInAutomatedTests.Advanced.Observer.Classic.Behaviors;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Classic
+namespace PatternsInAutomatedTests.Advanced.Observer.Classic
 {
     [TestClass]
     public class BaseTest

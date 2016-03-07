@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.Strategy.Pages.PreviewShoppingCartPage
+namespace PatternsInAutomatedTests.Advanced.Strategy.Pages.PreviewShoppingCartPage
 {
     public class PreviewShoppingCartPageMap : BasePageElementMap
     {

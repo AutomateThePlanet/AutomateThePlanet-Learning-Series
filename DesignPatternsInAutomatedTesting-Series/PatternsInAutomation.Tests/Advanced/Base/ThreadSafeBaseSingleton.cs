@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Base
+﻿namespace PatternsInAutomatedTests.Advanced.Base
 {
     public abstract class ThreadSafeBaseSingleton<T>
         where T : new()

@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Core;
-using P = PatternsInAutomation.Tests.Advanced.BingMainPage;
+using PatternsInAutomatedTests.Advanced.Core;
+using P = PatternsInAutomatedTests.Advanced.BingMainPage;
 
-namespace PatternsInAutomation.Tests.Advanced
+namespace PatternsInAutomatedTests.Advanced
 {
     [TestClass]
     public class AdvancedBingTests

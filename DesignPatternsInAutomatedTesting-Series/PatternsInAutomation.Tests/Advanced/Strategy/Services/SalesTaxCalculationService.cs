@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Strategy.Enums;
+﻿using PatternsInAutomatedTests.Advanced.Strategy.Enums;
 
-namespace PatternsInAutomation.Tests.Advanced.Strategy.Services
+namespace PatternsInAutomatedTests.Advanced.Strategy.Services
 {
     public class SalesTaxCalculationService
     {

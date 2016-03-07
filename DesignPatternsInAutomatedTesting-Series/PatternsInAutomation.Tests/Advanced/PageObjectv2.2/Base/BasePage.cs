@@ -1,7 +1,7 @@
 ﻿using System;
 using OpenQA.Selenium;
 
-namespace PatternsInAutomation.Tests.Advanced.PageObjectv22.Base
+namespace PatternsInAutomatedTests.Advanced.PageObjectv22.Base
 {
     public abstract class BasePage
     {

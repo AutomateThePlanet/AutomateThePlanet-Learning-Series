@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Core;
+﻿using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.Strategy.Pages.PlaceOrderPage
+namespace PatternsInAutomatedTests.Advanced.Strategy.Pages.PlaceOrderPage
 {
     public class PlaceOrderPage : BasePageSingleton<PlaceOrderPage, PlaceOrderPageMap, PlaceOrderPageValidator>
     {

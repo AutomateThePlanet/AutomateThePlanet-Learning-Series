@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace PatternsInAutomation.Tests.Beginners.Pages.BingMainPage
+namespace PatternsInAutomatedTests.Beginners.Pages.BingMainPage
 {
     public class BingMainPage
     {

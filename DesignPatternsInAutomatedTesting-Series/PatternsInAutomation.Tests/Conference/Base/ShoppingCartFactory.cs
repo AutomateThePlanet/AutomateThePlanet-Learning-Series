@@ -1,10 +1,10 @@
 ﻿using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Conference.Pages.Checkout;
-using PatternsInAutomation.Tests.Conference.Pages.Item;
-using PatternsInAutomation.Tests.Conference.Pages.ShippingAddress;
-using PatternsInAutomation.Tests.Conference.Pages.SignIn;
+using PatternsInAutomatedTests.Conference.Pages.Checkout;
+using PatternsInAutomatedTests.Conference.Pages.Item;
+using PatternsInAutomatedTests.Conference.Pages.ShippingAddress;
+using PatternsInAutomatedTests.Conference.Pages.SignIn;
 
-namespace PatternsInAutomation.Tests.Conference.Base
+namespace PatternsInAutomatedTests.Conference.Base
 {
     public class ShoppingCartFactory : IFactory<ShoppingCart>
     {

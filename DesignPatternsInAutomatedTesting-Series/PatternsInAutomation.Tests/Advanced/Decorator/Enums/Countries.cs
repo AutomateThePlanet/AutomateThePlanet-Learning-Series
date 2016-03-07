@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Decorator.Enums
+﻿namespace PatternsInAutomatedTests.Advanced.Decorator.Enums
 {
     public enum Countries
     {

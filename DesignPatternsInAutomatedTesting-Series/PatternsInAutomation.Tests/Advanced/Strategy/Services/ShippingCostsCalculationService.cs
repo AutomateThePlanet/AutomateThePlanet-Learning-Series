@@ -1,5 +1,4 @@
-﻿
-namespace PatternsInAutomation.Tests.Advanced.Strategy.Services
+﻿namespace PatternsInAutomatedTests.Advanced.Strategy.Services
 {
     public class ShippingCostsCalculationService
     {

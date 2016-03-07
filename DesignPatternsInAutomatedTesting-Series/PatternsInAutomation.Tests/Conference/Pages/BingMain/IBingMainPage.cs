@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Conference.Pages.BingMain
+﻿namespace PatternsInAutomatedTests.Conference.Pages.BingMain
 {
     public interface IBingMainPage : IPage
     {

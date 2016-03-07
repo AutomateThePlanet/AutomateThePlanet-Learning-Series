@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PatternsInAutomation.Tests.Conference.Pages.Item
+namespace PatternsInAutomatedTests.Conference.Pages.Item
 {
     public static class ItemPageAsserter
     {

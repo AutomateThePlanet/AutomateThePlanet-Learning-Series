@@ -3,10 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
-using PatternsInAutomation.Tests.Beginners.Selenium.Bing.Pages;
-using POP = PatternsInAutomation.Tests.Beginners.Pages.BingMainPage;
+using PatternsInAutomatedTests.Beginners.Selenium.Bing.Pages;
+using POP = PatternsInAutomatedTests.Beginners.Pages.BingMainPage;
 
-namespace PatternsInAutomation.Tests.Beginners
+namespace PatternsInAutomatedTests.Beginners
 {
     [TestClass]
     public class BingTests

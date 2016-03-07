@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Unity.Base;
+using PatternsInAutomatedTests.Advanced.Unity.Base;
 
-namespace PatternsInAutomation.Tests.Advanced.Unity.BingMainPage
+namespace PatternsInAutomatedTests.Advanced.Unity.BingMainPage
 {
     public class BingMainPageValidator : BasePageValidator<BingMainPageElementMap>
     {

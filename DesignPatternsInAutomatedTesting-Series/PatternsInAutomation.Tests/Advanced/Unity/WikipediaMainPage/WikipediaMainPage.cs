@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Unity.Base;
+﻿using PatternsInAutomatedTests.Advanced.Unity.Base;
 
-namespace PatternsInAutomation.Tests.Advanced.Unity.WikipediaMainPage
+namespace PatternsInAutomatedTests.Advanced.Unity.WikipediaMainPage
 {
     public class WikipediaMainPage : BasePage<WikipediaMainPageMap, WikipediaMainPageValidator>, IWikipediaMainPage
     {

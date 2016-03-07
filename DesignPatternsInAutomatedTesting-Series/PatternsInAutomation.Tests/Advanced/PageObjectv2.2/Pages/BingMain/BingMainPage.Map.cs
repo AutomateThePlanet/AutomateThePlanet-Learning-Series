@@ -1,8 +1,8 @@
 ﻿using System;
 using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Advanced.PageObjectv22.Base;
+using PatternsInAutomatedTests.Advanced.PageObjectv22.Base;
 
-namespace PatternsInAutomation.Tests.Advanced.PageObjectv22
+namespace PatternsInAutomatedTests.Advanced.PageObjectv22
 {
     public partial class BingMainPage : BasePage
     {

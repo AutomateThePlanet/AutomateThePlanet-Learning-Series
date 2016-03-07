@@ -1,7 +1,7 @@
-﻿using PatternsInAutomation.Tests.Advanced.Unity.Base;
-using PatternsInAutomation.Tests.Advanced.Unity.Enums;
+﻿using PatternsInAutomatedTests.Advanced.Unity.Base;
+using PatternsInAutomatedTests.Advanced.Unity.Enums;
 
-namespace PatternsInAutomation.Tests.Advanced.Unity.BingMainPage
+namespace PatternsInAutomatedTests.Advanced.Unity.BingMainPage
 {
     public class BingMainPage : BasePage<BingMainPageElementMap, BingMainPageValidator>, IBingMainPage
     {

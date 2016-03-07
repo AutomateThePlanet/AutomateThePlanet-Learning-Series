@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Core;
-using PatternsInAutomation.Tests.Advanced.Observer.Attributes;
+using PatternsInAutomatedTests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Observer.Attributes;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Classic.Behaviors
+namespace PatternsInAutomatedTests.Advanced.Observer.Classic.Behaviors
 {
     public class BrowserLaunchTestBehaviorObserver : BaseTestBehaviorObserver
     {

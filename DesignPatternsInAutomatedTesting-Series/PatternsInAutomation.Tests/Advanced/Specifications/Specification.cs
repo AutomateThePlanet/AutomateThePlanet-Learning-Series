@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Specifications
+﻿namespace PatternsInAutomatedTests.Advanced.Specifications
 {
 	public abstract class Specification<TEntity> : ISpecification<TEntity>
 	{

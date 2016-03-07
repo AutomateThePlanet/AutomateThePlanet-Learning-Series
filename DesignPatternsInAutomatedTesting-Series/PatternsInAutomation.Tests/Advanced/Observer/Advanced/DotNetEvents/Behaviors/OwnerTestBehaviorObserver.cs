@@ -2,7 +2,7 @@
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Advanced.DotNetEvents.Behaviors
+namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.DotNetEvents.Behaviors
 {
     public class OwnerTestBehaviorObserver : BaseTestBehaviorObserver
     {

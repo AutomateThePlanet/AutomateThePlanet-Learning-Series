@@ -1,12 +1,12 @@
-﻿using PatternsInAutomation.Tests.Advanced.Decorator.Advanced.Strategies;
-using PatternsInAutomation.Tests.Advanced.Decorator.Data;
-using PatternsInAutomation.Tests.Advanced.Decorator.Pages.ItemPage;
-using PatternsInAutomation.Tests.Advanced.Decorator.Pages.PreviewShoppingCartPage;
-using PatternsInAutomation.Tests.Advanced.Decorator.Pages.ShippingAddressPage;
-using PatternsInAutomation.Tests.Advanced.Decorator.Pages.ShippingPaymentPage;
-using PatternsInAutomation.Tests.Advanced.Decorator.Pages.SignInPage;
+﻿using PatternsInAutomatedTests.Advanced.Decorator.Advanced.Strategies;
+using PatternsInAutomatedTests.Advanced.Decorator.Data;
+using PatternsInAutomatedTests.Advanced.Decorator.Pages.ItemPage;
+using PatternsInAutomatedTests.Advanced.Decorator.Pages.PreviewShoppingCartPage;
+using PatternsInAutomatedTests.Advanced.Decorator.Pages.ShippingAddressPage;
+using PatternsInAutomatedTests.Advanced.Decorator.Pages.ShippingPaymentPage;
+using PatternsInAutomatedTests.Advanced.Decorator.Pages.SignInPage;
 
-namespace PatternsInAutomation.Tests.Advanced.Decorator.Advanced.Base
+namespace PatternsInAutomatedTests.Advanced.Decorator.Advanced.Base
 {
     public class PurchaseContext
     {

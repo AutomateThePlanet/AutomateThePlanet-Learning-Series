@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Core;
+﻿using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.BingMainPageSingletonDerived
+namespace PatternsInAutomatedTests.Advanced.BingMainPageSingletonDerived
 {
     public class BingMainPage : BasePageSingletonDerived<BingMainPage, BingMainPageElementMap, BingMainPageValidator>
     {

@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Strategy.Enums;
+﻿using PatternsInAutomatedTests.Advanced.Strategy.Enums;
 
-namespace PatternsInAutomation.Tests.Advanced.Strategy
+namespace PatternsInAutomatedTests.Advanced.Strategy
 {
     public class VatTaxCalculationService
     {

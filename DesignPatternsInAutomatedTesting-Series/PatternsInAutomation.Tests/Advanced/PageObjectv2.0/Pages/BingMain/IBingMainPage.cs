@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.PageObjectv20.Base;
+﻿using PatternsInAutomatedTests.Advanced.PageObjectv20.Base;
 
-namespace PatternsInAutomation.Tests.Advanced.PageObjectv20
+namespace PatternsInAutomatedTests.Advanced.PageObjectv20
 {
     public interface IBingMainPage : IPage
     {

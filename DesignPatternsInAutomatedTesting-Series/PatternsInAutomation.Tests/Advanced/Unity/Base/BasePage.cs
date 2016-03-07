@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Core;
+﻿using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.Unity.Base
+namespace PatternsInAutomatedTests.Advanced.Unity.Base
 {
     public class BasePage<M>
         where M : BasePageElementMap, new()

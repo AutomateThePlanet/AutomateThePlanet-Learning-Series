@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Reflection;
-using PatternsInAutomation.Tests.Advanced.Observer.Attributes;
+using PatternsInAutomatedTests.Advanced.Observer.Attributes;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Advanced.DotNetEvents.Behaviors
+namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.DotNetEvents.Behaviors
 {
     public class AssociatedBugTestBehaviorObserver : BaseTestBehaviorObserver
     {

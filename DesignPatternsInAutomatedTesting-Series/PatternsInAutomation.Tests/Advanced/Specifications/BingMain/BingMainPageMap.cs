@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Conference.Base;
+using PatternsInAutomatedTests.Conference.Base;
 
-namespace PatternsInAutomation.Tests.Advanced.Specifications
+namespace PatternsInAutomatedTests.Advanced.Specifications
 {
     public class BingMainPageMap : BaseElementMap
     {

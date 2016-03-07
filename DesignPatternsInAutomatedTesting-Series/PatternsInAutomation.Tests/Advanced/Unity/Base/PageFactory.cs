@@ -2,7 +2,7 @@
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 
-namespace PatternsInAutomation.Tests.Advanced.Unity.Base
+namespace PatternsInAutomatedTests.Advanced.Unity.Base
 {
     public static class PageFactory
     {

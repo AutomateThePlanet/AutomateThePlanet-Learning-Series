@@ -1,5 +1,5 @@
 ﻿using System;
-using PatternsInAutomation.Tests.Advanced.Rules;
+using PatternsInAutomatedTests.Advanced.Rules;
 
 namespace Perfect.SystemTests.Rules
 {

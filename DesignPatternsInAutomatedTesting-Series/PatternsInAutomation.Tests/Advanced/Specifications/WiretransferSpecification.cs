@@ -1,7 +1,7 @@
-﻿using PatternsInAutomation.Tests.Advanced.Specifications.Data;
+﻿using PatternsInAutomatedTests.Advanced.Specifications.Data;
 using System;
 
-namespace PatternsInAutomation.Tests.Advanced.Specifications
+namespace PatternsInAutomatedTests.Advanced.Specifications
 {
     public class WiretransferSpecification : Specification<PurchaseTestInput>
     {

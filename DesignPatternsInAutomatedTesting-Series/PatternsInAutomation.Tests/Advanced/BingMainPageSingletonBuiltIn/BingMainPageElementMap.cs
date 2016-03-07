@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.BingMainPageSingletonBuiltIn
+namespace PatternsInAutomatedTests.Advanced.BingMainPageSingletonBuiltIn
 {
     public class BingMainPageElementMap : BasePageElementMap
     {

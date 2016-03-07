@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Core;
-using PatternsInAutomation.Tests.Advanced.Ebay;
-using PatternsInAutomation.Tests.Advanced.Ebay.Data;
+using PatternsInAutomatedTests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Ebay;
+using PatternsInAutomatedTests.Advanced.Ebay.Data;
 
-namespace PatternsInAutomation.Tests.Advanced
+namespace PatternsInAutomatedTests.Advanced
 {
     [TestClass]
     public class EbayPurchase_PurchaseFaceade_Tests

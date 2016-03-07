@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PatternsInAutomation.Tests.Advanced.Specifications
+namespace PatternsInAutomatedTests.Advanced.Specifications
 {
     public class ExpressionSpecification<TEntity> : Specification<TEntity>
     {

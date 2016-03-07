@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Ebay.Data
+﻿namespace PatternsInAutomatedTests.Advanced.Ebay.Data
 {
     public class ClientInfo
     {

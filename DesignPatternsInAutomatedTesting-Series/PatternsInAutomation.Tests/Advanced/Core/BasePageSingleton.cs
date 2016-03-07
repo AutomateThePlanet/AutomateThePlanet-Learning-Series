@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Base;
+﻿using PatternsInAutomatedTests.Advanced.Base;
 
-namespace PatternsInAutomation.Tests.Advanced.Core
+namespace PatternsInAutomatedTests.Advanced.Core
 {
     public abstract class BasePageSingleton<S, M> : ThreadSafeLazyBaseSingleton<S>
         where M : BasePageElementMap, new()

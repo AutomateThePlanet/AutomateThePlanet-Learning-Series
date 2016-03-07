@@ -1,7 +1,7 @@
-﻿using PatternsInAutomation.Tests.Advanced.Core;
-using PatternsInAutomation.Tests.Advanced.Strategy.Data;
+﻿using PatternsInAutomatedTests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Strategy.Data;
 
-namespace PatternsInAutomation.Tests.Advanced.Strategy.Pages.ShippingAddressPage
+namespace PatternsInAutomatedTests.Advanced.Strategy.Pages.ShippingAddressPage
 {
     public class ShippingAddressPage : BasePageSingleton<ShippingAddressPage, ShippingAddressPageMap>
     {

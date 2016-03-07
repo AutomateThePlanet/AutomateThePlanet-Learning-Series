@@ -1,6 +1,6 @@
-using PatternsInAutomation.Tests.Conference.Data;
+using PatternsInAutomatedTests.Conference.Data;
 
-namespace PatternsInAutomation.Tests.Conference
+namespace PatternsInAutomatedTests.Conference
 {
     public interface IShippingAddressPage : IPage
     {

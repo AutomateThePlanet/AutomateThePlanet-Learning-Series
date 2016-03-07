@@ -1,5 +1,4 @@
-﻿
-namespace PatternsInAutomation.Tests.Advanced.Rules.Data
+﻿namespace PatternsInAutomatedTests.Advanced.Rules.Data
 {
     public class PurchaseTestInput
     {

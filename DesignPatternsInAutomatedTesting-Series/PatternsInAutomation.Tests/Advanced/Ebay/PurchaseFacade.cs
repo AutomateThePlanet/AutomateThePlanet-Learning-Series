@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
-using PatternsInAutomation.Tests.Advanced.Ebay.Data;
-using PatternsInAutomation.Tests.Advanced.Ebay.Pages.CheckoutPage;
-using PatternsInAutomation.Tests.Advanced.Ebay.Pages.ItemPage;
-using PatternsInAutomation.Tests.Advanced.Ebay.Pages.ShippingAddressPage;
-using PatternsInAutomation.Tests.Advanced.Ebay.Pages.SignInPage;
+using PatternsInAutomatedTests.Advanced.Ebay.Data;
+using PatternsInAutomatedTests.Advanced.Ebay.Pages.CheckoutPage;
+using PatternsInAutomatedTests.Advanced.Ebay.Pages.ItemPage;
+using PatternsInAutomatedTests.Advanced.Ebay.Pages.ShippingAddressPage;
+using PatternsInAutomatedTests.Advanced.Ebay.Pages.SignInPage;
 
-namespace PatternsInAutomation.Tests.Advanced.Ebay
+namespace PatternsInAutomatedTests.Advanced.Ebay
 {
     public class PurchaseFacade
     {

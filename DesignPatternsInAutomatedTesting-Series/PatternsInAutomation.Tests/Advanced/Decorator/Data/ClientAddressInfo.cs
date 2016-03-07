@@ -1,5 +1,4 @@
-﻿
-namespace PatternsInAutomation.Tests.Advanced.Decorator.Data
+﻿namespace PatternsInAutomatedTests.Advanced.Decorator.Data
 {
     public class ClientAddressInfo
     {

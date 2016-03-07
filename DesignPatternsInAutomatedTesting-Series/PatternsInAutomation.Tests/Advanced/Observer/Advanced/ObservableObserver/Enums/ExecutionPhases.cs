@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Observer.Advanced.ObservableObserver.Enums
+﻿namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver.Enums
 {
     public enum ExecutionPhases
     {

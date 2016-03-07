@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Observer.Attributes;
+using PatternsInAutomatedTests.Advanced.Observer.Attributes;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Advanced.ObservableObserver.Behaviors
+namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver.Behaviors
 {
     public class AssociatedBugTestBehaviorObserver : BaseTestBehaviorObserver
     {

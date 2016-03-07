@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace PatternsInAutomation.Tests.Advanced.Base
+namespace PatternsInAutomatedTests.Advanced.Base
 {
     public abstract class ThreadSafeNestedContructorsBaseSingleton<T>
     {

@@ -1,4 +1,4 @@
-namespace PatternsInAutomation.Tests.Conference
+namespace PatternsInAutomatedTests.Conference
 {
     public interface ICheckoutPage : IPage
     {

@@ -1,11 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Core;
-using PatternsInAutomation.Tests.Advanced.Strategy.Advanced.Base;
-using PatternsInAutomation.Tests.Advanced.Strategy.Advanced.Strategies;
-using PatternsInAutomation.Tests.Advanced.Strategy.Data;
-using PatternsInAutomation.Tests.Advanced.Strategy.Enums;
+using PatternsInAutomatedTests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Strategy.Advanced.Base;
+using PatternsInAutomatedTests.Advanced.Strategy.Advanced.Strategies;
+using PatternsInAutomatedTests.Advanced.Strategy.Data;
+using PatternsInAutomatedTests.Advanced.Strategy.Enums;
 
-namespace PatternsInAutomation.Tests.Advanced.Strategy.Tests
+namespace PatternsInAutomatedTests.Advanced.Strategy.Tests
 {
     [TestClass]
     public class AmazonPurchase_AdvancedPurchaseStrategy_Tests

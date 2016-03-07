@@ -1,8 +1,8 @@
-﻿using PatternsInAutomation.Tests.Advanced.Rules.Data;
+﻿using PatternsInAutomatedTests.Advanced.Rules.Data;
 using Perfect.SystemTests.Rules;
 using System;
 
-namespace PatternsInAutomation.Tests.Advanced.Rules
+namespace PatternsInAutomatedTests.Advanced.Rules
 {
     public class PromotionalPurchaseRule : BaseRule
     {

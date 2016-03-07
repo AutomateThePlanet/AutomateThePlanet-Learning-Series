@@ -1,9 +1,9 @@
-﻿using PatternsInAutomation.Tests.Conference.Data;
-using PatternsInAutomation.Tests.Conference.Pages.Checkout;
-using PatternsInAutomation.Tests.Conference.Pages.ShippingAddress;
-using PatternsInAutomation.Tests.Conference.Pages.Item;
+﻿using PatternsInAutomatedTests.Conference.Data;
+using PatternsInAutomatedTests.Conference.Pages.Checkout;
+using PatternsInAutomatedTests.Conference.Pages.ShippingAddress;
+using PatternsInAutomatedTests.Conference.Pages.Item;
 
-namespace PatternsInAutomation.Tests.Conference.Base
+namespace PatternsInAutomatedTests.Conference.Base
 {
     public class ShoppingCart
     {

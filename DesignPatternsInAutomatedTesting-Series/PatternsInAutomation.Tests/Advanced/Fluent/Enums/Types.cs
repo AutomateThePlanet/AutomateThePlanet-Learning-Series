@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Fluent.Enums
+﻿namespace PatternsInAutomatedTests.Advanced.Fluent.Enums
 {
     public enum Types
     {

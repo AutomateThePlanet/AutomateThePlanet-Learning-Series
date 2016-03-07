@@ -1,7 +1,7 @@
 ﻿using System;
 using Perfect.SystemTests.Rules;
 
-namespace PatternsInAutomation.Tests.Advanced.Rules
+namespace PatternsInAutomatedTests.Advanced.Rules
 {
     public abstract class BaseRule : IRule
     {

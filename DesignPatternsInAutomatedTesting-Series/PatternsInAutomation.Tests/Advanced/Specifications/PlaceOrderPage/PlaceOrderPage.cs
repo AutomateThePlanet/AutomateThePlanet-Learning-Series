@@ -1,8 +1,8 @@
 ﻿using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Advanced.Specifications.Base;
-using PatternsInAutomation.Tests.Advanced.Specifications.Data;
+using PatternsInAutomatedTests.Advanced.Specifications.Base;
+using PatternsInAutomatedTests.Advanced.Specifications.Data;
 
-namespace PatternsInAutomation.Tests.Advanced.Specifications
+namespace PatternsInAutomatedTests.Advanced.Specifications
 {
     public partial class PlaceOrderPage : BasePage
     {

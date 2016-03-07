@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Core;
+﻿using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.Decorator.Pages.ShippingPaymentPage
+namespace PatternsInAutomatedTests.Advanced.Decorator.Pages.ShippingPaymentPage
 {
     public class ShippingPaymentPage : BasePageSingleton<ShippingPaymentPage, ShippingPaymentPageMap>
     {

@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace PatternsInAutomation.Tests.Advanced.PageObjectv20.Base
+namespace PatternsInAutomatedTests.Advanced.PageObjectv20.Base
 {
     public interface IPage
     {

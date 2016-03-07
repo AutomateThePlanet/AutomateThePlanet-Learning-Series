@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Specifications
+﻿namespace PatternsInAutomatedTests.Advanced.Specifications
 {
 	public class NotSpecification<TEntity> : Specification<TEntity>
 	{

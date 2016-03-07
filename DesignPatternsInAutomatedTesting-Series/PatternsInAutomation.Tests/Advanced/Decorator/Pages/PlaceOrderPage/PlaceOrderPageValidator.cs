@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.Decorator.Pages.PlaceOrderPage
+namespace PatternsInAutomatedTests.Advanced.Decorator.Pages.PlaceOrderPage
 {
-    public class PlaceOrderPageValidator : BasePageValidator<PatternsInAutomation.Tests.Advanced.Decorator.Pages.PlaceOrderPage.PlaceOrderPageMap>
+    public class PlaceOrderPageValidator : BasePageValidator<PatternsInAutomatedTests.Advanced.Decorator.Pages.PlaceOrderPage.PlaceOrderPageMap>
     {
         public void ItemsPrice(string expectedPrice)
         {

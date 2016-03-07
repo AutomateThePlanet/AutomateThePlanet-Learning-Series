@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Observer.Advanced.ObservableObserver.Enums;
-using PatternsInAutomation.Tests.Advanced.Observer.Classic;
+using PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver.Enums;
+using PatternsInAutomatedTests.Advanced.Observer.Classic;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Advanced.ObservableObserver
+namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver
 {
     public class BaseTestBehaviorObserver : IObserver<ExecutionStatus>
     {

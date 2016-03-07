@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Advanced.Unity.Base;
+using PatternsInAutomatedTests.Advanced.Unity.Base;
 
-namespace PatternsInAutomation.Tests.Advanced.Unity.WikipediaMainPage
+namespace PatternsInAutomatedTests.Advanced.Unity.WikipediaMainPage
 {
     public class WikipediaMainPageMap : BasePageElementMap
     {

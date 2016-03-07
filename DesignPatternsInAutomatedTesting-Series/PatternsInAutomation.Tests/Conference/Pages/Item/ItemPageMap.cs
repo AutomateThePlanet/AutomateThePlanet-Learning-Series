@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Conference.Base;
+using PatternsInAutomatedTests.Conference.Base;
 
-namespace PatternsInAutomation.Tests.Conference.Pages.Item
+namespace PatternsInAutomatedTests.Conference.Pages.Item
 {
     public class ItemPageMap : BaseElementMap
     {

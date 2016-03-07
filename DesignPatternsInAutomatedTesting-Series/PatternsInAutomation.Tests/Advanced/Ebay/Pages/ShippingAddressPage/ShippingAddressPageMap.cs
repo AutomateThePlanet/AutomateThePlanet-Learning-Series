@@ -1,8 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using PatternsInAutomation.Tests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.Ebay.Pages.ShippingAddressPage
+namespace PatternsInAutomatedTests.Advanced.Ebay.Pages.ShippingAddressPage
 {
     public class ShippingAddressPageMap : BasePageElementMap
     {

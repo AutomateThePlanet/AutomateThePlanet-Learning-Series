@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Specifications
+﻿namespace PatternsInAutomatedTests.Advanced.Specifications
 {
     ////public class SourceOrderDetailIsActiveForChaining : Specification<DataObjects.InvoiceItem>
     ////{
@@ -6,9 +6,7 @@
     ////    {
     ////        Guard.ThrowIf().ArgumentIsNull(entity, "entity");
     ////        Guard.ThrowIf().ArgumentIsNull(entity.OrderDetail, "OrderDetail");
-
     ////        var orderDetail = entity.OrderDetail;
-
     ////        return !orderDetail.IsSplitted && !orderDetail.NextOrderDetailId.HasValue && !orderDetail.UnionOrderDetailId.HasValue;
     ////    }
     ////}

@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Conference.Base;
+using PatternsInAutomatedTests.Conference.Base;
 
 namespace PPatternsInAutomation.Tests.Conference.Pages.Checkout
 {

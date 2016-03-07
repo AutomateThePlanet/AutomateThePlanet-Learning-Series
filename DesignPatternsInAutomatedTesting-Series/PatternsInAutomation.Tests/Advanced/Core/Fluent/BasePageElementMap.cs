@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace PatternsInAutomation.Tests.Advanced.Core.Fluent
+namespace PatternsInAutomatedTests.Advanced.Core.Fluent
 {
     public class BasePageElementMap
     {

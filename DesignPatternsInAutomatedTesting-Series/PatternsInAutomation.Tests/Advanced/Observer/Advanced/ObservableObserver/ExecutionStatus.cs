@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Observer.Advanced.ObservableObserver.Enums;
+using PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver.Enums;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Advanced.ObservableObserver
+namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver
 {
     public class ExecutionStatus
     {

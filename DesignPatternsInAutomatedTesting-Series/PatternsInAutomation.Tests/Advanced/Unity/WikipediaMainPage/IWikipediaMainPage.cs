@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Unity.WikipediaMainPage
+﻿namespace PatternsInAutomatedTests.Advanced.Unity.WikipediaMainPage
 {
     public interface IWikipediaMainPage
     {

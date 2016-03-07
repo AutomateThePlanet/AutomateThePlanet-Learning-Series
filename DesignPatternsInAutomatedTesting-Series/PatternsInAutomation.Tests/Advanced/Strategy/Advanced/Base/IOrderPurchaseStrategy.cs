@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Strategy.Data;
+﻿using PatternsInAutomatedTests.Advanced.Strategy.Data;
 
-namespace PatternsInAutomation.Tests.Advanced.Strategy.Advanced.Base
+namespace PatternsInAutomatedTests.Advanced.Strategy.Advanced.Base
 {
     public interface IOrderPurchaseStrategy
     {

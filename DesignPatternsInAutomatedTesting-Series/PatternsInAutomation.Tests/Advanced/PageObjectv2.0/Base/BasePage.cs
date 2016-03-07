@@ -1,7 +1,7 @@
 ﻿using System;
 using OpenQA.Selenium;
 
-namespace PatternsInAutomation.Tests.Advanced.PageObjectv20.Base
+namespace PatternsInAutomatedTests.Advanced.PageObjectv20.Base
 {
     public abstract class BasePage<TMap>
         where TMap : BaseElementMap

@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
-using PatternsInAutomation.Tests.Conference.Pages.BingMain;
+using PatternsInAutomatedTests.Conference.Pages.BingMain;
 
-namespace PatternsInAutomation.Tests.Conference
+namespace PatternsInAutomatedTests.Conference
 {
     [TestClass]
     public class BingTests 

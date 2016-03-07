@@ -1,8 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using PatternsInAutomation.Tests.Conference.Base;
+using PatternsInAutomatedTests.Conference.Base;
 
-namespace PatternsInAutomation.Tests.Conference.Pages.ShippingAddress
+namespace PatternsInAutomatedTests.Conference.Pages.ShippingAddress
 {
     public class ShippingAddressPageMap : BaseElementMap
     {

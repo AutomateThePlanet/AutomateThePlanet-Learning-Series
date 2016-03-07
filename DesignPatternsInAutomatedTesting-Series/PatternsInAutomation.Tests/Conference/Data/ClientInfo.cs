@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Conference.Data
+﻿namespace PatternsInAutomatedTests.Conference.Data
 {
     public class ClientInfo
     {

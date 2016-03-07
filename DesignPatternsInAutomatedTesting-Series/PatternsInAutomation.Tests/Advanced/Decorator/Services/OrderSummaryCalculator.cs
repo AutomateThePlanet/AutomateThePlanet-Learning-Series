@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Decorator.Data;
+﻿using PatternsInAutomatedTests.Advanced.Decorator.Data;
 
-namespace PatternsInAutomation.Tests.Advanced.Decorator.Services
+namespace PatternsInAutomatedTests.Advanced.Decorator.Services
 {
     public class OrderSummaryCalculator
     {

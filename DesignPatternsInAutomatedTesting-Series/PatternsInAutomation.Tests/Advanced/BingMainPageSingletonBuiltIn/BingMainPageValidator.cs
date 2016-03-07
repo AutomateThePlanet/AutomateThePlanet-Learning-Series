@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.BingMainPage;
-using PatternsInAutomation.Tests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.BingMainPage;
+using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.BingMainPageSingletonBuiltIn
+namespace PatternsInAutomatedTests.Advanced.BingMainPageSingletonBuiltIn
 {
-    public class BingMainPageValidator : BasePageValidator<PatternsInAutomation.Tests.Advanced.BingMainPageSingletonBuiltIn.BingMainPageElementMap>
+    public class BingMainPageValidator : BasePageValidator<PatternsInAutomatedTests.Advanced.BingMainPageSingletonBuiltIn.BingMainPageElementMap>
     {
         public void ResultsCount(string expectedCount)
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Classic
+namespace PatternsInAutomatedTests.Advanced.Observer.Classic
 {
     public class MSTestExecutionSubject : ITestExecutionSubject
     {

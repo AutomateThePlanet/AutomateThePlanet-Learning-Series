@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.BingMainPage
+namespace PatternsInAutomatedTests.Advanced.BingMainPage
 {
     public class BingMainPage : BasePage<BingMainPageElementMap, BingMainPageValidator>
     {

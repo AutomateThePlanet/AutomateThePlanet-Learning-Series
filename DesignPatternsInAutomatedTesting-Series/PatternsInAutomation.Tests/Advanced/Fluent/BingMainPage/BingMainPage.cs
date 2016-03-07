@@ -1,7 +1,7 @@
-﻿using PatternsInAutomation.Tests.Advanced.Core.Fluent;
-using PatternsInAutomation.Tests.Advanced.Fluent.Enums;
+﻿using PatternsInAutomatedTests.Advanced.Core.Fluent;
+using PatternsInAutomatedTests.Advanced.Fluent.Enums;
 
-namespace PatternsInAutomation.Tests.Advanced.Fluent.BingMainPage
+namespace PatternsInAutomatedTests.Advanced.Fluent.BingMainPage
 {
     public class BingMainPage : BaseFluentPageSingleton<BingMainPage, BingMainPageElementMap, BingMainPageValidator>
     {

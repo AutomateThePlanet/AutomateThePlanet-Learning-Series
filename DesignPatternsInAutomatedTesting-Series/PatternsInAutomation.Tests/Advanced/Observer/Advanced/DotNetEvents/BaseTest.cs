@@ -2,9 +2,9 @@
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Advanced.Observer.Advanced.DotNetEvents.Behaviors;
+using PatternsInAutomatedTests.Advanced.Observer.Advanced.DotNetEvents.Behaviors;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Advanced.DotNetEvents
+namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.DotNetEvents
 {
     [TestClass]
     public class BaseTest

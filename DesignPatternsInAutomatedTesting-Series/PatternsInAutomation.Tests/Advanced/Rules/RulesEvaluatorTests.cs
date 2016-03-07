@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Rules.Data;
+using PatternsInAutomatedTests.Advanced.Rules.Data;
 using System;
 
-namespace PatternsInAutomation.Tests.Advanced.Rules
+namespace PatternsInAutomatedTests.Advanced.Rules
 {
     [TestClass]
     public class RulesEvaluatorTests

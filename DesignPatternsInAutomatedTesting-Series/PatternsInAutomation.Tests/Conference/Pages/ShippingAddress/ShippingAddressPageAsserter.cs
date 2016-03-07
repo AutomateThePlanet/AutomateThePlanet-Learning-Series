@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PatternsInAutomation.Tests.Conference.Pages.ShippingAddress
+namespace PatternsInAutomatedTests.Conference.Pages.ShippingAddress
 {
     public static class ShippingAddressPageAsserter 
     {

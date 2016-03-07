@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Decorator.Services
+﻿namespace PatternsInAutomatedTests.Advanced.Decorator.Services
 {
     public class ShippingCostsCalculationService
     {

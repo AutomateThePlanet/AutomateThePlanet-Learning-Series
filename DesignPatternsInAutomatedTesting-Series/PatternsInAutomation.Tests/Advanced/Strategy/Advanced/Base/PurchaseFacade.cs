@@ -1,12 +1,12 @@
-﻿using PatternsInAutomation.Tests.Advanced.Strategy.Data;
-using PatternsInAutomation.Tests.Advanced.Strategy.Pages.ItemPage;
-using PatternsInAutomation.Tests.Advanced.Strategy.Pages.PlaceOrderPage;
-using PatternsInAutomation.Tests.Advanced.Strategy.Pages.PreviewShoppingCartPage;
-using PatternsInAutomation.Tests.Advanced.Strategy.Pages.ShippingAddressPage;
-using PatternsInAutomation.Tests.Advanced.Strategy.Pages.ShippingPaymentPage;
-using PatternsInAutomation.Tests.Advanced.Strategy.Pages.SignInPage;
+﻿using PatternsInAutomatedTests.Advanced.Strategy.Data;
+using PatternsInAutomatedTests.Advanced.Strategy.Pages.ItemPage;
+using PatternsInAutomatedTests.Advanced.Strategy.Pages.PlaceOrderPage;
+using PatternsInAutomatedTests.Advanced.Strategy.Pages.PreviewShoppingCartPage;
+using PatternsInAutomatedTests.Advanced.Strategy.Pages.ShippingAddressPage;
+using PatternsInAutomatedTests.Advanced.Strategy.Pages.ShippingPaymentPage;
+using PatternsInAutomatedTests.Advanced.Strategy.Pages.SignInPage;
 
-namespace PatternsInAutomation.Tests.Advanced.Strategy.Advanced.Base
+namespace PatternsInAutomatedTests.Advanced.Strategy.Advanced.Base
 {
     public class PurchaseFacade
     {

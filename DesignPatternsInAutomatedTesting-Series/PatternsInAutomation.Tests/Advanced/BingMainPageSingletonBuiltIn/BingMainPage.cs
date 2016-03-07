@@ -1,8 +1,8 @@
-﻿using PatternsInAutomation.Tests.Advanced.Core;
+﻿using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.BingMainPageSingletonBuiltIn
+namespace PatternsInAutomatedTests.Advanced.BingMainPageSingletonBuiltIn
 {
-    public class BingMainPage : BasePage<PatternsInAutomation.Tests.Advanced.BingMainPageSingletonBuiltIn.BingMainPageElementMap, PatternsInAutomation.Tests.Advanced.BingMainPageSingletonBuiltIn.BingMainPageValidator>
+    public class BingMainPage : BasePage<PatternsInAutomatedTests.Advanced.BingMainPageSingletonBuiltIn.BingMainPageElementMap, PatternsInAutomatedTests.Advanced.BingMainPageSingletonBuiltIn.BingMainPageValidator>
     {
         public BingMainPage()
            : base(@"http://www.bing.com/")

@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Core;
+﻿using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.Decorator.Pages.ShippingAddressPage
+namespace PatternsInAutomatedTests.Advanced.Decorator.Pages.ShippingAddressPage
 {
     public class ShippingAddressPage : BasePageSingleton<ShippingAddressPage, ShippingAddressPageMap>
     {
@@ -9,12 +9,12 @@ namespace PatternsInAutomation.Tests.Advanced.Decorator.Pages.ShippingAddressPag
             this.Map.ContinueButton.Click();
         }
 
-        public void FillShippingInfo(PatternsInAutomation.Tests.Advanced.Decorator.Data.ClientPurchaseInfo clientInfo)
+        public void FillShippingInfo(PatternsInAutomatedTests.Advanced.Decorator.Data.ClientPurchaseInfo clientInfo)
         {
             this.FillAddressInfoInternal(clientInfo);
         }
 
-        public void ClickDifferentBillingCheckBox(PatternsInAutomation.Tests.Advanced.Decorator.Data.ClientPurchaseInfo clientInfo)
+        public void ClickDifferentBillingCheckBox(PatternsInAutomatedTests.Advanced.Decorator.Data.ClientPurchaseInfo clientInfo)
         {
             if (clientInfo.BillingInfo != null)
             {
@@ -22,7 +22,7 @@ namespace PatternsInAutomation.Tests.Advanced.Decorator.Pages.ShippingAddressPag
             }            
         }
 
-        public void FillBillingInfo(PatternsInAutomation.Tests.Advanced.Decorator.Data.ClientPurchaseInfo clientInfo)
+        public void FillBillingInfo(PatternsInAutomatedTests.Advanced.Decorator.Data.ClientPurchaseInfo clientInfo)
         {
             if (clientInfo.BillingInfo != null)
             {
@@ -30,7 +30,7 @@ namespace PatternsInAutomation.Tests.Advanced.Decorator.Pages.ShippingAddressPag
             }             
         }
 
-        private void FillAddressInfoInternal(PatternsInAutomation.Tests.Advanced.Decorator.Data.ClientPurchaseInfo clientInfo)
+        private void FillAddressInfoInternal(PatternsInAutomatedTests.Advanced.Decorator.Data.ClientPurchaseInfo clientInfo)
         {
             this.Map.CountryDropDown.SelectByText(clientInfo.ShippingInfo.Country);
             this.Map.FullNameInput.SendKeys(clientInfo.ShippingInfo.FullName);

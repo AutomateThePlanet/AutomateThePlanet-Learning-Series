@@ -1,7 +1,7 @@
 ﻿using System;
-using PatternsInAutomation.Tests.Advanced.Decorator.Data;
+using PatternsInAutomatedTests.Advanced.Decorator.Data;
 
-namespace PatternsInAutomation.Tests.Advanced.Decorator.Advanced.Strategies
+namespace PatternsInAutomatedTests.Advanced.Decorator.Advanced.Strategies
 {
     public abstract class OrderPurchaseStrategyDecorator : OrderPurchaseStrategy
     {

@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Strategy.Enums;
+﻿using PatternsInAutomatedTests.Advanced.Strategy.Enums;
 
-namespace PatternsInAutomation.Tests.Advanced.Strategy.Data
+namespace PatternsInAutomatedTests.Advanced.Strategy.Data
 {
     public class ClientPurchaseInfo
     {

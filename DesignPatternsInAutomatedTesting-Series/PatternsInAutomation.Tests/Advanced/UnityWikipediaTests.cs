@@ -2,11 +2,11 @@
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Core;
-using PatternsInAutomation.Tests.Advanced.Unity.Base;
-using PatternsInAutomation.Tests.Advanced.Unity.WikipediaMainPage;
+using PatternsInAutomatedTests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Unity.Base;
+using PatternsInAutomatedTests.Advanced.Unity.WikipediaMainPage;
 
-namespace PatternsInAutomation.Tests.Advanced
+namespace PatternsInAutomatedTests.Advanced
 {
     [TestClass]
     public class UnityWikipediaTests

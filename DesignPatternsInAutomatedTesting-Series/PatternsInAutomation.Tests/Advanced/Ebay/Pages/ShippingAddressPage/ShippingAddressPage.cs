@@ -1,7 +1,7 @@
-﻿using PatternsInAutomation.Tests.Advanced.Core;
-using PatternsInAutomation.Tests.Advanced.Ebay.Data;
+﻿using PatternsInAutomatedTests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Ebay.Data;
 
-namespace PatternsInAutomation.Tests.Advanced.Ebay.Pages.ShippingAddressPage
+namespace PatternsInAutomatedTests.Advanced.Ebay.Pages.ShippingAddressPage
 {
     public class ShippingAddressPage : BasePage<ShippingAddressPageMap, ShippingAddressPageValidator>
     {

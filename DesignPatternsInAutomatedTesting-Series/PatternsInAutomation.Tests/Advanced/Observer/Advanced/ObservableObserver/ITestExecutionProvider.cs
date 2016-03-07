@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Advanced.ObservableObserver
+namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver
 {
     public interface ITestExecutionProvider
     {

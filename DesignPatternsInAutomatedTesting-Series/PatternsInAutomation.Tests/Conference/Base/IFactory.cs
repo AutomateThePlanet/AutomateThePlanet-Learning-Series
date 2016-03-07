@@ -1,5 +1,4 @@
-﻿
-namespace PatternsInAutomation.Tests.Conference.Base
+﻿namespace PatternsInAutomatedTests.Conference.Base
 {
     public interface IFactory<T>
     {

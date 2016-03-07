@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Advanced.DotNetEvents
+namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.DotNetEvents
 {
     public interface IExecutionProvider
     {

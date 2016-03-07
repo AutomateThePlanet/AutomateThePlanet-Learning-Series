@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Core;
+﻿using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.Strategy.Pages.SignInPage
+namespace PatternsInAutomatedTests.Advanced.Strategy.Pages.SignInPage
 {
     public class SignInPage : BasePageSingleton<SignInPage, SignInPageMap>
     {

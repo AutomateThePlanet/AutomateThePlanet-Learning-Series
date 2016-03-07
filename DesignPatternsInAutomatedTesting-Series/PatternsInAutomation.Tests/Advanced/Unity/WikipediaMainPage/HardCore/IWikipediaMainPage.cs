@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Unity.Base;
+﻿using PatternsInAutomatedTests.Advanced.Unity.Base;
 
-namespace PatternsInAutomation.Tests.Advanced.Unity.WikipediaMainPage.HardCore
+namespace PatternsInAutomatedTests.Advanced.Unity.WikipediaMainPage.HardCore
 {
     public interface IWikipediaMainPage<M, V> : IPage<M, V>
         where M : BasePageElementMap, new()

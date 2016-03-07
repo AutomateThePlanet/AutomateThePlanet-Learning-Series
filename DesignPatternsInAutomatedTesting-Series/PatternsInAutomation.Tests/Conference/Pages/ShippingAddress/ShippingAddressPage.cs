@@ -1,9 +1,9 @@
 ﻿using System;
 using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Conference.Base;
-using PatternsInAutomation.Tests.Conference.Data;
+using PatternsInAutomatedTests.Conference.Base;
+using PatternsInAutomatedTests.Conference.Data;
 
-namespace PatternsInAutomation.Tests.Conference.Pages.ShippingAddress
+namespace PatternsInAutomatedTests.Conference.Pages.ShippingAddress
 {
     public class ShippingAddressPage : BasePage<ShippingAddressPageMap>, IShippingAddressPage
     {

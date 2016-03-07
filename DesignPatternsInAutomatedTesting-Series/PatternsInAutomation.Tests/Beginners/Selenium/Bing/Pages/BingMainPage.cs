@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace PatternsInAutomation.Tests.Beginners.Selenium.Bing.Pages
+namespace PatternsInAutomatedTests.Beginners.Selenium.Bing.Pages
 {
     public class BingMainPage
     {

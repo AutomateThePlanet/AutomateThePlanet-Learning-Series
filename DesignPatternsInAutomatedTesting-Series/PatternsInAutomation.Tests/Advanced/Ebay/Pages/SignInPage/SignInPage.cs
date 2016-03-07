@@ -1,7 +1,7 @@
-﻿using PatternsInAutomation.Tests.Advanced.Core;
-using PatternsInAutomation.Tests.Conference;
+﻿using PatternsInAutomatedTests.Advanced.Core;
+using PatternsInAutomatedTests.Conference;
 
-namespace PatternsInAutomation.Tests.Advanced.Ebay.Pages.SignInPage
+namespace PatternsInAutomatedTests.Advanced.Ebay.Pages.SignInPage
 {
     public class SignInPage : BasePage<SignInPageMap, SignInPageValidator>
     {

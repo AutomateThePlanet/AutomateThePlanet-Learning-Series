@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Unity.Enums;
+﻿using PatternsInAutomatedTests.Advanced.Unity.Enums;
 
-namespace PatternsInAutomation.Tests.Advanced.Unity.BingMainPage
+namespace PatternsInAutomatedTests.Advanced.Unity.BingMainPage
 {
     public interface IBingMainPage
     {

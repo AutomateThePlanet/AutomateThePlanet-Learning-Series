@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PatternsInAutomation.Tests.Advanced.PageObjectv22
+namespace PatternsInAutomatedTests.Advanced.PageObjectv22
 {
     public static class BingMainPageAsserter
     {

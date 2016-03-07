@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PatternsInAutomation.Tests.Advanced.Base
+namespace PatternsInAutomatedTests.Advanced.Base
 {
     public abstract class ThreadSafeLazyBaseSingleton<T>
         where T : new()

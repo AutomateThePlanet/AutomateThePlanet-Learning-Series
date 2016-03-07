@@ -1,5 +1,4 @@
-﻿
-namespace PatternsInAutomation.Tests.Advanced.Rules
+﻿namespace PatternsInAutomatedTests.Advanced.Rules
 {
     public class NullRule : BaseRule
     {

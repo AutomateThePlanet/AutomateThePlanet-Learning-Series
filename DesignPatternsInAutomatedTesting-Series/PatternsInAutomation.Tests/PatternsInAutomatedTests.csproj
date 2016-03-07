@@ -6,8 +6,8 @@
     <ProjectGuid>{8E4E4E04-3409-4454-998A-38BCBE3779CF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PatternsInAutomation.Tests</RootNamespace>
-    <AssemblyName>PatternsInAutomation.Tests</AssemblyName>
+    <RootNamespace>PatternsInAutomatedTests</RootNamespace>
+    <AssemblyName>PatternsInAutomatedTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

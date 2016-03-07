@@ -1,7 +1,7 @@
-﻿using PatternsInAutomation.Tests.Advanced.Unity.Base;
-using PatternsInAutomation.Tests.Advanced.Unity.Enums;
+﻿using PatternsInAutomatedTests.Advanced.Unity.Base;
+using PatternsInAutomatedTests.Advanced.Unity.Enums;
 
-namespace PatternsInAutomation.Tests.Advanced.Unity.BingMainPage.HardCore
+namespace PatternsInAutomatedTests.Advanced.Unity.BingMainPage.HardCore
 {
     public interface IBingMainPage<M, V>
     : IPage<M, V>

@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Rules.Data;
+﻿using PatternsInAutomatedTests.Advanced.Rules.Data;
 
-namespace PatternsInAutomation.Tests.Advanced.Rules
+namespace PatternsInAutomatedTests.Advanced.Rules
 {
     public class CreditCardChargeRule<TRuleResult> : BaseRule
         where TRuleResult : class, IRuleResult, new()

@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Unity.Enums
+﻿namespace PatternsInAutomatedTests.Advanced.Unity.Enums
 {
     public enum Sizes
     {

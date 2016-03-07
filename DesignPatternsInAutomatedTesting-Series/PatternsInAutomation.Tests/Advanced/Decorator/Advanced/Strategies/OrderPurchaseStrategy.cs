@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Decorator.Advanced.Strategies
+﻿namespace PatternsInAutomatedTests.Advanced.Decorator.Advanced.Strategies
 {
     public abstract class OrderPurchaseStrategy 
     {

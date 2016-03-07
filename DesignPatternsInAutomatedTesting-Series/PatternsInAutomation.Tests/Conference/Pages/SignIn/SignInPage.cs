@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Conference.Base;
+using PatternsInAutomatedTests.Conference.Base;
 
-namespace PatternsInAutomation.Tests.Conference.Pages.SignIn
+namespace PatternsInAutomatedTests.Conference.Pages.SignIn
 {
     public class SignInPage : BasePage<SignInPageMap>, ISignInPage
     {

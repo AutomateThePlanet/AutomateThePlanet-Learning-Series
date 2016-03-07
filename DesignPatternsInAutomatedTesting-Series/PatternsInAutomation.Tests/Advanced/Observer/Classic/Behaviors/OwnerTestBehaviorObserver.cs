@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Classic.Behaviors
+namespace PatternsInAutomatedTests.Advanced.Observer.Classic.Behaviors
 {
     public class OwnerTestBehaviorObserver : BaseTestBehaviorObserver
     {

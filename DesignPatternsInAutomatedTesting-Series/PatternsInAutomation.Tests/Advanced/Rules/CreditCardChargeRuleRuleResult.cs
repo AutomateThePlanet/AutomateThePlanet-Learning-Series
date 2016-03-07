@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PatternsInAutomation.Tests.Advanced.Rules
+namespace PatternsInAutomatedTests.Advanced.Rules
 {
     public class CreditCardChargeRuleRuleResult : IRuleResult
     {

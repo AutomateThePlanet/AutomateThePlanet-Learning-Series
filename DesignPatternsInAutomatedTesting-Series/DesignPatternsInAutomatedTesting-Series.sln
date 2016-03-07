@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternsInAutomation.Tests", "PatternsInAutomation.Tests\PatternsInAutomation.Tests.csproj", "{8E4E4E04-3409-4454-998A-38BCBE3779CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternsInAutomatedTests", "PatternsInAutomation.Tests\PatternsInAutomatedTests.csproj", "{8E4E4E04-3409-4454-998A-38BCBE3779CF}"
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "PatternsInAutomation.Diagrams", "ModelingProject\PatternsInAutomation.Diagrams.modelproj", "{FCA718C0-DE23-40B4-832B-4F67C176ECD6}"
 EndProject

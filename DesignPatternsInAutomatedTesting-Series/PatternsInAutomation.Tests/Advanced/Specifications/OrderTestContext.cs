@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Specifications.Data;
+﻿using PatternsInAutomatedTests.Advanced.Specifications.Data;
 
-namespace PatternsInAutomation.Tests.Advanced.Specifications
+namespace PatternsInAutomatedTests.Advanced.Specifications
 {
     public class OrderTestContext
     {

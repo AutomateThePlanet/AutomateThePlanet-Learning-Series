@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.Decorator.Pages.ItemPage
+namespace PatternsInAutomatedTests.Advanced.Decorator.Pages.ItemPage
 {
-    public class ItemPageValidator : BasePageValidator<PatternsInAutomation.Tests.Advanced.Decorator.Pages.ItemPage.ItemPageMap>
+    public class ItemPageValidator : BasePageValidator<PatternsInAutomatedTests.Advanced.Decorator.Pages.ItemPage.ItemPageMap>
     {
         public void ProductTitle(string expectedTitle)
         {

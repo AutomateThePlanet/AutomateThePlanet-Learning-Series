@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PatternsInAutomation.Tests.Advanced.Unity.Base
+namespace PatternsInAutomatedTests.Advanced.Unity.Base
 {
     public interface IPage<M, V>
         where M : BasePageElementMap, new()

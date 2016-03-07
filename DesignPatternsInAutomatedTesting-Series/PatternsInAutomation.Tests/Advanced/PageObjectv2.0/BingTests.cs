@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
-namespace PatternsInAutomation.Tests.Advanced.PageObjectv20
+namespace PatternsInAutomatedTests.Advanced.PageObjectv20
 {
     [TestClass]
     public class BingTests 

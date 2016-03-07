@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.Strategy.Pages.ItemPage
+namespace PatternsInAutomatedTests.Advanced.Strategy.Pages.ItemPage
 {
     public class ItemPageValidator : BasePageValidator<ItemPageMap>
     {

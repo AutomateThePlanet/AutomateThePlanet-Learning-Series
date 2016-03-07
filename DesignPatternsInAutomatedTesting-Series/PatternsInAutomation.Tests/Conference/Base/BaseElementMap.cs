@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace PatternsInAutomation.Tests.Conference.Base
+namespace PatternsInAutomatedTests.Conference.Base
 {
     public abstract class BaseElementMap
     {

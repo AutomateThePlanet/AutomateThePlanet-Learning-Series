@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
-namespace PatternsInAutomation.Tests.Advanced.Core
+namespace PatternsInAutomatedTests.Advanced.Core
 {
     public static class Driver
     {

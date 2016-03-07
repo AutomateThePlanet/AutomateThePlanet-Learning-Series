@@ -1,8 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using PatternsInAutomation.Tests.Advanced.Core.Fluent;
+using PatternsInAutomatedTests.Advanced.Core.Fluent;
 
-namespace PatternsInAutomation.Tests.Advanced.Fluent.BingMainPage
+namespace PatternsInAutomatedTests.Advanced.Fluent.BingMainPage
 {
     public class BingMainPageElementMap : BasePageElementMap
     {

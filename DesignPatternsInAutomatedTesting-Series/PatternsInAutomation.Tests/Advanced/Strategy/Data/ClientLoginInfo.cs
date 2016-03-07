@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PatternsInAutomation.Tests.Advanced.Strategy.Data
+namespace PatternsInAutomatedTests.Advanced.Strategy.Data
 {
     public class ClientLoginInfo
     {

@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Unity.Base
+﻿namespace PatternsInAutomatedTests.Advanced.Unity.Base
 {
     public class BasePageValidator<M>
         where M : BasePageElementMap, new()

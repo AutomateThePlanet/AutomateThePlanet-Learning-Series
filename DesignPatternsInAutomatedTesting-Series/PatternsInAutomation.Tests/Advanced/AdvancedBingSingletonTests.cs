@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using P = PatternsInAutomation.Tests.Advanced.BingMainPage;
-using S = PatternsInAutomation.Tests.Advanced.BingMainPageSingletonDerived;
-using PatternsInAutomation.Tests.Advanced.Core;
+using P = PatternsInAutomatedTests.Advanced.BingMainPage;
+using S = PatternsInAutomatedTests.Advanced.BingMainPageSingletonDerived;
+using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced
+namespace PatternsInAutomatedTests.Advanced
 {
     [TestClass]
     public class AdvancedBingSingletonTests

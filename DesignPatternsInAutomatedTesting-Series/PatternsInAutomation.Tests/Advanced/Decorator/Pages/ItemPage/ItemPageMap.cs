@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.Decorator.Pages.ItemPage
+namespace PatternsInAutomatedTests.Advanced.Decorator.Pages.ItemPage
 {
     public class ItemPageMap : BasePageElementMap
     {

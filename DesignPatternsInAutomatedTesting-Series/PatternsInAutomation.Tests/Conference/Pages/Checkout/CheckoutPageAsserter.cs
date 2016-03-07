@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PatternsInAutomation.Tests.Conference.Pages.Checkout
+namespace PatternsInAutomatedTests.Conference.Pages.Checkout
 {
     public static class CheckoutPageAsserter
     {

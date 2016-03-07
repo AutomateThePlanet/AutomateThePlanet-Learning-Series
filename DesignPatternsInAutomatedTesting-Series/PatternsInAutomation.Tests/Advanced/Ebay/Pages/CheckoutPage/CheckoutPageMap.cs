@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using PatternsInAutomation.Tests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Core;
 
-namespace PatternsInAutomation.Tests.Advanced.Ebay.Pages.CheckoutPage
+namespace PatternsInAutomatedTests.Advanced.Ebay.Pages.CheckoutPage
 {
     public class CheckoutPageMap : BasePageElementMap
     {

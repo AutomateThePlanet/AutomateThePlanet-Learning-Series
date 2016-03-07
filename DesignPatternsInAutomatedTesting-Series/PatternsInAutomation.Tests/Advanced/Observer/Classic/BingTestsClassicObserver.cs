@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Core;
-using PatternsInAutomation.Tests.Advanced.Observer.Attributes;
-using B = PatternsInAutomation.Tests.Beginners.Selenium.Bing.Pages;
+using PatternsInAutomatedTests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Observer.Attributes;
+using B = PatternsInAutomatedTests.Beginners.Selenium.Bing.Pages;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Classic
+namespace PatternsInAutomatedTests.Advanced.Observer.Classic
 {
     [TestClass]
     [ExecutionBrowser(BrowserTypes.Chrome)]

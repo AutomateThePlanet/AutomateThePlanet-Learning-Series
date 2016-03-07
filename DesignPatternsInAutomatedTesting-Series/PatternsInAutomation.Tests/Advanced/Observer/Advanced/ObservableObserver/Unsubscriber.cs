@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PatternsInAutomation.Tests.Advanced.Observer.Advanced.ObservableObserver
+namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver
 {
     internal class Unsubscriber<T> : IDisposable
     {

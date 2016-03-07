@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using PatternsInAutomation.Tests.Advanced.Rules;
+using PatternsInAutomatedTests.Advanced.Rules;
 
-namespace PatternsInAutomation.Tests.Advanced.Rules
+namespace PatternsInAutomatedTests.Advanced.Rules
 {
     public class RulesChain
     {

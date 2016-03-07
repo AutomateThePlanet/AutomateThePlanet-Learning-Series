@@ -1,7 +1,7 @@
-﻿using PatternsInAutomation.Tests.Advanced.Decorator.Data;
-using PatternsInAutomation.Tests.Advanced.Decorator.Pages.PlaceOrderPage;
+﻿using PatternsInAutomatedTests.Advanced.Decorator.Data;
+using PatternsInAutomatedTests.Advanced.Decorator.Pages.PlaceOrderPage;
 
-namespace PatternsInAutomation.Tests.Advanced.Decorator.Advanced.Strategies
+namespace PatternsInAutomatedTests.Advanced.Decorator.Advanced.Strategies
 {
     public class NoTaxesOrderPurchaseStrategy : OrderPurchaseStrategyDecorator
     {

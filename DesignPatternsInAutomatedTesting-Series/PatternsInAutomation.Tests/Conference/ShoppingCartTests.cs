@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
-using PatternsInAutomation.Tests.Conference.Base;
-using PatternsInAutomation.Tests.Conference.Data;
+using PatternsInAutomatedTests.Conference.Base;
+using PatternsInAutomatedTests.Conference.Data;
 
-namespace PatternsInAutomation.Tests.Conference
+namespace PatternsInAutomatedTests.Conference
 {
     [TestClass]
     public class ShoppingCartTests

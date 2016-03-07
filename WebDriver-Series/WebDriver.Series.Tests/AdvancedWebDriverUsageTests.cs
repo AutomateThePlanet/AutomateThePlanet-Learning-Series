@@ -166,18 +166,17 @@ namespace WebDriver.Series.Tests
             wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath("//*[@id='tve_editor']/div[2]/div[2]/div/div")));
         }
 
-        // 3. Get HTML Source of WebElement
-        [TestMethod]
-        public void GetHtmlSourceOfWebElement()
-        {
-            this.driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
-            this.WaitUntilLoaded();
-            var element = this.driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[3]/div/div"));
-            string sourceHtml = element.GetAttribute("innerHTML");
-            Debug.WriteLine(sourceHtml);
-        }
+        
+                                [TestMethod]
+                                public void GetHtmlSourceOfWebElement()
+                                {
+                                    this.driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+                                    this.WaitUntilLoaded();
+                                    var element = this.driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[3]/div/div"));
+                                    string sourceHtml = element.GetAttribute("innerHTML");
+                                    Debug.WriteLine(sourceHtml);
+                                }
 
-        // 4. Execute JS C# 
         [TestMethod]
         public void ExecuteJavaScript()
         {

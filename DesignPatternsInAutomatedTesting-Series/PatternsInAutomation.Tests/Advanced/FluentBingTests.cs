@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PatternsInAutomation.Tests.Advanced.Core;
-using PatternsInAutomation.Tests.Advanced.Fluent.Enums;
-using P = PatternsInAutomation.Tests.Advanced.Fluent.BingMainPage;
+using PatternsInAutomatedTests.Advanced.Core;
+using PatternsInAutomatedTests.Advanced.Fluent.Enums;
+using P = PatternsInAutomatedTests.Advanced.Fluent.BingMainPage;
 
-namespace PatternsInAutomation.Tests.Advanced
+namespace PatternsInAutomatedTests.Advanced
 {
     [TestClass]
     public class FluentBingTests

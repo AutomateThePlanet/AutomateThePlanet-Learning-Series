@@ -1,4 +1,4 @@
-﻿namespace PatternsInAutomation.Tests.Advanced.Core.Fluent
+﻿namespace PatternsInAutomatedTests.Advanced.Core.Fluent
 {
     public class BasePageValidator<S, M, V>
         where S : BaseFluentPageSingleton<S, M, V>

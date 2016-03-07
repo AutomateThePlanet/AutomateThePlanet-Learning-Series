@@ -1,9 +1,9 @@
 ﻿using PPatternsInAutomation.Tests.Conference.Pages.Checkout;
-using PatternsInAutomation.Tests.Conference.Base;
+using PatternsInAutomatedTests.Conference.Base;
 using System;
 using OpenQA.Selenium;
 
-namespace PatternsInAutomation.Tests.Conference.Pages.Checkout
+namespace PatternsInAutomatedTests.Conference.Pages.Checkout
 {
     public class CheckoutPage : BasePage<CheckoutPageMap>, ICheckoutPage
     {

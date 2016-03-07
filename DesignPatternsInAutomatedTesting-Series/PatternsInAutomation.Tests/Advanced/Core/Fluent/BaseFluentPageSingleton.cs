@@ -1,6 +1,6 @@
-﻿using PatternsInAutomation.Tests.Advanced.Base;
+﻿using PatternsInAutomatedTests.Advanced.Base;
 
-namespace PatternsInAutomation.Tests.Advanced.Core.Fluent
+namespace PatternsInAutomatedTests.Advanced.Core.Fluent
 {
     public abstract class BaseFluentPageSingleton<S, M> : ThreadSafeNestedContructorsBaseSingleton<S>
         where M : BasePageElementMap, new()

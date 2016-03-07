@@ -1,11 +1,11 @@
 ﻿using System;
-using PatternsInAutomation.Tests.Advanced.Strategy.Advanced.Base;
-using PatternsInAutomation.Tests.Advanced.Strategy.Data;
-using PatternsInAutomation.Tests.Advanced.Strategy.Enums;
-using PatternsInAutomation.Tests.Advanced.Strategy.Pages.PlaceOrderPage;
-using PatternsInAutomation.Tests.Advanced.Strategy.Services;
+using PatternsInAutomatedTests.Advanced.Strategy.Advanced.Base;
+using PatternsInAutomatedTests.Advanced.Strategy.Data;
+using PatternsInAutomatedTests.Advanced.Strategy.Enums;
+using PatternsInAutomatedTests.Advanced.Strategy.Pages.PlaceOrderPage;
+using PatternsInAutomatedTests.Advanced.Strategy.Services;
 
-namespace PatternsInAutomation.Tests.Advanced.Strategy.Advanced.Strategies
+namespace PatternsInAutomatedTests.Advanced.Strategy.Advanced.Strategies
 {
     public class SalesTaxOrderPurchaseStrategy : IOrderPurchaseStrategy
     {
