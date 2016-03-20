@@ -773,6 +773,16 @@
             does not implement <see cref="T:OpenQA.Selenium.ITakesScreenshot"/>, or the capabilities of the driver
             indicate that it cannot take screenshots.</exception>
         </member>
+        <member name="M:OpenQA.Selenium.Support.Extensions.WebDriverExtensions.ExecuteJavaScript(OpenQA.Selenium.IWebDriver,System.String,System.Object[])">
+            <summary>
+            Executes JavaScript in the context of the currently selected frame or window
+            </summary>
+            <param name="driver">The driver instance to extend.</param>
+            <param name="script">The JavaScript code to execute.</param>
+            <param name="args">The arguments to the script.</param>
+            <exception cref="T:OpenQA.Selenium.WebDriverException">Thrown if this <see cref="T:OpenQA.Selenium.IWebDriver"/> instance
+            does not implement <see cref="T:OpenQA.Selenium.IJavaScriptExecutor"/></exception>
+        </member>
         <member name="M:OpenQA.Selenium.Support.Extensions.WebDriverExtensions.ExecuteJavaScript``1(OpenQA.Selenium.IWebDriver,System.String,System.Object[])">
             <summary>
             Executes JavaScript in the context of the currently selected frame or window

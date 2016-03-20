@@ -42,13 +42,13 @@
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
-    <Reference Include="WebDriver, Version=2.52.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Selenium.WebDriver.2.52.0\lib\net40\WebDriver.dll</HintPath>
+    <Reference Include="WebDriver, Version=2.53.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.2.53.0\lib\net40\WebDriver.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="WebDriver.Support, Version=2.52.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Selenium.Support.2.52.0\lib\net40\WebDriver.Support.dll</HintPath>
+    <Reference Include="WebDriver.Support, Version=2.53.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.2.53.0\lib\net40\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <Choose>
@@ -70,9 +70,12 @@
     <Compile Include="Controls\SortType.cs" />
     <Compile Include="EdgeTests\Pages\HealthyDietGeneratorPage.cs" />
     <Compile Include="Enums\FilterOperator.cs" />
+    <Compile Include="GridTestCases\Pages\GridFilterPage.cs" />
     <Compile Include="HealthyDietMenuGeneratorTestsEdge.cs" />
+    <Compile Include="KendoGridTestCasesAutomationTests.cs" />
     <Compile Include="KendoGridTests.cs" />
     <Compile Include="AdvancedWebDriverUsageTests.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="RamDiskTests.cs" />
     <Compile Include="HealthyDietMenuGeneratorTestsFirefox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +87,7 @@
   <ItemGroup>
     <Content Include="Drivers\IEDriverServer.exe" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
