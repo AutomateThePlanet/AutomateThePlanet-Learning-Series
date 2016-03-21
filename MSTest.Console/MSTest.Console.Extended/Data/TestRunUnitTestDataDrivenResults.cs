@@ -6,7 +6,7 @@ namespace MSTest.Console.Extended.Data
 {
     /// <remarks/>
     [XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
-    public partial class TestRunUnitTestResult
+    public partial class TestRunUnitTestDataDrivenResults
     {
         private TestRunUnitTestResultOutput outputField;
 
@@ -31,8 +31,7 @@ namespace MSTest.Console.Extended.Data
         private string testListIdField;
 
         private string relativeResultsDirectoryField;
-
-        private TestRunUnitTestDataDrivenResults[] innerResultsField;
+        
 
         /// <remarks/>
         public TestRunUnitTestResultOutput Output
@@ -215,20 +214,5 @@ namespace MSTest.Console.Extended.Data
                 this.relativeResultsDirectoryField = value;
             }
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("UnitTestResult")]
-        public TestRunUnitTestDataDrivenResults[] InnerResults
-        {
-            get
-            {
-                return this.innerResultsField;
-            }
-            set
-            {
-                this.innerResultsField = value;
-            }
-        }
     }
-
 }
