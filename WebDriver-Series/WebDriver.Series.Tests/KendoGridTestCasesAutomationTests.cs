@@ -190,9 +190,59 @@ namespace WebDriver.Series.Tests
         #region OrderDate Test Cases
 
         [TestMethod]
+        public void OrderDateEqualToFilter()
+        {
+            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+
+            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
+            var lastOrderDate = allItems.Last().OrderDate;
+
+            var newItem = this.CreateNewItemInDb();
+            newItem.OrderDate = lastOrderDate;
+            this.UpdateItemInDb(newItem);
+
+            kendoGrid.Filter(OrderDateColumnName, Enums.FilterOperator.EqualTo, newItem.OrderDate.ToString());
+            this.WaitForGridToLoadAtLeast(1, kendoGrid);
+            var results = kendoGrid.GetItems<Order>();
+
+            Assert.IsTrue(results.Count() == 1);
+            Assert.AreEqual(newItem.OrderDate.ToString(), results[0].OrderDate);
+        }
+
+        [TestMethod]
+        public void OrderDateNotEqualToFilter()
+        {
+            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+
+            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
+            var lastOrderDate = allItems.Last().OrderDate;
+
+            var newItem = this.CreateNewItemInDb();
+            newItem.OrderDate = lastOrderDate.AddDays(1);
+            this.UpdateItemInDb(newItem);
+
+            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            secondNewItem.OrderDate = lastOrderDate.AddDays(2);
+            this.UpdateItemInDb(secondNewItem);
+
+            // After we filter by the unique shipping name, two items will be displayed in the grid. 
+            // After we apply the date after filter only the second item should be visible in the grid.
+            kendoGrid.Filter(
+                new GridFilter(OrderDateColumnName, Enums.FilterOperator.NotEqualTo, newItem.OrderDate.ToString()),
+                new GridFilter(ShipNameColumnName, Enums.FilterOperator.EqualTo, newItem.ShipName));
+            this.WaitForGridToLoadAtLeast(1, kendoGrid);
+            var results = kendoGrid.GetItems<Order>();
+
+            Assert.IsTrue(results.Count() == 1);
+            Assert.AreEqual(secondNewItem.ToString(), results[0].OrderDate);
+        }
+
+        [TestMethod]
         public void OrderDateAfterFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
+            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
             var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
@@ -221,7 +271,7 @@ namespace WebDriver.Series.Tests
         [TestMethod]
         public void OrderDateIsAfterOrEqualToFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
+            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
             var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
@@ -251,7 +301,7 @@ namespace WebDriver.Series.Tests
         [TestMethod]
         public void OrderDateBeforeFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
+            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
             var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
@@ -280,7 +330,7 @@ namespace WebDriver.Series.Tests
         [TestMethod]
         public void OrderDateIsBeforeOrEqualToFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
+            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
             var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
@@ -294,8 +344,6 @@ namespace WebDriver.Series.Tests
             secondNewItem.OrderDate = lastOrderDate.AddDays(-2);
             this.UpdateItemInDb(secondNewItem);
 
-            // After we filter by the unique shipping name, two items will be displayed in the grid. 
-            // After we apply the date after filter only the second item should be visible in the grid.
             kendoGrid.Filter(
                 new GridFilter(OrderDateColumnName, Enums.FilterOperator.IsBeforeOrEqualTo, newItem.OrderDate.ToString()),
                 new GridFilter(ShipNameColumnName, Enums.FilterOperator.EqualTo, newItem.ShipName));
@@ -310,7 +358,7 @@ namespace WebDriver.Series.Tests
         [TestMethod]
         public void OrderDateClearFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
+            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
             var newItem = this.CreateNewItemInDb();
@@ -325,7 +373,7 @@ namespace WebDriver.Series.Tests
         [TestMethod]
         public void OrderDateSortAsc()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/sorting");
+            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
             var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
@@ -353,7 +401,7 @@ namespace WebDriver.Series.Tests
         [TestMethod]
         public void OrderDateSortDesc()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/sorting");
+            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
             var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
