@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Xml.Serialization;
 
 namespace MSTest.Console.Extended.Data
 {
     [XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
-    public partial class TestRunUnitTestResult
+    public partial class TestRunUnitTestDataDrivenResults
     {
         private TestRunUnitTestResultOutput outputField;
 
@@ -30,9 +30,7 @@ namespace MSTest.Console.Extended.Data
         private string testListIdField;
 
         private string relativeResultsDirectoryField;
-
-        private TestRunUnitTestDataDrivenResults[] innerResultsField;
-       
+    
         public TestRunUnitTestResultOutput Output
         {
             get
@@ -44,20 +42,7 @@ namespace MSTest.Console.Extended.Data
                 this.outputField = value;
             }
         }
-
-        [System.Xml.Serialization.XmlArrayItemAttribute("UnitTestResult")]
-        public TestRunUnitTestDataDrivenResults[] InnerResults
-        {
-            get
-            {
-                return this.innerResultsField;
-            }
-            set
-            {
-                this.innerResultsField = value;
-            }
-        }
-       
+    
         [XmlAttributeAttribute]
         public string executionId
         {
@@ -70,7 +55,7 @@ namespace MSTest.Console.Extended.Data
                 this.executionIdField = value;
             }
         }
-       
+    
         [XmlAttributeAttribute]
         public string testId
         {
@@ -83,7 +68,7 @@ namespace MSTest.Console.Extended.Data
                 this.testIdField = value;
             }
         }
-       
+    
         [XmlAttributeAttribute]
         public string testName
         {
@@ -96,7 +81,7 @@ namespace MSTest.Console.Extended.Data
                 this.testNameField = value;
             }
         }
-       
+    
         [XmlAttributeAttribute]
         public string computerName
         {
@@ -114,7 +99,7 @@ namespace MSTest.Console.Extended.Data
         public TimeSpan duration
         {
             get
-            { 
+            {
                 return this.durationField;
             }
             set
@@ -122,23 +107,23 @@ namespace MSTest.Console.Extended.Data
                 this.durationField = value;
             }
         }
-        
+
         // XmlSerializer does not support TimeSpan, so use this property for 
         // serialization instead.
         [Browsable(false)]
         [XmlAttributeAttribute(DataType = "duration", AttributeName = "duration")]
         public string DurationString
         {
-            get 
-            { 
-                return this.duration.ToString(); 
+            get
+            {
+                return this.duration.ToString();
             }
-            set 
+            set
             {
                 this.duration = string.IsNullOrEmpty(value) ? TimeSpan.Zero : TimeSpan.Parse(value);
             }
         }
-       
+    
         [XmlAttributeAttribute]
         public System.DateTime startTime
         {
@@ -151,7 +136,7 @@ namespace MSTest.Console.Extended.Data
                 this.startTimeField = value;
             }
         }
-       
+    
         [XmlAttributeAttribute]
         public System.DateTime endTime
         {
@@ -164,7 +149,7 @@ namespace MSTest.Console.Extended.Data
                 this.endTimeField = value;
             }
         }
-       
+    
         [XmlAttributeAttribute]
         public string testType
         {
@@ -177,7 +162,7 @@ namespace MSTest.Console.Extended.Data
                 this.testTypeField = value;
             }
         }
-       
+    
         [XmlAttributeAttribute]
         public string outcome
         {
@@ -190,7 +175,7 @@ namespace MSTest.Console.Extended.Data
                 this.outcomeField = value;
             }
         }
-       
+    
         [XmlAttributeAttribute]
         public string testListId
         {
@@ -203,7 +188,7 @@ namespace MSTest.Console.Extended.Data
                 this.testListIdField = value;
             }
         }
-       
+
         [XmlAttributeAttribute]
         public string relativeResultsDirectory
         {

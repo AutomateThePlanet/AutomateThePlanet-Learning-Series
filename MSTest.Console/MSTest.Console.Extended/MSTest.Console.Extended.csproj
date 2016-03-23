@@ -56,6 +56,7 @@
     <Compile Include="Data\TestRunResultSummaryOutput.cs" />
     <Compile Include="Data\TestRunResultSummaryRunInfos.cs" />
     <Compile Include="Data\TestRunResultSummaryRunInfosRunInfo.cs" />
+    <Compile Include="Data\TestRunUnitTestDataDrivenResults.cs" />
     <Compile Include="Data\TestRunUnitTestResultOutput.cs" />
     <Compile Include="Data\TestRunUnitTestResultOutputErrorInfo.cs" />
     <Compile Include="Data\TestRunUnitTestOwners.cs" />
