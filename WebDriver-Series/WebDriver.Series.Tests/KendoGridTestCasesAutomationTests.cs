@@ -199,7 +199,7 @@ namespace WebDriver.Series.Tests
             var lastOrderDate = allItems.Last().OrderDate;
 
             var newItem = this.CreateNewItemInDb();
-            newItem.OrderDate = lastOrderDate;
+            newItem.OrderDate = lastOrderDate.AddDays(1);
             this.UpdateItemInDb(newItem);
 
             kendoGrid.Filter(OrderDateColumnName, Enums.FilterOperator.EqualTo, newItem.OrderDate.ToString());
@@ -216,7 +216,7 @@ namespace WebDriver.Series.Tests
             this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
+            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.Last().OrderDate;
 
             var newItem = this.CreateNewItemInDb();
@@ -245,7 +245,7 @@ namespace WebDriver.Series.Tests
             this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
+            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.Last().OrderDate;
 
             var newItem = this.CreateNewItemInDb();
@@ -274,7 +274,7 @@ namespace WebDriver.Series.Tests
             this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
+            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.Last().OrderDate;
 
             var newItem = this.CreateNewItemInDb();
@@ -304,8 +304,8 @@ namespace WebDriver.Series.Tests
             this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
-            var lastOrderDate = allItems.Last().OrderDate;
+            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var lastOrderDate = allItems.First().OrderDate;
 
             var newItem = this.CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(-1);
@@ -333,8 +333,8 @@ namespace WebDriver.Series.Tests
             this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
-            var lastOrderDate = allItems.Last().OrderDate;
+            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var lastOrderDate = allItems.First().OrderDate;
 
             var newItem = this.CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(-1);
@@ -376,8 +376,8 @@ namespace WebDriver.Series.Tests
             this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
-            var lastOrderDate = allItems.Last().OrderDate;
+            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var lastOrderDate = allItems.First().OrderDate;
 
             var newItem = this.CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(-1);
@@ -404,8 +404,8 @@ namespace WebDriver.Series.Tests
             this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
-            var lastOrderDate = allItems.Last().OrderDate;
+            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var lastOrderDate = allItems.First().OrderDate;
 
             var newItem = this.CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(-1);
@@ -746,7 +746,7 @@ namespace WebDriver.Series.Tests
         {
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
             this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 10);
+            this.NavigateToGridInitialPage(kendoGrid, 11);
             int targetPage = 1;
             GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
             gridFilterPage.GoToFirstPageButton.Click();
@@ -763,7 +763,7 @@ namespace WebDriver.Series.Tests
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
             this.InitializeInvoicesForPaging();
             this.NavigateToGridInitialPage(kendoGrid, 1);
-            int targetPage = 1;
+            int targetPage = 11;
             GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
             gridFilterPage.GoToLastPage.Click();
             this.WaitForPageToLoad(targetPage, kendoGrid);
@@ -778,8 +778,8 @@ namespace WebDriver.Series.Tests
         {
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
             this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 10);
-            int targetPage = 9;
+            this.NavigateToGridInitialPage(kendoGrid, 11);
+            int targetPage = 10;
             GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
             gridFilterPage.GoToPreviousPage.Click();
             this.WaitForPageToLoad(targetPage, kendoGrid);
@@ -822,14 +822,14 @@ namespace WebDriver.Series.Tests
         }
 
         [TestMethod]
-        public void NavigateToFirstPage_PreviousPageButton()
+        public void NavigateToLastPage_MorePagesNextButton()
         {
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
             this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 2);
-            int targetPage = 1;
+            this.NavigateToGridInitialPage(kendoGrid, 1);
+            int targetPage = 11;
             GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
-            gridFilterPage.GoToPreviousPage.Click();
+            gridFilterPage.NextMorePages.Click();
             this.WaitForPageToLoad(targetPage, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
@@ -837,7 +837,105 @@ namespace WebDriver.Series.Tests
             this.AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, this.testPagingItems.Count());
         }
 
-        // Add more test cases for disabled arrow buttons. + more pages button NavigateToLastPage_MorePagesNextButton, NavigateToPage10_MorePagesPreviousButton
+        [TestMethod]
+        public void NavigateToPage10_MorePagesPreviousButton()
+        {
+            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            this.InitializeInvoicesForPaging();
+            this.NavigateToGridInitialPage(kendoGrid, 11);
+            int targetPage = 1;
+            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            gridFilterPage.PreviousMorePages.Click();
+            this.WaitForPageToLoad(targetPage, kendoGrid);
+            var results = kendoGrid.GetItems<Order>();
+
+            Assert.AreEqual(this.testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
+            this.AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, this.testPagingItems.Count());
+        }
+
+        [TestMethod]
+        public void GoToFirstPageButtonDisabled_WhenFirstPageIsLoaded()
+        {
+            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            this.InitializeInvoicesForPaging();
+            this.NavigateToGridInitialPage(kendoGrid, 11);
+            int targetPage = 1;
+            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            gridFilterPage.GoToFirstPageButton.Click();
+            this.WaitForPageToLoad(targetPage, kendoGrid);
+        
+            Assert.IsFalse(gridFilterPage.GoToFirstPageButton.Enabled);
+        }
+
+        [TestMethod]
+        public void GoToPreviousPageButtonDisabled_WhenFirstPageIsLoaded()
+        {
+            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            this.InitializeInvoicesForPaging();
+            this.NavigateToGridInitialPage(kendoGrid, 11);
+            int targetPage = 1;
+            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            gridFilterPage.GoToFirstPageButton.Click();
+            this.WaitForPageToLoad(targetPage, kendoGrid);
+        
+            Assert.IsFalse(gridFilterPage.GoToPreviousPage.Enabled);
+        }
+
+        [TestMethod]
+        public void PreviousMorePagesButtonDisabled_WhenFirstPageIsLoaded()
+        {
+            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            this.InitializeInvoicesForPaging();
+            this.NavigateToGridInitialPage(kendoGrid, 11);
+            int targetPage = 1;
+            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            gridFilterPage.GoToFirstPageButton.Click();
+            this.WaitForPageToLoad(targetPage, kendoGrid);
+        
+            Assert.IsFalse(gridFilterPage.PreviousMorePages.Displayed);
+        }
+
+        [TestMethod]
+        public void GoToLastPageButtonDisabled_WhenLastPageIsLoaded()
+        {
+            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            this.InitializeInvoicesForPaging();
+            this.NavigateToGridInitialPage(kendoGrid, 1);
+            int targetPage = 11;
+            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            gridFilterPage.GoToLastPage.Click();
+            this.WaitForPageToLoad(targetPage, kendoGrid);
+
+            Assert.IsFalse(gridFilterPage.GoToLastPage.Enabled);
+        }
+
+        [TestMethod]
+        public void GoToNextPageButtonDisabled_WhenLastPageIsLoaded()
+        {
+            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            this.InitializeInvoicesForPaging();
+            this.NavigateToGridInitialPage(kendoGrid, 1);
+            int targetPage = 11;
+            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            gridFilterPage.GoToLastPage.Click();
+            this.WaitForPageToLoad(targetPage, kendoGrid);
+
+            Assert.IsFalse(gridFilterPage.GoToNextPage.Enabled);
+        }
+
+        [TestMethod]
+        public void PreviousMorePageButtonDisabled_WhenLastPageIsLoaded()
+        {
+            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            this.InitializeInvoicesForPaging();
+            this.NavigateToGridInitialPage(kendoGrid, 1);
+            int targetPage = 11;
+            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            gridFilterPage.GoToLastPage.Click();
+            this.WaitForPageToLoad(targetPage, kendoGrid);
+
+            Assert.IsFalse(gridFilterPage.PreviousMorePages.Enabled);
+        }
         
         #endregion
             
@@ -916,7 +1014,7 @@ namespace WebDriver.Series.Tests
             
         private void InitializeInvoicesForPaging()
         {
-            int totalOrders = 10;
+            int totalOrders = 11;
             if (!string.IsNullOrEmpty(this.uniqueShippingName))
             {
                 uniqueShippingName = Guid.NewGuid().ToString();
