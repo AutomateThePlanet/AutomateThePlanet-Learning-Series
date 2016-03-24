@@ -29,6 +29,12 @@ namespace WebDriver.Series.Tests.GridTestCases.Pages
         [FindsBy(How = How.XPath, Using = "//*[@id='grid']/div[3]/a[2]/span")]
         public IWebElement GoToPreviousPage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//*[@id='grid']/div[3]/ul/li[12]/a")]
+        public IWebElement NextMorePages { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//*[@id='grid']/div[3]/ul/li[2]/a")]
+        public IWebElement PreviousMorePages { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//*[@id='grid']/div[3]/ul/li[2]/a")]
         public IWebElement PageOnFirstPositionButton { get; set; }
 
