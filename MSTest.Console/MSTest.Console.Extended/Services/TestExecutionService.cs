@@ -51,6 +51,11 @@ namespace MSTest.Console.Extended.Services
                     {
                         string currentTestResultPath = this.fileSystemProvider.GetTempTrxFile();
                         string retryRunArguments = this.microsoftTestTestRunProvider.GenerateAdditionalArgumentsForFailedTestsRun(failedTests, currentTestResultPath);
+                        ////if (!string.IsNullOrEmpty(retryRunArguments))
+                        ////{
+                        ////    retryRunArguments = retryRunArguments.Replace(@"/test:*", string.Empty);
+                        ////}
+                      
                         this.log.InfoFormat("Run {0} time with arguments {1}", i + 2, retryRunArguments);
                         this.processExecutionProvider.ExecuteProcessWithAdditionalArguments(retryRunArguments);
                         this.processExecutionProvider.CurrentProcessWaitForExit();
