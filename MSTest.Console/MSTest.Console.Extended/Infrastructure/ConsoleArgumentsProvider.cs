@@ -116,12 +116,13 @@ namespace MSTest.Console.Extended.Infrastructure
             {
                 string currentValueToBeAppended = currentArgument;
                 KeyValuePair<string, string> currentArgumentPair = this.SplitArgumentNameAndValue(currentArgument);
-                if (currentArgumentPair.Key != null && currentArgumentPair.Value.Contains(" "))
+                if (currentArgumentPair.Key != null && currentArgumentPair.Value.Contains(" ") && (currentArgumentPair.Key != "test" && currentArgumentPair.Value != "*"))
                 {
                     currentValueToBeAppended = string.Concat("/", currentArgumentPair.Key, ":", "\"", currentArgumentPair.Value, "\"");
                 }
                 sb.AppendFormat("{0} ", currentValueToBeAppended);
             }
+                      
             return sb.ToString().TrimEnd();
         }
 
