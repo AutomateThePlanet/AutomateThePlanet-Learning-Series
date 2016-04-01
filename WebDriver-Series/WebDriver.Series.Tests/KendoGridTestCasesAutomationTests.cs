@@ -838,7 +838,7 @@ namespace WebDriver.Series.Tests
         }
 
         [TestMethod]
-        public void NavigateToPage10_MorePagesPreviousButton()
+        public void NavigateToPageOne_MorePagesPreviousButton()
         {
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
             this.InitializeInvoicesForPaging();
@@ -924,7 +924,7 @@ namespace WebDriver.Series.Tests
         }
 
         [TestMethod]
-        public void PreviousMorePageButtonDisabled_WhenLastPageIsLoaded()
+        public void NextMorePageButtonDisabled_WhenLastPageIsLoaded()
         {
             var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
             this.InitializeInvoicesForPaging();
