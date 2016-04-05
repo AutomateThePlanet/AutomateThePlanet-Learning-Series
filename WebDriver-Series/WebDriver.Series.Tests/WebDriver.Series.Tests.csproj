@@ -70,8 +70,17 @@
     <Compile Include="Controls\SortType.cs" />
     <Compile Include="EdgeTests\Pages\HealthyDietGeneratorPage.cs" />
     <Compile Include="Enums\FilterOperator.cs" />
+    <Compile Include="GridTestCases\GridColumnAsserter.cs" />
+    <Compile Include="GridTestCases\GridColumns.cs" />
+    <Compile Include="GridTestCases\OrderDateColumnAsserter.cs" />
+    <Compile Include="GridTestCases\FreightColumnAsserter.cs" />
+    <Compile Include="GridTestCases\GridPagerAsserter.cs" />
+    <Compile Include="GridTestCases\ShipNameColumnAsserter.cs" />
+    <Compile Include="GridTestCases\OrderIdColumnAsserter.cs" />
+    <Compile Include="GridTestCases\Pages\IGridPage.cs" />
     <Compile Include="GridTestCases\Pages\GridFilterPage.cs" />
     <Compile Include="HealthyDietMenuGeneratorTestsEdge.cs" />
+    <Compile Include="KendoGridAdvanceReuseTacticsAutomationTests.cs" />
     <Compile Include="KendoGridTestCasesAutomationTests.cs" />
     <Compile Include="KendoGridTests.cs" />
     <Compile Include="AdvancedWebDriverUsageTests.cs" />

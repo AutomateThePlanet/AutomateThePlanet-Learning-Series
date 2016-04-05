@@ -1,9 +1,10 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using WebDriver.Series.Tests.Controls;
 
 namespace WebDriver.Series.Tests.GridTestCases.Pages
 {
-    public class GridFilterPage
+    public class GridFilterPage : IGridPage
     {
         public readonly string Url = @"http://demos.telerik.com/kendo-ui/grid/filter-row";
         private readonly IWebDriver driver;
@@ -12,6 +13,14 @@ namespace WebDriver.Series.Tests.GridTestCases.Pages
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
+        }
+
+        public KendoGrid Grid 
+        {
+            get
+            {
+                return new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            }
         }
 
         [FindsBy(How = How.XPath, Using = "//*[@id='grid']/div[3]/span")]
