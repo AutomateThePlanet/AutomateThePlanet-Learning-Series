@@ -6560,6 +6560,467 @@
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="af46c0a3-a35f-4bd7-9b2c-534a2845af44"
+        name="IPurchasePromotionalCodeStrategy"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="e5f76025-933a-41dc-9928-c465d43f0bf3"
+            name="AssertPromotionalCodeDiscount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="24dda29d-321a-46f6-8503-a722a105ac86"
+            name="GetPromotionalCodeDiscountAmount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="6d0e8cfa-1c0f-4d76-9aa8-dcdbbe9f0881"
+            name="ApplyPromotionalCode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1b7e9743-17b4-4738-8f22-5f7192db0171"
+        name="DbPurchasePromotionalCodeStrategy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="6e1f5e47-b06e-4e2a-bb7c-4ce42da935fa">
+            <interfaceMoniker
+              Id="af46c0a3-a35f-4bd7-9b2c-534a2845af44"
+              LastKnownName="IPurchasePromotionalCodeStrategy"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="42d58aea-74da-4ad3-9270-b3ec8eca52dd"
+            name="ApplyPromotionalCode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e845e841-78b3-4f1d-895d-d1da6dde4d5f"
+            name="AssertPromotionalCodeDiscount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="159acf0b-a0c8-4ea9-a1c8-855a7294fbe0"
+            name="GetPromotionalCodeDiscountAmount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f06f202d-30a2-46e2-a50f-558b9ee0b342"
+        name="NullPurchasePromotionalCodeStrategy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c3fa9f21-d06d-4f31-ba74-59c57135c075">
+            <interfaceMoniker
+              Id="af46c0a3-a35f-4bd7-9b2c-534a2845af44"
+              LastKnownName="IPurchasePromotionalCodeStrategy"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f4d433fd-f1a7-4165-9e4f-4a5bbfad774f"
+            name="ApplyPromotionalCode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f8b3c4de-2e17-49d5-9f95-92af930ade19"
+            name="AssertPromotionalCodeDiscount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="3f983048-d46b-45f6-ac71-a3b7e304eb9c"
+            name="GetPromotionalCodeDiscountAmount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a0881017-e069-41d2-8b09-1e8275088da8"
+        name="UiPurchasePromotionalCodeStrategy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="d96e5575-b77d-4f63-910c-7a512d8c5244">
+            <interfaceMoniker
+              Id="af46c0a3-a35f-4bd7-9b2c-534a2845af44"
+              LastKnownName="IPurchasePromotionalCodeStrategy"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="cdc8adfb-9f68-4f74-86f4-3c15ede5e221"
+            name="ApplyPromotionalCode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="3c2d1323-76d7-46d6-a500-330106f2afec"
+            name="AssertPromotionalCodeDiscount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="114a12e6-231e-4e51-a10d-cf79762697e7"
+            name="GetPromotionalCodeDiscountAmount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a3e23ff2-29df-4427-b75f-d1a24a3afa1b"
+        name="WebServicePurchasePromotionalCodeStrategy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="cb933deb-9699-4b1a-b66e-e615d0b1ad16">
+            <interfaceMoniker
+              Id="af46c0a3-a35f-4bd7-9b2c-534a2845af44"
+              LastKnownName="IPurchasePromotionalCodeStrategy"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4ad6afe7-fe51-4b68-8813-5a2de1e882a6"
+            name="ApplyPromotionalCode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="098ed87a-aa62-46fd-9b85-e247ff3e1c9a"
+            name="AssertPromotionalCodeDiscount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="cecb4a67-482b-4f0c-afe6-eb80b8dec10c"
+            name="GetPromotionalCodeDiscountAmount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="d37c1ef9-2b34-422c-8943-e2eb684e765f"
+        name="IPurchasePromotionalCodeStrategy1"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="f4c9b30a-5140-4e42-b1e3-6b440c5733a6"
+            name="AssertPromotionalCodeDiscount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="397750e0-cf47-46d6-9b39-c464237878a7"
+            name="GetPromotionalCodeDiscountAmount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="98792137-fb14-444f-bd73-fb9180035938"
+            name="ApplyPromotionalCode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4e3eba0f-a5e8-4162-b943-c35c466ef2cc"
+        name="DbPurchasePromotionalCodeStrategy1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c1f17e5c-794f-4bca-afad-7c60ea7e0373">
+            <interfaceMoniker
+              Id="d37c1ef9-2b34-422c-8943-e2eb684e765f"
+              LastKnownName="IPurchasePromotionalCodeStrategy1"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="01c08971-928f-47da-8228-98f046230c4e"
+            name="ApplyPromotionalCode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="47e50024-cd09-42ce-9113-014c81eb3370"
+            name="AssertPromotionalCodeDiscount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="dd242cf7-d50e-4988-a39c-633a714d342f"
+            name="GetPromotionalCodeDiscountAmount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f856ba7a-e596-49ff-a49e-88526f5bd94d"
+        name="NullPurchasePromotionalCodeStrategy1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="a8bd5477-ab16-44e3-b087-c76b1a7ab2fb">
+            <interfaceMoniker
+              Id="d37c1ef9-2b34-422c-8943-e2eb684e765f"
+              LastKnownName="IPurchasePromotionalCodeStrategy1"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="3f392d6b-ffc7-4061-b110-974a081d6e9b"
+            name="ApplyPromotionalCode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="1123d45f-6045-47fd-b2aa-2f3ac73db9c2"
+            name="AssertPromotionalCodeDiscount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8d22c3be-36f6-4eab-8b21-9d94e3177401"
+            name="GetPromotionalCodeDiscountAmount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="eedd73b4-dc89-4350-87d3-a85b1c62840d"
+        name="UiPurchasePromotionalCodeStrategy1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="85cef764-ffd8-486a-b715-3f3141471a9f">
+            <interfaceMoniker
+              Id="d37c1ef9-2b34-422c-8943-e2eb684e765f"
+              LastKnownName="IPurchasePromotionalCodeStrategy1"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="1ba405cb-2818-4e9e-91e1-c773dd4f22bb"
+            name="ApplyPromotionalCode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="85738ad2-9fe8-40c6-b48c-e2a824161b05"
+            name="AssertPromotionalCodeDiscount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="12e495e1-d449-4135-9bce-4190e887c86d"
+            name="GetPromotionalCodeDiscountAmount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2f24ca99-b89a-4f81-9b0c-14233e030b77"
+        name="WebServicePurchasePromotionalCodeStrategy1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="ff36849f-35bc-41cb-bbf9-7a12ab77c94b">
+            <interfaceMoniker
+              Id="d37c1ef9-2b34-422c-8943-e2eb684e765f"
+              LastKnownName="IPurchasePromotionalCodeStrategy1"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="b45ef842-d274-4926-a865-89e7e197e87c"
+            name="ApplyPromotionalCode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="9ac979b0-9e09-4a5e-9dbb-b5e7826d42db"
+            name="AssertPromotionalCodeDiscount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="054f1201-edcf-47a3-a545-789d77169d6e"
+            name="GetPromotionalCodeDiscountAmount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2fd510af-e1ed-4c95-8a7d-7c83572ebc09"
+        name="PurchaseContext"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="076e3de1-ce01-4898-a752-d68dddd29e7d">
+            <interfaceMoniker
+              Id="d37c1ef9-2b34-422c-8943-e2eb684e765f"
+              LastKnownName="IPurchasePromotionalCodeStrategy1"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="20ad087c-f49c-4ce5-9475-bad019d7fe67"
+            name="PurchaseContext(IPurchasePromotionalCodeStrategy purchasePromotionalCodeStrategy)"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="80f1607d-8b47-4bcd-8a1e-08fd6f8e6990"
+            name="void PurchaseItem"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

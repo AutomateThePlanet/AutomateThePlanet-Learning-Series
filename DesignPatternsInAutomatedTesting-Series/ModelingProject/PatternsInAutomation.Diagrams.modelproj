@@ -78,6 +78,13 @@
       <SubType>Content</SubType>
       <DependentUpon>LinqSpecificationDesignPattern.classdiagram</DependentUpon>
     </Content>
+    <Content Include="NullObjectDesignPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="NullObjectDesignPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>NullObjectDesignPattern.classdiagram</DependentUpon>
+    </Content>
     <Content Include="ObserverDesignPattern.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -133,6 +140,13 @@
     <Content Include="StrategyDesignPattern.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>StrategyDesignPattern.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="StrategyNullObjectDesignPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="StrategyNullObjectDesignPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>StrategyNullObjectDesignPattern.classdiagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\ModelingProject1.uml">

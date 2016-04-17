@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="1be0bdec-457f-486c-931e-f51550c85c8c" name="StrategyNullObjectDesignPattern" linkedPackageId="2a782709-3d6f-4f6d-886a-07c1161e7dd4" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="b1cd0ab7-4363-4915-8d45-38dfa49482cd">
+      <profileInstance Id="d9e7bfb9-60a0-4e96-8704-7f2d7e82a100" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="cd598de1-3784-42c2-bb29-1c865486207e">
+      <profileInstance Id="ec744e25-954c-4bbf-9b78-3372988f468b" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="07da57a8-b2e9-4c61-9c33-c0bf99039b8b" name="IPurchasePromotionalCodeStrategy1" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d37c1ef9-2b34-422c-8943-e2eb684e765f" />
+        <ownedOperations>
+          <operation Id="540d12bd-cd4b-4aa4-ae30-b89097e5e8df" name="AssertPromotionalCodeDiscount" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f4c9b30a-5140-4e42-b1e3-6b440c5733a6" />
+          </operation>
+          <operation Id="e5d263ee-b104-469f-acec-7b4bc15f4b58" name="GetPromotionalCodeDiscountAmount" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="397750e0-cf47-46d6-9b39-c464237878a7" />
+          </operation>
+          <operation Id="74e6a602-6219-4bbe-a6fe-ea575f383076" name="ApplyPromotionalCode" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="98792137-fb14-444f-bd73-fb9180035938" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fbe14fd4-cdfa-4fac-8b5a-f5e020511001" name="DbPurchasePromotionalCodeStrategy1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4e3eba0f-a5e8-4162-b943-c35c466ef2cc" />
+        <suppliersInternal>
+          <interfaceRealization Id="fb5ea12c-270e-4078-9b5d-9ccfcede8cf4">
+            <interfaceMoniker Id="07da57a8-b2e9-4c61-9c33-c0bf99039b8b" LastKnownName="IPurchasePromotionalCodeStrategy1" />
+            <elementDefinition Id="c1f17e5c-794f-4bca-afad-7c60ea7e0373" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="7e4cde6c-4d33-4554-baf6-c78d82c1d4cd" name="ApplyPromotionalCode" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="01c08971-928f-47da-8228-98f046230c4e" />
+          </operation>
+          <operation Id="ecc000ef-31b0-4da1-8f53-84c3b8a05b77" name="AssertPromotionalCodeDiscount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="47e50024-cd09-42ce-9113-014c81eb3370" />
+          </operation>
+          <operation Id="e6834db6-af5e-41e6-8849-2e26828c5cbc" name="GetPromotionalCodeDiscountAmount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="dd242cf7-d50e-4988-a39c-633a714d342f" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="279edf11-a448-4e03-a8a9-40e0aa01b39a" name="NullPurchasePromotionalCodeStrategy1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f856ba7a-e596-49ff-a49e-88526f5bd94d" />
+        <suppliersInternal>
+          <interfaceRealization Id="362e04ba-227f-483b-9641-8aec6395df6c">
+            <interfaceMoniker Id="07da57a8-b2e9-4c61-9c33-c0bf99039b8b" LastKnownName="IPurchasePromotionalCodeStrategy1" />
+            <elementDefinition Id="a8bd5477-ab16-44e3-b087-c76b1a7ab2fb" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="dfb291a1-201f-4e9a-b72b-0c9fb0ce8f67" name="ApplyPromotionalCode" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3f392d6b-ffc7-4061-b110-974a081d6e9b" />
+          </operation>
+          <operation Id="26218b86-7809-4b4c-b8f9-c47a12f9f5f7" name="AssertPromotionalCodeDiscount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1123d45f-6045-47fd-b2aa-2f3ac73db9c2" />
+          </operation>
+          <operation Id="e8de179f-85ab-4c08-9ec1-4540d9110873" name="GetPromotionalCodeDiscountAmount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8d22c3be-36f6-4eab-8b21-9d94e3177401" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e2a15276-b3e1-487d-99bc-2f7fc65854a6" name="UiPurchasePromotionalCodeStrategy1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="eedd73b4-dc89-4350-87d3-a85b1c62840d" />
+        <suppliersInternal>
+          <interfaceRealization Id="a86abf6a-ef23-4eb0-909e-a3ff648e673b">
+            <interfaceMoniker Id="07da57a8-b2e9-4c61-9c33-c0bf99039b8b" LastKnownName="IPurchasePromotionalCodeStrategy1" />
+            <elementDefinition Id="85cef764-ffd8-486a-b715-3f3141471a9f" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="05f204a4-6dc9-4b74-ba96-a5853198a8bc" name="ApplyPromotionalCode" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1ba405cb-2818-4e9e-91e1-c773dd4f22bb" />
+          </operation>
+          <operation Id="cb49a854-2fc9-4c06-93f8-22418de6d996" name="AssertPromotionalCodeDiscount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="85738ad2-9fe8-40c6-b48c-e2a824161b05" />
+          </operation>
+          <operation Id="8429f7ac-c23f-40fb-b692-87f937eb358e" name="GetPromotionalCodeDiscountAmount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="12e495e1-d449-4135-9bce-4190e887c86d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2c0ba43c-5a9d-4076-877d-f17937686134" name="WebServicePurchasePromotionalCodeStrategy1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2f24ca99-b89a-4f81-9b0c-14233e030b77" />
+        <suppliersInternal>
+          <interfaceRealization Id="d28dcf06-0342-4d9c-b5b8-420ab9df80f7">
+            <interfaceMoniker Id="07da57a8-b2e9-4c61-9c33-c0bf99039b8b" LastKnownName="IPurchasePromotionalCodeStrategy1" />
+            <elementDefinition Id="ff36849f-35bc-41cb-bbf9-7a12ab77c94b" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="d83693bb-d757-4d97-94b5-3f7a6228f62c" name="ApplyPromotionalCode" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b45ef842-d274-4926-a865-89e7e197e87c" />
+          </operation>
+          <operation Id="4d0c02a0-0355-4cf3-9aa6-551be15fcc30" name="AssertPromotionalCodeDiscount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9ac979b0-9e09-4a5e-9dbb-b5e7826d42db" />
+          </operation>
+          <operation Id="3f43abff-5402-4b1c-aa75-887b6d71e561" name="GetPromotionalCodeDiscountAmount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="054f1201-edcf-47a3-a545-789d77169d6e" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8316277e-1ff6-4518-9131-6ecfe79d48ec" name="PurchaseContext" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2fd510af-e1ed-4c95-8a7d-7c83572ebc09" />
+        <suppliersInternal>
+          <dependency Id="c2425a59-5191-4011-a7d7-5d876256ea19">
+            <interfaceMoniker Id="07da57a8-b2e9-4c61-9c33-c0bf99039b8b" LastKnownName="IPurchasePromotionalCodeStrategy1" />
+            <elementDefinition Id="076e3de1-ce01-4898-a752-d68dddd29e7d" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="de7e0d25-adb5-4a0d-9a06-ef259d4de7b4" name="PurchaseContext(IPurchasePromotionalCodeStrategy purchasePromotionalCodeStrategy)" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="20ad087c-f49c-4ce5-9475-bad019d7fe67" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="d9a76ab4-ffd0-476a-88dc-8312ed96ecd1" name="void PurchaseItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="80f1607d-8b47-4bcd-8a1e-08fd6f8e6990" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="2a782709-3d6f-4f6d-886a-07c1161e7dd4" name="ModelingProject1">
+    <elementDefinition Id="71304b90-dec2-48cf-aa25-61ab4fe1335d" />
+  </package>
+</logicalClassDesignerModel>
