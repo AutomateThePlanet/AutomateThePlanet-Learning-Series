@@ -63,6 +63,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="CSharp.Series.NLog.UnitTests.licenseheader" />
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

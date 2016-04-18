@@ -67,6 +67,7 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="CSharp.Series.NLog.Tests.licenseheader" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
