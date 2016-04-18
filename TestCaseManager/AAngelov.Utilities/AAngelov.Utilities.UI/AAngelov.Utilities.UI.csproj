@@ -106,6 +106,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="AAngelov.Utilities.UI.licenseheader" />
     <None Include="app.config" />
     <None Include="Licenses\TestCaseManager.License.rtf" />
     <None Include="packages.config" />

@@ -65,31 +65,21 @@
     </Reference>
     <Reference Include="Microsoft.TeamFoundation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.TeamFoundation.Common.Library, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-
-
-
-    <Reference Include="Microsoft.TeamFoundation.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2012' OR '$(Configuration)' == 'Debug' OR '$(Configuration)' == 'Release'"/>
-    <Reference Include="Microsoft.TeamFoundation.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2012' OR '$(Configuration)' == 'Debug' OR '$(Configuration)' == 'Release'"/>
-    <Reference Include="Microsoft.TeamFoundation.TestManagement.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2012' OR '$(Configuration)' == 'Debug' OR '$(Configuration)' == 'Release'"/>
-    <Reference Include="Microsoft.TeamFoundation.TestManagement.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2012' OR '$(Configuration)' == 'Debug' OR '$(Configuration)' == 'Release'"/>
-    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2012' OR '$(Configuration)' == 'Debug' OR '$(Configuration)' == 'Release'"/>
-
-
-
-
-    <Reference Include="Microsoft.TeamFoundation.Client, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2013'"/>
-    <Reference Include="Microsoft.TeamFoundation.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2013'"/>
-    <Reference Include="Microsoft.TeamFoundation.TestManagement.Client, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2013'"/>
-    <Reference Include="Microsoft.TeamFoundation.TestManagement.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2013'"/>
-    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2013'"/>
-    <Reference Include="Microsoft.VisualStudio.Services.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2013'"/>
-    
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2012' OR '$(Configuration)' == 'Debug' OR '$(Configuration)' == 'Release'" />
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2012' OR '$(Configuration)' == 'Debug' OR '$(Configuration)' == 'Release'" />
+    <Reference Include="Microsoft.TeamFoundation.TestManagement.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2012' OR '$(Configuration)' == 'Debug' OR '$(Configuration)' == 'Release'" />
+    <Reference Include="Microsoft.TeamFoundation.TestManagement.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2012' OR '$(Configuration)' == 'Debug' OR '$(Configuration)' == 'Release'" />
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2012' OR '$(Configuration)' == 'Debug' OR '$(Configuration)' == 'Release'" />
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2013'" />
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2013'" />
+    <Reference Include="Microsoft.TeamFoundation.TestManagement.Client, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2013'" />
+    <Reference Include="Microsoft.TeamFoundation.TestManagement.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2013'" />
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2013'" />
+    <Reference Include="Microsoft.VisualStudio.Services.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'VisualStudio_2013'" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
     </Reference>
-    
-   
     <Reference Include="Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.TextTemplating.Interfaces.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.TextTemplating.Modeling.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -222,6 +212,7 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>HtmlTestCaseExportTemplate.cs</LastGenOutput>
     </None>
+    <None Include="TestCaseManagerCore.licenseheader" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

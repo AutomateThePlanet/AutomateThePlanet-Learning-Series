@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="AAngelov.Utilities.licenseheader" />
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>

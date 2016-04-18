@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="WebDriver.Series.Tests.licenseheader" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Drivers\IEDriverServer.exe" />

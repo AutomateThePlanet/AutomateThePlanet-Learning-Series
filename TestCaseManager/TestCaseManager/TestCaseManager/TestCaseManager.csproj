@@ -365,6 +365,7 @@
     </None>
     <AppDesigner Include="Properties\" />
     <None Include="Properties\Settings.settings" />
+    <None Include="TestCaseManager.licenseheader" />
     <None Include="TestCaseManager_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
