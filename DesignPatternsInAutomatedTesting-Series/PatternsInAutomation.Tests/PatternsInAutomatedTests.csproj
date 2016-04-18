@@ -381,6 +381,7 @@
   <ItemGroup>
     <None Include="PageObjectDesignPattern-Class-Diagram.cd" />
     <None Include="packages.config" />
+    <None Include="PatternsInAutomation.Tests.licenseheader" />
     <None Include="unity.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
