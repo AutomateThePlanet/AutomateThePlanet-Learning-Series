@@ -87,6 +87,7 @@
     <None Include="Exceptions.trx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="MSTest.Console.Extended.UnitTests.licenseheader" />
     <None Include="NoExceptions.trx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
