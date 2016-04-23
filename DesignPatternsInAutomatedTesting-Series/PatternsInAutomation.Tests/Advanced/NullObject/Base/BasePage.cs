@@ -29,7 +29,13 @@ namespace PatternsInAutomatedTests.Advanced.NullObject.Base
             this.driverWait = new WebDriverWait(driver, new TimeSpan(0, 0, 30));
         }
 
-        public virtual string Url { get; }
+        public virtual string Url 
+        {
+            get
+            {
+                return string.Empty;
+            }
+        }
 
         public virtual void Open(string part = "")
         {

@@ -60,7 +60,7 @@ namespace PatternsInAutomatedTests.Advanced.Strategy.Advanced.Base
         {
             foreach (var currentStrategy in orderpurchaseStrategies)
             {
-                currentStrategy.ValidateOrderSummary(itemPrice, clientPurchaseInfo);
+                currentStrategy.AssertOrderSummary(itemPrice, clientPurchaseInfo);
             }
         }
     }

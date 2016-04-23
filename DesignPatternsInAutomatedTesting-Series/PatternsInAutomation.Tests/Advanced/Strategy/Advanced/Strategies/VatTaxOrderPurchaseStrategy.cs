@@ -28,7 +28,7 @@ namespace PatternsInAutomatedTests.Advanced.Strategy.Advanced.Strategies
 
         public VatTaxCalculationService VatTaxCalculationService { get; set; }
 
-        public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
+        public void AssertOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
         {
             Countries currentCountry = (Countries)Enum.Parse(typeof(Countries), clientPurchaseInfo.BillingInfo.Country);
             decimal currentItemPrice = decimal.Parse(itemsPrice);

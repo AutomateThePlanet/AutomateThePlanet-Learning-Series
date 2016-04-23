@@ -25,7 +25,7 @@ namespace PatternsInAutomatedTests.Advanced.Strategy.Advanced.Strategies
         {
         }
 
-        public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
+        public void AssertOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
         {
             PlaceOrderPage.Instance.Validate().EstimatedTaxPrice("0.00");
         }

@@ -15,7 +15,7 @@ using OpenQA.Selenium;
 
 namespace PatternsInAutomatedTests.Advanced.NullObject.Pages.PlaceOrderPage
 {
-    public class PlaceOrderPage
+    public partial class PlaceOrderPage
     {
         public IWebElement TotalPrice
         {

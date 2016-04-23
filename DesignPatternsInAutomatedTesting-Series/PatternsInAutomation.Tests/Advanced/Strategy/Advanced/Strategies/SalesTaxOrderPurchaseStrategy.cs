@@ -29,7 +29,7 @@ namespace PatternsInAutomatedTests.Advanced.Strategy.Advanced.Strategies
 
         public SalesTaxCalculationService SalesTaxCalculationService { get; set; }
 
-        public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
+        public void AssertOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
         {
             States currentState = (States)Enum.Parse(typeof(States), clientPurchaseInfo.ShippingInfo.State);
             decimal currentItemPrice = decimal.Parse(itemsPrice);

@@ -30,7 +30,7 @@ namespace PatternsInAutomatedTests.Advanced.Strategy.Advanced.Strategies
 
         public GiftWrappingPriceCalculationService GiftWrappingPriceCalculationService { get; set; }
 
-        public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
+        public void AssertOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
         {
             decimal giftWrapPrice = this.GiftWrappingPriceCalculationService.Calculate(clientPurchaseInfo.GiftWrapping);
 

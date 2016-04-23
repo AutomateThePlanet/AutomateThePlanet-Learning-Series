@@ -121,6 +121,10 @@
     <Compile Include="Advanced\NullObject\Data\ClientAddressInfo.cs" />
     <Compile Include="Advanced\NullObject\Data\ClientLoginInfo.cs" />
     <Compile Include="Advanced\NullObject\Data\ClientPurchaseInfo.cs" />
+    <Compile Include="Advanced\NullObject\ImmutableStrategies\BasePromotionalCodeStrategy.cs" />
+    <Compile Include="Advanced\NullObject\ImmutableStrategies\DbPurchasePromotionalCodeStrategy.cs" />
+    <Compile Include="Advanced\NullObject\ImmutableStrategies\UiPurchasePromotionalCodeStrategy.cs" />
+    <Compile Include="Advanced\NullObject\ImmutableStrategies\WebServicePurchasePromotionalCodeStrategy.cs" />
     <Compile Include="Advanced\NullObject\Pages\ItemPage\ItemPage.cs" />
     <Compile Include="Advanced\NullObject\Pages\ItemPage\ItemPage.Map.cs" />
     <Compile Include="Advanced\NullObject\Pages\ItemPage\ItemPageAsserter.cs" />
@@ -135,10 +139,14 @@
     <Compile Include="Advanced\NullObject\Pages\ShippingPaymentPage\ShippingPaymentPage.Map.cs" />
     <Compile Include="Advanced\NullObject\Pages\SignInPage\SignInPage.cs" />
     <Compile Include="Advanced\NullObject\Pages\SignInPage\SignInPage.Map.cs" />
+    <Compile Include="Advanced\NullObject\SingletonStrategies\NullPurchasePromotionalCodeStrategy.cs" />
     <Compile Include="Advanced\NullObject\Strategies\NullPurchasePromotionalCodeStrategy.cs" />
     <Compile Include="Advanced\NullObject\Strategies\WebServicePurchasePromotionalCodeStrategy.cs" />
     <Compile Include="Advanced\NullObject\Strategies\DbPurchasePromotionalCodeStrategy.cs" />
     <Compile Include="Advanced\NullObject\Strategies\UiPurchasePromotionalCodeStrategy.cs" />
+    <Compile Include="Advanced\NullObject\Tests\AmazonPurchase_UnityNullObjectTests.cs" />
+    <Compile Include="Advanced\NullObject\Tests\AmazonPurchase_SingletonNullObjectTests.cs" />
+    <Compile Include="Advanced\NullObject\Tests\AmazonPurchase_ImmutableNullObjectTests.cs" />
     <Compile Include="Advanced\NullObject\Tests\AmazonPurchaseNullObjectTests.cs" />
     <Compile Include="Advanced\Observer\Advanced\DotNetEvents\BaseTest.cs" />
     <Compile Include="Advanced\Observer\Advanced\DotNetEvents\BaseTestBehaviorObserver.cs" />
