@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Copyright 2016 Automate The Planet Ltd.
+Licensed under the Apache License, Version 2.0 (the "License");
+You may not use this file except in compliance with the License.
+You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<freeStyleProject>
+  <action>
+    <parameterDefinition>
+      <defaultParameterValue>
+        <value/>
+      </defaultParameterValue>
+      <description>
+        Represents the build number generated from the TFS Build Agent.
+      </description>
+      <name>TfsBuildNumber</name>
+      <type>StringParameterDefinition</type>
+    </parameterDefinition>
+  </action>
+  <action/>
+  <description>
+    The configuration is used to build the Jenkins-CSharp-Api project and copy the generated artifacts to share directory.
+  </description>
+  <displayName>Jenkins-CSharp-Api.Parameterized</displayName>
+  <name>Jenkins-CSharp-Api.Parameterized</name>
+  <url>
+    http://localhost:8080/job/Jenkins-CSharp-Api.Parameterized/
+  </url>
+  <buildable>true</buildable>
+  <build>
+    <number>1</number>
+    <url>
+      http://localhost:8080/job/Jenkins-CSharp-Api.Parameterized/1/
+    </url>
+  </build>
+  <color>blue</color>
+  <firstBuild>
+    <number>1</number>
+    <url>
+      http://localhost:8080/job/Jenkins-CSharp-Api.Parameterized/1/
+    </url>
+  </firstBuild>
+  <healthReport>
+    <description>Build stability: No recent builds failed.</description>
+    <iconUrl>health-80plus.png</iconUrl>
+    <score>100</score>
+  </healthReport>
+  <inQueue>false</inQueue>
+  <keepDependencies>false</keepDependencies>
+  <lastBuild>
+    <number>34</number>
+    <url>
+      http://localhost:8080/job/Jenkins-CSharp-Api.Parameterized/34/
+    </url>
+  </lastBuild>
+  <lastCompletedBuild>
+    <number>34</number>
+    <url>
+      http://localhost:8080/job/Jenkins-CSharp-Api.Parameterized/34/
+    </url>
+  </lastCompletedBuild>
+  <lastStableBuild>
+    <number>34</number>
+    <url>
+      http://localhost:8080/job/Jenkins-CSharp-Api.Parameterized/34/
+    </url>
+  </lastStableBuild>
+  <lastSuccessfulBuild>
+    <number>34</number>
+    <url>
+      http://localhost:8080/job/Jenkins-CSharp-Api.Parameterized/34/
+    </url>
+  </lastSuccessfulBuild>
+  <lastUnsuccessfulBuild>
+    <number>13</number>
+    <url>
+      http://localhost:8080/job/Jenkins-CSharp-Api.Parameterized/13/
+    </url>
+  </lastUnsuccessfulBuild>
+  <nextBuildNumber>35</nextBuildNumber>
+  <property>
+    <parameterDefinition>
+      <defaultParameterValue>
+        <name>TfsBuildNumber</name>
+        <value/>
+      </defaultParameterValue>
+      <description>
+        Represents the build number generated from the TFS Build Agent.
+      </description>
+      <name>TfsBuildNumber</name>
+      <type>StringParameterDefinition</type>
+    </parameterDefinition>
+  </property>
+  <concurrentBuild>false</concurrentBuild>
+  <scm/>
+</freeStyleProject>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Copyright 2016 Automate The Planet Ltd.
+Licensed under the Apache License, Version 2.0 (the "License");
+You may not use this file except in compliance with the License.
+You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<freeStyleBuild>
+  <action>
+    <parameter>
+      <name>TfsBuildNumber</name>
+      <value>7757ae58-5ba5-4690-b49c-997779f62338</value>
+    </parameter>
+  </action>
+  <action>
+    <cause>
+      <shortDescription>Started by user anonymous</shortDescription>
+      <userName>anonymous</userName>
+    </cause>
+  </action>
+  <action>
+    <buildsByBranchName>
+      <originmaster>
+        <buildNumber>34</buildNumber>
+        <marked>
+          <SHA1>8ef914109ab7c6a8f9c7cc6c9f476a8bcac634dd</SHA1>
+          <branch>
+            <SHA1>8ef914109ab7c6a8f9c7cc6c9f476a8bcac634dd</SHA1>
+            <name>origin/master</name>
+          </branch>
+        </marked>
+        <revision>
+          <SHA1>8ef914109ab7c6a8f9c7cc6c9f476a8bcac634dd</SHA1>
+          <branch>
+            <SHA1>8ef914109ab7c6a8f9c7cc6c9f476a8bcac634dd</SHA1>
+            <name>origin/master</name>
+          </branch>
+        </revision>
+      </originmaster>
+    </buildsByBranchName>
+    <lastBuiltRevision>
+      <SHA1>8ef914109ab7c6a8f9c7cc6c9f476a8bcac634dd</SHA1>
+      <branch>
+        <SHA1>8ef914109ab7c6a8f9c7cc6c9f476a8bcac634dd</SHA1>
+        <name>origin/master</name>
+      </branch>
+    </lastBuiltRevision>
+    <scmName/>
+  </action>
+  <action/>
+  <action/>
+  <action/>
+  <action/>
+  <building>false</building>
+  <duration>14477</duration>
+  <estimatedDuration>15959</estimatedDuration>
+  <fullDisplayName>
+    Jenkins-CSharp-Api.Parameterized 7757ae58-5ba5-4690-b49c-997779f62338_Jenkins-CSharp-Api
+  </fullDisplayName>
+  <id>2014-08-05_07-55-13</id>
+  <keepLog>false</keepLog>
+  <number>34</number>
+  <result>SUCCESS</result>
+  <timestamp>1407225313323</timestamp>
+  <url>
+    http://localhost:8080/job/Jenkins-CSharp-Api.Parameterized/34/
+  </url>
+  <builtOn/>
+  <changeSet>
+    <kind>git</kind>
+  </changeSet>
+</freeStyleBuild>
