@@ -3,9 +3,110 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriver.Series.Tests", "WebDriver.Series.Tests\WebDriver.Series.Tests.csproj", "{C63E8E59-BD61-4A41-9039-BB5C16422D23}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Getting Started with WebDriver CSharp in 10 Minutes", "1. Getting Started with WebDriver CSharp in 10 Minutes", "{72C5F509-1F8B-4DF4-B76A-1CBCF0B6E924}"
+	ProjectSection(SolutionItems) = preProject
+		readme-1.txt = readme-1.txt
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriver.Tools", "WebDriver.Tools\WebDriver.Tools.csproj", "{DF4FC3D9-A5A6-4855-BAC4-7CD3B10F52D1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Most Underrated WebDriver Locator – XPath", "2. Most Underrated WebDriver Locator – XPath", "{9581A39C-C842-4E83-B573-FC7A6437ECDB}"
+	ProjectSection(SolutionItems) = preProject
+		readme-2.txt = readme-2.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. WebDriver Selenium Tor Integration CSharp Code", "3. WebDriver Selenium Tor Integration CSharp Code", "{EB810675-2136-41E0-A8D1-98726AC7365C}"
+	ProjectSection(SolutionItems) = preProject
+		readme-3.txt = readme-3.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Test URL Redirects with WebDriver and HttpWebRequest", "4. Test URL Redirects with WebDriver and HttpWebRequest", "{BE01D5B9-5072-4C37-9378-7E310354C1C4}"
+	ProjectSection(SolutionItems) = preProject
+		readme-4.txt = readme-4.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Microsoft Edge WebDriver- What Everybody Ought to Know About", "5. Microsoft Edge WebDriver- What Everybody Ought to Know About", "{9BE3D20D-40CB-4C1A-A689-42A066D66DE9}"
+	ProjectSection(SolutionItems) = preProject
+		readme-5.txt = readme-5.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Speed up Selenium Tests through RAM Facts and Myths", "6. Speed up Selenium Tests through RAM Facts and Myths", "{059A76F8-9555-4AF6-B768-44ABEE248CAA}"
+	ProjectSection(SolutionItems) = preProject
+		readme-6.txt = readme-6.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Automate Telerik Kendo Grid with WebDriver and JavaScript", "7. Automate Telerik Kendo Grid with WebDriver and JavaScript", "{DD666112-9F80-4218-B544-69F9394CD683}"
+	ProjectSection(SolutionItems) = preProject
+		readme-7.txt = readme-7.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. Create Custom Selenium IDE Export to WebDriver", "8. Create Custom Selenium IDE Export to WebDriver", "{BA40A9A7-A335-49A9-B4B8-14255D34BF9E}"
+	ProjectSection(SolutionItems) = preProject
+		readme-8.txt = readme-8.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9. 10 Advanced WebDriver Tips and Tricks Part 1", "9. 10 Advanced WebDriver Tips and Tricks Part 1", "{7EFD7458-6993-459F-8958-DB35B30D57B1}"
+	ProjectSection(SolutionItems) = preProject
+		readme-9.txt = readme-9.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. 10 Advanced WebDriver Tips and Tricks Part 2", "10. 10 Advanced WebDriver Tips and Tricks Part 2", "{FA877A2E-835E-4F35-B5F8-E78C5E405BD6}"
+	ProjectSection(SolutionItems) = preProject
+		readme-10.txt = readme-10.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11. 10 Advanced WebDriver Tips and Tricks Part 3", "11. 10 Advanced WebDriver Tips and Tricks Part 3", "{50D4B201-0978-42AC-A6FC-D44A33060B87}"
+	ProjectSection(SolutionItems) = preProject
+		readme-11.txt = readme-11.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12. Design Grid Control Automated Tests Part 1", "12. Design Grid Control Automated Tests Part 1", "{BD1EDA00-D9F7-49A6-8FAC-1F2188A74D9E}"
+	ProjectSection(SolutionItems) = preProject
+		readme-12.txt = readme-12.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13. Design Grid Control Automated Tests Part 2", "13. Design Grid Control Automated Tests Part 2", "{55FB2BDB-5B1B-4724-95EA-B1F05D7D8110}"
+	ProjectSection(SolutionItems) = preProject
+		readme-13.txt = readme-13.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14. Design Grid Control Automated Tests Part 3", "14. Design Grid Control Automated Tests Part 3", "{E5F61708-F394-4D48-B394-DAB96364190D}"
+	ProjectSection(SolutionItems) = preProject
+		readme-14.txt = readme-14.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15. Advanced Reuse Tactics for Grid Controls Automated Tests", "15. Advanced Reuse Tactics for Grid Controls Automated Tests", "{079FED77-7D65-4E26-84FF-7C4D8B4F9DEA}"
+	ProjectSection(SolutionItems) = preProject
+		readme-15.txt = readme-15.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedWebDriverTipsTricksPartTwo", "AdvancedWebDriverTipsTricksPartTwo\AdvancedWebDriverTipsTricksPartTwo.csproj", "{BEE6D32A-A7B7-470A-9801-F8A5AE3D8AD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedWebDriverTipsTricksPartThree", "AdvancedWebDriverTipsTricksPartThree\AdvancedWebDriverTipsTricksPartThree.csproj", "{12807D16-85A9-4B49-9061-0E15D79F016B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignGridControlAutomatedTestsPartOne", "DesignGridControlAutomatedTestsPartOne\DesignGridControlAutomatedTestsPartOne.csproj", "{E053E1B2-3ABC-4D7C-801F-255260DE0927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignGridControlAutomatedTestsPartTwo", "DesignGridControlAutomatedTestsPartTwo\DesignGridControlAutomatedTestsPartTwo.csproj", "{A638D41B-EE9E-4F5D-A451-EE72B1903BE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignGridControlAutomatedTestsPartThree", "DesignGridControlAutomatedTestsPartThree\DesignGridControlAutomatedTestsPartThree.csproj", "{3E99C3F8-06C4-490B-BA7D-36B1BCBA06E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedReuseTacticsGridControlsAutomatedTests", "AdvancedReuseTacticsGridControlsAutomatedTests\AdvancedReuseTacticsGridControlsAutomatedTests.csproj", "{9ECD8690-17B0-412B-AF6D-05E5CE4B19B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MostUnderratedWebDriverLocatorXPath", "MostUnderratedWebDriverLocatorXPath\MostUnderratedWebDriverLocatorXPath.csproj", "{85335026-247B-46ED-A2A6-AAAE615284FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverSeleniumTorIntegration", "WebDriverSeleniumTorIntegration\WebDriverSeleniumTorIntegration.csproj", "{131AA02E-06C4-4DB6-8B75-13ABFE0C72F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUrlRedirectsWebDriverHttpWebRequest", "TestUrlRedirectsWebDriverHttpWebRequest\TestUrlRedirectsWebDriverHttpWebRequest.csproj", "{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout", "MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout\MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout.csproj", "{4020385F-C2BF-451E-B118-B7E4BC8930A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedUpSeleniumTestsRamFactsMyths", "SpeedUpSeleniumTestsRamFactsMyths\SpeedUpSeleniumTestsRamFactsMyths.csproj", "{C9E9FCFA-4DDC-4A53-90BF-723C60AA165C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomateTelerikKendoGridWebDriverJavaScript", "AutomateTelerikKendoGridWebDriverJavaScript\AutomateTelerikKendoGridWebDriverJavaScript.csproj", "{09F6304D-805B-4A92-82AF-24F6F297EF36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedWebDriverTipsTricksPartOne", "AdvancedWebDriverTipsTricksPartOne\AdvancedWebDriverTipsTricksPartOne.csproj", "{72C27BC0-C747-45CF-998A-09989842F019}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonComponents", "CommonComponents", "{875B8A5D-165C-4FF6-8D55-DD08474228AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ui.Automation.Core.Controls", "Ui.Automation.Core.Controls\Ui.Automation.Core.Controls.csproj", "{0FCF9CA2-F3DF-4090-B9DB-6D2AB01EC094}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +114,80 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C63E8E59-BD61-4A41-9039-BB5C16422D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C63E8E59-BD61-4A41-9039-BB5C16422D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C63E8E59-BD61-4A41-9039-BB5C16422D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C63E8E59-BD61-4A41-9039-BB5C16422D23}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF4FC3D9-A5A6-4855-BAC4-7CD3B10F52D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF4FC3D9-A5A6-4855-BAC4-7CD3B10F52D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF4FC3D9-A5A6-4855-BAC4-7CD3B10F52D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF4FC3D9-A5A6-4855-BAC4-7CD3B10F52D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEE6D32A-A7B7-470A-9801-F8A5AE3D8AD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE6D32A-A7B7-470A-9801-F8A5AE3D8AD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE6D32A-A7B7-470A-9801-F8A5AE3D8AD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE6D32A-A7B7-470A-9801-F8A5AE3D8AD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12807D16-85A9-4B49-9061-0E15D79F016B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12807D16-85A9-4B49-9061-0E15D79F016B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12807D16-85A9-4B49-9061-0E15D79F016B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12807D16-85A9-4B49-9061-0E15D79F016B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E053E1B2-3ABC-4D7C-801F-255260DE0927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E053E1B2-3ABC-4D7C-801F-255260DE0927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E053E1B2-3ABC-4D7C-801F-255260DE0927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E053E1B2-3ABC-4D7C-801F-255260DE0927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A638D41B-EE9E-4F5D-A451-EE72B1903BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A638D41B-EE9E-4F5D-A451-EE72B1903BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A638D41B-EE9E-4F5D-A451-EE72B1903BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A638D41B-EE9E-4F5D-A451-EE72B1903BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E99C3F8-06C4-490B-BA7D-36B1BCBA06E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E99C3F8-06C4-490B-BA7D-36B1BCBA06E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E99C3F8-06C4-490B-BA7D-36B1BCBA06E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E99C3F8-06C4-490B-BA7D-36B1BCBA06E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ECD8690-17B0-412B-AF6D-05E5CE4B19B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ECD8690-17B0-412B-AF6D-05E5CE4B19B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ECD8690-17B0-412B-AF6D-05E5CE4B19B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ECD8690-17B0-412B-AF6D-05E5CE4B19B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85335026-247B-46ED-A2A6-AAAE615284FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85335026-247B-46ED-A2A6-AAAE615284FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85335026-247B-46ED-A2A6-AAAE615284FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85335026-247B-46ED-A2A6-AAAE615284FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{131AA02E-06C4-4DB6-8B75-13ABFE0C72F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{131AA02E-06C4-4DB6-8B75-13ABFE0C72F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{131AA02E-06C4-4DB6-8B75-13ABFE0C72F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{131AA02E-06C4-4DB6-8B75-13ABFE0C72F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4020385F-C2BF-451E-B118-B7E4BC8930A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4020385F-C2BF-451E-B118-B7E4BC8930A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4020385F-C2BF-451E-B118-B7E4BC8930A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4020385F-C2BF-451E-B118-B7E4BC8930A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E9FCFA-4DDC-4A53-90BF-723C60AA165C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E9FCFA-4DDC-4A53-90BF-723C60AA165C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E9FCFA-4DDC-4A53-90BF-723C60AA165C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E9FCFA-4DDC-4A53-90BF-723C60AA165C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09F6304D-805B-4A92-82AF-24F6F297EF36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09F6304D-805B-4A92-82AF-24F6F297EF36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09F6304D-805B-4A92-82AF-24F6F297EF36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09F6304D-805B-4A92-82AF-24F6F297EF36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72C27BC0-C747-45CF-998A-09989842F019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C27BC0-C747-45CF-998A-09989842F019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72C27BC0-C747-45CF-998A-09989842F019}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72C27BC0-C747-45CF-998A-09989842F019}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FCF9CA2-F3DF-4090-B9DB-6D2AB01EC094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FCF9CA2-F3DF-4090-B9DB-6D2AB01EC094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FCF9CA2-F3DF-4090-B9DB-6D2AB01EC094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FCF9CA2-F3DF-4090-B9DB-6D2AB01EC094}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BEE6D32A-A7B7-470A-9801-F8A5AE3D8AD9} = {FA877A2E-835E-4F35-B5F8-E78C5E405BD6}
+		{12807D16-85A9-4B49-9061-0E15D79F016B} = {50D4B201-0978-42AC-A6FC-D44A33060B87}
+		{E053E1B2-3ABC-4D7C-801F-255260DE0927} = {BD1EDA00-D9F7-49A6-8FAC-1F2188A74D9E}
+		{A638D41B-EE9E-4F5D-A451-EE72B1903BE6} = {55FB2BDB-5B1B-4724-95EA-B1F05D7D8110}
+		{3E99C3F8-06C4-490B-BA7D-36B1BCBA06E8} = {E5F61708-F394-4D48-B394-DAB96364190D}
+		{9ECD8690-17B0-412B-AF6D-05E5CE4B19B1} = {079FED77-7D65-4E26-84FF-7C4D8B4F9DEA}
+		{85335026-247B-46ED-A2A6-AAAE615284FC} = {9581A39C-C842-4E83-B573-FC7A6437ECDB}
+		{131AA02E-06C4-4DB6-8B75-13ABFE0C72F8} = {EB810675-2136-41E0-A8D1-98726AC7365C}
+		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6} = {BE01D5B9-5072-4C37-9378-7E310354C1C4}
+		{4020385F-C2BF-451E-B118-B7E4BC8930A9} = {9BE3D20D-40CB-4C1A-A689-42A066D66DE9}
+		{C9E9FCFA-4DDC-4A53-90BF-723C60AA165C} = {059A76F8-9555-4AF6-B768-44ABEE248CAA}
+		{09F6304D-805B-4A92-82AF-24F6F297EF36} = {DD666112-9F80-4218-B544-69F9394CD683}
+		{72C27BC0-C747-45CF-998A-09989842F019} = {7EFD7458-6993-459F-8958-DB35B30D57B1}
+		{0FCF9CA2-F3DF-4090-B9DB-6D2AB01EC094} = {875B8A5D-165C-4FF6-8D55-DD08474228AE}
 	EndGlobalSection
 EndGlobal

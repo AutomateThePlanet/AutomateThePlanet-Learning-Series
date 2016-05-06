@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestStudio.Series.Tests", "TestStudio.Series.Tests\TestStudio.Series.Tests.csproj", "{72A608FF-6C88-472E-B015-97A92520BEB2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Getting Started with Telerik Testing Framework CSharp in 10 Minutes", "1. Getting Started with Telerik Testing Framework CSharp in 10 Minutes", "{3E2F8B66-A339-4E21-BDA5-B48C59D09F2C}"
+	ProjectSection(SolutionItems) = preProject
+		readme-1.txt = readme-1.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Advanced Web UI Components Automation with Telerik Testing Framework", "2. Advanced Web UI Components Automation with Telerik Testing Framework", "{EE0224C8-CD32-4117-B24F-1395FD396C76}"
+	ProjectSection(SolutionItems) = preProject
+		readme-2.txt = readme-2.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStartedTelerikTestingFramework", "GettingStartedTelerikTestingFramework\GettingStartedTelerikTestingFramework.csproj", "{6976EFCB-A2D5-4194-AD4A-BED4804B4731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedWebUiComponentsAutomation", "AdvancedWebUiComponentsAutomation\AdvancedWebUiComponentsAutomation.csproj", "{6BD37747-2D09-4723-B515-A22FB142440E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +23,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{72A608FF-6C88-472E-B015-97A92520BEB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72A608FF-6C88-472E-B015-97A92520BEB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72A608FF-6C88-472E-B015-97A92520BEB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{72A608FF-6C88-472E-B015-97A92520BEB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6976EFCB-A2D5-4194-AD4A-BED4804B4731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6976EFCB-A2D5-4194-AD4A-BED4804B4731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6976EFCB-A2D5-4194-AD4A-BED4804B4731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6976EFCB-A2D5-4194-AD4A-BED4804B4731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BD37747-2D09-4723-B515-A22FB142440E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BD37747-2D09-4723-B515-A22FB142440E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BD37747-2D09-4723-B515-A22FB142440E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BD37747-2D09-4723-B515-A22FB142440E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6976EFCB-A2D5-4194-AD4A-BED4804B4731} = {3E2F8B66-A339-4E21-BDA5-B48C59D09F2C}
+		{6BD37747-2D09-4723-B515-A22FB142440E} = {EE0224C8-CD32-4117-B24F-1395FD396C76}
 	EndGlobalSection
 EndGlobal

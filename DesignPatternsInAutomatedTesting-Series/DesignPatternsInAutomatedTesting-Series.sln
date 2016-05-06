@@ -3,9 +3,147 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternsInAutomatedTests", "PatternsInAutomation.Tests\PatternsInAutomatedTests.csproj", "{8E4E4E04-3409-4454-998A-38BCBE3779CF}"
-EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "PatternsInAutomation.Diagrams", "ModelingProject\PatternsInAutomation.Diagrams.modelproj", "{FCA718C0-DE23-40B4-832B-4F67C176ECD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Page Object Pattern", "1. Page Object Pattern", "{3194CD1C-2DE7-405A-B71B-4D1169FB771B}"
+	ProjectSection(SolutionItems) = preProject
+		readme-1.txt = readme-1.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Advanced Page Object Pattern", "2. Advanced Page Object Pattern", "{2072D630-717C-4CE2-AFBF-C2477BC62B09}"
+	ProjectSection(SolutionItems) = preProject
+		readme-2.txt = readme-2.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Facade Design Pattern", "3. Facade Design Pattern", "{5E7E9B3B-C608-4E5F-AC35-0657C70B3D3B}"
+	ProjectSection(SolutionItems) = preProject
+		readme-3.txt = readme-3.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Singleton Design Pattern", "4. Singleton Design Pattern", "{A4C9D588-E57E-4806-A358-CB94B6F5971E}"
+	ProjectSection(SolutionItems) = preProject
+		readme-4.txt = readme-4.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Fluent Page Object Pattern", "5. Fluent Page Object Pattern", "{8F1893E3-2A8E-4DF9-8D38-306C7CF3B9C7}"
+	ProjectSection(SolutionItems) = preProject
+		readme-5.txt = readme-5.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Strategy Design Pattern", "7. Strategy Design Pattern", "{4ACE4C59-44D6-4CF0-986A-F3547F1FE35D}"
+	ProjectSection(SolutionItems) = preProject
+		readme-7.txt = readme-7.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Use IoC Container to Create Page Object Pattern on Steroids", "6. Use IoC Container to Create Page Object Pattern on Steroids", "{E818F106-1269-4902-9D18-7FDD18AD92E7}"
+	ProjectSection(SolutionItems) = preProject
+		readme-6.txt = readme-6.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. Advanced Strategy Design Pattern", "8. Advanced Strategy Design Pattern", "{AB9EB7CA-19F0-469E-96A3-98DF48A4A77B}"
+	ProjectSection(SolutionItems) = preProject
+		readme-8.txt = readme-8.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9. Observer Design Pattern Classic Implementation", "9. Observer Design Pattern Classic Implementation", "{CEDA2F41-5635-4B8B-8947-1467F0B1DB78}"
+	ProjectSection(SolutionItems) = preProject
+		readme-9.txt = readme-9.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. Advanced Observer Design Pattern via Events and Delegates", "10. Advanced Observer Design Pattern via Events and Delegates", "{9A034945-F386-4354-8133-E1E6C2AF1CD4}"
+	ProjectSection(SolutionItems) = preProject
+		readme-10.txt = readme-10.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11. Advanced Observer Design Pattern via IObservable and IObserver", "11. Advanced Observer Design Pattern via IObservable and IObserver", "{E613FDCB-E16F-4A07-BEA8-0F84129D328D}"
+	ProjectSection(SolutionItems) = preProject
+		readme-11.txt = readme-11.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12. Decorator Design Pattern", "12. Decorator Design Pattern", "{E24707DD-491C-452D-A350-E804B7D71154}"
+	ProjectSection(SolutionItems) = preProject
+		readme-12.txt = readme-12.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13. Page Objects That Make Code More Maintainable", "13. Page Objects That Make Code More Maintainable", "{F0390107-D10F-4402-95D9-B8145B704D2E}"
+	ProjectSection(SolutionItems) = preProject
+		readme-13.txt = readme-13.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14. Improved Facade Design Pattern in Automated Testing v.2.0", "14. Improved Facade Design Pattern in Automated Testing v.2.0", "{1A2E2858-CC92-4749-A5E9-455CF555B88A}"
+	ProjectSection(SolutionItems) = preProject
+		readme-14.txt = readme-14.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15. 3 Design Patterns for More Reliable and Maintainable UI Tests", "15. 3 Design Patterns for More Reliable and Maintainable UI Tests", "{668338FD-B2E2-4F4C-8762-CDB087DC0D08}"
+	ProjectSection(SolutionItems) = preProject
+		readme-15.txt = readme-15.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16. Rules Design Pattern", "16. Rules Design Pattern", "{32440FE3-BAA7-4C32-A32A-35B58C744366}"
+	ProjectSection(SolutionItems) = preProject
+		readme-16.txt = readme-16.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "17. Specification Design Pattern", "17. Specification Design Pattern", "{8A954674-D8DA-40C5-91D6-39DC25D217FD}"
+	ProjectSection(SolutionItems) = preProject
+		readme-17.txt = readme-17.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18. Advanced Specification Design Pattern", "18. Advanced Specification Design Pattern", "{BFFA8964-091C-4B02-87CE-332B0BA43A6B}"
+	ProjectSection(SolutionItems) = preProject
+		readme-18.txt = readme-18.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19. Null Object Design Pattern", "19. Null Object Design Pattern", "{42FAAF41-B24C-4F1B-A130-4C9EE362C2A5}"
+	ProjectSection(SolutionItems) = preProject
+		readme-19.txt = readme-19.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20. Advanced Null Object Design Pattern", "20. Advanced Null Object Design Pattern", "{2F916E39-898B-4959-88C5-45B2F4796F04}"
+	ProjectSection(SolutionItems) = preProject
+		readme-20.txt = readme-20.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjectPattern", "PageObjectPattern\PageObjectPattern.csproj", "{E2DAC66D-8902-44E7-B58A-F6F36F10E7F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverDesignPatternEventsDelegates", "ObserverDesignPatternEventsDelegates\ObserverDesignPatternEventsDelegates.csproj", "{8AE9436D-6FBC-4FC4-AB43-0D2362CC19F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverDesignPatternIObservableIObserver", "ObserverDesignPatternIObservableIObserver\ObserverDesignPatternIObservableIObserver.csproj", "{E6C9E85B-5B40-421A-917E-6560DA8F1F6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecoratorDesignPattern", "DecoratorDesignPattern\DecoratorDesignPattern.csproj", "{23D9D3B5-F143-4636-AE81-05AA54B67206}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjectsThatMakeCodeMoreMaintainable", "PageObjectsThatMakeCodeMoreMaintainable\PageObjectsThatMakeCodeMoreMaintainable.csproj", "{96238C7D-5D7F-4E23-B27B-CEE8701BFB2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImprovedFacadeDesignPattern", "ImprovedFacadeDesignPattern\ImprovedFacadeDesignPattern.csproj", "{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternsMoreReliableMaintainableTests", "DesignPatternsMoreReliableMaintainableTests\DesignPatternsMoreReliableMaintainableTests.csproj", "{D6C345CE-4ED5-4183-8926-FDA4C3E216D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesDesignPattern", "RulesDesignPattern\RulesDesignPattern.csproj", "{8DBA9D92-C1A3-4119-A3FE-21EECBFF5547}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecificationDesignPattern", "SpecificationDesignPattern\SpecificationDesignPattern.csproj", "{9977A596-DC0C-48DE-BA07-7569F785CDDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedSpecificationDesignPattern", "AdvancedSpecificationDesignPattern\AdvancedSpecificationDesignPattern.csproj", "{D5808084-B5C1-40AE-A719-86F8FE5236CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullObjectDesignPattern", "NullObjectDesignPattern\NullObjectDesignPattern.csproj", "{91855084-EE96-4142-B077-E21641510C11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedPageObjectPattern", "AdvancedPageObjectPattern\AdvancedPageObjectPattern.csproj", "{B71F29E4-72B9-4574-A541-5EBCB75DB015}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedNullObjectDesignPattern", "AdvancedNullObjectDesignPattern\AdvancedNullObjectDesignPattern.csproj", "{8F2514CF-7A09-4B41-8D6C-540F5510EB57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacadeDesignPattern", "FacadeDesignPattern\FacadeDesignPattern.csproj", "{DD556336-0B90-40AC-A37A-69350AD818AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonDesignPattern", "SingletonDesignPattern\SingletonDesignPattern.csproj", "{D30E4E7B-2FA2-4D72-B95E-FAE09C61DCFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentPageObjectPattern", "FluentPageObjectPattern\FluentPageObjectPattern.csproj", "{B807855A-54AF-4375-BF7A-4770ABE528C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCContainerPageObjectPattern", "IoCContainerPageObjectPattern\IoCContainerPageObjectPattern.csproj", "{54CC1029-406A-41F8-8106-A446CD8A5C34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyDesignPattern", "StrategyDesignPattern\StrategyDesignPattern.csproj", "{0D5EFFD7-3780-428F-AE51-16F91C806EB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedStrategyDesignPattern", "AdvancedStrategyDesignPattern\AdvancedStrategyDesignPattern.csproj", "{D26D6A4D-5BF8-48F1-BA1C-AFE9477A0843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverDesignPatternClassicImplementation", "ObserverDesignPatternClassicImplementation\ObserverDesignPatternClassicImplementation.csproj", "{7B431CFE-EDC5-410B-81FE-7CC937972013}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +151,114 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8E4E4E04-3409-4454-998A-38BCBE3779CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E4E4E04-3409-4454-998A-38BCBE3779CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E4E4E04-3409-4454-998A-38BCBE3779CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E4E4E04-3409-4454-998A-38BCBE3779CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FCA718C0-DE23-40B4-832B-4F67C176ECD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FCA718C0-DE23-40B4-832B-4F67C176ECD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCA718C0-DE23-40B4-832B-4F67C176ECD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCA718C0-DE23-40B4-832B-4F67C176ECD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2DAC66D-8902-44E7-B58A-F6F36F10E7F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2DAC66D-8902-44E7-B58A-F6F36F10E7F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2DAC66D-8902-44E7-B58A-F6F36F10E7F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2DAC66D-8902-44E7-B58A-F6F36F10E7F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AE9436D-6FBC-4FC4-AB43-0D2362CC19F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AE9436D-6FBC-4FC4-AB43-0D2362CC19F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AE9436D-6FBC-4FC4-AB43-0D2362CC19F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AE9436D-6FBC-4FC4-AB43-0D2362CC19F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6C9E85B-5B40-421A-917E-6560DA8F1F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6C9E85B-5B40-421A-917E-6560DA8F1F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6C9E85B-5B40-421A-917E-6560DA8F1F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6C9E85B-5B40-421A-917E-6560DA8F1F6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23D9D3B5-F143-4636-AE81-05AA54B67206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D9D3B5-F143-4636-AE81-05AA54B67206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D9D3B5-F143-4636-AE81-05AA54B67206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23D9D3B5-F143-4636-AE81-05AA54B67206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96238C7D-5D7F-4E23-B27B-CEE8701BFB2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96238C7D-5D7F-4E23-B27B-CEE8701BFB2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96238C7D-5D7F-4E23-B27B-CEE8701BFB2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96238C7D-5D7F-4E23-B27B-CEE8701BFB2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6C345CE-4ED5-4183-8926-FDA4C3E216D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C345CE-4ED5-4183-8926-FDA4C3E216D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C345CE-4ED5-4183-8926-FDA4C3E216D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C345CE-4ED5-4183-8926-FDA4C3E216D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DBA9D92-C1A3-4119-A3FE-21EECBFF5547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DBA9D92-C1A3-4119-A3FE-21EECBFF5547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DBA9D92-C1A3-4119-A3FE-21EECBFF5547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DBA9D92-C1A3-4119-A3FE-21EECBFF5547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9977A596-DC0C-48DE-BA07-7569F785CDDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9977A596-DC0C-48DE-BA07-7569F785CDDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9977A596-DC0C-48DE-BA07-7569F785CDDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9977A596-DC0C-48DE-BA07-7569F785CDDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5808084-B5C1-40AE-A719-86F8FE5236CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5808084-B5C1-40AE-A719-86F8FE5236CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5808084-B5C1-40AE-A719-86F8FE5236CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5808084-B5C1-40AE-A719-86F8FE5236CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91855084-EE96-4142-B077-E21641510C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91855084-EE96-4142-B077-E21641510C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91855084-EE96-4142-B077-E21641510C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91855084-EE96-4142-B077-E21641510C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B71F29E4-72B9-4574-A541-5EBCB75DB015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B71F29E4-72B9-4574-A541-5EBCB75DB015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B71F29E4-72B9-4574-A541-5EBCB75DB015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B71F29E4-72B9-4574-A541-5EBCB75DB015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F2514CF-7A09-4B41-8D6C-540F5510EB57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F2514CF-7A09-4B41-8D6C-540F5510EB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F2514CF-7A09-4B41-8D6C-540F5510EB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F2514CF-7A09-4B41-8D6C-540F5510EB57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD556336-0B90-40AC-A37A-69350AD818AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD556336-0B90-40AC-A37A-69350AD818AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD556336-0B90-40AC-A37A-69350AD818AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD556336-0B90-40AC-A37A-69350AD818AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D30E4E7B-2FA2-4D72-B95E-FAE09C61DCFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D30E4E7B-2FA2-4D72-B95E-FAE09C61DCFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D30E4E7B-2FA2-4D72-B95E-FAE09C61DCFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D30E4E7B-2FA2-4D72-B95E-FAE09C61DCFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B807855A-54AF-4375-BF7A-4770ABE528C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B807855A-54AF-4375-BF7A-4770ABE528C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B807855A-54AF-4375-BF7A-4770ABE528C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B807855A-54AF-4375-BF7A-4770ABE528C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54CC1029-406A-41F8-8106-A446CD8A5C34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54CC1029-406A-41F8-8106-A446CD8A5C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54CC1029-406A-41F8-8106-A446CD8A5C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54CC1029-406A-41F8-8106-A446CD8A5C34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D5EFFD7-3780-428F-AE51-16F91C806EB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D5EFFD7-3780-428F-AE51-16F91C806EB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D5EFFD7-3780-428F-AE51-16F91C806EB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D5EFFD7-3780-428F-AE51-16F91C806EB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D26D6A4D-5BF8-48F1-BA1C-AFE9477A0843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D26D6A4D-5BF8-48F1-BA1C-AFE9477A0843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D26D6A4D-5BF8-48F1-BA1C-AFE9477A0843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D26D6A4D-5BF8-48F1-BA1C-AFE9477A0843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B431CFE-EDC5-410B-81FE-7CC937972013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B431CFE-EDC5-410B-81FE-7CC937972013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B431CFE-EDC5-410B-81FE-7CC937972013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B431CFE-EDC5-410B-81FE-7CC937972013}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E2DAC66D-8902-44E7-B58A-F6F36F10E7F1} = {3194CD1C-2DE7-405A-B71B-4D1169FB771B}
+		{8AE9436D-6FBC-4FC4-AB43-0D2362CC19F3} = {9A034945-F386-4354-8133-E1E6C2AF1CD4}
+		{E6C9E85B-5B40-421A-917E-6560DA8F1F6E} = {E613FDCB-E16F-4A07-BEA8-0F84129D328D}
+		{23D9D3B5-F143-4636-AE81-05AA54B67206} = {E24707DD-491C-452D-A350-E804B7D71154}
+		{96238C7D-5D7F-4E23-B27B-CEE8701BFB2A} = {F0390107-D10F-4402-95D9-B8145B704D2E}
+		{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4} = {1A2E2858-CC92-4749-A5E9-455CF555B88A}
+		{D6C345CE-4ED5-4183-8926-FDA4C3E216D6} = {668338FD-B2E2-4F4C-8762-CDB087DC0D08}
+		{8DBA9D92-C1A3-4119-A3FE-21EECBFF5547} = {32440FE3-BAA7-4C32-A32A-35B58C744366}
+		{9977A596-DC0C-48DE-BA07-7569F785CDDB} = {8A954674-D8DA-40C5-91D6-39DC25D217FD}
+		{D5808084-B5C1-40AE-A719-86F8FE5236CA} = {BFFA8964-091C-4B02-87CE-332B0BA43A6B}
+		{91855084-EE96-4142-B077-E21641510C11} = {42FAAF41-B24C-4F1B-A130-4C9EE362C2A5}
+		{B71F29E4-72B9-4574-A541-5EBCB75DB015} = {2072D630-717C-4CE2-AFBF-C2477BC62B09}
+		{8F2514CF-7A09-4B41-8D6C-540F5510EB57} = {2F916E39-898B-4959-88C5-45B2F4796F04}
+		{DD556336-0B90-40AC-A37A-69350AD818AB} = {5E7E9B3B-C608-4E5F-AC35-0657C70B3D3B}
+		{D30E4E7B-2FA2-4D72-B95E-FAE09C61DCFC} = {A4C9D588-E57E-4806-A358-CB94B6F5971E}
+		{B807855A-54AF-4375-BF7A-4770ABE528C6} = {8F1893E3-2A8E-4DF9-8D38-306C7CF3B9C7}
+		{54CC1029-406A-41F8-8106-A446CD8A5C34} = {E818F106-1269-4902-9D18-7FDD18AD92E7}
+		{0D5EFFD7-3780-428F-AE51-16F91C806EB6} = {4ACE4C59-44D6-4CF0-986A-F3547F1FE35D}
+		{D26D6A4D-5BF8-48F1-BA1C-AFE9477A0843} = {AB9EB7CA-19F0-469E-96A3-98DF48A4A77B}
+		{7B431CFE-EDC5-410B-81FE-7CC937972013} = {CEDA2F41-5635-4B8B-8947-1467F0B1DB78}
 	EndGlobalSection
 EndGlobal

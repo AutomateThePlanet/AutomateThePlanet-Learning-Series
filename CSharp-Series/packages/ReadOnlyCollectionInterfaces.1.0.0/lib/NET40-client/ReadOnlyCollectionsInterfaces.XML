@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReadOnlyCollectionsInterfaces</name>
+    </assembly>
+    <members>
+        <member name="T:System.Collections.Generic.IReadOnlyCollection`1">
+            <summary>
+            Read-only collection of elements.
+            </summary>
+            <typeparam name="T">Element type.</typeparam>
+        </member>
+        <member name="P:System.Collections.Generic.IReadOnlyCollection`1.Count">
+            <summary>
+            Number of elements in the collection.
+            </summary>
+        </member>
+        <member name="T:System.Collections.Generic.IReadOnlyList`1">
+            <summary>
+            Read-only list of elements.
+            </summary>
+            <typeparam name="T">Element type.</typeparam>
+        </member>
+        <member name="P:System.Collections.Generic.IReadOnlyList`1.Item(System.Int32)">
+            <summary>
+            Gets the element at the specified index in the list.
+            </summary>
+            <param name="index">Zero-based index of the element to get.</param>
+            <returns>Element at the specified index in the list.</returns>
+        </member>
+        <member name="T:System.Collections.Generic.IReadOnlyDictionary`2">
+            <summary>
+            Read-only collection of key/value pairs.
+            </summary>
+            <typeparam name="TKey">Key type.</typeparam>
+            <typeparam name="TValue">Value type.</typeparam>
+        </member>
+        <member name="M:System.Collections.Generic.IReadOnlyDictionary`2.ContainsKey(`0)">
+            <summary>
+            Determines whether the dictionary contains an element with the specified key.
+            </summary>
+            <param name="key">Key to locate.</param>
+            <returns>true if the dictionary contains the specified key; otherwise false.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.IReadOnlyDictionary`2.TryGetValue(`0,`1@)">
+            <summary>
+            Gets the value associated with the specified key.
+            </summary>
+            <param name="key">Key to locate.</param>
+            <param name="value">Value located, if successful.</param>
+            <returns>true if the key was found; otherwise false.</returns>
+        </member>
+        <member name="P:System.Collections.Generic.IReadOnlyDictionary`2.Item(`0)">
+            <summary>
+            Gets the element that has the specified key in the dictionary.
+            </summary>
+            <param name="key">Key to locate.</param>
+            <returns>Element with the specified key in the dictionary.</returns>
+        </member>
+        <member name="P:System.Collections.Generic.IReadOnlyDictionary`2.Keys">
+            <summary>
+            Keys in the dictionary.
+            </summary>
+        </member>
+        <member name="P:System.Collections.Generic.IReadOnlyDictionary`2.Values">
+            <summary>
+            Values in the dictionary.
+            </summary>
+        </member>
+    </members>
+</doc>

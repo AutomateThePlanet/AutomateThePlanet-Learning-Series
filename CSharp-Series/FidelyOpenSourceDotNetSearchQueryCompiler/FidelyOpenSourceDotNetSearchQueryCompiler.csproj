@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2ED526C3-F932-4D39-B412-D8888A0CC2F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FidelyOpenSourceDotNetSearchQueryCompiler</RootNamespace>
+    <AssemblyName>FidelyOpenSourceDotNetSearchQueryCompiler</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Core\AliasAttribute.cs" />
+    <Compile Include="Core\Caching\Cache.cs" />
+    <Compile Include="Core\Caching\CacheItem.cs" />
+    <Compile Include="Core\Compilation\BlankOperand.cs" />
+    <Compile Include="Core\Compilation\Evaluators\DynamicVariableEvaluator.cs" />
+    <Compile Include="Core\Compilation\Evaluators\GuardianEvaluator.cs" />
+    <Compile Include="Core\Compilation\Evaluators\IOperandBuilder.cs" />
+    <Compile Include="Core\Compilation\Evaluators\OperandEvaluator.cs" />
+    <Compile Include="Core\Compilation\Evaluators\StaticVariableEvaluator.cs" />
+    <Compile Include="Core\Compilation\Operand.cs" />
+    <Compile Include="Core\Compilation\Operators\CalculatingOperator.cs" />
+    <Compile Include="Core\Compilation\Operators\ComparativeOperator.cs" />
+    <Compile Include="Core\Compilation\Operators\FidelyOperator.cs" />
+    <Compile Include="Core\Compilation\Operators\OperatorIndependency.cs" />
+    <Compile Include="Core\CompilerSetting.cs" />
+    <Compile Include="Core\Constants.cs" />
+    <Compile Include="Core\EvaluatorCollection.cs" />
+    <Compile Include="Core\IDescribable.cs" />
+    <Compile Include="Core\Integration\AutoCompleteItem.cs" />
+    <Compile Include="Core\Integration\IAutoCompleteItem.cs" />
+    <Compile Include="Core\Integration\MatchingMode.cs" />
+    <Compile Include="Core\Integration\MatchingOption.cs" />
+    <Compile Include="Core\Integration\RegexAutoCompleteItem.cs" />
+    <Compile Include="Core\IWarningNotifier.cs" />
+    <Compile Include="Core\Logger.cs" />
+    <Compile Include="Core\NotEvaluateAttribute.cs" />
+    <Compile Include="Core\OperatorCollection.cs" />
+    <Compile Include="Core\Parsing\SyntacticAnalyzer.cs" />
+    <Compile Include="Core\Parsing\TreeNode.cs" />
+    <Compile Include="Core\Processing\BaseTokenizer.cs" />
+    <Compile Include="Core\Processing\BlankOperandFiller.cs" />
+    <Compile Include="Core\Processing\ITokenFilter.cs" />
+    <Compile Include="Core\Processing\LogicalAndFiller.cs" />
+    <Compile Include="Core\Processing\ParenthesisFiller.cs" />
+    <Compile Include="Core\Processing\QuotedWordTokenizer.cs" />
+    <Compile Include="Core\Processing\StrongLinkedWordTokenizer.cs" />
+    <Compile Include="Core\Processing\WeakLinkedWordTokenizer.cs" />
+    <Compile Include="Core\SearchQueryCompiler.cs" />
+    <Compile Include="Core\SearchQueryCompilerBuilder.cs" />
+    <Compile Include="Core\Tokens\BlankOperandToken.cs" />
+    <Compile Include="Core\Tokens\CalculatingOperatorToken.cs" />
+    <Compile Include="Core\Tokens\ClosedParenthesisToken.cs" />
+    <Compile Include="Core\Tokens\ComparativeOperatorToken.cs" />
+    <Compile Include="Core\Tokens\IToken.cs" />
+    <Compile Include="Core\Tokens\LogicalAndOperatorToken.cs" />
+    <Compile Include="Core\Tokens\LogicalOperatorToken.cs" />
+    <Compile Include="Core\Tokens\LogicalOrOperatorToken.cs" />
+    <Compile Include="Core\Tokens\OpenedParenthesisToken.cs" />
+    <Compile Include="Core\Tokens\OperandToken.cs" />
+    <Compile Include="Core\Tokens\OperatorToken.cs" />
+    <Compile Include="Core\Tokens\QuotedOperandToken.cs" />
+    <Compile Include="Core\Tokens\UncategorizedToken.cs" />
+    <Compile Include="Core\WarningNotifiedEventArgs.cs" />
+    <Compile Include="Evaluators\BaseBuiltInEvaluator.cs" />
+    <Compile Include="Evaluators\OperandBuilder.cs" />
+    <Compile Include="Evaluators\PropertyEvaluator.cs" />
+    <Compile Include="Evaluators\TypeConversionEvaluator.cs" />
+    <Compile Include="ObjectCompilerSetting.cs" />
+    <Compile Include="Operators\Add.cs" />
+    <Compile Include="Operators\BaseBuiltInCalculatingOperator.cs" />
+    <Compile Include="Operators\BaseBuiltInComparativeOperator.cs" />
+    <Compile Include="Operators\Divide.cs" />
+    <Compile Include="Operators\Equal.cs" />
+    <Compile Include="Operators\GreaterThan.cs" />
+    <Compile Include="Operators\GreaterThanOrEqual.cs" />
+    <Compile Include="Operators\LessThan.cs" />
+    <Compile Include="Operators\LessThanOrEqual.cs" />
+    <Compile Include="Operators\Multiply.cs" />
+    <Compile Include="Operators\NotEqual.cs" />
+    <Compile Include="Operators\NotPartialMatch.cs" />
+    <Compile Include="Operators\OperandPair.cs" />
+    <Compile Include="Operators\PartialMatch.cs" />
+    <Compile Include="Operators\PrefixSearch.cs" />
+    <Compile Include="Operators\Subtract.cs" />
+    <Compile Include="Operators\SuffixSearch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchQueryCompilerBuilderExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Parsing\Syntax\" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

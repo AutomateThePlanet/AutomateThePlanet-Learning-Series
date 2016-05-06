@@ -70,16 +70,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ControlsExtensions\HtmlInputControlExtensions.cs" />
-    <Compile Include="ControlsExtensions\HtmlSelectExtensions.cs" />
-    <Compile Include="CustomControls\FullCalendar.cs" />
-    <Compile Include="CustomControls\GaugeNeedle.cs" />
-    <Compile Include="CustomControls\KendoColorPicker.cs" />
-    <Compile Include="CustomControls\KendoComboBox.cs" />
-    <Compile Include="CustomControls\KendoDatePicker.cs" />
-    <Compile Include="ControlsExtensions\RadTextBoxExtension.cs" />
-    <Compile Include="CustomControlsTests.cs" />
-    <Compile Include="TelerikTestFrameworkGettingStarted.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

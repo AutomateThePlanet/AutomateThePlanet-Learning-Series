@@ -64,12 +64,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Controls\GridFilter.cs" />
-    <Compile Include="Controls\GridItem.cs" />
-    <Compile Include="Controls\KendoGrid.cs" />
-    <Compile Include="Controls\SortType.cs" />
-    <Compile Include="EdgeTests\Pages\HealthyDietGeneratorPage.cs" />
-    <Compile Include="Enums\FilterOperator.cs" />
     <Compile Include="GridTestCases\GridColumnAsserter.cs" />
     <Compile Include="GridTestCases\GridColumns.cs" />
     <Compile Include="GridTestCases\OrderDateColumnAsserter.cs" />
@@ -79,16 +73,10 @@
     <Compile Include="GridTestCases\OrderIdColumnAsserter.cs" />
     <Compile Include="GridTestCases\Pages\IGridPage.cs" />
     <Compile Include="GridTestCases\Pages\GridFilterPage.cs" />
-    <Compile Include="HealthyDietMenuGeneratorTestsEdge.cs" />
     <Compile Include="KendoGridAdvanceReuseTacticsAutomationTests.cs" />
     <Compile Include="KendoGridTestCasesAutomationTests.cs" />
-    <Compile Include="KendoGridTests.cs" />
-    <Compile Include="AdvancedWebDriverUsageTests.cs" />
     <Compile Include="Order.cs" />
-    <Compile Include="RamDiskTests.cs" />
-    <Compile Include="HealthyDietMenuGeneratorTestsFirefox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
