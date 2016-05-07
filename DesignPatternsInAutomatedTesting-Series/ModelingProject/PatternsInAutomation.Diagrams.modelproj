@@ -22,6 +22,20 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="AdvancedBehavioursDesignPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="AdvancedBehavioursDesignPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>AdvancedBehavioursDesignPattern.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="BehavioursDesignPattern.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="BehavioursDesignPattern.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>BehavioursDesignPattern.classdiagram</DependentUpon>
+    </Content>
     <Content Include="DecoratorPattern.classdiagram">
       <SubType>Content</SubType>
     </Content>

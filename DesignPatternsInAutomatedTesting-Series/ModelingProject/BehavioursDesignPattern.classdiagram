@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="0d3765cc-8901-4edd-89be-fd8b96a62f52" name="BehavioursDesignPattern" linkedPackageId="a2adbb9e-7fae-438a-9dde-bb34a2450e42" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="c21583f2-f59a-4998-a4d0-7717c6cfdc33">
+      <profileInstance Id="6fc56210-2d45-433d-8ea5-602b610708da" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="cafc65a0-6404-42e5-b3d2-c66e3ae8033a">
+      <profileInstance Id="036764d9-31c2-4fc1-81e2-1fa711bc3b3a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c58f634b-e2be-4903-b8b4-bf593cb72547" name="ItemPage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ebe7ccc2-3ae4-4956-a252-e8e693795800" />
+        <ownedOperationsInternal>
+          <operation Id="0126d1b8-0d69-4ca1-86f9-9e843c43d4fa" name="Navigate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4f47119c-47b1-4d0b-9e81-7714701e1336" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4933068c-3c53-4d29-9f90-bf5dbb45dc89" name="Behaviour" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3fe3add9-72ae-40fd-82d8-e0ab115edcf2" />
+        <suppliersInternal>
+          <interfaceRealization Id="b2a47b8c-3d03-4353-a520-8e76b1311577">
+            <interfaceMoniker Id="5d5d687a-f5c9-4ed2-941a-c381116d0830" LastKnownName="IBehaviour" />
+            <elementDefinition Id="986faf10-4ce8-4038-a112-dbecaabaf334" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="7d621d51-1e4c-41ff-9b9c-659a79e58c13" name="PerformAct" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f51f6872-b1ad-435a-a3c0-ab4ec6f3ef9a" />
+          </operation>
+          <operation Id="fc4993ae-3f9d-4691-8d63-73a14354b3fb" name="PerformPostAct" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8535e090-678a-46c4-8646-c07855961b8b" />
+          </operation>
+          <operation Id="775261d6-9fe8-497a-891c-23ad4bb250dd" name="PerformPostActAsserts" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="02a0b739-909f-47c8-bd2c-fe55f360cbe9" />
+          </operation>
+          <operation Id="72e3c984-7feb-43d5-bd26-24c53e6978ea" name="PerformPreActAsserts" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a251d922-c8b6-4325-8bfb-9241a6243daf" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="5d5d687a-f5c9-4ed2-941a-c381116d0830" name="IBehaviour" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4c3ad363-e0d5-487b-b363-6e3a11f39749" />
+        <ownedOperations>
+          <operation Id="71fbe813-2bfb-4b59-a01e-5cd33173d5db" name="PerformAct" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cc7ad1d6-ec83-4572-9b90-0a661fbe744e" />
+          </operation>
+          <operation Id="eba0d8ed-9031-4ed3-bd55-9c78107a2659" name="PerformPostAct" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="552eb67c-2c19-42e2-b99c-0e67a4f62232" />
+          </operation>
+          <operation Id="3f4f86a7-edbd-4de8-ba45-7aa60caf788e" name="PerformPostActAsserts" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e8916b19-337a-4b51-8bd9-5882e91d0e80" />
+          </operation>
+          <operation Id="229e96d8-fd9c-4982-bb3f-e4c90ef95a82" name="PerformPreActAsserts" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="19249845-ed71-4884-8d95-32d2cb2ba3ff" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="91a9fafd-85e6-47ed-897d-92137e6a81c2" name="BehaviourEngine" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7d10fd1f-843c-4f02-b8d3-ed1e2d8d0d24" />
+        <suppliersInternal>
+          <dependency Id="4dcea5b1-db95-46e2-8d7a-095c6dd0254f">
+            <classMoniker Id="4933068c-3c53-4d29-9f90-bf5dbb45dc89" LastKnownName="Behaviour" />
+            <elementDefinition Id="3a5f1865-dd05-4dc5-9049-a1f2cfa7bf90" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="02c89def-d6f0-476c-9e69-d56ed73a352f" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ec42dd0e-454e-4e34-b3be-cd1f88c8db6c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a16a785b-9710-497a-ba7c-d87d3d0a4d52" name="params Type[] pageBehaviours" direction="In" isUnique="false">
+                  <elementDefinition Id="71606577-c1db-4b24-a242-4498a26b82b4" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="184a8f18-3ed2-4b46-8f32-4e3c171fb347" name="PurchaseTestContext" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="abf2c073-3722-4bde-8c6d-931a77d72400" />
+        <ownedAttributesInternal>
+          <property Id="8be85438-5a6c-4671-8572-5a43a138c358" name="ItemUrl" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a464597c-11b8-4668-85e1-bd22196d5174" />
+          </property>
+          <property Id="0a0b8b21-ccc7-4af3-9fde-6b2cf65741b5" name="ItemPrice" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4a6144be-d60c-4d94-8ef6-e1b701c06983" />
+          </property>
+          <property Id="ff6552b9-415e-4306-b70b-b85e353625e6" name="ClientLoginInfo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d32689b3-92be-47c7-9622-4707aaddf1f2" />
+          </property>
+          <property Id="7f24d472-f134-473e-bf72-9869b5933c56" name="ClientPurchaseInfo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3b9ab42f-1dd9-4a89-934c-8a36ff4798b1" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5ab43467-ed49-43a9-b917-30a0fbe7c21b" name="ItemPageNavigationBehaviour" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5f470a68-5712-4c07-98cf-833f754e21ce" />
+        <suppliersInternal>
+          <dependency Id="df0c9a9e-05eb-4907-81f9-9723de8fb0af">
+            <classMoniker Id="184a8f18-3ed2-4b46-8f32-4e3c171fb347" LastKnownName="PurchaseTestContext" />
+            <elementDefinition Id="58ac6fdb-ec38-443e-a95b-20849e6ec0e2" />
+          </dependency>
+          <dependency Id="1e9b016a-7e15-49ad-881f-5b2bae9bf10e">
+            <classMoniker Id="c58f634b-e2be-4903-b8b4-bf593cb72547" LastKnownName="ItemPage" />
+            <elementDefinition Id="0e53d3ec-4168-4abb-a655-e05c0a8a1558" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="0f2bddce-6f17-4a06-8b3d-bf18642988cd" isSubstitutable="false">
+            <classMoniker Id="4933068c-3c53-4d29-9f90-bf5dbb45dc89" LastKnownName="Behaviour" />
+            <elementDefinition Id="81adcaa8-7979-435e-9527-7d3095888f05" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="9a0a08e8-50e7-4467-95ab-6ec91a31cdb5" name="PerformAct" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="27531b58-a9c7-430e-8a27-13005f2f1394" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="332e2af2-c6b1-4e34-b7b9-0d5d3764f9cd" name="SignInPageLoginBehaviour" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1d2a3df0-103c-4947-88d2-707be30e221c" />
+        <suppliersInternal>
+          <dependency Id="cf09b0ed-d91f-4d50-889a-1283793046b3">
+            <classMoniker Id="184a8f18-3ed2-4b46-8f32-4e3c171fb347" LastKnownName="PurchaseTestContext" />
+            <elementDefinition Id="043cebde-a31d-4655-aca2-42cc6350575f" />
+          </dependency>
+          <dependency Id="eb63a6d4-c175-463e-91db-c36ea0274d40">
+            <classMoniker Id="e74eda3f-52d2-4e57-b324-33426de93d06" LastKnownName="SignInPage" />
+            <elementDefinition Id="72410034-baf8-4b63-9503-28411da2f903" />
+          </dependency>
+          <dependency Id="50bb3f18-9723-4e88-99e7-724ad18bf41f">
+            <classMoniker Id="44842777-a813-4088-aeb1-019886f9a556" LastKnownName="ShippingAddressPage" />
+            <elementDefinition Id="63c41f3b-898e-4ac2-82e3-4a7219064d5b" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="6a45b029-2cd8-4e09-babe-5d5f22a71bc1" isSubstitutable="false">
+            <classMoniker Id="4933068c-3c53-4d29-9f90-bf5dbb45dc89" LastKnownName="Behaviour" />
+            <elementDefinition Id="01b3e0d6-578d-49ab-8005-576d9bb3025c" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="f744385d-3a36-471a-ba3a-9780874cd2e8" name="PerformAct" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7c8dfd11-8f72-44b3-b800-add221db6c27" />
+          </operation>
+          <operation Id="3b456e94-c7b3-4a1c-9dd5-77b221b88842" name="PerformPostAct" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="78be1a54-dd4e-4508-a1b4-4d0caf250517" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e74eda3f-52d2-4e57-b324-33426de93d06" name="SignInPage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="318a15c5-e1e8-4dcb-8df1-a704ab4095f5" />
+        <ownedOperationsInternal>
+          <operation Id="8db718d4-f0e7-4d25-a137-71da86c84b88" name="Login" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d696fcf0-f026-4e29-aa49-1519ab63d832" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="44842777-a813-4088-aeb1-019886f9a556" name="ShippingAddressPage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="09784150-1422-423c-8ccb-123d8c7f6226" />
+        <ownedOperationsInternal>
+          <operation Id="bf4c2ebc-ffa0-43ff-a3c1-d9642c95045b" name="WaitForPageToLoad" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4701dde2-123b-4cd8-a0df-2c37eaeb2306" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="a2adbb9e-7fae-438a-9dde-bb34a2450e42" name="ModelingProject1">
+    <elementDefinition Id="71304b90-dec2-48cf-aa25-61ab4fe1335d" />
+  </package>
+</logicalClassDesignerModel>
