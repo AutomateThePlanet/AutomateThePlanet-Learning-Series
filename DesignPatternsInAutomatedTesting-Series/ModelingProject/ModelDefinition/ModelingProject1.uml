@@ -7815,6 +7815,526 @@
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="50283446-fd39-4e92-8a63-af2dc61e4a27"
+        name="IBehaviour"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="820ac0e9-da14-47dd-bfb9-2af416dfcc4a"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cab3209d-0b41-453e-9450-c569a750096e"
+        name="ActionBehaviour"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="7e65f97b-46b6-4caf-9c8b-a87d358ba769">
+            <interfaceMoniker
+              Id="50283446-fd39-4e92-8a63-af2dc61e4a27"
+              LastKnownName="IBehaviour"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="a82d9789-803b-43f3-8f75-686fc699ebba"
+            name="PerformAct"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="1a46a795-ac63-49f6-ab28-d29459f0b44e"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9b914875-3b6d-4ca7-80a3-38bf1ffd1f2e"
+        name="AssertBehaviour"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="1454dc3c-c61b-41fa-a4c2-b9fd8a8cd7d7">
+            <interfaceMoniker
+              Id="50283446-fd39-4e92-8a63-af2dc61e4a27"
+              LastKnownName="IBehaviour"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="9827060d-9baa-489f-9274-a380d5d2119d"
+            name="Assert"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="63d849db-7351-4bda-8787-bac02bb9729a"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cdc1779a-bfb9-4a85-9c43-44704076f910"
+        name="WaitableActionBehaviour"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c449f9e7-eebb-42f2-bb8c-0ec7cad4f0d9">
+            <interfaceMoniker
+              Id="50283446-fd39-4e92-8a63-af2dc61e4a27"
+              LastKnownName="IBehaviour"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="fc6779e5-50a9-4794-98be-388df8b14303"
+            name="PerformAct"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ba801043-3017-454a-afb5-9c5d225f7688"
+            name="PerformPostActWait"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0a92cba9-def5-441b-a463-e4c04c3d8295"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="92bc8d61-205e-429c-b049-84830fa99a60"
+        name="WaitableAssertableActionBehaviour"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="fc57a7ef-dd3b-4087-9777-fa08fa457a5e">
+            <interfaceMoniker
+              Id="50283446-fd39-4e92-8a63-af2dc61e4a27"
+              LastKnownName="IBehaviour"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="2cb503b7-b45b-44ab-915b-4557e07287df"
+            name="PerformPreActWait"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ff558be5-ece4-4c80-b1fd-053bd9efd0a8"
+            name="PerformPreActAssert"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ac2f99ac-09fa-4498-99e0-9e5682a89bc1"
+            name="PerformAct"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="4fcd2962-94c4-435f-8996-074da9cf2a4d"
+            name="PerformPostActAssert"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="01a58e34-efef-4abb-a98c-c96e70f85781"
+            name="PerformPostActWait"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="628dc991-febd-416d-b8fa-2cfce0b9f6c9"
+            name="PerformPostActWaitAssert"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f2137a88-4475-40ea-a12e-0fd3d324e8f7"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="08a1f06e-5f24-43ad-a7b9-02460a00c0fd"
+        name="ItemPageNavigationBehaviour"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="389500b4-ff5b-430b-84f2-ff168f517767">
+            <classMoniker
+              Id="de62deb8-ee8a-445d-ac29-db1836a40c93"
+              LastKnownName="UnityContainerFactory"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+          <dependency
+            Id="cd3ffc9e-e06a-4663-b334-ad60edf7c74f">
+            <classMoniker
+              Id="5d4fb030-04b0-4fb6-90f4-5671cbcdf09b"
+              LastKnownName="ItemPage"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+          <dependency
+            Id="2687ca3b-3ba0-4581-98d9-ae958e2a1bca">
+            <classMoniker
+              Id="8563a915-879a-4d00-9499-cde76ac8f783"
+              LastKnownName="NavigatePageBehaviorDefinition"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="0e121fbf-f525-4747-a2c7-f766c387bdfd"
+            isSubstitutable="false">
+            <classMoniker
+              Id="cab3209d-0b41-453e-9450-c569a750096e"
+              LastKnownName="ActionBehaviour"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="4623695d-7d51-41bc-9769-9b7a06adc62f"
+            name="itemUrl"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c1bbe68c-06ba-48b6-b738-99bd3e11b024"
+            name="PerformAct"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5d4fb030-04b0-4fb6-90f4-5671cbcdf09b"
+        name="ItemPage"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="7ff4f949-085b-4279-95bc-835d312431c5"
+            name="Navigate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="de62deb8-ee8a-445d-ac29-db1836a40c93"
+        name="UnityContainerFactory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="58ebe490-5df5-40e6-8d7d-bacad1edc724"
+            name="GetContainer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ff8e7db2-b9fd-4db3-9133-136384586074"
+        name="BehaviourEngine"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="c8cb2cac-dbe7-4716-b9b5-b3d930185ca6">
+            <interfaceMoniker
+              Id="50283446-fd39-4e92-8a63-af2dc61e4a27"
+              LastKnownName="IBehaviour"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+          <dependency
+            Id="78031097-e2a1-4315-8dd7-e50985a321a1">
+            <classMoniker
+              Id="3e47ef7d-2533-4eab-aa05-85353dd040a1"
+              LastKnownName="BehaviorDefinition"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+          <dependency
+            Id="fc6ba9db-1dc5-48b4-a41b-27b5854d966a">
+            <classMoniker
+              Id="de62deb8-ee8a-445d-ac29-db1836a40c93"
+              LastKnownName="UnityContainerFactory"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="13dc352e-a82f-4fb2-93a6-a4df419cf562"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4e4728e6-fe76-4de4-bb2e-4a25c0319ee2"
+        name="SignInPageLoginBehaviour"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="80b7253d-d133-429f-809f-755dca299b11">
+            <classMoniker
+              Id="de62deb8-ee8a-445d-ac29-db1836a40c93"
+              LastKnownName="UnityContainerFactory"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+          <dependency
+            Id="78bde5e3-190f-4f69-9a64-372a03d72564">
+            <classMoniker
+              Id="82a077cd-f901-4588-9416-f28d89c293be"
+              LastKnownName="SignInPage"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+          <dependency
+            Id="f1984d36-027f-4923-aa56-7ced3149cd68">
+            <classMoniker
+              Id="da9f72c5-a89b-4bee-8dde-a19d785587e4"
+              LastKnownName="ShippingAddressPage"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="17551648-ccc6-402e-b167-50817041a328"
+            isSubstitutable="false">
+            <classMoniker
+              Id="cdc1779a-bfb9-4a85-9c43-44704076f910"
+              LastKnownName="WaitableActionBehaviour"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="93dd3178-20eb-4964-b476-60adeacad8b5"
+            name="ClientLoginInfo"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="2b0de20a-31bc-4ad1-8db1-9dd7edb41ca8"
+            name="PerformPostActWait"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ef910270-0a85-4fd6-8893-e56f1affd2b2"
+            name="PerformAct"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="82a077cd-f901-4588-9416-f28d89c293be"
+        name="SignInPage"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="2cf5f4c7-82c5-41cb-aa25-834458fcb7a3"
+            name="Login"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="da9f72c5-a89b-4bee-8dde-a19d785587e4"
+        name="ShippingAddressPage"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="b47d9356-94fb-432a-b99b-02f7bd3e6e39"
+            name="WaitForPageToLoad"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3e47ef7d-2533-4eab-aa05-85353dd040a1"
+        name="BehaviorDefinition"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="571e2e4e-235e-4972-bfe7-af83a979f899"
+            name="Type BehaviorType"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8563a915-879a-4d00-9499-cde76ac8f783"
+        name="NavigatePageBehaviorDefinition"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="652dcc82-6ca5-40aa-b81f-4c203a5673b6"
+            isSubstitutable="false">
+            <classMoniker
+              Id="3e47ef7d-2533-4eab-aa05-85353dd040a1"
+              LastKnownName="BehaviorDefinition"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="54a8d81b-3b8a-42b4-93b2-19088ef9d97a"
+            name="string ExpectedUrl"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

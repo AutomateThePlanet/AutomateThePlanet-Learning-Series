@@ -166,6 +166,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "23. Advanced Behaviours Des
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedBehavioursDesignPatternPartTwo", "AdvancedBehavioursDesignPatternPartTwo\AdvancedBehavioursDesignPatternPartTwo.csproj", "{9A0A60B4-AE87-4424-AD23-1BB732C014B5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hero's Journey to Perfect System Test's Design", "Hero's Journey to Perfect System Test's Design", "{F3BE854E-642D-4B99-AABC-BAFBABD57115}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerfectSystemTestsDesign", "PerfectSystemTestsDesign\PerfectSystemTestsDesign.csproj", "{ADE75661-42DB-4A1E-8D65-34EFE360F620}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -268,6 +272,10 @@ Global
 		{9A0A60B4-AE87-4424-AD23-1BB732C014B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A0A60B4-AE87-4424-AD23-1BB732C014B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A0A60B4-AE87-4424-AD23-1BB732C014B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADE75661-42DB-4A1E-8D65-34EFE360F620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE75661-42DB-4A1E-8D65-34EFE360F620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE75661-42DB-4A1E-8D65-34EFE360F620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE75661-42DB-4A1E-8D65-34EFE360F620}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -296,5 +304,6 @@ Global
 		{6CB43C8F-F7A9-435C-921D-D2F053003F15} = {58DB0604-A0BF-4942-B4F2-01B0ECA74494}
 		{29C917B3-41F0-4EC6-82AC-6A54503433DC} = {678D5928-2199-45B4-B95D-5C1669C91322}
 		{9A0A60B4-AE87-4424-AD23-1BB732C014B5} = {BBFDF962-CEE1-4DAE-AFD1-AC47BD289614}
+		{ADE75661-42DB-4A1E-8D65-34EFE360F620} = {F3BE854E-642D-4B99-AABC-BAFBABD57115}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b1b8236b-d655-4cfd-be78-a7fbe3692255" name="AdvancedBehavioursDesignPattern-PartTwo" linkedPackageId="489777b8-168e-4966-966c-96f924806ee4" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="dbe37b09-408d-4e4b-b9ae-d7ab096c1e2a">
+      <profileInstance Id="26b1d515-8bfa-44fa-ac2b-d0ded43f298c" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="25dc1ac7-7fa4-4834-b7b0-c7c610c1499d">
+      <profileInstance Id="94acd39f-4196-4e5e-bb94-32e367c7064a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="b50aef60-c813-44f1-a889-c931dfbd70ed" name="IBehaviour" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="50283446-fd39-4e92-8a63-af2dc61e4a27" />
+        <ownedOperations>
+          <operation Id="f072123d-00bd-466b-b3e3-57190cb78dd4" name="Execute" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="820ac0e9-da14-47dd-bfb9-2af416dfcc4a" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b9315155-3d65-4687-a654-3294aee275cb" name="ActionBehaviour" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cab3209d-0b41-453e-9450-c569a750096e" />
+        <suppliersInternal>
+          <interfaceRealization Id="4dd9a18c-37f1-4a14-8c2f-4d552b7de56e">
+            <interfaceMoniker Id="b50aef60-c813-44f1-a889-c931dfbd70ed" LastKnownName="IBehaviour" />
+            <elementDefinition Id="7e65f97b-46b6-4caf-9c8b-a87d358ba769" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="a5047ec6-c6c4-48f9-9d08-32e605291c2f" name="PerformAct" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a82d9789-803b-43f3-8f75-686fc699ebba" />
+          </operation>
+          <operation Id="ec36dc5d-d2e7-4f49-833a-0302c462dac9" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1a46a795-ac63-49f6-ab28-d29459f0b44e" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8e6b61cd-06dc-4360-a0db-70bd2cc99d8a" name="ItemPageNavigationBehaviour" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="08a1f06e-5f24-43ad-a7b9-02460a00c0fd" />
+        <suppliersInternal>
+          <dependency Id="8c7c561b-090f-44fd-b8d7-34da91a8ffe5">
+            <classMoniker Id="4472f5ce-5b7b-46be-9bd5-1d2cfbeba128" LastKnownName="UnityContainerFactory" />
+            <elementDefinition Id="389500b4-ff5b-430b-84f2-ff168f517767" />
+          </dependency>
+          <dependency Id="a463b341-dc6d-4710-b014-a75bdcab363a">
+            <classMoniker Id="eade49d5-18e3-4a75-898c-7f293bfc1537" LastKnownName="ItemPage" />
+            <elementDefinition Id="cd3ffc9e-e06a-4663-b334-ad60edf7c74f" />
+          </dependency>
+          <dependency Id="a00590aa-87ad-48eb-b4aa-14cb7bf8a9ca">
+            <classMoniker Id="57c3a7ec-ad94-4eff-bc43-b20fc48b02bf" LastKnownName="NavigatePageBehaviorDefinition" />
+            <elementDefinition Id="2687ca3b-3ba0-4581-98d9-ae958e2a1bca" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="d7804898-73d2-4193-bad1-0f8b02fc8ff1" isSubstitutable="false">
+            <classMoniker Id="b9315155-3d65-4687-a654-3294aee275cb" LastKnownName="ActionBehaviour" />
+            <elementDefinition Id="0e121fbf-f525-4747-a2c7-f766c387bdfd" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="3b43b2a6-b91d-4d9a-a9b2-8a10cde279fd" name="itemUrl" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4623695d-7d51-41bc-9769-9b7a06adc62f" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="1bc6187b-8b29-4acf-ba92-d028cf211826" name="PerformAct" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c1bbe68c-06ba-48b6-b738-99bd3e11b024" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="eade49d5-18e3-4a75-898c-7f293bfc1537" name="ItemPage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5d4fb030-04b0-4fb6-90f4-5671cbcdf09b" />
+        <ownedOperationsInternal>
+          <operation Id="f7ee1608-61e2-421c-bf94-116f10b7979f" name="Navigate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7ff4f949-085b-4279-95bc-835d312431c5" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4472f5ce-5b7b-46be-9bd5-1d2cfbeba128" name="UnityContainerFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="de62deb8-ee8a-445d-ac29-db1836a40c93" />
+        <ownedOperationsInternal>
+          <operation Id="4db81631-77c4-48e3-8795-f18eea8a7598" name="GetContainer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="58ebe490-5df5-40e6-8d7d-bacad1edc724" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="71880628-3814-4e0f-a5bd-f60d8bf538fd" name="BehaviourEngine" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ff8e7db2-b9fd-4db3-9133-136384586074" />
+        <suppliersInternal>
+          <dependency Id="be81fd38-b7a5-43f8-ad6d-a1d6f7f19c23">
+            <interfaceMoniker Id="b50aef60-c813-44f1-a889-c931dfbd70ed" LastKnownName="IBehaviour" />
+            <elementDefinition Id="c8cb2cac-dbe7-4716-b9b5-b3d930185ca6" />
+          </dependency>
+          <dependency Id="d56866e6-105e-4496-8fb1-3e00def48a5d">
+            <classMoniker Id="16e18914-0fb5-4c07-a99d-b1d141767ef1" LastKnownName="BehaviorDefinition" />
+            <elementDefinition Id="78031097-e2a1-4315-8dd7-e50985a321a1" />
+          </dependency>
+          <dependency Id="dfa72440-a75a-46c0-a974-f47f802dfed1">
+            <classMoniker Id="4472f5ce-5b7b-46be-9bd5-1d2cfbeba128" LastKnownName="UnityContainerFactory" />
+            <elementDefinition Id="fc6ba9db-1dc5-48b4-a41b-27b5854d966a" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="729e7de7-9dd2-446b-94de-f6e13a6981e8" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="13dc352e-a82f-4fb2-93a6-a4df419cf562" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="16e18914-0fb5-4c07-a99d-b1d141767ef1" name="BehaviorDefinition" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3e47ef7d-2533-4eab-aa05-85353dd040a1" />
+        <ownedAttributesInternal>
+          <property Id="1dd32a25-cf01-4e1d-b032-0c5cc6ccdb05" name="Type BehaviorType" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="571e2e4e-235e-4972-bfe7-af83a979f899" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="57c3a7ec-ad94-4eff-bc43-b20fc48b02bf" name="NavigatePageBehaviorDefinition" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8563a915-879a-4d00-9499-cde76ac8f783" />
+        <generalsInternal>
+          <generalization Id="a701122f-b498-44bd-9d4b-1d2c0089430f" isSubstitutable="false">
+            <classMoniker Id="16e18914-0fb5-4c07-a99d-b1d141767ef1" LastKnownName="BehaviorDefinition" />
+            <elementDefinition Id="652dcc82-6ca5-40aa-b81f-4c203a5673b6" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="bb5201df-8789-421a-a827-bb4d0581e8ae" name="string ExpectedUrl" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="54a8d81b-3b8a-42b4-93b2-19088ef9d97a" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="489777b8-168e-4966-966c-96f924806ee4" name="ModelingProject1">
+    <elementDefinition Id="71304b90-dec2-48cf-aa25-61ab4fe1335d" />
+  </package>
+</logicalClassDesignerModel>
