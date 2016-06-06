@@ -1,0 +1,3 @@
+Article: http://automatetheplanet.com/visual-ui-automation-verification-testing-framework/
+URL: 5 Expert Tips and Tricks for Visual UI Automation Verification- Testing Framework
+Publish Date: 05.06.2016
