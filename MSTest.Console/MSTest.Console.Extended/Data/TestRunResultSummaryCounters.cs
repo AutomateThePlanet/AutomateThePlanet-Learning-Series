@@ -19,41 +19,41 @@ namespace MSTest.Console.Extended.Data
     [XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public partial class TestRunResultSummaryCounters
     {
-        private byte totalField;
+        private int totalField;
 
-        private byte executedField;
+        private int executedField;
 
-        private byte passedField;
+        private int passedField;
 
-        private byte errorField;
+        private int errorField;
 
-        private byte failedField;
+        private int failedField;
 
-        private byte timeoutField;
+        private int timeoutField;
 
-        private byte abortedField;
+        private int abortedField;
 
-        private byte inconclusiveField;
+        private int inconclusiveField;
 
-        private byte passedButRunAbortedField;
+        private int passedButRunAbortedField;
 
-        private byte notRunnableField;
+        private int notRunnableField;
 
-        private byte notExecutedField;
+        private int notExecutedField;
 
-        private byte disconnectedField;
+        private int disconnectedField;
 
-        private byte warningField;
+        private int warningField;
 
-        private byte completedField;
+        private int completedField;
 
-        private byte inProgressField;
+        private int inProgressField;
 
-        private byte pendingField;
+        private int pendingField;
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte total
+        public int total
         {
             get
             {
@@ -67,7 +67,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte executed
+        public int executed
         {
             get
             {
@@ -81,7 +81,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte passed
+        public int passed
         {
             get
             {
@@ -95,7 +95,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte error
+        public int error
         {
             get
             {
@@ -109,7 +109,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte failed
+        public int failed
         {
             get
             {
@@ -123,7 +123,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte timeout
+        public int timeout
         {
             get
             {
@@ -137,7 +137,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte aborted
+        public int aborted
         {
             get
             {
@@ -151,7 +151,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte inconclusive
+        public int inconclusive
         {
             get
             {
@@ -165,7 +165,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte passedButRunAborted
+        public int passedButRunAborted
         {
             get
             {
@@ -179,7 +179,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte notRunnable
+        public int notRunnable
         {
             get
             {
@@ -193,7 +193,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte notExecuted
+        public int notExecuted
         {
             get
             {
@@ -207,7 +207,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte disconnected
+        public int disconnected
         {
             get
             {
@@ -221,7 +221,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte warning
+        public int warning
         {
             get
             {
@@ -235,7 +235,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte completed
+        public int completed
         {
             get
             {
@@ -249,7 +249,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte inProgress
+        public int inProgress
         {
             get
             {
@@ -263,7 +263,7 @@ namespace MSTest.Console.Extended.Data
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public byte pending
+        public int pending
         {
             get
             {

@@ -59,8 +59,8 @@ namespace MSTest.Console.Extended.Infrastructure
       
         public void UpdateResultsSummary(TestRun testRun)
         {
-            testRun.ResultSummary.Counters.failed = (byte)testRun.Results.ToList().Count(x => x.outcome.Equals("Failed"));
-            testRun.ResultSummary.Counters.passed = (byte)testRun.Results.ToList().Count(x => x.outcome.Equals("Passed"));
+            testRun.ResultSummary.Counters.failed = (int)testRun.Results.ToList().Count(x => x.outcome.Equals("Failed"));
+            testRun.ResultSummary.Counters.passed = (int)testRun.Results.ToList().Count(x => x.outcome.Equals("Passed"));
             if ((int)testRun.ResultSummary.Counters.passed != testRun.Results.Length)
             {
                 testRun.ResultSummary.outcome = "Failed";
