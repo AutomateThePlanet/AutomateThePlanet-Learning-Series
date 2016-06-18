@@ -11,6 +11,7 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
+
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -22,10 +23,10 @@ namespace MSTest.Console.Extended.Infrastructure
 {
     public class ConsoleArgumentsProvider : IConsoleArgumentsProvider
     {
-        private readonly string testResultFilePathRegexPattern = @".*resultsfile:(?<ResultsFilePath>[0-9A-Za-z\\:._-]{1,})";
-        private readonly string testNewResultFilePathRegexPattern = @".*(?<NewResultsFilePathArgument>/newResultsfile:(?<NewResultsFilePath>[0-9A-Za-z\\:._-]{1,}))";
+        private readonly string testResultFilePathRegexPattern = @".*resultsfile:(?<ResultsFilePath>[1-9A-Za-z\\:._]{1,})";
+        private readonly string testNewResultFilePathRegexPattern = @".*(?<NewResultsFilePathArgument>/newResultsfile:(?<NewResultsFilePath>[1-9A-Za-z\\:._]{1,}))";
         private readonly string retriesRegexPattern = @".*(?<RetriesArgument>/retriesCount:(?<RetriesCount>[0-9]{1})).*";
-        private readonly string failedTestsThresholdRegexPattern = @".*(?<ThresholdArgument>/threshold:(?<ThresholdCount>[0-9]{1,})).*";
+        private readonly string failedTestsThresholdRegexPattern = @".*(?<ThresholdArgument>/threshold:(?<ThresholdCount>[0-9]{1,3})).*";
         private readonly string deleteOldFilesRegexPattern = @".*(?<DeleteOldFilesArgument>/deleteOldResultsFiles:(?<DeleteOldFilesValue>[a-zA-Z]{4,5})).*";
         private readonly string argumentRegexPattern = @".*/(?<ArgumentName>[a-zA-Z]{1,}):(?<ArgumentValue>.*)";
 
@@ -36,11 +37,11 @@ namespace MSTest.Console.Extended.Infrastructure
             this.InitializeNewTestResultsPath();
             this.InitializeRetriesCount();
             this.InitializeFailedTestsThreshold();
-            this.InitializeDeleteOldResultFiles(); 
+            this.InitializeDeleteOldResultFiles();
         }
 
         public string ConsoleArguments { get; set; }
-        
+
         public string TestResultPath { get; set; }
 
         public string NewTestResultPath { get; set; }
@@ -129,13 +130,12 @@ namespace MSTest.Console.Extended.Infrastructure
             {
                 string currentValueToBeAppended = currentArgument;
                 KeyValuePair<string, string> currentArgumentPair = this.SplitArgumentNameAndValue(currentArgument);
-                if (currentArgumentPair.Key != null && currentArgumentPair.Value.Contains(" ") && (currentArgumentPair.Key != "test" && currentArgumentPair.Value != "*"))
+                if (currentArgumentPair.Key != null && currentArgumentPair.Value.Contains(" "))
                 {
                     currentValueToBeAppended = string.Concat("/", currentArgumentPair.Key, ":", "\"", currentArgumentPair.Value, "\"");
                 }
                 sb.AppendFormat("{0} ", currentValueToBeAppended);
             }
-                      
             return sb.ToString().TrimEnd();
         }
 

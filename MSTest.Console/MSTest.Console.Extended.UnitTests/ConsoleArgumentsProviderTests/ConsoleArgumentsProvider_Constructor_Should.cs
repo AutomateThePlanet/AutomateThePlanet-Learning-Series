@@ -11,6 +11,7 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
+
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MSTest.Console.Extended.Infrastructure;
@@ -301,10 +302,10 @@ namespace MSTest.Console.Extended.UnitTests.ConsoleArgumentsProviderTests
                 "/retriesCount:3",
                 "/deleteOldResultsFiles:true",
                 @"/newResultsfile:C:\ResultsNew.trx",
-                "/threshold:5"
+                "/threshold:10"
             };
             var consoleArgumentsProvider = new ConsoleArgumentsProvider(args);
-            Assert.AreEqual<int>(5, consoleArgumentsProvider.FailedTestsThreshold);
+            Assert.AreEqual<int>(10, consoleArgumentsProvider.FailedTestsThreshold);
         }
 
         [TestMethod]
