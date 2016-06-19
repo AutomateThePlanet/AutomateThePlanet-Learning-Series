@@ -78,6 +78,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="readme-4.txt" />
     <Content Include="redirect-URLs.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

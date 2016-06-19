@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridTestFramework.UITests.Core", "HybridTestFramework.UITests.Core.csproj", "{4161286F-A88A-4770-AC78-9D687A3B2C27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Create Hybrid Test Framework - Interface Contracts", "1. Create Hybrid Test Framework - Interface Contracts", "{D76CEE82-C798-45A7-8B36-3BC9053FD016}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateHybridTestFrameworkInterfaceContracts", "..\CreateHybridTestFrameworkInterfaceContracts\CreateHybridTestFrameworkInterfaceContracts.csproj", "{BB15CEEE-099B-405F-AF99-07FD3A46ACDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4161286F-A88A-4770-AC78-9D687A3B2C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4161286F-A88A-4770-AC78-9D687A3B2C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4161286F-A88A-4770-AC78-9D687A3B2C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4161286F-A88A-4770-AC78-9D687A3B2C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB15CEEE-099B-405F-AF99-07FD3A46ACDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB15CEEE-099B-405F-AF99-07FD3A46ACDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB15CEEE-099B-405F-AF99-07FD3A46ACDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB15CEEE-099B-405F-AF99-07FD3A46ACDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB15CEEE-099B-405F-AF99-07FD3A46ACDE} = {D76CEE82-C798-45A7-8B36-3BC9053FD016}
+	EndGlobalSection
+EndGlobal

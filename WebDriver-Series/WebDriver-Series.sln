@@ -9,34 +9,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Getting Started with Web
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Most Underrated WebDriver Locator – XPath", "2. Most Underrated WebDriver Locator – XPath", "{9581A39C-C842-4E83-B573-FC7A6437ECDB}"
-	ProjectSection(SolutionItems) = preProject
-		readme-2.txt = readme-2.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. WebDriver Selenium Tor Integration CSharp Code", "3. WebDriver Selenium Tor Integration CSharp Code", "{EB810675-2136-41E0-A8D1-98726AC7365C}"
-	ProjectSection(SolutionItems) = preProject
-		readme-3.txt = readme-3.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Test URL Redirects with WebDriver and HttpWebRequest", "4. Test URL Redirects with WebDriver and HttpWebRequest", "{BE01D5B9-5072-4C37-9378-7E310354C1C4}"
-	ProjectSection(SolutionItems) = preProject
-		readme-4.txt = readme-4.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Microsoft Edge WebDriver- What Everybody Ought to Know About", "5. Microsoft Edge WebDriver- What Everybody Ought to Know About", "{9BE3D20D-40CB-4C1A-A689-42A066D66DE9}"
-	ProjectSection(SolutionItems) = preProject
-		readme-5.txt = readme-5.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Speed up Selenium Tests through RAM Facts and Myths", "6. Speed up Selenium Tests through RAM Facts and Myths", "{059A76F8-9555-4AF6-B768-44ABEE248CAA}"
-	ProjectSection(SolutionItems) = preProject
-		readme-6.txt = readme-6.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Automate Telerik Kendo Grid with WebDriver and JavaScript", "7. Automate Telerik Kendo Grid with WebDriver and JavaScript", "{DD666112-9F80-4218-B544-69F9394CD683}"
-	ProjectSection(SolutionItems) = preProject
-		readme-7.txt = readme-7.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. Create Custom Selenium IDE Export to WebDriver", "8. Create Custom Selenium IDE Export to WebDriver", "{BA40A9A7-A335-49A9-B4B8-14255D34BF9E}"
 	ProjectSection(SolutionItems) = preProject
@@ -44,39 +26,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. Create Custom Selenium I
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9. 10 Advanced WebDriver Tips and Tricks Part 1", "9. 10 Advanced WebDriver Tips and Tricks Part 1", "{7EFD7458-6993-459F-8958-DB35B30D57B1}"
-	ProjectSection(SolutionItems) = preProject
-		readme-9.txt = readme-9.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. 10 Advanced WebDriver Tips and Tricks Part 2", "10. 10 Advanced WebDriver Tips and Tricks Part 2", "{FA877A2E-835E-4F35-B5F8-E78C5E405BD6}"
-	ProjectSection(SolutionItems) = preProject
-		readme-10.txt = readme-10.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11. 10 Advanced WebDriver Tips and Tricks Part 3", "11. 10 Advanced WebDriver Tips and Tricks Part 3", "{50D4B201-0978-42AC-A6FC-D44A33060B87}"
-	ProjectSection(SolutionItems) = preProject
-		readme-11.txt = readme-11.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12. Design Grid Control Automated Tests Part 1", "12. Design Grid Control Automated Tests Part 1", "{BD1EDA00-D9F7-49A6-8FAC-1F2188A74D9E}"
-	ProjectSection(SolutionItems) = preProject
-		readme-12.txt = readme-12.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13. Design Grid Control Automated Tests Part 2", "13. Design Grid Control Automated Tests Part 2", "{55FB2BDB-5B1B-4724-95EA-B1F05D7D8110}"
-	ProjectSection(SolutionItems) = preProject
-		readme-13.txt = readme-13.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14. Design Grid Control Automated Tests Part 3", "14. Design Grid Control Automated Tests Part 3", "{E5F61708-F394-4D48-B394-DAB96364190D}"
-	ProjectSection(SolutionItems) = preProject
-		readme-14.txt = readme-14.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15. Advanced Reuse Tactics for Grid Controls Automated Tests", "15. Advanced Reuse Tactics for Grid Controls Automated Tests", "{079FED77-7D65-4E26-84FF-7C4D8B4F9DEA}"
-	ProjectSection(SolutionItems) = preProject
-		readme-15.txt = readme-15.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedWebDriverTipsTricksPartTwo", "AdvancedWebDriverTipsTricksPartTwo\AdvancedWebDriverTipsTricksPartTwo.csproj", "{BEE6D32A-A7B7-470A-9801-F8A5AE3D8AD9}"
 EndProject

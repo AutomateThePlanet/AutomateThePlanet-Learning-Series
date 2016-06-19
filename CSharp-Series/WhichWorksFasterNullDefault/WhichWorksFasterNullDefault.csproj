@@ -61,6 +61,9 @@
       <Link>AutomateThePlanet.licenseheader</Link>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme-21.txt" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

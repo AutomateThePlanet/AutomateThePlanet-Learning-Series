@@ -84,6 +84,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="readme-1.txt" />
     <Content Include="UnitTests\XmlTestFiles\BuildStatusSingleBuildNodeXml.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

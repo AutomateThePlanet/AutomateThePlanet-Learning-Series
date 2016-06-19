@@ -6,14 +6,8 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "PatternsInAutomation.Diagrams", "ModelingProject\PatternsInAutomation.Diagrams.modelproj", "{FCA718C0-DE23-40B4-832B-4F67C176ECD6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Page Object Pattern", "1. Page Object Pattern", "{3194CD1C-2DE7-405A-B71B-4D1169FB771B}"
-	ProjectSection(SolutionItems) = preProject
-		readme-1.txt = readme-1.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Advanced Page Object Pattern", "2. Advanced Page Object Pattern", "{2072D630-717C-4CE2-AFBF-C2477BC62B09}"
-	ProjectSection(SolutionItems) = preProject
-		readme-2.txt = readme-2.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Facade Design Pattern", "3. Facade Design Pattern", "{5E7E9B3B-C608-4E5F-AC35-0657C70B3D3B}"
 	ProjectSection(SolutionItems) = preProject
@@ -21,89 +15,38 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Facade Design Pattern", 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Singleton Design Pattern", "4. Singleton Design Pattern", "{A4C9D588-E57E-4806-A358-CB94B6F5971E}"
-	ProjectSection(SolutionItems) = preProject
-		readme-4.txt = readme-4.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Fluent Page Object Pattern", "5. Fluent Page Object Pattern", "{8F1893E3-2A8E-4DF9-8D38-306C7CF3B9C7}"
-	ProjectSection(SolutionItems) = preProject
-		readme-5.txt = readme-5.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Strategy Design Pattern", "7. Strategy Design Pattern", "{4ACE4C59-44D6-4CF0-986A-F3547F1FE35D}"
-	ProjectSection(SolutionItems) = preProject
-		readme-7.txt = readme-7.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Use IoC Container to Create Page Object Pattern on Steroids", "6. Use IoC Container to Create Page Object Pattern on Steroids", "{E818F106-1269-4902-9D18-7FDD18AD92E7}"
-	ProjectSection(SolutionItems) = preProject
-		readme-6.txt = readme-6.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. Advanced Strategy Design Pattern", "8. Advanced Strategy Design Pattern", "{AB9EB7CA-19F0-469E-96A3-98DF48A4A77B}"
-	ProjectSection(SolutionItems) = preProject
-		readme-8.txt = readme-8.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9. Observer Design Pattern Classic Implementation", "9. Observer Design Pattern Classic Implementation", "{CEDA2F41-5635-4B8B-8947-1467F0B1DB78}"
-	ProjectSection(SolutionItems) = preProject
-		readme-9.txt = readme-9.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. Advanced Observer Design Pattern via Events and Delegates", "10. Advanced Observer Design Pattern via Events and Delegates", "{9A034945-F386-4354-8133-E1E6C2AF1CD4}"
-	ProjectSection(SolutionItems) = preProject
-		readme-10.txt = readme-10.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11. Advanced Observer Design Pattern via IObservable and IObserver", "11. Advanced Observer Design Pattern via IObservable and IObserver", "{E613FDCB-E16F-4A07-BEA8-0F84129D328D}"
-	ProjectSection(SolutionItems) = preProject
-		readme-11.txt = readme-11.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12. Decorator Design Pattern", "12. Decorator Design Pattern", "{E24707DD-491C-452D-A350-E804B7D71154}"
-	ProjectSection(SolutionItems) = preProject
-		readme-12.txt = readme-12.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13. Page Objects That Make Code More Maintainable", "13. Page Objects That Make Code More Maintainable", "{F0390107-D10F-4402-95D9-B8145B704D2E}"
-	ProjectSection(SolutionItems) = preProject
-		readme-13.txt = readme-13.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14. Improved Facade Design Pattern in Automated Testing v.2.0", "14. Improved Facade Design Pattern in Automated Testing v.2.0", "{1A2E2858-CC92-4749-A5E9-455CF555B88A}"
-	ProjectSection(SolutionItems) = preProject
-		readme-14.txt = readme-14.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15. 3 Design Patterns for More Reliable and Maintainable UI Tests", "15. 3 Design Patterns for More Reliable and Maintainable UI Tests", "{668338FD-B2E2-4F4C-8762-CDB087DC0D08}"
-	ProjectSection(SolutionItems) = preProject
-		readme-15.txt = readme-15.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16. Rules Design Pattern", "16. Rules Design Pattern", "{32440FE3-BAA7-4C32-A32A-35B58C744366}"
-	ProjectSection(SolutionItems) = preProject
-		readme-16.txt = readme-16.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "17. Specification Design Pattern", "17. Specification Design Pattern", "{8A954674-D8DA-40C5-91D6-39DC25D217FD}"
-	ProjectSection(SolutionItems) = preProject
-		readme-17.txt = readme-17.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18. Advanced Specification Design Pattern", "18. Advanced Specification Design Pattern", "{BFFA8964-091C-4B02-87CE-332B0BA43A6B}"
-	ProjectSection(SolutionItems) = preProject
-		readme-18.txt = readme-18.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19. Null Object Design Pattern", "19. Null Object Design Pattern", "{42FAAF41-B24C-4F1B-A130-4C9EE362C2A5}"
-	ProjectSection(SolutionItems) = preProject
-		readme-19.txt = readme-19.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20. Advanced Null Object Design Pattern", "20. Advanced Null Object Design Pattern", "{2F916E39-898B-4959-88C5-45B2F4796F04}"
-	ProjectSection(SolutionItems) = preProject
-		readme-20.txt = readme-20.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjectPattern", "PageObjectPattern\PageObjectPattern.csproj", "{E2DAC66D-8902-44E7-B58A-F6F36F10E7F1}"
 EndProject
@@ -146,23 +89,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverDesignPatternClassicImplementation", "ObserverDesignPatternClassicImplementation\ObserverDesignPatternClassicImplementation.csproj", "{7B431CFE-EDC5-410B-81FE-7CC937972013}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21. Behaviours Design Pattern", "21. Behaviours Design Pattern", "{58DB0604-A0BF-4942-B4F2-01B0ECA74494}"
-	ProjectSection(SolutionItems) = preProject
-		readme-21.txt = readme-21.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BehavioursDesignPattern", "BehavioursDesignPattern\BehavioursDesignPattern.csproj", "{6CB43C8F-F7A9-435C-921D-D2F053003F15}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "22. Advanced Behaviours Design Pattern Part 1", "22. Advanced Behaviours Design Pattern Part 1", "{678D5928-2199-45B4-B95D-5C1669C91322}"
-	ProjectSection(SolutionItems) = preProject
-		readme-22.txt = readme-22.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedBehavioursDesignPattern", "AdvancedBehavioursDesignPattern\AdvancedBehavioursDesignPattern.csproj", "{29C917B3-41F0-4EC6-82AC-6A54503433DC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "23. Advanced Behaviours Design Pattern Part 2", "23. Advanced Behaviours Design Pattern Part 2", "{BBFDF962-CEE1-4DAE-AFD1-AC47BD289614}"
-	ProjectSection(SolutionItems) = preProject
-		readme-23.txt = readme-23.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedBehavioursDesignPatternPartTwo", "AdvancedBehavioursDesignPatternPartTwo\AdvancedBehavioursDesignPatternPartTwo.csproj", "{9A0A60B4-AE87-4424-AD23-1BB732C014B5}"
 EndProject

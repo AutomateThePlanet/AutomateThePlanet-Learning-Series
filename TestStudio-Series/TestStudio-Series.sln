@@ -4,37 +4,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Getting Started with Telerik Testing Framework CSharp in 10 Minutes", "1. Getting Started with Telerik Testing Framework CSharp in 10 Minutes", "{3E2F8B66-A339-4E21-BDA5-B48C59D09F2C}"
-	ProjectSection(SolutionItems) = preProject
-		readme-1.txt = readme-1.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Advanced Web UI Components Automation with Telerik Testing Framework", "2. Advanced Web UI Components Automation with Telerik Testing Framework", "{EE0224C8-CD32-4117-B24F-1395FD396C76}"
-	ProjectSection(SolutionItems) = preProject
-		readme-2.txt = readme-2.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStartedTelerikTestingFramework", "GettingStartedTelerikTestingFramework\GettingStartedTelerikTestingFramework.csproj", "{6976EFCB-A2D5-4194-AD4A-BED4804B4731}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedWebUiComponentsAutomation", "AdvancedWebUiComponentsAutomation\AdvancedWebUiComponentsAutomation.csproj", "{6BD37747-2D09-4723-B515-A22FB142440E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Revealed How to Create Generic Dialog Handlers Through Testing Framework", "3. Revealed How to Create Generic Dialog Handlers Through Testing Framework", "{994D98F2-1D79-4065-8AD8-7991D9AC2B18}"
-	ProjectSection(SolutionItems) = preProject
-		readme-3.txt = readme-3.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HowToCreateGenericDialogHandlers", "HowToCreateGenericDialogHandlers\HowToCreateGenericDialogHandlers.csproj", "{63D48C2A-B5EF-4E38-BFA7-49C8D663DEAF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. 5 Expert Tips and Tricks for Visual UI Automation Verification- Testing Framework", "4. 5 Expert Tips and Tricks for Visual UI Automation Verification- Testing Framework", "{0F3BAF5E-D28D-4493-8B8C-53BC5D194129}"
-	ProjectSection(SolutionItems) = preProject
-		readne-4.txt = readne-4.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiveExpertTipsTricksVisualUiAutomationVerification", "FiveExpertTipsTricksVisualUiAutomationVerification\FiveExpertTipsTricksVisualUiAutomationVerification.csproj", "{A424F756-6C5E-4ABB-A196-DC21103F3842}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. 7 Enhanced Browser Automation Tricks You Need to Know- Testing Framework", "5. 7 Enhanced Browser Automation Tricks You Need to Know- Testing Framework", "{C51B6A68-EAFB-411A-BFED-C79D790E6A43}"
-	ProjectSection(SolutionItems) = preProject
-		readme-5.txt = readme-5.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnhancedBrowserAutomationTricksYouNeedToKnow", "EnhancedBrowserHandlingTricksYouNeedToKnow\EnhancedBrowserAutomationTricksYouNeedToKnow.csproj", "{630E3510-0734-4A86-94C2-13823E7C87F0}"
 EndProject

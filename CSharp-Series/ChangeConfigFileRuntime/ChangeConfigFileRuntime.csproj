@@ -61,6 +61,7 @@
     <Content Include="cars.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="readme-2.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ChangeConfigFileRuntime.licenseheader" />

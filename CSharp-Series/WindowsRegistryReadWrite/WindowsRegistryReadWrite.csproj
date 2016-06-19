@@ -64,6 +64,9 @@
     <None Include="packages.config" />
     <None Include="WindowsRegistryReadWrite.licenseheader" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme-6.txt" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

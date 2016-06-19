@@ -48,34 +48,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopWindowsEventLogTips", "TopWindowsEventLogTips\TopWindowsEventLogTips.csproj", "{4101FDB2-B5B3-4C44-9624-3E9BA7E40CE7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. MSBuild TCP IP Logger CSharp Code", "1. MSBuild TCP IP Logger CSharp Code", "{8AFF6B46-184F-4DB8-B0CC-7DA7B93F1BC4}"
-	ProjectSection(SolutionItems) = preProject
-		readme-1.txt = readme-1.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Change .config File at Runtime CSharp Code", "2. Change .config File at Runtime CSharp Code", "{2EEAFD71-9203-4E38-B1D4-D7D7EC499CCE}"
-	ProjectSection(SolutionItems) = preProject
-		readme-2.txt = readme-2.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Implement Copy Paste CSharp Code", "3. Implement Copy Paste CSharp Code", "{772AC162-61C6-4F2D-85B7-953EA429EA69}"
-	ProjectSection(SolutionItems) = preProject
-		readme-3.txt = readme-3.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Fidely Open Source .NET Search Query Compiler", "4. Fidely Open Source .NET Search Query Compiler", "{00F2A94A-2CBF-4941-97C4-9F3F2F4E2357}"
-	ProjectSection(SolutionItems) = preProject
-		readme-4.txt = readme-4.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Windows Registry Read Write CSharp Code", "6. Windows Registry Read Write CSharp Code", "{FF505E72-66B9-4191-A7D2-7F19F2C5ECDE}"
-	ProjectSection(SolutionItems) = preProject
-		readme-6.txt = readme-6.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Get Assembly Properties Without Locking File CSharp Code", "7. Get Assembly Properties Without Locking File CSharp Code", "{B6DAC5C7-03D9-4B79-9D5D-035BE36035C3}"
-	ProjectSection(SolutionItems) = preProject
-		readme-7.txt = readme-7.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Specify Assembly References Based On Build Configuration in Visual Studio", "5. Specify Assembly References Based On Build Configuration in Visual Studio", "{AB4515FB-712D-4A88-9E8A-7EE1236CABD8}"
 	ProjectSection(SolutionItems) = preProject
@@ -83,24 +65,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Specify Assembly Referen
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. YouTube API Getting Started CSharp Code", "8. YouTube API Getting Started CSharp Code", "{A3BAC32C-7C43-44E7-BE73-B87FF52AC0FB}"
-	ProjectSection(SolutionItems) = preProject
-		readme-8.txt = readme-8.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9. YouTube Playlists API CSharp Code", "9. YouTube Playlists API CSharp Code", "{F31E9BFD-F39B-41F0-AA45-BBB63F9742B2}"
-	ProjectSection(SolutionItems) = preProject
-		readme-9.txt = readme-9.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. Assert DateTime the Right Way MSTest NUnit CSharp Code", "10. Assert DateTime the Right Way MSTest NUnit CSharp Code", "{9C5F1342-2CA2-46E9-8071-7EF808584F6A}"
-	ProjectSection(SolutionItems) = preProject
-		readme-10.txt = readme-10.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11. Generic Properties Validator CSharp Code", "11. Generic Properties Validator CSharp Code", "{8B074A34-2715-473D-9378-E2D0DC2C105E}"
-	ProjectSection(SolutionItems) = preProject
-		readme-11.txt = readme-11.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12. 19 Must-Know Visual Studio Keyboard Shortcuts – Part 1", "12. 19 Must-Know Visual Studio Keyboard Shortcuts – Part 1", "{50D24E88-B1D0-4476-98D5-CE1F95B02DF3}"
 	ProjectSection(SolutionItems) = preProject
@@ -123,44 +93,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15. Hints For Arranging Usi
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16. Top 15 Underutilized Features of .NET", "16. Top 15 Underutilized Features of .NET", "{49CB8ABA-0056-4667-9426-303AECBA83EF}"
-	ProjectSection(SolutionItems) = preProject
-		readme-16.txt = readme-16.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "17. Types Of Code Coverage- Examples In CSharp", "17. Types Of Code Coverage- Examples In CSharp", "{3251711A-389D-419D-A4B8-73D7E600E334}"
-	ProjectSection(SolutionItems) = preProject
-		readme-17.txt = readme-17.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18. Reduced AutoMapper- Auto-Map Objects 180 Percents Faster", "18. Reduced AutoMapper- Auto-Map Objects 180 Percents Faster", "{AC50C362-DE9C-462B-9D9A-1B781CD19D0D}"
-	ProjectSection(SolutionItems) = preProject
-		readme-18.txt = readme-18.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19. Neat Tricks for Effortlessly Formatting Currency in CSharp", "19. Neat Tricks for Effortlessly Formatting Currency in CSharp", "{A6B1E1A8-9AC5-4687-BD83-360D7365E71F}"
-	ProjectSection(SolutionItems) = preProject
-		readme-19.txt = readme-19.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20. Top 15 Underutilized Features of .NET Part 2", "20. Top 15 Underutilized Features of .NET Part 2", "{11C6922F-0376-44C8-A46C-D140AB227D09}"
-	ProjectSection(SolutionItems) = preProject
-		readme-20.txt = readme-20.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21. Which Works Faster- Null Coalescing Operator or GetValueOrDefault or Conditional Operator", "21. Which Works Faster- Null Coalescing Operator or GetValueOrDefault or Conditional Operator", "{E7C0E601-CEA5-493D-884D-B8D1ACEF5988}"
-	ProjectSection(SolutionItems) = preProject
-		readme-21.txt = readme-21.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "22. Get Property Names Using Lambda Expressions in CSharp", "22. Get Property Names Using Lambda Expressions in CSharp", "{27AE1AAD-EDBF-446B-92E7-C19E6D487BC1}"
-	ProjectSection(SolutionItems) = preProject
-		readme-22.txt = readme-22.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "23. Top 9 Windows Event Log Tips Using CSharp", "23. Top 9 Windows Event Log Tips Using CSharp", "{39B7A880-7E6B-474C-BBBC-CDD8BBCC488A}"
-	ProjectSection(SolutionItems) = preProject
-		readme-23.txt = readme-23.txt
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

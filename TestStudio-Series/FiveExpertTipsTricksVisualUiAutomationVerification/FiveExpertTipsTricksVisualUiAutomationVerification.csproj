@@ -78,6 +78,7 @@
     <Content Include="mainArticleDivExpected.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="readne-4.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\AutomateThePlanet.licenseheader">

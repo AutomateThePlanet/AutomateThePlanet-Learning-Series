@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jenkins-CSharp-Api", "Jenkins-CSharp-Api\Jenkins-CSharp-Api.csproj", "{B93D1E5D-4B08-479C-8C92-73DF00247EC7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Jenkins CSharp API Library for Triggering Builds", "Jenkins CSharp API Library for Triggering Builds", "{4181F2C8-B604-4697-B951-107C4B6740EA}"
-	ProjectSection(SolutionItems) = preProject
-		readme-1.txt = readme-1.txt
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
