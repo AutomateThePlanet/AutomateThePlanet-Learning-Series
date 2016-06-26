@@ -32,6 +32,7 @@ namespace HybridTestFramework.UITests.Core
                     BrowserExeDirectory = string.Empty,
                     PageLoadTimeout = 60,
                     ScriptTimeout = 60,
+                    ElementsWaitTimeout = 60
                 };
             }
         }
@@ -45,6 +46,7 @@ namespace HybridTestFramework.UITests.Core
                     BrowserExeDirectory = Environment.CurrentDirectory,
                     PageLoadTimeout = 60,
                     ScriptTimeout = 60,
+                    ElementsWaitTimeout = 60
                 };
             }
         }
@@ -54,6 +56,8 @@ namespace HybridTestFramework.UITests.Core
         public int ScriptTimeout { get; set; }
 
         public int PageLoadTimeout { get; set; }
+
+        public int ElementsWaitTimeout { get; set; }
 
         public string BrowserExeDirectory { get; set; }
     }
