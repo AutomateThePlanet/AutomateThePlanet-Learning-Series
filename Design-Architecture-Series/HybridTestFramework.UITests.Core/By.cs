@@ -1,4 +1,5 @@
 ﻿using HybridTestFramework.UITests.Core.Controls;
+using HybridTestFramework.UITests.Core.Enums;
 
 // <copyright file="By.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.

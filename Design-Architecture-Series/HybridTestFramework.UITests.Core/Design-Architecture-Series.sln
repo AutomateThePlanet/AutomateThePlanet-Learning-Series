@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Create Hybrid Test Frame
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumDriverImplementation", "SeleniumDriverImplementation\SeleniumDriverImplementation.csproj", "{476268A6-E9E3-4478-BB77-25EC67DFA1ED}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Create Hybrid Test Framework - Selenium Driver Controls", "3. Create Hybrid Test Framework - Selenium Driver Controls", "{A53517FC-4DFB-415A-8C75-D27791611EE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumDriverControls", "..\SeleniumDriverControls\SeleniumDriverControls.csproj", "{F89091DA-50F2-46DC-9C60-69CFC858320A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,10 @@ Global
 		{476268A6-E9E3-4478-BB77-25EC67DFA1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{476268A6-E9E3-4478-BB77-25EC67DFA1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{476268A6-E9E3-4478-BB77-25EC67DFA1ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F89091DA-50F2-46DC-9C60-69CFC858320A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89091DA-50F2-46DC-9C60-69CFC858320A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89091DA-50F2-46DC-9C60-69CFC858320A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89091DA-50F2-46DC-9C60-69CFC858320A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,5 +52,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{BB15CEEE-099B-405F-AF99-07FD3A46ACDE} = {D76CEE82-C798-45A7-8B36-3BC9053FD016}
 		{476268A6-E9E3-4478-BB77-25EC67DFA1ED} = {9B625587-19EF-413A-94E8-1FCB279075D8}
+		{F89091DA-50F2-46DC-9C60-69CFC858320A} = {A53517FC-4DFB-415A-8C75-D27791611EE3}
 	EndGlobalSection
 EndGlobal

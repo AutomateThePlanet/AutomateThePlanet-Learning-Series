@@ -26,7 +26,7 @@ namespace SeleniumDriverImplementation
             this.container.RegisterType<IElementFinder, SeleniumDriver>();
             this.container.RegisterType<IJavaScriptInvoker, SeleniumDriver>();
             this.container.RegisterType<IElement, Element>();
-            this.container.RegisterType<IButton, ButtonControl>();
+            this.container.RegisterType<IButton, Button>();
             this.container.RegisterInstance<IUnityContainer>(this.container);
             this.container.RegisterInstance<BrowserSettings>(BrowserSettings.DefaultFirefoxSettings);
             this.driver = this.container.Resolve<IDriver>();

@@ -1,4 +1,4 @@
-﻿// <copyright file="seleniumframe.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="ContentElement.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -11,25 +11,35 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-using HybridTestFramework.UITests.Core;
 
-namespace HybridTestFramework.UITests.Selenium.Engine
+using HybridTestFramework.UITests.Core.Controls;
+using Microsoft.Practices.Unity;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+
+namespace HybridTestFramework.UITests.Selenium.Controls
 {
-    public class SeleniumFrame : IFrame
+    public class ContentElement : Element, IContentElement
     {
-        private readonly string name;
-
-        public SeleniumFrame(string name)
+        public ContentElement(
+            IWebDriver driver,
+            IWebElement webElement,
+            IUnityContainer container) : base(driver, webElement, container)
         {
-            this.name = name;
         }
 
-        public string Name
+        public new string Content
         {
             get
             {
-                return this.name;
+                return this.webElement.Text;
             }
+        }
+
+        public void Hover()
+        {
+            Actions action = new Actions(driver);
+            action.MoveToElement(this.webElement).Perform();
         }
     }
 }

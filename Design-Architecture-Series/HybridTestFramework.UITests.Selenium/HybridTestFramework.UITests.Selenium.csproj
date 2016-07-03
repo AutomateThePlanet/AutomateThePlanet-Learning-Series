@@ -59,6 +59,10 @@
       <HintPath>..\HybridTestFramework.UITests.Core\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\HybridTestFramework.UITests.Core\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -85,7 +89,14 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ByExtensions.cs" />
-    <Compile Include="Controls\ButtonControl.cs" />
+    <Compile Include="Controls\KendoGrid.cs" />
+    <Compile Include="Controls\TextBox.cs" />
+    <Compile Include="Controls\ComboBox.cs" />
+    <Compile Include="Controls\Checkbox.cs" />
+    <Compile Include="Controls\Anchor.cs" />
+    <Compile Include="Controls\Button.cs" />
+    <Compile Include="Controls\ContentElement.cs" />
+    <Compile Include="Controls\Div.cs" />
     <Compile Include="Controls\Element.cs" />
     <Compile Include="Engine\ElementFinderService.cs" />
     <Compile Include="Engine\SeleniumDriver.CookieService.cs" />
@@ -105,6 +116,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\AutomateThePlanet.licenseheader">
+      <Link>AutomateThePlanet.licenseheader</Link>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

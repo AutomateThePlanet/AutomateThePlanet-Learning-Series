@@ -11,8 +11,8 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-
 using System;
+using HybridTestFramework.UITests.Core.Enums;
 
 namespace HybridTestFramework.UITests.Core
 {

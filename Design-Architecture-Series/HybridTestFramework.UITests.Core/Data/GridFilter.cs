@@ -1,4 +1,4 @@
-﻿// <copyright file="SearchType.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="GridFilter.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,24 +12,23 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace HybridTestFramework.UITests.Core.Enums
+using HybridTestFramework.UITests.Core.Enums;
+
+namespace HybridTestFramework.UITests.Core.Data
 {
-    public enum SearchType
+    public class GridFilter
     {
-        Id,
-        IdEndingWith,
-        ValueEndingWith,
-        IdContaining,
-        Tag,
-        CssClass,
-        XPath,
-        CssClassContaining,
-        LinkTextContaining,
-        LinkText,
-        XPathContaining,
-        CssSelector,
-        Name,
-        InnerTextContains,
-        NameEndingWith
+        public GridFilter(string columnName, FilterOperator filterOperator, string filterValue)
+        {
+            this.ColumnName = columnName;
+            this.FilterOperator = filterOperator;
+            this.FilterValue = filterValue;
+        }
+
+        public string ColumnName { get; set; }
+
+        public FilterOperator FilterOperator { get; set; }
+
+        public string FilterValue { get; set; }
     }
 }

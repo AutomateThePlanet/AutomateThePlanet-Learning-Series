@@ -50,13 +50,23 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BasePage.cs" />
     <Compile Include="By.cs" />
+    <Compile Include="Controls\IAnchor.cs" />
     <Compile Include="Controls\IButton.cs" />
+    <Compile Include="Controls\ICheckbox.cs" />
+    <Compile Include="Controls\IComboBox.cs" />
     <Compile Include="Controls\IContentElement.cs" />
+    <Compile Include="Controls\IDiv.cs" />
+    <Compile Include="Controls\IKendoGrid.cs" />
+    <Compile Include="Controls\ITextBox.cs" />
+    <Compile Include="Data\GridFilter.cs" />
     <Compile Include="Enums\Browsers.cs" />
     <Compile Include="BrowserSettings.cs" />
     <Compile Include="Controls\IElement.cs" />
     <Compile Include="Enums\DialogButton.cs" />
+    <Compile Include="Enums\SortType.cs" />
+    <Compile Include="Enums\FilterOperator.cs" />
     <Compile Include="Events\PageEventArgs.cs" />
     <Compile Include="IBrowser.cs" />
     <Compile Include="ICookieService.cs" />
