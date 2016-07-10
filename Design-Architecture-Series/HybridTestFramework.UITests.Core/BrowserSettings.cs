@@ -51,6 +51,20 @@ namespace HybridTestFramework.UITests.Core
             }
         }
 
+        public static BrowserSettings DefaultInternetExplorerSettings
+        {
+            get
+            {
+                return new BrowserSettings(Browsers.InternetExplorer)
+                {
+                    BrowserExeDirectory = Environment.CurrentDirectory,
+                    PageLoadTimeout = 60,
+                    ScriptTimeout = 60,
+                    ElementsWaitTimeout = 60
+                };
+            }
+        }
+
         public Browsers Type { get; private set; }
 
         public int ScriptTimeout { get; set; }
