@@ -19,16 +19,18 @@ using Microsoft.Practices.Unity;
 
 namespace HybridTestFramework.UITests.TestingFramework.Controls
 {
-    public class ContentElement : Element, IContentElement
+    public class ContentElement<TElementType> : 
+        Element<TElementType>, 
+        IContentElement
+        where TElementType : HtmlControl, new()
     {
         private readonly HtmlControl inputControl;
 
         public ContentElement(IDriver driver,
             ArtOfTest.WebAii.ObjectModel.Element element,
-            IUnityContainer container) 
-            : base(driver, element, container)
+            IUnityContainer container) : base(driver, element, container)
         {
-            this.inputControl = element.As<HtmlAnchor>();
+            this.inputControl = element.As<TElementType>();
         }
 
         public new string Content
@@ -39,9 +41,22 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
             }
         }
 
+        public new bool IsEnabled
+        {
+            get
+            {
+                return this.htmlControl.IsEnabled;
+            }
+        }
+
         public void Hover()
         {
             this.inputControl.MouseHover();
+        }
+
+        public void Focus()
+        {
+            this.htmlControl.Focus();
         }
     }
 }

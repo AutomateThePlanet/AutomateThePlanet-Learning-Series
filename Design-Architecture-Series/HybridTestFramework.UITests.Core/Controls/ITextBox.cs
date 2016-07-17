@@ -18,10 +18,6 @@ namespace HybridTestFramework.UITests.Core.Controls
     {
         string Text { get; set; }
 
-        bool IsEnabled { get; }
-
-        void Focus();
-
         void SimulateRealTyping(string valueToBeTyped);
     }
 }

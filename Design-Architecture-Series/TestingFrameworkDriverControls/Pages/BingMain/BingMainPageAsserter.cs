@@ -1,4 +1,4 @@
-﻿// <copyright file="IButton.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="BingMainPageAsserter.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,9 +12,20 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace HybridTestFramework.UITests.Core.Controls
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace TestingFrameworkDriverControls.Pages.BingMain
 {
-    public interface IButton : IContentElement
+    public static class BingMainPageAsserter
     {
+        public static void AssertResultsCountIsAsExpected(
+            this BingMainPage page, 
+            int expectedCount)
+        {
+            Assert.AreEqual(
+                page.ResultsCountDiv.Content, 
+                expectedCount,
+                "The results count is not as expected.");
+        }
     }
 }

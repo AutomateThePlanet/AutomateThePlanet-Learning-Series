@@ -41,5 +41,19 @@ namespace HybridTestFramework.UITests.Selenium.Controls
             Actions action = new Actions(driver);
             action.MoveToElement(this.webElement).Perform();
         }
+
+        public bool IsEnabled
+        {
+            get
+            {
+                return this.webElement.Enabled;
+            }
+        }
+
+        public void Focus()
+        {
+            Actions action = new Actions(driver);
+            action.MoveToElement(this.webElement).Perform();
+        }
     }
 }

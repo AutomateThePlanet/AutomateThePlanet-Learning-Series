@@ -15,10 +15,11 @@
 using HybridTestFramework.UITests.Core.Controls;
 using Microsoft.Practices.Unity;
 using HybridTestFramework.UITests.Core;
+using ArtOfTest.WebAii.Controls.HtmlControls;
 
 namespace HybridTestFramework.UITests.TestingFramework.Controls
 {
-    public class Button : ContentElement, IButton
+    public class Button : ContentElement<HtmlButton>, IButton
     {
         public Button(IDriver driver,
             ArtOfTest.WebAii.ObjectModel.Element element,

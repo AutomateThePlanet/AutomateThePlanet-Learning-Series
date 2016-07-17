@@ -16,8 +16,6 @@ namespace HybridTestFramework.UITests.Core.Controls
 {
     public interface ICheckbox : IContentElement
     {
-        bool IsEnabled { get; }
-
         bool IsChecked { get; }
 
         void Check();

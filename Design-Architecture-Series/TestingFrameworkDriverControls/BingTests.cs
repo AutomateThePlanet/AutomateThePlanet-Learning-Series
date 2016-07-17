@@ -17,10 +17,10 @@ using HybridTestFramework.UITests.Core.Controls;
 using HybridTestFramework.UITests.TestingFramework.Controls;
 using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+using TestingFrameworkDriverControls.Pages.BingMain;
 using Engine = HybridTestFramework.UITests.TestingFramework.Engine;
 
-namespace TestingFrameworkDriver
+namespace TestingFrameworkDriverControls
 {
     [TestClass]
     public class BingTests
@@ -32,6 +32,7 @@ namespace TestingFrameworkDriver
         public void SetupTest()
         {
             this.container = new UnityContainer();
+
             this.container.RegisterType<IDriver, Engine.TestingFrameworkDriver>();
             this.container.RegisterType<INavigationService, Engine.TestingFrameworkDriver>();
             this.container.RegisterType<IBrowser, Engine.TestingFrameworkDriver>();
@@ -39,30 +40,32 @@ namespace TestingFrameworkDriver
             this.container.RegisterType<IDialogService, Engine.TestingFrameworkDriver>();
             this.container.RegisterType<IElementFinder, Engine.TestingFrameworkDriver>();
             this.container.RegisterType<IJavaScriptInvoker, Engine.TestingFrameworkDriver>();
-            this.container.RegisterType<IAnchor, Anchor>();
+
+            this.container.RegisterType<IButton, Button>();
+            this.container.RegisterType<ITextBox, TextBox>();
+            this.container.RegisterType<IDiv, Div>();
+
+            this.container.RegisterType<BingMainPage>();
+
             this.container.RegisterInstance<IUnityContainer>(this.container);
             this.container.RegisterInstance<BrowserSettings>(BrowserSettings.DefaultInternetExplorerSettings);
-            this.driver = this.container.Resolve<IDriver>();
-        }
 
-        [TestCleanup]
-        public void TeardownTest()
-        {
-            this.driver.Quit();
+            this.driver = this.container.Resolve<IDriver>();
+            this.container.RegisterInstance<INavigationService>(this.driver);
+            this.container.RegisterInstance<IElementFinder>(this.driver);
+            this.container.RegisterInstance<IBrowser>(this.driver);
+            this.container.RegisterInstance<IDialogService>(this.driver);
+            this.container.RegisterInstance<IJavaScriptInvoker>(this.driver);
+            this.container.RegisterInstance<IDriver>(this.driver);
         }
 
         [TestMethod]
-        public void NavigateToAutomateThePlanet()
+        public void SearchForAutomateThePlanet()
         {
-            this.driver.NavigateByAbsoluteUrl(@"http://automatetheplanet.com/");
-            var blogButton = this.driver.Find<IAnchor>(
-                By.Xpath("//*[@id='tve_editor']/div[2]/div[4]/div/div/div/div/div/a"));
-            blogButton.Hover();
-            Console.WriteLine(blogButton.Content);
-            this.driver.NavigateByAbsoluteUrl(
-                        @"http://automatetheplanet.com/download-source-code/");
-            this.driver.ClickBackButton();
-            Console.WriteLine(this.driver.Title);
+            var bingMainPage = this.container.Resolve<BingMainPage>();
+            bingMainPage.Navigate();
+            bingMainPage.Search("Automate The Planet");
+            bingMainPage.AssertResultsCountIsAsExpected(264);
         }
     }
 }

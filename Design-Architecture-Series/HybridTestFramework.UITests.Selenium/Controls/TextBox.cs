@@ -41,23 +41,9 @@ namespace HybridTestFramework.UITests.Selenium.Controls
             }
         }
 
-        public void Focus()
-        {
-            Actions action = new Actions(driver);
-            action.MoveToElement(this.webElement).Perform();
-        }
-
         public void SimulateRealTyping(string valueToBeTyped)
         {
             throw new System.NotImplementedException();
-        }
-
-        public bool IsEnabled
-        {
-            get
-            {
-                return this.webElement.Enabled;
-            }
         }
     }
 }

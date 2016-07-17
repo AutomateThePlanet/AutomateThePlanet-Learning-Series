@@ -23,13 +23,5 @@ namespace HybridTestFramework.UITests.Selenium.Controls
             : base(driver, webElement, container)
         {
         }
-
-        public bool IsEnabled
-        {
-            get
-            {
-                return this.webElement.Enabled;
-            }
-        }
     }
 }

@@ -18,6 +18,10 @@ namespace HybridTestFramework.UITests.Core.Controls
     {
         new string Content { get; }
 
+        new bool IsEnabled { get; }
+
         void Hover();
+
+        void Focus();
     }
 }

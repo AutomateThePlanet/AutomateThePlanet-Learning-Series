@@ -23,9 +23,10 @@ using System.Linq;
 
 namespace HybridTestFramework.UITests.TestingFramework.Controls
 {
-    public class Element : IElement
+    public class Element<TElementType> : IElement
+        where TElementType : HtmlControl, new()
     {
-        protected readonly HtmlControl htmlControl;
+        protected readonly TElementType htmlControl;
         protected readonly ElementFinderService elementFinderService;
         protected readonly IDriver driver;
 
@@ -35,7 +36,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
             IUnityContainer container)
         {
             this.driver = driver;
-            this.htmlControl = element.As<HtmlControl>();
+            this.htmlControl = element.As<TElementType>();
             this.elementFinderService = new ElementFinderService(container);
         }
 

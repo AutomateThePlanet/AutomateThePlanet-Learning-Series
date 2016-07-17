@@ -1,4 +1,4 @@
-﻿// <copyright file="Checkbox.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="BingMainPage.Map.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -11,43 +11,36 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
+
 using System;
 using HybridTestFramework.UITests.Core.Controls;
-using Microsoft.Practices.Unity;
-using OpenQA.Selenium;
+using HybridTestFramework.UITests.Core;
 
-namespace HybridTestFramework.UITests.Selenium.Controls
+namespace TestingFrameworkDriverControls.Pages.BingMain
 {
-    public class Checkbox : ContentElement, ICheckbox
+    public partial class BingMainPage
     {
-        public Checkbox(
-            IWebDriver driver,
-            IWebElement webElement,
-            IUnityContainer container) : base(driver, webElement, container)
-        {
-        }
-
-        public bool IsChecked
+        public ITextBox SearchBox
         {
             get
             {
-                return this.webElement.Selected;
+                return this.ElementFinder.Find<ITextBox>(By.Id("sb_form_q"));
             }
         }
 
-        public void Check()
+        public IButton GoButton
         {
-            if (!this.webElement.Selected)
+            get
             {
-                this.webElement.Click();
+                return this.ElementFinder.Find<IButton>(By.Id("sb_form_go"));
             }
         }
 
-        public void Uncheck()
+        public IDiv ResultsCountDiv
         {
-            if (this.webElement.Selected)
+            get
             {
-                this.webElement.Click();
+                return this.ElementFinder.Find<IDiv>(By.Id("b_tween"));
             }
         }
     }
