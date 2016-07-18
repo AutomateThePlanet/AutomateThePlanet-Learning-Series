@@ -69,8 +69,6 @@
     <Compile Include="Enums\SortType.cs" />
     <Compile Include="Enums\FilterOperator.cs" />
     <Compile Include="Events\PageEventArgs.cs" />
-    <Compile Include="Extensions\AdvancedBy.cs" />
-    <Compile Include="Extensions\AdvancedElementFinder.cs" />
     <Compile Include="IBrowser.cs" />
     <Compile Include="ICookieService.cs" />
     <Compile Include="IDialogService.cs" />
@@ -86,6 +84,9 @@
     <None Include="..\..\AutomateThePlanet.licenseheader">
       <Link>AutomateThePlanet.licenseheader</Link>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -103,6 +103,10 @@
     <Content Include="readme-4.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HybridTestFramework.UITests.Core.Extensions\HybridTestFramework.UITests.Core.Extensions.csproj">
+      <Project>{194d01f3-5009-4afe-8c22-322035c96113}</Project>
+      <Name>HybridTestFramework.UITests.Core.Extensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HybridTestFramework.UITests.Core\HybridTestFramework.UITests.Core.csproj">
       <Project>{4161286f-a88a-4770-ac78-9d687a3b2c27}</Project>
       <Name>HybridTestFramework.UITests.Core</Name>

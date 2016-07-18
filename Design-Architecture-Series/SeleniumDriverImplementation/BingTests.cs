@@ -44,7 +44,6 @@ namespace SeleniumDriverImplementation
         {
             this.driver.NavigateByAbsoluteUrl(@"http://automatetheplanet.com/");
             var blogButton = this.driver.Find<IButton>(AdvancedBy.Xpath("//*[@id='tve_editor']/div[2]/div[4]/div/div/div/div/div/a"));
-            this.driver.FindByClassContaining<Anchor>("");
             blogButton.Hover();
             Console.WriteLine(blogButton.Content);
             this.driver.NavigateByAbsoluteUrl(@"http://automatetheplanet.com/download-source-code/");
