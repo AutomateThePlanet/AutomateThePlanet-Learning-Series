@@ -1,4 +1,4 @@
-﻿// <copyright file="IElementFinder.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="BingMainPageAsserter.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,17 +12,20 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using System.Collections.Generic;
-using HybridTestFramework.UITests.Core.Controls;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HybridTestFramework.UITests.Core
+namespace AdvancedElementFindExtensions.Pages.BingMain
 {
-    public interface IElementFinder
+    public static class BingMainPageAsserter
     {
-        TElement Find<TElement>(By by) where TElement : class, IElement;
-
-        IEnumerable<TElement> FindAll<TElement>(By by) where TElement : class, IElement;
-
-        bool IsElementPresent(Core.By by);
+        public static void AssertResultsCountIsAsExpected(
+            this BingMainPage page, 
+            int expectedCount)
+        {
+            Assert.AreEqual(
+                page.ResultsCountDiv.Content, 
+                expectedCount,
+                "The results count is not as expected.");
+        }
     }
 }

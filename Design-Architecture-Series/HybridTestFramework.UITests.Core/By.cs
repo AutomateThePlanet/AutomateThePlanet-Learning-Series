@@ -1,7 +1,4 @@
-﻿using HybridTestFramework.UITests.Core.Controls;
-using HybridTestFramework.UITests.Core.Enums;
-
-// <copyright file="By.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="By.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -14,6 +11,9 @@ using HybridTestFramework.UITests.Core.Enums;
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
+
+using HybridTestFramework.UITests.Core.Controls;
+using HybridTestFramework.UITests.Core.Enums;
 
 namespace HybridTestFramework.UITests.Core
 {
@@ -40,65 +40,15 @@ namespace HybridTestFramework.UITests.Core
         {
             return new By(SearchType.Id, id);
         }
-
-        public static By InnerTextContains(string innerText)
-        {
-            return new By(SearchType.InnerTextContains, innerText);
-        }
-
-        public static By NameEndingWith(string name)
-        {
-            return new By(SearchType.NameEndingWith, name);
-        }
-
-        public static By Xpath(string xpath)
-        {
-            return new By(SearchType.XPath, xpath);
-        }
-
-        public static By XPathContaining(string xpath)
-        {
-            return new By(SearchType.XPathContaining, xpath);
-        }
-
-        public static By IdEndingWith(string id)
-        {
-            return new By(SearchType.IdEndingWith, id);
-        }
-
-        public static By ValueEndingWith(string valueEndingWith)
-        {
-            return new By(SearchType.ValueEndingWith, valueEndingWith);
-        }
-
-        public static By IdContaining(string id)
-        {
-            return new By(SearchType.IdContaining, id);
-        }
-
+        
         public static By Id(string id, IElement parentElement)
         {
             return new By(SearchType.Id, id, parentElement);
         }
 
-        public static By CssClass(string cssClass)
-        {
-            return new By(SearchType.CssClass, cssClass);
-        }
-
-        public static By CssClassContaining(string cssClassContaining)
-        {
-            return new By(SearchType.CssClassContaining, cssClassContaining);
-        }
-
         public static By LinkText(string linkText)
         {
             return new By(SearchType.LinkText, linkText);
-        }
-
-        public static By LinkTextContaining(string linkTextContaing)
-        {
-            return new By(SearchType.LinkTextContaining, linkTextContaing);
         }
 
         public static By CssClass(string cssClass, IElement parentElement)

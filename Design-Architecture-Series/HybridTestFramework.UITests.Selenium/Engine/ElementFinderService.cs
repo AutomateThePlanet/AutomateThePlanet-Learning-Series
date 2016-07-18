@@ -11,10 +11,12 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
+using System;
 using HybridTestFramework.UITests.Selenium.Controls;
 using Microsoft.Practices.Unity;
 using OpenQA.Selenium;
 using System.Collections.Generic;
+using HybridTestFramework.UITests.Core;
 
 namespace HybridTestFramework.UITests.Selenium.Engine
 {
@@ -27,7 +29,7 @@ namespace HybridTestFramework.UITests.Selenium.Engine
             this.container = container;
         }
 
-        public TElement Find<TElement>(ISearchContext searchContext, Core.By by) 
+        public TElement Find<TElement>(ISearchContext searchContext, Core.By by)
             where TElement : class, Core.Controls.IElement
         {
             var element = searchContext.FindElement(by.ToSeleniumBy());
