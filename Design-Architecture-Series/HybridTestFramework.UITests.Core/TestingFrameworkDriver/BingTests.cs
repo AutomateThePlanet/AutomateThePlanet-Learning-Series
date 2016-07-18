@@ -14,6 +14,7 @@
 
 using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Controls;
+using HybridTestFramework.UITests.Core.Extensions;
 using HybridTestFramework.UITests.TestingFramework.Controls;
 using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -56,11 +57,11 @@ namespace TestingFrameworkDriver
         {
             this.driver.NavigateByAbsoluteUrl(@"http://automatetheplanet.com/");
             var blogButton = this.driver.Find<IAnchor>(
-                By.Xpath("//*[@id='tve_editor']/div[2]/div[4]/div/div/div/div/div/a"));
+                AdvancedBy.Xpath("//*[@id='tve_editor']/div[2]/div[4]/div/div/div/div/div/a"));
             blogButton.Hover();
             Console.WriteLine(blogButton.Content);
             this.driver.NavigateByAbsoluteUrl(
-                        @"http://automatetheplanet.com/download-source-code/");
+                @"http://automatetheplanet.com/download-source-code/");
             this.driver.ClickBackButton();
             Console.WriteLine(this.driver.Title);
         }
