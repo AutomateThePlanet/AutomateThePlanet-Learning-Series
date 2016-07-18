@@ -88,6 +88,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="read-me6.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\HybridTestFramework.UITests.Core\HybridTestFramework.UITests.Core.csproj">
       <Project>{4161286f-a88a-4770-ac78-9d687a3b2c27}</Project>
       <Name>HybridTestFramework.UITests.Core</Name>
@@ -96,9 +99,6 @@
       <Project>{511861b7-5994-4cae-84d0-daa38ba5e9b0}</Project>
       <Name>HybridTestFramework.UITests.Selenium</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="read-me6.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

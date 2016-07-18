@@ -93,6 +93,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\AutomateThePlanet.licenseheader">
+      <Link>AutomateThePlanet.licenseheader</Link>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="read-me5.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\HybridTestFramework.UITests.Core\HybridTestFramework.UITests.Core.csproj">
       <Project>{4161286f-a88a-4770-ac78-9d687a3b2c27}</Project>
       <Name>HybridTestFramework.UITests.Core</Name>
@@ -101,15 +110,6 @@
       <Project>{678950f3-aa6e-496e-9bc3-dfcf036cb83f}</Project>
       <Name>HybridTestFramework.UITests.TestingFramework</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\AutomateThePlanet.licenseheader">
-      <Link>AutomateThePlanet.licenseheader</Link>
-    </None>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="read-me5.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

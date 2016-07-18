@@ -82,7 +82,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\AutomateThePlanet.licenseheader">
+      <Link>AutomateThePlanet.licenseheader</Link>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="read-me3.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HybridTestFramework.UITests.Core\HybridTestFramework.UITests.Core.csproj">
@@ -93,9 +99,6 @@
       <Project>{511861b7-5994-4cae-84d0-daa38ba5e9b0}</Project>
       <Name>HybridTestFramework.UITests.Selenium</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="read-me3.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

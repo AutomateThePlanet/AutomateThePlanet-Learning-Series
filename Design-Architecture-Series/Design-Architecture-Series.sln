@@ -1,0 +1,90 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Create Hybrid Test Framework - Interface Contracts", "1. Create Hybrid Test Framework - Interface Contracts", "{D76CEE82-C798-45A7-8B36-3BC9053FD016}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Create Hybrid Test Framework - Selenium Driver Implementation", "2. Create Hybrid Test Framework - Selenium Driver Implementation", "{9B625587-19EF-413A-94E8-1FCB279075D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Create Hybrid Test Framework - Selenium Driver Controls", "3. Create Hybrid Test Framework - Selenium Driver Controls", "{A53517FC-4DFB-415A-8C75-D27791611EE3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Create Hybrid Test Framework - Testing Framework Driver Implementation", "4. Create Hybrid Test Framework - Testing Framework Driver Implementation", "{F4CB2C43-3609-43FC-AFE1-6345FF9397D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Create Hybrid Test Framework - Testing Framework Driver Controls", "5. Create Hybrid Test Framework - Testing Framework Driver Controls", "{355484E8-22E6-4B4B-A971-1BAA3E88F169}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Create Hybrid Test Framework - Advanced Element Find Extensions", "6. Create Hybrid Test Framework - Advanced Element Find Extensions", "{0BDBA4BE-F825-4212-9053-A98FE129642D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateHybridTestFrameworkInterfaceContracts", "CreateHybridTestFrameworkInterfaceContracts\CreateHybridTestFrameworkInterfaceContracts.csproj", "{BB15CEEE-099B-405F-AF99-07FD3A46ACDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumDriverControls", "SeleniumDriverControls\SeleniumDriverControls.csproj", "{F89091DA-50F2-46DC-9C60-69CFC858320A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumDriverImplementation", "SeleniumDriverImplementation\SeleniumDriverImplementation.csproj", "{476268A6-E9E3-4478-BB77-25EC67DFA1ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingFrameworkDriver", "TestingFrameworkDriver\TestingFrameworkDriver.csproj", "{FC72DFA5-685A-47D3-97EA-0B7579FDF16D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingFrameworkDriverControls", "TestingFrameworkDriverControls\TestingFrameworkDriverControls.csproj", "{A0102498-88B9-4738-9630-E76591F16B9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedElementFindExtensions", "AdvancedElementFindExtensions\AdvancedElementFindExtensions.csproj", "{843DE4B5-1094-448E-A3BD-25738473EDBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridTestFramework.UITests.Core", "HybridTestFramework.UITests.Core\HybridTestFramework.UITests.Core.csproj", "{4161286F-A88A-4770-AC78-9D687A3B2C27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridTestFramework.UITests.Selenium", "HybridTestFramework.UITests.Selenium\HybridTestFramework.UITests.Selenium.csproj", "{511861B7-5994-4CAE-84D0-DAA38BA5E9B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridTestFramework.UITests.TestingFramework", "HybridTestFramework.UITests.TestingFramework\HybridTestFramework.UITests.TestingFramework.csproj", "{678950F3-AA6E-496E-9BC3-DFCF036CB83F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB15CEEE-099B-405F-AF99-07FD3A46ACDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB15CEEE-099B-405F-AF99-07FD3A46ACDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB15CEEE-099B-405F-AF99-07FD3A46ACDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB15CEEE-099B-405F-AF99-07FD3A46ACDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F89091DA-50F2-46DC-9C60-69CFC858320A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89091DA-50F2-46DC-9C60-69CFC858320A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89091DA-50F2-46DC-9C60-69CFC858320A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89091DA-50F2-46DC-9C60-69CFC858320A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{476268A6-E9E3-4478-BB77-25EC67DFA1ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{476268A6-E9E3-4478-BB77-25EC67DFA1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{476268A6-E9E3-4478-BB77-25EC67DFA1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{476268A6-E9E3-4478-BB77-25EC67DFA1ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC72DFA5-685A-47D3-97EA-0B7579FDF16D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC72DFA5-685A-47D3-97EA-0B7579FDF16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC72DFA5-685A-47D3-97EA-0B7579FDF16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC72DFA5-685A-47D3-97EA-0B7579FDF16D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0102498-88B9-4738-9630-E76591F16B9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0102498-88B9-4738-9630-E76591F16B9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0102498-88B9-4738-9630-E76591F16B9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0102498-88B9-4738-9630-E76591F16B9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{843DE4B5-1094-448E-A3BD-25738473EDBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{843DE4B5-1094-448E-A3BD-25738473EDBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{843DE4B5-1094-448E-A3BD-25738473EDBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{843DE4B5-1094-448E-A3BD-25738473EDBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4161286F-A88A-4770-AC78-9D687A3B2C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4161286F-A88A-4770-AC78-9D687A3B2C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4161286F-A88A-4770-AC78-9D687A3B2C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4161286F-A88A-4770-AC78-9D687A3B2C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{511861B7-5994-4CAE-84D0-DAA38BA5E9B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{511861B7-5994-4CAE-84D0-DAA38BA5E9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{511861B7-5994-4CAE-84D0-DAA38BA5E9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{511861B7-5994-4CAE-84D0-DAA38BA5E9B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{678950F3-AA6E-496E-9BC3-DFCF036CB83F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678950F3-AA6E-496E-9BC3-DFCF036CB83F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{678950F3-AA6E-496E-9BC3-DFCF036CB83F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{678950F3-AA6E-496E-9BC3-DFCF036CB83F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB15CEEE-099B-405F-AF99-07FD3A46ACDE} = {D76CEE82-C798-45A7-8B36-3BC9053FD016}
+		{F89091DA-50F2-46DC-9C60-69CFC858320A} = {A53517FC-4DFB-415A-8C75-D27791611EE3}
+		{476268A6-E9E3-4478-BB77-25EC67DFA1ED} = {9B625587-19EF-413A-94E8-1FCB279075D8}
+		{FC72DFA5-685A-47D3-97EA-0B7579FDF16D} = {F4CB2C43-3609-43FC-AFE1-6345FF9397D8}
+		{A0102498-88B9-4738-9630-E76591F16B9F} = {355484E8-22E6-4B4B-A971-1BAA3E88F169}
+		{843DE4B5-1094-448E-A3BD-25738473EDBE} = {0BDBA4BE-F825-4212-9053-A98FE129642D}
+	EndGlobalSection
+EndGlobal

@@ -73,12 +73,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HybridTestFramework.UITests.Core\HybridTestFramework.UITests.Core.csproj">
-      <Project>{4161286f-a88a-4770-ac78-9d687a3b2c27}</Project>
-      <Name>HybridTestFramework.UITests.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\..\AutomateThePlanet.licenseheader">
       <Link>AutomateThePlanet.licenseheader</Link>
     </None>
@@ -86,6 +80,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme-1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HybridTestFramework.UITests.Core\HybridTestFramework.UITests.Core.csproj">
+      <Project>{4161286f-a88a-4770-ac78-9d687a3b2c27}</Project>
+      <Name>HybridTestFramework.UITests.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
