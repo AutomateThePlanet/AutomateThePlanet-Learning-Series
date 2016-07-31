@@ -18,47 +18,65 @@ namespace HybridTestFramework.UITests.Core.Extensions
 {
     public static class AdvancedElementFinder
     {
-        public static TElement FindByIdEndingWith<TElement>(this IElementFinder finder, string idEnding) where TElement : class, IElement
+        public static TElement FindByIdEndingWith<TElement>(
+            this IElementFinder finder, string idEnding) 
+            where TElement : class, IElement
         {
             return finder.Find<TElement>(AdvancedBy.IdEndingWith(idEnding));
         }
 
-        public static TElement FindByIdContaining<TElement>(this IElementFinder finder, string idContaining) where TElement : class, IElement
+        public static TElement FindByIdContaining<TElement>(
+            this IElementFinder finder, string idContaining) 
+            where TElement : class, IElement
         {
             return finder.Find<TElement>(AdvancedBy.IdContaining(idContaining));
         }
 
-        public static TElement FindByValueEndingWith<TElement>(this IElementFinder finder, string valueEnding) where TElement : class, IElement
+        public static TElement FindByValueEndingWith<TElement>(
+            this IElementFinder finder, string valueEnding) 
+            where TElement : class, IElement
         {
             return finder.Find<TElement>(AdvancedBy.ValueEndingWith(valueEnding));
         }
 
-        public static TElement FindByXpath<TElement>(this IElementFinder finder, string xpath) where TElement : class, IElement
+        public static TElement FindByXpath<TElement>(
+            this IElementFinder finder, string xpath) 
+            where TElement : class, IElement
         {
             return finder.Find<TElement>(AdvancedBy.Xpath(xpath));
         }
 
-        public static TElement FindByLinkTextContaining<TElement>(this IElementFinder finder, string linkTextContaining) where TElement : class, IElement
+        public static TElement FindByLinkTextContaining<TElement>(
+            this IElementFinder finder, string linkTextContaining) 
+            where TElement : class, IElement
         {
             return finder.Find<TElement>(AdvancedBy.LinkTextContaining(linkTextContaining));
         }
 
-        public static TElement FindByClass<TElement>(this IElementFinder finder, string cssClass) where TElement : class, IElement
+        public static TElement FindByClass<TElement>(
+            this IElementFinder finder, string cssClass) 
+            where TElement : class, IElement
         {
             return finder.Find<TElement>(AdvancedBy.CssClass(cssClass));
         }
 
-        public static TElement FindByClassContaining<TElement>(this IElementFinder finder, string cssClassContaining) where TElement : class, IElement
+        public static TElement FindByClassContaining<TElement>(
+            this IElementFinder finder, string cssClassContaining) 
+            where TElement : class, IElement
         {
             return finder.Find<TElement>(AdvancedBy.CssClassContaining(cssClassContaining));
         }
 
-        public static TElement FindByInnerTextContaining<TElement>(this IElementFinder finder, string innerText) where TElement : class, IElement
+        public static TElement FindByInnerTextContaining<TElement>(
+            this IElementFinder finder, string innerText) 
+            where TElement : class, IElement
         {
             return finder.Find<TElement>(AdvancedBy.InnerTextContains(innerText));
         }
 
-        public static TElement FindByNameEndingWith<TElement>(this IElementFinder finder, string name) where TElement : class, IElement
+        public static TElement FindByNameEndingWith<TElement>(
+            this IElementFinder finder, string name) 
+            where TElement : class, IElement
         {
             return finder.Find<TElement>(AdvancedBy.NameEndingWith(name));
         }

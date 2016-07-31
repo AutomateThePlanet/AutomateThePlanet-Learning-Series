@@ -19,7 +19,8 @@ namespace HybridTestFramework.UITests.Core.Extensions
 {
     public class AdvancedBy : By
     {
-        public AdvancedBy(SearchType type, string value, IElement parent) : base(type, value, parent)
+        public AdvancedBy(SearchType type, string value, IElement parent) 
+            : base(type, value, parent)
         {
         }
 

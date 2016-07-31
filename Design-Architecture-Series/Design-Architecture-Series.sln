@@ -35,6 +35,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridTestFramework.UITests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridTestFramework.UITests.Core.Extensions", "HybridTestFramework.UITests.Core.Extensions\HybridTestFramework.UITests.Core.Extensions.csproj", "{194D01F3-5009-4AFE-8C22-322035C96113}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Create Hybrid Test Framework - Dynamically Configure Execution Engine", "7. Create Hybrid Test Framework - Dynamically Configure Execution Engine", "{BA0481EA-2D24-4AC0-AAA9-2A3328B4390E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigureExecutionEngine", "ConfigureExecutionEngine\ConfigureExecutionEngine.csproj", "{D206F827-761D-4FE4-885D-C152C28D9E2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridTestFramework.UITests.Core.Behaviours", "HybridTestFramework.UITests.Core.Behaviours\HybridTestFramework.UITests.Core.Behaviours.csproj", "{11376C1A-2F0F-4FCC-A6C7-7EB1DAAA4F02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +87,14 @@ Global
 		{194D01F3-5009-4AFE-8C22-322035C96113}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{194D01F3-5009-4AFE-8C22-322035C96113}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{194D01F3-5009-4AFE-8C22-322035C96113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D206F827-761D-4FE4-885D-C152C28D9E2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D206F827-761D-4FE4-885D-C152C28D9E2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D206F827-761D-4FE4-885D-C152C28D9E2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D206F827-761D-4FE4-885D-C152C28D9E2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11376C1A-2F0F-4FCC-A6C7-7EB1DAAA4F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11376C1A-2F0F-4FCC-A6C7-7EB1DAAA4F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11376C1A-2F0F-4FCC-A6C7-7EB1DAAA4F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11376C1A-2F0F-4FCC-A6C7-7EB1DAAA4F02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,5 +106,6 @@ Global
 		{FC72DFA5-685A-47D3-97EA-0B7579FDF16D} = {F4CB2C43-3609-43FC-AFE1-6345FF9397D8}
 		{A0102498-88B9-4738-9630-E76591F16B9F} = {355484E8-22E6-4B4B-A971-1BAA3E88F169}
 		{843DE4B5-1094-448E-A3BD-25738473EDBE} = {0BDBA4BE-F825-4212-9053-A98FE129642D}
+		{D206F827-761D-4FE4-885D-C152C28D9E2F} = {BA0481EA-2D24-4AC0-AAA9-2A3328B4390E}
 	EndGlobalSection
 EndGlobal

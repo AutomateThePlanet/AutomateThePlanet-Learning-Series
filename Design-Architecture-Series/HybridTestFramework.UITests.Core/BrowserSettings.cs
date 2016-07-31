@@ -18,7 +18,7 @@ namespace HybridTestFramework.UITests.Core
 {
     public sealed class BrowserSettings
     {
-        private BrowserSettings(Browsers type)
+        public BrowserSettings(Browsers type)
         {
             this.Type = type;
         }
