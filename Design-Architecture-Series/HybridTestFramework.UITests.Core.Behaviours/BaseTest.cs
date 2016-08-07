@@ -31,7 +31,8 @@ namespace HybridTestFramework.UITests.Core.Behaviours
             this.container = new UnityContainer();
             this.container.RegisterInstance<IUnityContainer>(this.container);
             this.currentTestExecutionProvider = new MSTestExecutionProvider();
-            this.InitializeTestExecutionBehaviorObservers(this.currentTestExecutionProvider, this.container);
+            this.InitializeTestExecutionBehaviorObservers(
+                this.currentTestExecutionProvider, this.container);
             var memberInfo = MethodInfo.GetCurrentMethod();
             this.currentTestExecutionProvider.TestInstantiated(memberInfo);
         }
@@ -105,7 +106,9 @@ namespace HybridTestFramework.UITests.Core.Behaviours
             return memberInfo;
         }
 
-        private void InitializeTestExecutionBehaviorObservers(MSTestExecutionProvider currentTestExecutionProvider, IUnityContainer container)
+        private void InitializeTestExecutionBehaviorObservers(
+            MSTestExecutionProvider currentTestExecutionProvider, 
+            IUnityContainer container)
         {
             var executionEngine = new ExecutionEngineBehaviorObserver(container);
             executionEngine.Subscribe(currentTestExecutionProvider);

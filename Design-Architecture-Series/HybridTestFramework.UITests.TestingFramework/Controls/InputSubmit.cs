@@ -1,4 +1,4 @@
-﻿// <copyright file="BingMainPage.Map.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="InputSubmit.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,34 +12,26 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Controls;
+using Microsoft.Practices.Unity;
+using HybridTestFramework.UITests.Core;
+using ArtOfTest.WebAii.Controls.HtmlControls;
 
-namespace ConfigureExecutionEngine.Pages
+namespace HybridTestFramework.UITests.TestingFramework.Controls
 {
-    public partial class BingMainPage
+    public class InputSubmit : ContentElement<HtmlInputSubmit>, IInputSubmit
     {
-        public ISearch SearchBox
+        public InputSubmit(IDriver driver,
+            ArtOfTest.WebAii.ObjectModel.Element element,
+            IUnityContainer container) : base(driver, element, container)
         {
-            get
-            {
-                return this.ElementFinder.Find<ISearch>(By.Id("sb_form_q"));
-            }
         }
 
-        public IInputSubmit GoButton
+        public bool IsEnabled
         {
             get
             {
-                return this.ElementFinder.Find<IInputSubmit>(By.Id("sb_form_go"));
-            }
-        }
-
-        public IDiv ResultsCountDiv
-        {
-            get
-            {
-                return this.ElementFinder.Find<IDiv>(By.Id("b_tween"));
+                return this.htmlControl.IsEnabled;
             }
         }
     }

@@ -23,7 +23,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ConfigureExecutionEngine
 {
     [TestClass,
-    ExecutionEngineAttribute(ExecutionEngineType.WebDriver, Browsers.Firefox)]
+    ExecutionEngineAttribute(ExecutionEngineType.TestStudio, Browsers.Firefox)]
     public class BingTests : BaseTest
     {
         [TestMethod]

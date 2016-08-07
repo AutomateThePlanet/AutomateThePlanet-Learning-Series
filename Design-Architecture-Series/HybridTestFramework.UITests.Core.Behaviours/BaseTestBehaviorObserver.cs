@@ -11,9 +11,8 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-using HybridTestFramework.UITests.Core.Behaviours;
 
-namespace HybridTestFramework.UITests.Core
+namespace HybridTestFramework.UITests.Core.Behaviours
 {
     public class BaseTestBehaviorObserver
     {

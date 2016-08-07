@@ -53,12 +53,14 @@
     <Compile Include="BasePage.cs" />
     <Compile Include="By.cs" />
     <Compile Include="Controls\IAnchor.cs" />
+    <Compile Include="Controls\IInputSubmit.cs" />
     <Compile Include="Controls\IButton.cs" />
     <Compile Include="Controls\ICheckbox.cs" />
     <Compile Include="Controls\IComboBox.cs" />
     <Compile Include="Controls\IContentElement.cs" />
     <Compile Include="Controls\IDiv.cs" />
     <Compile Include="Controls\IKendoGrid.cs" />
+    <Compile Include="Controls\ISearch.cs" />
     <Compile Include="Controls\ITextBox.cs" />
     <Compile Include="Data\GridFilter.cs" />
     <Compile Include="ElementTimeoutException.cs" />

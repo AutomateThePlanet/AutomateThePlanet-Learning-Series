@@ -107,21 +107,26 @@ namespace HybridTestFramework.UITests.Core.Behaviours
                     new InjectionFactory(x => new TestingFrameworkDriver(this.unityContainer, browserSettings)));
                 this.driver = this.unityContainer.Resolve<IDriver>();
 
-                this.unityContainer.RegisterType<IButton, SeleniumControls.Button>();
-                this.unityContainer.RegisterType<ITextBox, SeleniumControls.TextBox>();
-                this.unityContainer.RegisterType<IDiv, SeleniumControls.Div>();
+                this.unityContainer.RegisterType<IButton, TestingFrameworkControls.Button>();
+                this.unityContainer.RegisterType<ITextBox, TestingFrameworkControls.TextBox>();
+                this.unityContainer.RegisterType<IDiv, TestingFrameworkControls.Div>();
+                this.unityContainer.RegisterType<ISearch, TestingFrameworkControls.Search>();
+                this.unityContainer.RegisterType<IInputSubmit, TestingFrameworkControls.InputSubmit>();
             }
             else if (this.executionEngineType.Equals(ExecutionEngineType.WebDriver))
             {
                 this.unityContainer.RegisterType<IDriver, SeleniumDriver>(
                     new InjectionFactory(x => new SeleniumDriver(this.unityContainer, browserSettings)));
                 this.driver = this.unityContainer.Resolve<IDriver>();
-                
-                this.unityContainer.RegisterType<IButton, TestingFrameworkControls.Button>();
-                this.unityContainer.RegisterType<ITextBox, TestingFrameworkControls.TextBox>();
-                this.unityContainer.RegisterType<IDiv, TestingFrameworkControls.Div>();
+
+                this.unityContainer.RegisterType<IButton, SeleniumControls.Button>();
+                this.unityContainer.RegisterType<ITextBox, SeleniumControls.TextBox>();
+                this.unityContainer.RegisterType<IDiv, SeleniumControls.Div>();
+                this.unityContainer.RegisterType<ISearch, SeleniumControls.Search>();
+                this.unityContainer.RegisterType<IInputSubmit, SeleniumControls.InputSubmit>();
             }
 
+            this.unityContainer.RegisterInstance<IDriver>(this.driver);
             this.unityContainer.RegisterInstance<IBrowser>(this.driver);
             this.unityContainer.RegisterInstance<ICookieService>(this.driver);
             this.unityContainer.RegisterInstance<IDialogService>(this.driver);

@@ -12,7 +12,6 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using ArtOfTest.Common.Exceptions;
 using ArtOfTest.WebAii.Core;
 using HybridTestFramework.UITests.Core;
 using Microsoft.Practices.Unity;
@@ -70,10 +69,6 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
                 Manager.Current.ActiveBrowser.WaitForElement(hfe, 5000, false);
             }
             catch (TimeoutException)
-            {
-                return false;
-            }
-            catch (FindElementException)
             {
                 return false;
             }

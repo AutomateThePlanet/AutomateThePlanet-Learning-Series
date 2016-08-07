@@ -65,6 +65,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\Translators\Telerik.TestingFramework.Controls.KendoUI.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.TestStudio.Core, Version=2016.2.630.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\Telerik.TestStudio.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Telerik.TestStudio.Translators.KendoUI, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\Translators\Telerik.TestStudio.Translators.KendoUI.dll</HintPath>
