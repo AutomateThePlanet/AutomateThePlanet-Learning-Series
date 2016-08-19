@@ -1,4 +1,4 @@
-﻿// <copyright file="BaseTestBehaviorObserver.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="basetestbehaviorobserver.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ namespace HybridTestFramework.UITests.Core.Behaviours
     {
         public void Subscribe(IExecutionProvider provider)
         {
-            provider.TestInstantiatedEvent += this.TestInstantiated;
             provider.PreTestInitEvent += this.PreTestInit;
             provider.PostTestInitEvent += this.PostTestInit;
             provider.PreTestCleanupEvent += this.PreTestCleanup;
@@ -27,7 +26,6 @@ namespace HybridTestFramework.UITests.Core.Behaviours
 
         public void Unsubscribe(IExecutionProvider provider)
         {
-            provider.TestInstantiatedEvent -= this.TestInstantiated;
             provider.PreTestInitEvent -= this.PreTestInit;
             provider.PostTestInitEvent -= this.PostTestInit;
             provider.PreTestCleanupEvent -= this.PreTestCleanup;

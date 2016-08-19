@@ -1,4 +1,4 @@
-﻿// <copyright file="iexecutionprovider.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="BingMainPageAsserter.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -11,18 +11,21 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-using System;
 
-namespace HybridTestFramework.UITests.Core.Behaviours
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace CreateVideoRecordingEngine.Pages
 {
-    public interface IExecutionProvider
+    public static class BingMainPageAsserter
     {
-        event EventHandler<TestExecutionEventArgs> PreTestInitEvent;
-
-        event EventHandler<TestExecutionEventArgs> PostTestInitEvent;
-
-        event EventHandler<TestExecutionEventArgs> PreTestCleanupEvent;
-
-        event EventHandler<TestExecutionEventArgs> PostTestCleanupEvent;
+        public static void AssertResultsCountIsAsExpected(
+            this BingMainPage page,
+            int expectedCount)
+        {
+            Assert.AreEqual(
+                page.ResultsCountDiv.Content,
+                expectedCount,
+                "The results count is not as expected.");
+        }
     }
 }

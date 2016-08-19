@@ -12,7 +12,7 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace HybridTestFramework.UITests.Core.Behaviours.Enums
+namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Enums
 {
     public enum ExecutionEngineType
     {

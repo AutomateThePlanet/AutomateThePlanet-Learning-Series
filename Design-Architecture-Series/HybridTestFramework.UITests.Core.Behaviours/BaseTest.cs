@@ -1,4 +1,4 @@
-﻿// <copyright file="BaseTest.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="basetest.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,6 +12,9 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
+using HybridTestFramework.UITests.Core.Behaviours.TestsEngine;
+using HybridTestFramework.UITests.Core.Behaviours.VideoRecording;
+using HybridTestFramework.UITests.Core.Utilities;
 using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Reflection;
@@ -21,7 +24,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours
     [TestClass]
     public class BaseTest
     {
-        private readonly MSTestExecutionProvider currentTestExecutionProvider;
+        private readonly TestExecutionProvider currentTestExecutionProvider;
         private IDriver driver;
         private readonly IUnityContainer container;
         private TestContext testContextInstance;
@@ -30,11 +33,9 @@ namespace HybridTestFramework.UITests.Core.Behaviours
         {
             this.container = new UnityContainer();
             this.container.RegisterInstance<IUnityContainer>(this.container);
-            this.currentTestExecutionProvider = new MSTestExecutionProvider();
+            this.currentTestExecutionProvider = new TestExecutionProvider();
             this.InitializeTestExecutionBehaviorObservers(
                 this.currentTestExecutionProvider, this.container);
-            var memberInfo = MethodInfo.GetCurrentMethod();
-            this.currentTestExecutionProvider.TestInstantiated(memberInfo);
         }
 
         public IDriver Driver
@@ -77,19 +78,19 @@ namespace HybridTestFramework.UITests.Core.Behaviours
         public void CoreTestInit()
         {
             var memberInfo = GetCurrentExecutionMethodInfo();
-            this.currentTestExecutionProvider.PreTestInit(this.TestContext, memberInfo);
+            this.currentTestExecutionProvider.PreTestInit((TestOutcome)this.TestContext.CurrentTestOutcome, this.TestContext.TestName, memberInfo);
             this.driver = this.container.Resolve<IDriver>();
             this.TestInit();
-            this.currentTestExecutionProvider.PostTestInit(this.TestContext, memberInfo);
+            this.currentTestExecutionProvider.PostTestInit((TestOutcome)this.TestContext.CurrentTestOutcome, this.TestContext.TestName, memberInfo);
         }
 
         [TestCleanup]
         public void CoreTestCleanup()
         {
             var memberInfo = GetCurrentExecutionMethodInfo();
-            this.currentTestExecutionProvider.PreTestCleanup(this.TestContext, memberInfo);
+            this.currentTestExecutionProvider.PreTestCleanup((TestOutcome)this.TestContext.CurrentTestOutcome, this.TestContext.TestName, memberInfo);
             this.TestCleanup();
-            this.currentTestExecutionProvider.PostTestCleanup(this.TestContext, memberInfo);
+            this.currentTestExecutionProvider.PostTestCleanup((TestOutcome)this.TestContext.CurrentTestOutcome, this.TestContext.TestName, memberInfo);
         }
 
         public virtual void TestInit()
@@ -100,18 +101,20 @@ namespace HybridTestFramework.UITests.Core.Behaviours
         {
         }
 
+        public virtual void InitializeTestExecutionBehaviorObservers(
+            TestExecutionProvider testExecutionProvider,
+            IUnityContainer container)
+        {
+            var executionEngine = new ExecutionEngineBehaviorObserver(container);
+            var videoRecording = new VideoBehaviorObserver(new MsExpressionEncoderVideoRecorder());
+            executionEngine.Subscribe(testExecutionProvider);
+            videoRecording.Subscribe(testExecutionProvider);
+        }
+
         private MethodInfo GetCurrentExecutionMethodInfo()
         {
             var memberInfo = this.GetType().GetMethod(this.TestContext.TestName);
             return memberInfo;
-        }
-
-        private void InitializeTestExecutionBehaviorObservers(
-            MSTestExecutionProvider currentTestExecutionProvider, 
-            IUnityContainer container)
-        {
-            var executionEngine = new ExecutionEngineBehaviorObserver(container);
-            executionEngine.Subscribe(currentTestExecutionProvider);
         }
     }
 }

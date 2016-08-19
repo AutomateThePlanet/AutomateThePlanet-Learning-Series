@@ -12,18 +12,21 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using ConfigureExecutionEngine.Pages;
+using CreateVideoRecordingEngine.Pages;
 using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Behaviours;
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Attributes;
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Enums;
+using HybridTestFramework.UITests.Core.Behaviours.VideoRecording.Attributes;
+using HybridTestFramework.UITests.Core.Behaviours.VideoRecording.Enums;
 using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ConfigureExecutionEngine
+namespace CreateVideoRecordingEngine
 {
     [TestClass,
-    ExecutionEngineAttribute(ExecutionEngineType.TestStudio, Browsers.Firefox)]
+    ExecutionEngineAttribute(ExecutionEngineType.TestStudio, Browsers.Firefox),
+    VideoRecordingAttribute(VideoRecordingMode.OnlyFail)]
     public class BingTests : BaseTest
     {
         [TestMethod]
@@ -33,6 +36,17 @@ namespace ConfigureExecutionEngine
             bingMainPage.Navigate();
             bingMainPage.Search("Automate The Planet");
             bingMainPage.AssertResultsCountIsAsExpected(264);
+            Assert.Fail();
+        }
+
+        [TestMethod]
+        public void SearchForAutomateThePlanet1()
+        {
+            var bingMainPage = this.Container.Resolve<BingMainPage>();
+            bingMainPage.Navigate();
+            bingMainPage.Search("Automate The Planet");
+            bingMainPage.AssertResultsCountIsAsExpected(264);
+            Assert.Fail();
         }
     }
 }

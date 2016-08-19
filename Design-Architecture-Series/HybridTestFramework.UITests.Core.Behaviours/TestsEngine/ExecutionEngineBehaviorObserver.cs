@@ -12,8 +12,8 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using HybridTestFramework.UITests.Core.Behaviours.Attributes;
-using HybridTestFramework.UITests.Core.Behaviours.Enums;
+using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Attributes;
+using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Enums;
 using HybridTestFramework.UITests.Core.Controls;
 using HybridTestFramework.UITests.Selenium.Engine;
 using HybridTestFramework.UITests.TestingFramework.Engine;
@@ -23,7 +23,7 @@ using System.Reflection;
 using SeleniumControls = HybridTestFramework.UITests.Selenium.Controls;
 using TestingFrameworkControls = HybridTestFramework.UITests.TestingFramework.Controls;
 
-namespace HybridTestFramework.UITests.Core.Behaviours
+namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
 {
     public class ExecutionEngineBehaviorObserver : BaseTestBehaviorObserver
     {
@@ -37,12 +37,12 @@ namespace HybridTestFramework.UITests.Core.Behaviours
             this.unityContainer = unityContainer;
         }
 
-        protected override void PostTestCleanup(object sender, HybridTestFramework.UITests.Core.Behaviours.TestExecutionEventArgs e)
+        protected override void PostTestCleanup(object sender, TestExecutionEventArgs e)
         {
             this.driver.Quit();
         }
 
-        protected override void PreTestInit(object sender, HybridTestFramework.UITests.Core.Behaviours.TestExecutionEventArgs e)
+        protected override void PreTestInit(object sender, TestExecutionEventArgs e)
         {
             this.executionBrowserType = this.ConfigureTestExecutionBrowser(e.MemberInfo);
             this.executionEngineType = this.GetExecutionEngineType(e.MemberInfo);

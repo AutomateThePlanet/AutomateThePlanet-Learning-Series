@@ -1,4 +1,4 @@
-﻿// <copyright file="iexecutionprovider.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="VideoRecordingMode.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -11,18 +11,15 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-using System;
 
-namespace HybridTestFramework.UITests.Core.Behaviours
+namespace HybridTestFramework.UITests.Core.Behaviours.VideoRecording.Enums
 {
-    public interface IExecutionProvider
+    public enum VideoRecordingMode
     {
-        event EventHandler<TestExecutionEventArgs> PreTestInitEvent;
-
-        event EventHandler<TestExecutionEventArgs> PostTestInitEvent;
-
-        event EventHandler<TestExecutionEventArgs> PreTestCleanupEvent;
-
-        event EventHandler<TestExecutionEventArgs> PostTestCleanupEvent;
+        Always,
+        DoNotRecord,
+        Ignore,
+        OnlyPass,
+        OnlyFail
     }
 }

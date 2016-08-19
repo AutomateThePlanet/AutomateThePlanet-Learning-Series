@@ -11,10 +11,11 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-using System;
-using HybridTestFramework.UITests.Core.Behaviours.Enums;
 
-namespace HybridTestFramework.UITests.Core.Behaviours.Attributes
+using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Enums;
+using System;
+
+namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Attributes
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
     public class ExecutionEngineAttribute : Attribute

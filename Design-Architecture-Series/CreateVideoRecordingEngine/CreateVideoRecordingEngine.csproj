@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{11376C1A-2F0F-4FCC-A6C7-7EB1DAAA4F02}</ProjectGuid>
+    <ProjectGuid>{6C9DE703-AD3E-4EF6-A391-D06330220B96}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HybridTestFramework.UITests.Core.Behaviours</RootNamespace>
-    <AssemblyName>HybridTestFramework.UITests.Core.Behaviours</AssemblyName>
+    <RootNamespace>CreateVideoRecordingEngine</RootNamespace>
+    <AssemblyName>CreateVideoRecordingEngine</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,11 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ArtOfTest.WebAii, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL">
+    <Reference Include="ArtOfTest.WebAii, Version=2016.2.630.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\ArtOfTest.WebAii.dll</HintPath>
     </Reference>
-    <Reference Include="ArtOfTest.WebAii.Design, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=4fc62bbc3827ab1d, processorArchitecture=MSIL">
+    <Reference Include="ArtOfTest.WebAii.Design, Version=2016.2.630.0, Culture=neutral, PublicKeyToken=4fc62bbc3827ab1d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\ArtOfTest.WebAii.Design.dll</HintPath>
     </Reference>
@@ -60,21 +60,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Drawing" />
-    <Reference Include="Telerik.TestingFramework.Controls.KendoUI, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
+    <Reference Include="Telerik.TestingFramework.Controls.KendoUI, Version=2016.2.630.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\Translators\Telerik.TestingFramework.Controls.KendoUI.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.TestStudio.Translators.KendoUI, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\Translators\Telerik.TestStudio.Translators.KendoUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WebAii.Controls.Html, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
+    <Reference Include="Telerik.WebAii.Controls.Html, Version=2016.2.630.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\Translators\Telerik.WebAii.Controls.Html.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WebAii.Design.Translators.Html, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
+    <Reference Include="Telerik.WebAii.Design.Translators.Html, Version=2016.2.630.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\Translators\Telerik.WebAii.Design.Translators.Html.dll</HintPath>
     </Reference>
@@ -100,28 +95,31 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="TestContextTestExecutionEventArgsAdapter.cs" />
-    <Compile Include="TestOutcome.cs" />
-    <Compile Include="TestsEngine\Attributes\ExecutionEngineAttribute.cs" />
-    <Compile Include="BaseTest.cs" />
-    <Compile Include="BaseTestBehaviorObserver.cs" />
-    <Compile Include="TestsEngine\ExecutionEngineBehaviorObserver.cs" />
-    <Compile Include="IExecutionProvider.cs" />
-    <Compile Include="TestExecutionEventArgs.cs" />
-    <Compile Include="TestsEngine\Enums\ExecutionEngineType.cs" />
-    <Compile Include="TestExecutionProvider.cs" />
+    <Compile Include="BingTests.cs" />
+    <Compile Include="Pages\BingMain\BingMainPage.cs" />
+    <Compile Include="Pages\BingMain\BingMainPage.Map.cs" />
+    <Compile Include="Pages\BingMain\BingMainPageAsserter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VideoRecording\Attributes\VideoRecordingAttribute.cs" />
-    <Compile Include="VideoRecording\Enums\VideoRecordingMode.cs" />
-    <Compile Include="VideoRecording\VideoBehaviorObserver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\AutomateThePlanet.licenseheader">
       <Link>AutomateThePlanet.licenseheader</Link>
     </None>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="read-me8.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdvancedElementFindExtensions\AdvancedElementFindExtensions.csproj">
+      <Project>{843de4b5-1094-448e-a3bd-25738473edbe}</Project>
+      <Name>AdvancedElementFindExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HybridTestFramework.UITests.Core.Behaviours\HybridTestFramework.UITests.Core.Behaviours.csproj">
+      <Project>{11376c1a-2f0f-4fcc-a6c7-7eb1daaa4f02}</Project>
+      <Name>HybridTestFramework.UITests.Core.Behaviours</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HybridTestFramework.UITests.Core.Extensions\HybridTestFramework.UITests.Core.Extensions.csproj">
       <Project>{194d01f3-5009-4afe-8c22-322035c96113}</Project>
       <Name>HybridTestFramework.UITests.Core.Extensions</Name>
@@ -137,10 +135,6 @@
     <ProjectReference Include="..\HybridTestFramework.UITests.Selenium\HybridTestFramework.UITests.Selenium.csproj">
       <Project>{511861b7-5994-4cae-84d0-daa38ba5e9b0}</Project>
       <Name>HybridTestFramework.UITests.Selenium</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HybridTestFramework.UITests.TestingFramework\HybridTestFramework.UITests.TestingFramework.csproj">
-      <Project>{678950f3-aa6e-496e-9bc3-dfcf036cb83f}</Project>
-      <Name>HybridTestFramework.UITests.TestingFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
@@ -163,6 +157,11 @@
   </Choose>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Name="CreateVideoRecordingEngine" />
+    </VisualStudio>
+  </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -1,4 +1,4 @@
-﻿// <copyright file="TestExecutionEventArgs.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="testexecutioneventargs.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,7 +12,6 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Reflection;
 
@@ -20,16 +19,23 @@ namespace HybridTestFramework.UITests.Core.Behaviours
 {
     public class TestExecutionEventArgs : EventArgs
     {
-        private readonly TestContext testContext;
+        private readonly TestOutcome testOutcome;
         private readonly MemberInfo memberInfo;
+        private readonly string testName;
 
-        public TestExecutionEventArgs(TestContext context, MemberInfo memberInfo)
+        public TestExecutionEventArgs(TestOutcome testOutcome, string testName, MemberInfo memberInfo)
         {
-            this.testContext = context;
+            this.testOutcome = testOutcome;
+            this.testName = testName;
             this.memberInfo = memberInfo;
         }
 
-        public MemberInfo MemberInfo
+        public TestExecutionEventArgs(MemberInfo memberInfo)
+        {
+            this.memberInfo = memberInfo;
+        }
+
+        public virtual MemberInfo MemberInfo
         {
             get
             {
@@ -37,11 +43,19 @@ namespace HybridTestFramework.UITests.Core.Behaviours
             }
         }
 
-        public TestContext TestContext
+        public virtual TestOutcome TestOutcome
         {
             get
             {
-                return this.testContext;
+                return this.testOutcome;
+            }
+        }
+
+        public virtual string TestName
+        {
+            get
+            {
+                return this.testName;
             }
         }
     }
