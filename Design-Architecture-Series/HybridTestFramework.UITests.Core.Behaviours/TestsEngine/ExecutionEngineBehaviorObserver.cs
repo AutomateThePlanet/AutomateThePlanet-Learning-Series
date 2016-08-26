@@ -12,12 +12,15 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
+using System.Collections.Generic;
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Attributes;
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Enums;
 using HybridTestFramework.UITests.Core.Controls;
 using HybridTestFramework.UITests.Core.Utilities;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.AmbientContext;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility;
+using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator;
+using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator.Interfaces;
 using HybridTestFramework.UITests.Selenium.Engine;
 using HybridTestFramework.UITests.TestingFramework.Engine;
 using Microsoft.Practices.Unity;
@@ -106,32 +109,31 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
             var browserSettings = new BrowserSettings(this.executionBrowserType);
             if (this.executionEngineType.Equals(ExecutionEngineType.TestStudio))
             {
-                ServiceUnavailableExceptionHandler serviceUnavailableExceptionHandler = new ServiceUnavailableExceptionHandler();
-                var exceptionAnalyzer = new HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility.ExceptionAnalyzer(serviceUnavailableExceptionHandler);
-                this.unityContainer.RegisterInstance<IExceptionAnalyzer>(exceptionAnalyzer);
-                
                 #region Default Registration
                 
-                ////this.unityContainer.RegisterType<IDriver, TestingFrameworkDriver>(
-                ////    new InjectionFactory(x => new TestingFrameworkDriver(this.unityContainer, browserSettings)));
-                
-                #endregion
-                    
-                # region 9. Failed Tests Аnalysis- Chain of Responsibility Design Pattern
-                        
                 this.unityContainer.RegisterType<IDriver, TestingFrameworkDriver>(
-                    new InjectionFactory(x => new TestingFrameworkDriver(
-                        this.unityContainer,
-                        browserSettings,
-                        exceptionAnalyzer)));
+                    new InjectionFactory(x => new TestingFrameworkDriver(this.unityContainer, browserSettings)));
                 
                 #endregion
-
+                
+                # region 9. Failed Tests Аnalysis- Chain of Responsibility Design Pattern
+                
+                ////ServiceUnavailableExceptionHandler serviceUnavailableExceptionHandler = new ServiceUnavailableExceptionHandler();
+                ////var exceptionAnalyzer = new HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility.ExceptionAnalyzer(serviceUnavailableExceptionHandler);
+                ////this.unityContainer.RegisterInstance<IExceptionAnalyzer>(exceptionAnalyzer);
+                ////this.unityContainer.RegisterType<IDriver, TestingFrameworkDriver>(
+                ////    new InjectionFactory(x => new TestingFrameworkDriver(
+                ////        this.unityContainer,
+                ////        browserSettings,
+                ////        exceptionAnalyzer)));
+                
+                #endregion
+                
                 # region 10. Failed Tests Аnalysis- Ambient Context Design Pattern
-
-                UnityContainerFactory.GetContainer().RegisterType<FileNotFoundExceptionHandler>(ExceptionAnalyzerConstants.MainApplicationHandlerName);
-                var mainHandler = UnityContainerFactory.GetContainer().Resolve<FileNotFoundExceptionHandler>();
-                UnityContainerFactory.GetContainer().RegisterInstance<Handler>(ExceptionAnalyzerConstants.MainApplicationHandlerName, mainHandler, new HierarchicalLifetimeManager());
+                
+                ////UnityContainerFactory.GetContainer().RegisterType<FileNotFoundExceptionHandler>(ExceptionAnalyzerConstants.MainApplicationHandlerName);
+                ////var mainHandler = UnityContainerFactory.GetContainer().Resolve<FileNotFoundExceptionHandler>();
+                ////UnityContainerFactory.GetContainer().RegisterInstance<Handler>(ExceptionAnalyzerConstants.MainApplicationHandlerName, mainHandler, new HierarchicalLifetimeManager());
                 
                 #endregion
                 
@@ -163,6 +165,17 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
             this.unityContainer.RegisterInstance<IJavaScriptInvoker>(this.driver);
             this.unityContainer.RegisterInstance<INavigationService>(this.driver);
             this.unityContainer.RegisterInstance<IElementFinder>(this.driver);
+            
+            # region 11. Failed Tests Аnalysis - Decorator Design Pattern
+            
+            this.unityContainer.RegisterType<IEnumerable<IExceptionAnalysationHandler>, IExceptionAnalysationHandler[]>();
+            this.unityContainer.RegisterType<IUiExceptionAnalyser, UiExceptionAnalyser>();
+            this.unityContainer.RegisterType<IElementFinder, ExceptionAnalyzedElementFinder>(
+                new InjectionFactory(x => new ExceptionAnalyzedElementFinder(this.driver, this.unityContainer.Resolve<IUiExceptionAnalyser>())));
+            this.unityContainer.RegisterType<INavigationService, ExceptionAnalyzedNavigationService>(
+                new InjectionFactory(x => new ExceptionAnalyzedNavigationService(this.driver, this.unityContainer.Resolve<IUiExceptionAnalyser>())));
+        
+            #endregion
         }
         
         private Browsers ConfigureTestExecutionBrowser(MemberInfo memberInfo)
@@ -186,7 +199,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
                     currentExecutionBrowserType = Browsers.InternetExplorer;
                 }
             }
-            
+        
             return currentExecutionBrowserType;
         }
         

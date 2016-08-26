@@ -14,6 +14,7 @@
 
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine;
 using HybridTestFramework.UITests.Core.Behaviours.VideoRecording;
+using HybridTestFramework.UITests.Core.Utilities;
 using HybridTestFramework.UITests.Core.Utilities.VideoRecording;
 using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -31,7 +32,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours
 
         public BaseTest()
         {
-            this.container = new UnityContainer();
+            this.container = UnityContainerFactory.GetContainer();
             this.container.RegisterInstance<IUnityContainer>(this.container);
             this.currentTestExecutionProvider = new TestExecutionProvider();
             this.InitializeTestExecutionBehaviorObservers(

@@ -1,0 +1,3 @@
+﻿Article: Failed Tests Аnalysis - Decorator Design Pattern
+URL:  http://automatetheplanet.com/failed-tests-analysis-decorator
+Publish Date: 10.09.2016

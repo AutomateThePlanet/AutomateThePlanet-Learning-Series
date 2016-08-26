@@ -12,14 +12,13 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using HybridTestFramework.UITests.Core;
-
 namespace HybridTestFramework.UITests.Core
 {
     public abstract class BasePage
     {
-        private readonly IElementFinder elementFinder;
-        private readonly INavigationService navigationService;
+        // Changed to be not readonly.
+        private IElementFinder elementFinder;
+        private INavigationService navigationService;
 
         public BasePage(IElementFinder elementFinder, INavigationService navigationService)
         {
@@ -27,19 +26,34 @@ namespace HybridTestFramework.UITests.Core
             this.navigationService = navigationService;
         }
 
+        // add an empty contstructor in order the decorators to be able to work.
+        public BasePage()
+        {
+        }
+
+        // changed to have setter.
         protected IElementFinder ElementFinder
         {
             get
             {
                 return this.elementFinder;
             }
+            set
+            {
+                this.elementFinder = value;
+            }
         }
 
+        // changed to have setter.
         protected INavigationService NavigationService
         {
             get
             {
                 return this.navigationService;
+            }
+            set
+            {
+                this.navigationService = value;
             }
         }
     }

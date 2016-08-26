@@ -12,46 +12,41 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
+using FailedTestsAnalysisDecorator.Pages;
 using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Behaviours;
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Attributes;
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Enums;
 using HybridTestFramework.UITests.Core.Behaviours.VideoRecording.Attributes;
 using HybridTestFramework.UITests.Core.Behaviours.VideoRecording.Enums;
-using HybridTestFramework.UITests.Core.Controls;
-using HybridTestFramework.UITests.Core.Extensions;
-using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.AmbientContext;
-using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility;
+using HybridTestFramework.UITests.Core.Utilities;
+using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator;
+using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator.Interfaces;
 using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
-namespace FailedTestsAnalysisAmbientContext
+namespace FailedTestsAnalysisDecorator
 {
     [TestClass,
     ExecutionEngineAttribute(ExecutionEngineType.TestStudio, Browsers.Firefox),
     VideoRecordingAttribute(VideoRecordingMode.DoNotRecord)]
     public class BingTests : BaseTest
     {
-        private IExceptionAnalyzer exceptionAnalyzer;
- 
         public override void TestInit()
         {
             base.TestInit();
-            this.exceptionAnalyzer = this.Container.Resolve<IExceptionAnalyzer>();
+            UnityContainerFactory.GetContainer().RegisterType<IExceptionAnalysationHandler, ServiceUnavailableExceptionHandler>(Guid.NewGuid().ToString());
+            UnityContainerFactory.GetContainer().RegisterType<IExceptionAnalysationHandler, FileNotFoundExceptionHandler>(Guid.NewGuid().ToString());  
         }
 
         [TestMethod]
-        public void TryToLoginTelerik_AmbientContext()
+        public void TryToLoginTelerik_Decorator()
         {
-            this.Driver.NavigateByAbsoluteUrl("https://www.telerik.com/login/");
-            this.exceptionAnalyzer.AddNewHandler<EmptyEmailValidationExceptionHandler>();
-            using (new TestsExceptionsAnalyzerContext<EmptyEmailValidationExceptionHandler>())
-            {
-                var loginButton = this.Driver.FindByIdEndingWith<IButton>("LoginButton");
-                loginButton.Click();
-                var logoutButton = this.Driver.FindByIdEndingWith<IButton>("LogoutButton");
-                logoutButton.Click();
-            }
+            var loginPage = this.Container.Resolve<LoginPage>();
+            loginPage.Navigate();
+            loginPage.Login();
+            loginPage.Logout();
         }
     }
 }
