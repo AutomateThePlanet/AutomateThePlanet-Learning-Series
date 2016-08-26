@@ -47,6 +47,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateVideoRecordingEngine"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridTestFramework.UITests.Core.Utilities", "HybridTestFramework.UITests.Core.Utilities\HybridTestFramework.UITests.Core.Utilities.csproj", "{4799C486-623C-4718-A910-3A3157992E22}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9. Failed Tests Аnalysis- Chain of Responsibility Design Pattern", "9. Failed Tests Аnalysis- Chain of Responsibility Design Pattern", "{3F5CF6D8-81F5-4418-9864-3B424B502BF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FailedTestsAnalysisChainOfResponsibility", "FailedTestsAnalysisChainOfResponsibility\FailedTestsAnalysisChainOfResponsibility.csproj", "{46B905E2-D259-415D-A688-A73645D9967B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. Failed Tests Аnalysis- Ambient Context Design Pattern", "10. Failed Tests Аnalysis- Ambient Context Design Pattern", "{B4E49DBA-6F45-4CF9-AD9F-ECBEBF2174CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FailedTestsAnalysisAmbientContext", "FailedTestsAnalysisAmbientContext\FailedTestsAnalysisAmbientContext.csproj", "{FAEB1F3C-1147-442E-8606-D1E843E054BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +117,14 @@ Global
 		{4799C486-623C-4718-A910-3A3157992E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4799C486-623C-4718-A910-3A3157992E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4799C486-623C-4718-A910-3A3157992E22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B905E2-D259-415D-A688-A73645D9967B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B905E2-D259-415D-A688-A73645D9967B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B905E2-D259-415D-A688-A73645D9967B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B905E2-D259-415D-A688-A73645D9967B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAEB1F3C-1147-442E-8606-D1E843E054BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAEB1F3C-1147-442E-8606-D1E843E054BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAEB1F3C-1147-442E-8606-D1E843E054BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAEB1F3C-1147-442E-8606-D1E843E054BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,5 +138,7 @@ Global
 		{843DE4B5-1094-448E-A3BD-25738473EDBE} = {0BDBA4BE-F825-4212-9053-A98FE129642D}
 		{D206F827-761D-4FE4-885D-C152C28D9E2F} = {BA0481EA-2D24-4AC0-AAA9-2A3328B4390E}
 		{6C9DE703-AD3E-4EF6-A391-D06330220B96} = {A418D4D7-E8F7-4252-BFAB-90EC4655F8DC}
+		{46B905E2-D259-415D-A688-A73645D9967B} = {3F5CF6D8-81F5-4418-9864-3B424B502BF7}
+		{FAEB1F3C-1147-442E-8606-D1E843E054BD} = {B4E49DBA-6F45-4CF9-AD9F-ECBEBF2174CC}
 	EndGlobalSection
 EndGlobal

@@ -1,4 +1,4 @@
-﻿// <copyright file="ElementFinderService.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="ElementFinderService - Copy.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -11,9 +11,10 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-
 using ArtOfTest.WebAii.Core;
 using HybridTestFramework.UITests.Core;
+using HybridTestFramework.UITests.Core.Utilities;
+using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.AmbientContext;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility;
 using Microsoft.Practices.Unity;
 using System;
@@ -24,23 +25,39 @@ using System.Reflection;
 
 namespace HybridTestFramework.UITests.TestingFramework.Engine
 {
-    public class ElementFinderService
+    public class ExceptionAnalizedElementFinderService
     {
         private readonly IUnityContainer container;
+        private readonly IExceptionAnalyzer excepionAnalyzer;
 
-        public ElementFinderService(IUnityContainer container)
+        public ExceptionAnalizedElementFinderService(IUnityContainer container, IExceptionAnalyzer excepionAnalyzer)
         {
             this.container = container;
+            this.excepionAnalyzer = excepionAnalyzer;
         }
 
         public TElement Find<TElement>(IDriver driver, Find findContext, Core.By by)
             where TElement : class, Core.Controls.IElement
         {
             TElement result = default(TElement);
-            string testingFrameworkExpression = by.ToTestingFrameworkExpression();
-            this.WaitForExists(driver, testingFrameworkExpression);
-            var element = findContext.ByExpression(by.ToTestingFrameworkExpression());
-            result = this.ResolveElement<TElement>(driver, element);
+            try
+            {
+                string testingFrameworkExpression = by.ToTestingFrameworkExpression();
+                this.WaitForExists(driver, testingFrameworkExpression);
+                var element = findContext.ByExpression(by.ToTestingFrameworkExpression());
+                result = this.ResolveElement<TElement>(driver, element);
+            }
+            catch (Exception ex)
+            {
+                ////# region 9. Failed Tests Аnalysis- Chain of Responsibility Design Pattern
+                ////this.excepionAnalyzer.MainApplicationHandler.HandleRequest(ex, driver);
+                ////#endregion
+                # region 10. Failed Tests Аnalysis- Ambient Context Design Pattern
+                var mainApplicationHandler = UnityContainerFactory.GetContainer().Resolve<Handler>(ExceptionAnalyzerConstants.MainApplicationHandlerName);
+                mainApplicationHandler.HandleRequest(ex, driver);
+                #endregion
+                throw;
+            }
 
             return result;
         }
@@ -49,14 +66,28 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
             where TElement : class, Core.Controls.IElement
         {
             List<TElement> resolvedElements = new List<TElement>();
-            string testingFrameworkExpression = by.ToTestingFrameworkExpression();
-            this.WaitForExists(driver, testingFrameworkExpression);
-            var elements = findContext.AllByExpression(testingFrameworkExpression);
-
-            foreach (var currentElement in elements)
+            try
             {
-                TElement result = this.ResolveElement<TElement>(driver, currentElement);
-                resolvedElements.Add(result);
+                string testingFrameworkExpression = by.ToTestingFrameworkExpression();
+                this.WaitForExists(driver, testingFrameworkExpression);
+                var elements = findContext.AllByExpression(testingFrameworkExpression);
+
+                foreach (var currentElement in elements)
+                {
+                    TElement result = this.ResolveElement<TElement>(driver, currentElement);
+                    resolvedElements.Add(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                ////# region 9. Failed Tests Аnalysis- Chain of Responsibility Design Pattern
+                ////this.excepionAnalyzer.MainApplicationHandler.HandleRequest(ex, driver);
+                ////#endregion
+                # region 10. Failed Tests Аnalysis- Ambient Context Design Pattern
+                var mainApplicationHandler = UnityContainerFactory.GetContainer().Resolve<Handler>(ExceptionAnalyzerConstants.MainApplicationHandlerName);
+                mainApplicationHandler.HandleRequest(ex, driver);
+                #endregion
+                throw;
             }
 
             return resolvedElements;

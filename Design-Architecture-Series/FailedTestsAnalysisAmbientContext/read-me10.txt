@@ -1,0 +1,3 @@
+﻿Article: Failed Tests Аnalysis- Ambient Context Design Pattern
+URL:  http://automatetheplanet.com/failed-tests-analysis-ambient-context
+Publish Date: 03.09.2016

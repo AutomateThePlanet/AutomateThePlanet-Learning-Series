@@ -8335,6 +8335,581 @@
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4e4972c3-6c05-4e4d-a0e3-e444935fb098"
+        name="Handler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="4c6a037b-e873-4ad7-abc4-fd3d0ff7fa8b"
+            name="HandleRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9e3bee30-bb50-4017-9e78-c0dfc0475d98"
+        name="Client"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="c61e704b-38c8-4fa3-b627-08ef3dd21c08">
+            <classMoniker
+              Id="4e4972c3-6c05-4e4d-a0e3-e444935fb098"
+              LastKnownName="Handler"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cd100275-0faf-48b1-8074-f4f43847bc5c"
+        name="ConcreteHandler1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="533489d9-09e7-4710-b5d9-ce34896e4a05"
+            isSubstitutable="false">
+            <classMoniker
+              Id="4e4972c3-6c05-4e4d-a0e3-e444935fb098"
+              LastKnownName="Handler"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="513a666d-155b-4a99-b83d-d5d25c47fc0d"
+            name="HandleRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d4eb38cc-3ef3-4df7-a3af-cd4a46f740c0"
+        name="ConcreteHandler2"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="1369a7d2-961f-466e-9833-82c174c3151e"
+            isSubstitutable="false">
+            <classMoniker
+              Id="4e4972c3-6c05-4e4d-a0e3-e444935fb098"
+              LastKnownName="Handler"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0bef829e-bb68-4241-8b43-a8fbb9700a2c"
+            name="HandleRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fda5d85b-f5f9-4151-9fc7-4165561ff739"
+        name="Handler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="a6740a7b-e7f7-4396-a950-8c8cb568445b"
+            name="Handler Successor"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="cffecf59-2927-419c-9d2f-72ee4e7db00a"
+            name="SetSuccessor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a9109aac-beb7-4895-925e-8a02303cba4c"
+                  name="Handler successor"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="96866629-0877-4d5e-8f01-3b8cd9b438d4"
+            name="ClearSuccessor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ab1cc379-8be7-4696-a047-0bca76b69f78"
+            name="HandleRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="eb3719b5-0b0e-42dc-8d8e-d5a3a20ff596"
+                  name="Exception ex"
+                  direction="In"
+                  isUnique="false">
+                  <defaultValue>
+                    <literalString
+                      Id="49e77b19-df6c-49e9-8e31-6d37d6c4aa22"
+                      name="DefaultValue"
+                      value="null" />
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="26f6ddc5-cd2c-456e-8271-08ac48603fc6"
+                  name="params object[] context"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="114001c0-b111-425f-bbc0-6e82bb36124e"
+            name="IsApplicable"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="964d497a-9666-4a11-aa58-9f769f33be94"
+                  name="params object[] exceptionData"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="246697e6-6219-4fe5-9ec4-8cf0a16ca468"
+        name="HtmlSourceExceptionHandler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="41b817f9-21a2-44ab-8815-ea5f47ea43f6"
+            isSubstitutable="false">
+            <classMoniker
+              Id="fda5d85b-f5f9-4151-9fc7-4165561ff739"
+              LastKnownName="Handler"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="8377138f-1ab1-43f2-bf41-995fec53d46a"
+            name="string TextToSearchInSource"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="276cd074-11a5-4413-a402-81b1ecdfffe1"
+            name="IsApplicable"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b312ec4f-0222-42ca-b1fe-cc39edaef7dc"
+                  name="params object[] context"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="27adf8a9-3304-4b5c-badc-771a998ef5db"
+        name="IExceptionAnalyzer"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="2b206ee8-165b-4d12-9aa8-1912b1910054">
+            <classMoniker
+              Id="fda5d85b-f5f9-4151-9fc7-4165561ff739"
+              LastKnownName="Handler"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributes>
+          <property
+            Id="c8349dea-1530-48b2-a940-822689ecd349"
+            name="Handler MainApplicationHandler"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="18ed48fb-a924-450f-b3da-09252530a71a"
+            name="AddNewHandler&lt;TNewHandler&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="fec8e021-886e-4b62-872b-6a420d9a398a"
+            name="RemoveLastHandler"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d3751248-d72f-4719-9c49-d064c009ccaa"
+        name="ExceptionAnalyzer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="7bae35c9-f267-4538-b055-6ffdf218b2e8">
+            <interfaceMoniker
+              Id="27adf8a9-3304-4b5c-badc-771a998ef5db"
+              LastKnownName="IExceptionAnalyzer"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+          <dependency
+            Id="6f87f606-7fdb-4e39-9f61-bbdfbd3d8b62">
+            <classMoniker
+              Id="246697e6-6219-4fe5-9ec4-8cf0a16ca468"
+              LastKnownName="HtmlSourceExceptionHandler"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="fa42ca66-4852-4493-afe5-6f1409353e13"
+            name="Handler MainApplicationHandler"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="392bce8a-7183-4dbc-95a0-b92c08df9f80"
+            name="AddNewHandler&lt;TNewHandler&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7e2b4af9-852f-49f4-be6f-67edb1384c23"
+            name="RemoveLastHandler"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a937b667-a345-457b-bc97-8288f10d8d3a"
+        name="ElementFinderService"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="29726426-dc68-452b-8bd6-e0567119c605">
+            <interfaceMoniker
+              Id="27adf8a9-3304-4b5c-badc-771a998ef5db"
+              LastKnownName="IExceptionAnalyzer"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="db1d95e1-a075-4e2e-9cc4-e2b89d1ecb6f"
+        name="TestsExceptionsAnalyzerContext&lt;THandler&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="a15bf4e2-8465-49e6-81af-dbe36e346641">
+            <classMoniker
+              Id="128470f3-2f82-4b97-946b-fb85188653db"
+              LastKnownName="Handler"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="8a24d6ba-fb59-4fcf-9059-9ff196ee6e15"
+            name="Stack&lt;Handler&gt; scopeStack"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0513195b-1414-444e-82e2-b684ae7d35ae"
+            name="Dispose"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b70e2b45-3705-47df-aeca-5ca3ddd6a669"
+            name="AddHandlerInfrontOfChain&lt;TNewHandler&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7442b081-0122-477b-9409-ab36eb76e788"
+            name="MakeSuccessorMainHandler"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="128470f3-2f82-4b97-946b-fb85188653db"
+        name="Handler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="f708b9a9-bbfd-4a4e-91d4-08b4f531e4db"
+            name="string DetailedIssueExplanation"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="4ca5c09b-1921-4861-b59d-4e6e4c7decf2"
+            name="Handler Successor"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="05e8bbb0-465e-4f75-8ba8-c6620026b852"
+            name="SetSuccessor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2271de57-143e-47af-b8ce-d2ab82b5bdd8"
+                  name="Handler successor"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="38b98498-3bbb-4b61-89e0-bdbc7c7df3db"
+            name="void ClearSuccessor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="79d66d7c-3569-486c-b49f-7cba027e9ded"
+            name="HandleRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="339b5c99-e8c1-4af9-bc54-80acce3fed0f"
+                  name="Exception ex"
+                  direction="In"
+                  isUnique="false">
+                  <defaultValue>
+                    <literalString
+                      Id="ce1bb2fb-eb66-4e6e-a8b1-d693c334463b"
+                      name="DefaultValue"
+                      value="null" />
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1beb89fc-e9c7-48c5-b9d7-959127f055da"
+                  name="params object[] context"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="204c7ded-7177-4a19-9c36-739a9cd4a42a"
+            name="IsApplicable"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0922e28a-9608-40e8-85f0-0e3d7b32b39f"
+                  name="params object[] exceptionData"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2c96c222-fa51-42f2-afa5-b5dc930c8f40"
+        name="TestsExceptionsAnalyzerContext&lt;THandler1, THandler2&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="80a79688-8858-4a10-9bea-a9776266cfde"
+            isSubstitutable="false">
+            <classMoniker
+              Id="db1d95e1-a075-4e2e-9cc4-e2b89d1ecb6f"
+              LastKnownName="TestsExceptionsAnalyzerContext&lt;THandler&gt;"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="596a8b27-a667-41f0-8271-e92328f7cbf9"
+        name="TestsExceptionsAnalyzerContext&lt;THandler1, THandler2, THandler3&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="9bb2800e-53ee-473a-b321-4d8b9a4272c4"
+            isSubstitutable="false">
+            <classMoniker
+              Id="2c96c222-fa51-42f2-afa5-b5dc930c8f40"
+              LastKnownName="TestsExceptionsAnalyzerContext&lt;THandler1, THandler2&gt;"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

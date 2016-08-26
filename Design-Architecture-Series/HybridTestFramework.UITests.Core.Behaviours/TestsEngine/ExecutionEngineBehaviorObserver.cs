@@ -15,6 +15,9 @@
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Attributes;
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Enums;
 using HybridTestFramework.UITests.Core.Controls;
+using HybridTestFramework.UITests.Core.Utilities;
+using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.AmbientContext;
+using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility;
 using HybridTestFramework.UITests.Selenium.Engine;
 using HybridTestFramework.UITests.TestingFramework.Engine;
 using Microsoft.Practices.Unity;
@@ -102,11 +105,38 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
         {
             var browserSettings = new BrowserSettings(this.executionBrowserType);
             if (this.executionEngineType.Equals(ExecutionEngineType.TestStudio))
-            { 
+            {
+                ServiceUnavailableExceptionHandler serviceUnavailableExceptionHandler = new ServiceUnavailableExceptionHandler();
+                var exceptionAnalyzer = new HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility.ExceptionAnalyzer(serviceUnavailableExceptionHandler);
+                this.unityContainer.RegisterInstance<IExceptionAnalyzer>(exceptionAnalyzer);
+                
+                #region Default Registration
+                
+                ////this.unityContainer.RegisterType<IDriver, TestingFrameworkDriver>(
+                ////    new InjectionFactory(x => new TestingFrameworkDriver(this.unityContainer, browserSettings)));
+                
+                #endregion
+                    
+                # region 9. Failed Tests Аnalysis- Chain of Responsibility Design Pattern
+                        
                 this.unityContainer.RegisterType<IDriver, TestingFrameworkDriver>(
-                    new InjectionFactory(x => new TestingFrameworkDriver(this.unityContainer, browserSettings)));
-                this.driver = this.unityContainer.Resolve<IDriver>();
+                    new InjectionFactory(x => new TestingFrameworkDriver(
+                        this.unityContainer,
+                        browserSettings,
+                        exceptionAnalyzer)));
+                
+                #endregion
 
+                # region 10. Failed Tests Аnalysis- Ambient Context Design Pattern
+
+                UnityContainerFactory.GetContainer().RegisterType<FileNotFoundExceptionHandler>(ExceptionAnalyzerConstants.MainApplicationHandlerName);
+                var mainHandler = UnityContainerFactory.GetContainer().Resolve<FileNotFoundExceptionHandler>();
+                UnityContainerFactory.GetContainer().RegisterInstance<Handler>(ExceptionAnalyzerConstants.MainApplicationHandlerName, mainHandler, new HierarchicalLifetimeManager());
+                
+                #endregion
+                
+                this.driver = this.unityContainer.Resolve<IDriver>();
+                
                 this.unityContainer.RegisterType<IButton, TestingFrameworkControls.Button>();
                 this.unityContainer.RegisterType<ITextBox, TestingFrameworkControls.TextBox>();
                 this.unityContainer.RegisterType<IDiv, TestingFrameworkControls.Div>();
@@ -118,14 +148,14 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
                 this.unityContainer.RegisterType<IDriver, SeleniumDriver>(
                     new InjectionFactory(x => new SeleniumDriver(this.unityContainer, browserSettings)));
                 this.driver = this.unityContainer.Resolve<IDriver>();
-
+                
                 this.unityContainer.RegisterType<IButton, SeleniumControls.Button>();
                 this.unityContainer.RegisterType<ITextBox, SeleniumControls.TextBox>();
                 this.unityContainer.RegisterType<IDiv, SeleniumControls.Div>();
                 this.unityContainer.RegisterType<ISearch, SeleniumControls.Search>();
                 this.unityContainer.RegisterType<IInputSubmit, SeleniumControls.InputSubmit>();
             }
-
+            
             this.unityContainer.RegisterInstance<IDriver>(this.driver);
             this.unityContainer.RegisterInstance<IBrowser>(this.driver);
             this.unityContainer.RegisterInstance<ICookieService>(this.driver);
@@ -134,13 +164,13 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
             this.unityContainer.RegisterInstance<INavigationService>(this.driver);
             this.unityContainer.RegisterInstance<IElementFinder>(this.driver);
         }
-
+        
         private Browsers ConfigureTestExecutionBrowser(MemberInfo memberInfo)
         {
             var currentExecutionBrowserType = Browsers.Firefox;
             Browsers methodExecutionBrowser = this.GetExecutionBrowser(memberInfo);
             Browsers classExecutionBrowser = this.GetExecutionBrowser(memberInfo.DeclaringType);
-
+            
             if (methodExecutionBrowser != Browsers.NotSet)
             {
                 currentExecutionBrowserType = methodExecutionBrowser;
@@ -156,17 +186,17 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
                     currentExecutionBrowserType = Browsers.InternetExplorer;
                 }
             }
-
+            
             return currentExecutionBrowserType;
         }
-
+        
         private Browsers GetExecutionBrowser(MemberInfo memberInfo)
         {
             if (memberInfo == null)
             {
                 throw new ArgumentNullException("The test method's info cannot be null.");
             }
-
+            
             var executionBrowserAttribute = memberInfo.GetCustomAttribute<ExecutionEngineAttribute>(true);
             if (executionBrowserAttribute != null)
             {
@@ -174,14 +204,14 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
             }
             return Browsers.NotSet;
         }
-
+        
         private Browsers GetExecutionBrowser(Type currentType)
         {
             if (currentType == null)
             {
                 throw new ArgumentNullException("The test method's type cannot be null.");
             }
-
+            
             var executionBrowserAttribute = currentType.GetCustomAttribute<ExecutionEngineAttribute>(true);
             if (executionBrowserAttribute != null)
             {

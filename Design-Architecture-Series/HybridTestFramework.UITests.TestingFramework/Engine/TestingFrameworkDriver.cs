@@ -13,6 +13,7 @@
 // <site>http://automatetheplanet.com/</site>
 
 using HybridTestFramework.UITests.Core;
+using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility;
 using Microsoft.Practices.Unity;
 using ArtOfTest.WebAii.Core;
 
@@ -21,15 +22,30 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
     public partial class TestingFrameworkDriver : IDriver
     {
         private readonly Browser originalBrowser;
-        private readonly ElementFinderService elementFinderService;
+        ////private readonly ElementFinderService elementFinderService;
+        private readonly ExceptionAnalizedElementFinderService elementFinderService;
         private Manager driver;
         private IUnityContainer container;
         private BrowserSettings browserSettings;
         private Browser currentActiveBrowser;
 
+        ////public TestingFrameworkDriver(
+        ////    IUnityContainer container,
+        ////    BrowserSettings browserSettings)
+        ////{
+        ////    this.container = container;
+        ////    this.browserSettings = browserSettings;
+        ////    this.InitializeManager(browserSettings);
+        ////    this.LaunchNewBrowser();
+        ////    this.originalBrowser = this.driver.ActiveBrowser;
+        ////    this.currentActiveBrowser = this.driver.ActiveBrowser;
+        ////    this.elementFinderService = new ElementFinderService(container);
+        ////}
+
         public TestingFrameworkDriver(
             IUnityContainer container,
-            BrowserSettings browserSettings)
+            BrowserSettings browserSettings,
+            IExceptionAnalyzer excepionAnalyzer)
         {
             this.container = container;
             this.browserSettings = browserSettings;
@@ -37,7 +53,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
             this.LaunchNewBrowser();
             this.originalBrowser = this.driver.ActiveBrowser;
             this.currentActiveBrowser = this.driver.ActiveBrowser;
-            this.elementFinderService = new ElementFinderService(container);
+            this.elementFinderService = new ExceptionAnalizedElementFinderService(container, excepionAnalyzer);
         }
 
         private void InitializeManager(BrowserSettings browserSettings)

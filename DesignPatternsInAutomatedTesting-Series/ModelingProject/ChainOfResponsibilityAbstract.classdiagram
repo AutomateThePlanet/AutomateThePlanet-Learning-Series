@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="dbc7980a-7a2c-41b9-840a-74a070269e45" name="ChainOfResponsibility" linkedPackageId="ed96d6c5-c66f-4b00-8f00-3d9c3d08e20b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="1ff72b9f-b971-4d1a-95c5-325f28f438ef">
+      <profileInstance Id="906072b2-fdb3-4dd3-b23e-33c9c35f959a" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="2640e175-dd62-4fde-a302-a1d533e4f5d5">
+      <profileInstance Id="13c105f1-0b2a-42bc-9195-50d22cb4f2b5" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="beb8e1c2-9ccc-4887-87e2-eeb134c7f0c8" name="Handler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4e4972c3-6c05-4e4d-a0e3-e444935fb098" />
+        <ownedOperationsInternal>
+          <operation Id="3dc973de-3513-4301-bd93-d4c923aa8911" name="HandleRequest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4c6a037b-e873-4ad7-abc4-fd3d0ff7fa8b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="864fb994-d2db-481b-acf4-71997535d592" name="Client" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9e3bee30-bb50-4017-9e78-c0dfc0475d98" />
+        <suppliersInternal>
+          <dependency Id="c830d08f-d683-4fe4-b06f-0e233740576d">
+            <classMoniker Id="beb8e1c2-9ccc-4887-87e2-eeb134c7f0c8" LastKnownName="Handler" />
+            <elementDefinition Id="c61e704b-38c8-4fa3-b627-08ef3dd21c08" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="67dfdcbd-a7d3-4ea4-b38f-a8a7b1706baa" name="ConcreteHandler1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cd100275-0faf-48b1-8074-f4f43847bc5c" />
+        <generalsInternal>
+          <generalization Id="b69e0630-83d4-45bc-883e-9d78139443a4" isSubstitutable="false">
+            <classMoniker Id="beb8e1c2-9ccc-4887-87e2-eeb134c7f0c8" LastKnownName="Handler" />
+            <elementDefinition Id="533489d9-09e7-4710-b5d9-ce34896e4a05" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="ea057b1a-6b45-472c-8bc4-351d428d503e" name="HandleRequest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="513a666d-155b-4a99-b83d-d5d25c47fc0d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5d91cda6-36c5-4ff4-afe3-c21b15d2fa0e" name="ConcreteHandler2" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d4eb38cc-3ef3-4df7-a3af-cd4a46f740c0" />
+        <generalsInternal>
+          <generalization Id="30b30874-8418-427b-b931-1a505d168b3a" isSubstitutable="false">
+            <classMoniker Id="beb8e1c2-9ccc-4887-87e2-eeb134c7f0c8" LastKnownName="Handler" />
+            <elementDefinition Id="1369a7d2-961f-466e-9833-82c174c3151e" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="f0a3f39f-dccf-49fb-bdaa-4dd7d75dfd41" name="HandleRequest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0bef829e-bb68-4241-8b43-a8fbb9700a2c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="ed96d6c5-c66f-4b00-8f00-3d9c3d08e20b" name="ModelingProject1">
+    <elementDefinition Id="71304b90-dec2-48cf-aa25-61ab4fe1335d" />
+  </package>
+</logicalClassDesignerModel>

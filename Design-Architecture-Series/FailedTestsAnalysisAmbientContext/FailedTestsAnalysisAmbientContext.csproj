@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{678950F3-AA6E-496E-9BC3-DFCF036CB83F}</ProjectGuid>
+    <ProjectGuid>{FAEB1F3C-1147-442E-8606-D1E843E054BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HybridTestFramework.UITests.TestingFramework</RootNamespace>
-    <AssemblyName>HybridTestFramework.UITests.TestingFramework</AssemblyName>
+    <RootNamespace>FailedTestsAnalysisAmbientContext</RootNamespace>
+    <AssemblyName>FailedTestsAnalysisAmbientContext</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,52 +35,41 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ArtOfTest.WebAii, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL">
+    <Reference Include="ArtOfTest.WebAii, Version=2016.2.630.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\ArtOfTest.WebAii.dll</HintPath>
     </Reference>
-    <Reference Include="ArtOfTest.WebAii.Design, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=4fc62bbc3827ab1d, processorArchitecture=MSIL">
+    <Reference Include="ArtOfTest.WebAii.Design, Version=2016.2.630.0, Culture=neutral, PublicKeyToken=4fc62bbc3827ab1d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\ArtOfTest.WebAii.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\HybridTestFramework.UITests.Core\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
-      <HintPath>..\HybridTestFramework.UITests.Core\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
-      <HintPath>..\HybridTestFramework.UITests.Core\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
-      <HintPath>..\HybridTestFramework.UITests.Core\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\HybridTestFramework.UITests.Core\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Web" />
-    <Reference Include="Telerik.TestingFramework.Controls.KendoUI, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
+    <Reference Include="Telerik.TestingFramework.Controls.KendoUI, Version=2016.2.630.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\Translators\Telerik.TestingFramework.Controls.KendoUI.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.TestStudio.Core, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL">
+    <Reference Include="Telerik.TestStudio.Core, Version=2016.2.630.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\Telerik.TestStudio.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.TestStudio.Translators.KendoUI, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\Translators\Telerik.TestStudio.Translators.KendoUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WebAii.Controls.Html, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
+    <Reference Include="Telerik.WebAii.Controls.Html, Version=2016.2.630.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\Translators\Telerik.WebAii.Controls.Html.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WebAii.Design.Translators.Html, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
+    <Reference Include="Telerik.WebAii.Design.Translators.Html, Version=2016.2.630.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Telerik\Test Studio\Bin\Translators\Telerik.WebAii.Design.Translators.Html.dll</HintPath>
     </Reference>
@@ -98,38 +87,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ByExtensions.cs" />
-    <Compile Include="Controls\Anchor.cs" />
-    <Compile Include="Controls\InputSubmit.cs" />
-    <Compile Include="Controls\Button.cs" />
-    <Compile Include="Controls\Checkbox.cs" />
-    <Compile Include="Controls\ComboBox.cs" />
-    <Compile Include="Controls\ContentElement.cs" />
-    <Compile Include="Controls\Div.cs" />
-    <Compile Include="Controls\Element.cs" />
-    <Compile Include="Controls\KendoGrid.cs" />
-    <Compile Include="Controls\Search.cs" />
-    <Compile Include="Controls\TextBox.cs" />
-    <Compile Include="Engine\ExceptionAnalizedElementFinderService.cs" />
-    <Compile Include="Engine\ElementFinderService.cs" />
-    <Compile Include="Engine\TestingFrameworkDriver.Browser.cs" />
-    <Compile Include="Engine\TestingFrameworkDriver.CookieService.cs" />
-    <Compile Include="Engine\TestingFrameworkDriver.cs" />
-    <Compile Include="Engine\TestingFrameworkDriver.DialogService.cs" />
-    <Compile Include="Engine\TestingFrameworkDriver.ElementFinder.cs" />
-    <Compile Include="Engine\TestingFrameworkDriver.JavascriptInvoker.cs" />
-    <Compile Include="Engine\TestingFrameworkDriver.NavigationService.cs" />
-    <Compile Include="Engine\TestStudioFrame.cs" />
-    <Compile Include="HtmlElementExpressionExtensions.cs" />
+    <Compile Include="BingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\AutomateThePlanet.licenseheader">
-      <Link>AutomateThePlanet.licenseheader</Link>
-    </None>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\HybridTestFramework.UITests.Core.Behaviours\HybridTestFramework.UITests.Core.Behaviours.csproj">
+      <Project>{11376c1a-2f0f-4fcc-a6c7-7eb1daaa4f02}</Project>
+      <Name>HybridTestFramework.UITests.Core.Behaviours</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HybridTestFramework.UITests.Core.Extensions\HybridTestFramework.UITests.Core.Extensions.csproj">
+      <Project>{194d01f3-5009-4afe-8c22-322035c96113}</Project>
+      <Name>HybridTestFramework.UITests.Core.Extensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HybridTestFramework.UITests.Core.Utilities\HybridTestFramework.UITests.Core.Utilities.csproj">
       <Project>{4799c486-623c-4718-a910-3a3157992e22}</Project>
       <Name>HybridTestFramework.UITests.Core.Utilities</Name>
@@ -138,8 +107,21 @@
       <Project>{4161286f-a88a-4770-ac78-9d687a3b2c27}</Project>
       <Name>HybridTestFramework.UITests.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HybridTestFramework.UITests.TestingFramework\HybridTestFramework.UITests.TestingFramework.csproj">
+      <Project>{678950f3-aa6e-496e-9bc3-dfcf036cb83f}</Project>
+      <Name>HybridTestFramework.UITests.TestingFramework</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="..\..\AutomateThePlanet.licenseheader">
+      <Link>AutomateThePlanet.licenseheader</Link>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="read-me10.txt" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
@@ -160,6 +142,11 @@
   </Choose>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Name="FailedTestsAnalysisAmbientContext" />
+    </VisualStudio>
+  </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

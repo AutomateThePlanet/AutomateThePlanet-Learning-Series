@@ -36,12 +36,33 @@
       <SubType>Content</SubType>
       <DependentUpon>AdvancedBehavioursDesignPattern.classdiagram</DependentUpon>
     </Content>
+    <Content Include="AmbientContext.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="AmbientContext.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>AmbientContext.classdiagram</DependentUpon>
+    </Content>
     <Content Include="BehavioursDesignPattern.classdiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="BehavioursDesignPattern.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>BehavioursDesignPattern.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ChainOfResponsibilityAbstract.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ChainOfResponsibilityAbstract.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ChainOfResponsibilityAbstract.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ChainOfResponsibilityExceptionAnalysis.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ChainOfResponsibilityExceptionAnalysis.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ChainOfResponsibilityExceptionAnalysis.classdiagram</DependentUpon>
     </Content>
     <Content Include="DecoratorPattern.classdiagram">
       <SubType>Content</SubType>
