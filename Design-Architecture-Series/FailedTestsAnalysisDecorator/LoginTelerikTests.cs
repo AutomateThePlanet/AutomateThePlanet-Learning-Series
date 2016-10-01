@@ -31,7 +31,7 @@ namespace FailedTestsAnalysisDecorator
     [TestClass,
     ExecutionEngineAttribute(ExecutionEngineType.TestStudio, Browsers.Firefox),
     VideoRecordingAttribute(VideoRecordingMode.DoNotRecord)]
-    public class BingTests : BaseTest
+    public class LoginTelerikTests : BaseTest
     {
         public override void TestInit()
         {

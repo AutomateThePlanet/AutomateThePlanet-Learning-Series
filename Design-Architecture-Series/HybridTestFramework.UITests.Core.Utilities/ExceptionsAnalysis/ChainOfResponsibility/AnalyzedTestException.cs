@@ -22,15 +22,18 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfR
         {
         }
         
-        public AnalyzedTestException(string message) : base(FormatExceptionMessage(message))
+        public AnalyzedTestException(string message) 
+            : base(FormatExceptionMessage(message))
         {
         }
 
-        public AnalyzedTestException(string message, Exception inner) : base(FormatExceptionMessage(message), inner)
+        public AnalyzedTestException(string message, Exception inner) 
+            : base(FormatExceptionMessage(message), inner)
         {
         }
 
-        private static string FormatExceptionMessage(string exceptionMessage)
+        private static string FormatExceptionMessage(
+            string exceptionMessage)
         {
             return string.Format(
                 "\n\n{0}\n\n{1}\n\n{2}\n",

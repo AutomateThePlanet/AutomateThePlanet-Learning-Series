@@ -87,7 +87,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="BingTests.cs" />
+    <Compile Include="LoginTelerikTests.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\LoginPage.Map.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

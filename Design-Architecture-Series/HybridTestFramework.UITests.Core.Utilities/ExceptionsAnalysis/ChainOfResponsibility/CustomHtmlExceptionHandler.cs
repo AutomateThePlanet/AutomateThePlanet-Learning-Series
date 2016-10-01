@@ -19,7 +19,9 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfR
         private readonly string textToSearchInSource;
         private readonly string detailedIssueExplanation;
 
-        public CustomHtmlExceptionHandler(string textToSearchInSource, string detailedIssueExplanation)
+        public CustomHtmlExceptionHandler(
+            string textToSearchInSource, 
+            string detailedIssueExplanation)
         {
             this.textToSearchInSource = textToSearchInSource;
             this.detailedIssueExplanation = detailedIssueExplanation;

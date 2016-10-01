@@ -100,7 +100,10 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
 
         public void LaunchNewBrowser()
         {
-            this.driver.LaunchNewBrowser();
+            if (this.driver != null)
+            {
+                this.driver.LaunchNewBrowser();
+            }
         }
 
         public void MaximizeBrowserWindow()

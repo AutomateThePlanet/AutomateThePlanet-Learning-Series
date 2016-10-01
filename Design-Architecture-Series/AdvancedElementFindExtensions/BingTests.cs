@@ -44,8 +44,9 @@ namespace AdvancedElementFindExtensions
             this.container.RegisterType<ITextBox, TextBox>();
             this.container.RegisterType<IDiv, Div>();
             this.container.RegisterType<IContentElement, ContentElement>();
+            this.container.RegisterType<BingMainPage>();
             this.container.RegisterInstance<IUnityContainer>(this.container);
-            this.container.RegisterInstance<BrowserSettings>(BrowserSettings.DefaultFirefoxSettings);
+            this.container.RegisterInstance<BrowserSettings>(BrowserSettings.DefaultInternetExplorerSettings);
             this.driver = this.container.Resolve<IDriver>();
         }
 

@@ -1,4 +1,4 @@
-﻿// <copyright file="BingTests.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="LoginTelerikTests.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -20,17 +20,16 @@ using HybridTestFramework.UITests.Core.Behaviours.VideoRecording.Attributes;
 using HybridTestFramework.UITests.Core.Behaviours.VideoRecording.Enums;
 using HybridTestFramework.UITests.Core.Controls;
 using HybridTestFramework.UITests.Core.Extensions;
-using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.AmbientContext;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility;
-using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.Practices.Unity;
 
-namespace FailedTestsAnalysisAmbientContext
+namespace FailedTestsAnalysisChainOfResponsibility
 {
     [TestClass,
     ExecutionEngineAttribute(ExecutionEngineType.TestStudio, Browsers.Firefox),
     VideoRecordingAttribute(VideoRecordingMode.DoNotRecord)]
-    public class BingTests : BaseTest
+    public class LoginTelerikTests : BaseTest
     {
         private IExceptionAnalyzer exceptionAnalyzer;
  
@@ -41,17 +40,15 @@ namespace FailedTestsAnalysisAmbientContext
         }
 
         [TestMethod]
-        public void TryToLoginTelerik_AmbientContext()
+        public void TryToLoginTelerik()
         {
             this.Driver.NavigateByAbsoluteUrl("https://www.telerik.com/login/");
             this.exceptionAnalyzer.AddNewHandler<EmptyEmailValidationExceptionHandler>();
-            using (new TestsExceptionsAnalyzerContext<EmptyEmailValidationExceptionHandler>())
-            {
-                var loginButton = this.Driver.FindByIdEndingWith<IButton>("LoginButton");
-                loginButton.Click();
-                var logoutButton = this.Driver.FindByIdEndingWith<IButton>("LogoutButton");
-                logoutButton.Click();
-            }
+            var loginButton = this.Driver.FindByIdEndingWith<IButton>("LoginButton");
+            loginButton.Click();
+            var logoutButton = this.Driver.FindByIdEndingWith<IButton>("LogoutButton");
+            logoutButton.Click();
+            this.exceptionAnalyzer.RemoveLastHandler();
         }
     }
 }
