@@ -1,0 +1,3 @@
+﻿Article: Create Hybrid Test Framework - Improved Dynamically Configure Execution Engine
+URL:  http://automatetheplanet.com/hybrid-test-framework-improved-configure-execution-engine/
+Publish Date: 08.10.2016
