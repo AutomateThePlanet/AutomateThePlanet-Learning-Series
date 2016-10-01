@@ -69,6 +69,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12. Create Hybrid Test Fram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractUnitTestFramework", "AbstractUnitTestFramework\AbstractUnitTestFramework.csproj", "{3C45CD8D-064C-4BD5-A1D0-F35C01532C59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridTestFramework.Core.Behaviours.Contracts", "HybridTestFramework.Core.Behaviours.Contracts\HybridTestFramework.Core.Behaviours.Contracts.csproj", "{041A4CD0-B9D1-4E4A-9DC3-6439C6EE510B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13. Create Hybrid Test Framework - Improved Dynamically Configure Execution Engine", "13. Create Hybrid Test Framework - Improved Dynamically Configure Execution Engine", "{FD0CF9F6-7F89-477C-AAE8-EAC64A735E2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImprovedConfigureExecutionEngine", "ImprovedConfigureExecutionEngine\ImprovedConfigureExecutionEngine.csproj", "{B0B7E430-8C69-447A-96E7-4149F78FE56A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +165,14 @@ Global
 		{3C45CD8D-064C-4BD5-A1D0-F35C01532C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C45CD8D-064C-4BD5-A1D0-F35C01532C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C45CD8D-064C-4BD5-A1D0-F35C01532C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{041A4CD0-B9D1-4E4A-9DC3-6439C6EE510B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041A4CD0-B9D1-4E4A-9DC3-6439C6EE510B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041A4CD0-B9D1-4E4A-9DC3-6439C6EE510B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041A4CD0-B9D1-4E4A-9DC3-6439C6EE510B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0B7E430-8C69-447A-96E7-4149F78FE56A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0B7E430-8C69-447A-96E7-4149F78FE56A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0B7E430-8C69-447A-96E7-4149F78FE56A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0B7E430-8C69-447A-96E7-4149F78FE56A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -176,5 +190,6 @@ Global
 		{FAEB1F3C-1147-442E-8606-D1E843E054BD} = {B4E49DBA-6F45-4CF9-AD9F-ECBEBF2174CC}
 		{CB42F5B1-1632-4146-9B5D-334375388C7F} = {225C0428-B8B5-4428-BC10-C5D650089014}
 		{3C45CD8D-064C-4BD5-A1D0-F35C01532C59} = {AD04EFBD-47DC-4DDE-8C39-CEEF340C251F}
+		{B0B7E430-8C69-447A-96E7-4149F78FE56A} = {FD0CF9F6-7F89-477C-AAE8-EAC64A735E2A}
 	EndGlobalSection
 EndGlobal

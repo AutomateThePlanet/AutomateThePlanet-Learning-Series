@@ -100,6 +100,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ITestBehaviorObserver.cs" />
+    <Compile Include="SecondVersion\BaseTest.cs" />
     <Compile Include="TestContextTestExecutionEventArgsAdapter.cs" />
     <Compile Include="TestOutcome.cs" />
     <Compile Include="TestsEngine\Attributes\ExecutionEngineAttribute.cs" />
@@ -111,6 +113,7 @@
     <Compile Include="TestsEngine\Enums\ExecutionEngineType.cs" />
     <Compile Include="TestExecutionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestsEngine\SecondVersion\ExecutionEngineBehaviorObserver.cs" />
     <Compile Include="VideoRecording\Attributes\VideoRecordingAttribute.cs" />
     <Compile Include="VideoRecording\Enums\VideoRecordingMode.cs" />
     <Compile Include="VideoRecording\VideoBehaviorObserver.cs" />
@@ -122,6 +125,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HybridTestFramework.Core.Behaviours.Contracts\HybridTestFramework.Core.Behaviours.Contracts.csproj">
+      <Project>{041A4CD0-B9D1-4E4A-9DC3-6439C6EE510B}</Project>
+      <Name>HybridTestFramework.Core.Behaviours.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HybridTestFramework.UITests.Core.Extensions\HybridTestFramework.UITests.Core.Extensions.csproj">
       <Project>{194d01f3-5009-4afe-8c22-322035c96113}</Project>
       <Name>HybridTestFramework.UITests.Core.Extensions</Name>
@@ -143,6 +150,7 @@
       <Name>HybridTestFramework.UITests.TestingFramework</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

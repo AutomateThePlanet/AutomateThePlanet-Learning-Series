@@ -34,5 +34,9 @@ namespace ConfigureExecutionEngine
             bingMainPage.Search("Automate The Planet");
             bingMainPage.AssertResultsCountIsAsExpected(264);
         }
+
+        /*
+        - BaseTest second version register new observers. Istead of using InitializeTestExecutionBehaviorObservers. No Dependency to concrete behaviours.
+         * */
     }
 }

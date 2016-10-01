@@ -71,6 +71,7 @@
     <Compile Include="Enums\SortType.cs" />
     <Compile Include="Enums\FilterOperator.cs" />
     <Compile Include="Events\PageEventArgs.cs" />
+    <Compile Include="ExecutionEngineAttribute.cs" />
     <Compile Include="IBrowser.cs" />
     <Compile Include="ICookieService.cs" />
     <Compile Include="IDialogService.cs" />

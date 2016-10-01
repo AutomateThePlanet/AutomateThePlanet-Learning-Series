@@ -122,6 +122,8 @@
     <Compile Include="Engine\TestStudioFrame.cs" />
     <Compile Include="HtmlElementExpressionExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestExecutionEngine.cs" />
+    <Compile Include="TestingFrameworkExecutionEngineAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\AutomateThePlanet.licenseheader">
@@ -130,6 +132,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HybridTestFramework.Core.Behaviours.Contracts\HybridTestFramework.Core.Behaviours.Contracts.csproj">
+      <Project>{041a4cd0-b9d1-4e4a-9dc3-6439c6ee510b}</Project>
+      <Name>HybridTestFramework.Core.Behaviours.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HybridTestFramework.UITests.Core.Utilities\HybridTestFramework.UITests.Core.Utilities.csproj">
       <Project>{4799c486-623c-4718-a910-3a3157992e22}</Project>
       <Name>HybridTestFramework.UITests.Core.Utilities</Name>

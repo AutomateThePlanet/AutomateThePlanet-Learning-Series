@@ -14,7 +14,7 @@
 
 namespace HybridTestFramework.UITests.Core.Behaviours
 {
-    public class BaseTestBehaviorObserver
+    public class BaseTestBehaviorObserver : ITestBehaviorObserver
     {
         public void Subscribe(IExecutionProvider provider)
         {
