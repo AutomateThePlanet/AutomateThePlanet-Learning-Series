@@ -1,4 +1,4 @@
-﻿// <copyright file="PreviewShoppingCartPage.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="ShippingPaymentPage.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -11,26 +11,25 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-
 using OpenQA.Selenium;
 using PerfectSystemTestsDesign.Base;
 
-namespace PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage
+namespace PerfectSystemTestsDesign.Pages.ShippingPaymentPage
 {
-    public partial class PreviewShoppingCartPage : BasePage
+    public partial class ShippingPaymentPage : BasePage
     {
-        public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
+        public ShippingPaymentPage(IWebDriver driver) : base(driver)
         {
         }
 
-        public void ClickProceedToCheckoutButton()
+        public void ClickBottomContinueButton()
         {
-            this.ProceedToCheckoutButton.Click();
+            this.BottomContinueButton.Click();
         }
 
-        public void CheckOrderContainsGift()
+        public void ClickTopContinueButton()
         {
-            this.ThisOrderContainsGiftCheckbox.Click();
+            this.TopContinueButton.Click();
         }
     }
 }

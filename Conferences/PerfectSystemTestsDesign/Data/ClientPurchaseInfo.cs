@@ -1,4 +1,4 @@
-﻿// <copyright file="PreviewShoppingCartPage.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="ClientPurchaseInfo.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -11,26 +11,20 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-
-using OpenQA.Selenium;
-using PerfectSystemTestsDesign.Base;
-
-namespace PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage
+namespace PerfectSystemTestsDesign.Data
 {
-    public partial class PreviewShoppingCartPage : BasePage
+    public class ClientPurchaseInfo
     {
-        public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
+        public ClientPurchaseInfo(PerfectSystemTestsDesign.Data.ClientAddressInfo addressInfo)
         {
+            this.BillingInfo = addressInfo;
+            this.ShippingInfo = addressInfo;
         }
 
-        public void ClickProceedToCheckoutButton()
-        {
-            this.ProceedToCheckoutButton.Click();
-        }
+        public PerfectSystemTestsDesign.Data.ClientAddressInfo BillingInfo { get; set; }
 
-        public void CheckOrderContainsGift()
-        {
-            this.ThisOrderContainsGiftCheckbox.Click();
-        }
+        public PerfectSystemTestsDesign.Data.ClientAddressInfo ShippingInfo { get; set; }
+
+        public string CouponCode { get; set; }
     }
 }

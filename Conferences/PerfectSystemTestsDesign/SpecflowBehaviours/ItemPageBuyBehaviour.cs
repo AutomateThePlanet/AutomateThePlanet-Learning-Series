@@ -1,4 +1,4 @@
-﻿// <copyright file="PreviewShoppingCartPage.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="ItemPageBuyBehaviour.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,25 +12,33 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using OpenQA.Selenium;
+using Microsoft.Practices.Unity;
 using PerfectSystemTestsDesign.Base;
+using PerfectSystemTestsDesign.Pages.ItemPage;
+using PerfectSystemTestsDesign.SpecflowBehaviours.Core;
+using TechTalk.SpecFlow;
 
-namespace PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage
+namespace PerfectSystemTestsDesign.SpecflowBehaviours
 {
-    public partial class PreviewShoppingCartPage : BasePage
+    [Binding]
+    public class ItemPageBuyBehaviour : ActionBehaviour
     {
-        public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
+        private readonly ItemPage itemPage;
+
+        public ItemPageBuyBehaviour()
         {
+            this.itemPage = UnityContainerFactory.GetContainer().Resolve<ItemPage>(); 
         }
 
-        public void ClickProceedToCheckoutButton()
+        [When(@"I click the 'buy now' button")]
+        protected override void Execute()
         {
-            this.ProceedToCheckoutButton.Click();
+            base.Execute();
         }
 
-        public void CheckOrderContainsGift()
+        protected override void PerformAct()
         {
-            this.ThisOrderContainsGiftCheckbox.Click();
+            this.itemPage.ClickBuyNowButton();
         }
     }
 }

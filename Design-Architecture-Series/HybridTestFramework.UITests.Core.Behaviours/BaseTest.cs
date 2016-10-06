@@ -79,19 +79,31 @@ namespace HybridTestFramework.UITests.Core.Behaviours
         public void CoreTestInit()
         {
             var memberInfo = GetCurrentExecutionMethodInfo();
-            this.currentTestExecutionProvider.PreTestInit((TestOutcome)this.TestContext.CurrentTestOutcome, this.TestContext.TestName, memberInfo);
+            this.currentTestExecutionProvider.PreTestInit(
+                (TestOutcome)this.TestContext.CurrentTestOutcome, 
+                this.TestContext.TestName, 
+                memberInfo);
             this.driver = this.container.Resolve<IDriver>();
             this.TestInit();
-            this.currentTestExecutionProvider.PostTestInit((TestOutcome)this.TestContext.CurrentTestOutcome, this.TestContext.TestName, memberInfo);
+            this.currentTestExecutionProvider.PostTestInit(
+                (TestOutcome)this.TestContext.CurrentTestOutcome, 
+                this.TestContext.TestName, 
+                memberInfo);
         }
 
         [TestCleanup]
         public void CoreTestCleanup()
         {
             var memberInfo = GetCurrentExecutionMethodInfo();
-            this.currentTestExecutionProvider.PreTestCleanup((TestOutcome)this.TestContext.CurrentTestOutcome, this.TestContext.TestName, memberInfo);
+            this.currentTestExecutionProvider.PreTestCleanup(
+                (TestOutcome)this.TestContext.CurrentTestOutcome, 
+                this.TestContext.TestName, 
+                memberInfo);
             this.TestCleanup();
-            this.currentTestExecutionProvider.PostTestCleanup((TestOutcome)this.TestContext.CurrentTestOutcome, this.TestContext.TestName, memberInfo);
+            this.currentTestExecutionProvider.PostTestCleanup(
+                (TestOutcome)this.TestContext.CurrentTestOutcome, 
+                this.TestContext.TestName, 
+                memberInfo);
         }
 
         public virtual void TestInit()
@@ -107,7 +119,8 @@ namespace HybridTestFramework.UITests.Core.Behaviours
             IUnityContainer container)
         {
             var executionEngine = new ExecutionEngineBehaviorObserver(container);
-            var videoRecording = new VideoBehaviorObserver(new MsExpressionEncoderVideoRecorder());
+            var videoRecording = 
+                new VideoBehaviorObserver(new MsExpressionEncoderVideoRecorder());
             executionEngine.Subscribe(testExecutionProvider);
             videoRecording.Subscribe(testExecutionProvider);
         }

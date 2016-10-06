@@ -1,4 +1,4 @@
-﻿// <copyright file="PreviewShoppingCartPage.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="UnityContainerFactory.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -11,26 +11,22 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
+using Microsoft.Practices.Unity;
 
-using OpenQA.Selenium;
-using PerfectSystemTestsDesign.Base;
-
-namespace PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage
+namespace PerfectSystemTestsDesign.Base
 {
-    public partial class PreviewShoppingCartPage : BasePage
+    public static class UnityContainerFactory
     {
-        public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
+        private static IUnityContainer unityContainer;
+
+        static UnityContainerFactory()
         {
+            unityContainer = new UnityContainer();
         }
 
-        public void ClickProceedToCheckoutButton()
+        public static IUnityContainer GetContainer()
         {
-            this.ProceedToCheckoutButton.Click();
-        }
-
-        public void CheckOrderContainsGift()
-        {
-            this.ThisOrderContainsGiftCheckbox.Click();
+            return unityContainer;
         }
     }
 }

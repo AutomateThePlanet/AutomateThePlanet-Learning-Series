@@ -1,4 +1,4 @@
-﻿// <copyright file="PreviewShoppingCartPage.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="BasePage.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,25 +12,29 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
+using System;
 using OpenQA.Selenium;
-using PerfectSystemTestsDesign.Base;
 
-namespace PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage
+namespace DesignPatternsMoreReliableMaintainableTests.Base
 {
-    public partial class PreviewShoppingCartPage : BasePage
+    public abstract class BasePage<TMap>
+        where TMap : BaseElementMap
     {
-        public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
+        protected IWebDriver driver;
+
+        public BasePage(IWebDriver driver, TMap map)
         {
+            this.driver = driver;
+            this.Map = map;
         }
 
-        public void ClickProceedToCheckoutButton()
-        {
-            this.ProceedToCheckoutButton.Click();
-        }
+        public abstract string Url { get; }
 
-        public void CheckOrderContainsGift()
+        internal TMap Map { get; private set; }
+
+        public virtual void Open(string part = "")
         {
-            this.ThisOrderContainsGiftCheckbox.Click();
+            this.driver.Navigate().GoToUrl(string.Concat(this.Url, part));
         }
     }
 }

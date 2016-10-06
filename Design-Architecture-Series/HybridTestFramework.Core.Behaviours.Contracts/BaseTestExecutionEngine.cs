@@ -56,7 +56,8 @@ namespace HybridTestFramework.Core.Behaviours.Contracts
             {
                 throw new ArgumentNullException("The test method's info cannot be null.");
             }
-            var executionEngineTypeMethodAttribute = memberInfo.GetCustomAttribute<ExecutionEngineAttribute>();
+            var executionEngineTypeMethodAttribute =
+                memberInfo.GetCustomAttribute<ExecutionEngineAttribute>();
             if (executionEngineTypeMethodAttribute != null)
             {
                 return true;
@@ -71,7 +72,8 @@ namespace HybridTestFramework.Core.Behaviours.Contracts
                 throw new ArgumentNullException("The test method's type cannot be null.");
             }
 
-            var executionEngineClassAttribute = currentType.GetCustomAttribute<ExecutionEngineAttribute>(true);
+            var executionEngineClassAttribute = 
+                currentType.GetCustomAttribute<ExecutionEngineAttribute>(true);
             if (executionEngineClassAttribute != null)
             {
                 return true;

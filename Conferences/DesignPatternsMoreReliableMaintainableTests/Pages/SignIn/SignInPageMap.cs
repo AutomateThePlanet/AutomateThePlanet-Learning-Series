@@ -1,4 +1,4 @@
-﻿// <copyright file="PreviewShoppingCartPage.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="SignInPageMap.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,25 +12,23 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
+using DesignPatternsMoreReliableMaintainableTests.Base;
 using OpenQA.Selenium;
-using PerfectSystemTestsDesign.Base;
 
-namespace PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage
+namespace DesignPatternsMoreReliableMaintainableTests.Pages.SignIn
 {
-    public partial class PreviewShoppingCartPage : BasePage
+    public class SignInPageMap : BaseElementMap
     {
-        public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
+        public SignInPageMap(IWebDriver driver) : base(driver)
         {
         }
 
-        public void ClickProceedToCheckoutButton()
+        public IWebElement ContinueAsGuestButton
         {
-            this.ProceedToCheckoutButton.Click();
-        }
-
-        public void CheckOrderContainsGift()
-        {
-            this.ThisOrderContainsGiftCheckbox.Click();
+            get
+            {
+                return this.driver.FindElement(By.Id("gtChk"));
+            }
         }
     }
 }

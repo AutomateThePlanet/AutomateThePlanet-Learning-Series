@@ -1,4 +1,4 @@
-﻿// <copyright file="PreviewShoppingCartPage.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="BingMainPageAsserter.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,25 +12,15 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using OpenQA.Selenium;
-using PerfectSystemTestsDesign.Base;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage
+namespace DesignPatternsMoreReliableMaintainableTests.Pages.BingMain
 {
-    public partial class PreviewShoppingCartPage : BasePage
+    public static class BingMainPageAsserter
     {
-        public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
+        public static void AssertResultsCountIsAsExpected(this IBingMainPage page, int expectedCount)
         {
-        }
-
-        public void ClickProceedToCheckoutButton()
-        {
-            this.ProceedToCheckoutButton.Click();
-        }
-
-        public void CheckOrderContainsGift()
-        {
-            this.ThisOrderContainsGiftCheckbox.Click();
+            Assert.AreEqual(page.GetResultsCount(), expectedCount, "The results count is not as expected.");
         }
     }
 }

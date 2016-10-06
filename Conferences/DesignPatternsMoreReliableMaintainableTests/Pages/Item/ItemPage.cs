@@ -1,4 +1,4 @@
-﻿// <copyright file="PreviewShoppingCartPage.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="ItemPage.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,25 +12,34 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
+using System;
+using DesignPatternsMoreReliableMaintainableTests.Base;
 using OpenQA.Selenium;
-using PerfectSystemTestsDesign.Base;
 
-namespace PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage
+namespace DesignPatternsMoreReliableMaintainableTests.Pages.Item
 {
-    public partial class PreviewShoppingCartPage : BasePage
+    public class ItemPage : BasePage<ItemPageMap>, IItemPage
     {
-        public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
+        public ItemPage(IWebDriver driver) : base(driver, new ItemPageMap(driver))
         {
         }
 
-        public void ClickProceedToCheckoutButton()
+        public override string Url
         {
-            this.ProceedToCheckoutButton.Click();
+            get
+            {
+                return "http://www.ebay.com/itm/";
+            }
         }
 
-        public void CheckOrderContainsGift()
+        public void ClickBuyNowButton()
         {
-            this.ThisOrderContainsGiftCheckbox.Click();
+            this.Map.BuyNowButton.Click();
+        }
+
+        public double GetPrice()
+        {
+            throw new NotImplementedException();
         }
     }
 }

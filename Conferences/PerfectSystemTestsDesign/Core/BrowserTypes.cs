@@ -1,4 +1,4 @@
-﻿// <copyright file="PreviewShoppingCartPage.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="BrowserTypes.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -11,26 +11,13 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-
-using OpenQA.Selenium;
-using PerfectSystemTestsDesign.Base;
-
-namespace PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage
+namespace PerfectSystemTestsDesign.Core
 {
-    public partial class PreviewShoppingCartPage : BasePage
+    public enum BrowserTypes
     {
-        public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
-        {
-        }
-
-        public void ClickProceedToCheckoutButton()
-        {
-            this.ProceedToCheckoutButton.Click();
-        }
-
-        public void CheckOrderContainsGift()
-        {
-            this.ThisOrderContainsGiftCheckbox.Click();
-        }
+        Firefox,
+        InternetExplorer,
+        Chrome, 
+        NotSet
     }
 }

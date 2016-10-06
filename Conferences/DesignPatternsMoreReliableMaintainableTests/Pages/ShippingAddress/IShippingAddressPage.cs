@@ -1,4 +1,4 @@
-﻿// <copyright file="PreviewShoppingCartPage.cs" company="Automate The Planet Ltd.">
+// <copyright file="IShippingAddressPage.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,25 +12,17 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using OpenQA.Selenium;
-using PerfectSystemTestsDesign.Base;
+using DesignPatternsMoreReliableMaintainableTests.Base;
+using DesignPatternsMoreReliableMaintainableTests.Data;
 
-namespace PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage
+namespace DesignPatternsMoreReliableMaintainableTests.Pages.ShippingAddress
 {
-    public partial class PreviewShoppingCartPage : BasePage
+    public interface IShippingAddressPage : IPage
     {
-        public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
-        {
-        }
+        void FillShippingInfo(ClientInfo clientInfo);
 
-        public void ClickProceedToCheckoutButton()
-        {
-            this.ProceedToCheckoutButton.Click();
-        }
+        void ClickContinueButton();
 
-        public void CheckOrderContainsGift()
-        {
-            this.ThisOrderContainsGiftCheckbox.Click();
-        }
+        double GetSubtotalAmount();
     }
 }

@@ -1,4 +1,4 @@
-﻿// <copyright file="PreviewShoppingCartPage.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="ShippingAddressPageContinueBehaviour.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -11,26 +11,25 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-
-using OpenQA.Selenium;
+using Microsoft.Practices.Unity;
 using PerfectSystemTestsDesign.Base;
+using PerfectSystemTestsDesign.Behaviours.Core;
+using PerfectSystemTestsDesign.Pages.ShippingAddressPage;
 
-namespace PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage
+namespace PerfectSystemTestsDesign.Behaviours
 {
-    public partial class PreviewShoppingCartPage : BasePage
+    public class ShippingAddressPageContinueBehaviour : ActionBehaviour
     {
-        public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
+        private readonly ShippingAddressPage shippingAddressPage;
+
+        public ShippingAddressPageContinueBehaviour()
         {
+            this.shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
         }
 
-        public void ClickProceedToCheckoutButton()
+        protected override void PerformAct()
         {
-            this.ProceedToCheckoutButton.Click();
-        }
-
-        public void CheckOrderContainsGift()
-        {
-            this.ThisOrderContainsGiftCheckbox.Click();
+            this.shippingAddressPage.ClickContinueButton();
         }
     }
 }
