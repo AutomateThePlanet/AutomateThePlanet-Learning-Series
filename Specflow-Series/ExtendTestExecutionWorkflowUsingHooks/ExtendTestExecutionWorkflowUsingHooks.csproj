@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{051247FB-E57E-429C-B93D-F8D6F2414D9E}</ProjectGuid>
+    <ProjectGuid>{1D04017C-D1DE-4570-A965-CE8FB8B88C31}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GettingStartedSpecflow</RootNamespace>
-    <AssemblyName>GettingStartedSpecflow</AssemblyName>
+    <RootNamespace>ExtendTestExecutionWorkflowUsingHooks</RootNamespace>
+    <AssemblyName>ExtendTestExecutionWorkflowUsingHooks</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -16,7 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
-    <NuGetPackageImportStamp>e5f01ad2</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>484ba0e9</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -80,19 +80,20 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ConvertMetricsForNuclearScienceStepsMethodUnderscrores.cs" />
-    <Compile Include="ConvertMetricsForNuclearScienceStepsPascalCase.cs" />
+    <Compile Include="Base\BasePage.cs" />
+    <Compile Include="Base\UnityContainerFactory.cs" />
     <Compile Include="ConvertMetricsForNuclearScienceSteps.cs" />
-    <Compile Include="ConvertMetricsForNuclearScienceStepsRegularExpressions.cs" />
-    <Compile Include="EnergyAndPowerConvertCalculator.feature.cs">
+    <Compile Include="Core\BrowserTypes.cs" />
+    <Compile Include="Core\Driver.cs" />
+    <Compile Include="EnergyAndPowerConvertCalculator1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnergyAndPowerConvertCalculator.feature</DependentUpon>
     </Compile>
-    <Compile Include="Base\BasePage.cs" />
-    <Compile Include="Base\UnityContainerFactory.cs" />
-    <Compile Include="Core\BrowserTypes.cs" />
-    <Compile Include="Core\Driver.cs" />
+    <Compile Include="OrderHooks.cs" />
+    <Compile Include="TestScenarioBrowserHooks.cs" />
+    <Compile Include="TestRunSingleBrowserHooks.cs" />
+    <Compile Include="Hooks.cs" />
     <Compile Include="Pages\CelsiusFahrenheitPage\KilowattHoursPage.cs" />
     <Compile Include="Pages\CelsiusFahrenheitPage\KilowattHoursPage.Map.cs" />
     <Compile Include="Pages\CelsiusFahrenheitPage\KilowattHoursPageAsserter.cs" />
@@ -101,19 +102,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="read-me2.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="..\..\AutomateThePlanet.licenseheader">
       <Link>AutomateThePlanet.licenseheader</Link>
     </None>
+    <None Include="App.config" />
     <None Include="EnergyAndPowerConvertCalculator.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>EnergyAndPowerConvertCalculator.feature.cs</LastGenOutput>
+      <LastGenOutput>EnergyAndPowerConvertCalculator1.feature.cs</LastGenOutput>
     </None>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="read-me1.txt" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
@@ -137,15 +140,15 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties Name="GettingStartedSpecflow" />
+      <UserProperties Name="ExtendTestExecutionWorkflowUsingHooks" />
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.24.0.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.24.0.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.25.0.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.25.0.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.24.0.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.24.0.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.25.0.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.25.0.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

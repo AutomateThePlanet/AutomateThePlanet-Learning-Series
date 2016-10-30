@@ -1,4 +1,4 @@
-﻿// <copyright file="SignInPage.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="BrowserTypes.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -11,24 +11,13 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-
-using GettingStartedSpecflow.Base;
-using OpenQA.Selenium;
-
-namespace GettingStartedSpecflow.Pages
+namespace ExtendTestExecutionWorkflowUsingHooks.Core
 {
-    public partial class HomePage : BasePage
+    public enum BrowserTypes
     {
-        public HomePage(IWebDriver driver) : base(driver)
-        {
-        }
-
-        public override string Url
-        {
-            get
-            {
-                return "http://www.metric-conversions.org/";
-            }
-        }
+        Firefox,
+        InternetExplorer,
+        Chrome, 
+        NotSet
     }
 }

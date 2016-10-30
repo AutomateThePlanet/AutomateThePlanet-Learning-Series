@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStartedSpecflow", "G
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Getting Started with Specflow in 10 Minutes", "Getting Started with Specflow in 10 Minutes", "{65376811-056B-4C05-B5EB-766097C3F065}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Advanced SpecFlow Using Hooks to Extend Test Execution Workflow", "Advanced SpecFlow Using Hooks to Extend Test Execution Workflow", "{B3E07D1C-5667-49D8-AC18-F7CA47D02BAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendTestExecutionWorkflowUsingHooks", "ExtendTestExecutionWorkflowUsingHooks\ExtendTestExecutionWorkflowUsingHooks.csproj", "{1D04017C-D1DE-4570-A965-CE8FB8B88C31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +21,16 @@ Global
 		{051247FB-E57E-429C-B93D-F8D6F2414D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{051247FB-E57E-429C-B93D-F8D6F2414D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{051247FB-E57E-429C-B93D-F8D6F2414D9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D04017C-D1DE-4570-A965-CE8FB8B88C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D04017C-D1DE-4570-A965-CE8FB8B88C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D04017C-D1DE-4570-A965-CE8FB8B88C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D04017C-D1DE-4570-A965-CE8FB8B88C31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{051247FB-E57E-429C-B93D-F8D6F2414D9E} = {65376811-056B-4C05-B5EB-766097C3F065}
+		{1D04017C-D1DE-4570-A965-CE8FB8B88C31} = {B3E07D1C-5667-49D8-AC18-F7CA47D02BAC}
 	EndGlobalSection
 EndGlobal

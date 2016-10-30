@@ -1,4 +1,4 @@
-﻿// <copyright file="SignInPage.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="KilowattHoursPage.cs" company="Automate The Planet Ltd.">
 // Copyright 2016 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,14 +12,14 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using GettingStartedSpecflow.Base;
+using ExtendTestExecutionWorkflowUsingHooks.Base;
 using OpenQA.Selenium;
 
-namespace GettingStartedSpecflow.Pages
+namespace ExtendTestExecutionWorkflowUsingHooks.Pages
 {
-    public partial class HomePage : BasePage
+    public partial class KilowattHoursPage : BasePage
     {
-        public HomePage(IWebDriver driver) : base(driver)
+        public KilowattHoursPage(IWebDriver driver) : base(driver)
         {
         }
 
@@ -27,8 +27,14 @@ namespace GettingStartedSpecflow.Pages
         {
             get
             {
-                return "http://www.metric-conversions.org/";
+                return "http://www.metric-conversions.org/temperature/celsius-to-fahrenheit.htm";
             }
+        }
+
+        public void ConvertKilowattHoursToNewtonMeters(double kWh)
+        {
+            this.CelsiusInput.SendKeys(kWh.ToString());
+            this.driverWait.Until(drv => this.Answer != null);
         }
     }
 }
