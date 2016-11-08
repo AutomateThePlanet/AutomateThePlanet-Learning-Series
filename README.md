@@ -24,6 +24,6 @@ This way, you will have a **bookmark for easier access** and you will **show app
 - [Extended.MSTest.Console Application](https://github.com/angelovstanton/AutomateThePlanet/tree/master/MSTest.Console "Extended.MSTest.Console Application")
 - [TestCaseManager Application](https://github.com/angelovstanton/AutomateThePlanet/tree/master/TestCaseManager "TestCaseManager Application")
 
-Under each folder you will find a separate solution file. Every article from the series has its own folder and an info file. To run the examples from specific series you need only its folder. 
+Under each folder, you will find a separate solution file. Every article from the series has its folder and an info file. To run the examples from particular series you need only its folder.
 
 ![](https://github.com/angelovstanton/AutomateThePlanet/blob/master/series-folder-explanation.png)
