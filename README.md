@@ -4,7 +4,7 @@ Anton Angelov here, editor-in-chief of Automate The Planet.
 
 Welcome to the source code repository of Automate The Planet!
 
-I have a favor to ask. **Please START the repository.**
+I have a favor to ask. **Please STAR the repository.**
 
 ![](https://github.com/angelovstanton/AutomateThePlanet/blob/master/start-automatetheplanet.png)
 
