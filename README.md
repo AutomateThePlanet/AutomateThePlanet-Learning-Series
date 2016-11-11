@@ -1,4 +1,5 @@
 ![](https://github.com/angelovstanton/AutomateThePlanet/blob/master/automate-the-planet.jpg)
+
 Hi guys,
 
 Anton Angelov here, editor-in-chief of Automate The Planet.
