@@ -99,8 +99,10 @@ this.FeatureBackground();
 #line 16
  testRunner.And("type 30 kWh", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
+ testRunner.And("type whatever the fuck", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
  testRunner.Then("assert that 1.080000e+8 Nm are displayed as answer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 18
+#line 20
  testRunner.Then("close web browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
