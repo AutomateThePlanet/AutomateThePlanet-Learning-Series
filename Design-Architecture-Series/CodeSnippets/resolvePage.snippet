@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>resolvepage</Title>
+			<Shortcut>rpage</Shortcut>
+			<Description>Code snippet for resolving page</Description>
+			<Author>Automate The Planet Ltd.</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+        <Literal>
+          <ID>pageName</ID>
+          <Default>myPage</Default>
+          <ToolTip>The name of the resolved page.</ToolTip>
+        </Literal>
+				<Literal>
+					<ID>pageType</ID>
+					<Default>MyPage</Default>
+					<ToolTip>The type of the resolved page.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+        <![CDATA[var $pageName$ = this.Container.Resolve<$pageType$>();]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Create Hybrid Test Framework - Interface Contracts", "1. Create Hybrid Test Framework - Interface Contracts", "{D76CEE82-C798-45A7-8B36-3BC9053FD016}"
 EndProject
@@ -74,6 +74,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13. Create Hybrid Test Framework - Improved Dynamically Configure Execution Engine", "13. Create Hybrid Test Framework - Improved Dynamically Configure Execution Engine", "{FD0CF9F6-7F89-477C-AAE8-EAC64A735E2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImprovedConfigureExecutionEngine", "ImprovedConfigureExecutionEngine\ImprovedConfigureExecutionEngine.csproj", "{B0B7E430-8C69-447A-96E7-4149F78FE56A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14. Write Tests Faster with Visual Studio Code Snippets", "14. Write Tests Faster with Visual Studio Code Snippets", "{79F5F189-3958-4044-91E0-F57CF2D6E0C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualStudioCodeSnippets", "VisualStudioCodeSnippets\VisualStudioCodeSnippets.csproj", "{9F727044-C993-4938-AFF5-E2A17539815B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -173,6 +177,10 @@ Global
 		{B0B7E430-8C69-447A-96E7-4149F78FE56A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0B7E430-8C69-447A-96E7-4149F78FE56A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0B7E430-8C69-447A-96E7-4149F78FE56A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F727044-C993-4938-AFF5-E2A17539815B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F727044-C993-4938-AFF5-E2A17539815B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F727044-C993-4938-AFF5-E2A17539815B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F727044-C993-4938-AFF5-E2A17539815B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -191,5 +199,6 @@ Global
 		{CB42F5B1-1632-4146-9B5D-334375388C7F} = {225C0428-B8B5-4428-BC10-C5D650089014}
 		{3C45CD8D-064C-4BD5-A1D0-F35C01532C59} = {AD04EFBD-47DC-4DDE-8C39-CEEF340C251F}
 		{B0B7E430-8C69-447A-96E7-4149F78FE56A} = {FD0CF9F6-7F89-477C-AAE8-EAC64A735E2A}
+		{9F727044-C993-4938-AFF5-E2A17539815B} = {79F5F189-3958-4044-91E0-F57CF2D6E0C9}
 	EndGlobalSection
 EndGlobal
