@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeProjectStatisticsCalculator", "CodeProjectStatisticsCalculator\CodeProjectStatisticsCalculator.csproj", "{2F8DE3EF-27D1-411B-9421-035B19EEFEB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. MSTest.Console.Extended", "2. MSTest.Console.Extended", "{1E085E93-13B6-474B-B8BE-8862A3AA20DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTest.Console.Extended", "MSTest.Console.Extended\MSTest.Console.Extended.csproj", "{14B324BE-3A19-4561-9909-16BD2685CFCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTest.Console.Extended.UnitTests", "MSTest.Console.Extended.UnitTests\MSTest.Console.Extended.UnitTests.csproj", "{E50B59CB-ED17-42E0-81F5-6CD74360C6D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. CodeProject Statistics Calculator", "3. CodeProject Statistics Calculator", "{A3C1FD06-0CC5-4BA3-A3B3-994F58A27C7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Test URL Redirects with WebDriver and HttpWebRequest", "1. Test URL Redirects with WebDriver and HttpWebRequest", "{8CD2FFA9-D1AA-40B3-A89D-933ED9437F20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUrlRedirectsWebDriverHttpWebRequest", "TestUrlRedirectsWebDriverHttpWebRequest\TestUrlRedirectsWebDriverHttpWebRequest.csproj", "{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9A3FB51D-2D40-4352-AD8A-6C1269CEB0F1}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F8DE3EF-27D1-411B-9421-035B19EEFEB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8DE3EF-27D1-411B-9421-035B19EEFEB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8DE3EF-27D1-411B-9421-035B19EEFEB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8DE3EF-27D1-411B-9421-035B19EEFEB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14B324BE-3A19-4561-9909-16BD2685CFCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B324BE-3A19-4561-9909-16BD2685CFCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B324BE-3A19-4561-9909-16BD2685CFCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B324BE-3A19-4561-9909-16BD2685CFCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E50B59CB-ED17-42E0-81F5-6CD74360C6D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E50B59CB-ED17-42E0-81F5-6CD74360C6D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E50B59CB-ED17-42E0-81F5-6CD74360C6D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E50B59CB-ED17-42E0-81F5-6CD74360C6D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2F8DE3EF-27D1-411B-9421-035B19EEFEB5} = {A3C1FD06-0CC5-4BA3-A3B3-994F58A27C7D}
+		{14B324BE-3A19-4561-9909-16BD2685CFCD} = {1E085E93-13B6-474B-B8BE-8862A3AA20DE}
+		{E50B59CB-ED17-42E0-81F5-6CD74360C6D5} = {1E085E93-13B6-474B-B8BE-8862A3AA20DE}
+		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6} = {8CD2FFA9-D1AA-40B3-A89D-933ED9437F20}
+	EndGlobalSection
+EndGlobal
