@@ -75,6 +75,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImprovedPageObjects", "Impr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImprovedPageObjects", "ImprovedPageObjects\ImprovedPageObjects.csproj", "{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16. Use Selenium WebDriver UI Tests for Load Testing in the Cloud", "16. Use Selenium WebDriver UI Tests for Load Testing in the Cloud", "{0729514F-5710-437D-970D-9A5840E371A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverCloudLoadTesting", "WebDriverCloudLoadTesting\WebDriverCloudLoadTesting.csproj", "{16001DE2-C8E9-4321-8110-D5835283B343}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +145,10 @@ Global
 		{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16001DE2-C8E9-4321-8110-D5835283B343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16001DE2-C8E9-4321-8110-D5835283B343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16001DE2-C8E9-4321-8110-D5835283B343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16001DE2-C8E9-4321-8110-D5835283B343}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -162,5 +170,6 @@ Global
 		{0FCF9CA2-F3DF-4090-B9DB-6D2AB01EC094} = {875B8A5D-165C-4FF6-8D55-DD08474228AE}
 		{6D90459B-F297-45DF-A81F-B84D03DA41A6} = {BE6A56F4-A917-4E07-849B-37616836E1A4}
 		{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8} = {6D90459B-F297-45DF-A81F-B84D03DA41A6}
+		{16001DE2-C8E9-4321-8110-D5835283B343} = {0729514F-5710-437D-970D-9A5840E371A8}
 	EndGlobalSection
 EndGlobal
