@@ -79,6 +79,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16. Use Selenium WebDriver 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverCloudLoadTesting", "WebDriverCloudLoadTesting\WebDriverCloudLoadTesting.csproj", "{16001DE2-C8E9-4321-8110-D5835283B343}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "17. Enhanced WebDriver Tests with the New Improved CSharp 6.0", "17. Enhanced WebDriver Tests with the New Improved CSharp 6.0", "{A60B2F35-EF11-4628-9870-2A99442C6161}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverTestsCSharpSix", "WebDriverTestsCSharpSix\WebDriverTestsCSharpSix.csproj", "{71EE5670-1113-4716-AEE2-645671D03F60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +153,10 @@ Global
 		{16001DE2-C8E9-4321-8110-D5835283B343}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16001DE2-C8E9-4321-8110-D5835283B343}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16001DE2-C8E9-4321-8110-D5835283B343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71EE5670-1113-4716-AEE2-645671D03F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71EE5670-1113-4716-AEE2-645671D03F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71EE5670-1113-4716-AEE2-645671D03F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71EE5670-1113-4716-AEE2-645671D03F60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -171,5 +179,6 @@ Global
 		{6D90459B-F297-45DF-A81F-B84D03DA41A6} = {BE6A56F4-A917-4E07-849B-37616836E1A4}
 		{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8} = {6D90459B-F297-45DF-A81F-B84D03DA41A6}
 		{16001DE2-C8E9-4321-8110-D5835283B343} = {0729514F-5710-437D-970D-9A5840E371A8}
+		{71EE5670-1113-4716-AEE2-645671D03F60} = {A60B2F35-EF11-4628-9870-2A99442C6161}
 	EndGlobalSection
 EndGlobal
