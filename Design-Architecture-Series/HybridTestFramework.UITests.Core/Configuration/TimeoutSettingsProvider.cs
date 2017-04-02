@@ -10,12 +10,14 @@ namespace HybridTestFramework.UITests.Core.Configuration
         {
             try
             {
-                timeoutSettings = (TimeoutSettings) ConfigurationManager.GetSection(sectionName: "TimeoutSettings");
+                timeoutSettings = 
+                    (TimeoutSettings) 
+                    ConfigurationManager.GetSection(sectionName: "TimeoutSettings");
             }
             catch (ConfigurationErrorsException ex)
             {
                 throw new ConfigurationErrorsException(
-                    message: "Please configure correctly the TimeoutSettings section. Check if the section is registered.",
+                    message: "Please configure correctly the TimeoutSettings section.",
                     inner: ex);
             }
         }
