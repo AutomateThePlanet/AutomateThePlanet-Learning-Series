@@ -79,6 +79,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14. Write Tests Faster with
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualStudioCodeSnippets", "VisualStudioCodeSnippets\VisualStudioCodeSnippets.csproj", "{9F727044-C993-4938-AFF5-E2A17539815B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15. Create Hybrid Test Framework - Work with Config Files", "15. Create Hybrid Test Framework - Work with Config Files", "{6E548627-CE26-4212-A981-4127E5F7CE21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkConfigFiles", "WorkConfigFiles\WorkConfigFiles.csproj", "{7CA5E612-3FAF-4E11-AAA0-0ADF9A204EA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -181,6 +185,10 @@ Global
 		{9F727044-C993-4938-AFF5-E2A17539815B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F727044-C993-4938-AFF5-E2A17539815B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F727044-C993-4938-AFF5-E2A17539815B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CA5E612-3FAF-4E11-AAA0-0ADF9A204EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA5E612-3FAF-4E11-AAA0-0ADF9A204EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA5E612-3FAF-4E11-AAA0-0ADF9A204EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA5E612-3FAF-4E11-AAA0-0ADF9A204EA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -200,5 +208,6 @@ Global
 		{3C45CD8D-064C-4BD5-A1D0-F35C01532C59} = {AD04EFBD-47DC-4DDE-8C39-CEEF340C251F}
 		{B0B7E430-8C69-447A-96E7-4149F78FE56A} = {FD0CF9F6-7F89-477C-AAE8-EAC64A735E2A}
 		{9F727044-C993-4938-AFF5-E2A17539815B} = {79F5F189-3958-4044-91E0-F57CF2D6E0C9}
+		{7CA5E612-3FAF-4E11-AAA0-0ADF9A204EA1} = {6E548627-CE26-4212-A981-4127E5F7CE21}
 	EndGlobalSection
 EndGlobal

@@ -13,6 +13,7 @@
 // <site>http://automatetheplanet.com/</site>
 
 using Microsoft.Practices.Unity;
+using PerfectSystemTestsDesign.Base;
 using PerfectSystemTestsDesign.Data;
 using PerfectSystemTestsDesign.Pages.ShippingAddressPage;
 using PerfectSystemTestsDesign.Pages.SignInPage;
@@ -30,8 +31,10 @@ namespace PerfectSystemTestsDesign.SpecflowBehaviours
 
         public SignInPageLoginBehaviour()
         {
-            this.signInPage = PerfectSystemTestsDesign.Base.UnityContainerFactory.GetContainer().Resolve<SignInPage>();
-            this.shippingAddressPage = PerfectSystemTestsDesign.Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
+            this.signInPage = 
+                UnityContainerFactory.GetContainer().Resolve<SignInPage>();
+            this.shippingAddressPage = 
+                UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
         }
 
         [When(@"I login with email = ""([^""]*)"" and pass = ""([^""]*)""")]

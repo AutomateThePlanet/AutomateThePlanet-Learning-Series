@@ -16,6 +16,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using PerfectSystemTestsDesign.Base;
 using PerfectSystemTestsDesign.Behaviours;
+using PerfectSystemTestsDesign.Behaviours.Core;
 using PerfectSystemTestsDesign.Core;
 using PerfectSystemTestsDesign.Data;
 using PerfectSystemTestsDesign.Pages.ItemPage;
@@ -83,7 +84,7 @@ namespace PerfectSystemTestsDesign
                 Email = "g3984159@trbvm.com",
                 Password = "ASDFG_12345"
             };
-            PerfectSystemTestsDesign.Behaviours.Core.BehaviourExecutor.Execute(
+            BehaviourExecutor.Execute(
                 new ItemPageNavigationBehaviour(itemUrl),
                 new ItemPageBuyBehaviour(),
                 new PreviewShoppingCartPageProceedBehaviour(),
