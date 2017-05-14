@@ -23,6 +23,7 @@ This way, you will have a **bookmark for easier access** and you will **show app
 - [Testing Framework Series](https://github.com/angelovstanton/AutomateThePlanet/tree/master/TestingTechniques-Series "Testing Framework Series")
 - [Specflow Series](https://github.com/angelovstanton/AutomateThePlanet/tree/master/Specflow-Series "Specflow Series")
 - [Jenkins Series](https://github.com/angelovstanton/AutomateThePlanet/tree/master/Jenkins-Series "Jenkins Series")
+- [Geeks Gifts Series](https://github.com/angelovstanton/AutomateThePlanet/tree/master/GiftsForGeeks "Geeks Gifts Series")
 - [Extended.MSTest.Console Application](https://github.com/angelovstanton/AutomateThePlanet/tree/master/MSTest.Console "Extended.MSTest.Console Application")
 - [TestCaseManager Application](https://github.com/angelovstanton/AutomateThePlanet/tree/master/TestCaseManager "TestCaseManager Application")
 
