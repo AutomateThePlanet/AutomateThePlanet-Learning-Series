@@ -11,7 +11,6 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-
 using FlowersSurprise.Console.Flowers;
 using System;
 using System.Collections.Generic;
@@ -19,7 +18,7 @@ using System.Linq;
 
 namespace FlowersSurprise.Console
 {
-    public static class FlowersExecutionEngine
+    public static class FlowerExecutionEngine
     {
         public static void Execute(List<Flower> flowers)
         {

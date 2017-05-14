@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8D2F1651-3277-4BE8-AE88-B841B8FB0DE1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FlowersCatsSurprise</RootNamespace>
+    <AssemblyName>FlowersCatsSurprise</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>wizardIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="WallpaperChangingService.cs" />
+    <Compile Include="WallpaperStyle.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="..\..\AutomateThePlanet.licenseheader">
+      <Link>AutomateThePlanet.licenseheader</Link>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cats\cat_black_moon_night_silhouette_outlines_32004_1920x1080.jpg" />
+    <Resource Include="Cats\cat_black_snow_winter_113310_1920x1080.jpg" />
+    <Resource Include="Cats\cat_black_sunlight_sitting_collar_112071_1920x1080.jpg" />
+    <Resource Include="Cats\cat_blue_eyed_glance_113572_1920x1080.jpg" />
+    <Resource Include="Cats\cat_box_sit_street_89346_1920x1080.jpg" />
+    <Resource Include="Cats\cat_branch_playful_face_105610_1920x1080.jpg" />
+    <Resource Include="Cats\cat_costume_photo_shoot_89473_1920x1080.jpg" />
+    <Resource Include="Cats\cat_dark_eyes_bright_surprisingly_25930_1920x1080.jpg" />
+    <Resource Include="Cats\cat_distance_look_black_and_white_89506_1920x1080.jpg" />
+    <Resource Include="Cats\cat_face_eyes_photo_shoot_108794_1920x1080 %281%29.jpg" />
+    <Resource Include="Cats\cat_face_eyes_photo_shoot_108794_1920x1080.jpg" />
+    <Resource Include="Cats\cat_face_fluffy_blue_eyed_111951_1920x1080.jpg" />
+    <Resource Include="Cats\cat_face_glasses_thick_65455_1920x1080.jpg" />
+    <Resource Include="Cats\cat_face_grass_lie_106391_1920x1080.jpg" />
+    <Resource Include="Cats\cat_face_light_look_89216_1920x1080.jpg" />
+    <Resource Include="Cats\cat_face_profile_fluffy_89791_1920x1080.jpg" />
+    <Resource Include="Cats\cat_face_shouting_spotted_89372_1920x1080.jpg" />
+    <Resource Include="Cats\cat_face_striped_close-up_89316_1920x1080.jpg" />
+    <Resource Include="Cats\cat_fluffy_grass_sit_109199_1920x1080.jpg" />
+    <Resource Include="Cats\cat_fluffy_hat_umbrella_104236_1920x1080.jpg" />
+    <Resource Include="Cats\cat_fluffy_ladder_113866_1920x1080.jpg" />
+    <Resource Include="Cats\cat_fluffy_walk_113818_1920x1080.jpg" />
+    <Resource Include="Cats\cat_food_eat_striped_89488_1920x1080.jpg" />
+    <Resource Include="Cats\cat_grass_sit_84173_1920x1080.jpg" />
+    <Resource Include="Cats\cat_grass_sit_fear_89501_1920x1080.jpg" />
+    <Resource Include="Cats\cat_grass_walk_110252_1920x1080.jpg" />
+    <Resource Include="Cats\cat_gray_eyes_background_89841_1920x1080.jpg" />
+    <Resource Include="Cats\cat_grin_muzzle_aggression_113567_1920x1080.jpg" />
+    <Resource Include="Cats\cat_grin_scream_black_furry_113750_1920x1080.jpg" />
+    <Resource Include="Cats\cat_hammock_kitten_red_fluffy_96607_1920x1080.jpg" />
+    <Resource Include="Cats\cat_hat_face_beautiful_71803_1920x1080.jpg" />
+    <Resource Include="Cats\cat_homeless_spotted_111769_1920x1080.jpg" />
+    <Resource Include="Cats\cat_hood_fashion_gown_lying_52957_1920x1080.jpg" />
+    <Resource Include="Cats\cat_jump_spotted_89281_1920x1080.jpg" />
+    <Resource Include="Cats\cat_kitchen_stove_kitten_89457_1920x1080.jpg" />
+    <Resource Include="Cats\cat_kitten_lying_pillow_sleep_89351_1920x1080.jpg" />
+    <Resource Include="Cats\cat_licking_lips_striped_89471_1920x1080.jpg" />
+    <Resource Include="Cats\cat_lies_street_113899_1920x1080.jpg" />
+    <Resource Include="Cats\cat_look_lying_89293_1920x1080.jpg" />
+    <Resource Include="Cats\cat_look_old_89296_1920x1080.jpg" />
+    <Resource Include="Cats\cat_look_out_face_lie_89339_1920x1080.jpg" />
+    <Resource Include="Cats\cat_look_out_sit_dark_89764_1920x1080.jpg" />
+    <Resource Include="Cats\cat_lying_spotted_89261_1920x1080.jpg" />
+    <Resource Include="Cats\cat_muzzle_blue_eyes_113456_1920x1080.jpg" />
+    <Resource Include="Cats\cat_muzzle_eyes_alertness_89325_1920x1080.jpg" />
+    <Resource Include="Cats\cat_muzzle_furry_mustache_104146_1920x1080.jpg" />
+    <Resource Include="Cats\cat_muzzle_lick_89489_1920x1080.jpg" />
+    <Resource Include="Cats\cat_muzzle_nose_whiskers_eyes_103138_1920x1080.jpg" />
+    <Resource Include="Cats\cat_muzzle_spotted_89414_1920x1080.jpg" />
+    <Resource Include="Cats\cat_muzzle_surprise_look_89263_1920x1080.jpg" />
+    <Resource Include="Cats\cat_package_paper_playful_89300_1920x1080.jpg" />
+    <Resource Include="Cats\cat_package_paper_playful_89388_1920x1080.jpg" />
+    <Resource Include="Cats\cat_paws_lies_playful_85793_1920x1080.jpg" />
+    <Resource Include="Cats\cat_profile_muzzle_eyes_113734_1920x1080.jpg" />
+    <Resource Include="Cats\cat_purebred_face_lie_89463_1920x1080.jpg" />
+    <Resource Include="Cats\cat_red_furry_sleepy_101533_1920x1080.jpg" />
+    <Resource Include="Cats\cat_sitting_striped_89821_1920x1080.jpg" />
+    <Resource Include="Cats\cat_sleeping_striped_plaid_104296_1920x1080.jpg" />
+    <Resource Include="Cats\cat_snow_caution_winter_89517_1920x1080.jpg" />
+    <Resource Include="Cats\cat_snow_tail_playful_climbing_52348_1920x1080.jpg" />
+    <Resource Include="Cats\cat_spotted_blur_105356_1920x1080.jpg" />
+    <Resource Include="Cats\cat_spotted_color_84170_1920x1080.jpg" />
+    <Resource Include="Cats\cat_spotted_muzzle_89762_1920x1080 %281%29.jpg" />
+    <Resource Include="Cats\cat_spotted_muzzle_89762_1920x1080.jpg" />
+    <Resource Include="Cats\cat_striped_grass_flowers_walk_104519_1920x1080.jpg" />
+    <Resource Include="Cats\cat_striped_green_eyed_113771_1920x1080.jpg" />
+    <Resource Include="Cats\cat_striped_spotted_lying_89834_1920x1080.jpg" />
+    <Resource Include="Cats\cat_suitcase_antiques_111415_1920x1080.jpg" />
+    <Resource Include="Cats\cat_surprise_look_striped_96597_1920x1080.jpg" />
+    <Resource Include="Cats\cat_tabby_eyes_surprise_lie_94958_1920x1080.jpg" />
+    <Resource Include="Cats\cat_tabby_ginger_89276_1920x1080.jpg" />
+    <Resource Include="Cats\cat_tabby_walk_113727_1920x1080.jpg" />
+    <Resource Include="Cats\cat_trees_leaves_muzzle_106432_1920x1080.jpg" />
+    <Resource Include="Cats\cat_tree_bark_spotted_102216_1920x1080.jpg" />
+    <Resource Include="Cats\cat_tree_sitting_branch_111803_1920x1080.jpg" />
+    <Resource Include="Cats\cat_truck_couple_kittens_89760_1920x1080.jpg" />
+    <Resource Include="Cats\cat_walk_sit_spotted_89239_1920x1080.jpg" />
+    <Resource Include="Cats\cat_wet_look_104978_1920x1080.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-1.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-10.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-11.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-12.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-13.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-14.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-15.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-16 %281%29.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-16.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-17.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-18.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-19.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-2.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-20.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-21.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-22.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-23.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-24.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-3.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-4.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-5.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-6.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-7.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-8.jpg" />
+    <Resource Include="Flowers\flowers-wallpaper-9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="catIcon.ico" />
+    <Resource Include="flowerIcon.ico" />
+    <Resource Include="wizardIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="readme-2.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

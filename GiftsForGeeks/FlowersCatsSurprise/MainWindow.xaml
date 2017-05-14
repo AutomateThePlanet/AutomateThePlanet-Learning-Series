@@ -1,0 +1,12 @@
+﻿<Window x:Class="FlowersCatsSurprise.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Flo Flower or Cat?" Height="200" Width="400" Loaded="Window_Loaded" MinHeight="200" MaxHeight="200" MinWidth="400" MaxWidth="400" >
+    <Grid>
+        <Image Source="catIcon.ico" Margin="-86,0,86,0" MouseDown="Cat_MouseDown"  />
+        <Image Source="flowerIcon.ico" Margin="197,0,0,0" MouseDown="Flower_MouseDown" />
+    </Grid>
+</Window>

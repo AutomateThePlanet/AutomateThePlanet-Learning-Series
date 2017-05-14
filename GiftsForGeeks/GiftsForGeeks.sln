@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26206.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowersSurprise.Console", "FlowersSurprise.Console\FlowersSurprise.Console.csproj", "{FBCB0500-209F-403B-9B77-841A75098671}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Geeks Gifts Surprise a Girl with Console Flowers Program", "1. Geeks Gifts Surprise a Girl with Console Flowers Program", "{1FABA1F2-559F-4ACF-A464-6388CE6D9713}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Geeks Gifts Surprise a Girl with Cat or Flower Wallpaper Changing Program", "2. Geeks Gifts Surprise a Girl with Cat or Flower Wallpaper Changing Program", "{4971CAA6-71FF-432C-85FF-2681B9329DD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowersCatsSurprise", "FlowersCatsSurprise\FlowersCatsSurprise.csproj", "{8D2F1651-3277-4BE8-AE88-B841B8FB0DE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,11 +21,16 @@ Global
 		{FBCB0500-209F-403B-9B77-841A75098671}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBCB0500-209F-403B-9B77-841A75098671}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBCB0500-209F-403B-9B77-841A75098671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D2F1651-3277-4BE8-AE88-B841B8FB0DE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2F1651-3277-4BE8-AE88-B841B8FB0DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2F1651-3277-4BE8-AE88-B841B8FB0DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2F1651-3277-4BE8-AE88-B841B8FB0DE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FBCB0500-209F-403B-9B77-841A75098671} = {1FABA1F2-559F-4ACF-A464-6388CE6D9713}
+		{8D2F1651-3277-4BE8-AE88-B841B8FB0DE1} = {4971CAA6-71FF-432C-85FF-2681B9329DD2}
 	EndGlobalSection
 EndGlobal
