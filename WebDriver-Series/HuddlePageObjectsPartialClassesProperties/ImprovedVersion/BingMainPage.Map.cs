@@ -1,4 +1,4 @@
-﻿// <copyright file="BingMainPage.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="BingMainPage.Map.cs" company="Automate The Planet Ltd.">
 // Copyright 2017 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,31 +12,34 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
 
 namespace HuddlePageObjectsPartialClassesProperties.ImprovedVersion
 {
     public partial class BingMainPage
     {
-        private readonly IWebDriver driver;
-        private readonly string url = @"http://www.bing.com/";
-
-        public BingMainPage(IWebDriver browser)
+        public IWebElement SearchBox
         {
-            this.driver = browser;
-            PageFactory.InitElements(browser, this);
+            get
+            {
+                return this._driver.FindElement(By.Id("sb_form_q"));
+            }
         }
 
-        public void Navigate()
+
+        public IWebElement GoButton
         {
-            this.driver.Navigate().GoToUrl(this.url);
+            get
+            {
+                return this._driver.FindElement(By.Id("sb_form_go"));
+            }
         }
 
-        public void Search(string textToType)
+        public IWebElement ResultsCountDiv
         {
-            this.SearchBox.Clear();
-            this.SearchBox.SendKeys(textToType);
-            this.GoButton.Click();
+            get
+            {
+                return this._driver.FindElement(By.Id("b_tween"));
+            }
         }
     }
 }

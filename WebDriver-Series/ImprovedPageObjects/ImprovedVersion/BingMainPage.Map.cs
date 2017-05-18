@@ -14,7 +14,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace ImprovedPageObjects.ImprovedVersion
+namespace HuddlePageObjectsPartialClassesProperties.ImprovedVersion
 {
     public partial class BingMainPage
     {

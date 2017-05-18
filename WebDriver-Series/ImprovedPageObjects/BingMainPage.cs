@@ -15,7 +15,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace ImprovedPageObjects
+namespace HuddlePageObjectsPartialClassesProperties
 {
     public class BingMainPage
     {

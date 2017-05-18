@@ -11,25 +11,24 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
+
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
 
 namespace HuddlePageObjectsPartialClassesProperties.ImprovedVersion
 {
     public partial class BingMainPage
     {
-        private readonly IWebDriver driver;
+        private readonly IWebDriver _driver;
         private readonly string url = @"http://www.bing.com/";
 
         public BingMainPage(IWebDriver browser)
         {
-            this.driver = browser;
-            PageFactory.InitElements(browser, this);
+            this._driver = browser;
         }
 
         public void Navigate()
         {
-            this.driver.Navigate().GoToUrl(this.url);
+            this._driver.Navigate().GoToUrl(this.url);
         }
 
         public void Search(string textToType)

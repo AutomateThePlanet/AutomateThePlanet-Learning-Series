@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26206.0
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Getting Started with WebDriver CSharp in 10 Minutes", "1. Getting Started with WebDriver CSharp in 10 Minutes", "{72C5F509-1F8B-4DF4-B76A-1CBCF0B6E924}"
 	ProjectSection(SolutionItems) = preProject
@@ -71,9 +71,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ui.Automation.Core.Controls
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Huddle", "Huddle", "{BE6A56F4-A917-4E07-849B-37616836E1A4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImprovedPageObjects", "ImprovedPageObjects", "{6D90459B-F297-45DF-A81F-B84D03DA41A6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Page Objects- Partial Classes FindsBy Attributes", "1. Page Objects- Partial Classes FindsBy Attributes", "{6D90459B-F297-45DF-A81F-B84D03DA41A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImprovedPageObjects", "ImprovedPageObjects\ImprovedPageObjects.csproj", "{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsPartialClassesFindsByAttributes", "ImprovedPageObjects\HuddlePageObjectsPartialClassesFindsByAttributes.csproj", "{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16. Use Selenium WebDriver UI Tests for Load Testing in the Cloud", "16. Use Selenium WebDriver UI Tests for Load Testing in the Cloud", "{0729514F-5710-437D-970D-9A5840E371A8}"
 EndProject
@@ -86,6 +86,20 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18. 5 Reasons You Should Use the Brand-New CSharp 7.0 in Your WebDriver Tests", "18. 5 Reasons You Should Use the Brand-New CSharp 7.0 in Your WebDriver Tests", "{0A59D995-A424-44AD-8800-99F3989059E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverCsharpSeven", "WebDriverCsharpSeven\WebDriverCsharpSeven.csproj", "{5E74BB21-7F89-468F-A8F0-3683A4172E22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Page Objects- Partial Classes with Properties", "2. Page Objects- Partial Classes with Properties", "{E09EB29E-71F0-4153-96CF-DC5854E59B7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Page Objects- Partial Classes CSharp 7 Features", "3. Page Objects- Partial Classes CSharp 7 Features", "{E6701FCE-0F57-4D86-9058-98E4D299ECBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Page Objects- Partial Classes Fluent API", "4. Page Objects- Partial Classes Fluent API", "{36764F76-E9DD-44E8-97FA-8CC0442CAC48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Page Objects- Partial Classes String Properties", "5. Page Objects- Partial Classes String Properties", "{4349683B-C860-4048-9A98-B9D1E9F04FCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Page Objects Series", "Page Objects Series", "{D5E1B798-3F73-4EB0-A675-21EB232443FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsPartialClassesProperties", "HuddlePageObjectsPartialClassesProperties\HuddlePageObjectsPartialClassesProperties.csproj", "{FBDA99E9-196E-43B8-A74E-B7F0DEA8710B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Page Objects- Page Sections", "6. Page Objects- Page Sections", "{7E7184D4-07BA-4F0C-B410-BB4BD95760AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -165,6 +179,10 @@ Global
 		{5E74BB21-7F89-468F-A8F0-3683A4172E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E74BB21-7F89-468F-A8F0-3683A4172E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E74BB21-7F89-468F-A8F0-3683A4172E22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBDA99E9-196E-43B8-A74E-B7F0DEA8710B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBDA99E9-196E-43B8-A74E-B7F0DEA8710B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBDA99E9-196E-43B8-A74E-B7F0DEA8710B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBDA99E9-196E-43B8-A74E-B7F0DEA8710B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -184,10 +202,17 @@ Global
 		{09F6304D-805B-4A92-82AF-24F6F297EF36} = {DD666112-9F80-4218-B544-69F9394CD683}
 		{72C27BC0-C747-45CF-998A-09989842F019} = {7EFD7458-6993-459F-8958-DB35B30D57B1}
 		{0FCF9CA2-F3DF-4090-B9DB-6D2AB01EC094} = {875B8A5D-165C-4FF6-8D55-DD08474228AE}
-		{6D90459B-F297-45DF-A81F-B84D03DA41A6} = {BE6A56F4-A917-4E07-849B-37616836E1A4}
+		{6D90459B-F297-45DF-A81F-B84D03DA41A6} = {D5E1B798-3F73-4EB0-A675-21EB232443FE}
 		{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8} = {6D90459B-F297-45DF-A81F-B84D03DA41A6}
 		{16001DE2-C8E9-4321-8110-D5835283B343} = {0729514F-5710-437D-970D-9A5840E371A8}
 		{71EE5670-1113-4716-AEE2-645671D03F60} = {A60B2F35-EF11-4628-9870-2A99442C6161}
 		{5E74BB21-7F89-468F-A8F0-3683A4172E22} = {0A59D995-A424-44AD-8800-99F3989059E8}
+		{E09EB29E-71F0-4153-96CF-DC5854E59B7E} = {D5E1B798-3F73-4EB0-A675-21EB232443FE}
+		{E6701FCE-0F57-4D86-9058-98E4D299ECBD} = {D5E1B798-3F73-4EB0-A675-21EB232443FE}
+		{36764F76-E9DD-44E8-97FA-8CC0442CAC48} = {D5E1B798-3F73-4EB0-A675-21EB232443FE}
+		{4349683B-C860-4048-9A98-B9D1E9F04FCA} = {D5E1B798-3F73-4EB0-A675-21EB232443FE}
+		{D5E1B798-3F73-4EB0-A675-21EB232443FE} = {BE6A56F4-A917-4E07-849B-37616836E1A4}
+		{FBDA99E9-196E-43B8-A74E-B7F0DEA8710B} = {E09EB29E-71F0-4153-96CF-DC5854E59B7E}
+		{7E7184D4-07BA-4F0C-B410-BB4BD95760AE} = {D5E1B798-3F73-4EB0-A675-21EB232443FE}
 	EndGlobalSection
 EndGlobal
