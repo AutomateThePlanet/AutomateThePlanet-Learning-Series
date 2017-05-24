@@ -56,6 +56,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BingTests.cs" />
+    <Compile Include="Pages\BingMainPage\BingMainPage.Asserter.cs" />
+    <Compile Include="Pages\BingMainPage\BingMainPage.cs" />
+    <Compile Include="Pages\BingMainPage\BingMainPage.Map.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

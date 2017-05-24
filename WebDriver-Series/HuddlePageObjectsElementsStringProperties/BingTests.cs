@@ -11,44 +11,54 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
+
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
-namespace WebDriverCsharpSeven.DigitSeparators
+namespace HuddlePageObjectsElementsStringProperties
 {
     [TestClass]
     public class BingTests
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
 
         [TestInitialize]
         public void SetupTest()
         {
-            driver = new FirefoxDriver();
-            // Prior C# 7.0
-            ////driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(30000);
-            // C# 7.0
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30_000);
+            _driver = new FirefoxDriver();
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            driver.Quit();
+            _driver.Quit();
         }
 
         [TestMethod]
         public void SearchTextInBing_First()
         {
-            var bingMainPage = new BingMainPage(driver);
+            var bingMainPage = new BingMainPage(_driver);
+
             bingMainPage.Navigate();
             bingMainPage.Search("Automate The Planet");
-            // Prior C# 7.0
-            ////bingMainPage.AssertResultsCount(236000);
-            // C# 7.0
-            bingMainPage.AssertResultsCount(236_000);
+
+            bingMainPage.AssertResultsCount("236,000 RESULTS");
+        }
+
+        [TestMethod]
+        public void SearchTextInBing_UseElementsDirectly()
+        {
+            var bingMainPage = new BingMainPage(_driver);
+
+            bingMainPage.Navigate();
+            bingMainPage.SearchBox = "Automate The Planet";
+            bingMainPage.GoButton.Click();
+
+            Assert.AreEqual(bingMainPage.ResultsCountDiv, "236,000 RESULTS");
         }
     }
 }

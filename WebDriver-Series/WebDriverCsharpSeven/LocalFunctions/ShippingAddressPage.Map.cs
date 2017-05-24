@@ -64,7 +64,7 @@ namespace WebDriverCsharpSeven.LocalFunctions
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressAddressLine1"));
+                return driver.FindElement(By.Id("enterAddressAddressLine1"));
             }
         }
 
@@ -72,7 +72,7 @@ namespace WebDriverCsharpSeven.LocalFunctions
         {
             get
             {
-                return this.driver.FindElements(By.ClassName("purchaseOrderRow"));
+                return driver.FindElements(By.ClassName("purchaseOrderRow"));
             }
         }
 
@@ -80,7 +80,7 @@ namespace WebDriverCsharpSeven.LocalFunctions
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressCity"));
+                return driver.FindElement(By.Id("enterAddressCity"));
             }
         }
 
@@ -88,7 +88,7 @@ namespace WebDriverCsharpSeven.LocalFunctions
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressPostalCode"));
+                return driver.FindElement(By.Id("enterAddressPostalCode"));
             }
         }
 
@@ -96,7 +96,7 @@ namespace WebDriverCsharpSeven.LocalFunctions
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressPhoneNumber"));
+                return driver.FindElement(By.Id("enterAddressPhoneNumber"));
             }
         }
 
@@ -104,7 +104,7 @@ namespace WebDriverCsharpSeven.LocalFunctions
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterVat"));
+                return driver.FindElement(By.Id("enterVat"));
             }
         }
     }

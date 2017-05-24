@@ -17,10 +17,10 @@ namespace WebDriverTestsCSharpSix.CSharpSix.AutoPropertyInitializers
     {
         public Client(string firstName, string lastName, string email, string password)
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Email = email;
-            this.Password = password;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            Password = password;
         }
 
         public string FirstName { get; set; } = "Default First Name";

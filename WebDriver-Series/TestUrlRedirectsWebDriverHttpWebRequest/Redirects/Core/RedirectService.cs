@@ -27,14 +27,14 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
         {
             this.redirectEngine = redirectEngine;
             this.redirectEngine.Initialize();
-            this.InitializeRedirectUrls();
+            InitializeRedirectUrls();
         }
 
         public void TestRedirects()
         {
             bool shouldFail = false;
 
-            foreach (var currentSite in this.sites.Site)
+            foreach (var currentSite in sites.Site)
             {
                 Uri baseUri = new Uri(currentSite.Url);
 
@@ -43,7 +43,7 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
                     Uri currentFromUrl = new Uri(baseUri, currentRedirect.From);
                     Uri currentToUrl = new Uri(baseUri, currentRedirect.To);
 
-                    string currentSitesUrl = this.redirectEngine.NavigateToFromUrl(currentFromUrl.AbsoluteUri);
+                    string currentSitesUrl = redirectEngine.NavigateToFromUrl(currentFromUrl.AbsoluteUri);
                     try
                     {
                         Assert.AreEqual<string>(currentToUrl.AbsoluteUri, currentSitesUrl);
@@ -71,7 +71,7 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(Sites));
             TextReader reader = new StreamReader(@"redirect-URLs.xml");
-            this.sites = (Sites)deserializer.Deserialize(reader);
+            sites = (Sites)deserializer.Deserialize(reader);
             reader.Close();
         }
     }

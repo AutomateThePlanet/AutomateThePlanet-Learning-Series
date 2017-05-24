@@ -26,30 +26,30 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
         private IWebDriver driver;
         private IGridPage gridPage;
         private FreightColumnAsserter freightColumnAsserter;
-        private AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases.OrderDateColumnAsserter orderDateColumnAsserter;
-        private AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases.OrderIdColumnAsserter orderIdColumnAsserter;
-        private AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases.ShipNameColumnAsserter shipNameColumnAsserter;
-        private AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases.GridPagerAsserter gridPagerAsserter;
+        private GridTestCases.OrderDateColumnAsserter orderDateColumnAsserter;
+        private GridTestCases.OrderIdColumnAsserter orderIdColumnAsserter;
+        private GridTestCases.ShipNameColumnAsserter shipNameColumnAsserter;
+        private GridTestCases.GridPagerAsserter gridPagerAsserter;
 
         // TODO: Fix Pages URLs
 
         [TestInitialize]
         public void SetupTest()
         {
-            this.driver = new FirefoxDriver();
-            this.driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
-            this.gridPage = new GridFilterPage(this.driver);
-            this.freightColumnAsserter = new FreightColumnAsserter(this.gridPage);
-            this.orderDateColumnAsserter = new AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases.OrderDateColumnAsserter(this.gridPage);
-            this.orderIdColumnAsserter = new AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases.OrderIdColumnAsserter(this.gridPage);
-            this.shipNameColumnAsserter = new AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases.ShipNameColumnAsserter(this.gridPage);
-            this.gridPagerAsserter = new AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases.GridPagerAsserter(this.gridPage);
+            driver = new FirefoxDriver();
+            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
+            gridPage = new GridFilterPage(driver);
+            freightColumnAsserter = new FreightColumnAsserter(gridPage);
+            orderDateColumnAsserter = new GridTestCases.OrderDateColumnAsserter(gridPage);
+            orderIdColumnAsserter = new GridTestCases.OrderIdColumnAsserter(gridPage);
+            shipNameColumnAsserter = new GridTestCases.ShipNameColumnAsserter(gridPage);
+            gridPagerAsserter = new GridTestCases.GridPagerAsserter(gridPage);
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            this.driver.Quit();
+            driver.Quit();
         }
 
         // ** OrderID Test Cases (Unique Identifier Type Column Test Cases) ** 
@@ -59,43 +59,43 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
         [TestMethod]
         public void OrderIdEqualToFilter()
         {
-            this.orderIdColumnAsserter.OrderIdEqualToFilter();
+            orderIdColumnAsserter.OrderIdEqualToFilter();
         }
         
         [TestMethod]
         public void OrderIdGreaterThanOrEqualToFilter()
         {
-            this.orderIdColumnAsserter.OrderIdGreaterThanOrEqualToFilter();
+            orderIdColumnAsserter.OrderIdGreaterThanOrEqualToFilter();
         }
         
         [TestMethod]
         public void OrderIdGreaterThanFilter()
         {
-            this.orderIdColumnAsserter.OrderIdGreaterThanFilter();
+            orderIdColumnAsserter.OrderIdGreaterThanFilter();
         }
         
         [TestMethod]
         public void OrderIdLessThanOrEqualToFilter()
         {
-            this.orderIdColumnAsserter.OrderIdLessThanOrEqualToFilter();
+            orderIdColumnAsserter.OrderIdLessThanOrEqualToFilter();
         }
         
         [TestMethod]
         public void OrderIdLessThanFilter()
         {
-            this.orderIdColumnAsserter.OrderIdLessThanFilter();
+            orderIdColumnAsserter.OrderIdLessThanFilter();
         }
         
         [TestMethod]
         public void OrderIdNotEqualToFilter()
         {
-            this.orderIdColumnAsserter.OrderIdNotEqualToFilter();
+            orderIdColumnAsserter.OrderIdNotEqualToFilter();
         }
         
         [TestMethod]
         public void OrderIdClearFilter()
         {
-            this.orderIdColumnAsserter.OrderIdClearFilter();
+            orderIdColumnAsserter.OrderIdClearFilter();
         }
 
         #endregion
@@ -107,55 +107,55 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
         [TestMethod]
         public void OrderDateEqualToFilter()
         {
-            this.orderDateColumnAsserter.OrderDateEqualToFilter();
+            orderDateColumnAsserter.OrderDateEqualToFilter();
         }
 
         [TestMethod]
         public void OrderDateNotEqualToFilter()
         {
-            this.orderDateColumnAsserter.OrderDateNotEqualToFilter();
+            orderDateColumnAsserter.OrderDateNotEqualToFilter();
         }
 
         [TestMethod]
         public void OrderDateAfterFilter()
         {
-            this.orderDateColumnAsserter.OrderDateAfterFilter();
+            orderDateColumnAsserter.OrderDateAfterFilter();
         }
 
         [TestMethod]
         public void OrderDateIsAfterOrEqualToFilter()
         {
-            this.orderDateColumnAsserter.OrderDateIsAfterOrEqualToFilter();
+            orderDateColumnAsserter.OrderDateIsAfterOrEqualToFilter();
         }
 
         [TestMethod]
         public void OrderDateBeforeFilter()
         {
-            this.orderDateColumnAsserter.OrderDateBeforeFilter();
+            orderDateColumnAsserter.OrderDateBeforeFilter();
         }
 
         [TestMethod]
         public void OrderDateIsBeforeOrEqualToFilter()
         {
-            this.orderDateColumnAsserter.OrderDateIsBeforeOrEqualToFilter();
+            orderDateColumnAsserter.OrderDateIsBeforeOrEqualToFilter();
         }
 
         [TestMethod]
         public void OrderDateClearFilter()
         {
-            this.orderDateColumnAsserter.OrderDateClearFilter();
+            orderDateColumnAsserter.OrderDateClearFilter();
         }
 
         [TestMethod]
         public void OrderDateSortAsc()
         {
-            this.orderDateColumnAsserter.OrderDateSortAsc();
+            orderDateColumnAsserter.OrderDateSortAsc();
         }
 
         [TestMethod]
         public void OrderDateSortDesc()
         {
-            this.orderDateColumnAsserter.OrderDateSortDesc();
+            orderDateColumnAsserter.OrderDateSortDesc();
         }
         
         #endregion
@@ -167,43 +167,43 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
         [TestMethod]
         public void ShipNameEqualToFilter()
         {
-            this.shipNameColumnAsserter.ShipNameEqualToFilter();
+            shipNameColumnAsserter.ShipNameEqualToFilter();
         }
         
         [TestMethod]
         public void ShipNameContainsFilter()
         {
-            this.shipNameColumnAsserter.ShipNameContainsFilter();
+            shipNameColumnAsserter.ShipNameContainsFilter();
         }
         
         [TestMethod]
         public void ShipNameEndsWithFilter()
         {
-            this.shipNameColumnAsserter.ShipNameEndsWithFilter();
+            shipNameColumnAsserter.ShipNameEndsWithFilter();
         }
         
         [TestMethod]
         public void ShipNameStartsWithFilter()
         {
-            this.shipNameColumnAsserter.ShipNameStartsWithFilter();
+            shipNameColumnAsserter.ShipNameStartsWithFilter();
         }
         
         [TestMethod]
         public void ShipNameNotEqualToFilter()
         {
-            this.shipNameColumnAsserter.ShipNameNotEqualToFilter();
+            shipNameColumnAsserter.ShipNameNotEqualToFilter();
         }
         
         [TestMethod]
         public void ShipNameNotContainsFilter()
         {
-            this.shipNameColumnAsserter.ShipNameNotContainsFilter();
+            shipNameColumnAsserter.ShipNameNotContainsFilter();
         }
         
         [TestMethod]
         public void ShipNameClearFilter()
         {
-            this.shipNameColumnAsserter.ShipNameClearFilter();
+            shipNameColumnAsserter.ShipNameClearFilter();
         }
         
         #endregion      
@@ -215,43 +215,43 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
         [TestMethod]
         public void FreightEqualToFilter()
         {
-            this.freightColumnAsserter.FreightEqualToFilter();
+            freightColumnAsserter.FreightEqualToFilter();
         }
         
         [TestMethod]
         public void FreightGreaterThanOrEqualToFilter()
         {
-            this.freightColumnAsserter.FreightGreaterThanOrEqualToFilter();
+            freightColumnAsserter.FreightGreaterThanOrEqualToFilter();
         }
         
         [TestMethod]
         public void FreightGreaterThanFilter()
         {
-            this.freightColumnAsserter.FreightGreaterThanFilter();
+            freightColumnAsserter.FreightGreaterThanFilter();
         }
         
         [TestMethod]
         public void FreightLessThanOrEqualToFilter()
         {
-            this.freightColumnAsserter.FreightLessThanOrEqualToFilter();
+            freightColumnAsserter.FreightLessThanOrEqualToFilter();
         }
         
         [TestMethod]
         public void FreightLessThanFilter()
         {
-            this.freightColumnAsserter.FreightLessThanFilter();
+            freightColumnAsserter.FreightLessThanFilter();
         }
         
         [TestMethod]
         public void FreightNotEqualToFilter()
         {
-            this.freightColumnAsserter.FreightNotEqualToFilter();
+            freightColumnAsserter.FreightNotEqualToFilter();
         }
         
         [TestMethod]
         public void FreightClearFilter()
         {
-            this.freightColumnAsserter.FreightClearFilter();
+            freightColumnAsserter.FreightClearFilter();
         }
 
         #endregion
@@ -263,79 +263,79 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
         [TestMethod]
         public void NavigateToFirstPage_GoToFirstPageButton()
         {
-            this.gridPagerAsserter.NavigateToFirstPage_GoToFirstPageButton();
+            gridPagerAsserter.NavigateToFirstPage_GoToFirstPageButton();
         }
 
         [TestMethod]
         public void NavigateToLastPage_GoToLastPageButton()
         {
-            this.gridPagerAsserter.NavigateToLastPage_GoToLastPageButton();
+            gridPagerAsserter.NavigateToLastPage_GoToLastPageButton();
         }
 
         [TestMethod]
         public void NavigateToPageNine_GoToPreviousPageButton()
         {
-            this.gridPagerAsserter.NavigateToPageNine_GoToPreviousPageButton();
+            gridPagerAsserter.NavigateToPageNine_GoToPreviousPageButton();
         }
 
         [TestMethod]
         public void NavigateToPageTwo_GoToNextPageButton()
         {
-            this.gridPagerAsserter.NavigateToPageTwo_GoToNextPageButton();
+            gridPagerAsserter.NavigateToPageTwo_GoToNextPageButton();
         }
 
         [TestMethod]
         public void NavigateToPageTwo_SecondPageButton()
         {
-            this.gridPagerAsserter.NavigateToPageTwo_SecondPageButton();
+            gridPagerAsserter.NavigateToPageTwo_SecondPageButton();
         }
 
         [TestMethod]
         public void NavigateToLastPage_MorePagesNextButton()
         {
-            this.gridPagerAsserter.NavigateToLastPage_MorePagesNextButton();
+            gridPagerAsserter.NavigateToLastPage_MorePagesNextButton();
         }
 
         [TestMethod]
         public void NavigateToPageOne_MorePagesPreviousButton()
         {
-            this.gridPagerAsserter.NavigateToPageOne_MorePagesPreviousButton();
+            gridPagerAsserter.NavigateToPageOne_MorePagesPreviousButton();
         }
 
         [TestMethod]
         public void GoToFirstPageButtonDisabled_WhenFirstPageIsLoaded()
         {
-            this.gridPagerAsserter.GoToFirstPageButtonDisabled_WhenFirstPageIsLoaded();
+            gridPagerAsserter.GoToFirstPageButtonDisabled_WhenFirstPageIsLoaded();
         }
 
         [TestMethod]
         public void GoToPreviousPageButtonDisabled_WhenFirstPageIsLoaded()
         {
-            this.gridPagerAsserter.GoToPreviousPageButtonDisabled_WhenFirstPageIsLoaded();
+            gridPagerAsserter.GoToPreviousPageButtonDisabled_WhenFirstPageIsLoaded();
         }
 
         [TestMethod]
         public void PreviousMorePagesButtonDisabled_WhenFirstPageIsLoaded()
         {
-            this.gridPagerAsserter.PreviousMorePagesButtonDisabled_WhenFirstPageIsLoaded();
+            gridPagerAsserter.PreviousMorePagesButtonDisabled_WhenFirstPageIsLoaded();
         }
 
         [TestMethod]
         public void GoToLastPageButtonDisabled_WhenLastPageIsLoaded()
         {
-            this.gridPagerAsserter.GoToLastPageButtonDisabled_WhenLastPageIsLoaded();
+            gridPagerAsserter.GoToLastPageButtonDisabled_WhenLastPageIsLoaded();
         }
 
         [TestMethod]
         public void GoToNextPageButtonDisabled_WhenLastPageIsLoaded()
         {
-            this.gridPagerAsserter.GoToNextPageButtonDisabled_WhenLastPageIsLoaded();
+            gridPagerAsserter.GoToNextPageButtonDisabled_WhenLastPageIsLoaded();
         }
 
         [TestMethod]
         public void NextMorePageButtonDisabled_WhenLastPageIsLoaded()
         {
-            this.gridPagerAsserter.NextMorePageButtonDisabled_WhenLastPageIsLoaded();
+            gridPagerAsserter.NextMorePageButtonDisabled_WhenLastPageIsLoaded();
         }
         
         #endregion

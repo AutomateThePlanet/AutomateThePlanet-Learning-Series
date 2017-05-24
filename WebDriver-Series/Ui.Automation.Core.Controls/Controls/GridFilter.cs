@@ -19,9 +19,9 @@ namespace Ui.Automation.Core.Controls.Controls
     {
         public GridFilter(string columnName, FilterOperator filterOperator, string filterValue)
         {
-            this.ColumnName = columnName;
-            this.FilterOperator = filterOperator;
-            this.FilterValue = filterValue;
+            ColumnName = columnName;
+            FilterOperator = filterOperator;
+            FilterValue = filterValue;
         }
 
         public string ColumnName { get; set; }

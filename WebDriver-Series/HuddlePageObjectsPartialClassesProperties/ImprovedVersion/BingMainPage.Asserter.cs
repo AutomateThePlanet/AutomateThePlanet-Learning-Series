@@ -13,13 +13,13 @@
 // <site>http://automatetheplanet.com/</site>
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HuddlePageObjectsPartialClassesProperties.ImprovedVersion
+namespace HuddlePageObjectsElementsStringProperties.ImprovedVersion
 {
     public partial class BingMainPage
     {
         public void AssertResultsCount(string expectedCount)
         {
-            Assert.AreEqual(this.ResultsCountDiv.Text, expectedCount);
+            Assert.AreEqual(ResultsCountDiv.Text, expectedCount);
         }
     }
 }

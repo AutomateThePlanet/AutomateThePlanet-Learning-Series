@@ -21,7 +21,7 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest
         [TestMethod]
         public void TestRedirects()
         {
-            var redirectService = new TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core.RedirectService(new TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core.WebRequestRedirectStrategy());
+            var redirectService = new Redirects.Core.RedirectService(new Redirects.Core.WebRequestRedirectStrategy());
             using (redirectService)
             {
                 redirectService.TestRedirects();

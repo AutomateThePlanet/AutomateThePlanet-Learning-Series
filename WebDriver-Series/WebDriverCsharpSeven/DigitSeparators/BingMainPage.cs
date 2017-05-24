@@ -24,7 +24,7 @@ namespace WebDriverCsharpSeven.DigitSeparators
 
         public BingMainPage(IWebDriver browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
@@ -39,7 +39,7 @@ namespace WebDriverCsharpSeven.DigitSeparators
 
         public void Navigate()
         {
-            this.driver.Navigate().GoToUrl(this.url);
+            driver.Navigate().GoToUrl(url);
         }
 
         public void Search(string textToType)

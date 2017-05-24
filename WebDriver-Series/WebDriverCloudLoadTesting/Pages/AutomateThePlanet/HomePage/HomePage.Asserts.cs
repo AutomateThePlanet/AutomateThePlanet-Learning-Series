@@ -19,7 +19,7 @@ namespace WebDriverCloudLoadTesting.Pages.AutomateThePlanet
     {
         public void AssertHeadline()
         {
-            Assert.IsTrue(this.MainHeadline.Text.Contains("Taking Software Quality to"));
+            Assert.IsTrue(MainHeadline.Text.Contains("Taking Software Quality to"));
         }
     }
 }

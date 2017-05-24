@@ -11,29 +11,32 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
 
-namespace WebDriverTestsCSharpSix.CSharpSix.ExpressionBodiesFunctions.ImprovedVersion
+using OpenQA.Selenium;
+
+namespace HuddlePageObjectsElementsStringProperties
 {
     public partial class BingMainPage
     {
-        private readonly IWebDriver driver;
+        private readonly IWebDriver _driver;
+        private readonly string _url = @"http://www.bing.com/";
 
-        public BingMainPage(IWebDriver browser)
-        {
-            driver = browser;
-            PageFactory.InitElements(browser, this);
-        }
+        public BingMainPage(IWebDriver browser) => _driver = browser;
 
-        public string Url => @"http://www.bing.com/";
+        public void Navigate() => _driver.Navigate().GoToUrl(_url);
 
-        public void Navigate() => driver.Navigate().GoToUrl(Url);
+        // Normal Version
+        ////public void Search(string textToType)
+        ////{
+        ////    SearchBox.Clear();
+        ////    SearchBox.SendKeys(textToType);
+        ////    GoButton.Click();
+        ////}
 
+        // String Properties Version
         public void Search(string textToType)
         {
-            SearchBox.Clear();
-            SearchBox.SendKeys(textToType);
+            SearchBox = textToType;
             GoButton.Click();
         }
     }

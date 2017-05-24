@@ -28,23 +28,23 @@ namespace MostUnderratedWebDriverLocatorXPath
         [TestInitialize]
         public void SetupTest()
         {
-            this.Driver = new FirefoxDriver();
-            this.Wait = new WebDriverWait(this.Driver, TimeSpan.FromSeconds(30));
+            Driver = new FirefoxDriver();
+            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            this.Driver.Quit();
+            Driver.Quit();
         }
 
         [TestMethod]
         public void Find_Column_Table_XPath()
         {
-            this.Driver.Navigate().GoToUrl(@"http://www.tutorialspoint.com/html/html_tables.htm");
+            Driver.Navigate().GoToUrl(@"http://www.tutorialspoint.com/html/html_tables.htm");
             var expression = By.XPath("/html/body/div[1]/div/div/div/div[2]/div[1]/div/div[6]/table/tbody");
-            this.Wait.Until(x => x.FindElement(expression));
-            var element = this.Driver.FindElement(By.XPath("//td[contains(text(), '5000')]/preceding-sibling::td[1]"));
+            Wait.Until(x => x.FindElement(expression));
+            var element = Driver.FindElement(By.XPath("//td[contains(text(), '5000')]/preceding-sibling::td[1]"));
             Assert.AreEqual<string>("Ramesh Raman", element.Text);
         }
     }

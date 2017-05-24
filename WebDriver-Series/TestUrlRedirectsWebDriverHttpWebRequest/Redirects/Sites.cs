@@ -21,6 +21,6 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects
     public class Sites
     {
         [XmlElement(ElementName = "site")]
-        public List<TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Site> Site { get; set; }
+        public List<Site> Site { get; set; }
     }
 }

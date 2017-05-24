@@ -24,7 +24,7 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
 
         public string NavigateToFromUrl(string fromUrl)
         {
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(fromUrl);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(fromUrl);
             request.Method = "HEAD";
             request.Timeout = (int)TimeSpan.FromHours(1).TotalMilliseconds;
             string currentSitesUrl = string.Empty;

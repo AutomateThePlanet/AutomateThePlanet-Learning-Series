@@ -13,7 +13,7 @@
 // <site>http://automatetheplanet.com/</site>
 using OpenQA.Selenium;
 
-namespace HuddlePageObjectsPartialClassesProperties.ImprovedVersion
+namespace HuddlePageObjectsElementsStringProperties.ImprovedVersion
 {
     public partial class BingMainPage
     {
@@ -21,7 +21,7 @@ namespace HuddlePageObjectsPartialClassesProperties.ImprovedVersion
         {
             get
             {
-                return this._driver.FindElement(By.Id("sb_form_q"));
+                return _driver.FindElement(By.Id("sb_form_q"));
             }
         }
 
@@ -30,7 +30,7 @@ namespace HuddlePageObjectsPartialClassesProperties.ImprovedVersion
         {
             get
             {
-                return this._driver.FindElement(By.Id("sb_form_go"));
+                return _driver.FindElement(By.Id("sb_form_go"));
             }
         }
 
@@ -38,7 +38,7 @@ namespace HuddlePageObjectsPartialClassesProperties.ImprovedVersion
         {
             get
             {
-                return this._driver.FindElement(By.Id("b_tween"));
+                return _driver.FindElement(By.Id("b_tween"));
             }
         }
     }

@@ -28,21 +28,21 @@ namespace AutomateTelerikKendoGridWebDriverJavaScript
         [TestInitialize]
         public void SetupTest()
         {
-            this.driver = new FirefoxDriver();
-            this.driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
+            driver = new FirefoxDriver();
+            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            this.driver.Quit();
+            driver.Quit();
         }
 
         [TestMethod]
         public void FilterContactName()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/index");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/index");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
             kendoGrid.Filter("ContactName", FilterOperator.Contains, "Thomas");
             var items = kendoGrid.GetItems<GridItem>();
             Assert.AreEqual(1, items.Count);
@@ -51,8 +51,8 @@ namespace AutomateTelerikKendoGridWebDriverJavaScript
         [TestMethod]
         public void SortContactTitleDesc()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/index");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/index");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
             kendoGrid.Sort("ContactTitle", SortType.Desc);
             var items = kendoGrid.GetItems<GridItem>();
             Assert.AreEqual("Sales Representative", items[0]);
@@ -62,8 +62,8 @@ namespace AutomateTelerikKendoGridWebDriverJavaScript
         [TestMethod]
         public void TestCurrentPage()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/index");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/index");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
             var pageNumber = kendoGrid.GetCurrentPageNumber();
             Assert.AreEqual(1, pageNumber);
         }
@@ -71,8 +71,8 @@ namespace AutomateTelerikKendoGridWebDriverJavaScript
         [TestMethod]
         public void GetPageSize()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/index");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/index");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
             var pageNumber = kendoGrid.GetPageSize();
             Assert.AreEqual(20, pageNumber);
         }
@@ -80,8 +80,8 @@ namespace AutomateTelerikKendoGridWebDriverJavaScript
         [TestMethod]
         public void GetAllItems()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/index");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/index");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
 
             var items = kendoGrid.GetItems<GridItem>();
             Assert.AreEqual(91, items.Count);

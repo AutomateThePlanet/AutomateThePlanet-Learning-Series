@@ -20,16 +20,16 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
 {
     public class GridColumnAsserter
     {
-        public GridColumnAsserter(AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases.Pages.IGridPage gridPage)
+        public GridColumnAsserter(Pages.IGridPage gridPage)
         {
-            this.GridPage = gridPage;
+            GridPage = gridPage;
         }
 
-        protected AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases.Pages.IGridPage GridPage { get; set; }
+        protected Pages.IGridPage GridPage { get; set; }
 
         protected void WaitForPageToLoad(int expectedPage, KendoGrid grid)
         {
-            this.Until(() =>
+            Until(() =>
             {
                 int currentPage = grid.GetCurrentPageNumber();
                 return currentPage == expectedPage;
@@ -38,7 +38,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
 
         protected void WaitForGridToLoad(int expectedCount, KendoGrid grid)
         {
-            this.Until(
+            Until(
                 () =>
                 {
                     var items = grid.GetItems<GridItem>();
@@ -48,7 +48,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             
         protected void WaitForGridToLoadAtLeast(int expectedCount, KendoGrid grid)
         {
-            this.Until(
+            Until(
                 () =>
                 {
                     var items = grid.GetItems<GridItem>();

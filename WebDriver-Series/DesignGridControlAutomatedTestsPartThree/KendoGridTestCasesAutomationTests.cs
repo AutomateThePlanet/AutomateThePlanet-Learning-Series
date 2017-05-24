@@ -35,14 +35,14 @@ namespace DesignGridControlAutomatedTestsPartThree
         [TestInitialize]
         public void SetupTest()
         {
-            this.driver = new FirefoxDriver();
-            this.driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
+            driver = new FirefoxDriver();
+            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            this.driver.Quit();
+            driver.Quit();
         }
         
         // ** Paging Test Cases **
@@ -52,125 +52,125 @@ namespace DesignGridControlAutomatedTestsPartThree
         [TestMethod]
         public void NavigateToFirstPage_GoToFirstPageButton()
         {
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
-            this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 11);
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            InitializeInvoicesForPaging();
+            NavigateToGridInitialPage(kendoGrid, 11);
             int targetPage = 1;
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.GoToFirstPageButton.Click();
-            this.WaitForPageToLoad(targetPage, kendoGrid);
+            WaitForPageToLoad(targetPage, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
         
-            Assert.AreEqual(this.testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
-            this.AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, this.testPagingItems.Count());
+            Assert.AreEqual(testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, testPagingItems.Count());
         }
 
         [TestMethod]
         public void NavigateToLastPage_GoToLastPageButton()
         {
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
-            this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 1);
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            InitializeInvoicesForPaging();
+            NavigateToGridInitialPage(kendoGrid, 1);
             int targetPage = 11;
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.GoToLastPage.Click();
-            this.WaitForPageToLoad(targetPage, kendoGrid);
+            WaitForPageToLoad(targetPage, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
-            Assert.AreEqual(this.testPagingItems.Last().OrderId, results.First().OrderId);
-            this.AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, this.testPagingItems.Count());
+            Assert.AreEqual(testPagingItems.Last().OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, testPagingItems.Count());
         }
 
         [TestMethod]
         public void NavigateToPageNine_GoToPreviousPageButton()
         {
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
-            this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 11);
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            InitializeInvoicesForPaging();
+            NavigateToGridInitialPage(kendoGrid, 11);
             int targetPage = 10;
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.GoToPreviousPage.Click();
-            this.WaitForPageToLoad(targetPage, kendoGrid);
+            WaitForPageToLoad(targetPage, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
-            Assert.AreEqual(this.testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
-            this.AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, this.testPagingItems.Count());
+            Assert.AreEqual(testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, testPagingItems.Count());
         }
 
         [TestMethod]
         public void NavigateToPageTwo_GoToNextPageButton()
         {
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
-            this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 1);
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            InitializeInvoicesForPaging();
+            NavigateToGridInitialPage(kendoGrid, 1);
             int targetPage = 2;
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.GoToNextPage.Click();
-            this.WaitForPageToLoad(targetPage, kendoGrid);
+            WaitForPageToLoad(targetPage, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
-            Assert.AreEqual(this.testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
-            this.AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, this.testPagingItems.Count());
+            Assert.AreEqual(testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, testPagingItems.Count());
         }
 
         [TestMethod]
         public void NavigateToPageTwo_SecondPageButton()
         {
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
-            this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 1);
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            InitializeInvoicesForPaging();
+            NavigateToGridInitialPage(kendoGrid, 1);
             int targetPage = 2;
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.PageOnSecondPositionButton.Click();
-            this.WaitForPageToLoad(targetPage, kendoGrid);
+            WaitForPageToLoad(targetPage, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
-            Assert.AreEqual(this.testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
-            this.AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, this.testPagingItems.Count());
+            Assert.AreEqual(testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, testPagingItems.Count());
         }
 
         [TestMethod]
         public void NavigateToLastPage_MorePagesNextButton()
         {
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
-            this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 1);
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            InitializeInvoicesForPaging();
+            NavigateToGridInitialPage(kendoGrid, 1);
             int targetPage = 11;
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.NextMorePages.Click();
-            this.WaitForPageToLoad(targetPage, kendoGrid);
+            WaitForPageToLoad(targetPage, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
-            Assert.AreEqual(this.testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
-            this.AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, this.testPagingItems.Count());
+            Assert.AreEqual(testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, testPagingItems.Count());
         }
 
         [TestMethod]
         public void NavigateToPageOne_MorePagesPreviousButton()
         {
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
-            this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 11);
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            InitializeInvoicesForPaging();
+            NavigateToGridInitialPage(kendoGrid, 11);
             int targetPage = 1;
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.PreviousMorePages.Click();
-            this.WaitForPageToLoad(targetPage, kendoGrid);
+            WaitForPageToLoad(targetPage, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
-            Assert.AreEqual(this.testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
-            this.AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, this.testPagingItems.Count());
+            Assert.AreEqual(testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, testPagingItems.Count());
         }
 
         [TestMethod]
         public void GoToFirstPageButtonDisabled_WhenFirstPageIsLoaded()
         {
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
-            this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 11);
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            InitializeInvoicesForPaging();
+            NavigateToGridInitialPage(kendoGrid, 11);
             int targetPage = 1;
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.GoToFirstPageButton.Click();
-            this.WaitForPageToLoad(targetPage, kendoGrid);
+            WaitForPageToLoad(targetPage, kendoGrid);
         
             Assert.IsFalse(gridFilterPage.GoToFirstPageButton.Enabled);
         }
@@ -178,13 +178,13 @@ namespace DesignGridControlAutomatedTestsPartThree
         [TestMethod]
         public void GoToPreviousPageButtonDisabled_WhenFirstPageIsLoaded()
         {
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
-            this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 11);
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            InitializeInvoicesForPaging();
+            NavigateToGridInitialPage(kendoGrid, 11);
             int targetPage = 1;
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.GoToFirstPageButton.Click();
-            this.WaitForPageToLoad(targetPage, kendoGrid);
+            WaitForPageToLoad(targetPage, kendoGrid);
         
             Assert.IsFalse(gridFilterPage.GoToPreviousPage.Enabled);
         }
@@ -192,13 +192,13 @@ namespace DesignGridControlAutomatedTestsPartThree
         [TestMethod]
         public void PreviousMorePagesButtonDisabled_WhenFirstPageIsLoaded()
         {
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
-            this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 11);
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            InitializeInvoicesForPaging();
+            NavigateToGridInitialPage(kendoGrid, 11);
             int targetPage = 1;
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.GoToFirstPageButton.Click();
-            this.WaitForPageToLoad(targetPage, kendoGrid);
+            WaitForPageToLoad(targetPage, kendoGrid);
         
             Assert.IsFalse(gridFilterPage.PreviousMorePages.Displayed);
         }
@@ -206,13 +206,13 @@ namespace DesignGridControlAutomatedTestsPartThree
         [TestMethod]
         public void GoToLastPageButtonDisabled_WhenLastPageIsLoaded()
         {
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
-            this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 1);
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            InitializeInvoicesForPaging();
+            NavigateToGridInitialPage(kendoGrid, 1);
             int targetPage = 11;
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.GoToLastPage.Click();
-            this.WaitForPageToLoad(targetPage, kendoGrid);
+            WaitForPageToLoad(targetPage, kendoGrid);
 
             Assert.IsFalse(gridFilterPage.GoToLastPage.Enabled);
         }
@@ -220,13 +220,13 @@ namespace DesignGridControlAutomatedTestsPartThree
         [TestMethod]
         public void GoToNextPageButtonDisabled_WhenLastPageIsLoaded()
         {
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
-            this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 1);
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            InitializeInvoicesForPaging();
+            NavigateToGridInitialPage(kendoGrid, 1);
             int targetPage = 11;
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.GoToLastPage.Click();
-            this.WaitForPageToLoad(targetPage, kendoGrid);
+            WaitForPageToLoad(targetPage, kendoGrid);
 
             Assert.IsFalse(gridFilterPage.GoToNextPage.Enabled);
         }
@@ -234,13 +234,13 @@ namespace DesignGridControlAutomatedTestsPartThree
         [TestMethod]
         public void NextMorePageButtonDisabled_WhenLastPageIsLoaded()
         {
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
-            this.InitializeInvoicesForPaging();
-            this.NavigateToGridInitialPage(kendoGrid, 1);
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            InitializeInvoicesForPaging();
+            NavigateToGridInitialPage(kendoGrid, 1);
             int targetPage = 11;
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.GoToLastPage.Click();
-            this.WaitForPageToLoad(targetPage, kendoGrid);
+            WaitForPageToLoad(targetPage, kendoGrid);
 
             Assert.IsFalse(gridFilterPage.PreviousMorePages.Enabled);
         }
@@ -249,14 +249,14 @@ namespace DesignGridControlAutomatedTestsPartThree
             
         private void NavigateToGridInitialPage(KendoGrid kendoGrid, int initialPageNumber)
         {
-            GridFilterPage gridFilterPage = new GridFilterPage(this.driver);
+            GridFilterPage gridFilterPage = new GridFilterPage(driver);
             gridFilterPage.NavigateTo();
-            kendoGrid.Filter(ShipNameColumnName, FilterOperator.EqualTo, this.uniqueShippingName);
+            kendoGrid.Filter(ShipNameColumnName, FilterOperator.EqualTo, uniqueShippingName);
             kendoGrid.ChangePageSize(1);
-            this.WaitForGridToLoad(1, kendoGrid);
+            WaitForGridToLoad(1, kendoGrid);
             kendoGrid.NavigateToPage(initialPageNumber);
             WaitForPageToLoad(initialPageNumber, kendoGrid);
-            this.AssertPagerInfoLabel(gridFilterPage, initialPageNumber, initialPageNumber, this.testPagingItems.Count);
+            AssertPagerInfoLabel(gridFilterPage, initialPageNumber, initialPageNumber, testPagingItems.Count);
         }
             
         private void AssertPagerInfoLabel(GridFilterPage page, int startItems, int endItems, int totalItems)
@@ -267,7 +267,7 @@ namespace DesignGridControlAutomatedTestsPartThree
             
         public void WaitForPageToLoad(int expectedPage, KendoGrid grid)
         {
-            this.Until(() =>
+            Until(() =>
             {
                 int currentPage = grid.GetCurrentPageNumber();
                 return currentPage == expectedPage;
@@ -276,7 +276,7 @@ namespace DesignGridControlAutomatedTestsPartThree
 
         private void WaitForGridToLoad(int expectedCount, KendoGrid grid)
         {
-            this.Until(
+            Until(
                 () =>
                 {
                     var items = grid.GetItems<GridItem>();
@@ -302,14 +302,14 @@ namespace DesignGridControlAutomatedTestsPartThree
         private void InitializeInvoicesForPaging()
         {
             int totalOrders = 11;
-            if (!string.IsNullOrEmpty(this.uniqueShippingName))
+            if (!string.IsNullOrEmpty(uniqueShippingName))
             {
                 uniqueShippingName = Guid.NewGuid().ToString();
             }
-            this.testPagingItems = new List<Order>();
+            testPagingItems = new List<Order>();
             for (int i = 0; i < totalOrders; i++)
             {
-                var newOrder = this.CreateNewItemInDb(this.uniqueShippingName);
+                var newOrder = CreateNewItemInDb(uniqueShippingName);
                 testPagingItems.Add(newOrder);
             }
         }

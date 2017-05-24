@@ -19,7 +19,7 @@ namespace WebDriverTestsCSharpSix.CSharpFive.ExpressionBodiesFunctions.ImprovedV
     {
         public void AssertResultsCount(string expectedCount)
         {
-            Assert.AreEqual(this.ResultsCountDiv.Text, expectedCount);
+            Assert.AreEqual(ResultsCountDiv.Text, expectedCount);
         }
     }
 }

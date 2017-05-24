@@ -22,24 +22,24 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
 {
     public class OrderDateColumnAsserter : GridColumnAsserter
     {
-        public OrderDateColumnAsserter(AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases.Pages.IGridPage gridPage) : base(gridPage)
+        public OrderDateColumnAsserter(Pages.IGridPage gridPage) : base(gridPage)
         {
         }
 
         public void OrderDateEqualToFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderId);
             var lastOrderDate = allItems.Last().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            this.GridPage.Grid.Filter(GridColumns.OrderDate, FilterOperator.EqualTo, newItem.OrderDate.ToString());
-            this.WaitForGridToLoadAtLeast(1, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            GridPage.Grid.Filter(GridColumns.OrderDate, FilterOperator.EqualTo, newItem.OrderDate.ToString());
+            WaitForGridToLoadAtLeast(1, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 1);
             Assert.AreEqual(newItem.OrderDate.ToString(), results[0].OrderDate);
@@ -47,26 +47,26 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
 
         public void OrderDateNotEqualToFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.Last().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
             // After we filter by the unique shipping name, two items will be displayed in the grid. 
             // After we apply the date after filter only the second item should be visible in the grid.
-            this.GridPage.Grid.Filter(
+            GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderDate, FilterOperator.NotEqualTo, newItem.OrderDate.ToString()),
                 new GridFilter(GridColumns.ShipName, FilterOperator.EqualTo, newItem.ShipName));
-            this.WaitForGridToLoadAtLeast(1, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            WaitForGridToLoadAtLeast(1, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 1);
             Assert.AreEqual(secondNewItem.ToString(), results[0].OrderDate);
@@ -74,26 +74,26 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
 
         public void OrderDateAfterFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.Last().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
             // After we filter by the unique shipping name, two items will be displayed in the grid. 
             // After we apply the date after filter only the second item should be visible in the grid.
-            this.GridPage.Grid.Filter(
+            GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderDate, FilterOperator.IsAfter, newItem.OrderDate.ToString()),
                 new GridFilter(GridColumns.ShipName, FilterOperator.EqualTo, newItem.ShipName));
-            this.WaitForGridToLoadAtLeast(1, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            WaitForGridToLoadAtLeast(1, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 1);
             Assert.AreEqual(secondNewItem.ToString(), results[0].OrderDate);
@@ -101,26 +101,26 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
 
         public void OrderDateIsAfterOrEqualToFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.Last().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
             // After we filter by the unique shipping name, two items will be displayed in the grid. 
             // After we apply the date after filter only the second item should be visible in the grid.
-            this.GridPage.Grid.Filter(
+            GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderDate, FilterOperator.IsAfterOrEqualTo, newItem.OrderDate.ToString()),
                 new GridFilter(GridColumns.ShipName, FilterOperator.EqualTo, newItem.ShipName));
-            this.WaitForGridToLoadAtLeast(2, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            WaitForGridToLoadAtLeast(2, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 2);
             Assert.AreEqual(secondNewItem.ToString(), results[0].OrderDate);
@@ -129,26 +129,26 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
 
         public void OrderDateBeforeFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.First().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(-1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(-2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
             // After we filter by the unique shipping name, two items will be displayed in the grid. 
             // After we apply the date after filter only the second item should be visible in the grid.
-            this.GridPage.Grid.Filter(
+            GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderDate, FilterOperator.IsBefore, newItem.OrderDate.ToString()),
                 new GridFilter(GridColumns.ShipName, FilterOperator.EqualTo, newItem.ShipName));
-            this.WaitForGridToLoadAtLeast(1, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            WaitForGridToLoadAtLeast(1, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 1);
             Assert.AreEqual(secondNewItem.ToString(), results[0].OrderDate);
@@ -156,24 +156,24 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
 
         public void OrderDateIsBeforeOrEqualToFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.First().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(-1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(-2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
-            this.GridPage.Grid.Filter(
+            GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderDate, FilterOperator.IsBeforeOrEqualTo, newItem.OrderDate.ToString()),
                 new GridFilter(GridColumns.ShipName, FilterOperator.EqualTo, newItem.ShipName));
-            this.WaitForGridToLoadAtLeast(2, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            WaitForGridToLoadAtLeast(2, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 2);
             Assert.AreEqual(secondNewItem.ToString(), results[0].OrderDate);
@@ -182,37 +182,37 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
 
         public void OrderDateClearFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
 
-            this.CreateNewItemInDb();
+            CreateNewItemInDb();
 
-            this.GridPage.Grid.Filter(GridColumns.OrderDate, FilterOperator.IsAfter, DateTime.MaxValue.ToString());
-            this.WaitForGridToLoad(0, this.GridPage.Grid);
-            this.GridPage.Grid.RemoveFilters();
+            GridPage.Grid.Filter(GridColumns.OrderDate, FilterOperator.IsAfter, DateTime.MaxValue.ToString());
+            WaitForGridToLoad(0, GridPage.Grid);
+            GridPage.Grid.RemoveFilters();
 
-            this.WaitForGridToLoadAtLeast(1, this.GridPage.Grid);
+            WaitForGridToLoadAtLeast(1, GridPage.Grid);
         }
 
         public void OrderDateSortAsc()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.First().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(-1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(-2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
-            this.GridPage.Grid.Filter(GridColumns.ShipName, FilterOperator.EqualTo, newItem.ShipName);
-            this.WaitForGridToLoadAtLeast(2, this.GridPage.Grid);
-            this.GridPage.Grid.Sort(GridColumns.OrderDate, SortType.Asc);
+            GridPage.Grid.Filter(GridColumns.ShipName, FilterOperator.EqualTo, newItem.ShipName);
+            WaitForGridToLoadAtLeast(2, GridPage.Grid);
+            GridPage.Grid.Sort(GridColumns.OrderDate, SortType.Asc);
             Thread.Sleep(1000);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            var results = GridPage.Grid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 2);
             Assert.AreEqual(secondNewItem.ToString(), results[0].OrderDate);
@@ -221,24 +221,24 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
 
         public void OrderDateSortDesc()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.First().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(-1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(-2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
-            this.GridPage.Grid.Filter(GridColumns.ShipName, FilterOperator.EqualTo, newItem.ShipName);
-            this.WaitForGridToLoadAtLeast(2, this.GridPage.Grid);
-            this.GridPage.Grid.Sort(GridColumns.OrderDate, SortType.Desc);
+            GridPage.Grid.Filter(GridColumns.ShipName, FilterOperator.EqualTo, newItem.ShipName);
+            WaitForGridToLoadAtLeast(2, GridPage.Grid);
+            GridPage.Grid.Sort(GridColumns.OrderDate, SortType.Desc);
             Thread.Sleep(1000);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            var results = GridPage.Grid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 2);
             Assert.AreEqual(newItem.ToString(), results[0].OrderDate);

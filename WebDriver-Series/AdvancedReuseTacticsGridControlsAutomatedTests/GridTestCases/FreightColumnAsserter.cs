@@ -28,15 +28,15 @@ namespace WebDriver.Series.Tests.GridTestCases
 
         public void FreightEqualToFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = this.GetUniqueNumberValue();
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = GetUniqueNumberValue();
+            UpdateItemInDb(newItem);
             
-            this.GridPage.Grid.Filter(GridColumns.Freight, FilterOperator.EqualTo, newItem.Freight.ToString());
-            this.WaitForGridToLoadAtLeast(1, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<AdvancedReuseTacticsGridControlsAutomatedTests.Order>();
+            GridPage.Grid.Filter(GridColumns.Freight, FilterOperator.EqualTo, newItem.Freight.ToString());
+            WaitForGridToLoadAtLeast(1, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<AdvancedReuseTacticsGridControlsAutomatedTests.Order>();
             
             Assert.IsTrue(results.Count() == 1);
             Assert.AreEqual(newItem.Freight.ToString(), results[0].Freight);
@@ -44,22 +44,22 @@ namespace WebDriver.Series.Tests.GridTestCases
         
         public void FreightGreaterThanOrEqualToFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
             
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.Freight);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var biggestFreight = allItems.Last().Freight;
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = biggestFreight + this.GetUniqueNumberValue();
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = biggestFreight + GetUniqueNumberValue();
+            UpdateItemInDb(newItem);
             
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.Freight = newItem.Freight + 1;
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
             
-            this.GridPage.Grid.Filter(GridColumns.Freight, FilterOperator.GreaterThanOrEqualTo, newItem.Freight.ToString());
-            this.WaitForGridToLoadAtLeast(2, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<AdvancedReuseTacticsGridControlsAutomatedTests.Order>();
+            GridPage.Grid.Filter(GridColumns.Freight, FilterOperator.GreaterThanOrEqualTo, newItem.Freight.ToString());
+            WaitForGridToLoadAtLeast(2, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<AdvancedReuseTacticsGridControlsAutomatedTests.Order>();
 
             Assert.IsTrue(results.Count() == 2);
             
@@ -70,22 +70,22 @@ namespace WebDriver.Series.Tests.GridTestCases
         
         public void FreightGreaterThanFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
             
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.Freight);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var biggestFreight = allItems.Last().Freight;
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = biggestFreight + this.GetUniqueNumberValue();
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = biggestFreight + GetUniqueNumberValue();
+            UpdateItemInDb(newItem);
             
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.Freight = newItem.Freight + 1;
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
             
-            this.GridPage.Grid.Filter(GridColumns.Freight, FilterOperator.GreaterThan, newItem.Freight.ToString());
-            this.WaitForGridToLoadAtLeast(1, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<AdvancedReuseTacticsGridControlsAutomatedTests.Order>();
+            GridPage.Grid.Filter(GridColumns.Freight, FilterOperator.GreaterThan, newItem.Freight.ToString());
+            WaitForGridToLoadAtLeast(1, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<AdvancedReuseTacticsGridControlsAutomatedTests.Order>();
 
             Assert.IsTrue(results.Count() == 1);
             
@@ -95,22 +95,22 @@ namespace WebDriver.Series.Tests.GridTestCases
         
         public void FreightLessThanOrEqualToFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
             
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.Freight);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var smallestFreight = allItems.First().Freight;
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = Math.Round(smallestFreight - this.GetUniqueNumberValue(), 3, MidpointRounding.AwayFromZero);
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = Math.Round(smallestFreight - GetUniqueNumberValue(), 3, MidpointRounding.AwayFromZero);
+            UpdateItemInDb(newItem);
             
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.Freight = Math.Round((newItem.Freight - 0.01), 3, MidpointRounding.AwayFromZero);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
             
-            this.GridPage.Grid.Filter(GridColumns.Freight, FilterOperator.LessThanOrEqualTo, newItem.Freight.ToString());
-            this.WaitForGridToLoadAtLeast(2, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<AdvancedReuseTacticsGridControlsAutomatedTests.Order>();
+            GridPage.Grid.Filter(GridColumns.Freight, FilterOperator.LessThanOrEqualTo, newItem.Freight.ToString());
+            WaitForGridToLoadAtLeast(2, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<AdvancedReuseTacticsGridControlsAutomatedTests.Order>();
 
             Assert.IsTrue(results.Count() == 2);
             
@@ -121,22 +121,22 @@ namespace WebDriver.Series.Tests.GridTestCases
         
         public void FreightLessThanFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
             
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.Freight);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var smallestFreight = allItems.First().Freight;
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = Math.Round(smallestFreight - this.GetUniqueNumberValue(), 3, MidpointRounding.AwayFromZero);
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = Math.Round(smallestFreight - GetUniqueNumberValue(), 3, MidpointRounding.AwayFromZero);
+            UpdateItemInDb(newItem);
             
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.Freight = Math.Round((newItem.Freight - 0.01), 3, MidpointRounding.AwayFromZero);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
             
-            this.GridPage.Grid.Filter(GridColumns.Freight, FilterOperator.LessThan, newItem.Freight.ToString());
-            this.WaitForGridToLoadAtLeast(1, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<AdvancedReuseTacticsGridControlsAutomatedTests.Order>();
+            GridPage.Grid.Filter(GridColumns.Freight, FilterOperator.LessThan, newItem.Freight.ToString());
+            WaitForGridToLoadAtLeast(1, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<AdvancedReuseTacticsGridControlsAutomatedTests.Order>();
 
             Assert.IsTrue(results.Count() == 1);
             
@@ -146,42 +146,42 @@ namespace WebDriver.Series.Tests.GridTestCases
         
         public void FreightNotEqualToFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = this.GetUniqueNumberValue();
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = GetUniqueNumberValue();
+            UpdateItemInDb(newItem);
             
             // After we apply the orderId filter, only 1 item is displayed in the grid. When we apply the NotEqualTo filter this item will disappear.
-            this.GridPage.Grid.Filter(
+            GridPage.Grid.Filter(
                 new GridFilter(GridColumns.Freight, FilterOperator.NotEqualTo, newItem.Freight.ToString()),
                 new GridFilter(GridColumns.OrderID, FilterOperator.EqualTo, newItem.OrderId.ToString()));
-            this.WaitForGridToLoad(0, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<AdvancedReuseTacticsGridControlsAutomatedTests.Order>();
+            WaitForGridToLoad(0, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<AdvancedReuseTacticsGridControlsAutomatedTests.Order>();
         
             Assert.IsTrue(results.Count() == 0);
         }
         
         public void FreightClearFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
             
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.Freight);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var biggestFreight = allItems.Last().Freight;
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = biggestFreight + this.GetUniqueNumberValue();
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = biggestFreight + GetUniqueNumberValue();
+            UpdateItemInDb(newItem);
             
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.Freight = newItem.Freight + 1;
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
             
-            this.GridPage.Grid.Filter(GridColumns.Freight, FilterOperator.EqualTo, newItem.Freight.ToString());
-            this.WaitForGridToLoad(1, this.GridPage.Grid);
-            this.GridPage.Grid.RemoveFilters();
+            GridPage.Grid.Filter(GridColumns.Freight, FilterOperator.EqualTo, newItem.Freight.ToString());
+            WaitForGridToLoad(1, GridPage.Grid);
+            GridPage.Grid.RemoveFilters();
         
-            this.WaitForGridToLoadAtLeast(2, this.GridPage.Grid);
+            WaitForGridToLoadAtLeast(2, GridPage.Grid);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace DesignGridControlAutomatedTestsPartOne.Pages
         {
             get
             {
-                return new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+                return new KendoGrid(driver, driver.FindElement(By.Id("grid")));
             }
         }
 
@@ -68,7 +68,7 @@ namespace DesignGridControlAutomatedTestsPartOne.Pages
         
         public void NavigateTo()
         {
-            this.driver.Navigate().GoToUrl(this.Url);
+            driver.Navigate().GoToUrl(Url);
         }
     }
 }

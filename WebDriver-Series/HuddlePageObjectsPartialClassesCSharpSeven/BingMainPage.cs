@@ -23,7 +23,7 @@ namespace HuddlePageObjectsPartialClassesCSharpSeven
 
         public BingMainPage(IWebDriver browser)
         {
-            this._driver = browser;
+            _driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
@@ -46,19 +46,19 @@ namespace HuddlePageObjectsPartialClassesCSharpSeven
 
         public void Navigate()
         {
-            this._driver.Navigate().GoToUrl(this.Url);
+            _driver.Navigate().GoToUrl(Url);
         }
 
         public void Search(string textToType)
         {
-            this.SearchBox.Clear();
-            this.SearchBox.SendKeys(textToType);
-            this.GoButton.Click();
+            SearchBox.Clear();
+            SearchBox.SendKeys(textToType);
+            GoButton.Click();
         }
 
         public void AssertResultsCount(string expectedCount)
         {
-            Assert.AreEqual(this.ResultsCountDiv.Text, expectedCount);
+            Assert.AreEqual(ResultsCountDiv.Text, expectedCount);
         }
     }
 }

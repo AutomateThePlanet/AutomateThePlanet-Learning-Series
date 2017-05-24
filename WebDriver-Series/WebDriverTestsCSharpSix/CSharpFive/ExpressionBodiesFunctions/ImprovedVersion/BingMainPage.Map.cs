@@ -21,7 +21,7 @@ namespace WebDriverTestsCSharpSix.CSharpFive.ExpressionBodiesFunctions.ImprovedV
         {
             get
             {
-                return this.driver.FindElement(By.Id("sb_form_q"));
+                return driver.FindElement(By.Id("sb_form_q"));
             }
         }
 
@@ -29,7 +29,7 @@ namespace WebDriverTestsCSharpSix.CSharpFive.ExpressionBodiesFunctions.ImprovedV
         {
             get
             {
-                return this.driver.FindElement(By.Id("sb_form_go"));
+                return driver.FindElement(By.Id("sb_form_go"));
             }
         }
 
@@ -37,7 +37,7 @@ namespace WebDriverTestsCSharpSix.CSharpFive.ExpressionBodiesFunctions.ImprovedV
         {
             get
             {
-                return this.driver.FindElement(By.Id("b_tween"));
+                return driver.FindElement(By.Id("b_tween"));
             }
         }
     }

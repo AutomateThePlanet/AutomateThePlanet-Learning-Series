@@ -1,4 +1,4 @@
-﻿// <copyright file="BingMainPage.Map.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="BingMainPage.Asserter.cs" company="Automate The Planet Ltd.">
 // Copyright 2017 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -11,16 +11,16 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-using OpenQA.Selenium;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace WebDriverTestsCSharpSix.CSharpSix.ExpressionBodiesFunctions.ImprovedVersion
+namespace HuddlePageObjectsElementsStringProperties
 {
     public partial class BingMainPage
     {
-        public IWebElement SearchBox => driver.FindElement(By.Id("sb_form_q"));
+        // Normal Version
+        ////public void AssertResultsCount(string expectedCount) => Assert.AreEqual(ResultsCountDiv.Text, expectedCount);
 
-        public IWebElement GoButton => driver.FindElement(By.Id("sb_form_go"));
-
-        public IWebElement ResultsCountDiv => driver.FindElement(By.Id("b_tween"));
+        // String Properties Version
+        public void AssertResultsCount(string expectedCount) => Assert.AreEqual(ResultsCountDiv, expectedCount);
     }
 }

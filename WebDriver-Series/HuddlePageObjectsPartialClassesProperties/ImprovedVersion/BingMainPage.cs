@@ -14,7 +14,7 @@
 
 using OpenQA.Selenium;
 
-namespace HuddlePageObjectsPartialClassesProperties.ImprovedVersion
+namespace HuddlePageObjectsElementsStringProperties.ImprovedVersion
 {
     public partial class BingMainPage
     {
@@ -23,19 +23,19 @@ namespace HuddlePageObjectsPartialClassesProperties.ImprovedVersion
 
         public BingMainPage(IWebDriver browser)
         {
-            this._driver = browser;
+            _driver = browser;
         }
 
         public void Navigate()
         {
-            this._driver.Navigate().GoToUrl(this.url);
+            _driver.Navigate().GoToUrl(url);
         }
 
         public void Search(string textToType)
         {
-            this.SearchBox.Clear();
-            this.SearchBox.SendKeys(textToType);
-            this.GoButton.Click();
+            SearchBox.Clear();
+            SearchBox.SendKeys(textToType);
+            GoButton.Click();
         }
     }
 }

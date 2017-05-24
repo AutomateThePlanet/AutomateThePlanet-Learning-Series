@@ -21,17 +21,17 @@ namespace DesignGridControlAutomatedTestsPartOne
         {
             if (!string.IsNullOrEmpty(shipName))
             {
-                this.ShipName = shipName;
+                ShipName = shipName;
             }            
         }
 
         public Order()
         {
             Random rand = new Random();
-            this.OrderId = rand.Next();
-            this.ShipName = Guid.NewGuid().ToString();
-            this.Freight = rand.Next();
-            this.OrderDate = DateTime.Now;
+            OrderId = rand.Next();
+            ShipName = Guid.NewGuid().ToString();
+            Freight = rand.Next();
+            OrderDate = DateTime.Now;
         }
 
         public int OrderId { get; set; }

@@ -22,18 +22,18 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
 
         public void Initialize()
         {
-            this.driver = new FirefoxDriver();
+            driver = new FirefoxDriver();
         }
 
         public void Dispose()
         {
-            this.driver.Quit();
+            driver.Quit();
         }
 
         public string NavigateToFromUrl(string fromUrl)
         {
-            this.driver.Navigate().GoToUrl(fromUrl);
-            string currentSitesUrl = this.driver.Url;
+            driver.Navigate().GoToUrl(fromUrl);
+            string currentSitesUrl = driver.Url;
 
             return currentSitesUrl;
         }

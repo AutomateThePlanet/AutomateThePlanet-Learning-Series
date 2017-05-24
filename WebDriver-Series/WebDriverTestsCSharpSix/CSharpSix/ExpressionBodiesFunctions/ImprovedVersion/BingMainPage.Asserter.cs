@@ -17,6 +17,6 @@ namespace WebDriverTestsCSharpSix.CSharpSix.ExpressionBodiesFunctions.ImprovedVe
 {
     public partial class BingMainPage
     {
-        public void AssertResultsCount(string expectedCount) => Assert.AreEqual(this.ResultsCountDiv.Text, expectedCount);
+        public void AssertResultsCount(string expectedCount) => Assert.AreEqual(ResultsCountDiv.Text, expectedCount);
     }
 }

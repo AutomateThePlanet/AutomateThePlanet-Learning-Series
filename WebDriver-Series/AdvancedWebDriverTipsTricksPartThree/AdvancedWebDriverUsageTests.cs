@@ -40,8 +40,8 @@ namespace AdvancedWebDriverTipsTricksPartThree
         [TestInitialize]
         public void SetupTest()
         {
-            this.driver = new FirefoxDriver();
-            this.driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
+            driver = new FirefoxDriver();
+            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
             // 10 Advanced WebDriver Tips and Tricks Part 3
             // 1. Start FirefoxDriver with plugins
             ////FirefoxProfile profile = new FirefoxProfile();
@@ -89,7 +89,7 @@ namespace AdvancedWebDriverTipsTricksPartThree
         [TestCleanup]
         public void TeardownTest()
         {
-            this.driver.Quit();
+            driver.Quit();
         }
 
         // 10 Advanced WebDriver Tips and Tricks Part 3
@@ -97,8 +97,8 @@ namespace AdvancedWebDriverTipsTricksPartThree
         [TestMethod]
         public void AssertButtonEnabledDisabled()
         {
-            this.driver.Navigate().GoToUrl(@"http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_disabled");
-            this.driver.SwitchTo().Frame("iframeResult");
+            driver.Navigate().GoToUrl(@"http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_disabled");
+            driver.SwitchTo().Frame("iframeResult");
             IWebElement button = driver.FindElement(By.XPath("/html/body/button"));
             Assert.IsFalse(button.Enabled);
         }
@@ -162,7 +162,7 @@ namespace AdvancedWebDriverTipsTricksPartThree
                 profile.SetPreference("browser.download.dir", downloadFolderPath);
                 profile.SetPreference("browser.download.manager.alertOnEXEOpen", false);
                 profile.SetPreference("browser.helperApps.neverAsk.saveToDisk", "application/msword, application/binary, application/ris, text/csv, image/png, application/pdf, text/html, text/plain, application/zip, application/x-zip, application/x-zip-compressed, application/download, application/octet-stream");
-                this.driver = new FirefoxDriver(profile);
+                driver = new FirefoxDriver(profile);
 
                 driver.Navigate().GoToUrl("https://www.telerik.com/download-trial-file/v2/telerik-testing-framework");
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));

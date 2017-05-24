@@ -23,18 +23,18 @@ namespace WebDriverCloudLoadTesting.Pages.AutomateThePlanet
 
         public HomePage(IWebDriver browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
         public void Navigate()
         {
-            this.driver.Navigate().GoToUrl(this.url);
+            driver.Navigate().GoToUrl(url);
         }
 
         public void GoToBlog()
         {
-            this.GoToTheBlogLink.Click();
+            GoToTheBlogLink.Click();
         }
     }
 }

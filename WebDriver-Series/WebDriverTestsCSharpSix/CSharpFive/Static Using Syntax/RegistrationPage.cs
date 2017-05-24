@@ -23,7 +23,7 @@ namespace WebDriverTestsCSharpSix.CSharpFive.StaticUsingSyntax
 
         public RegistrationPage(IWebDriver browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
@@ -42,26 +42,26 @@ namespace WebDriverTestsCSharpSix.CSharpFive.StaticUsingSyntax
         public User RegisterUser(string email = null, string password = null, string userName = null)
         {
             var user = new User();
-            this.driver.Navigate().GoToUrl(this.url);
+            driver.Navigate().GoToUrl(url);
             if (string.IsNullOrEmpty(email))
             {
                 email = UniqueEmailGenerator.BuildUniqueEmailTimestamp();
             }
             user.Email = email;
-            this.Email.SendKeys(email);
+            Email.SendKeys(email);
             if (string.IsNullOrEmpty(password))
             {
                 password = TimestampBuilder.GenerateUniqueText();
             }
             user.Pass = password;
-            this.Pass.SendKeys(password);
+            Pass.SendKeys(password);
             if (string.IsNullOrEmpty(userName))
             {
                 userName = TimestampBuilder.GenerateUniqueText();
             }
             user.UserName = userName;
-            this.UserName.SendKeys(userName);
-            this.RegisterButton.Click();
+            UserName.SendKeys(userName);
+            RegisterButton.Click();
             return user;
         }
     }

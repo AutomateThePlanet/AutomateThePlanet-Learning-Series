@@ -22,7 +22,7 @@ namespace WebDriverCsharpSeven.ExpressionBodiesContructor
         {
             get
             {
-                return new SelectElement(this.driver.FindElement(By.Name("enterAddressCountryCode")));
+                return new SelectElement(driver.FindElement(By.Name("enterAddressCountryCode")));
             }
         }
 
@@ -30,7 +30,7 @@ namespace WebDriverCsharpSeven.ExpressionBodiesContructor
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressFullName"));
+                return driver.FindElement(By.Id("enterAddressFullName"));
             }
         }
 
@@ -38,7 +38,7 @@ namespace WebDriverCsharpSeven.ExpressionBodiesContructor
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressAddressLine1"));
+                return driver.FindElement(By.Id("enterAddressAddressLine1"));
             }
         }
 
@@ -46,7 +46,7 @@ namespace WebDriverCsharpSeven.ExpressionBodiesContructor
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressCity"));
+                return driver.FindElement(By.Id("enterAddressCity"));
             }
         }
 
@@ -54,7 +54,7 @@ namespace WebDriverCsharpSeven.ExpressionBodiesContructor
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressPostalCode"));
+                return driver.FindElement(By.Id("enterAddressPostalCode"));
             }
         }
 
@@ -62,7 +62,7 @@ namespace WebDriverCsharpSeven.ExpressionBodiesContructor
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressPhoneNumber"));
+                return driver.FindElement(By.Id("enterAddressPhoneNumber"));
             }
         }
 
@@ -70,7 +70,7 @@ namespace WebDriverCsharpSeven.ExpressionBodiesContructor
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterVat"));
+                return driver.FindElement(By.Id("enterVat"));
             }
         }
     }
