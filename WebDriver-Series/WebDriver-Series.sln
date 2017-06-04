@@ -103,6 +103,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Page Objects- Page Secti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsPartialClassesCSharpSeven", "HuddlePageObjectsPartialClassesCSharpSeven\HuddlePageObjectsPartialClassesCSharpSeven.csproj", "{53E1B957-7528-4F9D-BF51-F02F453C6B15}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19. Most Exhaustive WebDriver Locators Cheat Sheet", "19. Most Exhaustive WebDriver Locators Cheat Sheet", "{C7C7797C-BAFD-42CB-B99D-4A20FCF4FB28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocatorsCheatSheet", "LocatorsCheatSheet\LocatorsCheatSheet.csproj", "{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -189,6 +193,10 @@ Global
 		{53E1B957-7528-4F9D-BF51-F02F453C6B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53E1B957-7528-4F9D-BF51-F02F453C6B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53E1B957-7528-4F9D-BF51-F02F453C6B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -221,5 +229,6 @@ Global
 		{FBDA99E9-196E-43B8-A74E-B7F0DEA8710B} = {E09EB29E-71F0-4153-96CF-DC5854E59B7E}
 		{7E7184D4-07BA-4F0C-B410-BB4BD95760AE} = {D5E1B798-3F73-4EB0-A675-21EB232443FE}
 		{53E1B957-7528-4F9D-BF51-F02F453C6B15} = {E6701FCE-0F57-4D86-9058-98E4D299ECBD}
+		{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47} = {C7C7797C-BAFD-42CB-B99D-4A20FCF4FB28}
 	EndGlobalSection
 EndGlobal
