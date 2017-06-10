@@ -23,7 +23,7 @@ namespace WebDriverTestsCSharpSix.CSharpFive.NullConditionalOperator
 
         public ShippingAddressPage(IWebDriver browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
@@ -31,13 +31,13 @@ namespace WebDriverTestsCSharpSix.CSharpFive.NullConditionalOperator
 
         private void FillAddressInfoInternal(ClientPurchaseInfo clientInfo)
         {
-            this.Country.SelectByText(clientInfo.Country);
-            this.FullName.SendKeys(clientInfo.FullName);
-            this.Address.SendKeys(clientInfo.Address);
-            this.City.SendKeys(clientInfo.City);
-            this.Zip.SendKeys(clientInfo.Zip == null ? string.Empty : clientInfo.Zip);
-            this.Phone.SendKeys(clientInfo.Phone == null ? string.Empty : clientInfo.Phone);
-            this.Vat.SendKeys(clientInfo.Vat == null ? string.Empty : clientInfo.Vat);
+            Country.SelectByText(clientInfo.Country);
+            FullName.SendKeys(clientInfo.FullName);
+            Address.SendKeys(clientInfo.Address);
+            City.SendKeys(clientInfo.City);
+            Zip.SendKeys(clientInfo.Zip == null ? string.Empty : clientInfo.Zip);
+            Phone.SendKeys(clientInfo.Phone == null ? string.Empty : clientInfo.Phone);
+            Vat.SendKeys(clientInfo.Vat == null ? string.Empty : clientInfo.Vat);
         }
     }
 }

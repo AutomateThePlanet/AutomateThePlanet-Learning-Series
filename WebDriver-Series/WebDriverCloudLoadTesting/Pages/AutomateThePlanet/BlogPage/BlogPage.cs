@@ -25,7 +25,7 @@ namespace WebDriverCloudLoadTesting.Pages.AutomateThePlanet
 
         public BlogPage(IWebDriver browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 

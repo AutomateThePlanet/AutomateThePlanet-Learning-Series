@@ -28,29 +28,29 @@ namespace WebDriverCloudLoadTesting
         [TestInitialize]
         public void SetupTest()
         {
-            this.driver = new PhantomJSDriver();
-            this.driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 30));
+            driver = new PhantomJSDriver();
+            driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 30));
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            this.driver.Quit();
+            driver.Quit();
         }
 
         [TestMethod]
         public void TestInTheCloud()
         {
-            var homePage = new HomePage(this.driver);
-            this.TestContext.BeginTimer("Automate The Planet Home Page- Navigate");
+            var homePage = new HomePage(driver);
+            TestContext.BeginTimer("Automate The Planet Home Page- Navigate");
             homePage.Navigate();
-            this.TestContext.EndTimer("Automate The Planet Home Page- Navigate");
+            TestContext.EndTimer("Automate The Planet Home Page- Navigate");
             homePage.AssertHeadline();
-            this.TestContext.BeginTimer("Automate The Planet- Go to Blog");
+            TestContext.BeginTimer("Automate The Planet- Go to Blog");
             homePage.GoToBlog();
-            var blogPage = new BlogPage(this.driver);
+            var blogPage = new BlogPage(driver);
             blogPage.WaitForSubscribeWidget();
-            this.TestContext.EndTimer("Automate The Planet- Go to Blog");
+            TestContext.EndTimer("Automate The Planet- Go to Blog");
             blogPage.AssertTitle();
         }
     }

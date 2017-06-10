@@ -1,5 +1,5 @@
 ﻿// <copyright file="GridFilterPage.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2017 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -32,7 +32,7 @@ namespace DesignGridControlAutomatedTestsPartTwo.Pages
         {
             get
             {
-                return new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+                return new KendoGrid(driver, driver.FindElement(By.Id("grid")));
             }
         }
 
@@ -68,7 +68,7 @@ namespace DesignGridControlAutomatedTestsPartTwo.Pages
         
         public void NavigateTo()
         {
-            this.driver.Navigate().GoToUrl(this.Url);
+            driver.Navigate().GoToUrl(Url);
         }
     }
 }

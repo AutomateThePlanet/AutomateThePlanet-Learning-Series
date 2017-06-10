@@ -1,5 +1,5 @@
 ﻿// <copyright file="GridFilter.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2017 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -19,9 +19,9 @@ namespace Ui.Automation.Core.Controls.Controls
     {
         public GridFilter(string columnName, FilterOperator filterOperator, string filterValue)
         {
-            this.ColumnName = columnName;
-            this.FilterOperator = filterOperator;
-            this.FilterValue = filterValue;
+            ColumnName = columnName;
+            FilterOperator = filterOperator;
+            FilterValue = filterValue;
         }
 
         public string ColumnName { get; set; }

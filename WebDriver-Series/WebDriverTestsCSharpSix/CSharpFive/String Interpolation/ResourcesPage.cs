@@ -26,11 +26,11 @@ namespace WebDriverTestsCSharpSix.CSharpFive.StringInterpolation
 
         public ResourcesPage(IWebDriver browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
-        public string Url => this.url;
+        public string Url => url;
 
         [FindsBy(How = How.Id, Using = "emailId")]
         public IWebElement Email { get; set; }
@@ -47,16 +47,16 @@ namespace WebDriverTestsCSharpSix.CSharpFive.StringInterpolation
         public IWebElement GetGridElement(string productName, int rowNumber)
         {
             var xpathLocator = string.Format("(//span[text()='{0}'])[{1}]/ancestor::td[1]/following-sibling::td[7]/span", productName, rowNumber);
-            return this.driver.FindElement(By.XPath(xpathLocator));
+            return driver.FindElement(By.XPath(xpathLocator));
         }
 
-        public void Navigate() => this.driver.Navigate().GoToUrl(this.url);
+        public void Navigate() => driver.Navigate().GoToUrl(url);
 
         public void DownloadSourceCode(string email, string name)
         {
-            this.Email.SendKeys(email);
-            this.Name.SendKeys(name);
-            this.DownloadButton.Click();
+            Email.SendKeys(email);
+            Name.SendKeys(name);
+            DownloadButton.Click();
             var successMessage = string.Format("Thank you for downloading {0}! An email was sent to {1}. Check your inbox.", name, email);
             var waitElem = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             waitElem.Until(ExpectedConditions.TextToBePresentInElementLocated(By.Id("successMessageId"), successMessage));
@@ -65,7 +65,7 @@ namespace WebDriverTestsCSharpSix.CSharpFive.StringInterpolation
         public void AssertSuccessMessage(string name, string email)
         {
             var successMessage = string.Format("Thank you for downloading {0}! An email was sent to {1}. Check your inbox.", name, email);
-            Assert.AreEqual(successMessage, this.SuccessMessage.Text);
+            Assert.AreEqual(successMessage, SuccessMessage.Text);
         }
     }
 }

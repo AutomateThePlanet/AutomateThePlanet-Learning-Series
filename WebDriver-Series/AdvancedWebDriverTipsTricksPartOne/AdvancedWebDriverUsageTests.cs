@@ -1,5 +1,5 @@
 ﻿// <copyright file="AdvancedWebDriverUsageTests.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2017 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -62,34 +62,34 @@ namespace AdvancedWebDriverTipsTricksPartOne
             ////options.EnableNativeEvents = true;
             ////options.PageLoadStrategy = InternetExplorerPageLoadStrategy.Eager;
             ////this.driver = new InternetExplorerDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers", options);
-            this.driver = new FirefoxDriver();
-            this.driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));         
+            driver = new FirefoxDriver();
+            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));         
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            this.driver.Quit();
+            driver.Quit();
         }
 
         // 1.1. Taking Screenshot. Full Screen.
         [TestMethod]
         public void WebDriverAdvancedUsage_TakingFullScrenenScreenshot()
         {
-            this.driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
-            this.WaitUntilLoaded();
+            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            WaitUntilLoaded();
             string tempFilePath = Path.GetTempFileName().Replace(".tmp", ".png");
-            this.TakeFullScreenshot(this.driver, tempFilePath);
+            TakeFullScreenshot(driver, tempFilePath);
         }
 
         // 1.2. Taking Screenshot. Full Screen.
         [TestMethod]
         public void WebDriverAdvancedUsage_TakingElementScreenshot()
         {
-            this.driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
-            this.WaitUntilLoaded();
+            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            WaitUntilLoaded();
             string tempFilePath = Path.GetTempFileName().Replace(".tmp", ".png");
-            this.TakeScreenshotOfElement(this.driver, By.XPath("//*[@id='tve_editor']/div[2]/div[2]/div/div"), tempFilePath);
+            TakeScreenshotOfElement(driver, By.XPath("//*[@id='tve_editor']/div[2]/div[2]/div/div"), tempFilePath);
         }
 
         // 2. How to set Page Load Timeout
@@ -97,10 +97,10 @@ namespace AdvancedWebDriverTipsTricksPartOne
         public void SetPageLoadTimeout()
         {
             // 2.1. Set Default Page Load Timeout
-            this.driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
+            driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
 
             // 2.2. Wait Until Page is Fully Loaded via JS
-            this.WaitUntilLoaded();
+            WaitUntilLoaded();
 
             // 2.3. Wait For Visibility of element
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
@@ -111,9 +111,9 @@ namespace AdvancedWebDriverTipsTricksPartOne
                                 [TestMethod]
                                 public void GetHtmlSourceOfWebElement()
                                 {
-                                    this.driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
-                                    this.WaitUntilLoaded();
-                                    var element = this.driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[3]/div/div"));
+                                    driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+                                    WaitUntilLoaded();
+                                    var element = driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[3]/div/div"));
                                     string sourceHtml = element.GetAttribute("innerHTML");
                                     Debug.WriteLine(sourceHtml);
                                 }
@@ -121,8 +121,8 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void ExecuteJavaScript()
         {
-            this.driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
-            this.WaitUntilLoaded();
+            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            WaitUntilLoaded();
             IJavaScriptExecutor js = driver as IJavaScriptExecutor;
             string title = (string)js.ExecuteScript("return document.title");
             Debug.WriteLine(title);
@@ -133,9 +133,9 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void ExecuteInHeadlessBrowser()
         {
-            this.driver = new PhantomJSDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers");
-            this.driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
-            this.WaitUntilLoaded();
+            driver = new PhantomJSDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers");
+            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            WaitUntilLoaded();
             IJavaScriptExecutor js = driver as IJavaScriptExecutor;
             string title = (string)js.ExecuteScript("return document.title");
             Debug.WriteLine(title);
@@ -145,7 +145,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void CheckIfElementIsVisible()
         {
-            this.driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
             Assert.IsTrue(driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[2]/div/div")).Displayed);
         }
 
@@ -153,27 +153,27 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void ManageCookies()
         {
-            this.driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
 
             // 9.1. Add new cookie
             OpenQA.Selenium.Cookie cookie = new OpenQA.Selenium.Cookie("key", "value");
-            this.driver.Manage().Cookies.AddCookie(cookie);
+            driver.Manage().Cookies.AddCookie(cookie);
 
             // 9.2. Get All Cookies
-            var cookies = this.driver.Manage().Cookies.AllCookies;
+            var cookies = driver.Manage().Cookies.AllCookies;
             foreach (var currentCookie in cookies)
             {
                 Debug.WriteLine(currentCookie.Value);
             }
 
             // 9.3. Delete Cookie by name
-            this.driver.Manage().Cookies.DeleteCookieNamed("CookieName");
+            driver.Manage().Cookies.DeleteCookieNamed("CookieName");
 
             // 9.4. Delete All Cookies
-            this.driver.Manage().Cookies.DeleteAllCookies();
+            driver.Manage().Cookies.DeleteAllCookies();
 
             // 9.5. Get Cookie by name
-            var myCookie = this.driver.Manage().Cookies.GetCookieNamed("CookieName");
+            var myCookie = driver.Manage().Cookies.GetCookieNamed("CookieName");
             Debug.WriteLine(myCookie.Value);
         }
 
@@ -181,8 +181,8 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void MaximizeWindow()
         {
-            this.driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
-            this.driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            driver.Manage().Window.Maximize();
         }
 
       
@@ -209,7 +209,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until((x) =>
             {
-                return ((IJavaScriptExecutor)this.driver).ExecuteScript("return document.readyState").Equals("complete");
+                return ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete");
             });
         }
 

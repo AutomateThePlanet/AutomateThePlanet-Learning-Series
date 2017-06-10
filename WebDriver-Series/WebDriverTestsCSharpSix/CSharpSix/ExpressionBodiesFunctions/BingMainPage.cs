@@ -24,7 +24,7 @@ namespace WebDriverTestsCSharpSix.CSharpSix.ExpressionBodiesFunctions
 
         public BingMainPage(IWebDriver browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
@@ -39,15 +39,15 @@ namespace WebDriverTestsCSharpSix.CSharpSix.ExpressionBodiesFunctions
         [FindsBy(How = How.Id, Using = "b_tween")]
         public IWebElement ResultsCountDiv { get; set; }
 
-        public void Navigate() => this.driver.Navigate().GoToUrl(this.url);
+        public void Navigate() => driver.Navigate().GoToUrl(url);
 
         public void Search(string textToType)
         {
-            this.SearchBox.Clear();
-            this.SearchBox.SendKeys(textToType);
-            this.GoButton.Click();
+            SearchBox.Clear();
+            SearchBox.SendKeys(textToType);
+            GoButton.Click();
         }
 
-        public void AssertResultsCount(string expectedCount) => Assert.AreEqual(this.ResultsCountDiv.Text, expectedCount);
+        public void AssertResultsCount(string expectedCount) => Assert.AreEqual(ResultsCountDiv.Text, expectedCount);
     }
 }

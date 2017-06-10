@@ -1,5 +1,5 @@
 ﻿// <copyright file="KendoGridTestCasesAutomationTests.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2017 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -35,14 +35,14 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestInitialize]
         public void SetupTest()
         {
-            this.driver = new FirefoxDriver();
-            this.driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
+            driver = new FirefoxDriver();
+            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            this.driver.Quit();
+            driver.Quit();
         }
      
         // ** OrderDate Test Cases ** (Date Type Column Test Cases)
@@ -52,18 +52,18 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateEqualToFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderId);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderId);
             var lastOrderDate = allItems.Last().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
             kendoGrid.Filter(OrderDateColumnName, FilterOperator.EqualTo, newItem.OrderDate.ToString());
-            this.WaitForGridToLoadAtLeast(1, kendoGrid);
+            WaitForGridToLoadAtLeast(1, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 1);
@@ -73,26 +73,26 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateNotEqualToFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.Last().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
             // After we filter by the unique shipping name, two items will be displayed in the grid. 
             // After we apply the date after filter only the second item should be visible in the grid.
             kendoGrid.Filter(
                 new GridFilter(OrderDateColumnName, FilterOperator.NotEqualTo, newItem.OrderDate.ToString()),
                 new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.ShipName));
-            this.WaitForGridToLoadAtLeast(1, kendoGrid);
+            WaitForGridToLoadAtLeast(1, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 1);
@@ -102,26 +102,26 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateAfterFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.Last().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
             // After we filter by the unique shipping name, two items will be displayed in the grid. 
             // After we apply the date after filter only the second item should be visible in the grid.
             kendoGrid.Filter(
                 new GridFilter(OrderDateColumnName, FilterOperator.IsAfter, newItem.OrderDate.ToString()),
                 new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.ShipName));
-            this.WaitForGridToLoadAtLeast(1, kendoGrid);
+            WaitForGridToLoadAtLeast(1, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 1);
@@ -131,26 +131,26 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateIsAfterOrEqualToFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.Last().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
             // After we filter by the unique shipping name, two items will be displayed in the grid. 
             // After we apply the date after filter only the second item should be visible in the grid.
             kendoGrid.Filter(
                 new GridFilter(OrderDateColumnName, FilterOperator.IsAfterOrEqualTo, newItem.OrderDate.ToString()),
                 new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.ShipName));
-            this.WaitForGridToLoadAtLeast(2, kendoGrid);
+            WaitForGridToLoadAtLeast(2, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 2);
@@ -161,26 +161,26 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateBeforeFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.First().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(-1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(-2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
             // After we filter by the unique shipping name, two items will be displayed in the grid. 
             // After we apply the date after filter only the second item should be visible in the grid.
             kendoGrid.Filter(
                 new GridFilter(OrderDateColumnName, FilterOperator.IsBefore, newItem.OrderDate.ToString()),
                 new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.ShipName));
-            this.WaitForGridToLoadAtLeast(1, kendoGrid);
+            WaitForGridToLoadAtLeast(1, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 1);
@@ -190,24 +190,24 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateIsBeforeOrEqualToFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.First().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(-1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(-2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
             kendoGrid.Filter(
                 new GridFilter(OrderDateColumnName, FilterOperator.IsBeforeOrEqualTo, newItem.OrderDate.ToString()),
                 new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.ShipName));
-            this.WaitForGridToLoadAtLeast(2, kendoGrid);
+            WaitForGridToLoadAtLeast(2, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 2);
@@ -218,37 +218,37 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateClearFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
 
             kendoGrid.Filter(OrderDateColumnName, FilterOperator.IsAfter, DateTime.MaxValue.ToString());
-            this.WaitForGridToLoad(0, kendoGrid);
+            WaitForGridToLoad(0, kendoGrid);
             kendoGrid.RemoveFilters();
 
-            this.WaitForGridToLoadAtLeast(1, kendoGrid);
+            WaitForGridToLoadAtLeast(1, kendoGrid);
         }
 
         [TestMethod]
         public void OrderDateSortAsc()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.First().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(-1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(-2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
             kendoGrid.Filter(ShipNameColumnName, FilterOperator.EqualTo, newItem.ShipName);
-            this.WaitForGridToLoadAtLeast(2, kendoGrid);
+            WaitForGridToLoadAtLeast(2, kendoGrid);
             kendoGrid.Sort(OrderDateColumnName, SortType.Asc);
             Thread.Sleep(1000);
             var results = kendoGrid.GetItems<Order>();
@@ -261,22 +261,22 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateSortDesc()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
 
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.OrderDate);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.First().OrderDate;
 
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             newItem.OrderDate = lastOrderDate.AddDays(-1);
-            this.UpdateItemInDb(newItem);
+            UpdateItemInDb(newItem);
 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.OrderDate = lastOrderDate.AddDays(-2);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
 
             kendoGrid.Filter(ShipNameColumnName, FilterOperator.EqualTo, newItem.ShipName);
-            this.WaitForGridToLoadAtLeast(2, kendoGrid);
+            WaitForGridToLoadAtLeast(2, kendoGrid);
             kendoGrid.Sort(OrderDateColumnName, SortType.Desc);
             Thread.Sleep(1000);
             var results = kendoGrid.GetItems<Order>();
@@ -297,15 +297,15 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightEqualToFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = this.GetUniqueNumberValue();
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = GetUniqueNumberValue();
+            UpdateItemInDb(newItem);
             
             kendoGrid.Filter(FreightColumnName, FilterOperator.EqualTo, newItem.Freight.ToString());
-            this.WaitForGridToLoadAtLeast(1, kendoGrid);
+            WaitForGridToLoadAtLeast(1, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
             
             Assert.IsTrue(results.Count() == 1);
@@ -315,22 +315,22 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightGreaterThanOrEqualToFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
             
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.Freight);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var biggestFreight = allItems.Last().Freight;
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = biggestFreight + this.GetUniqueNumberValue();
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = biggestFreight + GetUniqueNumberValue();
+            UpdateItemInDb(newItem);
             
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.Freight = newItem.Freight + 1;
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
             
             kendoGrid.Filter(FreightColumnName, FilterOperator.GreaterThanOrEqualTo, newItem.Freight.ToString());
-            this.WaitForGridToLoadAtLeast(2, kendoGrid);
+            WaitForGridToLoadAtLeast(2, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 2);
@@ -343,22 +343,22 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightGreaterThanFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
             
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.Freight);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var biggestFreight = allItems.Last().Freight;
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = biggestFreight + this.GetUniqueNumberValue();
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = biggestFreight + GetUniqueNumberValue();
+            UpdateItemInDb(newItem);
             
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.Freight = newItem.Freight + 1;
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
             
             kendoGrid.Filter(FreightColumnName, FilterOperator.GreaterThan, newItem.Freight.ToString());
-            this.WaitForGridToLoadAtLeast(1, kendoGrid);
+            WaitForGridToLoadAtLeast(1, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 1);
@@ -370,22 +370,22 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightLessThanOrEqualToFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
             
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.Freight);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var smallestFreight = allItems.First().Freight;
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = Math.Round(smallestFreight - this.GetUniqueNumberValue(), 3, MidpointRounding.AwayFromZero);
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = Math.Round(smallestFreight - GetUniqueNumberValue(), 3, MidpointRounding.AwayFromZero);
+            UpdateItemInDb(newItem);
             
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.Freight = Math.Round((newItem.Freight - 0.01), 3, MidpointRounding.AwayFromZero);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
             
             kendoGrid.Filter(FreightColumnName, FilterOperator.LessThanOrEqualTo, newItem.Freight.ToString());
-            this.WaitForGridToLoadAtLeast(2, kendoGrid);
+            WaitForGridToLoadAtLeast(2, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 2);
@@ -398,22 +398,22 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightLessThanFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
             
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.Freight);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var smallestFreight = allItems.First().Freight;
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = Math.Round(smallestFreight - this.GetUniqueNumberValue(), 3, MidpointRounding.AwayFromZero);
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = Math.Round(smallestFreight - GetUniqueNumberValue(), 3, MidpointRounding.AwayFromZero);
+            UpdateItemInDb(newItem);
             
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.Freight = Math.Round((newItem.Freight - 0.01), 3, MidpointRounding.AwayFromZero);
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
             
             kendoGrid.Filter(FreightColumnName, FilterOperator.LessThan, newItem.Freight.ToString());
-            this.WaitForGridToLoadAtLeast(1, kendoGrid);
+            WaitForGridToLoadAtLeast(1, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
 
             Assert.IsTrue(results.Count() == 1);
@@ -425,18 +425,18 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightNotEqualToFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = this.GetUniqueNumberValue();
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = GetUniqueNumberValue();
+            UpdateItemInDb(newItem);
             
             // After we apply the orderId filter, only 1 item is displayed in the grid. When we apply the NotEqualTo filter this item will disappear.
             kendoGrid.Filter(
                 new GridFilter(FreightColumnName, FilterOperator.NotEqualTo, newItem.Freight.ToString()),
                 new GridFilter(OrderIdColumnName, FilterOperator.EqualTo, newItem.OrderId.ToString()));
-            this.WaitForGridToLoad(0, kendoGrid);
+            WaitForGridToLoad(0, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
         
             Assert.IsTrue(results.Count() == 0);
@@ -445,25 +445,25 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightClearFilter()
         {
-            this.driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(this.driver, this.driver.FindElement(By.Id("grid")));
+            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
             
-            var allItems = this.GetAllItemsFromDb().OrderBy(x => x.Freight);
+            var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var biggestFreight = allItems.Last().Freight;
             
-            var newItem = this.CreateNewItemInDb();
-            newItem.Freight = biggestFreight + this.GetUniqueNumberValue();
-            this.UpdateItemInDb(newItem);
+            var newItem = CreateNewItemInDb();
+            newItem.Freight = biggestFreight + GetUniqueNumberValue();
+            UpdateItemInDb(newItem);
             
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             secondNewItem.Freight = newItem.Freight + 1;
-            this.UpdateItemInDb(secondNewItem);
+            UpdateItemInDb(secondNewItem);
             
             kendoGrid.Filter(FreightColumnName, FilterOperator.EqualTo, newItem.Freight.ToString());
-            this.WaitForGridToLoad(1, kendoGrid);
+            WaitForGridToLoad(1, kendoGrid);
             kendoGrid.RemoveFilters();
         
-            this.WaitForGridToLoadAtLeast(2, kendoGrid);
+            WaitForGridToLoadAtLeast(2, kendoGrid);
         }
 
         #endregion
@@ -471,7 +471,7 @@ namespace DesignGridControlAutomatedTestsPartTwo
             
         public void WaitForPageToLoad(int expectedPage, KendoGrid grid)
         {
-            this.Until(() =>
+            Until(() =>
             {
                 int currentPage = grid.GetCurrentPageNumber();
                 return currentPage == expectedPage;
@@ -480,7 +480,7 @@ namespace DesignGridControlAutomatedTestsPartTwo
 
         private void WaitForGridToLoad(int expectedCount, KendoGrid grid)
         {
-            this.Until(
+            Until(
                 () =>
                 {
                     var items = grid.GetItems<GridItem>();
@@ -490,7 +490,7 @@ namespace DesignGridControlAutomatedTestsPartTwo
             
         private void WaitForGridToLoadAtLeast(int expectedCount, KendoGrid grid)
         {
-            this.Until(
+            Until(
                 () =>
                 {
                     var items = grid.GetItems<GridItem>();

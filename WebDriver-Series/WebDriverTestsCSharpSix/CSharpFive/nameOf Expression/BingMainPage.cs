@@ -24,7 +24,7 @@ namespace WebDriverTestsCSharpSix.CSharpFive.NameOfExpression
 
         public BingMainPage(IWebDriver browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
@@ -47,7 +47,7 @@ namespace WebDriverTestsCSharpSix.CSharpFive.NameOfExpression
 
         public void Navigate()
         {
-            this.driver.Navigate().GoToUrl(this.Url);
+            driver.Navigate().GoToUrl(Url);
         }
         public void Login(string email, string password)
         {

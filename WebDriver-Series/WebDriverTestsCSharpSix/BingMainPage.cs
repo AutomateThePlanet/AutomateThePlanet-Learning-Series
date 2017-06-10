@@ -15,7 +15,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace HuddlePageObjectsPartialClassesProperties
+namespace HuddlePageObjectsElementsStringProperties
 {
     public class BingMainPage
     {
@@ -24,7 +24,7 @@ namespace HuddlePageObjectsPartialClassesProperties
 
         public BingMainPage(IWebDriver browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
@@ -39,19 +39,19 @@ namespace HuddlePageObjectsPartialClassesProperties
 
         public void Navigate()
         {
-            this.driver.Navigate().GoToUrl(this.url);
+            driver.Navigate().GoToUrl(url);
         }
 
         public void Search(string textToType)
         {
-            this.SearchBox.Clear();
-            this.SearchBox.SendKeys(textToType);
-            this.GoButton.Click();
+            SearchBox.Clear();
+            SearchBox.SendKeys(textToType);
+            GoButton.Click();
         }
 
         public void AssertResultsCount(string expectedCount)
         {
-            Assert.AreEqual(this.ResultsCountDiv.Text, expectedCount);
+            Assert.AreEqual(ResultsCountDiv.Text, expectedCount);
         }
     }
 }

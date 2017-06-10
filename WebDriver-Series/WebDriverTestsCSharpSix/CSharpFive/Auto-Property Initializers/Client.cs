@@ -17,18 +17,18 @@ namespace WebDriverTestsCSharpSix.CSharpFive.AutoPropertyInitializers
     {
         public Client(string firstName, string lastName, string email, string password)
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Email = email;
-            this.Password = password;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            Password = password;
         }
 
         public Client()
         {
-            this.FirstName = "Default First Name";
-            this.LastName = "Default Last Name";
-            this.Email = "myDefaultClientEmail@gmail.com";
-            this.Password = "12345";
+            FirstName = "Default First Name";
+            LastName = "Default Last Name";
+            Email = "myDefaultClientEmail@gmail.com";
+            Password = "12345";
         }
 
         public string FirstName { get; set; }

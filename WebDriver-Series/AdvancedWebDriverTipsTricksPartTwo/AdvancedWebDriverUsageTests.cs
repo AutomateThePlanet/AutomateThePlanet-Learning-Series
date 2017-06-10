@@ -1,5 +1,5 @@
 ﻿// <copyright file="AdvancedWebDriverUsageTests.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2017 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -40,8 +40,8 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         [TestInitialize]
         public void SetupTest()
         {
-            this.driver = new FirefoxDriver();
-            this.driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
+            driver = new FirefoxDriver();
+            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
             // 10 Advanced WebDriver Tips and Tricks Part 2
             // 6. Change Firefox user agent
             ////FirefoxProfileManager profileManager = new FirefoxProfileManager();
@@ -76,14 +76,14 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         [TestCleanup]
         public void TeardownTest()
         {
-            this.driver.Quit();
+            driver.Quit();
         }
 
         // 1. Drag and Drop
         [TestMethod]
         public void DragAndDrop()
         {
-            this.driver.Navigate().GoToUrl(@"http://loopj.com/jquery-simple-slider/");
+            driver.Navigate().GoToUrl(@"http://loopj.com/jquery-simple-slider/");
             IWebElement element = driver.FindElement(By.XPath("//*[@id='project']/p[1]/div/div[2]"));
             Actions move = new Actions(driver);
             move.DragAndDropToOffset(element, 30, 0).Perform();
@@ -93,7 +93,7 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         [TestMethod]
         public void FileUpload()
         {
-            this.driver.Navigate().GoToUrl(@"https://demos.telerik.com/aspnet-ajax/ajaxpanel/application-scenarios/file-upload/defaultcs.aspx");
+            driver.Navigate().GoToUrl(@"https://demos.telerik.com/aspnet-ajax/ajaxpanel/application-scenarios/file-upload/defaultcs.aspx");
             IWebElement element = driver.FindElement(By.Id("ctl00_ContentPlaceholder1_RadUpload1file0"));
             String filePath = @"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\bin\Debug\WebDriver.xml";
             element.SendKeys(filePath);
@@ -103,8 +103,8 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         [TestMethod]
         public void JavaScripPopUps()
         {
-            this.driver.Navigate().GoToUrl(@"http://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm");
-            this.driver.SwitchTo().Frame("iframeResult");
+            driver.Navigate().GoToUrl(@"http://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm");
+            driver.SwitchTo().Frame("iframeResult");
             IWebElement button = driver.FindElement(By.XPath("/html/body/button"));
             button.Click();
             IAlert a = driver.SwitchTo().Alert();
@@ -122,7 +122,7 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         [TestMethod]
         public void MovingBetweenTabs()
         {
-            this.driver.Navigate().GoToUrl(@"http://automatetheplanet.com/compelling-sunday-14022016/");
+            driver.Navigate().GoToUrl(@"http://automatetheplanet.com/compelling-sunday-14022016/");
             driver.FindElement(By.LinkText("10 Advanced WebDriver Tips and Tricks Part 1")).Click();
             driver.FindElement(By.LinkText("The Ultimate Guide To Unit Testing in ASP.NET MVC")).Click();
             ReadOnlyCollection<String> windowHandles = driver.WindowHandles;
@@ -138,8 +138,8 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         [TestMethod]
         public void NavigationHistory()
         {
-            this.driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/1078541/Advanced-WebDriver-Tips-and-Tricks-Part");
-            this.driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/1017816/Speed-up-Selenium-Tests-through-RAM-Facts-and-Myth");
+            driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/1078541/Advanced-WebDriver-Tips-and-Tricks-Part");
+            driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/1017816/Speed-up-Selenium-Tests-through-RAM-Facts-and-Myth");
             driver.Navigate().Back();
             Assert.AreEqual<string>("10 Advanced WebDriver Tips and Tricks - Part 1 - CodeProject", driver.Title);
             driver.Navigate().Refresh();
@@ -152,7 +152,7 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         [TestMethod]
         public void ScrollFocusToControl()
         {
-            this.driver.Navigate().GoToUrl(@"http://automatetheplanet.com/compelling-sunday-14022016/");
+            driver.Navigate().GoToUrl(@"http://automatetheplanet.com/compelling-sunday-14022016/");
             IWebElement link = driver.FindElement(By.PartialLinkText("Previous post"));
             string jsToBeExecuted = string.Format("window.scroll(0, {0});", link.Location.Y);
             ((IJavaScriptExecutor)driver).ExecuteScript(jsToBeExecuted);
@@ -164,7 +164,7 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         [TestMethod]
         public void FocusOnControl()
         {
-            this.driver.Navigate().GoToUrl(@"http://automatetheplanet.com/compelling-sunday-14022016/");
+            driver.Navigate().GoToUrl(@"http://automatetheplanet.com/compelling-sunday-14022016/");
             IWebElement link = driver.FindElement(By.PartialLinkText("Previous post"));
 
             // 9.1. Option 1.

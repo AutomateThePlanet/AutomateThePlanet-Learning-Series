@@ -22,19 +22,19 @@ namespace WebDriverTestsCSharpSix.CSharpSix.ExpressionBodiesFunctions.ImprovedVe
 
         public BingMainPage(IWebDriver browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
         public string Url => @"http://www.bing.com/";
 
-        public void Navigate() => this.driver.Navigate().GoToUrl(this.Url);
+        public void Navigate() => driver.Navigate().GoToUrl(Url);
 
         public void Search(string textToType)
         {
-            this.SearchBox.Clear();
-            this.SearchBox.SendKeys(textToType);
-            this.GoButton.Click();
+            SearchBox.Clear();
+            SearchBox.SendKeys(textToType);
+            GoButton.Click();
         }
     }
 }

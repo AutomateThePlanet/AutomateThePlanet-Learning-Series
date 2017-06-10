@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 // <copyright file="RedirectService.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2017 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -27,14 +27,14 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
         {
             this.redirectEngine = redirectEngine;
             this.redirectEngine.Initialize();
-            this.InitializeRedirectUrls();
+            InitializeRedirectUrls();
         }
 
         public void TestRedirects()
         {
             bool shouldFail = false;
 
-            foreach (var currentSite in this.sites.Site)
+            foreach (var currentSite in sites.Site)
             {
                 Uri baseUri = new Uri(currentSite.Url);
 
@@ -43,7 +43,7 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
                     Uri currentFromUrl = new Uri(baseUri, currentRedirect.From);
                     Uri currentToUrl = new Uri(baseUri, currentRedirect.To);
 
-                    string currentSitesUrl = this.redirectEngine.NavigateToFromUrl(currentFromUrl.AbsoluteUri);
+                    string currentSitesUrl = redirectEngine.NavigateToFromUrl(currentFromUrl.AbsoluteUri);
                     try
                     {
                         Assert.AreEqual<string>(currentToUrl.AbsoluteUri, currentSitesUrl);
@@ -71,7 +71,7 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(Sites));
             TextReader reader = new StreamReader(@"redirect-URLs.xml");
-            this.sites = (Sites)deserializer.Deserialize(reader);
+            sites = (Sites)deserializer.Deserialize(reader);
             reader.Close();
         }
     }

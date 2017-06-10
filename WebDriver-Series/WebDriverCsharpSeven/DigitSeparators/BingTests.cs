@@ -36,7 +36,7 @@ namespace WebDriverCsharpSeven.DigitSeparators
         [TestCleanup]
         public void TeardownTest()
         {
-            this.driver.Quit();
+            driver.Quit();
         }
 
         [TestMethod]

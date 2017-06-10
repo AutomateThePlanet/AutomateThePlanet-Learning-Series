@@ -17,10 +17,10 @@ namespace WebDriverTestsCSharpSix.CSharpSix.ExpressionBodiesFunctions.ImprovedVe
 {
     public partial class BingMainPage
     {
-        public IWebElement SearchBox => this.driver.FindElement(By.Id("sb_form_q"));
+        public IWebElement SearchBox => driver.FindElement(By.Id("sb_form_q"));
 
-        public IWebElement GoButton => this.driver.FindElement(By.Id("sb_form_go"));
+        public IWebElement GoButton => driver.FindElement(By.Id("sb_form_go"));
 
-        public IWebElement ResultsCountDiv => this.driver.FindElement(By.Id("b_tween"));
+        public IWebElement ResultsCountDiv => driver.FindElement(By.Id("b_tween"));
     }
 }

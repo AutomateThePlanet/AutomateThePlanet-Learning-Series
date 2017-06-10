@@ -1,5 +1,5 @@
 ﻿// <copyright file="TorTests.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2017 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -38,35 +38,35 @@ namespace WebDriverSeleniumTorIntegration
             string desktopPath  = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             // You should set here the path to your Tor browser exe. Mine was installed on my desktop because of that I'm using the below path.
             String torBinaryPath = string.Concat(desktopPath, @"\Tor Browser\Browser\firefox.exe");
-            this.TorProcess = new Process();
-            this.TorProcess.StartInfo.FileName = torBinaryPath;
-            this.TorProcess.StartInfo.Arguments = "-n";
-            this.TorProcess.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
-            this.TorProcess.Start();
+            TorProcess = new Process();
+            TorProcess.StartInfo.FileName = torBinaryPath;
+            TorProcess.StartInfo.Arguments = "-n";
+            TorProcess.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
+            TorProcess.Start();
 
             FirefoxProfile profile = new FirefoxProfile();
             profile.SetPreference("network.proxy.type", 1);
             profile.SetPreference("network.proxy.socks", "127.0.0.1");
             profile.SetPreference("network.proxy.socks_port", 9150);
-            this.Driver = new FirefoxDriver(profile);
-            this.Wait = new WebDriverWait(this.Driver, TimeSpan.FromSeconds(60));
+            Driver = new FirefoxDriver(profile);
+            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(60));
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            this.Driver.Quit();
-            this.TorProcess.Kill();
+            Driver.Quit();
+            TorProcess.Kill();
         }
 
         [TestMethod]
         public void Open_Tor_Browser()
         {
-            this.RefreshTorIdentity();
-            this.Driver.Navigate().GoToUrl(@"http://whatismyipaddress.com/");
+            RefreshTorIdentity();
+            Driver.Navigate().GoToUrl(@"http://whatismyipaddress.com/");
             var expression = By.XPath("//*[@id='section_left']/div[2]");
-            this.Wait.Until(x => x.FindElement(expression));
-            var element = this.Driver.FindElement(expression);
+            Wait.Until(x => x.FindElement(expression));
+            var element = Driver.FindElement(expression);
             Assert.AreNotEqual<string>("84.40.65.000", element.Text);
         }
 

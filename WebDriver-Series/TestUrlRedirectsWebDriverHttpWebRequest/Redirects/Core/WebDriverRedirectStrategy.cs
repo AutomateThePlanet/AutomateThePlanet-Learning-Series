@@ -1,5 +1,5 @@
 ﻿// <copyright file="WebDriverRedirectStrategy.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2017 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -22,18 +22,18 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
 
         public void Initialize()
         {
-            this.driver = new FirefoxDriver();
+            driver = new FirefoxDriver();
         }
 
         public void Dispose()
         {
-            this.driver.Quit();
+            driver.Quit();
         }
 
         public string NavigateToFromUrl(string fromUrl)
         {
-            this.driver.Navigate().GoToUrl(fromUrl);
-            string currentSitesUrl = this.driver.Url;
+            driver.Navigate().GoToUrl(fromUrl);
+            string currentSitesUrl = driver.Url;
 
             return currentSitesUrl;
         }

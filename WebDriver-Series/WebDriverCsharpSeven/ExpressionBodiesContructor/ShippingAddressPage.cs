@@ -33,13 +33,13 @@ namespace WebDriverCsharpSeven.ExpressionBodiesContructor
 
         private void FillAddressInfoInternal(ClientPurchaseInfo clientInfo)
         {
-            this.Country.SelectByText(clientInfo.Country);
-            this.FullName.SendKeys(clientInfo.FullName);
-            this.Address.SendKeys(clientInfo.Address);
-            this.City.SendKeys(clientInfo.City);
-            this.Zip.SendKeys(clientInfo?.Zip ?? string.Empty);
-            this.Phone.SendKeys(clientInfo?.Phone ?? string.Empty);
-            this.Vat.SendKeys(clientInfo?.Vat ?? string.Empty);
+            Country.SelectByText(clientInfo.Country);
+            FullName.SendKeys(clientInfo.FullName);
+            Address.SendKeys(clientInfo.Address);
+            City.SendKeys(clientInfo.City);
+            Zip.SendKeys(clientInfo?.Zip ?? string.Empty);
+            Phone.SendKeys(clientInfo?.Phone ?? string.Empty);
+            Vat.SendKeys(clientInfo?.Vat ?? string.Empty);
         }
     }
 }

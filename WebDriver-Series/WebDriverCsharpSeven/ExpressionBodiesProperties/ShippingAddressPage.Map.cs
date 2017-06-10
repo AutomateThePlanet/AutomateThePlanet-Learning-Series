@@ -63,7 +63,7 @@ namespace WebDriverCsharpSeven.ExpressionBodiesProperties
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressAddressLine1"));
+                return driver.FindElement(By.Id("enterAddressAddressLine1"));
             }
         }
 
@@ -71,7 +71,7 @@ namespace WebDriverCsharpSeven.ExpressionBodiesProperties
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressCity"));
+                return driver.FindElement(By.Id("enterAddressCity"));
             }
         }
 
@@ -79,7 +79,7 @@ namespace WebDriverCsharpSeven.ExpressionBodiesProperties
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressPostalCode"));
+                return driver.FindElement(By.Id("enterAddressPostalCode"));
             }
         }
 
@@ -87,7 +87,7 @@ namespace WebDriverCsharpSeven.ExpressionBodiesProperties
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressPhoneNumber"));
+                return driver.FindElement(By.Id("enterAddressPhoneNumber"));
             }
         }
 
@@ -95,7 +95,7 @@ namespace WebDriverCsharpSeven.ExpressionBodiesProperties
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterVat"));
+                return driver.FindElement(By.Id("enterVat"));
             }
         }
     }

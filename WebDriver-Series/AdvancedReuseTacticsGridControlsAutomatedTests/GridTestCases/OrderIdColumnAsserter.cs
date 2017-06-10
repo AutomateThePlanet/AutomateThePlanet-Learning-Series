@@ -1,5 +1,5 @@
 ﻿// <copyright file="OrderIdColumnAsserter.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2017 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -20,37 +20,37 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
 {
     public class OrderIdColumnAsserter : GridColumnAsserter
     {
-        public OrderIdColumnAsserter(AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases.Pages.IGridPage gridPage) : base(gridPage)
+        public OrderIdColumnAsserter(Pages.IGridPage gridPage) : base(gridPage)
         {
         }
 
         public void OrderIdEqualToFilter()
         {
-            this.GridPage.NavigateTo();
-            var newItem = this.CreateNewItemInDb();
+            GridPage.NavigateTo();
+            var newItem = CreateNewItemInDb();
 
-            this.GridPage.Grid.Filter(GridColumns.OrderID, FilterOperator.EqualTo, newItem.OrderId.ToString());           
-            this.WaitForGridToLoad(1, this.GridPage.Grid);
-            var items = this.GridPage.Grid.GetItems<GridItem>();
+            GridPage.Grid.Filter(GridColumns.OrderID, FilterOperator.EqualTo, newItem.OrderId.ToString());           
+            WaitForGridToLoad(1, GridPage.Grid);
+            var items = GridPage.Grid.GetItems<GridItem>();
         
             Assert.AreEqual(1, items.Count);
         }
         
         public void OrderIdGreaterThanOrEqualToFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
 
             // Create new item with unique ship name;
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             // Create second new item with the same unique shipping name 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             
             // When we filter by the second unique column ShippingName, only one item will be displayed. Once we apply the second not equal to filter the grid should be empty.
-            this.GridPage.Grid.Filter(
+            GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderID, FilterOperator.GreaterThanOrEqualTo, newItem.OrderId.ToString()),
                 new GridFilter(GridColumns.ShipName, FilterOperator.EqualTo, newItem.ShipName));
-            this.WaitForGridToLoadAtLeast(2, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            WaitForGridToLoadAtLeast(2, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<Order>();
 
             Assert.AreEqual(secondNewItem.OrderId, results.FirstOrDefault(x => x.ShipName == secondNewItem.ShipName).OrderId);
             Assert.AreEqual(newItem.OrderId, results.FirstOrDefault(x => x.ShipName == newItem.ShipName).OrderId);
@@ -59,19 +59,19 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         
         public void OrderIdGreaterThanFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
             
             // Create new item with unique ship name;
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             // Create second new item with the same unique shipping name 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             
             // Filter by the smaller orderId but also by the second unique column in this case shipping name
-            this.GridPage.Grid.Filter(
+            GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderID, FilterOperator.GreaterThan, newItem.OrderId.ToString()),
                 new GridFilter(GridColumns.ShipName, FilterOperator.EqualTo, newItem.ShipName));
-            this.WaitForGridToLoadAtLeast(1, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            WaitForGridToLoadAtLeast(1, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<Order>();
             
             Assert.AreEqual(secondNewItem.OrderId, results.FirstOrDefault(x => x.ShipName == secondNewItem.ShipName).OrderId);
             Assert.IsTrue(results.Count() == 1);
@@ -79,19 +79,19 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         
         public void OrderIdLessThanOrEqualToFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
             
             // Create new item with unique ship name;
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             // Create second new item with the same unique shipping name 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             
             // Filter by the larger orderId but also by the second unique column in this case shipping name
-            this.GridPage.Grid.Filter(
+            GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderID, FilterOperator.LessThanOrEqualTo, secondNewItem.OrderId.ToString()),
                 new GridFilter(GridColumns.ShipName, FilterOperator.EqualTo, newItem.ShipName));
-            this.WaitForGridToLoadAtLeast(2, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            WaitForGridToLoadAtLeast(2, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<Order>();
             
             Assert.AreEqual(newItem.OrderId, results.FirstOrDefault(x => x.ShipName == newItem.ShipName).OrderId);
             Assert.AreEqual(secondNewItem.OrderId, results.Last(x => x.ShipName == secondNewItem.ShipName).OrderId);
@@ -100,19 +100,19 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         
         public void OrderIdLessThanFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
             
             // Create new item with unique ship name;
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             // Create second new item with the same unique shipping name 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             
             // Filter by the larger orderId but also by the second unique column in this case shipping name
-            this.GridPage.Grid.Filter(
+            GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderID, FilterOperator.LessThan, secondNewItem.OrderId.ToString()),
                 new GridFilter(GridColumns.ShipName, FilterOperator.EqualTo, secondNewItem.ShipName));
-            this.WaitForGridToLoadAtLeast(1, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            WaitForGridToLoadAtLeast(1, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<Order>();
             
             Assert.AreEqual(newItem.OrderId, results.FirstOrDefault(x => x.ShipName == newItem.ShipName).OrderId);
             Assert.IsTrue(results.Count() == 1);
@@ -120,19 +120,19 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         
         public void OrderIdNotEqualToFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
             
             // Create new item with unique ship name;
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             // Create second new item with the same unique shipping name 
-            var secondNewItem = this.CreateNewItemInDb(newItem.ShipName);
+            var secondNewItem = CreateNewItemInDb(newItem.ShipName);
             
             // Filter by the larger orderId but also by the second unique column in this case shipping name
-            this.GridPage.Grid.Filter(
+            GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderID, FilterOperator.NotEqualTo, secondNewItem.OrderId.ToString()),
                 new GridFilter(GridColumns.ShipName, FilterOperator.EqualTo, secondNewItem.ShipName));
-            this.WaitForGridToLoadAtLeast(1, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            WaitForGridToLoadAtLeast(1, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<Order>();
             
             Assert.AreEqual(newItem.OrderId, results.FirstOrDefault(x => x.ShipName == newItem.ShipName).OrderId);
             Assert.IsTrue(results.Count() == 1);
@@ -140,18 +140,18 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         
         public void OrderIdClearFilter()
         {
-            this.GridPage.NavigateTo();
+            GridPage.NavigateTo();
             // Create new item with unique ship name;
-            var newItem = this.CreateNewItemInDb();
+            var newItem = CreateNewItemInDb();
             // Make sure that we have at least 2 items if the grid is empty. The tests are designed to run against empty DB.
-            this.CreateNewItemInDb(newItem.ShipName);
+            CreateNewItemInDb(newItem.ShipName);
             
-            this.GridPage.Grid.Filter(GridColumns.OrderID, FilterOperator.EqualTo, newItem.OrderId.ToString());
-            this.WaitForGridToLoad(1, this.GridPage.Grid);
-            this.GridPage.Grid.RemoveFilters();
+            GridPage.Grid.Filter(GridColumns.OrderID, FilterOperator.EqualTo, newItem.OrderId.ToString());
+            WaitForGridToLoad(1, GridPage.Grid);
+            GridPage.Grid.RemoveFilters();
             
-            this.WaitForGridToLoadAtLeast(1, this.GridPage.Grid);
-            var results = this.GridPage.Grid.GetItems<Order>();
+            WaitForGridToLoadAtLeast(1, GridPage.Grid);
+            var results = GridPage.Grid.GetItems<Order>();
             Assert.IsTrue(results.Count() > 1);
         }
     }

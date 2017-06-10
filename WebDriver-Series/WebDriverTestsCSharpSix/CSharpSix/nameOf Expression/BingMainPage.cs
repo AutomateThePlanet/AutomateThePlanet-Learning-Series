@@ -24,7 +24,7 @@ namespace WebDriverTestsCSharpSix.CSharpSix.NameOfExpression
 
         public BingMainPage(IWebDriver browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
@@ -47,7 +47,7 @@ namespace WebDriverTestsCSharpSix.CSharpSix.NameOfExpression
 
         public void Navigate()
         {
-            this.driver.Navigate().GoToUrl(this.Url);
+            driver.Navigate().GoToUrl(Url);
         }
 
         public void Login(string email, string password)
@@ -69,14 +69,14 @@ namespace WebDriverTestsCSharpSix.CSharpSix.NameOfExpression
             {
                 throw new ArgumentException(nameof(textToType) + "cannot be null or empty.");
             }
-            this.SearchBox.Clear();
-            this.SearchBox.SendKeys(textToType);
-            this.GoButton.Click();
+            SearchBox.Clear();
+            SearchBox.SendKeys(textToType);
+            GoButton.Click();
         }
 
         public void AssertResultsCount(string expectedCount)
         {
-            Assert.AreEqual(this.ResultsCountDiv.Text, expectedCount);
+            Assert.AreEqual(ResultsCountDiv.Text, expectedCount);
         }
     }
 }
