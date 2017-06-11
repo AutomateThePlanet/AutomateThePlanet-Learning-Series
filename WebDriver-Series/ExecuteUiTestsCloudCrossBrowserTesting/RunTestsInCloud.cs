@@ -30,48 +30,23 @@ namespace ExecuteUiTestsCloudCrossBrowserTesting
         [SetUp]
         public void SetupTest()
         {
-            ////var caps = new DesiredCapabilities();
-            ////caps.SetCapability("name", "Automate The Planet Cloud Tests");
-            ////caps.SetCapability("build", "1.0");
-
-            ////caps.SetCapability("browser_api_name", "Edge15");
-            ////caps.SetCapability("os_api_name", "Win10-E15");
-            ////caps.SetCapability("screen_resolution", "1366x768");
-
-            ////// Not working- there is a bug.
-            //////caps.SetCapability("browser_api_name", "FF46");
-            //////caps.SetCapability("os_api_name", "Mac10.11");
-            //////caps.SetCapability("screen_resolution", "1400x900");
-
-
-            ////caps.SetCapability("record_video", "true");
-            ////caps.SetCapability("record_network", "true");
-            ////caps.SetCapability("_username", _username);
-            ////caps.SetCapability("password", _authkey);
-
-            ////var hubUri = new Uri("http://hub.crossbrowsertesting.com:80/wd/hub");
-            ////_driver = new RemoteWebDriver(hubUri, caps, TimeSpan.FromSeconds(180));
-
-            // Start by setting the capabilities
             var caps = new DesiredCapabilities();
             caps.SetCapability("name", "Basic Example");
             caps.SetCapability("build", "1.0");
-            //caps.SetCapability("browser_api_name", "Chrome58");
-            //caps.SetCapability("os_api_name", "Win10-E15");
-            //caps.SetCapability("screen_resolution", "1366x768");
+            caps.SetCapability("browser_api_name", "Chrome58");
+            caps.SetCapability("os_api_name", "Win10-E15");
+            caps.SetCapability("screen_resolution", "1366x768");
 
-            caps.SetCapability("browser_api_name", "FF46");
-            caps.SetCapability("os_api_name", "Mac10.11");
-            caps.SetCapability("screen_resolution", "1400x900");
+            //////caps.SetCapability("browser_api_name", "FF46");
+            //////caps.SetCapability("os_api_name", "Mac10.11");
+            //////caps.SetCapability("screen_resolution", "1400x900");
             caps.SetCapability("record_video", "true");
             caps.SetCapability("record_network", "true");
-
 
             caps.SetCapability("username", _username);
             caps.SetCapability("password", _authkey);
             
             _driver = new RemoteWebDriver(new Uri("http://hub.crossbrowsertesting.com:80/wd/hub"), caps, TimeSpan.FromSeconds(180));
-
         }
 
         [TearDown]
