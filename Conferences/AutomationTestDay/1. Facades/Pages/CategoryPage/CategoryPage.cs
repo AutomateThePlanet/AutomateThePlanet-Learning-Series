@@ -28,7 +28,5 @@ namespace AutomationTestDay.Facades.Pages
         {
             NextPageButton?.Click();
         }
-
-
     }
 }

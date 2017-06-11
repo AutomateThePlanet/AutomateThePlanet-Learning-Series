@@ -22,11 +22,11 @@ using OpenQA.Selenium.Chrome;
 namespace AutomationTestDay.Behaviors
 {
     /*
-     * Online Assessment System - https://www.surveymonkey.com/r/RS326GP
      * 1. Refactor tests so that category page background is asserted only for the 'Design Pattern' category
      * 2. Create a new test for 'Design And Architecture' category, article- 'Create Hybrid Test Framework – Advanced Element Find Extensions'
      * 3. Remove Find How button assert from all tests
      * 4. Modify the code to use Enums instead of plain text for the categories' names
+     * 5. Fill online Assessment System - https://www.surveymonkey.com/r/RS326GP
      */
     [TestFixture]
     public class AutomateThePlanetBehaviourTests

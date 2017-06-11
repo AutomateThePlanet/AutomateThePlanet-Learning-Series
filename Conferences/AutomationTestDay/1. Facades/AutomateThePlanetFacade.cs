@@ -29,20 +29,20 @@ namespace AutomationTestDay.Facades
             _homePage = new HomePage(webDriver);
         }
 
-        public void DownloadSourceCode(string categoryText, string articleText)
+        public void DownloadSourceCode(string categoryName, string articleName)
         {
             _homePage.NavigateTo();
-            _homePage.AssertFindHowText(categoryText);
-            var findHowButton = _homePage.GetFindHowButtonByText(categoryText);
+            _homePage.AssertFindHowText(categoryName);
+            var findHowButton = _homePage.GetFindHowButtonByText(categoryName);
             findHowButton.Click();
 
-            _categoryPage.AssertCategoryBackgroundWhenSelected(categoryText);
+            _categoryPage.AssertCategoryBackgroundWhenSelected(categoryName);
             var articleAnchor = default(IWebElement);
             do
             {
                 try
                 {
-                    articleAnchor = _categoryPage.GetArticleAnchorByName(articleText);
+                    articleAnchor = _categoryPage.GetArticleAnchorByName(articleName);
                 }
                 catch (NoSuchElementException)
                 {
@@ -56,6 +56,3 @@ namespace AutomationTestDay.Facades
         }
     }
 }
-
-// 1. Extend the test to check the links' category before clicking. Green icon.
-// 2. Create two different version of the facade's method to accept enums Topic and Framework instead using string.
