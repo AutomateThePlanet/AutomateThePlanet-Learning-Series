@@ -113,6 +113,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19. Most Exhaustive WebDriv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocatorsCheatSheet", "LocatorsCheatSheet\LocatorsCheatSheet.csproj", "{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20. Execute UI Tests in the Cloud- Cross Browser Testing", "20. Execute UI Tests in the Cloud- Cross Browser Testing", "{6373C51E-AF03-4431-8FDB-2BFDC9AFD61B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecuteUiTestsCloudCrossBrowserTesting", "ExecuteUiTestsCloudCrossBrowserTesting\ExecuteUiTestsCloudCrossBrowserTesting.csproj", "{31C127B5-E501-4AFD-ABC6-8BFE4ECC5B5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -215,6 +219,10 @@ Global
 		{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C127B5-E501-4AFD-ABC6-8BFE4ECC5B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C127B5-E501-4AFD-ABC6-8BFE4ECC5B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C127B5-E501-4AFD-ABC6-8BFE4ECC5B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C127B5-E501-4AFD-ABC6-8BFE4ECC5B5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -251,5 +259,6 @@ Global
 		{1B63DA49-FC4F-49A7-A83B-4FF8C5B6B640} = {4349683B-C860-4048-9A98-B9D1E9F04FCA}
 		{8D0C2775-8860-472A-B31D-6D6D4A71373A} = {7E7184D4-07BA-4F0C-B410-BB4BD95760AE}
 		{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47} = {9C7AFA9A-B3D5-4539-93CC-7B2A19A3FA95}
+		{31C127B5-E501-4AFD-ABC6-8BFE4ECC5B5B} = {6373C51E-AF03-4431-8FDB-2BFDC9AFD61B}
 	EndGlobalSection
 EndGlobal
