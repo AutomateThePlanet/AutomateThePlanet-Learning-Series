@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26621.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Getting Started with WebDriver CSharp in 10 Minutes", "1. Getting Started with WebDriver CSharp in 10 Minutes", "{72C5F509-1F8B-4DF4-B76A-1CBCF0B6E924}"
 	ProjectSection(SolutionItems) = preProject
@@ -117,9 +117,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20. Execute UI Tests in the
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecuteUiTestsCloudCrossBrowserTesting", "ExecuteUiTestsCloudCrossBrowserTesting\ExecuteUiTestsCloudCrossBrowserTesting.csproj", "{31C127B5-E501-4AFD-ABC6-8BFE4ECC5B5B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21. Execute UI Tests in the Cloud- BrowserStack", "21. Execute UI Tests in the Cloud- BrowserStack", "{CC86EE85-BD2B-4F65-9740-EE0FD4F60427}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "22. Execute UI Tests in the Cloud- BrowserStack", "22. Execute UI Tests in the Cloud- BrowserStack", "{CC86EE85-BD2B-4F65-9740-EE0FD4F60427}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecuteUiTestsCloudBrowserStack", "ExecuteUiTestsCloudBrowserStack\ExecuteUiTestsCloudBrowserStack.csproj", "{3DBCB7A8-5523-4F41-8E78-7F8E2DF8217A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "23. Execute UI Tests in the Cloud- SauceLabs", "23. Execute UI Tests in the Cloud- SauceLabs", "{40A7B6A5-F3E1-4457-8D2A-74AD74735300}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecuteUiTestsSauceLabs", "ExecuteUiTestsSauceLabs\ExecuteUiTestsSauceLabs.csproj", "{AA322464-1E28-4914-BED1-F286D6511A75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21. Selenium WebDriver + .NET Core 2.0- What Everyone Ought to Know", "21. Selenium WebDriver + .NET Core 2.0- What Everyone Ought to Know", "{541201EF-5897-4CFD-BDE8-5935A524B166}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriverDotNetCore", "WebDriverDotNetCore\WebDriverDotNetCore.csproj", "{561A67B8-1D8D-4828-B1B7-0D7EFA6A8241}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -231,6 +239,14 @@ Global
 		{3DBCB7A8-5523-4F41-8E78-7F8E2DF8217A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DBCB7A8-5523-4F41-8E78-7F8E2DF8217A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DBCB7A8-5523-4F41-8E78-7F8E2DF8217A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA322464-1E28-4914-BED1-F286D6511A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA322464-1E28-4914-BED1-F286D6511A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA322464-1E28-4914-BED1-F286D6511A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA322464-1E28-4914-BED1-F286D6511A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{561A67B8-1D8D-4828-B1B7-0D7EFA6A8241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561A67B8-1D8D-4828-B1B7-0D7EFA6A8241}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561A67B8-1D8D-4828-B1B7-0D7EFA6A8241}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561A67B8-1D8D-4828-B1B7-0D7EFA6A8241}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -269,5 +285,10 @@ Global
 		{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47} = {9C7AFA9A-B3D5-4539-93CC-7B2A19A3FA95}
 		{31C127B5-E501-4AFD-ABC6-8BFE4ECC5B5B} = {6373C51E-AF03-4431-8FDB-2BFDC9AFD61B}
 		{3DBCB7A8-5523-4F41-8E78-7F8E2DF8217A} = {CC86EE85-BD2B-4F65-9740-EE0FD4F60427}
+		{AA322464-1E28-4914-BED1-F286D6511A75} = {40A7B6A5-F3E1-4457-8D2A-74AD74735300}
+		{561A67B8-1D8D-4828-B1B7-0D7EFA6A8241} = {541201EF-5897-4CFD-BDE8-5935A524B166}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}
 	EndGlobalSection
 EndGlobal
