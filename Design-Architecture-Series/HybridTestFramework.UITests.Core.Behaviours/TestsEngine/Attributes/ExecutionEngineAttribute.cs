@@ -22,14 +22,14 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Attributes
     {
         public ExecutionEngineAttribute(ExecutionEngineType executionEngineType, Browsers browser)
         {
-            this.Browser = browser;
-            this.ExecutionEngineType = executionEngineType;
+            Browser = browser;
+            ExecutionEngineType = executionEngineType;
         }
 
         public ExecutionEngineAttribute(Browsers browser)
         {
-            this.Browser = browser;
-            this.ExecutionEngineType = ExecutionEngineType.TestStudio;
+            Browser = browser;
+            ExecutionEngineType = ExecutionEngineType.TestStudio;
         }
 
         public Browsers Browser { get; set; }

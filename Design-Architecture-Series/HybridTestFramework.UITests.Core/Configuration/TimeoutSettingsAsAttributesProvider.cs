@@ -4,13 +4,13 @@ namespace HybridTestFramework.UITests.Core.Configuration
 {
     public class TimeoutSettingsAsAttributesProvider : ConfigurationSection
     {
-        private static readonly TimeoutSettingsAsAttributes timeoutSettings;
+        private static readonly TimeoutSettingsAsAttributes TimeoutSettings;
 
         static TimeoutSettingsAsAttributesProvider()
         {
             try
             {
-                timeoutSettings = 
+                TimeoutSettings = 
                     (TimeoutSettingsAsAttributes) 
                     ConfigurationManager.GetSection(sectionName: "TimeoutSettingsAsAttributes");
             }
@@ -26,7 +26,7 @@ namespace HybridTestFramework.UITests.Core.Configuration
         {
             get
             {
-                return timeoutSettings.WaitForAjaxTimeout;
+                return TimeoutSettings.WaitForAjaxTimeout;
             }
         }
 
@@ -34,7 +34,7 @@ namespace HybridTestFramework.UITests.Core.Configuration
         {
             get
             {
-                return timeoutSettings.SleepInterval;
+                return TimeoutSettings.SleepInterval;
             }
         }
 
@@ -42,7 +42,7 @@ namespace HybridTestFramework.UITests.Core.Configuration
         {
             get
             {
-                return timeoutSettings.ElementToBeVisibleTimeout;
+                return TimeoutSettings.ElementToBeVisibleTimeout;
             }
         }
 
@@ -50,7 +50,7 @@ namespace HybridTestFramework.UITests.Core.Configuration
         {
             get
             {
-                return timeoutSettings.ЕlementToExistTimeout;
+                return TimeoutSettings.ЕlementToExistTimeout;
             }
         }
 
@@ -58,7 +58,7 @@ namespace HybridTestFramework.UITests.Core.Configuration
         {
             get
             {
-                return timeoutSettings.ЕlementToNotExistTimeout;
+                return TimeoutSettings.ЕlementToNotExistTimeout;
             }
         }
 
@@ -66,7 +66,7 @@ namespace HybridTestFramework.UITests.Core.Configuration
         {
             get
             {
-                return timeoutSettings.ЕlementToBeClickableTimeout;
+                return TimeoutSettings.ЕlementToBeClickableTimeout;
             }
         }
 
@@ -74,7 +74,7 @@ namespace HybridTestFramework.UITests.Core.Configuration
         {
             get
             {
-                return timeoutSettings.ЕlementNotToBeVisibleTimeout;
+                return TimeoutSettings.ЕlementNotToBeVisibleTimeout;
             }
         }
 
@@ -82,7 +82,7 @@ namespace HybridTestFramework.UITests.Core.Configuration
         {
             get
             {
-                return timeoutSettings.ЕlementToHaveContentTimeout;
+                return TimeoutSettings.ЕlementToHaveContentTimeout;
             }
         }
     }

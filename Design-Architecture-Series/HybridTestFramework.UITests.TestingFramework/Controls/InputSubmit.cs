@@ -31,7 +31,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
         {
             get
             {
-                return this.htmlControl.IsEnabled;
+                return HtmlControl.IsEnabled;
             }
         }
     }

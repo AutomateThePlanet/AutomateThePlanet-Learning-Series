@@ -22,7 +22,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours.VideoRecording.Attributes
     {
         public VideoRecordingAttribute(VideoRecordingMode videoRecordingMode)
         {
-            this.VideoRecording = videoRecordingMode;
+            VideoRecording = videoRecordingMode;
         }
 
         public VideoRecordingMode VideoRecording { get; set; }

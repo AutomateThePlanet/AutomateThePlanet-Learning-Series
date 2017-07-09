@@ -20,7 +20,7 @@ namespace HybridTestFramework.UITests.Core
     {
         public BrowserSettings(Browsers type)
         {
-            this.Type = type;
+            Type = type;
         }
 
         public static BrowserSettings DefaultChomeSettings

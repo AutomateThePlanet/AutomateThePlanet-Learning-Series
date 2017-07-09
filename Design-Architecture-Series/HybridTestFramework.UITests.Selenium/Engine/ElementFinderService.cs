@@ -22,18 +22,18 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 {
     public class ElementFinderService
     {
-        private readonly IUnityContainer container;
+        private readonly IUnityContainer _container;
 
         public ElementFinderService(IUnityContainer container)
         {
-            this.container = container;
+            this._container = container;
         }
 
         public TElement Find<TElement>(ISearchContext searchContext, Core.By by)
             where TElement : class, Core.Controls.IElement
         {
             var element = searchContext.FindElement(by.ToSeleniumBy());
-            TElement result = this.ResolveElement<TElement>(searchContext, element);
+            var result = ResolveElement<TElement>(searchContext, element);
 
             return result;
         }
@@ -42,10 +42,10 @@ namespace HybridTestFramework.UITests.Selenium.Engine
             where TElement : class, Core.Controls.IElement
         {
             var elements = searchContext.FindElements(by.ToSeleniumBy());
-            List<TElement> resolvedElements = new List<TElement>();
+            var resolvedElements = new List<TElement>();
             foreach (var currentElement in elements)
             {
-                TElement result = this.ResolveElement<TElement>(searchContext, currentElement);
+                var result = ResolveElement<TElement>(searchContext, currentElement);
                 resolvedElements.Add(result);
             }
 
@@ -54,18 +54,18 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 
         public bool IsElementPresent(ISearchContext searchContext, Core.By by)
         {
-            var element = this.Find<Element>(searchContext, by);
+            var element = Find<Element>(searchContext, by);
             return element.IsVisible;
         }
 
         private TElement ResolveElement<TElement>(ISearchContext searchContext, IWebElement currentElement)
             where TElement : class, Core.Controls.IElement
         {
-            TElement result = this.container.Resolve<TElement>(new ResolverOverride[]
+            var result = _container.Resolve<TElement>(new ResolverOverride[]
             {
                 new ParameterOverride("driver", searchContext),
                 new ParameterOverride("webElement", currentElement),
-                new ParameterOverride("container", this.container)
+                new ParameterOverride("container", _container)
             });
             return result;
         }

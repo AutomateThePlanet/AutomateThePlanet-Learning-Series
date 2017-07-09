@@ -16,14 +16,14 @@ namespace HybridTestFramework.UITests.Core
 {
     public enum DialogButton : int
     {
-        OK = 0,
-        CANCEL = 1,
-        OPEN = 2,
-        YES = 3,
-        NO = 4,
-        CLOSE = 5,
-        RUN = 6,
-        SAVE = 7,
-        NOTSET = 8
+        Ok = 0,
+        Cancel = 1,
+        Open = 2,
+        Yes = 3,
+        No = 4,
+        Close = 5,
+        Run = 6,
+        Save = 7,
+        Notset = 8
     }
 }

@@ -22,18 +22,18 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 {
     public partial class SeleniumDriver : IDriver
     {
-        private IWebDriver driver;
-        private IUnityContainer container;
-        private BrowserSettings browserSettings;
-        private readonly ElementFinderService elementFinderService;
+        private IWebDriver _driver;
+        private IUnityContainer _container;
+        private BrowserSettings _browserSettings;
+        private readonly ElementFinderService _elementFinderService;
 
         public SeleniumDriver(IUnityContainer container, BrowserSettings browserSettings)
         {
-            this.container = container;
-            this.browserSettings = browserSettings;
-            this.ResolveBrowser(browserSettings);
-            this.elementFinderService = new ElementFinderService(container);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(browserSettings.ElementsWaitTimeout);
+            this._container = container;
+            this._browserSettings = browserSettings;
+            ResolveBrowser(browserSettings);
+            _elementFinderService = new ElementFinderService(container);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(browserSettings.ElementsWaitTimeout);
         }
 
         private void ResolveBrowser(BrowserSettings browserSettings)
@@ -45,7 +45,7 @@ namespace HybridTestFramework.UITests.Selenium.Engine
                 case Browsers.Chrome:
                     break;
                 case Browsers.Firefox:
-                    this.driver = new FirefoxDriver();
+                    _driver = new FirefoxDriver();
                     break;
                 case Browsers.InternetExplorer:
                     break;

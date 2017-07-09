@@ -24,7 +24,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
         {
             string currentCookieValue = null;
             var cookies =
-                this.driver.ActiveBrowser.Cookies.GetCookies(host);
+                _driver.ActiveBrowser.Cookies.GetCookies(host);
             foreach (Cookie currentCookie in cookies)
             {
                 if (currentCookie.Name.Equals(cookieName))
@@ -38,26 +38,26 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
 
         public void AddCookie(string cookieName, string cookieValue, string host)
         {
-            Cookie cookie = new Cookie()
+            var cookie = new Cookie()
             {
                 Name = cookieName,
                 Value = cookieValue,
                 Domain = host,
                 Path = "/"
             };
-            this.driver.ActiveBrowser.Cookies.SetCookie(cookie);
+            _driver.ActiveBrowser.Cookies.SetCookie(cookie);
         }
 
         public void DeleteCookie(string cookieName)
         {
-            this.driver.ActiveBrowser.Cookies.DeleteCookie(cookieName);
+            _driver.ActiveBrowser.Cookies.DeleteCookie(cookieName);
         }
 
         public void CleanAllCookies()
         {
-            this.driver.ActiveBrowser.ClearCache(
+            _driver.ActiveBrowser.ClearCache(
                 BrowserCacheType.Cookies);
-            this.driver.ActiveBrowser.ClearCache(
+            _driver.ActiveBrowser.ClearCache(
                 BrowserCacheType.TempFilesCache);
         }
     }

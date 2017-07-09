@@ -25,9 +25,9 @@ namespace HybridTestFramework.UITests.Core
 
         public By(SearchType type, string value, IElement parent)
         {
-            this.Type = type;
-            this.Value = value;
-            this.Parent = parent;
+            Type = type;
+            Value = value;
+            Parent = parent;
         }
 
         public SearchType Type { get; private set; }

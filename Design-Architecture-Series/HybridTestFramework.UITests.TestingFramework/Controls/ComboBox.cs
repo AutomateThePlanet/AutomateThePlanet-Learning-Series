@@ -22,7 +22,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
 {
     public class ComboBox : ContentElement<HtmlInputCheckBox>, IComboBox
     {
-        private readonly string jqueryExpression = 
+        private readonly string _jqueryExpression = 
             "$(\"select[id$='{0}'] option\").each(function() {{if (this.text == '{1}') {{ $(this).parent().val(this.value).change() }} }});";
         
         public ComboBox(IDriver driver,
@@ -35,20 +35,20 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
         {
             get
             {
-                return this.htmlControl.BaseElement.InnerText;
+                return HtmlControl.BaseElement.InnerText;
             }
         }
 
         public void SelectValue(string value)
         {
-            this.JQuerySelectByText(this.htmlControl.ID, value);
+            JQuerySelectByText(HtmlControl.ID, value);
         }
 
         private void JQuerySelectByText(string expression, string text)
         {
-            string javaScriptToBeExecuted = string.Format(this.jqueryExpression, expression, text);
-            this.driver.InvokeScript(javaScriptToBeExecuted);
-            this.driver.WaitForAjax();
+            var javaScriptToBeExecuted = string.Format(_jqueryExpression, expression, text);
+            Driver.InvokeScript(javaScriptToBeExecuted);
+            Driver.WaitForAjax();
         }
     }
 }

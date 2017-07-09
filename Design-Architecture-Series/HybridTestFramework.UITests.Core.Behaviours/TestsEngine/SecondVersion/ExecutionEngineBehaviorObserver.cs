@@ -22,19 +22,19 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine.SecondVersion
 {
     public class ExecutionEngineBehaviorObserver : BaseTestBehaviorObserver
     {
-        private readonly IUnityContainer unityContainer;
-        private Browsers executionBrowserType;
-        private readonly List<HybridTestFramework.Core.Behaviours.Contracts.ITestExecutionEngine> testExecutionEngines;
+        private readonly IUnityContainer _unityContainer;
+        private Browsers _executionBrowserType;
+        private readonly List<HybridTestFramework.Core.Behaviours.Contracts.ITestExecutionEngine> _testExecutionEngines;
 
         public ExecutionEngineBehaviorObserver(IUnityContainer unityContainer)
         {
-            this.unityContainer = unityContainer;
-            this.testExecutionEngines = this.unityContainer.ResolveAll<HybridTestFramework.Core.Behaviours.Contracts.ITestExecutionEngine>().ToList();
+            this._unityContainer = unityContainer;
+            _testExecutionEngines = this._unityContainer.ResolveAll<HybridTestFramework.Core.Behaviours.Contracts.ITestExecutionEngine>().ToList();
         }
 
         protected override void PostTestCleanup(object sender, TestExecutionEventArgs e)
         {
-            foreach (var testExecutionEngine in this.testExecutionEngines)
+            foreach (var testExecutionEngine in _testExecutionEngines)
             {
                 if (testExecutionEngine != null)
                 {
@@ -45,13 +45,13 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine.SecondVersion
 
         protected override void PreTestInit(object sender, TestExecutionEventArgs e)
         {
-            this.executionBrowserType = this.ConfigureTestExecutionBrowser(e.MemberInfo);
+            _executionBrowserType = ConfigureTestExecutionBrowser(e.MemberInfo);
 
-            foreach (var testExecutionEngine in this.testExecutionEngines)
+            foreach (var testExecutionEngine in _testExecutionEngines)
             {
                 if (testExecutionEngine.IsSelected(e.MemberInfo))
                 {
-                    testExecutionEngine.RegisterDependencies(executionBrowserType);
+                    testExecutionEngine.RegisterDependencies(_executionBrowserType);
                     break;
                 }
             }
@@ -60,8 +60,8 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine.SecondVersion
         private Browsers ConfigureTestExecutionBrowser(MemberInfo memberInfo)
         {
             var currentExecutionBrowserType = Browsers.Firefox;
-            Browsers methodExecutionBrowser = this.GetExecutionBrowser(memberInfo);
-            Browsers classExecutionBrowser = this.GetExecutionBrowser(memberInfo.DeclaringType);
+            var methodExecutionBrowser = GetExecutionBrowser(memberInfo);
+            var classExecutionBrowser = GetExecutionBrowser(memberInfo.DeclaringType);
             
             if (methodExecutionBrowser != Browsers.NotSet)
             {

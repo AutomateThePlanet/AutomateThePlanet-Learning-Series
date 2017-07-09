@@ -28,7 +28,7 @@ namespace AbstractUnitTestFramework
     [TestClass]
     public class BingTestsMsTest
     {
-        private IDriver driver;
+        private IDriver _driver;
 
         [TestInitialize]
         public void SetupTest()
@@ -46,20 +46,20 @@ namespace AbstractUnitTestFramework
             UnityContainerFactory.GetContainer().RegisterType<IDiv, Div>();
             UnityContainerFactory.GetContainer().RegisterType<BingMainPage>();
 
-            UnityContainerFactory.GetContainer().RegisterInstance<IUnityContainer>(UnityContainerFactory.GetContainer());
-            UnityContainerFactory.GetContainer().RegisterInstance<BrowserSettings>(BrowserSettings.DefaultChomeSettings);
-            this.driver = UnityContainerFactory.GetContainer().Resolve<IDriver>();
+            UnityContainerFactory.GetContainer().RegisterInstance(UnityContainerFactory.GetContainer());
+            UnityContainerFactory.GetContainer().RegisterInstance(BrowserSettings.DefaultChomeSettings);
+            _driver = UnityContainerFactory.GetContainer().Resolve<IDriver>();
 
-            UnityContainerFactory.GetContainer().RegisterInstance<IDriver>(this.driver);
-            UnityContainerFactory.GetContainer().RegisterInstance<IBrowser>(this.driver);
-            UnityContainerFactory.GetContainer().RegisterInstance<ICookieService>(this.driver);
-            UnityContainerFactory.GetContainer().RegisterInstance<IDialogService>(this.driver);
-            UnityContainerFactory.GetContainer().RegisterInstance<IJavaScriptInvoker>(this.driver);
-            UnityContainerFactory.GetContainer().RegisterInstance<INavigationService>(this.driver);
-            UnityContainerFactory.GetContainer().RegisterInstance<IElementFinder>(this.driver);
+            UnityContainerFactory.GetContainer().RegisterInstance(_driver);
+            UnityContainerFactory.GetContainer().RegisterInstance<IBrowser>(_driver);
+            UnityContainerFactory.GetContainer().RegisterInstance<ICookieService>(_driver);
+            UnityContainerFactory.GetContainer().RegisterInstance<IDialogService>(_driver);
+            UnityContainerFactory.GetContainer().RegisterInstance<IJavaScriptInvoker>(_driver);
+            UnityContainerFactory.GetContainer().RegisterInstance<INavigationService>(_driver);
+            UnityContainerFactory.GetContainer().RegisterInstance<IElementFinder>(_driver);
 
             // Register the concrete Unit Testing Framework.
-            UnityContainerFactory.GetContainer().RegisterType<IAssert, MSTestAssert>();
+            UnityContainerFactory.GetContainer().RegisterType<IAssert, MsTestAssert>();
         }
 
         [TestMethod]

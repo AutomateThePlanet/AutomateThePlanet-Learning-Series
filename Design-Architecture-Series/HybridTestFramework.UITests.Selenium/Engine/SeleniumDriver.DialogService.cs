@@ -18,7 +18,7 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 {
     public partial class SeleniumDriver : IDialogService
     {
-        public void Handle(Action action = null, DialogButton dialogButton = DialogButton.OK)
+        public void Handle(Action action = null, DialogButton dialogButton = DialogButton.Ok)
         {
             throw new NotImplementedException();
         }

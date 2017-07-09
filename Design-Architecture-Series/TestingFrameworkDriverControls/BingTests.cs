@@ -25,44 +25,44 @@ namespace TestingFrameworkDriverControls
     [TestClass]
     public class BingTests
     {
-        private IDriver driver;
-        private IUnityContainer container;
+        private IDriver _driver;
+        private IUnityContainer _container;
 
         [TestInitialize]
         public void SetupTest()
         {
-            this.container = new UnityContainer();
+            _container = new UnityContainer();
 
-            this.container.RegisterType<IDriver, Engine.TestingFrameworkDriver>();
-            this.container.RegisterType<INavigationService, Engine.TestingFrameworkDriver>();
-            this.container.RegisterType<IBrowser, Engine.TestingFrameworkDriver>();
-            this.container.RegisterType<ICookieService, Engine.TestingFrameworkDriver>();
-            this.container.RegisterType<IDialogService, Engine.TestingFrameworkDriver>();
-            this.container.RegisterType<IElementFinder, Engine.TestingFrameworkDriver>();
-            this.container.RegisterType<IJavaScriptInvoker, Engine.TestingFrameworkDriver>();
+            _container.RegisterType<IDriver, Engine.TestingFrameworkDriver>();
+            _container.RegisterType<INavigationService, Engine.TestingFrameworkDriver>();
+            _container.RegisterType<IBrowser, Engine.TestingFrameworkDriver>();
+            _container.RegisterType<ICookieService, Engine.TestingFrameworkDriver>();
+            _container.RegisterType<IDialogService, Engine.TestingFrameworkDriver>();
+            _container.RegisterType<IElementFinder, Engine.TestingFrameworkDriver>();
+            _container.RegisterType<IJavaScriptInvoker, Engine.TestingFrameworkDriver>();
 
-            this.container.RegisterType<IButton, Button>();
-            this.container.RegisterType<ITextBox, TextBox>();
-            this.container.RegisterType<IDiv, Div>();
+            _container.RegisterType<IButton, Button>();
+            _container.RegisterType<ITextBox, TextBox>();
+            _container.RegisterType<IDiv, Div>();
 
-            this.container.RegisterType<BingMainPage>();
+            _container.RegisterType<BingMainPage>();
 
-            this.container.RegisterInstance<IUnityContainer>(this.container);
-            this.container.RegisterInstance<BrowserSettings>(BrowserSettings.DefaultInternetExplorerSettings);
+            _container.RegisterInstance(_container);
+            _container.RegisterInstance(BrowserSettings.DefaultInternetExplorerSettings);
 
-            this.driver = this.container.Resolve<IDriver>();
-            this.container.RegisterInstance<INavigationService>(this.driver);
-            this.container.RegisterInstance<IElementFinder>(this.driver);
-            this.container.RegisterInstance<IBrowser>(this.driver);
-            this.container.RegisterInstance<IDialogService>(this.driver);
-            this.container.RegisterInstance<IJavaScriptInvoker>(this.driver);
-            this.container.RegisterInstance<IDriver>(this.driver);
+            _driver = _container.Resolve<IDriver>();
+            _container.RegisterInstance<INavigationService>(_driver);
+            _container.RegisterInstance<IElementFinder>(_driver);
+            _container.RegisterInstance<IBrowser>(_driver);
+            _container.RegisterInstance<IDialogService>(_driver);
+            _container.RegisterInstance<IJavaScriptInvoker>(_driver);
+            _container.RegisterInstance(_driver);
         }
 
         [TestMethod]
         public void SearchForAutomateThePlanet()
         {
-            var bingMainPage = this.container.Resolve<BingMainPage>();
+            var bingMainPage = _container.Resolve<BingMainPage>();
             bingMainPage.Navigate();
             bingMainPage.Search("Automate The Planet");
             bingMainPage.AssertResultsCountIsAsExpected(264);

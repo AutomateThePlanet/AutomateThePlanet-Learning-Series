@@ -32,21 +32,21 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
         {
             get
             {
-                return this.htmlControl.Text;
+                return HtmlControl.Text;
             }
             set
             {
-                this.htmlControl.Text = value;
+                HtmlControl.Text = value;
             }
         }
 
         public void SimulateRealTyping(string valueToBeTyped)
         {
-            this.htmlControl.Focus();
-            this.htmlControl.MouseClick();
+            HtmlControl.Focus();
+            HtmlControl.MouseClick();
             Manager.Current.Desktop.KeyBoard.TypeText(valueToBeTyped, 50, 100, true);
-            this.driver.WaitForAjax();
-            this.driver.WaitUntilReady();
+            Driver.WaitForAjax();
+            Driver.WaitUntilReady();
         }
     }
 }

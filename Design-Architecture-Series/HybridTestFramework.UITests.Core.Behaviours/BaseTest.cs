@@ -25,25 +25,25 @@ namespace HybridTestFramework.UITests.Core.Behaviours
     [TestClass]
     public class BaseTest
     {
-        private readonly TestExecutionProvider currentTestExecutionProvider;
-        private IDriver driver;
-        private readonly IUnityContainer container;
-        private TestContext testContextInstance;
+        private readonly TestExecutionProvider _currentTestExecutionProvider;
+        private IDriver _driver;
+        private readonly IUnityContainer _container;
+        private TestContext _testContextInstance;
 
         public BaseTest()
         {
-            this.container = UnityContainerFactory.GetContainer();
-            this.container.RegisterInstance<IUnityContainer>(this.container);
-            this.currentTestExecutionProvider = new TestExecutionProvider();
-            this.InitializeTestExecutionBehaviorObservers(
-                this.currentTestExecutionProvider, this.container);
+            _container = UnityContainerFactory.GetContainer();
+            _container.RegisterInstance(_container);
+            _currentTestExecutionProvider = new TestExecutionProvider();
+            InitializeTestExecutionBehaviorObservers(
+                _currentTestExecutionProvider, _container);
         }
 
         public IDriver Driver
         {
             get
             {
-                return driver;
+                return _driver;
             }
         }
 
@@ -51,7 +51,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours
         {
             get
             {
-                return container;
+                return _container;
             }
         }
 
@@ -59,11 +59,11 @@ namespace HybridTestFramework.UITests.Core.Behaviours
         {
             get
             {
-                return testContextInstance;
+                return _testContextInstance;
             }
             set
             {
-                testContextInstance = value;
+                _testContextInstance = value;
             }
         }
 
@@ -71,7 +71,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours
         {
             get
             {
-                return this.TestContext.TestName;
+                return TestContext.TestName;
             }
         }
 
@@ -79,15 +79,15 @@ namespace HybridTestFramework.UITests.Core.Behaviours
         public void CoreTestInit()
         {
             var memberInfo = GetCurrentExecutionMethodInfo();
-            this.currentTestExecutionProvider.PreTestInit(
-                (TestOutcome)this.TestContext.CurrentTestOutcome, 
-                this.TestContext.TestName, 
+            _currentTestExecutionProvider.PreTestInit(
+                (TestOutcome)TestContext.CurrentTestOutcome, 
+                TestContext.TestName, 
                 memberInfo);
-            this.driver = this.container.Resolve<IDriver>();
-            this.TestInit();
-            this.currentTestExecutionProvider.PostTestInit(
-                (TestOutcome)this.TestContext.CurrentTestOutcome, 
-                this.TestContext.TestName, 
+            _driver = _container.Resolve<IDriver>();
+            TestInit();
+            _currentTestExecutionProvider.PostTestInit(
+                (TestOutcome)TestContext.CurrentTestOutcome, 
+                TestContext.TestName, 
                 memberInfo);
         }
 
@@ -95,14 +95,14 @@ namespace HybridTestFramework.UITests.Core.Behaviours
         public void CoreTestCleanup()
         {
             var memberInfo = GetCurrentExecutionMethodInfo();
-            this.currentTestExecutionProvider.PreTestCleanup(
-                (TestOutcome)this.TestContext.CurrentTestOutcome, 
-                this.TestContext.TestName, 
+            _currentTestExecutionProvider.PreTestCleanup(
+                (TestOutcome)TestContext.CurrentTestOutcome, 
+                TestContext.TestName, 
                 memberInfo);
-            this.TestCleanup();
-            this.currentTestExecutionProvider.PostTestCleanup(
-                (TestOutcome)this.TestContext.CurrentTestOutcome, 
-                this.TestContext.TestName, 
+            TestCleanup();
+            _currentTestExecutionProvider.PostTestCleanup(
+                (TestOutcome)TestContext.CurrentTestOutcome, 
+                TestContext.TestName, 
                 memberInfo);
         }
 
@@ -127,7 +127,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours
 
         private MethodInfo GetCurrentExecutionMethodInfo()
         {
-            var memberInfo = this.GetType().GetMethod(this.TestContext.TestName);
+            var memberInfo = GetType().GetMethod(TestContext.TestName);
             return memberInfo;
         }
     }

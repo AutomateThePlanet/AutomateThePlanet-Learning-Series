@@ -18,19 +18,19 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 {
     public partial class SeleniumDriver : IElementFinder
     {
-        public TElement Find<TElement>(Core.By by) where TElement : class, Core.Controls.IElement
+        public TElement Find<TElement>(By by) where TElement : class, Core.Controls.IElement
         {
-            return this.elementFinderService.Find<TElement>(this.driver, by);
+            return _elementFinderService.Find<TElement>(_driver, by);
         }
 
-        public IEnumerable<TElement> FindAll<TElement>(Core.By by) where TElement : class, Core.Controls.IElement
+        public IEnumerable<TElement> FindAll<TElement>(By by) where TElement : class, Core.Controls.IElement
         {
-            return this.elementFinderService.FindAll<TElement>(this.driver, by);
+            return _elementFinderService.FindAll<TElement>(_driver, by);
         }
 
-        public bool IsElementPresent(Core.By by)
+        public bool IsElementPresent(By by)
         {
-            return this.elementFinderService.IsElementPresent(this.driver, by);
+            return _elementFinderService.IsElementPresent(_driver, by);
         }
     }
 }

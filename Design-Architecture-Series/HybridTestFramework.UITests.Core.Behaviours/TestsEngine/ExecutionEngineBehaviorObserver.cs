@@ -33,26 +33,26 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
 {
     public class ExecutionEngineBehaviorObserver : BaseTestBehaviorObserver
     {
-        private readonly IUnityContainer unityContainer;
-        private ExecutionEngineType executionEngineType;
-        private Browsers executionBrowserType;
-        private IDriver driver;
+        private readonly IUnityContainer _unityContainer;
+        private ExecutionEngineType _executionEngineType;
+        private Browsers _executionBrowserType;
+        private IDriver _driver;
 
         public ExecutionEngineBehaviorObserver(IUnityContainer unityContainer)
         {
-            this.unityContainer = unityContainer;
+            this._unityContainer = unityContainer;
         }
 
         protected override void PostTestCleanup(object sender, TestExecutionEventArgs e)
         {
-            this.driver.Quit();
+            _driver.Quit();
         }
 
         protected override void PreTestInit(object sender, TestExecutionEventArgs e)
         {
-            this.executionBrowserType = this.ConfigureTestExecutionBrowser(e.MemberInfo);
-            this.executionEngineType = this.GetExecutionEngineType(e.MemberInfo);
-            this.ResolveAllDriverDependencies();
+            _executionBrowserType = ConfigureTestExecutionBrowser(e.MemberInfo);
+            _executionEngineType = GetExecutionEngineType(e.MemberInfo);
+            ResolveAllDriverDependencies();
         }
 
         private ExecutionEngineType GetExecutionEngineTypeByMethodInfo(MemberInfo memberInfo)
@@ -89,8 +89,8 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
         {
             var executionEngineType = ExecutionEngineType.TestStudio;
 
-            ExecutionEngineType methodExecutionEngineType = this.GetExecutionEngineTypeByMethodInfo(memberInfo);
-            ExecutionEngineType classExecutionEngineType = this.GetExecutionEngineType(memberInfo.DeclaringType);
+            var methodExecutionEngineType = GetExecutionEngineTypeByMethodInfo(memberInfo);
+            var classExecutionEngineType = GetExecutionEngineType(memberInfo.DeclaringType);
 
             if (methodExecutionEngineType != ExecutionEngineType.NotSpecified)
             {
@@ -106,13 +106,13 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
 
         private void ResolveAllDriverDependencies()
         {
-            var browserSettings = new BrowserSettings(this.executionBrowserType);
-            if (this.executionEngineType.Equals(ExecutionEngineType.TestStudio))
+            var browserSettings = new BrowserSettings(_executionBrowserType);
+            if (_executionEngineType.Equals(ExecutionEngineType.TestStudio))
             {
                 #region Default Registration
                 
-                this.unityContainer.RegisterType<IDriver, TestingFrameworkDriver>(
-                    new InjectionFactory(x => new TestingFrameworkDriver(this.unityContainer, browserSettings)));
+                _unityContainer.RegisterType<IDriver, TestingFrameworkDriver>(
+                    new InjectionFactory(x => new TestingFrameworkDriver(_unityContainer, browserSettings)));
                 
                 #endregion
                 
@@ -137,43 +137,43 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
                 
                 #endregion
                 
-                this.driver = this.unityContainer.Resolve<IDriver>();
+                _driver = _unityContainer.Resolve<IDriver>();
                 
-                this.unityContainer.RegisterType<IButton, TestingFrameworkControls.Button>();
-                this.unityContainer.RegisterType<ITextBox, TestingFrameworkControls.TextBox>();
-                this.unityContainer.RegisterType<IDiv, TestingFrameworkControls.Div>();
-                this.unityContainer.RegisterType<ISearch, TestingFrameworkControls.Search>();
-                this.unityContainer.RegisterType<IInputSubmit, TestingFrameworkControls.InputSubmit>();
+                _unityContainer.RegisterType<IButton, TestingFrameworkControls.Button>();
+                _unityContainer.RegisterType<ITextBox, TestingFrameworkControls.TextBox>();
+                _unityContainer.RegisterType<IDiv, TestingFrameworkControls.Div>();
+                _unityContainer.RegisterType<ISearch, TestingFrameworkControls.Search>();
+                _unityContainer.RegisterType<IInputSubmit, TestingFrameworkControls.InputSubmit>();
             }
-            else if (this.executionEngineType.Equals(ExecutionEngineType.WebDriver))
+            else if (_executionEngineType.Equals(ExecutionEngineType.WebDriver))
             {
-                this.unityContainer.RegisterType<IDriver, SeleniumDriver>(
-                    new InjectionFactory(x => new SeleniumDriver(this.unityContainer, browserSettings)));
-                this.driver = this.unityContainer.Resolve<IDriver>();
+                _unityContainer.RegisterType<IDriver, SeleniumDriver>(
+                    new InjectionFactory(x => new SeleniumDriver(_unityContainer, browserSettings)));
+                _driver = _unityContainer.Resolve<IDriver>();
                 
-                this.unityContainer.RegisterType<IButton, SeleniumControls.Button>();
-                this.unityContainer.RegisterType<ITextBox, SeleniumControls.TextBox>();
-                this.unityContainer.RegisterType<IDiv, SeleniumControls.Div>();
-                this.unityContainer.RegisterType<ISearch, SeleniumControls.Search>();
-                this.unityContainer.RegisterType<IInputSubmit, SeleniumControls.InputSubmit>();
+                _unityContainer.RegisterType<IButton, SeleniumControls.Button>();
+                _unityContainer.RegisterType<ITextBox, SeleniumControls.TextBox>();
+                _unityContainer.RegisterType<IDiv, SeleniumControls.Div>();
+                _unityContainer.RegisterType<ISearch, SeleniumControls.Search>();
+                _unityContainer.RegisterType<IInputSubmit, SeleniumControls.InputSubmit>();
             }
             
-            this.unityContainer.RegisterInstance<IDriver>(this.driver);
-            this.unityContainer.RegisterInstance<IBrowser>(this.driver);
-            this.unityContainer.RegisterInstance<ICookieService>(this.driver);
-            this.unityContainer.RegisterInstance<IDialogService>(this.driver);
-            this.unityContainer.RegisterInstance<IJavaScriptInvoker>(this.driver);
-            this.unityContainer.RegisterInstance<INavigationService>(this.driver);
-            this.unityContainer.RegisterInstance<IElementFinder>(this.driver);
+            _unityContainer.RegisterInstance(_driver);
+            _unityContainer.RegisterInstance<IBrowser>(_driver);
+            _unityContainer.RegisterInstance<ICookieService>(_driver);
+            _unityContainer.RegisterInstance<IDialogService>(_driver);
+            _unityContainer.RegisterInstance<IJavaScriptInvoker>(_driver);
+            _unityContainer.RegisterInstance<INavigationService>(_driver);
+            _unityContainer.RegisterInstance<IElementFinder>(_driver);
             
             # region 11. Failed Tests Аnalysis - Decorator Design Pattern
             
-            this.unityContainer.RegisterType<IEnumerable<IExceptionAnalysationHandler>, IExceptionAnalysationHandler[]>();
-            this.unityContainer.RegisterType<IUiExceptionAnalyser, UiExceptionAnalyser>();
-            this.unityContainer.RegisterType<IElementFinder, ExceptionAnalyzedElementFinder>(
-                new InjectionFactory(x => new ExceptionAnalyzedElementFinder(this.driver, this.unityContainer.Resolve<IUiExceptionAnalyser>())));
-            this.unityContainer.RegisterType<INavigationService, ExceptionAnalyzedNavigationService>(
-                new InjectionFactory(x => new ExceptionAnalyzedNavigationService(this.driver, this.unityContainer.Resolve<IUiExceptionAnalyser>())));
+            _unityContainer.RegisterType<IEnumerable<IExceptionAnalysationHandler>, IExceptionAnalysationHandler[]>();
+            _unityContainer.RegisterType<IUiExceptionAnalyser, UiExceptionAnalyser>();
+            _unityContainer.RegisterType<IElementFinder, ExceptionAnalyzedElementFinder>(
+                new InjectionFactory(x => new ExceptionAnalyzedElementFinder(_driver, _unityContainer.Resolve<IUiExceptionAnalyser>())));
+            _unityContainer.RegisterType<INavigationService, ExceptionAnalyzedNavigationService>(
+                new InjectionFactory(x => new ExceptionAnalyzedNavigationService(_driver, _unityContainer.Resolve<IUiExceptionAnalyser>())));
         
             #endregion
         }
@@ -181,8 +181,8 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
         private Browsers ConfigureTestExecutionBrowser(MemberInfo memberInfo)
         {
             var currentExecutionBrowserType = Browsers.Firefox;
-            Browsers methodExecutionBrowser = this.GetExecutionBrowser(memberInfo);
-            Browsers classExecutionBrowser = this.GetExecutionBrowser(memberInfo.DeclaringType);
+            var methodExecutionBrowser = GetExecutionBrowser(memberInfo);
+            var classExecutionBrowser = GetExecutionBrowser(memberInfo.DeclaringType);
             
             if (methodExecutionBrowser != Browsers.NotSet)
             {

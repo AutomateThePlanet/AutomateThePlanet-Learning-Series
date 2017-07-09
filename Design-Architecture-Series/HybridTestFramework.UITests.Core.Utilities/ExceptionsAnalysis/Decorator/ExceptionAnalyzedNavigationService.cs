@@ -21,20 +21,20 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorato
     {
         public ExceptionAnalyzedNavigationService(INavigationService navigationService, IUiExceptionAnalyser exceptionAnalyser)
         {
-            this.NavigationService = navigationService;
-            this.UiExceptionAnalyser = exceptionAnalyser;
+            NavigationService = navigationService;
+            UiExceptionAnalyser = exceptionAnalyser;
         }
 
         public ExceptionAnalyzedNavigationService(ExceptionAnalyzedNavigationService exceptionAnalyzedNavigationService)
         {
-            this.UiExceptionAnalyser = exceptionAnalyzedNavigationService.UiExceptionAnalyser;
-            this.NavigationService = exceptionAnalyzedNavigationService.NavigationService;
+            UiExceptionAnalyser = exceptionAnalyzedNavigationService.UiExceptionAnalyser;
+            NavigationService = exceptionAnalyzedNavigationService.NavigationService;
         }
 
         public ExceptionAnalyzedNavigationService(ExceptionAnalyzedNavigationService exceptionAnalyzedNavigationService, IUiExceptionAnalyser exceptionAnalyser)
         {
-            this.UiExceptionAnalyser = exceptionAnalyser;
-            this.NavigationService = exceptionAnalyzedNavigationService.NavigationService;
+            UiExceptionAnalyser = exceptionAnalyser;
+            NavigationService = exceptionAnalyzedNavigationService.NavigationService;
         }
 
         public IUiExceptionAnalyser UiExceptionAnalyser { get; private set; }
@@ -47,7 +47,7 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorato
         {
             get
             {
-                return this.NavigationService.Url;
+                return NavigationService.Url;
             }
         }
 
@@ -55,34 +55,34 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorato
         {
             get
             {
-                return this.NavigationService.Title;
+                return NavigationService.Title;
             }
         }
 
         public void Navigate(string relativeUrl, string currentLocation, bool sslEnabled = false)
         {
-            this.NavigationService.Navigate(relativeUrl, currentLocation, sslEnabled);
+            NavigationService.Navigate(relativeUrl, currentLocation, sslEnabled);
         }
 
         public void NavigateByAbsoluteUrl(string absoluteUrl, bool useDecodedUrl = true)
         {
-            this.NavigationService.NavigateByAbsoluteUrl(absoluteUrl, useDecodedUrl);
+            NavigationService.NavigateByAbsoluteUrl(absoluteUrl, useDecodedUrl);
         }
 
         public void Navigate(string currentLocation, bool sslEnabled = false)
         {
-            this.NavigationService.Navigate(currentLocation, sslEnabled);
+            NavigationService.Navigate(currentLocation, sslEnabled);
         }
 
         public void WaitForUrl(string url)
         {
             try
             {
-                this.NavigationService.WaitForUrl(url);
+                NavigationService.WaitForUrl(url);
             }
             catch (Exception ex)
             {
-                this.UiExceptionAnalyser.Analyse(ex, this.NavigationService);
+                UiExceptionAnalyser.Analyse(ex, NavigationService);
                 throw;
             }
         }
@@ -91,11 +91,11 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorato
         {
             try
             {
-                this.NavigationService.WaitForPartialUrl(url);
+                NavigationService.WaitForPartialUrl(url);
             }
             catch (Exception ex)
             {
-                this.UiExceptionAnalyser.Analyse(ex, this.NavigationService);
+                UiExceptionAnalyser.Analyse(ex, NavigationService);
                 throw;
             }
         }

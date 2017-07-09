@@ -39,12 +39,12 @@ namespace HybridTestFramework.Core.Asserts
 
         public static void AreEqual<T>(T expected, T actual) where T : class
         {
-            assert.AreEqual<T>(expected, actual);
+            assert.AreEqual(expected, actual);
         }
 
         public static void AreEqual<T>(T expected, T actual, string message) where T : class
         {
-            assert.AreEqual<T>(expected, actual, message);
+            assert.AreEqual(expected, actual, message);
         }
 
         public static void AreNotEqual(object expected, object actual)
@@ -59,12 +59,12 @@ namespace HybridTestFramework.Core.Asserts
 
         public static void AreNotEqual<T>(T expected, T actual) where T : class
         {
-            assert.AreNotEqual<T>(expected, actual);
+            assert.AreNotEqual(expected, actual);
         }
 
         public static void AreNotEqual<T>(T expected, T actual, string message) where T : class
         {
-            assert.AreNotEqual<T>(expected, actual, message);
+            assert.AreNotEqual(expected, actual, message);
         }
 
         public static void IsFalse(bool condition)

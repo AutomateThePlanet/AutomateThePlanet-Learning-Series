@@ -21,13 +21,13 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 {
     public partial class SeleniumDriver : INavigationService
     {
-        public event EventHandler<Core.Events.PageEventArgs> Navigated;
+        public event EventHandler<PageEventArgs> Navigated;
 
         public string Url
         {
             get
             {
-                return this.driver.Url;
+                return _driver.Url;
             }
         }
 
@@ -35,7 +35,7 @@ namespace HybridTestFramework.UITests.Selenium.Engine
         {
             get
             {
-                return this.driver.Title;
+                return _driver.Title;
             }
         }
 
@@ -51,7 +51,7 @@ namespace HybridTestFramework.UITests.Selenium.Engine
             {
                 urlToNavigateTo = HttpUtility.UrlDecode(urlToNavigateTo);
             }
-            this.driver.Navigate().GoToUrl(urlToNavigateTo);
+            _driver.Navigate().GoToUrl(urlToNavigateTo);
         }
 
         public void Navigate(string currentLocation, bool sslEnabled = false)
@@ -61,29 +61,33 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 
         public void WaitForUrl(string url)
         {
-            WebDriverWait wait = new WebDriverWait(this.driver, TimeSpan.FromSeconds(this.browserSettings.ScriptTimeout));
-            wait.PollingInterval = TimeSpan.FromSeconds(0.8);
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(_browserSettings.ScriptTimeout))
+            {
+                PollingInterval = TimeSpan.FromSeconds(0.8)
+            };
             wait.Until(x => string.Compare(x.Url, url, StringComparison.InvariantCultureIgnoreCase) == 0);
-            this.RaiseNavigated(this.driver.Url);
-            this.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            RaiseNavigated(_driver.Url);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         public void WaitForPartialUrl(string url)
         {
-            WebDriverWait wait = new WebDriverWait(
-                this.driver, 
-                TimeSpan.FromSeconds(this.browserSettings.ScriptTimeout));
-            wait.PollingInterval = TimeSpan.FromSeconds(0.8);
+            var wait = new WebDriverWait(
+                _driver,
+                TimeSpan.FromSeconds(_browserSettings.ScriptTimeout))
+            {
+                PollingInterval = TimeSpan.FromSeconds(0.8)
+            };
             wait.Until(x => x.Url.Contains(url) == true);
-            this.RaiseNavigated(this.driver.Url);
-            this.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            RaiseNavigated(_driver.Url);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         private void RaiseNavigated(string url)
         {
-            if (this.Navigated != null)
+            if (Navigated != null)
             {
-                this.Navigated(this, new PageEventArgs(url));
+                Navigated(this, new PageEventArgs(url));
             }
         }
     }

@@ -24,7 +24,7 @@ namespace CreateHybridTestFrameworkInterfaceContracts.HybridVersion.Pages
         {
             get
             {
-                return this.ElementFinder.Find<IElement>(By.Id("sb_form_q"));
+                return ElementFinder.Find<IElement>(By.Id("sb_form_q"));
             }
         }
 
@@ -32,7 +32,7 @@ namespace CreateHybridTestFrameworkInterfaceContracts.HybridVersion.Pages
         {
             get
             {
-                return this.ElementFinder.Find<IElement>(By.Id("sb_form_go"));
+                return ElementFinder.Find<IElement>(By.Id("sb_form_go"));
             }
         }
 
@@ -40,7 +40,7 @@ namespace CreateHybridTestFrameworkInterfaceContracts.HybridVersion.Pages
         {
             get
             {
-                return this.ElementFinder.Find<IElement>(By.Id("b_tween"));
+                return ElementFinder.Find<IElement>(By.Id("b_tween"));
             }
         }
     }

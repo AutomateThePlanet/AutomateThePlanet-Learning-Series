@@ -27,12 +27,12 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfR
 
         protected override bool IsApplicable(params object[] context)
         {
-            IBrowser browser = (IBrowser)context.FirstOrDefault();
+            var browser = (IBrowser)context.FirstOrDefault();
             if (browser == null)
             {
                 throw new ArgumentNullException("The browser cannot be null!");
             }
-            bool result = browser.SourceString.Contains(this.TextToSearchInSource);
+            var result = browser.SourceString.Contains(TextToSearchInSource);
             return result;
         }
     }

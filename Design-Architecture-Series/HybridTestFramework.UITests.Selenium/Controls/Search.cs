@@ -31,12 +31,12 @@ namespace HybridTestFramework.UITests.Selenium.Controls
         {
             get
             {
-                return this.webElement.GetAttribute("value");
+                return WebElement.GetAttribute("value");
             }
             set
             {
-                this.webElement.Clear();
-                this.webElement.SendKeys(value);
+                WebElement.Clear();
+                WebElement.SendKeys(value);
             }
         }
 

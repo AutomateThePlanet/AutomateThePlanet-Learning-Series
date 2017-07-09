@@ -24,21 +24,21 @@ namespace HybridTestFramework.UITests.Core.Behaviours.VideoRecording
 {
     public class VideoBehaviorObserver : BaseTestBehaviorObserver
     {
-        private readonly IVideoRecorder videoRecorder;
-        private VideoRecordingMode recordingMode;
+        private readonly IVideoRecorder _videoRecorder;
+        private VideoRecordingMode _recordingMode;
         
         public VideoBehaviorObserver(IVideoRecorder videoRecorder)
         {
-            this.videoRecorder = videoRecorder;
+            this._videoRecorder = videoRecorder;
         }
 
         protected override void PostTestInit(object sender, TestExecutionEventArgs e)
         {
-            this.recordingMode = this.ConfigureTestVideoRecordingMode(e.MemberInfo);
+            _recordingMode = ConfigureTestVideoRecordingMode(e.MemberInfo);
 
-            if (this.recordingMode != VideoRecordingMode.DoNotRecord)
+            if (_recordingMode != VideoRecordingMode.DoNotRecord)
             {
-                this.videoRecorder.StartCapture();
+                _videoRecorder.StartCapture();
             }
         }
 
@@ -46,10 +46,10 @@ namespace HybridTestFramework.UITests.Core.Behaviours.VideoRecording
         {
             try
             {
-                string videosFolderPath = ConfigurationManager.AppSettings["videosFolderPath"];
-                string testName = e.TestName;
-                bool hasTestPassed = e.TestOutcome.Equals(TestOutcome.Passed);
-                this.SaveVideoDependingOnTestoutcome(videosFolderPath, testName, hasTestPassed);
+                var videosFolderPath = ConfigurationManager.AppSettings["videosFolderPath"];
+                var testName = e.TestName;
+                var hasTestPassed = e.TestOutcome.Equals(TestOutcome.Passed);
+                SaveVideoDependingOnTestoutcome(videosFolderPath, testName, hasTestPassed);
             }
             catch (Exception ex)
             {
@@ -58,31 +58,31 @@ namespace HybridTestFramework.UITests.Core.Behaviours.VideoRecording
             }
             finally
             {
-                this.videoRecorder.Dispose();
+                _videoRecorder.Dispose();
             }
         }
 
         private void SaveVideoDependingOnTestoutcome(string videoFolderPath, string testName, bool haveTestPassed)
         {
-            if (this.recordingMode != VideoRecordingMode.DoNotRecord &&
-                this.videoRecorder.Status == VideoRecordingStatus.Running)
+            if (_recordingMode != VideoRecordingMode.DoNotRecord &&
+                _videoRecorder.Status == VideoRecordingStatus.Running)
             {
-                bool shouldRecordAlways = this.recordingMode == VideoRecordingMode.Always;
-                bool shouldRecordAllPassedTests = haveTestPassed && this.recordingMode.Equals(VideoRecordingMode.OnlyPass);
-                bool shouldRecordAllFailedTests = !haveTestPassed && this.recordingMode.Equals(VideoRecordingMode.OnlyFail);
+                var shouldRecordAlways = _recordingMode == VideoRecordingMode.Always;
+                var shouldRecordAllPassedTests = haveTestPassed && _recordingMode.Equals(VideoRecordingMode.OnlyPass);
+                var shouldRecordAllFailedTests = !haveTestPassed && _recordingMode.Equals(VideoRecordingMode.OnlyFail);
                 if (shouldRecordAlways || shouldRecordAllPassedTests || shouldRecordAllFailedTests)
                 {
-                    this.videoRecorder.SaveVideo(videoFolderPath, testName);
+                    _videoRecorder.SaveVideo(videoFolderPath, testName);
                 }
             }
         }
 
         private VideoRecordingMode ConfigureTestVideoRecordingMode(MemberInfo memberInfo)
         {
-            VideoRecordingMode methodRecordingMode = this.GetVideoRecordingModeByMethodInfo(memberInfo);
-            VideoRecordingMode classRecordingMode = this.GetVideoRecordingModeType(memberInfo.DeclaringType);
-            VideoRecordingMode videoRecordingMode = VideoRecordingMode.DoNotRecord;
-            bool shouldTakeVideos = bool.Parse(ConfigurationManager.AppSettings["shouldTakeVideosOnExecution"]);
+            var methodRecordingMode = GetVideoRecordingModeByMethodInfo(memberInfo);
+            var classRecordingMode = GetVideoRecordingModeType(memberInfo.DeclaringType);
+            var videoRecordingMode = VideoRecordingMode.DoNotRecord;
+            var shouldTakeVideos = bool.Parse(ConfigurationManager.AppSettings["shouldTakeVideosOnExecution"]);
             
             if (methodRecordingMode != VideoRecordingMode.Ignore && shouldTakeVideos)
             {

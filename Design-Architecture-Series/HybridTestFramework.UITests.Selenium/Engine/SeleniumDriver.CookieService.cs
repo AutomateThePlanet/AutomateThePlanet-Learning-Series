@@ -20,24 +20,24 @@ namespace HybridTestFramework.UITests.Selenium.Engine
     {
         public string GetCookie(string host, string cookieName)
         {
-            var myCookie = this.driver.Manage().Cookies.GetCookieNamed(cookieName);
+            var myCookie = _driver.Manage().Cookies.GetCookieNamed(cookieName);
             return myCookie.Value;
         }
 
         public void AddCookie(string cookieName, string cookieValue, string host)
         {
-            Cookie cookie = new Cookie(cookieName, cookieValue);
-            this.driver.Manage().Cookies.AddCookie(cookie);
+            var cookie = new Cookie(cookieName, cookieValue);
+            _driver.Manage().Cookies.AddCookie(cookie);
         }
 
         public void DeleteCookie(string cookieName)
         {
-            this.driver.Manage().Cookies.DeleteCookieNamed("CookieName");
+            _driver.Manage().Cookies.DeleteCookieNamed("CookieName");
         }
 
         public void CleanAllCookies()
         {
-            this.driver.Manage().Cookies.DeleteAllCookies();
+            _driver.Manage().Cookies.DeleteAllCookies();
         }
     }
 }

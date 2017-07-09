@@ -16,7 +16,7 @@ namespace HybridTestFramework.UITests.Core
 {
     public interface IDialogService
     {
-        void Handle(System.Action action = null, DialogButton dialogButton = DialogButton.OK);
+        void Handle(System.Action action = null, DialogButton dialogButton = DialogButton.Ok);
 
         void HandleLogonDialog(string userName, string password);
 

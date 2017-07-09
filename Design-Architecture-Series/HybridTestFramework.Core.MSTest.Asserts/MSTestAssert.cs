@@ -18,7 +18,7 @@ using VSU = Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace HybridTestFramework.Core.MSTest.Asserts
 {
-    public class MSTestAssert : IAssert
+    public class MsTestAssert : IAssert
     {
         public void AreEqual(object expected, object actual)
         {
@@ -32,12 +32,12 @@ namespace HybridTestFramework.Core.MSTest.Asserts
 
         public void AreEqual<T>(T expected, T actual) where T : class
         {
-            VSU.Assert.AreEqual<T>(expected, actual);
+            VSU.Assert.AreEqual(expected, actual);
         }
 
         public void AreEqual<T>(T expected, T actual, string message) where T : class
         {
-            VSU.Assert.AreEqual<T>(expected, actual, message);
+            VSU.Assert.AreEqual(expected, actual, message);
         }
 
         public void AreNotEqual(object expected, object actual)
@@ -52,12 +52,12 @@ namespace HybridTestFramework.Core.MSTest.Asserts
 
         public void AreNotEqual<T>(T expected, T actual) where T : class
         {
-            VSU.Assert.AreNotEqual<T>(expected, actual);
+            VSU.Assert.AreNotEqual(expected, actual);
         }
 
         public void AreNotEqual<T>(T expected, T actual, string message) where T : class
         {
-            VSU.Assert.AreNotEqual<T>(expected, actual, message);
+            VSU.Assert.AreNotEqual(expected, actual, message);
         }
 
         public void Fail(string message)

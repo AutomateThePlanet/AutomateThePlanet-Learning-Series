@@ -21,28 +21,28 @@ namespace CreateHybridTestFrameworkInterfaceContracts.HybridVersion
     [TestClass]
     public class BingTests
     {
-        private BingMainPage bingMainPage;
-        private IDriver driver;
+        private BingMainPage _bingMainPage;
+        private IDriver _driver;
 
         [TestInitialize]
         public void SetupTest()
         {
-            this.driver = new SeleniumDriver();
-            this.bingMainPage = new BingMainPage(this.driver, this.driver);
+            _driver = new SeleniumDriver();
+            _bingMainPage = new BingMainPage(_driver, _driver);
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            this.driver.Quit();
+            _driver.Quit();
         }
 
         [TestMethod]
         public void SearchForAutomateThePlanet()
         {
-            this.bingMainPage.Navigate();
-            this.bingMainPage.Search("Automate The Planet");
-            this.bingMainPage.AssertResultsCountIsAsExpected(264);
+            _bingMainPage.Navigate();
+            _bingMainPage.Search("Automate The Planet");
+            _bingMainPage.AssertResultsCountIsAsExpected(264);
         }
     }
 }

@@ -91,7 +91,7 @@ namespace CreateHybridTestFrameworkInterfaceContracts.HybridVersion
             throw new NotImplementedException();
         }
 
-        public void Handle(Action action = null, DialogButton dialogButton = DialogButton.OK)
+        public void Handle(Action action = null, DialogButton dialogButton = DialogButton.Ok)
         {
             throw new NotImplementedException();
         }

@@ -26,7 +26,7 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorato
 
         public void AddExceptionAnalysationHandler(string textToSearchInSource, string detailedIssueExplanation)
         {
-            this.AddExceptionAnalysationHandler<CustomHtmlExceptionHandler>(new CustomHtmlExceptionHandler(textToSearchInSource, detailedIssueExplanation));
+            AddExceptionAnalysationHandler<CustomHtmlExceptionHandler>(new CustomHtmlExceptionHandler(textToSearchInSource, detailedIssueExplanation));
         }
     }
 }

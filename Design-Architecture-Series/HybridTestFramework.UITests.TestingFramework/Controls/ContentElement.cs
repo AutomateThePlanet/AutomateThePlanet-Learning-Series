@@ -24,20 +24,20 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
         IContentElement
         where TElementType : HtmlControl, new()
     {
-        private readonly HtmlControl inputControl;
+        private readonly HtmlControl _inputControl;
 
         public ContentElement(IDriver driver,
             ArtOfTest.WebAii.ObjectModel.Element element,
             IUnityContainer container) : base(driver, element, container)
         {
-            this.inputControl = element.As<TElementType>();
+            _inputControl = element.As<TElementType>();
         }
 
         public new string Content
         {
             get
             {
-                return this.inputControl.BaseElement.InnerText;
+                return _inputControl.BaseElement.InnerText;
             }
         }
 
@@ -45,18 +45,18 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
         {
             get
             {
-                return this.htmlControl.IsEnabled;
+                return HtmlControl.IsEnabled;
             }
         }
 
         public void Hover()
         {
-            this.inputControl.MouseHover();
+            _inputControl.MouseHover();
         }
 
         public void Focus()
         {
-            this.htmlControl.Focus();
+            HtmlControl.Focus();
         }
     }
 }

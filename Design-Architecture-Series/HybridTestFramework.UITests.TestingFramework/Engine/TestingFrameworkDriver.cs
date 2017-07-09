@@ -21,25 +21,25 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
 {
     public partial class TestingFrameworkDriver : IDriver
     {
-        private readonly Browser originalBrowser;
-        private readonly ElementFinderService elementFinderService;
+        private readonly Browser _originalBrowser;
+        private readonly ElementFinderService _elementFinderService;
         ////private readonly ExceptionAnalizedElementFinderService elementFinderService;
-        private Manager driver;
-        private IUnityContainer container;
-        private BrowserSettings browserSettings;
-        private Browser currentActiveBrowser;
+        private Manager _driver;
+        private IUnityContainer _container;
+        private BrowserSettings _browserSettings;
+        private Browser _currentActiveBrowser;
 
         public TestingFrameworkDriver(
             IUnityContainer container,
             BrowserSettings browserSettings)
         {
-            this.container = container;
-            this.browserSettings = browserSettings;
-            this.InitializeManager(browserSettings);
-            this.LaunchNewBrowser();
-            this.originalBrowser = this.driver.ActiveBrowser;
-            this.currentActiveBrowser = this.driver.ActiveBrowser;
-            this.elementFinderService = new ElementFinderService(container);
+            this._container = container;
+            this._browserSettings = browserSettings;
+            InitializeManager(browserSettings);
+            LaunchNewBrowser();
+            _originalBrowser = _driver.ActiveBrowser;
+            _currentActiveBrowser = _driver.ActiveBrowser;
+            _elementFinderService = new ElementFinderService(container);
         }
 
         # region 9. Failed Tests Аnalysis- Chain of Responsibility Design Pattern
@@ -61,7 +61,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
         {
             if (Manager.Current == null)
             {
-                Settings localSettings = new Settings();
+                var localSettings = new Settings();
                 localSettings.Web.KillBrowserProcessOnClose = true;
                 localSettings.Web.RecycleBrowser = true;
                 localSettings.DisableDialogMonitoring = true;
@@ -69,13 +69,13 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
                     UnexpectedDialogAction.DoNotHandle;
                 localSettings.ElementWaitTimeout =
                     browserSettings.ElementsWaitTimeout;
-                this.ResolveBrowser(
+                ResolveBrowser(
                     localSettings,
                     browserSettings.Type);
                 if (localSettings.Web.DefaultBrowser != BrowserType.NotSet)
                 {
-                    this.driver = new Manager(localSettings);
-                    this.driver.Start();
+                    _driver = new Manager(localSettings);
+                    _driver.Start();
                 }
             }
         }

@@ -20,25 +20,25 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorato
 {
     public class ExceptionAnalyser : IExceptionAnalyser
     {
-        private readonly List<IExceptionAnalysationHandler> exceptionAnalysationHandlers;
+        private readonly List<IExceptionAnalysationHandler> _exceptionAnalysationHandlers;
 
         public ExceptionAnalyser(IEnumerable<IExceptionAnalysationHandler> handlers)
         {
-            this.exceptionAnalysationHandlers = new List<IExceptionAnalysationHandler>();
-            this.exceptionAnalysationHandlers.AddRange(handlers);
+            _exceptionAnalysationHandlers = new List<IExceptionAnalysationHandler>();
+            _exceptionAnalysationHandlers.AddRange(handlers);
         }
 
         public void RemoveFirstExceptionAnalysationHandler()
         {
-            if (exceptionAnalysationHandlers.Count > 0)
+            if (_exceptionAnalysationHandlers.Count > 0)
             {
-                exceptionAnalysationHandlers.RemoveAt(0);
+                _exceptionAnalysationHandlers.RemoveAt(0);
             }
         }
 
         public void Analyse(Exception ex = null, params object[] context)
         {
-            foreach (var exceptionHandler in exceptionAnalysationHandlers)
+            foreach (var exceptionHandler in _exceptionAnalysationHandlers)
             {
                 if (exceptionHandler.IsApplicable(ex, context))
                 {
@@ -50,13 +50,13 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorato
         public void AddExceptionAnalysationHandler<TExceptionAnalysationHandler>(IExceptionAnalysationHandler exceptionAnalysationHandler)
             where TExceptionAnalysationHandler : IExceptionAnalysationHandler
         {
-            exceptionAnalysationHandlers.Insert(0, exceptionAnalysationHandler);
+            _exceptionAnalysationHandlers.Insert(0, exceptionAnalysationHandler);
         }
 
         public void AddExceptionAnalysationHandler<TExceptionAnalysationHandler>()
             where TExceptionAnalysationHandler : IExceptionAnalysationHandler, new()
         {
-            exceptionAnalysationHandlers.Insert(0, new TExceptionAnalysationHandler());
+            _exceptionAnalysationHandlers.Insert(0, new TExceptionAnalysationHandler());
         }
     }
 }

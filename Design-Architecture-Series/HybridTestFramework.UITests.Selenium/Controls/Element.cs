@@ -23,20 +23,20 @@ namespace HybridTestFramework.UITests.Selenium.Controls
 {
     public class Element : IElement
     {
-        protected readonly IWebElement webElement;
-        protected readonly IWebDriver driver;
-        protected readonly ElementFinderService elementFinderService;
+        protected readonly IWebElement WebElement;
+        protected readonly IWebDriver Driver;
+        protected readonly ElementFinderService ElementFinderService;
 
         public Element(IWebDriver driver, IWebElement webElement, IUnityContainer container)
         {
-            this.driver = driver;
-            this.webElement = webElement;
-            this.elementFinderService = new ElementFinderService(container);
+            this.Driver = driver;
+            this.WebElement = webElement;
+            ElementFinderService = new ElementFinderService(container);
         }
 
         public string GetAttribute(string name)
         {
-            return this.webElement.GetAttribute(name);
+            return WebElement.GetAttribute(name);
         }
 
         public void WaitForExists()
@@ -51,20 +51,20 @@ namespace HybridTestFramework.UITests.Selenium.Controls
 
         public void Click()
         {
-            this.webElement.Click();
+            WebElement.Click();
         }
 
         public void MouseClick()
         {
-            Actions builder = new Actions(this.driver);
-            builder.MoveToElement(this.webElement).Click().Build().Perform();
+            var builder = new Actions(Driver);
+            builder.MoveToElement(WebElement).Click().Build().Perform();
         }
 
         public bool IsVisible
         {
             get
             {
-                return this.webElement.Displayed;
+                return WebElement.Displayed;
             }
         }
 
@@ -72,7 +72,7 @@ namespace HybridTestFramework.UITests.Selenium.Controls
         {
             get
             {
-                return this.webElement.Size.Width;
+                return WebElement.Size.Width;
             }
         }
 
@@ -80,7 +80,7 @@ namespace HybridTestFramework.UITests.Selenium.Controls
         {
             get
             {
-                return webElement.GetAttribute("className");
+                return WebElement.GetAttribute("className");
             }
         }
 
@@ -88,23 +88,23 @@ namespace HybridTestFramework.UITests.Selenium.Controls
         {
             get
             {
-                return this.webElement.Text;
+                return WebElement.Text;
             }
         }
 
-        public TElement Find<TElement>(Core.By by) where TElement : class, Core.Controls.IElement
+        public TElement Find<TElement>(Core.By by) where TElement : class, IElement
         {
-            return this.elementFinderService.Find<TElement>(this.webElement, by);
+            return ElementFinderService.Find<TElement>(WebElement, by);
         }
 
-        public IEnumerable<TElement> FindAll<TElement>(Core.By by) where TElement : class, Core.Controls.IElement
+        public IEnumerable<TElement> FindAll<TElement>(Core.By by) where TElement : class, IElement
         {
-            return this.elementFinderService.FindAll<TElement>(this.webElement, by);
+            return ElementFinderService.FindAll<TElement>(WebElement, by);
         }
 
         public bool IsElementPresent(Core.By by)
         {
-            return this.elementFinderService.IsElementPresent(this.webElement, by);
+            return ElementFinderService.IsElementPresent(WebElement, by);
         }
     }
 }

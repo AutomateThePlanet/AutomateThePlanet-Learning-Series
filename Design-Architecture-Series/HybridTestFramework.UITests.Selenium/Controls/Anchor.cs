@@ -31,7 +31,7 @@ namespace HybridTestFramework.UITests.Selenium.Controls
         {
             get
             {
-                return this.webElement.GetAttribute("href");
+                return WebElement.GetAttribute("href");
             }
         }
     }

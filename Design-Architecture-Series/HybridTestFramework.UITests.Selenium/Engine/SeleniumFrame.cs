@@ -17,18 +17,18 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 {
     public class SeleniumFrame : IFrame
     {
-        private readonly string name;
+        private readonly string _name;
 
         public SeleniumFrame(string name)
         {
-            this.name = name;
+            this._name = name;
         }
 
         public string Name
         {
             get
             {
-                return this.name;
+                return _name;
             }
         }
     }

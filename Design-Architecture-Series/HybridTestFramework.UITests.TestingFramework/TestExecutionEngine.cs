@@ -33,30 +33,30 @@ namespace HybridTestFramework.UITests.TestingFramework
         public override void RegisterDependencies(Browsers executionBrowserType)
         {
             var browserSettings = new BrowserSettings(executionBrowserType);
-            this.driver = new TestingFrameworkDriver(this.container, browserSettings);
+            Driver = new TestingFrameworkDriver(Container, browserSettings);
 
-            this.container.RegisterType<IButton, Button>();
-            this.container.RegisterType<ITextBox, TextBox>();
-            this.container.RegisterType<IDiv, Div>();
-            this.container.RegisterType<ISearch, Search>();
-            this.container.RegisterType<IInputSubmit, InputSubmit>();
+            Container.RegisterType<IButton, Button>();
+            Container.RegisterType<ITextBox, TextBox>();
+            Container.RegisterType<IDiv, Div>();
+            Container.RegisterType<ISearch, Search>();
+            Container.RegisterType<IInputSubmit, InputSubmit>();
 
-            this.container.RegisterInstance<IDriver>(this.driver);
-            this.container.RegisterInstance<IBrowser>(this.driver);
-            this.container.RegisterInstance<ICookieService>(this.driver);
-            this.container.RegisterInstance<IDialogService>(this.driver);
-            this.container.RegisterInstance<IJavaScriptInvoker>(this.driver);
-            this.container.RegisterInstance<INavigationService>(this.driver);
-            this.container.RegisterInstance<IElementFinder>(this.driver);
+            Container.RegisterInstance(Driver);
+            Container.RegisterInstance<IBrowser>(Driver);
+            Container.RegisterInstance<ICookieService>(Driver);
+            Container.RegisterInstance<IDialogService>(Driver);
+            Container.RegisterInstance<IJavaScriptInvoker>(Driver);
+            Container.RegisterInstance<INavigationService>(Driver);
+            Container.RegisterInstance<IElementFinder>(Driver);
 
             # region 11. Failed Tests Аnalysis - Decorator Design Pattern
             
-            this.container.RegisterType<IEnumerable<IExceptionAnalysationHandler>, IExceptionAnalysationHandler[]>();
-            this.container.RegisterType<IUiExceptionAnalyser, UiExceptionAnalyser>();
-            this.container.RegisterType<IElementFinder, ExceptionAnalyzedElementFinder>(
-                new InjectionFactory(x => new ExceptionAnalyzedElementFinder(this.driver, this.container.Resolve<IUiExceptionAnalyser>())));
-            this.container.RegisterType<INavigationService, ExceptionAnalyzedNavigationService>(
-                new InjectionFactory(x => new ExceptionAnalyzedNavigationService(this.driver, this.container.Resolve<IUiExceptionAnalyser>())));
+            Container.RegisterType<IEnumerable<IExceptionAnalysationHandler>, IExceptionAnalysationHandler[]>();
+            Container.RegisterType<IUiExceptionAnalyser, UiExceptionAnalyser>();
+            Container.RegisterType<IElementFinder, ExceptionAnalyzedElementFinder>(
+                new InjectionFactory(x => new ExceptionAnalyzedElementFinder(Driver, Container.Resolve<IUiExceptionAnalyser>())));
+            Container.RegisterType<INavigationService, ExceptionAnalyzedNavigationService>(
+                new InjectionFactory(x => new ExceptionAnalyzedNavigationService(Driver, Container.Resolve<IUiExceptionAnalyser>())));
         
             #endregion
         }

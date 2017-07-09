@@ -18,7 +18,7 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfR
     {
         public ExceptionAnalyzer(Handler mainApplicationHandler)
         {
-            this.MainApplicationHandler = mainApplicationHandler;
+            MainApplicationHandler = mainApplicationHandler;
         }
         
         public ExceptionAnalyzer()
@@ -31,8 +31,8 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfR
             where TNewHandler : Handler, new()
         {
             var newHandler = new TNewHandler();
-            newHandler.SetSuccessor(this.MainApplicationHandler);
-            this.MainApplicationHandler = newHandler;
+            newHandler.SetSuccessor(MainApplicationHandler);
+            MainApplicationHandler = newHandler;
         }
 
         public void RemoveLastHandler()

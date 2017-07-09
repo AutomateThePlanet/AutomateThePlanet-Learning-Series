@@ -23,14 +23,14 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorato
     {
         public ExceptionAnalyzedElementFinder(IElementFinder elementFinder, IUiExceptionAnalyser exceptionAnalyser)
         {
-            this.ElementFinder = elementFinder;
-            this.UiExceptionAnalyser = exceptionAnalyser;
+            ElementFinder = elementFinder;
+            UiExceptionAnalyser = exceptionAnalyser;
         }
 
         public ExceptionAnalyzedElementFinder(ExceptionAnalyzedElementFinder elementFinderDecorator)
         {
-            this.UiExceptionAnalyser = elementFinderDecorator.UiExceptionAnalyser;
-            this.ElementFinder = elementFinderDecorator.ElementFinder;
+            UiExceptionAnalyser = elementFinderDecorator.UiExceptionAnalyser;
+            ElementFinder = elementFinderDecorator.ElementFinder;
         }
 
         public IUiExceptionAnalyser UiExceptionAnalyser { get; private set; }
@@ -39,14 +39,14 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorato
 
         public TElement Find<TElement>(By by) where TElement : class,IElement
         {
-            TElement result = default(TElement);
+            var result = default(TElement);
             try
             {
-                result = this.ElementFinder.Find<TElement>(by);
+                result = ElementFinder.Find<TElement>(by);
             }
             catch (Exception ex)
             {
-                this.UiExceptionAnalyser.Analyse(ex, this.ElementFinder);
+                UiExceptionAnalyser.Analyse(ex, ElementFinder);
                 throw;
             }
 
@@ -55,14 +55,14 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorato
 
         public IEnumerable<TElement> FindAll<TElement>(By by) where TElement : class, IElement
         {
-            IEnumerable<TElement> result = default(IEnumerable<TElement>);
+            var result = default(IEnumerable<TElement>);
             try
             {
-                result = this.ElementFinder.FindAll<TElement>(by);
+                result = ElementFinder.FindAll<TElement>(by);
             }
             catch (Exception ex)
             {
-                this.UiExceptionAnalyser.Analyse(ex, this.ElementFinder);
+                UiExceptionAnalyser.Analyse(ex, ElementFinder);
                 throw;
             }
 
@@ -71,14 +71,14 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorato
 
         public bool IsElementPresent(By by)
         {
-            bool result = default(bool);
+            var result = default(bool);
             try
             {
-                result = this.ElementFinder.IsElementPresent(by);
+                result = ElementFinder.IsElementPresent(by);
             }
             catch (Exception ex)
             {
-                this.UiExceptionAnalyser.Analyse(ex, this.ElementFinder);
+                UiExceptionAnalyser.Analyse(ex, ElementFinder);
                 throw;
             }
 

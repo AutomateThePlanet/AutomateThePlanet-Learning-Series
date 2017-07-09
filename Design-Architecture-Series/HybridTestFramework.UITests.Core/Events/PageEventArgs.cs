@@ -18,7 +18,7 @@ namespace HybridTestFramework.UITests.Core.Events
     {
         public PageEventArgs(string url)
         {
-            this.Url = url;
+            Url = url;
         }
 
         public string Url { get; private set; }

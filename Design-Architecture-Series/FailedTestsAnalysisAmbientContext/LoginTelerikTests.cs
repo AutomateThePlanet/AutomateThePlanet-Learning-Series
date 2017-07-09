@@ -35,12 +35,12 @@ namespace FailedTestsAnalysisAmbientContext
         [TestMethod]
         public void TryToLoginTelerik_AmbientContext()
         {
-            this.Driver.NavigateByAbsoluteUrl("https://www.telerik.com/login/");
+            Driver.NavigateByAbsoluteUrl("https://www.telerik.com/login/");
             using (new TestsExceptionsAnalyzerContext<EmptyEmailValidationExceptionHandler>())
             {
-                var loginButton = this.Driver.FindByIdEndingWith<IButton>("LoginButton");
+                var loginButton = Driver.FindByIdEndingWith<IButton>("LoginButton");
                 loginButton.Click();
-                var logoutButton = this.Driver.FindByIdEndingWith<IButton>("LogoutButton");
+                var logoutButton = Driver.FindByIdEndingWith<IButton>("LogoutButton");
                 logoutButton.Click();
             }
         }
@@ -48,12 +48,12 @@ namespace FailedTestsAnalysisAmbientContext
         [TestMethod]
         public void TryToLoginTelerik_AmbientContextWrapper()
         {
-            this.Driver.NavigateByAbsoluteUrl("https://www.telerik.com/login/");
+            Driver.NavigateByAbsoluteUrl("https://www.telerik.com/login/");
             HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.AmbientContext.ExceptionAnalyzer.AnalyzeFor<EmptyEmailValidationExceptionHandler>(() =>
             {
-                var loginButton = this.Driver.FindByIdEndingWith<IButton>("LoginButton");
+                var loginButton = Driver.FindByIdEndingWith<IButton>("LoginButton");
                 loginButton.Click();
-                var logoutButton = this.Driver.FindByIdEndingWith<IButton>("LogoutButton");
+                var logoutButton = Driver.FindByIdEndingWith<IButton>("LogoutButton");
                 logoutButton.Click();
             });
         }

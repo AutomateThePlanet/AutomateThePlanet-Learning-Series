@@ -20,7 +20,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
     {
         public string InvokeScript(string script)
         {
-            return this.driver.ActiveBrowser.Actions.InvokeScript(script);
+            return _driver.ActiveBrowser.Actions.InvokeScript(script);
         }
     }
 }

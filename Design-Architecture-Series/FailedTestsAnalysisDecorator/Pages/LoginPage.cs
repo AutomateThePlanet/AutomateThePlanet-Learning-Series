@@ -27,19 +27,19 @@ namespace FailedTestsAnalysisDecorator.Pages
 
         public void Navigate()
         {
-            this.NavigationService.NavigateByAbsoluteUrl(@"https://www.telerik.com/login/");
+            NavigationService.NavigateByAbsoluteUrl(@"https://www.telerik.com/login/");
         }
 
         public void Login()
         {
-            this.LoginButton.Click();
+            LoginButton.Click();
         }
     
         public void Logout()
         {
-            this.ExceptionAnalyser.AddExceptionAnalysationHandler<EmptyEmailValidationExceptionHandler>();
-            this.LogoutButton.Click();
-            this.ExceptionAnalyser.RemoveFirstExceptionAnalysationHandler();
+            ExceptionAnalyser.AddExceptionAnalysationHandler<EmptyEmailValidationExceptionHandler>();
+            LogoutButton.Click();
+            ExceptionAnalyser.RemoveFirstExceptionAnalysationHandler();
         }
     }
 }

@@ -27,9 +27,9 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorato
                 new ExceptionAnalyzedNavigationService(
                     navigationService as ExceptionAnalyzedNavigationService,
                     exceptionAnalyzedElementFinder.UiExceptionAnalyser);
-            this.ExceptionAnalyser = exceptionAnalyzedElementFinder.UiExceptionAnalyser;
-            this.ElementFinder = exceptionAnalyzedElementFinder;
-            this.NavigationService = exceptionAnalyzedNavigationService;
+            ExceptionAnalyser = exceptionAnalyzedElementFinder.UiExceptionAnalyser;
+            ElementFinder = exceptionAnalyzedElementFinder;
+            NavigationService = exceptionAnalyzedNavigationService;
         }
 
         public IUiExceptionAnalyser ExceptionAnalyser { get; private set; }

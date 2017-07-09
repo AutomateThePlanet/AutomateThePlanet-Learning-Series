@@ -29,25 +29,25 @@ namespace HybridTestFramework.UITests.Core.Behaviours
 
         public void PreTestInit(TestOutcome testOutcome, string testName, MemberInfo memberInfo)
         {
-            this.RaiseTestEvent(this.PreTestInitEvent, testOutcome, testName, memberInfo);
+            RaiseTestEvent(PreTestInitEvent, testOutcome, testName, memberInfo);
         }
 
         public void PostTestInit(TestOutcome testOutcome, string testName, MemberInfo memberInfo)
         {
-            this.RaiseTestEvent(this.PostTestInitEvent, testOutcome, testName, memberInfo);
+            RaiseTestEvent(PostTestInitEvent, testOutcome, testName, memberInfo);
         }
 
         public void PreTestCleanup(TestOutcome testOutcome, string testName, MemberInfo memberInfo)
         {
-            this.RaiseTestEvent(this.PreTestCleanupEvent, testOutcome, testName, memberInfo);
+            RaiseTestEvent(PreTestCleanupEvent, testOutcome, testName, memberInfo);
         }
 
         public void PostTestCleanup(TestOutcome testOutcome, string testName, MemberInfo memberInfo)
         {
-            this.RaiseTestEvent(this.PostTestCleanupEvent, testOutcome, testName, memberInfo);
+            RaiseTestEvent(PostTestCleanupEvent, testOutcome, testName, memberInfo);
         }
 
-        private void RaiseTestEvent(EventHandler<Core.Behaviours.TestExecutionEventArgs> eventHandler, TestOutcome testOutcome, string testName, MemberInfo memberInfo)
+        private void RaiseTestEvent(EventHandler<TestExecutionEventArgs> eventHandler, TestOutcome testOutcome, string testName, MemberInfo memberInfo)
         {
             if (eventHandler != null)
             {

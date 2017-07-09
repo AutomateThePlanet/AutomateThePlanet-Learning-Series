@@ -19,27 +19,27 @@ namespace HybridTestFramework.UITests.Core.Behaviours
 {
     public class TestExecutionEventArgs : EventArgs
     {
-        private readonly TestOutcome testOutcome;
-        private readonly MemberInfo memberInfo;
-        private readonly string testName;
+        private readonly TestOutcome _testOutcome;
+        private readonly MemberInfo _memberInfo;
+        private readonly string _testName;
 
         public TestExecutionEventArgs(TestOutcome testOutcome, string testName, MemberInfo memberInfo)
         {
-            this.testOutcome = testOutcome;
-            this.testName = testName;
-            this.memberInfo = memberInfo;
+            this._testOutcome = testOutcome;
+            this._testName = testName;
+            this._memberInfo = memberInfo;
         }
 
         public TestExecutionEventArgs(MemberInfo memberInfo)
         {
-            this.memberInfo = memberInfo;
+            this._memberInfo = memberInfo;
         }
 
         public virtual MemberInfo MemberInfo
         {
             get
             {
-                return this.memberInfo;
+                return _memberInfo;
             }
         }
 
@@ -47,7 +47,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours
         {
             get
             {
-                return this.testOutcome;
+                return _testOutcome;
             }
         }
 
@@ -55,7 +55,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours
         {
             get
             {
-                return this.testName;
+                return _testName;
             }
         }
     }

@@ -27,19 +27,19 @@ namespace SeleniumDriverControls.Pages.BingMain
 
         public void Navigate()
         {
-            this.NavigationService.NavigateByAbsoluteUrl(@"http://www.bing.com/");
+            NavigationService.NavigateByAbsoluteUrl(@"http://www.bing.com/");
         }
 
         public void Search(string textToType)
         {
-            this.SearchBox.Text = textToType;
-            this.GoButton.Click();
+            SearchBox.Text = textToType;
+            GoButton.Click();
         }
     
         public int GetResultsCount()
         {
-            int resultsCount = default(int);
-            resultsCount = int.Parse(this.ResultsCountDiv.Content);
+            var resultsCount = default(int);
+            resultsCount = int.Parse(ResultsCountDiv.Content);
             return resultsCount;
         }
     }

@@ -32,28 +32,28 @@ namespace HybridTestFramework.UITests.Selenium.Controls
         {
             get
             {
-                return this.webElement.Text;
+                return WebElement.Text;
             }
         }
 
         public void Hover()
         {
-            Actions action = new Actions(driver);
-            action.MoveToElement(this.webElement).Perform();
+            var action = new Actions(Driver);
+            action.MoveToElement(WebElement).Perform();
         }
 
         public bool IsEnabled
         {
             get
             {
-                return this.webElement.Enabled;
+                return WebElement.Enabled;
             }
         }
 
         public void Focus()
         {
-            Actions action = new Actions(driver);
-            action.MoveToElement(this.webElement).Perform();
+            var action = new Actions(Driver);
+            action.MoveToElement(WebElement).Perform();
         }
     }
 }

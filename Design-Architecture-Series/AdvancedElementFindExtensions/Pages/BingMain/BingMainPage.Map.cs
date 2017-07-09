@@ -26,7 +26,7 @@ namespace AdvancedElementFindExtensions.Pages.BingMain
             get
             {
                 ////return this.ElementFinder.Find<ITextBox>(By.Id("sb_form_q"));
-                return this.ElementFinder.FindByIdEndingWith<ITextBox>("sb_form_q");
+                return ElementFinder.FindByIdEndingWith<ITextBox>("sb_form_q");
             }
         }
 
@@ -34,7 +34,7 @@ namespace AdvancedElementFindExtensions.Pages.BingMain
         {
             get
             {
-                return this.ElementFinder.Find<IButton>(By.Id("sb_form_go"));
+                return ElementFinder.Find<IButton>(By.Id("sb_form_go"));
             }
         }
 
@@ -42,7 +42,7 @@ namespace AdvancedElementFindExtensions.Pages.BingMain
         {
             get
             {
-                return this.ElementFinder.Find<IDiv>(By.Id("b_tween"));
+                return ElementFinder.Find<IDiv>(By.Id("b_tween"));
             }
         }
     }

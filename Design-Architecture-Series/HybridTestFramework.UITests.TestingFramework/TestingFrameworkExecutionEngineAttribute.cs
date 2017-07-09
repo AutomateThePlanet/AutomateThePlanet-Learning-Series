@@ -21,7 +21,7 @@ namespace HybridTestFramework.UITests.TestingFramework
     {
         public TestingFrameworkExecutionEngineAttribute(Browsers browser = Browsers.Firefox) : base(browser)
         {
-            this.Browser = browser;
+            Browser = browser;
         }
     }
 }

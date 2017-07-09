@@ -24,7 +24,7 @@ namespace HybridTestFramework.UITests.Core.Utilities.VideoRecording.Model
 
         public VideoRecordingResult(bool isSuccessfullySaved = true)
         {
-            this.IsSuccessfullySaved = isSuccessfullySaved;
+            IsSuccessfullySaved = isSuccessfullySaved;
         }
     }
 }

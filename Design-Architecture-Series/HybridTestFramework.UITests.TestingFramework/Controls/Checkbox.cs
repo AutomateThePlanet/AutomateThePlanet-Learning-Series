@@ -31,22 +31,22 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
         {
             get
             {
-                return this.htmlControl.Checked;
+                return HtmlControl.Checked;
             }
         }
 
         public void Check()
         {
-            this.htmlControl.Check(true, true, true);
-            this.driver.WaitForAjax();
-            this.driver.WaitUntilReady();
+            HtmlControl.Check(true, true, true);
+            Driver.WaitForAjax();
+            Driver.WaitUntilReady();
         }
 
         public void Uncheck()
         {
-            this.htmlControl.Check(false, true, true);
-            this.driver.WaitForAjax();
-            this.driver.WaitUntilReady();
+            HtmlControl.Check(false, true, true);
+            Driver.WaitForAjax();
+            Driver.WaitUntilReady();
         }
     }
 }

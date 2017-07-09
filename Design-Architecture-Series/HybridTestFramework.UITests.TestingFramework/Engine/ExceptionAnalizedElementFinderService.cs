@@ -27,25 +27,25 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
 {
     public class ExceptionAnalizedElementFinderService
     {
-        private readonly IUnityContainer container;
-        private readonly IExceptionAnalyzer excepionAnalyzer;
+        private readonly IUnityContainer _container;
+        private readonly IExceptionAnalyzer _excepionAnalyzer;
 
         public ExceptionAnalizedElementFinderService(IUnityContainer container, IExceptionAnalyzer excepionAnalyzer)
         {
-            this.container = container;
-            this.excepionAnalyzer = excepionAnalyzer;
+            this._container = container;
+            this._excepionAnalyzer = excepionAnalyzer;
         }
 
-        public TElement Find<TElement>(IDriver driver, Find findContext, Core.By by)
+        public TElement Find<TElement>(IDriver driver, Find findContext, By by)
             where TElement : class, Core.Controls.IElement
         {
-            TElement result = default(TElement);
+            var result = default(TElement);
             try
             {
-                string testingFrameworkExpression = by.ToTestingFrameworkExpression();
-                this.WaitForExists(driver, testingFrameworkExpression);
+                var testingFrameworkExpression = by.ToTestingFrameworkExpression();
+                WaitForExists(driver, testingFrameworkExpression);
                 var element = findContext.ByExpression(by.ToTestingFrameworkExpression());
-                result = this.ResolveElement<TElement>(driver, element);
+                result = ResolveElement<TElement>(driver, element);
             }
             catch (Exception ex)
             {
@@ -62,19 +62,19 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
             return result;
         }
 
-        public IEnumerable<TElement> FindAll<TElement>(IDriver driver, Find findContext, Core.By by)
+        public IEnumerable<TElement> FindAll<TElement>(IDriver driver, Find findContext, By by)
             where TElement : class, Core.Controls.IElement
         {
-            List<TElement> resolvedElements = new List<TElement>();
+            var resolvedElements = new List<TElement>();
             try
             {
-                string testingFrameworkExpression = by.ToTestingFrameworkExpression();
-                this.WaitForExists(driver, testingFrameworkExpression);
+                var testingFrameworkExpression = by.ToTestingFrameworkExpression();
+                WaitForExists(driver, testingFrameworkExpression);
                 var elements = findContext.AllByExpression(testingFrameworkExpression);
 
                 foreach (var currentElement in elements)
                 {
-                    TElement result = this.ResolveElement<TElement>(driver, currentElement);
+                    var result = ResolveElement<TElement>(driver, currentElement);
                     resolvedElements.Add(result);
                 }
             }
@@ -93,13 +93,13 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
             return resolvedElements;
         }
 
-        public bool IsElementPresent(Find findContext, Core.By by)
+        public bool IsElementPresent(Find findContext, By by)
         {
             try
             {
-                string controlFindExpression = by.ToTestingFrameworkExpression();
+                var controlFindExpression = by.ToTestingFrameworkExpression();
                 Manager.Current.ActiveBrowser.RefreshDomTree();
-                HtmlFindExpression hfe = new HtmlFindExpression(controlFindExpression);
+                var hfe = new HtmlFindExpression(controlFindExpression);
                 Manager.Current.ActiveBrowser.WaitForElement(hfe, 5000, false);
             }
             catch (TimeoutException)
@@ -115,12 +115,12 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
             try
             {
                 driver.WaitUntilReady();
-                HtmlFindExpression hfe = new HtmlFindExpression(findExpression);
+                var hfe = new HtmlFindExpression(findExpression);
                 Manager.Current.ActiveBrowser.WaitForElement(hfe, 5000, false);
             }
             catch (Exception)
             {
-                this.ThrowTimeoutExceptionIfElementIsNull(driver, findExpression);
+                ThrowTimeoutExceptionIfElementIsNull(driver, findExpression);
             }
         }
 
@@ -129,23 +129,23 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
             ArtOfTest.WebAii.ObjectModel.Element element)
             where TElement : class, Core.Controls.IElement
         {
-            TElement result = this.container.Resolve<TElement>(
+            var result = _container.Resolve<TElement>(
                 new ResolverOverride[]
                 {
                     new ParameterOverride("driver", driver),
                     new ParameterOverride("element", element),
-                    new ParameterOverride("container", this.container)
+                    new ParameterOverride("container", _container)
                 });
             return result;
         }
 
         private void ThrowTimeoutExceptionIfElementIsNull(IDriver driver, params string[] customExpression)
         {
-            StackTrace stackTrace = new StackTrace();
-            StackFrame[] stackFrames = stackTrace.GetFrames();
-            StackFrame callingFrame = stackFrames[3];
-            MethodBase method = callingFrame.GetMethod();
-            string currentUrl = driver.Url;
+            var stackTrace = new StackTrace();
+            var stackFrames = stackTrace.GetFrames();
+            var callingFrame = stackFrames[3];
+            var method = callingFrame.GetMethod();
+            var currentUrl = driver.Url;
             throw new ElementTimeoutException(
                 string.Format(
                     "TIMED OUT- for element with Find Expression:\n {0}\n Element Name: {1}.{2}\n URL: {3}\nElement Timeout: {4}",

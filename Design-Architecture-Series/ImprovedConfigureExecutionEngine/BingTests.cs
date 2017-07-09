@@ -37,7 +37,7 @@ namespace ImprovedConfigureExecutionEngine
             var container = UnityContainerFactory.GetContainer();
             UnityContainerFactory.GetContainer().RegisterType<ITestBehaviorObserver, ExecutionEngineBehaviorObserver>(Guid.NewGuid().ToString());
             UnityContainerFactory.GetContainer().RegisterType<ITestExecutionEngine, TestExecutionEngine>(Guid.NewGuid().ToString());
-            UnityContainerFactory.GetContainer().RegisterInstance<IUnityContainer>(container);
+            UnityContainerFactory.GetContainer().RegisterInstance(container);
             
             // Unsubscribe execution engine observer and start single instance of the browser for the whole execution.
             ////testingFrameworkTestExecutionEngine = new TestExecutionEngine(container);
@@ -53,7 +53,7 @@ namespace ImprovedConfigureExecutionEngine
         [TestMethod]
         public void SearchForAutomateThePlanet()
         {
-            var bingMainPage = this.Container.Resolve<BingMainPage>();
+            var bingMainPage = Container.Resolve<BingMainPage>();
             bingMainPage.Navigate();
             bingMainPage.Search("Automate The Planet");
             bingMainPage.AssertResultsCountIsAsExpected("422,000 results");

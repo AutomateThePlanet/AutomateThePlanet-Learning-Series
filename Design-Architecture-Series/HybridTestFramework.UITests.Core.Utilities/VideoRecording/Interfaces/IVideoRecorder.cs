@@ -21,7 +21,7 @@ namespace HybridTestFramework.UITests.Core.Utilities.VideoRecording.Interfaces
     {
         VideoRecordingStatus Status { get; }
 
-        HybridTestFramework.UITests.Core.Utilities.VideoRecording.Model.VideoRecordingResult StartCapture();
+        VideoRecordingResult StartCapture();
 
         VideoRecordingResult SaveVideo(string saveLocation, string testName);
     }

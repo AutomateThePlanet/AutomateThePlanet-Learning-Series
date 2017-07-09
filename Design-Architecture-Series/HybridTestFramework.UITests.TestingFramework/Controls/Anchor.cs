@@ -33,7 +33,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
             get
             {
                 return HttpUtility.HtmlDecode(
-                    HttpUtility.UrlDecode(this.htmlControl.HRef));
+                    HttpUtility.UrlDecode(HtmlControl.HRef));
             }
         }
     }

@@ -19,28 +19,28 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
 {
     public partial class TestingFrameworkDriver : IElementFinder
     {
-        public TElement Find<TElement>(Core.By by)
+        public TElement Find<TElement>(By by)
             where TElement : class, Core.Controls.IElement
         {
-            return this.elementFinderService.Find<TElement>(
+            return _elementFinderService.Find<TElement>(
                 this,
-                this.currentActiveBrowser.Find,
+                _currentActiveBrowser.Find,
                 by);
         }
 
-        public IEnumerable<TElement> FindAll<TElement>(Core.By by)
+        public IEnumerable<TElement> FindAll<TElement>(By by)
             where TElement : class, Core.Controls.IElement
         {
-            return this.elementFinderService.FindAll<TElement>(
+            return _elementFinderService.FindAll<TElement>(
                 this,
-                this.currentActiveBrowser.Find,
+                _currentActiveBrowser.Find,
                 by);
         }
 
-        public bool IsElementPresent(Core.By by)
+        public bool IsElementPresent(By by)
         {
-            return this.elementFinderService.IsElementPresent(
-                this.currentActiveBrowser.Find,
+            return _elementFinderService.IsElementPresent(
+                _currentActiveBrowser.Find,
                 by);
         }
     }

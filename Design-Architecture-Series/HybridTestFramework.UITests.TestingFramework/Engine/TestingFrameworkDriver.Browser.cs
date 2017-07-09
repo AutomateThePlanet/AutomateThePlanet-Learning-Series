@@ -24,7 +24,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
         {
             get
             {
-                return this.browserSettings;
+                return _browserSettings;
             }
         }
 
@@ -32,15 +32,15 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
         {
             get
             {
-                return this.driver.ActiveBrowser.ViewSourceString;
+                return _driver.ActiveBrowser.ViewSourceString;
             }
         }
 
         public void SwitchToFrame(IFrame newContainer)
         {
-            this.RefreshDomTree();
-            this.currentActiveBrowser =
-                this.driver.ActiveBrowser.Frames[newContainer.Name];
+            RefreshDomTree();
+            _currentActiveBrowser =
+                _driver.ActiveBrowser.Frames[newContainer.Name];
         }
 
         public IFrame GetFrameByName(string frameName)
@@ -50,8 +50,8 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
 
         public void SwitchToDefault()
         {
-            this.RefreshDomTree();
-            this.currentActiveBrowser = this.originalBrowser;
+            RefreshDomTree();
+            _currentActiveBrowser = _originalBrowser;
         }
 
         public void Quit()
@@ -60,63 +60,63 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
             {
                 Manager.Current.Dispose();
             }
-            if (this.driver != null)
+            if (_driver != null)
             {
-                this.driver.Dispose();
-                this.driver = null;
+                _driver.Dispose();
+                _driver = null;
             }
         }
 
         public void WaitForAjax()
         {
-            this.driver.ActiveBrowser.WaitForAjax(browserSettings.ScriptTimeout);
+            _driver.ActiveBrowser.WaitForAjax(_browserSettings.ScriptTimeout);
         }
 
         public void WaitUntilReady()
         {
-            this.driver.ActiveBrowser.WaitUntilReady();
+            _driver.ActiveBrowser.WaitUntilReady();
         }
 
         public void FullWaitUntilReady()
         {
-            this.WaitForAjax();
-            this.WaitUntilReady();
+            WaitForAjax();
+            WaitUntilReady();
         }
 
         public void RefreshDomTree()
         {
-            this.driver.ActiveBrowser.RefreshDomTree();
+            _driver.ActiveBrowser.RefreshDomTree();
         }
 
         public void ClickBackButton()
         {
-            this.driver.ActiveBrowser.GoBack();
+            _driver.ActiveBrowser.GoBack();
         }
 
         public void ClickForwardButton()
         {
-            this.driver.ActiveBrowser.GoForward();
+            _driver.ActiveBrowser.GoForward();
         }
 
         public void LaunchNewBrowser()
         {
-            if (this.driver != null)
+            if (_driver != null)
             {
-                this.driver.LaunchNewBrowser();
+                _driver.LaunchNewBrowser();
             }
         }
 
         public void MaximizeBrowserWindow()
         {
-            if (!this.currentActiveBrowser.Window.IsMaximized)
+            if (!_currentActiveBrowser.Window.IsMaximized)
             {
-                this.currentActiveBrowser.Window.Maximize();
+                _currentActiveBrowser.Window.Maximize();
             }
         }
 
         public void ClickRefresh()
         {
-            this.driver.ActiveBrowser.Refresh();
+            _driver.ActiveBrowser.Refresh();
         }
     }
 }

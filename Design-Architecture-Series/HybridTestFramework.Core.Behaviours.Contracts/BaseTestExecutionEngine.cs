@@ -22,28 +22,28 @@ namespace HybridTestFramework.Core.Behaviours.Contracts
     public abstract class BaseTestExecutionEngine<TExecutionEngineAttribute> : ITestExecutionEngine
         where TExecutionEngineAttribute : ExecutionEngineAttribute
     {
-        protected IDriver driver;      
-        protected readonly IUnityContainer container;
-        private bool isDisposed;
+        protected IDriver Driver;      
+        protected readonly IUnityContainer Container;
+        private bool _isDisposed;
 
         public BaseTestExecutionEngine(IUnityContainer container)
         {
-            this.container = container;
+            this.Container = container;
         }
 
         public void Dispose()
         {
-            if (!this.isDisposed && this.driver != null)
+            if (!_isDisposed && Driver != null)
             {
-                this.driver.Quit();
-                this.isDisposed = true;
+                Driver.Quit();
+                _isDisposed = true;
             }
         }
 
         public bool IsSelected(MemberInfo memberInfo)
         {
-            bool isSelectedOnMethodLevel = this.GetExecutionEngineTypeByMethodInfo(memberInfo);
-            bool isSelectedOnClassLevel = this.GetExecutionEngineType(memberInfo.DeclaringType);
+            var isSelectedOnMethodLevel = GetExecutionEngineTypeByMethodInfo(memberInfo);
+            var isSelectedOnClassLevel = GetExecutionEngineType(memberInfo.DeclaringType);
 
             return isSelectedOnMethodLevel || isSelectedOnClassLevel;
         }

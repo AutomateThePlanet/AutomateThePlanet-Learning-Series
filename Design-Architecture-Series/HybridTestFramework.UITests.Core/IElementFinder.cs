@@ -23,6 +23,6 @@ namespace HybridTestFramework.UITests.Core
 
         IEnumerable<TElement> FindAll<TElement>(By by) where TElement : class, IElement;
 
-        bool IsElementPresent(Core.By by);
+        bool IsElementPresent(By by);
     }
 }

@@ -23,7 +23,7 @@ namespace FailedTestsAnalysisDecorator.Pages
         {
             get
             {
-                return this.ElementFinder.FindByIdEndingWith<IButton>("LoginButton");
+                return ElementFinder.FindByIdEndingWith<IButton>("LoginButton");
             }
         }
 
@@ -31,7 +31,7 @@ namespace FailedTestsAnalysisDecorator.Pages
         {
             get
             {
-                return this.ElementFinder.FindByIdEndingWith<IButton>("LogoutButton");
+                return ElementFinder.FindByIdEndingWith<IButton>("LogoutButton");
             }
         }
     }

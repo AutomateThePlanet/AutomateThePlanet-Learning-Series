@@ -25,7 +25,7 @@ namespace AbstractUnitTestFramework.Pages.BingMain
         {
             get
             {
-                return this.ElementFinder.FindByIdEndingWith<ISearch>("sb_form_q");
+                return ElementFinder.FindByIdEndingWith<ISearch>("sb_form_q");
             }
         }
 
@@ -33,7 +33,7 @@ namespace AbstractUnitTestFramework.Pages.BingMain
         {
             get
             {
-                return this.ElementFinder.Find<IInputSubmit>(By.Id("sb_form_go"));
+                return ElementFinder.Find<IInputSubmit>(By.Id("sb_form_go"));
             }
         }
 
@@ -41,7 +41,7 @@ namespace AbstractUnitTestFramework.Pages.BingMain
         {
             get
             {
-                return this.ElementFinder.Find<IDiv>(By.Id("b_tween"));
+                return ElementFinder.Find<IDiv>(By.Id("b_tween"));
             }
         }
     }

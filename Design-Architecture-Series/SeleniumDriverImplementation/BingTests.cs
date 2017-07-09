@@ -12,43 +12,43 @@ namespace SeleniumDriverImplementation
     [TestClass]
     public class BingTests
     {
-        private IDriver driver;
-        private IUnityContainer container;
+        private IDriver _driver;
+        private IUnityContainer _container;
 
         [TestInitialize]
         public void SetupTest()
         {
-            this.container = new UnityContainer();
-            this.container.RegisterType<IDriver, SeleniumDriver>();
-            this.container.RegisterType<INavigationService, SeleniumDriver>();
-            this.container.RegisterType<IBrowser, SeleniumDriver>();
-            this.container.RegisterType<ICookieService, SeleniumDriver>();
-            this.container.RegisterType<IDialogService, SeleniumDriver>();
-            this.container.RegisterType<IElementFinder, SeleniumDriver>();
-            this.container.RegisterType<IJavaScriptInvoker, SeleniumDriver>();
-            this.container.RegisterType<IElement, Element>();
-            this.container.RegisterType<IButton, Button>();
-            this.container.RegisterInstance<IUnityContainer>(this.container);
-            this.container.RegisterInstance<BrowserSettings>(BrowserSettings.DefaultFirefoxSettings);
-            this.driver = this.container.Resolve<IDriver>();
+            _container = new UnityContainer();
+            _container.RegisterType<IDriver, SeleniumDriver>();
+            _container.RegisterType<INavigationService, SeleniumDriver>();
+            _container.RegisterType<IBrowser, SeleniumDriver>();
+            _container.RegisterType<ICookieService, SeleniumDriver>();
+            _container.RegisterType<IDialogService, SeleniumDriver>();
+            _container.RegisterType<IElementFinder, SeleniumDriver>();
+            _container.RegisterType<IJavaScriptInvoker, SeleniumDriver>();
+            _container.RegisterType<IElement, Element>();
+            _container.RegisterType<IButton, Button>();
+            _container.RegisterInstance(_container);
+            _container.RegisterInstance(BrowserSettings.DefaultFirefoxSettings);
+            _driver = _container.Resolve<IDriver>();
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            this.driver.Quit();
+            _driver.Quit();
         }
 
         [TestMethod]
         public void NavigateToAutomateThePlanet()
         {
-            this.driver.NavigateByAbsoluteUrl(@"http://automatetheplanet.com/");
-            var blogButton = this.driver.Find<IButton>(AdvancedBy.Xpath("//*[@id='tve_editor']/div[2]/div[4]/div/div/div/div/div/a"));
+            _driver.NavigateByAbsoluteUrl(@"http://automatetheplanet.com/");
+            var blogButton = _driver.Find<IButton>(AdvancedBy.Xpath("//*[@id='tve_editor']/div[2]/div[4]/div/div/div/div/div/a"));
             blogButton.Hover();
             Console.WriteLine(blogButton.Content);
-            this.driver.NavigateByAbsoluteUrl(@"http://automatetheplanet.com/download-source-code/");
-            this.driver.ClickBackButton();
-            Console.WriteLine(this.driver.Title);
+            _driver.NavigateByAbsoluteUrl(@"http://automatetheplanet.com/download-source-code/");
+            _driver.ClickBackButton();
+            Console.WriteLine(_driver.Title);
         }
     }
 }

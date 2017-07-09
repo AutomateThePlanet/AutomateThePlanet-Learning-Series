@@ -27,7 +27,7 @@ namespace CreateHybridTestFrameworkInterfaceContracts.HybridVersion.Pages
 
         public void Navigate()
         {
-            this.NavigationService.NavigateByAbsoluteUrl(@"http://www.bing.com/");
+            NavigationService.NavigateByAbsoluteUrl(@"http://www.bing.com/");
         }
 
         public void Search(string textToType)
@@ -35,13 +35,13 @@ namespace CreateHybridTestFrameworkInterfaceContracts.HybridVersion.Pages
             // It is going to be implemented in the next article.
             ////this.SearchBox.Clear();
             ////this.SearchBox.SendKeys(textToType);
-            this.GoButton.Click();
+            GoButton.Click();
         }
     
         public int GetResultsCount()
         {
-            int resultsCount = default(int);
-            resultsCount = int.Parse(this.ResultsCountDiv.Content);
+            var resultsCount = default(int);
+            resultsCount = int.Parse(ResultsCountDiv.Content);
             return resultsCount;
         }
     }

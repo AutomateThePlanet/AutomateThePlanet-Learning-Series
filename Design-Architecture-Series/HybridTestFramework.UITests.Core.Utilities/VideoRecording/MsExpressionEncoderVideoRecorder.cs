@@ -37,36 +37,36 @@ namespace HybridTestFramework.UITests.Core.Utilities.VideoRecording
         private const string NewFileDateTimeFormat = "yyyyMMddHHmmssfff";
         private const int FrameRate = 5;
         private const int Quality = 20;
-        private readonly int height =
+        private readonly int _height =
                                      Screen.PrimaryScreen.Bounds.Height - (Screen.PrimaryScreen.Bounds.Height % 16);
-        private readonly int width =
+        private readonly int _width =
                                     Screen.PrimaryScreen.Bounds.Width - (Screen.PrimaryScreen.Bounds.Width % 16);
-        private ScreenCaptureJob screenCaptureJob;
-        private bool isDisposed;
+        private ScreenCaptureJob _screenCaptureJob;
+        private bool _isDisposed;
 
         public VideoRecordingStatus Status
         {
             get
             {
-                return this.screenCaptureJob != null ? (VideoRecordingStatus)this.screenCaptureJob.Status : VideoRecordingStatus.NotStarted;
+                return _screenCaptureJob != null ? (VideoRecordingStatus)_screenCaptureJob.Status : VideoRecordingStatus.NotStarted;
             }
         }
 
         public VideoRecordingResult StartCapture()
         {
-            VideoRecordingResult result = new VideoRecordingResult();
+            var result = new VideoRecordingResult();
             try
             {
-                this.Initialize();
-                this.screenCaptureJob.Start();
+                Initialize();
+                _screenCaptureJob.Start();
             }
             catch (Exception ex)
             {
-                string argumentExceptionMessage =
+                var argumentExceptionMessage =
                     string.Format("Video capturing failed with the following exception:{0}. Resolution: width - {1}, height - {2}. ",
                         ex.Message,
-                        this.height,
-                        this.width);
+                        _height,
+                        _width);
                 result.SavedException = new ArgumentException(argumentExceptionMessage);
                 result.IsSuccessfullySaved = false; 
             }
@@ -76,16 +76,16 @@ namespace HybridTestFramework.UITests.Core.Utilities.VideoRecording
 
         public void StopCapture()
         {
-            this.screenCaptureJob.Stop();
+            _screenCaptureJob.Stop();
         }
 
         public VideoRecordingResult SaveVideo(string saveLocation, string testName)
         {
-            VideoRecordingResult result = new VideoRecordingResult();
+            var result = new VideoRecordingResult();
 
             try
             {
-                this.StopCapture();
+                StopCapture();
             }
             catch (Exception e)
             {
@@ -95,8 +95,8 @@ namespace HybridTestFramework.UITests.Core.Utilities.VideoRecording
          
             if (Directory.Exists(saveLocation))
             {
-                string moveToPath = this.GenerateFinalFilePath(saveLocation, testName);
-                File.Move(this.screenCaptureJob.OutputScreenCaptureFileName, moveToPath);
+                var moveToPath = GenerateFinalFilePath(saveLocation, testName);
+                File.Move(_screenCaptureJob.OutputScreenCaptureFileName, moveToPath);
             }
             else
             {
@@ -110,41 +110,43 @@ namespace HybridTestFramework.UITests.Core.Utilities.VideoRecording
 
         public void Dispose()
         {
-            if (!this.isDisposed)
+            if (!_isDisposed)
             {
-                if (this.Status == VideoRecordingStatus.Running)
+                if (Status == VideoRecordingStatus.Running)
                 {
-                    this.StopCapture();
+                    StopCapture();
                 }
-                this.DeleteTempVideo();
-                this.isDisposed = true;
+                DeleteTempVideo();
+                _isDisposed = true;
             }
         }
 
         private void Initialize()
         {
-            this.screenCaptureJob = new ScreenCaptureJob();
-            this.screenCaptureJob.CaptureRectangle = new Rectangle(0, 0, this.width, this.height);
-            this.screenCaptureJob.ScreenCaptureVideoProfile.Force16Pixels = true;
-            this.screenCaptureJob.ShowFlashingBoundary = true;
-            this.screenCaptureJob.ScreenCaptureVideoProfile.FrameRate = FrameRate;
-            this.screenCaptureJob.CaptureMouseCursor = true;
-            this.screenCaptureJob.ScreenCaptureVideoProfile.Quality = Quality;
-            this.screenCaptureJob.ScreenCaptureVideoProfile.Size = new Size(this.width, this.height);
-            this.screenCaptureJob.ScreenCaptureVideoProfile.AutoFit = true;
-            this.screenCaptureJob.OutputScreenCaptureFileName = this.GetTempFilePathWithExtension();
-            this.isDisposed = false;
+            _screenCaptureJob = new ScreenCaptureJob()
+            {
+                CaptureRectangle = new Rectangle(0, 0, _width, _height)
+            };
+            _screenCaptureJob.ScreenCaptureVideoProfile.Force16Pixels = true;
+            _screenCaptureJob.ShowFlashingBoundary = true;
+            _screenCaptureJob.ScreenCaptureVideoProfile.FrameRate = FrameRate;
+            _screenCaptureJob.CaptureMouseCursor = true;
+            _screenCaptureJob.ScreenCaptureVideoProfile.Quality = Quality;
+            _screenCaptureJob.ScreenCaptureVideoProfile.Size = new Size(_width, _height);
+            _screenCaptureJob.ScreenCaptureVideoProfile.AutoFit = true;
+            _screenCaptureJob.OutputScreenCaptureFileName = GetTempFilePathWithExtension();
+            _isDisposed = false;
         }
 
         private string GenerateFinalFilePath(string saveLocation, string testName)
         {
-            string newFileName =
+            var newFileName =
                 string.Concat(
                     testName,
                     "-",
                     DateTime.Now.ToString(NewFileDateTimeFormat),
                     VideoExtension);
-            string moveToPath = Path.Combine(saveLocation, newFileName);
+            var moveToPath = Path.Combine(saveLocation, newFileName);
             return moveToPath;
         }
 
@@ -157,9 +159,9 @@ namespace HybridTestFramework.UITests.Core.Utilities.VideoRecording
 
         private void DeleteTempVideo()
         {
-            if (this.screenCaptureJob != null && File.Exists(this.screenCaptureJob.OutputScreenCaptureFileName))
+            if (_screenCaptureJob != null && File.Exists(_screenCaptureJob.OutputScreenCaptureFileName))
             {
-                File.Delete(this.screenCaptureJob.OutputScreenCaptureFileName);
+                File.Delete(_screenCaptureJob.OutputScreenCaptureFileName);
             }
         }
     }

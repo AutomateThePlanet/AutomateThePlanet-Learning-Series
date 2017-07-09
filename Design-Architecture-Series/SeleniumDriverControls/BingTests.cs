@@ -25,34 +25,32 @@ namespace SeleniumDriverControls
     [TestClass]
     public class BingTests
     {
-        private IDriver driver;
-        private IUnityContainer container;
+        private IUnityContainer _container;
 
         [TestInitialize]
         public void SetupTest()
         {
-            this.container = new UnityContainer();
-            this.container.RegisterType<IDriver, SeleniumDriver>();
-            this.container.RegisterType<INavigationService, SeleniumDriver>();
-            this.container.RegisterType<IBrowser, SeleniumDriver>();
-            this.container.RegisterType<ICookieService, SeleniumDriver>();
-            this.container.RegisterType<IDialogService, SeleniumDriver>();
-            this.container.RegisterType<IElementFinder, SeleniumDriver>();
-            this.container.RegisterType<IJavaScriptInvoker, SeleniumDriver>();
-            this.container.RegisterType<IElement, Element>();
-            this.container.RegisterType<IButton, Button>();
-            this.container.RegisterType<ITextBox, TextBox>();
-            this.container.RegisterType<IDiv, Div>();
-            this.container.RegisterType<IContentElement, ContentElement>();
-            this.container.RegisterInstance<IUnityContainer>(this.container);
-            this.container.RegisterInstance<BrowserSettings>(BrowserSettings.DefaultFirefoxSettings);
-            this.driver = this.container.Resolve<IDriver>();
+            _container = new UnityContainer();
+            _container.RegisterType<IDriver, SeleniumDriver>();
+            _container.RegisterType<INavigationService, SeleniumDriver>();
+            _container.RegisterType<IBrowser, SeleniumDriver>();
+            _container.RegisterType<ICookieService, SeleniumDriver>();
+            _container.RegisterType<IDialogService, SeleniumDriver>();
+            _container.RegisterType<IElementFinder, SeleniumDriver>();
+            _container.RegisterType<IJavaScriptInvoker, SeleniumDriver>();
+            _container.RegisterType<IElement, Element>();
+            _container.RegisterType<IButton, Button>();
+            _container.RegisterType<ITextBox, TextBox>();
+            _container.RegisterType<IDiv, Div>();
+            _container.RegisterType<IContentElement, ContentElement>();
+            _container.RegisterInstance(_container);
+            _container.RegisterInstance(BrowserSettings.DefaultFirefoxSettings);
         }
 
         [TestMethod]
         public void SearchForAutomateThePlanet()
         {
-            var bingMainPage = this.container.Resolve<BingMainPage>();
+            var bingMainPage = _container.Resolve<BingMainPage>();
             bingMainPage.Navigate();
             bingMainPage.Search("Automate The Planet");
             bingMainPage.AssertResultsCountIsAsExpected(264);

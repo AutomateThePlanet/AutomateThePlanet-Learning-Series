@@ -21,7 +21,7 @@ namespace HybridTestFramework.UITests.TestingFramework
     {
         public static string ToTestingFrameworkExpression(this Core.By by)
         {
-            string controlFindExpression = string.Empty;
+            var controlFindExpression = string.Empty;
             switch (by.Type)
             {
                 case SearchType.Id:

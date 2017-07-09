@@ -32,12 +32,12 @@ namespace HybridTestFramework.Core.NUnit.Asserts
 
         public void AreEqual<T>(T expected, T actual) where T : class
         {
-            NUF.Assert.That<T>(actual, NUF.Is.EqualTo(expected));
+            NUF.Assert.That(actual, NUF.Is.EqualTo(expected));
         }
 
         public void AreEqual<T>(T expected, T actual, string message) where T : class
         {
-            NUF.Assert.That<T>(actual, NUF.Is.EqualTo(expected), message);
+            NUF.Assert.That(actual, NUF.Is.EqualTo(expected), message);
         }
 
         public void AreNotEqual(object expected, object actual)
@@ -52,12 +52,12 @@ namespace HybridTestFramework.Core.NUnit.Asserts
 
         public void AreNotEqual<T>(T expected, T actual) where T : class
         {
-            NUF.Assert.That<T>(actual, NUF.Is.Not.EqualTo(expected));
+            NUF.Assert.That(actual, NUF.Is.Not.EqualTo(expected));
         }
 
         public void AreNotEqual<T>(T expected, T actual, string message) where T : class
         {
-            NUF.Assert.That<T>(actual, NUF.Is.Not.EqualTo(expected), message);
+            NUF.Assert.That(actual, NUF.Is.Not.EqualTo(expected), message);
         }
 
         public void Fail(string message)

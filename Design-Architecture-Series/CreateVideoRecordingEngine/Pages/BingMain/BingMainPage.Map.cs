@@ -23,7 +23,7 @@ namespace CreateVideoRecordingEngine.Pages
         {
             get
             {
-                return this.ElementFinder.Find<ISearch>(By.Id("sb_form_q"));
+                return ElementFinder.Find<ISearch>(By.Id("sb_form_q"));
             }
         }
 
@@ -31,7 +31,7 @@ namespace CreateVideoRecordingEngine.Pages
         {
             get
             {
-                return this.ElementFinder.Find<IInputSubmit>(By.Id("sb_form_go"));
+                return ElementFinder.Find<IInputSubmit>(By.Id("sb_form_go"));
             }
         }
 
@@ -39,7 +39,7 @@ namespace CreateVideoRecordingEngine.Pages
         {
             get
             {
-                return this.ElementFinder.Find<IDiv>(By.Id("b_tween"));
+                return ElementFinder.Find<IDiv>(By.Id("b_tween"));
             }
         }
     }

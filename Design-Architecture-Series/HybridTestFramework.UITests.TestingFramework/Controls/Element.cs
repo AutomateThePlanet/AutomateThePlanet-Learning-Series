@@ -26,54 +26,54 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
     public class Element<TElementType> : IElement
         where TElementType : HtmlControl, new()
     {
-        protected readonly TElementType htmlControl;
-        protected readonly ElementFinderService elementFinderService;
-        protected readonly IDriver driver;
+        protected readonly TElementType HtmlControl;
+        protected readonly ElementFinderService ElementFinderService;
+        protected readonly IDriver Driver;
 
         public Element(
             IDriver driver,
             ArtOfTest.WebAii.ObjectModel.Element element,
             IUnityContainer container)
         {
-            this.driver = driver;
-            this.htmlControl = element.As<TElementType>();
-            this.elementFinderService = new ElementFinderService(container);
+            this.Driver = driver;
+            HtmlControl = element.As<TElementType>();
+            ElementFinderService = new ElementFinderService(container);
         }
 
         public string GetAttribute(string name)
         {
             var attribute = 
-                this.htmlControl.Attributes.FirstOrDefault(x => x.Name == name);
+                HtmlControl.Attributes.FirstOrDefault(x => x.Name == name);
             return attribute == null ? null : attribute.Value;
         }
 
         public void WaitForExists()
         {
-            this.htmlControl.Wait.ForExists();
+            HtmlControl.Wait.ForExists();
         }
 
         public void WaitForNotExists()
         {
-            this.htmlControl.Wait.ForExistsNot();
+            HtmlControl.Wait.ForExistsNot();
         }
 
         public void Click()
         {
-            this.htmlControl.Click();
+            HtmlControl.Click();
         }
 
         public void MouseClick()
         {
-            this.htmlControl.ScrollToVisible(
+            HtmlControl.ScrollToVisible(
                 ScrollToVisibleType.ElementTopAtWindowTop);
-            this.htmlControl.MouseClick();
+            HtmlControl.MouseClick();
         }
 
         public bool IsVisible
         {
             get
             {
-                return this.htmlControl.IsVisible();
+                return HtmlControl.IsVisible();
             }
         }
 
@@ -81,7 +81,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
         {
             get
             {
-                return int.Parse(this.GetAttribute("width"));
+                return int.Parse(GetAttribute("width"));
             }
         }
 
@@ -89,7 +89,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
         {
             get
             {
-                return this.htmlControl.CssClass;
+                return HtmlControl.CssClass;
             }
         }
 
@@ -97,31 +97,31 @@ namespace HybridTestFramework.UITests.TestingFramework.Controls
         {
             get
             {
-                return this.htmlControl.BaseElement.InnerText;
+                return HtmlControl.BaseElement.InnerText;
             }
         }
 
-        public TElement Find<TElement>(Core.By by)
-            where TElement : class, Core.Controls.IElement
+        public TElement Find<TElement>(By by)
+            where TElement : class, IElement
         {
-            return this.elementFinderService.Find<TElement>(
-                this.driver,
-                this.htmlControl.Find,
+            return ElementFinderService.Find<TElement>(
+                Driver,
+                HtmlControl.Find,
                 by);
         }
 
-        public IEnumerable<TElement> FindAll<TElement>(Core.By by)
-            where TElement : class, Core.Controls.IElement
+        public IEnumerable<TElement> FindAll<TElement>(By by)
+            where TElement : class, IElement
         {
-            return this.elementFinderService.FindAll<TElement>(
-                this.driver,
-                this.htmlControl.Find, by);
+            return ElementFinderService.FindAll<TElement>(
+                Driver,
+                HtmlControl.Find, by);
         }
 
-        public bool IsElementPresent(Core.By by)
+        public bool IsElementPresent(By by)
         {
-            return this.elementFinderService.IsElementPresent(
-                this.htmlControl.Find,
+            return ElementFinderService.IsElementPresent(
+                HtmlControl.Find,
                 by);
         }
     }

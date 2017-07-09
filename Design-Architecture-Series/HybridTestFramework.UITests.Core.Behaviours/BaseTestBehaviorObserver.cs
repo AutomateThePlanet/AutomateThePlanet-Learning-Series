@@ -18,18 +18,18 @@ namespace HybridTestFramework.UITests.Core.Behaviours
     {
         public void Subscribe(IExecutionProvider provider)
         {
-            provider.PreTestInitEvent += this.PreTestInit;
-            provider.PostTestInitEvent += this.PostTestInit;
-            provider.PreTestCleanupEvent += this.PreTestCleanup;
-            provider.PostTestCleanupEvent += this.PostTestCleanup;
+            provider.PreTestInitEvent += PreTestInit;
+            provider.PostTestInitEvent += PostTestInit;
+            provider.PreTestCleanupEvent += PreTestCleanup;
+            provider.PostTestCleanupEvent += PostTestCleanup;
         }
 
         public void Unsubscribe(IExecutionProvider provider)
         {
-            provider.PreTestInitEvent -= this.PreTestInit;
-            provider.PostTestInitEvent -= this.PostTestInit;
-            provider.PreTestCleanupEvent -= this.PreTestCleanup;
-            provider.PostTestCleanupEvent -= this.PostTestCleanup;
+            provider.PreTestInitEvent -= PreTestInit;
+            provider.PostTestInitEvent -= PostTestInit;
+            provider.PreTestCleanupEvent -= PreTestCleanup;
+            provider.PostTestCleanupEvent -= PostTestCleanup;
         }
 
         protected virtual void TestInstantiated(object sender, TestExecutionEventArgs e)

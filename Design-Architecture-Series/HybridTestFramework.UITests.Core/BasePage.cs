@@ -17,13 +17,13 @@ namespace HybridTestFramework.UITests.Core
     public abstract class BasePage
     {
         // Changed to be not readonly.
-        private IElementFinder elementFinder;
-        private INavigationService navigationService;
+        private IElementFinder _elementFinder;
+        private INavigationService _navigationService;
 
         public BasePage(IElementFinder elementFinder, INavigationService navigationService)
         {
-            this.elementFinder = elementFinder;
-            this.navigationService = navigationService;
+            this._elementFinder = elementFinder;
+            this._navigationService = navigationService;
         }
 
         // add an empty contstructor in order the decorators to be able to work.
@@ -36,11 +36,11 @@ namespace HybridTestFramework.UITests.Core
         {
             get
             {
-                return this.elementFinder;
+                return _elementFinder;
             }
             set
             {
-                this.elementFinder = value;
+                _elementFinder = value;
             }
         }
 
@@ -49,11 +49,11 @@ namespace HybridTestFramework.UITests.Core
         {
             get
             {
-                return this.navigationService;
+                return _navigationService;
             }
             set
             {
-                this.navigationService = value;
+                _navigationService = value;
             }
         }
     }

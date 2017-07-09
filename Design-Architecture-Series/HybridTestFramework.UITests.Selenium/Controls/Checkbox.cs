@@ -31,23 +31,23 @@ namespace HybridTestFramework.UITests.Selenium.Controls
         {
             get
             {
-                return this.webElement.Selected;
+                return WebElement.Selected;
             }
         }
 
         public void Check()
         {
-            if (!this.webElement.Selected)
+            if (!WebElement.Selected)
             {
-                this.webElement.Click();
+                WebElement.Click();
             }
         }
 
         public void Uncheck()
         {
-            if (this.webElement.Selected)
+            if (WebElement.Selected)
             {
-                this.webElement.Click();
+                WebElement.Click();
             }
         }
     }

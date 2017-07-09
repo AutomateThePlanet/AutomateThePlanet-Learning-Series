@@ -6,18 +6,18 @@ namespace HybridTestFramework.UITests.Core.Behaviours
     public class TestContextTestExecutionEventArgsAdapter : TestExecutionEventArgs
     {
         // watch about adapter and bridge.
-        private TestContext testContext;
+        private TestContext _testContext;
 
         public TestContextTestExecutionEventArgsAdapter(TestContext testContext, MemberInfo memberInfo) : base(memberInfo)
         {
-            this.testContext = testContext;
+            this._testContext = testContext;
         }
 
         public override string TestName
         {
             get
             {
-                return this.testContext.TestName;
+                return _testContext.TestName;
             }
         }
 
@@ -25,7 +25,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours
         {
             get
             {
-                return (TestOutcome)this.testContext.CurrentTestOutcome;
+                return (TestOutcome)_testContext.CurrentTestOutcome;
             }
         }
     }

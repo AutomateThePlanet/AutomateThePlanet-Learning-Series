@@ -20,8 +20,8 @@ namespace HybridTestFramework.UITests.Selenium.Engine
     {
         public string InvokeScript(string script)
         {
-            IJavaScriptExecutor javaScriptExecutor = 
-                driver as IJavaScriptExecutor;
+            var javaScriptExecutor = 
+                _driver as IJavaScriptExecutor;
             return (string)javaScriptExecutor.ExecuteScript(script);
         }
     }

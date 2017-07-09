@@ -22,7 +22,7 @@ namespace HybridTestFramework.Core.Behaviours.Contracts
     {
         public ExecutionEngineAttribute(Browsers browser)
         {
-            this.Browser = browser;
+            Browser = browser;
         }
 
         public Browsers Browser { get; set; }

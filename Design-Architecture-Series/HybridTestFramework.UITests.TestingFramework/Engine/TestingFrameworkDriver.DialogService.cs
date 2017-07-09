@@ -22,17 +22,17 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
     {
         public void Handle(
             Action action = null,
-            DialogButton dialogButton = DialogButton.OK)
+            DialogButton dialogButton = DialogButton.Ok)
         {
-            Dialogs.ConfirmDialog confirmDialog =
+            var confirmDialog =
                 new Dialogs.ConfirmDialog(
-                    this.driver.ActiveBrowser,
+                    _driver.ActiveBrowser,
                     (Dialogs.DialogButton)Enum.Parse(typeof(Dialogs.DialogButton),
                         ((int)dialogButton).ToString()));
             try
             {
-                this.driver.DialogMonitor.AddDialog(confirmDialog);
-                this.driver.DialogMonitor.Start();
+                _driver.DialogMonitor.AddDialog(confirmDialog);
+                _driver.DialogMonitor.Start();
                 if (action != null)
                 {
                     action.Invoke();
@@ -42,8 +42,8 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
             }
             finally
             {
-                this.driver.DialogMonitor.RemoveDialog(confirmDialog);
-                this.driver.DialogMonitor.Stop();
+                _driver.DialogMonitor.RemoveDialog(confirmDialog);
+                _driver.DialogMonitor.Stop();
             }
         }
 
@@ -52,40 +52,40 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
             string password)
         {
             var logonDialog = new Dialogs.LogonDialog(
-                this.driver.ActiveBrowser,
+                _driver.ActiveBrowser,
                 userName,
                 password,
                 Dialogs.DialogButton.OK);
             try
             {
-                this.driver.DialogMonitor.AddDialog(logonDialog);
-                this.driver.DialogMonitor.Start();
+                _driver.DialogMonitor.AddDialog(logonDialog);
+                _driver.DialogMonitor.Start();
             }
             finally
             {
-                this.driver.DialogMonitor.RemoveDialog(logonDialog);
-                this.driver.DialogMonitor.Stop();
+                _driver.DialogMonitor.RemoveDialog(logonDialog);
+                _driver.DialogMonitor.Stop();
             }
         }
 
         public void Upload(string filePath)
         {
-            Dialogs.FileUploadDialog fileUploadDialog =
+            var fileUploadDialog =
                 new Dialogs.FileUploadDialog(
-                    this.driver.ActiveBrowser,
+                    _driver.ActiveBrowser,
                     filePath,
                     Dialogs.DialogButton.CANCEL);
             try
             {
-                this.driver.DialogMonitor.AddDialog(fileUploadDialog);
-                this.driver.DialogMonitor.Start();
+                _driver.DialogMonitor.AddDialog(fileUploadDialog);
+                _driver.DialogMonitor.Start();
                 fileUploadDialog.WaitUntilHandled();
                 fileUploadDialog.Handle();
             }
             finally
             {
-                this.driver.DialogMonitor.RemoveDialog(fileUploadDialog);
-                this.driver.DialogMonitor.Stop();
+                _driver.DialogMonitor.RemoveDialog(fileUploadDialog);
+                _driver.DialogMonitor.Stop();
             }
         }
     }

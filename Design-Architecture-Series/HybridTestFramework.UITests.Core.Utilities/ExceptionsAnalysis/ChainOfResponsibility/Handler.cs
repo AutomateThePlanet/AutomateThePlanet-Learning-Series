@@ -24,23 +24,23 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfR
 
         public void SetSuccessor(Handler successor)
         {
-            this.Successor = successor;
+            Successor = successor;
         }
 
         public void ClearSuccessor()
         {
-            this.Successor = null;
+            Successor = null;
         }
         
         public void HandleRequest(Exception ex = null, params object[] context)
         {
-            if (string.IsNullOrEmpty(this.DetailedIssueExplanation))
+            if (string.IsNullOrEmpty(DetailedIssueExplanation))
             {
                 throw new ArgumentException("The detailed exception explanation should be specified.");
             }
-            if (this.IsApplicable(context))
+            if (IsApplicable(context))
             {
-                throw new AnalyzedTestException(this.DetailedIssueExplanation, ex);
+                throw new AnalyzedTestException(DetailedIssueExplanation, ex);
             }
             else if (Successor != null)
             {

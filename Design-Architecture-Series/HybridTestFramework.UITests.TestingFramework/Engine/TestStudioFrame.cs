@@ -18,18 +18,18 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
 {
     public class TestStudioFrame : IFrame
     {
-        private readonly string name;
+        private readonly string _name;
 
         public TestStudioFrame(string name)
         {
-            this.name = name;
+            this._name = name;
         }
 
         public string Name
         {
             get
             {
-                return this.name;
+                return _name;
             }
         }
     }

@@ -26,7 +26,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
         {
             get
             {
-                return this.driver.ActiveBrowser.Url;                
+                return _driver.ActiveBrowser.Url;                
             }
         }
 
@@ -34,7 +34,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
         {
             get
             {
-                return this.driver.ActiveBrowser.PageTitle;
+                return _driver.ActiveBrowser.PageTitle;
             }
         }
 
@@ -50,7 +50,7 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
             string absoluteUrl,
             bool useDecodedUrl = true)
         {
-            this.currentActiveBrowser.NavigateTo(absoluteUrl, true);
+            _currentActiveBrowser.NavigateTo(absoluteUrl, true);
         }
 
         public void Navigate(
@@ -62,21 +62,21 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
 
         public void WaitForUrl(string url)
         {
-            int timeout = this.BrowserSettings.PageLoadTimeout;
-            this.driver.ActiveBrowser.WaitForUrl(url, false, timeout);
+            var timeout = BrowserSettings.PageLoadTimeout;
+            _driver.ActiveBrowser.WaitForUrl(url, false, timeout);
         }
 
         public void WaitForPartialUrl(string url)
         {
-            int timeout = this.BrowserSettings.PageLoadTimeout;
-            this.driver.ActiveBrowser.WaitForUrl(url, true, timeout);
+            var timeout = BrowserSettings.PageLoadTimeout;
+            _driver.ActiveBrowser.WaitForUrl(url, true, timeout);
         }
 
         private void RaiseNavigated(string url)
         {
-            if (this.Navigated != null)
+            if (Navigated != null)
             {
-                this.Navigated(this, new PageEventArgs(url));
+                Navigated(this, new PageEventArgs(url));
             }
         }
     }

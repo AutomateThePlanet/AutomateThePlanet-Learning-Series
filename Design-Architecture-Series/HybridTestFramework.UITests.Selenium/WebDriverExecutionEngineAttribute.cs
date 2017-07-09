@@ -21,7 +21,7 @@ namespace HybridTestFramework.UITests.Selenium
     {
         public WebDriverExecutionEngineAttribute(Browsers browser = Browsers.Firefox) : base(browser)
         {
-            this.Browser = browser;
+            Browser = browser;
         }
     }
 }

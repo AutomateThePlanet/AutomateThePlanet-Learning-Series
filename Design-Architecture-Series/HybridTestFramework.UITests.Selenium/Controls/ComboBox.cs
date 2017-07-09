@@ -32,14 +32,14 @@ namespace HybridTestFramework.UITests.Selenium.Controls
         {
             get
             {
-                var select = new SelectElement(this.webElement);
+                var select = new SelectElement(WebElement);
                 return select.SelectedOption.Text;
             }
         }
 
         public void SelectValue(string value)
         {
-            var select = new SelectElement(this.webElement);
+            var select = new SelectElement(WebElement);
             select.SelectByValue(value);
         }
     }

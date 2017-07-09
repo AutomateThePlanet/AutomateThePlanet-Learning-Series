@@ -22,16 +22,16 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.AmbientC
     public class TestsExceptionsAnalyzerContext<THandler> : IDisposable
         where THandler : Handler, new()
     {
-        private static readonly Stack<Handler> scopeStack = new Stack<Handler>();
+        private static readonly Stack<Handler> ScopeStack = new Stack<Handler>();
 
         public TestsExceptionsAnalyzerContext()
         {
-            this.AddHandlerInfrontOfChain<THandler>();
+            AddHandlerInfrontOfChain<THandler>();
         }
 
         public void Dispose()
         {
-            this.MakeSuccessorMainHandler();
+            MakeSuccessorMainHandler();
         }
 
         protected void AddHandlerInfrontOfChain<TNewHandler>()
@@ -41,15 +41,15 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.AmbientC
             var newHandler = UnityContainerFactory.GetContainer().Resolve<TNewHandler>();
             newHandler.SetSuccessor(mainApplicationHandler);
             UnityContainerFactory.GetContainer().RegisterInstance<Handler>(ExceptionAnalyzerConstants.MainApplicationHandlerName, newHandler);
-            scopeStack.Push(newHandler);
+            ScopeStack.Push(newHandler);
         }
 
         private void MakeSuccessorMainHandler()
         {
-            for (int i = 0; i < this.GetType().GetGenericArguments().Length; i++)
+            for (var i = 0; i < GetType().GetGenericArguments().Length; i++)
             {
-                var handler = scopeStack.Pop();
-                UnityContainerFactory.GetContainer().RegisterInstance<Handler>(ExceptionAnalyzerConstants.MainApplicationHandlerName, handler.Successor);
+                var handler = ScopeStack.Pop();
+                UnityContainerFactory.GetContainer().RegisterInstance(ExceptionAnalyzerConstants.MainApplicationHandlerName, handler.Successor);
                 handler.ClearSuccessor();
             }
         }

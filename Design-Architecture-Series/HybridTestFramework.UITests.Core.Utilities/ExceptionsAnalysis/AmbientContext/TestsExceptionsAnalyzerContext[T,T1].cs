@@ -22,7 +22,7 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.AmbientC
     {
         public TestsExceptionsAnalyzerContext()
         {
-            this.AddHandlerInfrontOfChain<THandler2>();
+            AddHandlerInfrontOfChain<THandler2>();
         }
     }
 }

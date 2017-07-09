@@ -24,7 +24,7 @@ namespace TestingFrameworkDriverControls.Pages.BingMain
         {
             get
             {
-                return this.ElementFinder.Find<ITextBox>(By.Id("sb_form_q"));
+                return ElementFinder.Find<ITextBox>(By.Id("sb_form_q"));
             }
         }
 
@@ -32,7 +32,7 @@ namespace TestingFrameworkDriverControls.Pages.BingMain
         {
             get
             {
-                return this.ElementFinder.Find<IButton>(By.Id("sb_form_go"));
+                return ElementFinder.Find<IButton>(By.Id("sb_form_go"));
             }
         }
 
@@ -40,7 +40,7 @@ namespace TestingFrameworkDriverControls.Pages.BingMain
         {
             get
             {
-                return this.ElementFinder.Find<IDiv>(By.Id("b_tween"));
+                return ElementFinder.Find<IDiv>(By.Id("b_tween"));
             }
         }
     }

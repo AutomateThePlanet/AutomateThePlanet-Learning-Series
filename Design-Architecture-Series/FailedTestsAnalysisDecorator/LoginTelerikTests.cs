@@ -43,7 +43,7 @@ namespace FailedTestsAnalysisDecorator
         [TestMethod]
         public void TryToLoginTelerik_Decorator()
         {
-            var loginPage = this.Container.Resolve<LoginPage>();
+            var loginPage = Container.Resolve<LoginPage>();
             loginPage.Navigate();
             loginPage.Login();
             loginPage.Logout();

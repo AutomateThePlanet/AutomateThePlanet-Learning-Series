@@ -4,20 +4,20 @@ namespace CreateHybridTestFrameworkInterfaceContracts.HybridVersion
 {
     public abstract class BasePage
     {
-        private readonly IElementFinder elementFinder;
-        private readonly INavigationService navigationService;
+        private readonly IElementFinder _elementFinder;
+        private readonly INavigationService _navigationService;
 
         public BasePage(IElementFinder elementFinder, INavigationService navigationService)
         {
-            this.elementFinder = elementFinder;
-            this.navigationService = navigationService;
+            this._elementFinder = elementFinder;
+            this._navigationService = navigationService;
         }
 
         protected IElementFinder ElementFinder
         {
             get
             {
-                return this.elementFinder;
+                return _elementFinder;
             }
         }
 
@@ -25,7 +25,7 @@ namespace CreateHybridTestFrameworkInterfaceContracts.HybridVersion
         {
             get
             {
-                return this.navigationService;
+                return _navigationService;
             }
         }
     }

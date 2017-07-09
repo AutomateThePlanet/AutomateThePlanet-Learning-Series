@@ -20,9 +20,9 @@ namespace HybridTestFramework.UITests.Core.Data
     {
         public GridFilter(string columnName, FilterOperator filterOperator, string filterValue)
         {
-            this.ColumnName = columnName;
-            this.FilterOperator = filterOperator;
-            this.FilterValue = filterValue;
+            ColumnName = columnName;
+            FilterOperator = filterOperator;
+            FilterValue = filterValue;
         }
 
         public string ColumnName { get; set; }

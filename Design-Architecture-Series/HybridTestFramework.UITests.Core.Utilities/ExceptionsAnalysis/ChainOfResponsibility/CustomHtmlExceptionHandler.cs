@@ -16,15 +16,15 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfR
 {
     public class CustomHtmlExceptionHandler : HtmlSourceExceptionHandler
     {
-        private readonly string textToSearchInSource;
-        private readonly string detailedIssueExplanation;
+        private readonly string _textToSearchInSource;
+        private readonly string _detailedIssueExplanation;
 
         public CustomHtmlExceptionHandler(
             string textToSearchInSource, 
             string detailedIssueExplanation)
         {
-            this.textToSearchInSource = textToSearchInSource;
-            this.detailedIssueExplanation = detailedIssueExplanation;
+            this._textToSearchInSource = textToSearchInSource;
+            this._detailedIssueExplanation = detailedIssueExplanation;
         }
 
         public CustomHtmlExceptionHandler()
@@ -35,7 +35,7 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfR
         {
             get
             {
-                return this.textToSearchInSource;
+                return _textToSearchInSource;
             }
         }
 
@@ -43,7 +43,7 @@ namespace HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfR
         {
             get
             {
-                return this.detailedIssueExplanation;
+                return _detailedIssueExplanation;
             }
         }
     }

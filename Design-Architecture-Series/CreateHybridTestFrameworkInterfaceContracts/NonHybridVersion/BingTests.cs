@@ -9,28 +9,28 @@ namespace CreateHybridTestFrameworkInterfaceContracts.NonHybridVersion
     [TestClass]
     public class BingTests
     {
-        private BingMainPage bingMainPage;
-        private IWebDriver driver;
+        private BingMainPage _bingMainPage;
+        private IWebDriver _driver;
 
         [TestInitialize]
         public void SetupTest()
         {
-            this.driver = new FirefoxDriver();
-            this.bingMainPage = new BingMainPage(this.driver);
+            _driver = new FirefoxDriver();
+            _bingMainPage = new BingMainPage(_driver);
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            this.driver.Quit();
+            _driver.Quit();
         }
 
         [TestMethod]
         public void SearchForAutomateThePlanet()
         {
-            this.bingMainPage.Open();
-            this.bingMainPage.Search("Automate The Planet");
-            this.bingMainPage.AssertResultsCountIsAsExpected(264);
+            _bingMainPage.Open();
+            _bingMainPage.Search("Automate The Planet");
+            _bingMainPage.AssertResultsCountIsAsExpected(264);
         }
     }
 }

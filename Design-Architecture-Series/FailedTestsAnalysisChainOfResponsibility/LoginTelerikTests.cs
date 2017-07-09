@@ -31,24 +31,24 @@ namespace FailedTestsAnalysisChainOfResponsibility
     VideoRecordingAttribute(VideoRecordingMode.DoNotRecord)]
     public class LoginTelerikTests : BaseTest
     {
-        private IExceptionAnalyzer exceptionAnalyzer;
+        private IExceptionAnalyzer _exceptionAnalyzer;
  
         public override void TestInit()
         {
             base.TestInit();
-            this.exceptionAnalyzer = this.Container.Resolve<IExceptionAnalyzer>();
+            _exceptionAnalyzer = Container.Resolve<IExceptionAnalyzer>();
         }
 
         [TestMethod]
         public void TryToLoginTelerik()
         {
-            this.Driver.NavigateByAbsoluteUrl("https://www.telerik.com/login/");
-            this.exceptionAnalyzer.AddNewHandler<EmptyEmailValidationExceptionHandler>();
-            var loginButton = this.Driver.FindByIdEndingWith<IButton>("LoginButton");
+            Driver.NavigateByAbsoluteUrl("https://www.telerik.com/login/");
+            _exceptionAnalyzer.AddNewHandler<EmptyEmailValidationExceptionHandler>();
+            var loginButton = Driver.FindByIdEndingWith<IButton>("LoginButton");
             loginButton.Click();
-            var logoutButton = this.Driver.FindByIdEndingWith<IButton>("LogoutButton");
+            var logoutButton = Driver.FindByIdEndingWith<IButton>("LogoutButton");
             logoutButton.Click();
-            this.exceptionAnalyzer.RemoveLastHandler();
+            _exceptionAnalyzer.RemoveLastHandler();
         }
     }
 }

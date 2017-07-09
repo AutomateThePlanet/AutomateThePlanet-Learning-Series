@@ -20,7 +20,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine.SecondVersion.
     {
         public ExecutionEngineAttribute(Browsers browser)
         {
-            this.Browser = browser;
+            Browser = browser;
         }
 
         public Browsers Browser { get; set; }

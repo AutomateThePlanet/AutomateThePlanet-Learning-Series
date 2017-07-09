@@ -22,7 +22,7 @@ namespace HybridTestFramework.UITests.Selenium.Engine
         {
             get
             {
-                return this.browserSettings;
+                return _browserSettings;
             }
         }
 
@@ -30,13 +30,13 @@ namespace HybridTestFramework.UITests.Selenium.Engine
         {
             get
             {
-               return this.driver.PageSource;
+               return _driver.PageSource;
             }
         }
 
         public void SwitchToFrame(IFrame newContainer)
         {
-            driver.SwitchTo().Frame(newContainer.Name);
+            _driver.SwitchTo().Frame(newContainer.Name);
         }
 
         public IFrame GetFrameByName(string frameName)
@@ -46,12 +46,12 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 
         public void SwitchToDefault()
         {
-            this.driver.SwitchTo().DefaultContent();
+            _driver.SwitchTo().DefaultContent();
         }
 
         public void Quit()
         {
-            this.driver.Quit();
+            _driver.Quit();
         }
 
         public void WaitForAjax()
@@ -76,12 +76,12 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 
         public void ClickBackButton()
         {
-            this.driver.Navigate().Back();
+            _driver.Navigate().Back();
         }
 
         public void ClickForwardButton()
         {
-            this.driver.Navigate().Forward();
+            _driver.Navigate().Forward();
         }
 
         public void LaunchNewBrowser()
@@ -91,12 +91,12 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 
         public void MaximizeBrowserWindow()
         {
-            driver.Manage().Window.Maximize();
+            _driver.Manage().Window.Maximize();
         }
 
         public void ClickRefresh()
         {
-            driver.Navigate().Refresh();
+            _driver.Navigate().Refresh();
         }
     }
 }

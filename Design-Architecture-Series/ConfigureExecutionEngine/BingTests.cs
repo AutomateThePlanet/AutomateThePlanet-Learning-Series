@@ -29,7 +29,7 @@ namespace ConfigureExecutionEngine
         [TestMethod]
         public void SearchForAutomateThePlanet()
         {
-            var bingMainPage = this.Container.Resolve<BingMainPage>();
+            var bingMainPage = Container.Resolve<BingMainPage>();
             bingMainPage.Navigate();
             bingMainPage.Search("Automate The Planet");
             bingMainPage.AssertResultsCountIsAsExpected(264);
