@@ -35,16 +35,16 @@ namespace WebDriverSeleniumTorIntegration
         [TestInitialize]
         public void SetupTest()
         {
-            string desktopPath  = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            var desktopPath  = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             // You should set here the path to your Tor browser exe. Mine was installed on my desktop because of that I'm using the below path.
-            String torBinaryPath = string.Concat(desktopPath, @"\Tor Browser\Browser\firefox.exe");
+            var torBinaryPath = string.Concat(desktopPath, @"\Tor Browser\Browser\firefox.exe");
             TorProcess = new Process();
             TorProcess.StartInfo.FileName = torBinaryPath;
             TorProcess.StartInfo.Arguments = "-n";
             TorProcess.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
             TorProcess.Start();
 
-            FirefoxProfile profile = new FirefoxProfile();
+            var profile = new FirefoxProfile();
             profile.SetPreference("network.proxy.type", 1);
             profile.SetPreference("network.proxy.socks", "127.0.0.1");
             profile.SetPreference("network.proxy.socks_port", 9150);
@@ -67,7 +67,7 @@ namespace WebDriverSeleniumTorIntegration
             var expression = By.XPath("//*[@id='section_left']/div[2]");
             Wait.Until(x => x.FindElement(expression));
             var element = Driver.FindElement(expression);
-            Assert.AreNotEqual<string>("84.40.65.000", element.Text);
+            Assert.AreNotEqual("84.40.65.000", element.Text);
         }
 
         public void RefreshTorIdentity()
@@ -75,14 +75,14 @@ namespace WebDriverSeleniumTorIntegration
             Socket server = null;
             try
             {
-                IPEndPoint ip = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9151);
+                var ip = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9151);
                 server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 server.Connect(ip);
                 // Please be sure that you have executed the part with the creation of an authentication hash, described in my article!
                 server.Send(Encoding.ASCII.GetBytes("AUTHENTICATE \"johnsmith\"" + Environment.NewLine));
-                byte[] data = new byte[1024];
-                int receivedDataLength = server.Receive(data);
-                string stringData = Encoding.ASCII.GetString(data, 0, receivedDataLength);
+                var data = new byte[1024];
+                var receivedDataLength = server.Receive(data);
+                var stringData = Encoding.ASCII.GetString(data, 0, receivedDataLength);
                 server.Send(Encoding.ASCII.GetBytes("SIGNAL NEWNYM" + Environment.NewLine));
                 data = new byte[1024];
                 receivedDataLength = server.Receive(data);

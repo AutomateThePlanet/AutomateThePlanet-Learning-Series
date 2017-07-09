@@ -27,7 +27,7 @@ namespace DesignGridControlAutomatedTestsPartThree
 
         public Order()
         {
-            Random rand = new Random();
+            var rand = new Random();
             OrderId = rand.Next();
             ShipName = Guid.NewGuid().ToString();
             Freight = rand.Next();

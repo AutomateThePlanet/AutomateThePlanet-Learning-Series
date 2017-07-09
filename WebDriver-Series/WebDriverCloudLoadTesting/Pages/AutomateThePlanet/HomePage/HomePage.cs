@@ -18,18 +18,18 @@ namespace WebDriverCloudLoadTesting.Pages.AutomateThePlanet
 {
     public partial class HomePage
     {
-        private readonly IWebDriver driver;
-        private readonly string url = @"http://automatetheplanet.com";
+        private readonly IWebDriver _driver;
+        private readonly string _url = @"http://automatetheplanet.com";
 
         public HomePage(IWebDriver browser)
         {
-            driver = browser;
+            _driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
         public void Navigate()
         {
-            driver.Navigate().GoToUrl(url);
+            _driver.Navigate().GoToUrl(_url);
         }
 
         public void GoToBlog()

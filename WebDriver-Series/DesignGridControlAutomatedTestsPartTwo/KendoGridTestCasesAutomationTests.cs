@@ -26,7 +26,7 @@ namespace DesignGridControlAutomatedTestsPartTwo
     [TestClass]
     public class KendoGridTestCasesAutomationTests
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
         private const string OrderIdColumnName = @"OrderID";
         private const string ShipNameColumnName = @"ShipName";
         private const string FreightColumnName = @"Freight";
@@ -35,14 +35,14 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestInitialize]
         public void SetupTest()
         {
-            driver = new FirefoxDriver();
-            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
+            _driver = new FirefoxDriver();
+            _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            driver.Quit();
+            _driver.Quit();
         }
      
         // ** OrderDate Test Cases ** (Date Type Column Test Cases)
@@ -52,8 +52,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderId);
             var lastOrderDate = allItems.Last().OrderDate;
@@ -73,8 +73,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateNotEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.Last().OrderDate;
@@ -102,8 +102,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateAfterFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.Last().OrderDate;
@@ -131,8 +131,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateIsAfterOrEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.Last().OrderDate;
@@ -161,8 +161,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateBeforeFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.First().OrderDate;
@@ -190,8 +190,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateIsBeforeOrEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.First().OrderDate;
@@ -218,8 +218,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateClearFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             var newItem = CreateNewItemInDb();
 
@@ -233,8 +233,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateSortAsc()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.First().OrderDate;
@@ -261,8 +261,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void OrderDateSortDesc()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/remote-data-binding");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             var allItems = GetAllItemsFromDb().OrderBy(x => x.OrderDate);
             var lastOrderDate = allItems.First().OrderDate;
@@ -297,8 +297,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             
             var newItem = CreateNewItemInDb();
             newItem.Freight = GetUniqueNumberValue();
@@ -315,8 +315,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightGreaterThanOrEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             
             var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var biggestFreight = allItems.Last().Freight;
@@ -343,8 +343,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightGreaterThanFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             
             var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var biggestFreight = allItems.Last().Freight;
@@ -370,8 +370,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightLessThanOrEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             
             var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var smallestFreight = allItems.First().Freight;
@@ -398,8 +398,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightLessThanFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             
             var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var smallestFreight = allItems.First().Freight;
@@ -425,8 +425,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightNotEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             
             var newItem = CreateNewItemInDb();
             newItem.Freight = GetUniqueNumberValue();
@@ -445,8 +445,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         [TestMethod]
         public void FreightClearFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             
             var allItems = GetAllItemsFromDb().OrderBy(x => x.Freight);
             var biggestFreight = allItems.Last().Freight;
@@ -473,7 +473,7 @@ namespace DesignGridControlAutomatedTestsPartTwo
         {
             Until(() =>
             {
-                int currentPage = grid.GetCurrentPageNumber();
+                var currentPage = grid.GetCurrentPageNumber();
                 return currentPage == expectedPage;
             });
         }
@@ -500,11 +500,11 @@ namespace DesignGridControlAutomatedTestsPartTwo
             
         private void Until(Func<bool> condition, int timeout = 10, string exceptionMessage = "Timeout exceeded.", int retryRateDelay = 50)
         {
-            DateTime start = DateTime.Now;
+            var start = DateTime.Now;
             while (!condition())
             {
-                DateTime now = DateTime.Now;
-                double totalSeconds = (now - start).TotalSeconds;
+                var now = DateTime.Now;
+                var totalSeconds = (now - start).TotalSeconds;
                 if (totalSeconds >= timeout)
                 {
                     throw new TimeoutException(exceptionMessage);
@@ -516,8 +516,8 @@ namespace DesignGridControlAutomatedTestsPartTwo
         private List<Order> GetAllItemsFromDb()
         {
             // Create dummy orders. This logic should be replaced with service oriented call to your DB and get all items that are populated in the grid.
-            List<Order> orders = new List<Order>();
-            for (int i = 0; i < 10; i++)
+            var orders = new List<Order>();
+            for (var i = 0; i < 10; i++)
             {
                 orders.Add(new Order());
             }
@@ -539,7 +539,7 @@ namespace DesignGridControlAutomatedTestsPartTwo
         private int GetUniqueNumberValue()
         {
             var currentTime = DateTime.Now;
-            int result = currentTime.Year + currentTime.Month + currentTime.Hour + currentTime.Minute + currentTime.Second + currentTime.Millisecond;
+            var result = currentTime.Year + currentTime.Month + currentTime.Hour + currentTime.Minute + currentTime.Second + currentTime.Millisecond;
             return result;
         }
     }

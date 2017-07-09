@@ -36,7 +36,7 @@ namespace WebDriverCsharpSeven.LocalFunctions
         public void AssertPurchaseOrders(List<PurchaseOrder> purchaseOrders)
         {
             string GetFormattedPurchaseOrder(PurchaseOrder purchaseOrder) => $"Your product: {purchaseOrder.ProductName} costs {purchaseOrder.Price}";
-            for (int i = 0; i < purchaseOrders.Count; i++)
+            for (var i = 0; i < purchaseOrders.Count; i++)
             {
                 Assert.AreEqual(GetFormattedPurchaseOrder(purchaseOrders[i]), PurchaseOrderRows[i].Text);
             }

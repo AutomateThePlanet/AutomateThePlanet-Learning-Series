@@ -12,7 +12,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <sites>
-  <site url="http://automatetheplanet.com/" name="AutomateThePlanet">
+  <site url="https://automatetheplanet.com/" name="AutomateThePlanet">
     <redirects>
       <redirect from="http://automatetheplanet.com/singleton-design-pattern-design-patterns-in-automation-testing/" to="/singleton-design-pattern/" />
       <redirect from="/advanced-strategy-design-pattern-design-patterns-in-automation-testing/" to="/advanced-strategy-design-pattern/" />

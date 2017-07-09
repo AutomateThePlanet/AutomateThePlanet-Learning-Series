@@ -19,12 +19,12 @@ namespace WebDriverTestsCSharpSix.CSharpSix.ExpressionBodiesFunctions
 {
     public class BingMainPage
     {
-        private readonly IWebDriver driver;
-        private readonly string url = @"http://www.bing.com/";
+        private readonly IWebDriver _driver;
+        private readonly string _url = @"http://www.bing.com/";
 
         public BingMainPage(IWebDriver browser)
         {
-            driver = browser;
+            _driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
@@ -39,7 +39,7 @@ namespace WebDriverTestsCSharpSix.CSharpSix.ExpressionBodiesFunctions
         [FindsBy(How = How.Id, Using = "b_tween")]
         public IWebElement ResultsCountDiv { get; set; }
 
-        public void Navigate() => driver.Navigate().GoToUrl(url);
+        public void Navigate() => _driver.Navigate().GoToUrl(_url);
 
         public void Search(string textToType)
         {

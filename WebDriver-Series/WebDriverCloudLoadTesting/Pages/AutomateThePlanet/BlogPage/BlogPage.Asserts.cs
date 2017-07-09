@@ -19,7 +19,7 @@ namespace WebDriverCloudLoadTesting.Pages.AutomateThePlanet
     {
         public void AssertTitle()
         {
-            Assert.AreEqual(driver.Title, "Blog - Automate The Planet");
+            Assert.AreEqual(_driver.Title, "Blog - Automate The Planet");
         }
     }
 }

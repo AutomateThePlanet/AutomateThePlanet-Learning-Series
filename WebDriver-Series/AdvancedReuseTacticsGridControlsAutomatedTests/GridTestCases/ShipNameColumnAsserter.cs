@@ -40,7 +40,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         public void ShipNameContainsFilter()
         {
             GridPage.NavigateTo();
-            string shipName = Guid.NewGuid().ToString();
+            var shipName = Guid.NewGuid().ToString();
             // Remove first and last letter
             shipName = shipName.TrimStart(shipName.First()).TrimEnd(shipName.Last());
             var newItem = CreateNewItemInDb(shipName);          
@@ -57,7 +57,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             GridPage.NavigateTo();
 
             // Remove first letter 
-            string shipName = Guid.NewGuid().ToString();
+            var shipName = Guid.NewGuid().ToString();
             shipName = shipName.TrimStart(shipName.First());
             var newItem = CreateNewItemInDb(shipName);
 
@@ -73,7 +73,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             GridPage.NavigateTo();
 
             // Remove last letter
-            string shipName = Guid.NewGuid().ToString();
+            var shipName = Guid.NewGuid().ToString();
             shipName = shipName.TrimEnd(shipName.Last());
             var newItem = CreateNewItemInDb(shipName);
 
@@ -94,7 +94,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             
             GridPage.Grid.Filter(
                 new GridFilter(GridColumns.ShipName, FilterOperator.NotEqualTo, newItem.ShipName),
-                new GridFilter(GridColumns.OrderID, FilterOperator.EqualTo, newItem.OrderId.ToString()));
+                new GridFilter(GridColumns.OrderId, FilterOperator.EqualTo, newItem.OrderId.ToString()));
             WaitForGridToLoad(0, GridPage.Grid);
             var items = GridPage.Grid.GetItems<GridItem>();
             
@@ -106,7 +106,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             GridPage.NavigateTo();
           
             // Remove first and last letter
-            string shipName = Guid.NewGuid().ToString();
+            var shipName = Guid.NewGuid().ToString();
             shipName = shipName.TrimStart(shipName.First()).TrimEnd(shipName.Last());
             var newItem = CreateNewItemInDb(shipName);
 
@@ -114,7 +114,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             // After the first filter there is only one element when we apply the second we expect 0 elements.
             GridPage.Grid.Filter(
                 new GridFilter(GridColumns.ShipName, FilterOperator.NotContains, newItem.ShipName),
-                new GridFilter(GridColumns.OrderID, FilterOperator.EqualTo, newItem.OrderId.ToString()));
+                new GridFilter(GridColumns.OrderId, FilterOperator.EqualTo, newItem.OrderId.ToString()));
             WaitForGridToLoad(0, GridPage.Grid);
             var items = GridPage.Grid.GetItems<GridItem>();
             

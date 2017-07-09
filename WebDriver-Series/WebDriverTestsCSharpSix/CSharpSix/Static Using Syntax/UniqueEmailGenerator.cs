@@ -19,31 +19,31 @@ namespace WebDriverTestsCSharpSix.CSharpSix.StaticUsingSyntax
     {
         public static string BuildUniqueEmail(string prefix, string sufix)
         {
-            string result = string.Concat(prefix, "_", TimestampBuilder.GenerateUniqueText(), "@", sufix, ".com");
+            var result = string.Concat(prefix, "_", TimestampBuilder.GenerateUniqueText(), "@", sufix, ".com");
             return result;
         }
 
         public static string BuildUniqueEmailTimestamp()
         {
-            string result = string.Format("bot-{0}@automatetheplanet.com", TimestampBuilder.GenerateUniqueText());
+            var result = string.Format("bot-{0}@automatetheplanet.com", TimestampBuilder.GenerateUniqueText());
             return result;
         }
 
         public static string BuildUniqueEmailGuid()
         {
-            string result = string.Format("bot-{0}@automatetheplanet.com", Guid.NewGuid().ToString());
+            var result = string.Format("bot-{0}@automatetheplanet.com", Guid.NewGuid().ToString());
             return result;
         }
 
         public static string BuildUniqueEmail(string prefix)
         {
-            string result = string.Format("{0}{1}@automatetheplanet.com", prefix, TimestampBuilder.GenerateUniqueText());
+            var result = string.Format("{0}{1}@automatetheplanet.com", prefix, TimestampBuilder.GenerateUniqueText());
             return result;
         }
 
         public static string BuildUniqueEmail(char specialSymbol)
         {
-            string result = string.Format("bot-{0}{1}@automatetheplanet.com", TimestampBuilder.GenerateUniqueText(), specialSymbol);
+            var result = string.Format("bot-{0}{1}@automatetheplanet.com", TimestampBuilder.GenerateUniqueText(), specialSymbol);
             return result;
         }
     }

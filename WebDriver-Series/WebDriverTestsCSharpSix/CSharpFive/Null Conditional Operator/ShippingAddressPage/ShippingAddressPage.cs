@@ -18,12 +18,12 @@ namespace WebDriverTestsCSharpSix.CSharpFive.NullConditionalOperator
 {
     public partial class ShippingAddressPage
     {
-        private readonly IWebDriver driver;
-        private readonly string url = @"http://www.amazon.com/shippingPage";
+        private readonly IWebDriver _driver;
+        private readonly string _url = @"http://www.amazon.com/shippingPage";
 
         public ShippingAddressPage(IWebDriver browser)
         {
-            driver = browser;
+            _driver = browser;
             PageFactory.InitElements(browser, this);
         }
 

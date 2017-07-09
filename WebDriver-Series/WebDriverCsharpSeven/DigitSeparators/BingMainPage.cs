@@ -19,12 +19,12 @@ namespace WebDriverCsharpSeven.DigitSeparators
 {
     public class BingMainPage
     {
-        private readonly IWebDriver driver;
-        private readonly string url = @"http://www.bing.com/";
+        private readonly IWebDriver _driver;
+        private readonly string _url = @"http://www.bing.com/";
 
         public BingMainPage(IWebDriver browser)
         {
-            driver = browser;
+            _driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
@@ -39,7 +39,7 @@ namespace WebDriverCsharpSeven.DigitSeparators
 
         public void Navigate()
         {
-            driver.Navigate().GoToUrl(url);
+            _driver.Navigate().GoToUrl(_url);
         }
 
         public void Search(string textToType)

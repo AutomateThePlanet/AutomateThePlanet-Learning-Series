@@ -18,8 +18,8 @@ namespace WebDriverCsharpSeven.ThrowExpressions
 {
     public partial class ShippingAddressPage
     {
-        private readonly IWebDriver driver;
-        private readonly string url = @"http://www.amazon.com/shippingPage";
+        private readonly IWebDriver _driver;
+        private readonly string _url = @"http://www.amazon.com/shippingPage";
 
         // Prior C# 7.0
         ////public ShippingAddressPage(IWebDriver driver)
@@ -32,7 +32,7 @@ namespace WebDriverCsharpSeven.ThrowExpressions
         ////}
 
         // C# 7.0
-        public ShippingAddressPage(IWebDriver driver) => this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
+        public ShippingAddressPage(IWebDriver driver) => _driver = driver ?? throw new ArgumentNullException(nameof(driver));
 
         // some other actions
     }

@@ -19,20 +19,20 @@ namespace WebDriverTestsCSharpSix.CSharpSix.StaticUsingSyntax
     {
         public static string BuildUniqueText(string text)
         {
-            string newTimestamp = GenerateUniqueText();
-            string result = string.Concat(text, newTimestamp);
+            var newTimestamp = GenerateUniqueText();
+            var result = string.Concat(text, newTimestamp);
             return result;
         }
 
         public static string GenerateUniqueText()
         {
-            string newTimestamp = DateTime.Now.ToString("MM-dd-yyyy-hh-mm-ss-ffff");
+            var newTimestamp = DateTime.Now.ToString("MM-dd-yyyy-hh-mm-ss-ffff");
             return newTimestamp;
         }
 
         public static string GenerateUniqueTextMonthNameOneWord()
         {
-            string newTimestamp = DateTime.Now.ToString("MMMMddyyyyhhmmss");
+            var newTimestamp = DateTime.Now.ToString("MMMMddyyyyhhmmss");
             return newTimestamp;
         }
     }

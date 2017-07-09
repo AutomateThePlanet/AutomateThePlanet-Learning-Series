@@ -155,7 +155,7 @@ namespace WebDriver.Series.Tests.GridTestCases
             // After we apply the orderId filter, only 1 item is displayed in the grid. When we apply the NotEqualTo filter this item will disappear.
             GridPage.Grid.Filter(
                 new GridFilter(GridColumns.Freight, FilterOperator.NotEqualTo, newItem.Freight.ToString()),
-                new GridFilter(GridColumns.OrderID, FilterOperator.EqualTo, newItem.OrderId.ToString()));
+                new GridFilter(GridColumns.OrderId, FilterOperator.EqualTo, newItem.OrderId.ToString()));
             WaitForGridToLoad(0, GridPage.Grid);
             var results = GridPage.Grid.GetItems<AdvancedReuseTacticsGridControlsAutomatedTests.Order>();
         

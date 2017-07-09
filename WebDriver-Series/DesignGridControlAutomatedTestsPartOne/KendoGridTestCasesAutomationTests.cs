@@ -25,21 +25,21 @@ namespace DesignGridControlAutomatedTestsPartOne
     [TestClass]
     public class KendoGridTestCasesAutomationTests
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
         private const string OrderIdColumnName = @"OrderID";
         private const string ShipNameColumnName = @"ShipName";
 
         [TestInitialize]
         public void SetupTest()
         {
-            driver = new FirefoxDriver();
-            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
+            _driver = new FirefoxDriver();
+            _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            driver.Quit();
+            _driver.Quit();
         }
 
         // ** OrderID Test Cases (Unique Identifier Type Column Test Cases) ** 
@@ -49,8 +49,8 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void OrderIdEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             var newItem = CreateNewItemInDb();
 
             kendoGrid.Filter(OrderIdColumnName, FilterOperator.EqualTo, newItem.OrderId.ToString());           
@@ -63,8 +63,8 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void OrderIdGreaterThanOrEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             // Create new item with unique ship name;
             var newItem = CreateNewItemInDb();
@@ -86,8 +86,8 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void OrderIdGreaterThanFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             
             // Create new item with unique ship name;
             var newItem = CreateNewItemInDb();
@@ -108,8 +108,8 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void OrderIdLessThanOrEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             
             // Create new item with unique ship name;
             var newItem = CreateNewItemInDb();
@@ -131,8 +131,8 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void OrderIdLessThanFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             
             // Create new item with unique ship name;
             var newItem = CreateNewItemInDb();
@@ -153,8 +153,8 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void OrderIdNotEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             
             // Create new item with unique ship name;
             var newItem = CreateNewItemInDb();
@@ -175,8 +175,8 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void OrderIdClearFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             // Create new item with unique ship name;
             var newItem = CreateNewItemInDb();
             // Make sure that we have at least 2 items if the grid is empty. The tests are designed to run against empty DB.
@@ -200,8 +200,8 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void ShipNameEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             var newItem = CreateNewItemInDb();
 
             kendoGrid.Filter(ShipNameColumnName, FilterOperator.EqualTo, newItem.ShipName);
@@ -214,9 +214,9 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void ShipNameContainsFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
-            string shipName = Guid.NewGuid().ToString();
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
+            var shipName = Guid.NewGuid().ToString();
             // Remove first and last letter
             shipName = shipName.TrimStart(shipName.First()).TrimEnd(shipName.Last());
             var newItem = CreateNewItemInDb(shipName);          
@@ -231,11 +231,11 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void ShipNameEndsWithFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             // Remove first letter 
-            string shipName = Guid.NewGuid().ToString();
+            var shipName = Guid.NewGuid().ToString();
             shipName = shipName.TrimStart(shipName.First());
             var newItem = CreateNewItemInDb(shipName);
 
@@ -249,11 +249,11 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void ShipNameStartsWithFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             // Remove last letter
-            string shipName = Guid.NewGuid().ToString();
+            var shipName = Guid.NewGuid().ToString();
             shipName = shipName.TrimEnd(shipName.Last());
             var newItem = CreateNewItemInDb(shipName);
 
@@ -267,8 +267,8 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void ShipNameNotEqualToFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             
             // Apply combined filter. First filter by ID and than by ship name (not equal filter). 
             // After the first filter there is only one element when we apply the second we expect 0 elements.
@@ -286,11 +286,11 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void ShipNameNotContainsFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));            
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));            
           
             // Remove first and last letter
-            string shipName = Guid.NewGuid().ToString();
+            var shipName = Guid.NewGuid().ToString();
             shipName = shipName.TrimStart(shipName.First()).TrimEnd(shipName.Last());
             var newItem = CreateNewItemInDb(shipName);
 
@@ -308,8 +308,8 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void ShipNameClearFilter()
         {
-            driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             var newItem = CreateNewItemInDb();
 
             // Filter by GUID and we know we wait the grid to be empty
@@ -326,7 +326,7 @@ namespace DesignGridControlAutomatedTestsPartOne
         {
             Until(() =>
             {
-                int currentPage = grid.GetCurrentPageNumber();
+                var currentPage = grid.GetCurrentPageNumber();
                 return currentPage == expectedPage;
             });
         }
@@ -353,11 +353,11 @@ namespace DesignGridControlAutomatedTestsPartOne
             
         private void Until(Func<bool> condition, int timeout = 10, string exceptionMessage = "Timeout exceeded.", int retryRateDelay = 50)
         {
-            DateTime start = DateTime.Now;
+            var start = DateTime.Now;
             while (!condition())
             {
-                DateTime now = DateTime.Now;
-                double totalSeconds = (now - start).TotalSeconds;
+                var now = DateTime.Now;
+                var totalSeconds = (now - start).TotalSeconds;
                 if (totalSeconds >= timeout)
                 {
                     throw new TimeoutException(exceptionMessage);

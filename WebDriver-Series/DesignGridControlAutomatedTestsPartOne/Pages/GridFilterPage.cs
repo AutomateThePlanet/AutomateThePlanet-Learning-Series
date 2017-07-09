@@ -20,11 +20,11 @@ namespace DesignGridControlAutomatedTestsPartOne.Pages
     public class GridFilterPage : IGridPage
     {
         public readonly string Url = @"http://demos.telerik.com/kendo-ui/grid/filter-row";
-        private readonly IWebDriver driver;
+        private readonly IWebDriver _driver;
 
         public GridFilterPage(IWebDriver driver)
         {
-            this.driver = driver;
+            _driver = driver;
             PageFactory.InitElements(driver, this);
         }
 
@@ -32,7 +32,7 @@ namespace DesignGridControlAutomatedTestsPartOne.Pages
         {
             get
             {
-                return new KendoGrid(driver, driver.FindElement(By.Id("grid")));
+                return new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             }
         }
 
@@ -68,7 +68,7 @@ namespace DesignGridControlAutomatedTestsPartOne.Pages
         
         public void NavigateTo()
         {
-            driver.Navigate().GoToUrl(Url);
+            _driver.Navigate().GoToUrl(Url);
         }
     }
 }

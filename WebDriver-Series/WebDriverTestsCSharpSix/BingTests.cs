@@ -21,25 +21,25 @@ namespace HuddlePageObjectsElementsStringProperties
     [TestClass]
     public class BingTests
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
 
         [TestInitialize]
         public void SetupTest()
         {
-            driver = new FirefoxDriver();
-            driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 30));
+            _driver = new FirefoxDriver();
+            _driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 30));
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            driver.Quit();
+            _driver.Quit();
         }
 
         [TestMethod]
         public void SearchTextInBing_First()
         {
-            var bingMainPage = new BingMainPage(driver);
+            var bingMainPage = new BingMainPage(_driver);
             bingMainPage.Navigate();
             bingMainPage.Search("Automate The Planet");
             bingMainPage.AssertResultsCount("236,000 RESULTS");

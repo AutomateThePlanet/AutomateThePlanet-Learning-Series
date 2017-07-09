@@ -21,8 +21,8 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
 {
     public class GridPagerAsserter : GridColumnAsserter
     {
-        private string uniqueShippingName;
-        private List<Order> testPagingItems;
+        private string _uniqueShippingName;
+        private List<Order> _testPagingItems;
         
         public GridPagerAsserter(Pages.IGridPage gridPage) : base(gridPage)
         {
@@ -32,98 +32,98 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         {
             InitializeInvoicesForPaging();
             NavigateToGridInitialPage(11);
-            int targetPage = 1;
+            var targetPage = 1;
             GridPage.GoToFirstPageButton.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
             var results = GridPage.Grid.GetItems<Order>();
         
-            Assert.AreEqual(testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
-            AssertPagerInfoLabel(targetPage, targetPage, testPagingItems.Count());
+            Assert.AreEqual(_testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(targetPage, targetPage, _testPagingItems.Count());
         }
 
         public void NavigateToLastPage_GoToLastPageButton()
         {
             InitializeInvoicesForPaging();
             NavigateToGridInitialPage(1);
-            int targetPage = 11;
+            var targetPage = 11;
             GridPage.GoToLastPage.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
             var results = GridPage.Grid.GetItems<Order>();
 
-            Assert.AreEqual(testPagingItems.Last().OrderId, results.First().OrderId);
-            AssertPagerInfoLabel(targetPage, targetPage, testPagingItems.Count());
+            Assert.AreEqual(_testPagingItems.Last().OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(targetPage, targetPage, _testPagingItems.Count());
         }
 
         public void NavigateToPageNine_GoToPreviousPageButton()
         {
             InitializeInvoicesForPaging();
             NavigateToGridInitialPage(11);
-            int targetPage = 10;
+            var targetPage = 10;
             GridPage.GoToPreviousPage.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
             var results = GridPage.Grid.GetItems<Order>();
 
-            Assert.AreEqual(testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
-            AssertPagerInfoLabel(targetPage, targetPage, testPagingItems.Count());
+            Assert.AreEqual(_testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(targetPage, targetPage, _testPagingItems.Count());
         }
 
         public void NavigateToPageTwo_GoToNextPageButton()
         {
             InitializeInvoicesForPaging();
             NavigateToGridInitialPage(1);
-            int targetPage = 2;
+            var targetPage = 2;
             GridPage.GoToNextPage.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
             var results = GridPage.Grid.GetItems<Order>();
 
-            Assert.AreEqual(testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
-            AssertPagerInfoLabel(targetPage, targetPage, testPagingItems.Count());
+            Assert.AreEqual(_testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(targetPage, targetPage, _testPagingItems.Count());
         }
 
         public void NavigateToPageTwo_SecondPageButton()
         {
             InitializeInvoicesForPaging();
             NavigateToGridInitialPage(1);
-            int targetPage = 2;
+            var targetPage = 2;
             GridPage.PageOnSecondPositionButton.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
             var results = GridPage.Grid.GetItems<Order>();
 
-            Assert.AreEqual(testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
-            AssertPagerInfoLabel(targetPage, targetPage, testPagingItems.Count());
+            Assert.AreEqual(_testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(targetPage, targetPage, _testPagingItems.Count());
         }
 
         public void NavigateToLastPage_MorePagesNextButton()
         {
             InitializeInvoicesForPaging();
             NavigateToGridInitialPage(1);
-            int targetPage = 11;
+            var targetPage = 11;
             GridPage.NextMorePages.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
             var results = GridPage.Grid.GetItems<Order>();
 
-            Assert.AreEqual(testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
-            AssertPagerInfoLabel(targetPage, targetPage, testPagingItems.Count());
+            Assert.AreEqual(_testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(targetPage, targetPage, _testPagingItems.Count());
         }
 
         public void NavigateToPageOne_MorePagesPreviousButton()
         {
             InitializeInvoicesForPaging();
             NavigateToGridInitialPage(11);
-            int targetPage = 1;
+            var targetPage = 1;
             GridPage.PreviousMorePages.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
             var results = GridPage.Grid.GetItems<Order>();
 
-            Assert.AreEqual(testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
-            AssertPagerInfoLabel(targetPage, targetPage, testPagingItems.Count());
+            Assert.AreEqual(_testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
+            AssertPagerInfoLabel(targetPage, targetPage, _testPagingItems.Count());
         }
 
         public void GoToFirstPageButtonDisabled_WhenFirstPageIsLoaded()
         {
             InitializeInvoicesForPaging();
             NavigateToGridInitialPage(11);
-            int targetPage = 1;
+            var targetPage = 1;
             GridPage.GoToFirstPageButton.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
         
@@ -134,7 +134,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         {
             InitializeInvoicesForPaging();
             NavigateToGridInitialPage(11);
-            int targetPage = 1;
+            var targetPage = 1;
             GridPage.GoToFirstPageButton.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
         
@@ -145,7 +145,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         {
             InitializeInvoicesForPaging();
             NavigateToGridInitialPage(11);
-            int targetPage = 1;
+            var targetPage = 1;
             GridPage.GoToFirstPageButton.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
         
@@ -156,7 +156,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         {
             InitializeInvoicesForPaging();
             NavigateToGridInitialPage(1);
-            int targetPage = 11;
+            var targetPage = 11;
             GridPage.GoToLastPage.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
 
@@ -167,7 +167,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         {
             InitializeInvoicesForPaging();
             NavigateToGridInitialPage(1);
-            int targetPage = 11;
+            var targetPage = 11;
             GridPage.GoToLastPage.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
 
@@ -178,7 +178,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         {
             InitializeInvoicesForPaging();
             NavigateToGridInitialPage(1);
-            int targetPage = 11;
+            var targetPage = 11;
             GridPage.GoToLastPage.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
 
@@ -188,32 +188,32 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         private void NavigateToGridInitialPage(int initialPageNumber)
         {
             GridPage.NavigateTo();
-            GridPage.Grid.Filter(GridColumns.ShipName, FilterOperator.EqualTo, uniqueShippingName);
+            GridPage.Grid.Filter(GridColumns.ShipName, FilterOperator.EqualTo, _uniqueShippingName);
             GridPage.Grid.ChangePageSize(1);
             WaitForGridToLoad(1, GridPage.Grid);
             GridPage.Grid.NavigateToPage(initialPageNumber);
             WaitForPageToLoad(initialPageNumber, GridPage.Grid);
-            AssertPagerInfoLabel(initialPageNumber, initialPageNumber, testPagingItems.Count);
+            AssertPagerInfoLabel(initialPageNumber, initialPageNumber, _testPagingItems.Count);
         }
             
         private void AssertPagerInfoLabel(int startItems, int endItems, int totalItems)
         {
-            string expectedLabel = string.Format("{0} - {1} of {2} items", startItems, endItems, totalItems);
+            var expectedLabel = string.Format("{0} - {1} of {2} items", startItems, endItems, totalItems);
             Assert.AreEqual(expectedLabel, GridPage.PagerInfoLabel.Text);
         }
 
         private void InitializeInvoicesForPaging()
         {
-            int totalOrders = 11;
-            if (!string.IsNullOrEmpty(uniqueShippingName))
+            var totalOrders = 11;
+            if (!string.IsNullOrEmpty(_uniqueShippingName))
             {
-                uniqueShippingName = Guid.NewGuid().ToString();
+                _uniqueShippingName = Guid.NewGuid().ToString();
             }
-            testPagingItems = new List<Order>();
-            for (int i = 0; i < totalOrders; i++)
+            _testPagingItems = new List<Order>();
+            for (var i = 0; i < totalOrders; i++)
             {
-                var newOrder = CreateNewItemInDb(uniqueShippingName);
-                testPagingItems.Add(newOrder);
+                var newOrder = CreateNewItemInDb(_uniqueShippingName);
+                _testPagingItems.Add(newOrder);
             }
         }
     }

@@ -21,28 +21,28 @@ namespace WebDriverCsharpSeven.DigitSeparators
     [TestClass]
     public class BingTests
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
 
         [TestInitialize]
         public void SetupTest()
         {
-            driver = new FirefoxDriver();
+            _driver = new FirefoxDriver();
             // Prior C# 7.0
             ////driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(30000);
             // C# 7.0
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30_000);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30_000);
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            driver.Quit();
+            _driver.Quit();
         }
 
         [TestMethod]
         public void SearchTextInBing_First()
         {
-            var bingMainPage = new BingMainPage(driver);
+            var bingMainPage = new BingMainPage(_driver);
             bingMainPage.Navigate();
             bingMainPage.Search("Automate The Planet");
             // Prior C# 7.0

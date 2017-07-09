@@ -35,8 +35,8 @@ namespace WebDriverCsharpSeven.LocalFunctions
         // C# 7.0
         public string Country
         {
-            get => new SelectElement(driver.FindElement(By.Name("enterAddressCountryCode"))).SelectedOption.Text;
-            set => new SelectElement(driver.FindElement(By.Name("enterAddressCountryCode"))).SelectByText(value);
+            get => new SelectElement(_driver.FindElement(By.Name("enterAddressCountryCode"))).SelectedOption.Text;
+            set => new SelectElement(_driver.FindElement(By.Name("enterAddressCountryCode"))).SelectByText(value);
         }
 
         // Prior C# 7.0
@@ -55,8 +55,8 @@ namespace WebDriverCsharpSeven.LocalFunctions
         // C# 7.0
         public string FullName
         {
-            get => driver.FindElement(By.Id("enterAddressFullName")).Text;
-            set => driver.FindElement(By.Id("enterAddressFullName")).SendKeys(value);
+            get => _driver.FindElement(By.Id("enterAddressFullName")).Text;
+            set => _driver.FindElement(By.Id("enterAddressFullName")).SendKeys(value);
         }
 
         // Prior C# 7.0
@@ -64,7 +64,7 @@ namespace WebDriverCsharpSeven.LocalFunctions
         {
             get
             {
-                return driver.FindElement(By.Id("enterAddressAddressLine1"));
+                return _driver.FindElement(By.Id("enterAddressAddressLine1"));
             }
         }
 
@@ -72,7 +72,7 @@ namespace WebDriverCsharpSeven.LocalFunctions
         {
             get
             {
-                return driver.FindElements(By.ClassName("purchaseOrderRow"));
+                return _driver.FindElements(By.ClassName("purchaseOrderRow"));
             }
         }
 
@@ -80,7 +80,7 @@ namespace WebDriverCsharpSeven.LocalFunctions
         {
             get
             {
-                return driver.FindElement(By.Id("enterAddressCity"));
+                return _driver.FindElement(By.Id("enterAddressCity"));
             }
         }
 
@@ -88,7 +88,7 @@ namespace WebDriverCsharpSeven.LocalFunctions
         {
             get
             {
-                return driver.FindElement(By.Id("enterAddressPostalCode"));
+                return _driver.FindElement(By.Id("enterAddressPostalCode"));
             }
         }
 
@@ -96,7 +96,7 @@ namespace WebDriverCsharpSeven.LocalFunctions
         {
             get
             {
-                return driver.FindElement(By.Id("enterAddressPhoneNumber"));
+                return _driver.FindElement(By.Id("enterAddressPhoneNumber"));
             }
         }
 
@@ -104,7 +104,7 @@ namespace WebDriverCsharpSeven.LocalFunctions
         {
             get
             {
-                return driver.FindElement(By.Id("enterVat"));
+                return _driver.FindElement(By.Id("enterVat"));
             }
         }
     }

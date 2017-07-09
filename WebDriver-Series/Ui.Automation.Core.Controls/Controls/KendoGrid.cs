@@ -23,78 +23,78 @@ namespace Ui.Automation.Core.Controls.Controls
 {
     public class KendoGrid
     {
-        private readonly string gridId;
-        private readonly IJavaScriptExecutor driver;
+        private readonly string _gridId;
+        private readonly IJavaScriptExecutor _driver;
 
         public KendoGrid(IWebDriver driver, IWebElement gridDiv)
         {
-            gridId = gridDiv.GetAttribute("id");
-            this.driver = (IJavaScriptExecutor)driver;
+            _gridId = gridDiv.GetAttribute("id");
+            _driver = (IJavaScriptExecutor)driver;
         }
 
         public void RemoveFilters()
         {
-            string jsToBeExecuted = GetGridReference();
+            var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "grid.dataSource.filter([]);");
-            driver.ExecuteScript(jsToBeExecuted);
+            _driver.ExecuteScript(jsToBeExecuted);
             ////this.Driver.FullWaitUntilReady();
         }
 
         public int TotalNumberRows()
         {
             ////this.Driver.FullWaitUntilReady();
-            string jsToBeExecuted = GetGridReference();
+            var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "grid.dataSource.total();");
-            var jsResult = driver.ExecuteScript(jsToBeExecuted);
+            var jsResult = _driver.ExecuteScript(jsToBeExecuted);
             return int.Parse(jsResult.ToString());
         }
 
         public void Reload()
         {
-            string jsToBeExecuted = GetGridReference();
+            var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "grid.dataSource.read();");
-            driver.ExecuteScript(jsToBeExecuted);
+            _driver.ExecuteScript(jsToBeExecuted);
             ////this.Driver.FullWaitUntilReady();
         }
 
         public int GetPageSize()
         {
-            string jsToBeExecuted = GetGridReference();
+            var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "return grid.dataSource.pageSize();");
-            var currentResponse = driver.ExecuteScript(jsToBeExecuted);
-            int pageSize = int.Parse(currentResponse.ToString());
+            var currentResponse = _driver.ExecuteScript(jsToBeExecuted);
+            var pageSize = int.Parse(currentResponse.ToString());
             return pageSize;
         }
 
         public void ChangePageSize(int newSize)
         {
-            string jsToBeExecuted = GetGridReference();
+            var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "grid.dataSource.pageSize(", newSize, ");");
-            driver.ExecuteScript(jsToBeExecuted);
+            _driver.ExecuteScript(jsToBeExecuted);
             ////this.Driver.FullWaitUntilReady();
         }
 
         public void NavigateToPage(int pageNumber)
         {
-            string jsToBeExecuted = GetGridReference();
+            var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "grid.dataSource.page(", pageNumber, ");");
-            driver.ExecuteScript(jsToBeExecuted);
+            _driver.ExecuteScript(jsToBeExecuted);
         }
 
         public void Sort(string columnName, SortType sortType)
         {
-            string jsToBeExecuted = GetGridReference();
+            var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "grid.dataSource.sort({field: '", columnName, "', dir: '", sortType.ToString().ToLower(), "'});");
-            driver.ExecuteScript(jsToBeExecuted);
+            _driver.ExecuteScript(jsToBeExecuted);
             ////this.Driver.FullWaitUntilReady();
         }
 
         public List<T> GetItems<T>() where T : class
         {
             ////this.Driver.FullWaitUntilReady();
-            string jsToBeExecuted = GetGridReference();
+            var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "return JSON.stringify(grid.dataSource.data());");
-            var jsResults = driver.ExecuteScript(jsToBeExecuted);
+            var jsResults = _driver.ExecuteScript(jsToBeExecuted);
             var items = JsonConvert.DeserializeObject<List<T>>(jsResults.ToString());
             return items;
         }
@@ -106,45 +106,45 @@ namespace Ui.Automation.Core.Controls.Controls
 
         public void Filter(params GridFilter[] gridFilters)
         {
-            string jsToBeExecuted = GetGridReference();
-            StringBuilder sb = new StringBuilder();
+            var jsToBeExecuted = GetGridReference();
+            var sb = new StringBuilder();
             sb.Append(jsToBeExecuted);
             sb.Append("grid.dataSource.filter({ logic: \"and\", filters: [");
             foreach (var currentFilter in gridFilters)
             {
                 DateTime filterDateTime;
-                bool isFilterDateTime = DateTime.TryParse(currentFilter.FilterValue, out filterDateTime);
-                string filterValueToBeApplied =
+                var isFilterDateTime = DateTime.TryParse(currentFilter.FilterValue, out filterDateTime);
+                var filterValueToBeApplied =
                                                isFilterDateTime ? string.Format("new Date({0}, {1}, {2})", filterDateTime.Year, filterDateTime.Month - 1, filterDateTime.Day) :
                                                 string.Format("\"{0}\"", currentFilter.FilterValue);
-                string kendoFilterOperator = ConvertFilterOperatorToKendoOperator(currentFilter.FilterOperator);
+                var kendoFilterOperator = ConvertFilterOperatorToKendoOperator(currentFilter.FilterOperator);
                 sb.Append(string.Concat("{ field: \"", currentFilter.ColumnName, "\", operator: \"", kendoFilterOperator, "\", value: ", filterValueToBeApplied, " },"));
             }
             sb.Append("] });");
             jsToBeExecuted = sb.ToString().Replace(",]", "]");
-            driver.ExecuteScript(jsToBeExecuted);
+            _driver.ExecuteScript(jsToBeExecuted);
             ////this.Driver.FullWaitUntilReady();
         }
 
         public int GetCurrentPageNumber()
         {
-            string jsToBeExecuted = GetGridReference();
+            var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "return grid.dataSource.page();");
-            var result = driver.ExecuteScript(jsToBeExecuted);
-            int pageNumber = int.Parse(result.ToString());
+            var result = _driver.ExecuteScript(jsToBeExecuted);
+            var pageNumber = int.Parse(result.ToString());
             return pageNumber;
         }
 
         private string GetGridReference()
         {
-            string initializeKendoGrid = string.Format("var grid = $('#{0}').data('kendoGrid');", gridId);
+            var initializeKendoGrid = string.Format("var grid = $('#{0}').data('kendoGrid');", _gridId);
 
             return initializeKendoGrid;
         }
 
         private string ConvertFilterOperatorToKendoOperator(FilterOperator filterOperator)
         {
-            string kendoFilterOperator = string.Empty;
+            var kendoFilterOperator = string.Empty;
             switch (filterOperator)
             {
                 case FilterOperator.EqualTo:

@@ -35,13 +35,13 @@ namespace AdvancedWebDriverTipsTricksPartThree
     [TestClass]
     public class AdvancedWebDriverUsageTests
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
 
         [TestInitialize]
         public void SetupTest()
         {
-            driver = new FirefoxDriver();
-            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
+            _driver = new FirefoxDriver();
+            _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
             // 10 Advanced WebDriver Tips and Tricks Part 3
             // 1. Start FirefoxDriver with plugins
             ////FirefoxProfile profile = new FirefoxProfile();
@@ -89,7 +89,7 @@ namespace AdvancedWebDriverTipsTricksPartThree
         [TestCleanup]
         public void TeardownTest()
         {
-            driver.Quit();
+            _driver.Quit();
         }
 
         // 10 Advanced WebDriver Tips and Tricks Part 3
@@ -97,9 +97,9 @@ namespace AdvancedWebDriverTipsTricksPartThree
         [TestMethod]
         public void AssertButtonEnabledDisabled()
         {
-            driver.Navigate().GoToUrl(@"http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_disabled");
-            driver.SwitchTo().Frame("iframeResult");
-            IWebElement button = driver.FindElement(By.XPath("/html/body/button"));
+            _driver.Navigate().GoToUrl(@"http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_disabled");
+            _driver.SwitchTo().Frame("iframeResult");
+            var button = _driver.FindElement(By.XPath("/html/body/button"));
             Assert.IsFalse(button.Enabled);
         }
 
@@ -108,10 +108,10 @@ namespace AdvancedWebDriverTipsTricksPartThree
         public void SetHiddenField()
         {
             ////<input type="hidden" name="country" value="Bulgaria"/>
-            IWebElement theHiddenElem = driver.FindElement(By.Name("country"));
-            string hiddenFieldValue = theHiddenElem.GetAttribute("value");
+            var theHiddenElem = _driver.FindElement(By.Name("country"));
+            var hiddenFieldValue = theHiddenElem.GetAttribute("value");
             Assert.AreEqual("Bulgaria", hiddenFieldValue);
-            ((IJavaScriptExecutor)driver).ExecuteScript(
+            ((IJavaScriptExecutor)_driver).ExecuteScript(
                 "arguments[0].value='Germany';",
                 theHiddenElem);
             hiddenFieldValue = theHiddenElem.GetAttribute("value");
@@ -122,22 +122,22 @@ namespace AdvancedWebDriverTipsTricksPartThree
         [TestMethod]
         public void VerifyFileDownloadChrome()
         {
-            string expectedFilePath = @"c:\temp\Testing_Framework_2015_3_1314_2_Free.exe";
+            var expectedFilePath = @"c:\temp\Testing_Framework_2015_3_1314_2_Free.exe";
             try
             {
-                String downloadFolderPath = @"c:\temp\";
+                var downloadFolderPath = @"c:\temp\";
                 var options = new ChromeOptions();
                 options.AddUserProfilePreference("download.default_directory", downloadFolderPath);
-                driver = new ChromeDriver(options);
+                _driver = new ChromeDriver(options);
 
-                driver.Navigate().GoToUrl("https://www.telerik.com/download-trial-file/v2/telerik-testing-framework");
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+                _driver.Navigate().GoToUrl("https://www.telerik.com/download-trial-file/v2/telerik-testing-framework");
+                var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
                 wait.Until((x) =>
                 {
                     return File.Exists(expectedFilePath);
                 });
-                FileInfo fileInfo = new FileInfo(expectedFilePath);
-                long fileSize = fileInfo.Length;
+                var fileInfo = new FileInfo(expectedFilePath);
+                var fileSize = fileInfo.Length;
                 Assert.AreEqual(4326192, fileSize);
             }
             finally
@@ -153,25 +153,25 @@ namespace AdvancedWebDriverTipsTricksPartThree
         [TestMethod]
         public void VerifyFileDownloadFirefox()
         {
-            string expectedFilePath = @"c:\temp\Testing_Framework_2015_3_1314_2_Free.exe";
+            var expectedFilePath = @"c:\temp\Testing_Framework_2015_3_1314_2_Free.exe";
             try
             {
-                String downloadFolderPath = @"c:\temp\";
-                FirefoxProfile profile = new FirefoxProfile();
+                var downloadFolderPath = @"c:\temp\";
+                var profile = new FirefoxProfile();
                 profile.SetPreference("browser.download.folderList", 2);
                 profile.SetPreference("browser.download.dir", downloadFolderPath);
                 profile.SetPreference("browser.download.manager.alertOnEXEOpen", false);
                 profile.SetPreference("browser.helperApps.neverAsk.saveToDisk", "application/msword, application/binary, application/ris, text/csv, image/png, application/pdf, text/html, text/plain, application/zip, application/x-zip, application/x-zip-compressed, application/download, application/octet-stream");
-                driver = new FirefoxDriver(profile);
+                _driver = new FirefoxDriver(profile);
 
-                driver.Navigate().GoToUrl("https://www.telerik.com/download-trial-file/v2/telerik-testing-framework");
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+                _driver.Navigate().GoToUrl("https://www.telerik.com/download-trial-file/v2/telerik-testing-framework");
+                var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
                 wait.Until((x) =>
                 {
                     return File.Exists(expectedFilePath);
                 });
-                FileInfo fileInfo = new FileInfo(expectedFilePath);
-                long fileSize = fileInfo.Length;
+                var fileInfo = new FileInfo(expectedFilePath);
+                var fileSize = fileInfo.Length;
                 Assert.AreEqual(4326192, fileSize);
             }
             finally

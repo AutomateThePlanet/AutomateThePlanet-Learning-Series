@@ -51,7 +51,7 @@ namespace ExecuteUiTestsSauceLabs
         [TearDown]
         public void TeardownTest()
         {
-            bool passed = TestContext.CurrentContext.Result.Outcome == ResultState.Success;
+            var passed = TestContext.CurrentContext.Result.Outcome == ResultState.Success;
             try
             {
                 // Logs the result to Sauce Labs

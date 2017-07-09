@@ -18,17 +18,17 @@ namespace WebDriverTestsCSharpSix.CSharpSix.ExpressionBodiesFunctions.ImprovedVe
 {
     public partial class BingMainPage
     {
-        private readonly IWebDriver driver;
+        private readonly IWebDriver _driver;
 
         public BingMainPage(IWebDriver browser)
         {
-            driver = browser;
+            _driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
         public string Url => @"http://www.bing.com/";
 
-        public void Navigate() => driver.Navigate().GoToUrl(Url);
+        public void Navigate() => _driver.Navigate().GoToUrl(Url);
 
         public void Search(string textToType)
         {

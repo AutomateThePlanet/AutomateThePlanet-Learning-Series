@@ -21,16 +21,16 @@ namespace WebDriverTestsCSharpSix.CSharpSix.StringInterpolation
 {
     public class ResourcesPage
     {
-        private readonly IWebDriver driver;
-        private readonly string url = @"https://automatetheplanet.com/resources/";
+        private readonly IWebDriver _driver;
+        private readonly string _url = @"https://automatetheplanet.com/resources/";
 
         public ResourcesPage(IWebDriver browser)
         {
-            driver = browser;
+            _driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
-        public string Url => url;
+        public string Url => _url;
 
         [FindsBy(How = How.Id, Using = "emailId")]
         public IWebElement Email { get; set; }
@@ -47,10 +47,10 @@ namespace WebDriverTestsCSharpSix.CSharpSix.StringInterpolation
         public IWebElement GetGridElement(string productName, int rowNumber)
         {
             var xpathLocator = $"(//span[text()='{productName}'])[{rowNumber}]/ancestor::td[1]/following-sibling::td[7]/span";
-            return driver.FindElement(By.XPath(xpathLocator));
+            return _driver.FindElement(By.XPath(xpathLocator));
         }
 
-        public void Navigate() => driver.Navigate().GoToUrl(url);
+        public void Navigate() => _driver.Navigate().GoToUrl(_url);
 
         public void DownloadSourceCode(string email, string name)
         {
@@ -58,7 +58,7 @@ namespace WebDriverTestsCSharpSix.CSharpSix.StringInterpolation
             Name.SendKeys(name);
             DownloadButton.Click();
             var successMessage = $"Thank you for downloading {name}! An email was sent to {email}. Check your inbox.";
-            var waitElem = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            var waitElem = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
             waitElem.Until(ExpectedConditions.TextToBePresentInElementLocated(By.Id("successMessageId"), successMessage));
         }
 

@@ -20,12 +20,12 @@ namespace WebDriverTestsCSharpSix.CSharpSix.StaticUsingSyntax
 {
     public class RegistrationPage
     {
-        private readonly IWebDriver driver;
-        private readonly string url = @"http://www.automatetheplanet.com/register";
+        private readonly IWebDriver _driver;
+        private readonly string _url = @"http://www.automatetheplanet.com/register";
 
         public RegistrationPage(IWebDriver browser)
         {
-            driver = browser;
+            _driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
@@ -44,7 +44,7 @@ namespace WebDriverTestsCSharpSix.CSharpSix.StaticUsingSyntax
         public User RegisterUser(string email = null, string password = null, string userName = null)
         {
             var user = new User();
-            driver.Navigate().GoToUrl(url);
+            _driver.Navigate().GoToUrl(_url);
             if (string.IsNullOrEmpty(email))
             {
                 email = BuildUniqueEmailTimestamp();

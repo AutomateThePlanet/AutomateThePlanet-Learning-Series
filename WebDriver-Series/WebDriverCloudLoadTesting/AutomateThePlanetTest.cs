@@ -22,33 +22,33 @@ namespace WebDriverCloudLoadTesting
     [TestClass]
     public class AutomateThePlanetTest
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
         public TestContext TestContext { get; set; }
 
         [TestInitialize]
         public void SetupTest()
         {
-            driver = new PhantomJSDriver();
-            driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 30));
+            _driver = new PhantomJSDriver();
+            _driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 30));
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            driver.Quit();
+            _driver.Quit();
         }
 
         [TestMethod]
         public void TestInTheCloud()
         {
-            var homePage = new HomePage(driver);
+            var homePage = new HomePage(_driver);
             TestContext.BeginTimer("Automate The Planet Home Page- Navigate");
             homePage.Navigate();
             TestContext.EndTimer("Automate The Planet Home Page- Navigate");
             homePage.AssertHeadline();
             TestContext.BeginTimer("Automate The Planet- Go to Blog");
             homePage.GoToBlog();
-            var blogPage = new BlogPage(driver);
+            var blogPage = new BlogPage(_driver);
             blogPage.WaitForSubscribeWidget();
             TestContext.EndTimer("Automate The Planet- Go to Blog");
             blogPage.AssertTitle();

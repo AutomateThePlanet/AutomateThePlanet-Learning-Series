@@ -26,7 +26,7 @@ namespace SpeedUpSeleniumTestsRamFactsMyths
     [TestClass]
     public class RamDiskTests
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
 
         [TestInitialize]
         public void SetupTest()
@@ -44,14 +44,14 @@ namespace SpeedUpSeleniumTestsRamFactsMyths
             ////options.PageLoadStrategy = InternetExplorerPageLoadStrategy.Eager;
             ////this.driver = new InternetExplorerDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers", options);
 
-            driver = new ChromeDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers");
-            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
+            _driver = new ChromeDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers");
+            _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            driver.Quit();
+            _driver.Quit();
         }
 
         [TestMethod]
@@ -60,86 +60,86 @@ namespace SpeedUpSeleniumTestsRamFactsMyths
             Profile("Firefox-CacheProfile-RAMDrive", 10,
                 () =>
                 {
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878773/Implement-Copy-Paste-Csharp-Code");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878773/Implement-Copy-Paste-Csharp-Code");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878205/Read-Write-Windows-Registry-Csharp-VB-NET-Reusable");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878205/Read-Write-Windows-Registry-Csharp-VB-NET-Reusable");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/997954/SSRS-SQL-Server-Reporting-Services-Subscriptions-f");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/997954/SSRS-SQL-Server-Reporting-Services-Subscriptions-f");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/877859/Generic-Properties-Validator-Csharp-VB-NET-Code");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/877859/Generic-Properties-Validator-Csharp-VB-NET-Code");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/886894/Reduced-AutoMapper-Auto-Map-Objects-Faster");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/886894/Reduced-AutoMapper-Auto-Map-Objects-Faster");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878910/Change-config-File-at-Runtime-Csharp-VB-NET-Code");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878910/Change-config-File-at-Runtime-Csharp-VB-NET-Code");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/877860/Assert-DateTime-the-Right-Way-MSTest-NUnit-Csharp");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/877860/Assert-DateTime-the-Right-Way-MSTest-NUnit-Csharp");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878584/Manage-TFS-Test-Cases-in-MS-Test-Manager-Csharp-VB");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878584/Manage-TFS-Test-Cases-in-MS-Test-Manager-Csharp-VB");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878774/Manage-TFS-Test-Suites-in-MS-Test-Manager-Csharp-V");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878774/Manage-TFS-Test-Suites-in-MS-Test-Manager-Csharp-V");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878583/Associate-Automated-Test-with-TFS-Test-Case-Csharp");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878583/Associate-Automated-Test-with-TFS-Test-Case-Csharp");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878912/Connect-to-TFS-Team-Project-Csharp-VB-NET-Code");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878912/Connect-to-TFS-Team-Project-Csharp-VB-NET-Code");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/design-techniques-for-enhancing-unit-tests");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/design-techniques-for-enhancing-unit-tests");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/observer-design-pattern-design");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/observer-design-pattern-design");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/types-code-coverage-examples-c");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/types-code-coverage-examples-c");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/reduced-automapper-auto-map");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/reduced-automapper-auto-map");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/advanced-page-object-pattern-0");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/advanced-page-object-pattern-0");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/design-patterns-in-automation-testing");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/design-patterns-in-automation-testing");
                     WaitUntilLoaded();
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/using-selenium-webdriver-tor-c");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/using-selenium-webdriver-tor-c");
                     WaitUntilLoaded();
                 });
         }
 
         [TestMethod]
-        public void NavigateToUrlsTestIE()
+        public void NavigateToUrlsTestIe()
         {
             Profile("IE-SSD-Drive", 10,
                 () =>
                 {
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878773/Implement-Copy-Paste-Csharp-Code");
-                    driver.Url = @"http://www.codeproject.com/Articles/878205/Read-Write-Windows-Registry-Csharp-VB-NET-Reusable";
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/997954/SSRS-SQL-Server-Reporting-Services-Subscriptions-f");
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/877859/Generic-Properties-Validator-Csharp-VB-NET-Code");
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/886894/Reduced-AutoMapper-Auto-Map-Objects-Faster");
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878910/Change-config-File-at-Runtime-Csharp-VB-NET-Code");
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/877860/Assert-DateTime-the-Right-Way-MSTest-NUnit-Csharp");
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878584/Manage-TFS-Test-Cases-in-MS-Test-Manager-Csharp-VB");
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878774/Manage-TFS-Test-Suites-in-MS-Test-Manager-Csharp-V");
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878583/Associate-Automated-Test-with-TFS-Test-Case-Csharp");
-                    driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878912/Connect-to-TFS-Team-Project-Csharp-VB-NET-Code");
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/design-techniques-for-enhancing-unit-tests");
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/observer-design-pattern-design");
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/types-code-coverage-examples-c");
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/reduced-automapper-auto-map");
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/advanced-page-object-pattern-0");
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/design-patterns-in-automation-testing");
-                    driver.Navigate().GoToUrl(@"https://dzone.com/articles/using-selenium-webdriver-tor-c");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878773/Implement-Copy-Paste-Csharp-Code");
+                    _driver.Url = @"http://www.codeproject.com/Articles/878205/Read-Write-Windows-Registry-Csharp-VB-NET-Reusable";
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/997954/SSRS-SQL-Server-Reporting-Services-Subscriptions-f");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/877859/Generic-Properties-Validator-Csharp-VB-NET-Code");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/886894/Reduced-AutoMapper-Auto-Map-Objects-Faster");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878910/Change-config-File-at-Runtime-Csharp-VB-NET-Code");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/877860/Assert-DateTime-the-Right-Way-MSTest-NUnit-Csharp");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878584/Manage-TFS-Test-Cases-in-MS-Test-Manager-Csharp-VB");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878774/Manage-TFS-Test-Suites-in-MS-Test-Manager-Csharp-V");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878583/Associate-Automated-Test-with-TFS-Test-Case-Csharp");
+                    _driver.Navigate().GoToUrl(@"http://www.codeproject.com/Articles/878912/Connect-to-TFS-Team-Project-Csharp-VB-NET-Code");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/design-techniques-for-enhancing-unit-tests");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/observer-design-pattern-design");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/types-code-coverage-examples-c");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/reduced-automapper-auto-map");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/advanced-page-object-pattern-0");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/design-patterns-in-automation-testing");
+                    _driver.Navigate().GoToUrl(@"https://dzone.com/articles/using-selenium-webdriver-tor-c");
                 });
         }
 
         private void WaitUntilLoaded()
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
             wait.Until((x) =>
             {
-                return ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete");
+                return ((IJavaScriptExecutor)_driver).ExecuteScript("return document.readyState").Equals("complete");
             });
         }
 
         private void Profile(string testResultsFileName, int iterations, Action actionToProfile)
         {
-            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string resultsPath = Path.Combine(desktopPath, "BenchmarkTestResults", string.Concat(testResultsFileName, "_", Guid.NewGuid().ToString(), ".txt"));
-            StreamWriter writer = new StreamWriter(resultsPath);
+            var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            var resultsPath = Path.Combine(desktopPath, "BenchmarkTestResults", string.Concat(testResultsFileName, "_", Guid.NewGuid().ToString(), ".txt"));
+            var writer = new StreamWriter(resultsPath);
 
             GC.Collect();
             GC.WaitForPendingFinalizers();
@@ -147,7 +147,7 @@ namespace SpeedUpSeleniumTestsRamFactsMyths
 
             var watch = new Stopwatch();
             watch.Start();
-            for (int i = 0; i < iterations; i++)
+            for (var i = 0; i < iterations; i++)
             {
                 actionToProfile();
             }

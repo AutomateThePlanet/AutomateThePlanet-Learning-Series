@@ -31,7 +31,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         {
             Until(() =>
             {
-                int currentPage = grid.GetCurrentPageNumber();
+                var currentPage = grid.GetCurrentPageNumber();
                 return currentPage == expectedPage;
             });
         }
@@ -58,11 +58,11 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             
         protected void Until(Func<bool> condition, int timeout = 10, string exceptionMessage = "Timeout exceeded.", int retryRateDelay = 50)
         {
-            DateTime start = DateTime.Now;
+            var start = DateTime.Now;
             while (!condition())
             {
-                DateTime now = DateTime.Now;
-                double totalSeconds = (now - start).TotalSeconds;
+                var now = DateTime.Now;
+                var totalSeconds = (now - start).TotalSeconds;
                 if (totalSeconds >= timeout)
                 {
                     throw new TimeoutException(exceptionMessage);
@@ -74,8 +74,8 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         protected List<Order> GetAllItemsFromDb()
         {
             // Create dummy orders. This logic should be replaced with service oriented call to your DB and get all items that are populated in the grid.
-            List<Order> orders = new List<Order>();
-            for (int i = 0; i < 10; i++)
+            var orders = new List<Order>();
+            for (var i = 0; i < 10; i++)
             {
                 orders.Add(new Order());
             }
@@ -96,7 +96,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
         protected int GetUniqueNumberValue()
         {
             var currentTime = DateTime.Now;
-            int result = currentTime.Year + currentTime.Month + currentTime.Hour + currentTime.Minute + currentTime.Second + currentTime.Millisecond;
+            var result = currentTime.Year + currentTime.Month + currentTime.Hour + currentTime.Minute + currentTime.Second + currentTime.Millisecond;
             return result;
         }
     }

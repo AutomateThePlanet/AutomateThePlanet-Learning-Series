@@ -35,7 +35,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
     [TestClass]
     public class AdvancedWebDriverUsageTests
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
 
         [TestInitialize]
         public void SetupTest()
@@ -62,34 +62,34 @@ namespace AdvancedWebDriverTipsTricksPartOne
             ////options.EnableNativeEvents = true;
             ////options.PageLoadStrategy = InternetExplorerPageLoadStrategy.Eager;
             ////this.driver = new InternetExplorerDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers", options);
-            driver = new FirefoxDriver();
-            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));         
+            _driver = new FirefoxDriver();
+            _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));         
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            driver.Quit();
+            _driver.Quit();
         }
 
         // 1.1. Taking Screenshot. Full Screen.
         [TestMethod]
         public void WebDriverAdvancedUsage_TakingFullScrenenScreenshot()
         {
-            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
             WaitUntilLoaded();
-            string tempFilePath = Path.GetTempFileName().Replace(".tmp", ".png");
-            TakeFullScreenshot(driver, tempFilePath);
+            var tempFilePath = Path.GetTempFileName().Replace(".tmp", ".png");
+            TakeFullScreenshot(_driver, tempFilePath);
         }
 
         // 1.2. Taking Screenshot. Full Screen.
         [TestMethod]
         public void WebDriverAdvancedUsage_TakingElementScreenshot()
         {
-            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
             WaitUntilLoaded();
-            string tempFilePath = Path.GetTempFileName().Replace(".tmp", ".png");
-            TakeScreenshotOfElement(driver, By.XPath("//*[@id='tve_editor']/div[2]/div[2]/div/div"), tempFilePath);
+            var tempFilePath = Path.GetTempFileName().Replace(".tmp", ".png");
+            TakeScreenshotOfElement(_driver, By.XPath("//*[@id='tve_editor']/div[2]/div[2]/div/div"), tempFilePath);
         }
 
         // 2. How to set Page Load Timeout
@@ -97,13 +97,13 @@ namespace AdvancedWebDriverTipsTricksPartOne
         public void SetPageLoadTimeout()
         {
             // 2.1. Set Default Page Load Timeout
-            driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
+            _driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
 
             // 2.2. Wait Until Page is Fully Loaded via JS
             WaitUntilLoaded();
 
             // 2.3. Wait For Visibility of element
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath("//*[@id='tve_editor']/div[2]/div[2]/div/div")));
         }
 
@@ -111,20 +111,20 @@ namespace AdvancedWebDriverTipsTricksPartOne
                                 [TestMethod]
                                 public void GetHtmlSourceOfWebElement()
                                 {
-                                    driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+                                    _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
                                     WaitUntilLoaded();
-                                    var element = driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[3]/div/div"));
-                                    string sourceHtml = element.GetAttribute("innerHTML");
+                                    var element = _driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[3]/div/div"));
+                                    var sourceHtml = element.GetAttribute("innerHTML");
                                     Debug.WriteLine(sourceHtml);
                                 }
 
         [TestMethod]
         public void ExecuteJavaScript()
         {
-            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
             WaitUntilLoaded();
-            IJavaScriptExecutor js = driver as IJavaScriptExecutor;
-            string title = (string)js.ExecuteScript("return document.title");
+            var js = _driver as IJavaScriptExecutor;
+            var title = (string)js.ExecuteScript("return document.title");
             Debug.WriteLine(title);
         }
 
@@ -133,11 +133,11 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void ExecuteInHeadlessBrowser()
         {
-            driver = new PhantomJSDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers");
-            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            _driver = new PhantomJSDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers");
+            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
             WaitUntilLoaded();
-            IJavaScriptExecutor js = driver as IJavaScriptExecutor;
-            string title = (string)js.ExecuteScript("return document.title");
+            var js = _driver as IJavaScriptExecutor;
+            var title = (string)js.ExecuteScript("return document.title");
             Debug.WriteLine(title);
         }
 
@@ -145,35 +145,35 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void CheckIfElementIsVisible()
         {
-            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
-            Assert.IsTrue(driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[2]/div/div")).Displayed);
+            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            Assert.IsTrue(_driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[2]/div/div")).Displayed);
         }
 
         // 9. Manage Cookies
         [TestMethod]
         public void ManageCookies()
         {
-            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
 
             // 9.1. Add new cookie
-            OpenQA.Selenium.Cookie cookie = new OpenQA.Selenium.Cookie("key", "value");
-            driver.Manage().Cookies.AddCookie(cookie);
+            var cookie = new OpenQA.Selenium.Cookie("key", "value");
+            _driver.Manage().Cookies.AddCookie(cookie);
 
             // 9.2. Get All Cookies
-            var cookies = driver.Manage().Cookies.AllCookies;
+            var cookies = _driver.Manage().Cookies.AllCookies;
             foreach (var currentCookie in cookies)
             {
                 Debug.WriteLine(currentCookie.Value);
             }
 
             // 9.3. Delete Cookie by name
-            driver.Manage().Cookies.DeleteCookieNamed("CookieName");
+            _driver.Manage().Cookies.DeleteCookieNamed("CookieName");
 
             // 9.4. Delete All Cookies
-            driver.Manage().Cookies.DeleteAllCookies();
+            _driver.Manage().Cookies.DeleteAllCookies();
 
             // 9.5. Get Cookie by name
-            var myCookie = driver.Manage().Cookies.GetCookieNamed("CookieName");
+            var myCookie = _driver.Manage().Cookies.GetCookieNamed("CookieName");
             Debug.WriteLine(myCookie.Value);
         }
 
@@ -181,18 +181,18 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void MaximizeWindow()
         {
-            driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
-            driver.Manage().Window.Maximize();
+            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            _driver.Manage().Window.Maximize();
         }
 
       
         // 8. Wait AJAX call to complete using JQuery
         public void WaitForAjaxComplete(int maxSeconds)
         {
-            bool isAjaxCallComplete = false;
-            for (int i = 1; i <= maxSeconds; i++)
+            var isAjaxCallComplete = false;
+            for (var i = 1; i <= maxSeconds; i++)
             {
-                isAjaxCallComplete = (bool)((IJavaScriptExecutor)driver).
+                isAjaxCallComplete = (bool)((IJavaScriptExecutor)_driver).
                 ExecuteScript("return window.jQuery != undefined && jQuery.active == 0");
 
                 if (isAjaxCallComplete)
@@ -206,16 +206,16 @@ namespace AdvancedWebDriverTipsTricksPartOne
 
         private void WaitUntilLoaded()
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
             wait.Until((x) =>
             {
-                return ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete");
+                return ((IJavaScriptExecutor)_driver).ExecuteScript("return document.readyState").Equals("complete");
             });
         }
 
         public void TakeFullScreenshot(IWebDriver driver, String filename)
         {
-            Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+            var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
             screenshot.SaveAsFile(filename, ImageFormat.Png);
         }
 
@@ -223,11 +223,11 @@ namespace AdvancedWebDriverTipsTricksPartOne
         {
             // 1. Make screenshot of all screen
             var screenshotDriver = driver as ITakesScreenshot;
-            Screenshot screenshot = screenshotDriver.GetScreenshot();
+            var screenshot = screenshotDriver.GetScreenshot();
             var bmpScreen = new Bitmap(new MemoryStream(screenshot.AsByteArray));
 
             // 2. Get screenshot of specific element
-            IWebElement element = driver.FindElement(by);
+            var element = driver.FindElement(by);
             var cropArea = new Rectangle(element.Location, element.Size);
             var bitmap = bmpScreen.Clone(cropArea, bmpScreen.PixelFormat);
             bitmap.Save(fileName);

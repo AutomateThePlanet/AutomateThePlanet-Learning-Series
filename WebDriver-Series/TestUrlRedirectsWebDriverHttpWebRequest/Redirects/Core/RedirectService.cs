@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-// <copyright file="RedirectService.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="RedirectService.cs" company="Automate The Planet Ltd.">
 // Copyright 2017 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -15,38 +14,39 @@
 using System;
 using System.IO;
 using System.Xml.Serialization;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
 {
     public class RedirectService : IDisposable
     {
-        readonly IRedirectStrategy redirectEngine;
-        private Sites sites;
+        readonly IRedirectStrategy _redirectEngine;
+        private Sites _sites;
 
         public RedirectService(IRedirectStrategy redirectEngine)
         {
-            this.redirectEngine = redirectEngine;
-            this.redirectEngine.Initialize();
+            _redirectEngine = redirectEngine;
+            _redirectEngine.Initialize();
             InitializeRedirectUrls();
         }
 
         public void TestRedirects()
         {
-            bool shouldFail = false;
+            var shouldFail = false;
 
-            foreach (var currentSite in sites.Site)
+            foreach (var currentSite in _sites.Site)
             {
-                Uri baseUri = new Uri(currentSite.Url);
+                var baseUri = new Uri(currentSite.Url);
 
                 foreach (var currentRedirect in currentSite.Redirects.Redirect)
                 {
-                    Uri currentFromUrl = new Uri(baseUri, currentRedirect.From);
-                    Uri currentToUrl = new Uri(baseUri, currentRedirect.To);
+                    var currentFromUrl = new Uri(baseUri, currentRedirect.From);
+                    var currentToUrl = new Uri(baseUri, currentRedirect.To);
 
-                    string currentSitesUrl = redirectEngine.NavigateToFromUrl(currentFromUrl.AbsoluteUri);
+                    var currentSitesUrl = _redirectEngine.NavigateToFromUrl(currentFromUrl.AbsoluteUri);
                     try
                     {
-                        Assert.AreEqual<string>(currentToUrl.AbsoluteUri, currentSitesUrl);
+                        Assert.AreEqual(currentToUrl.AbsoluteUri, currentSitesUrl);
                         Console.WriteLine(string.Format("{0} \n OK", currentFromUrl));
                     }
                     catch (Exception)
@@ -64,14 +64,14 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
 
         public void Dispose()
         {
-            redirectEngine.Dispose();
+            _redirectEngine.Dispose();
         }
 
         private void InitializeRedirectUrls()
         {
-            XmlSerializer deserializer = new XmlSerializer(typeof(Sites));
+            var deserializer = new XmlSerializer(typeof(Sites));
             TextReader reader = new StreamReader(@"redirect-URLs.xml");
-            sites = (Sites)deserializer.Deserialize(reader);
+            _sites = (Sites)deserializer.Deserialize(reader);
             reader.Close();
         }
     }

@@ -20,18 +20,18 @@ namespace WebDriverCloudLoadTesting.Pages.AutomateThePlanet
 {
     public partial class BlogPage
     {
-        private readonly IWebDriver driver;
-        private readonly string url = @"http://automatetheplanet.com/blog";
+        private readonly IWebDriver _driver;
+        private readonly string _url = @"http://automatetheplanet.com/blog";
 
         public BlogPage(IWebDriver browser)
         {
-            driver = browser;
+            _driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
         public void WaitForSubscribeWidget()
         {
-            new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists((By.ClassName("subscribe"))));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists((By.ClassName("subscribe"))));
         }
     }
 }
