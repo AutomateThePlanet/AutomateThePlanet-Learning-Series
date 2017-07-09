@@ -25,7 +25,7 @@ namespace Fidely.Framework.Tokens
 
         public override string ToString()
         {
-            return string.Format("[Q:{0}]", this.Value);
+            return string.Format("[Q:{0}]", Value);
         }
     }
 }

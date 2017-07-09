@@ -33,11 +33,11 @@ namespace Fidely.Framework.Processing
 
             var result = new List<IToken>();
 
-            List<IToken> tokens = input.ToList();
-            for (int i = 0; i < tokens.Count - 1; i++)
+            var tokens = input.ToList();
+            for (var i = 0; i < tokens.Count - 1; i++)
             {
-                IToken left = tokens[i];
-                IToken right = tokens[i + 1];
+                var left = tokens[i];
+                var right = tokens[i + 1];
 
                 result.Add(left);
                 if ((left is OperandToken || left is ClosedParenthesisToken) && (right is OperandToken || right is OpenedParenthesisToken))

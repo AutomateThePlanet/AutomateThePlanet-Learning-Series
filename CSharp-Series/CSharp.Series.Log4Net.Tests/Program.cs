@@ -18,7 +18,7 @@ namespace CSharp.Series.Log4Net.Tests
 {
     internal class Program
     {
-        private static readonly log4net.ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private static void Main(string[] args)
         {

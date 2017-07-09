@@ -33,7 +33,7 @@ namespace WhichWorksFasterNullDefault
                    var y = b.GetValueOrDefault(7);
                    var z = d.GetValueOrDefault(6) + f.GetValueOrDefault(3) + g.GetValueOrDefault(1) + h.GetValueOrDefault(1) + j.GetValueOrDefault(5) + k.GetValueOrDefault(8);
                });
-            string formattedProfileResult = Profiler.FormatProfileResults(int.MaxValue, profileResult);
+            var formattedProfileResult = Profiler.FormatProfileResults(int.MaxValue, profileResult);
             FileWriter.WriteToDesktop("ExecuteWithGetValueOrDefaultT", formattedProfileResult);
         }
 
@@ -55,7 +55,7 @@ namespace WhichWorksFasterNullDefault
                    var y = b ?? 7;
                    var z = (d ?? 6) + (f ?? 3) + (g ?? 1) + (h ?? 1) + (j ?? 5) + (k ?? 8);
                });
-            string formattedProfileResult = Profiler.FormatProfileResults(int.MaxValue, profileResult);
+            var formattedProfileResult = Profiler.FormatProfileResults(int.MaxValue, profileResult);
             FileWriter.WriteToDesktop("ExecuteWithNullCoalescingOperatorT", formattedProfileResult);
         }
 
@@ -77,7 +77,7 @@ namespace WhichWorksFasterNullDefault
                    var y = b.HasValue ? b : 7;
                    var z = (d.HasValue ? d : 6) + (f.HasValue ? f : 3) + (g.HasValue ? g : 1) + (h.HasValue ? h : 1) + (j.HasValue ? j : 5) + (k.HasValue ? k : 8);
                });
-            string formattedProfileResult = Profiler.FormatProfileResults(100000, profileResult);
+            var formattedProfileResult = Profiler.FormatProfileResults(100000, profileResult);
             FileWriter.WriteToDesktop("ExecuteWithConditionalOperatorT", formattedProfileResult);
         }
 
@@ -90,7 +90,7 @@ namespace WhichWorksFasterNullDefault
                {
                    var x = a.GetValueOrDefault();
                });
-            string formattedProfileResult = Profiler.FormatProfileResults(100000, profileResult);
+            var formattedProfileResult = Profiler.FormatProfileResults(100000, profileResult);
             FileWriter.WriteToDesktop("ExecuteWithGetValueOrDefaultZeroT", formattedProfileResult);
         }
 
@@ -103,7 +103,7 @@ namespace WhichWorksFasterNullDefault
                {
                    var x = a ?? 0;
                });
-            string formattedProfileResult = Profiler.FormatProfileResults(100000, profileResult);
+            var formattedProfileResult = Profiler.FormatProfileResults(100000, profileResult);
             FileWriter.WriteToDesktop("ExecuteWithNullCoalescingOperatorZeroT", formattedProfileResult);
         }
 
@@ -116,7 +116,7 @@ namespace WhichWorksFasterNullDefault
                {
                    var x = a.HasValue ? a : 0;
                });
-            string formattedProfileResult = Profiler.FormatProfileResults(100000, profileResult);
+            var formattedProfileResult = Profiler.FormatProfileResults(100000, profileResult);
             FileWriter.WriteToDesktop("ExecuteWithConditionalOperatorZeroT", formattedProfileResult);
         }
     }

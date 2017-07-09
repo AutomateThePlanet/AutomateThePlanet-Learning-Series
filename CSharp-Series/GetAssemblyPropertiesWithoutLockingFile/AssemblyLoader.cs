@@ -33,7 +33,7 @@ namespace GetAssemblyPropertiesWithoutLockingFile
 
         public void LoadAssembly(string path)
         {
-            this.assembly = Assembly.Load(AssemblyName.GetAssemblyName(path));
+            assembly = Assembly.Load(AssemblyName.GetAssemblyName(path));
         }
 
         public List<Test> GetMethodsWithTestMethodAttribute()
@@ -41,14 +41,14 @@ namespace GetAssemblyPropertiesWithoutLockingFile
             Type[] types;
             try
             {
-                types = this.assembly.GetTypes();
+                types = assembly.GetTypes();
             }
             catch (ReflectionTypeLoadException ex)
             {
                 types = ex.Types;
             }
             types = types.Where(t => t != null).ToArray();
-            MethodInfo[] methods = types.SelectMany(t => t.GetMethods().Where(y =>
+            var methods = types.SelectMany(t => t.GetMethods().Where(y =>
             {
                 var attributes = y.GetCustomAttributes(true).ToArray();
                 if (attributes.Length == 0)
@@ -57,7 +57,7 @@ namespace GetAssemblyPropertiesWithoutLockingFile
                 }
                 else
                 {
-                    bool result = false;
+                    var result = false;
                     foreach (var cAttribute in attributes)
                     {
                         result = cAttribute.GetType().FullName.Equals(typeof(TestMethodAttribute).ToString());
@@ -71,14 +71,14 @@ namespace GetAssemblyPropertiesWithoutLockingFile
                 }
             })).ToArray();
 
-            List<Test> tests = GetTestsByMethodInfos(methods);
+            var tests = GetTestsByMethodInfos(methods);
 
             return tests;
         }
 
         private static List<Test> GetTestsByMethodInfos(MethodInfo[] methodInfos)
         {
-            List<Test> tests = new List<Test>();
+            var tests = new List<Test>();
             foreach (var methodInfo in methodInfos)
             {
                 tests.Add(new Test(string.Format("{0}.{1}",
@@ -91,19 +91,19 @@ namespace GetAssemblyPropertiesWithoutLockingFile
 
         private static Guid GenerateTestMethodId(MethodInfo methodInfo)
         {
-            string currentNameSpace = methodInfo.DeclaringType.FullName;
-            string currentTestMethodShortName = methodInfo.Name;
-            string currentTestMethodFullName = string.Concat(currentNameSpace, ".", currentTestMethodShortName);
-            Guid testId = GuidFromString(currentTestMethodFullName);
+            var currentNameSpace = methodInfo.DeclaringType.FullName;
+            var currentTestMethodShortName = methodInfo.Name;
+            var currentTestMethodFullName = string.Concat(currentNameSpace, ".", currentTestMethodShortName);
+            var testId = GuidFromString(currentTestMethodFullName);
 
             return testId;
         }
 
         private static Guid GuidFromString(string data)
         {
-            byte[] hash = cryptoServiceProvider.ComputeHash(Encoding.Unicode.GetBytes(data));
+            var hash = cryptoServiceProvider.ComputeHash(Encoding.Unicode.GetBytes(data));
 
-            byte[] toGuid = new byte[16];
+            var toGuid = new byte[16];
             Array.Copy(hash, toGuid, 16);
 
             return new Guid(toGuid);

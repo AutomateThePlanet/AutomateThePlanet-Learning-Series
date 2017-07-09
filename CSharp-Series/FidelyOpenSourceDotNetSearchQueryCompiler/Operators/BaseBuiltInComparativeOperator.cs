@@ -48,16 +48,16 @@ namespace Fidely.Framework.Compilation.Objects.Operators
         /// <param name="description">The description of this operator.</param>
         protected BaseBuiltInComparativeOperator(string symbol, OperatorIndependency independency, string description) : base(symbol, independency)
         {
-            this.builder = new OperandBuilder();
+            builder = new OperandBuilder();
 
             if (description == null)
             {
-                var attribute = Attribute.GetCustomAttribute(this.GetType(), typeof(DescriptionAttribute)) as DescriptionAttribute;
-                this.Description = (attribute != null) ? attribute.Description : "";
+                var attribute = Attribute.GetCustomAttribute(GetType(), typeof(DescriptionAttribute)) as DescriptionAttribute;
+                Description = (attribute != null) ? attribute.Description : "";
             }
             else
             {
-                this.Description = description;
+                Description = description;
             }
         }
 
@@ -89,7 +89,7 @@ namespace Fidely.Framework.Compilation.Objects.Operators
                 {
                     if (property.CanRead && Attribute.GetCustomAttribute(property, typeof(NotEvaluateAttribute)) == null)
                     {
-                        operands.Add(this.builder.BuildUp(current, typeof(T).GetProperty(property.Name, BindingFlags.Instance | BindingFlags.Public)));
+                        operands.Add(builder.BuildUp(current, typeof(T).GetProperty(property.Name, BindingFlags.Instance | BindingFlags.Public)));
                         Logger.Verbose("Generated an operand with '{0}' property.", property.Name);
                     }
                     else
@@ -104,15 +104,15 @@ namespace Fidely.Framework.Compilation.Objects.Operators
                     return new Operand(Expression.Constant(true), typeof(bool));
                 }
 
-                result = this.Compare(operands[0], right);
-                for (int i = 1; i < operands.Count; i++)
+                result = Compare(operands[0], right);
+                for (var i = 1; i < operands.Count; i++)
                 {
-                    result = Expression.Or(result, this.Compare(operands[i], right));
+                    result = Expression.Or(result, Compare(operands[i], right));
                 }
             }
             else
             {
-                result = this.Compare(left, right);
+                result = Compare(left, right);
             }
 
             return new Operand(result, typeof(bool));

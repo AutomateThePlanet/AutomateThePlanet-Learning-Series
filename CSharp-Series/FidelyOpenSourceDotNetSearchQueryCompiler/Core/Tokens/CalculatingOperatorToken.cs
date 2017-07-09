@@ -22,14 +22,14 @@ namespace Fidely.Framework.Tokens
     {
         internal CalculatingOperatorToken(CalculatingOperator op) : base(op.Symbol, 0, op.Priority)
         {
-            this.Operator = op;
+            Operator = op;
         }
 
         internal CalculatingOperator Operator { get; private set; }
 
         public override string ToString()
         {
-            return string.Format("[calc:{0}]", this.Value);
+            return string.Format("[calc:{0}]", Value);
         }
     }
 }

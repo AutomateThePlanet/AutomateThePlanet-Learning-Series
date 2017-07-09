@@ -45,7 +45,7 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
                 return new Operand(Expression.Constant(""), typeof(string));
             }
 
-            decimal decimalValue = 0m;
+            var decimalValue = 0m;
             if (Decimal.TryParse(value.ToString(), out decimalValue))
             {
                 Logger.Verbose("Evaluated the specified value as a number operand.");

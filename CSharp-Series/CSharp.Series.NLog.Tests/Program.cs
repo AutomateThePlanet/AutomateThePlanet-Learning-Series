@@ -27,7 +27,7 @@ namespace CSharp.Series.NLog.Tests
             // Register a type to have a singleton lifetime without mapping the type
             IUnityContainer unityContainer = new UnityContainer();
             unityContainer.RegisterType<Loggers.ILogger, EventLogger>(new ContainerControlledLifetimeManager());
-            Loggers.ILogger eventLogger = unityContainer.Resolve<Loggers.ILogger>(); 
+            var eventLogger = unityContainer.Resolve<Loggers.ILogger>(); 
             eventLogger.LogInfo("EventLogger log message to Kaspersky event log.");
         }
     }

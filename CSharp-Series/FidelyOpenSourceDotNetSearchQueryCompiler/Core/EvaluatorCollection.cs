@@ -33,7 +33,7 @@ namespace Fidely.Framework
         /// </summary>
         public EvaluatorCollection()
         {
-            this.items = new List<OperandEvaluator>();
+            items = new List<OperandEvaluator>();
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Fidely.Framework
                 throw new ArgumentNullException("item");
             }
 
-            this.items.Add(item);
+            items.Add(item);
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Fidely.Framework
         /// <returns>The enumerator that iterates through the collection.</returns>
         public IEnumerator<OperandEvaluator> GetEnumerator()
         {
-            return this.items.GetEnumerator();
+            return items.GetEnumerator();
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Fidely.Framework
         /// <returns>The enumerator that iterates through the collection.</returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return this.items.GetEnumerator();
+            return items.GetEnumerator();
         }
     }
 }

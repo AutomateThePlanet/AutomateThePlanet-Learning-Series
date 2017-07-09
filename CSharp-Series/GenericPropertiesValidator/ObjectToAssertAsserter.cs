@@ -14,11 +14,11 @@
 
 namespace GenericPropertiesValidator
 {
-    public class ObjectToAssertAsserter : PropertiesAsserter<ObjectToAssertAsserter, GenericPropertiesValidator.ObjectToAssert>
+    public class ObjectToAssertAsserter : PropertiesAsserter<ObjectToAssertAsserter, ObjectToAssert>
     {
-        public void Assert(GenericPropertiesValidator.ObjectToAssert expected, GenericPropertiesValidator.ObjectToAssert actual)
+        public void Assert(ObjectToAssert expected, ObjectToAssert actual)
         {
-            this.Assert(expected,
+            Assert(expected,
                         actual,
                         e => e.LastName,
                         e => e.FirstName, 

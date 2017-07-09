@@ -37,7 +37,7 @@ namespace Fidely.Framework.Compilation.Evaluators
         public StaticVariableEvaluator(IOperandBuilder builder)
         {
             this.builder = builder;
-            this.evaluators = new Dictionary<string, Func<object>>();
+            evaluators = new Dictionary<string, Func<object>>();
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Fidely.Framework.Compilation.Evaluators
         /// <param name="procedure">The value generator.</param>
         public void RegisterVariable(string name, Func<object> procedure)
         {
-            this.RegisterVariable(name, procedure, null);
+            RegisterVariable(name, procedure, null);
         }
 
         /// <summary>
@@ -67,16 +67,16 @@ namespace Fidely.Framework.Compilation.Evaluators
                 throw new ArgumentNullException("procedure");
             }
 
-            if (this.evaluators.ContainsKey(name.ToUpperInvariant()))
+            if (evaluators.ContainsKey(name.ToUpperInvariant()))
             {
-                string message = String.Format(CultureInfo.CurrentUICulture, "Failed to register the specified variable '{0}' because this variable is already registered.", name);
+                var message = String.Format(CultureInfo.CurrentUICulture, "Failed to register the specified variable '{0}' because this variable is already registered.", name);
                 throw new ArgumentException(message, "name");
             }
 
             Logger.Verbose("Registered the specified variable '{0}'.", name);
 
-            this.evaluators[name.ToUpperInvariant()] = procedure;
-            this.Register(new AutoCompleteItem(name, description));
+            evaluators[name.ToUpperInvariant()] = procedure;
+            Register(new AutoCompleteItem(name, description));
         }
 
         /// <summary>
@@ -94,16 +94,16 @@ namespace Fidely.Framework.Compilation.Evaluators
                 throw new ArgumentNullException("value");
             }
 
-            if (!this.evaluators.ContainsKey(value.ToUpperInvariant()))
+            if (!evaluators.ContainsKey(value.ToUpperInvariant()))
             {
                 Logger.Verbose("Ignored the specified value because this didn't match any registered variable names.");
                 return null;
             }
 
-            Func<object> eval = this.evaluators[value.ToUpperInvariant()];
+            var eval = evaluators[value.ToUpperInvariant()];
             Logger.Verbose("Evaluated as '{0} : {1}'.", eval.ToString(), eval.GetType().FullName);
 
-            return this.builder.BuildUp(eval());
+            return builder.BuildUp(eval());
         }
 
         /// <summary>
@@ -112,10 +112,10 @@ namespace Fidely.Framework.Compilation.Evaluators
         /// <returns>The cloned instance.</returns>
         public override OperandEvaluator Clone()
         {
-            var instance = new StaticVariableEvaluator(this.builder);
-            foreach (string key in this.evaluators.Keys)
+            var instance = new StaticVariableEvaluator(builder);
+            foreach (var key in evaluators.Keys)
             {
-                instance.evaluators.Add(key, this.evaluators[key]);
+                instance.evaluators.Add(key, evaluators[key]);
             }
             return instance;
         }

@@ -21,7 +21,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
 
         public void StartPartyInAnotherDimension(object input)
         {
-            DimensionTester currentDimensionInput = (DimensionTester)input;
+            var currentDimensionInput = (DimensionTester)input;
             Console.WriteLine("let the party begin");
             while (currentDimensionInput.shouldPartyContinue)
             {

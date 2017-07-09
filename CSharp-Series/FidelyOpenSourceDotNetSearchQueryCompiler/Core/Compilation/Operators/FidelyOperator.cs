@@ -30,8 +30,8 @@ namespace Fidely.Framework.Compilation.Operators
         /// <param name="independency">The independency of this operator.</param>
         protected FidelyOperator(string symbol, OperatorIndependency independency)
         {
-            this.Symbol = symbol;
-            this.Independency = independency;
+            Symbol = symbol;
+            Independency = independency;
         }
 
         /// <summary>
@@ -60,9 +60,9 @@ namespace Fidely.Framework.Compilation.Operators
         protected void Warn(string format, params object[] args)
         {
             Logger.Warn(format, args);
-            if (this.WarningNotifier != null)
+            if (WarningNotifier != null)
             {
-                this.WarningNotifier.Notify(this.GetType(), this.Symbol, format, args);
+                WarningNotifier.Notify(GetType(), Symbol, format, args);
             }
         }
     }

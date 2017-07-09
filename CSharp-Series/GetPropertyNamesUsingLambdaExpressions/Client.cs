@@ -31,7 +31,7 @@ namespace GetPropertyNamesUsingLambdaExpressions
 
         public override string ToString()
         {
-            return string.Concat(this.FistName, " ", this.LastName);
+            return string.Concat(FistName, " ", LastName);
         }
 
     }

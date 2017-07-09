@@ -28,8 +28,8 @@ namespace MSBuildTcpIPLogger
 
         public static string GenerateTrxFilePath(string workingDir)
         {
-            string fileName = String.Concat(Generate(), ".trx");
-            string uniqueTestResultName = Path.Combine(workingDir, "results", fileName);
+            var fileName = String.Concat(Generate(), ".trx");
+            var uniqueTestResultName = Path.Combine(workingDir, "results", fileName);
 
             return uniqueTestResultName;
         }

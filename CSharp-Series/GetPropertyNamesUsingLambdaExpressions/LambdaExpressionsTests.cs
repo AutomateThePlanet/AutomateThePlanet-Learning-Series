@@ -22,13 +22,13 @@ namespace GetPropertyNamesUsingLambdaExpressions
         [TestMethod]
         public void NameExtensionsExample()
         {
-            Client client = new Client();
+            var client = new Client();
             var propertyNames = client.GetMemberNames(c => c.FistName, c => c.LastName, c => c.City);
             foreach (var cPropertyName in propertyNames)
             {
                 Console.WriteLine(cPropertyName);
             }
-            string nameOfTheMethod = client.GetMemberName(c => c.ToString());
+            var nameOfTheMethod = client.GetMemberName(c => c.ToString());
             Console.WriteLine(nameOfTheMethod);
         }
     }

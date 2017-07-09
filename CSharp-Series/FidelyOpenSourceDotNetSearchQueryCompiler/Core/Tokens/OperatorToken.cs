@@ -22,9 +22,9 @@ namespace Fidely.Framework.Tokens
     {
         protected OperatorToken(string value, int typePriority, int priority)
         {
-            this.Value = value;
-            this.TypePriority = typePriority;
-            this.Priority = priority;
+            Value = value;
+            TypePriority = typePriority;
+            Priority = priority;
         }
 
         public string Value { get; private set; }

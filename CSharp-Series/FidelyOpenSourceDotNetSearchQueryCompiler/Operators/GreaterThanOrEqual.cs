@@ -49,7 +49,7 @@ namespace Fidely.Framework.Compilation.Objects.Operators
         /// <returns>The cloned instance.</returns>
         public override FidelyOperator Clone()
         {
-            return new GreaterThanOrEqual<T>(this.Symbol, this.Independency, this.Description);
+            return new GreaterThanOrEqual<T>(Symbol, Independency, Description);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Fidely.Framework.Compilation.Objects.Operators
             }
             else
             {
-                this.Warn("'{0}' doesn't support to compare '{1}' and '{2}'.", this.GetType().FullName, left.OperandType.FullName, right.OperandType.FullName);
+                Warn("'{0}' doesn't support to compare '{1}' and '{2}'.", GetType().FullName, left.OperandType.FullName, right.OperandType.FullName);
                 result = Expression.Constant(false);
             }
 

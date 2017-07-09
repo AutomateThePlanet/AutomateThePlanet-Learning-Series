@@ -22,14 +22,14 @@ namespace Fidely.Framework.Tokens
     {
         internal ComparativeOperatorToken(ComparativeOperator op) : base(op.Symbol, 1, 0)
         {
-            this.Operator = op;
+            Operator = op;
         }
 
         internal ComparativeOperator Operator { get; private set; }
 
         public override string ToString()
         {
-            return string.Format("[cmp:{0}]", this.Value);
+            return string.Format("[cmp:{0}]", Value);
         }
     }
 }

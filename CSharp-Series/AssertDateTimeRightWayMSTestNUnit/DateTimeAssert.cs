@@ -31,8 +31,8 @@ namespace AssertDateTimeRightWayMSTestNUnit
             {
                 throw new NullReferenceException("The actual date was null");
             }
-            TimeSpan expectedDelta = GetTimeSpanDeltaByType(deltaType, count);
-            double totalSecondsDifference = Math.Abs(((DateTime)actualDate - (DateTime)expectedDate).TotalSeconds);
+            var expectedDelta = GetTimeSpanDeltaByType(deltaType, count);
+            var totalSecondsDifference = Math.Abs(((DateTime)actualDate - (DateTime)expectedDate).TotalSeconds);
 
             if (totalSecondsDifference > expectedDelta.TotalSeconds)
             {
@@ -47,7 +47,7 @@ namespace AssertDateTimeRightWayMSTestNUnit
 
         private static TimeSpan GetTimeSpanDeltaByType(DateTimeDeltaType type, int count)
         {
-            TimeSpan result = default(TimeSpan);
+            var result = default(TimeSpan);
 
             switch (type)
             {

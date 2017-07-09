@@ -54,8 +54,8 @@ namespace Fidely.Framework
         private static void Write(TraceEventType category, string format, params object[] args)
         {
             var trace = new StackTrace();
-            StackFrame frame = trace.GetFrame(2);
-            Type type = frame.GetMethod().ReflectedType;
+            var frame = trace.GetFrame(2);
+            var type = frame.GetMethod().ReflectedType;
             logger.TraceEvent(category, 1, String.Format(CultureInfo.CurrentUICulture, "[{0:yyyy-MM-dd hh:mm:ss.fff zzz}] [{1}] {2}", DateTimeOffset.Now, type.FullName, format), args);
         }
     }

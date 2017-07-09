@@ -22,16 +22,16 @@ namespace MSBuildTcpIPLogger
 
         public Process ExecuteMsbuildProject(string msbuildProjPath, IpAddressSettings ipAddressSettings, string additionalArgs = "")
         {
-            string currentAssemblyLocation = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            string currentAssemblyFullpath = String.Format(currentAssemblyLocation, "\\AutomationTestAssistantCore.dll");
-            string additionalArguments = BuildMsBuildAdditionalArguments(msbuildProjPath, ipAddressSettings, additionalArgs, currentAssemblyFullpath);
-            ProcessStartInfo procStartInfo = new ProcessStartInfo(MSBUILD_PATH, additionalArguments);
+            var currentAssemblyLocation = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            var currentAssemblyFullpath = String.Format(currentAssemblyLocation, "\\AutomationTestAssistantCore.dll");
+            var additionalArguments = BuildMsBuildAdditionalArguments(msbuildProjPath, ipAddressSettings, additionalArgs, currentAssemblyFullpath);
+            var procStartInfo = new ProcessStartInfo(MSBUILD_PATH, additionalArguments);
             procStartInfo.RedirectStandardOutput = false;
             //procStartInfo.UseShellExecute = true;
             //procStartInfo.CreateNoWindow = false;
             procStartInfo.UseShellExecute = false;
             procStartInfo.CreateNoWindow = true;
-            Process proc = new Process();
+            var proc = new Process();
             proc.StartInfo = procStartInfo;
             proc.Start();
             return proc;
@@ -40,8 +40,8 @@ namespace MSBuildTcpIPLogger
         public Process ExecuteMsTest(MessageArgsMsTest messageArgs)
         {
             messageArgs.CreateTestList();
-            string additionalArgs = String.Concat("/p:TestListPath=\"", messageArgs.TestListPath, "/p:ResultsFilePath=", "\"", messageArgs.ResultsFilePath, "\"");
-            Process currentProcess = ExecuteMsbuildProject(messageArgs.ProjectPath, messageArgs.IpAddressSettings, additionalArgs);
+            var additionalArgs = String.Concat("/p:TestListPath=\"", messageArgs.TestListPath, "/p:ResultsFilePath=", "\"", messageArgs.ResultsFilePath, "\"");
+            var currentProcess = ExecuteMsbuildProject(messageArgs.ProjectPath, messageArgs.IpAddressSettings, additionalArgs);
 
             return currentProcess;
         }
@@ -49,22 +49,22 @@ namespace MSBuildTcpIPLogger
         public Process ExecuteMsTestSpecificList(MessageArgsMsTest messageArgs)
         {
             messageArgs.CreateTestList();
-            string uniqueTestResultName = TimeStampGenerator.GenerateTrxFilePath(messageArgs.WorkingDir);
-            string additionalArgs = String.Concat("/p:TestListPath=\"", messageArgs.TestListPath, "\" /p:ResultsFilePath=", "\"", messageArgs.ResultsFilePath, "\"", " /p:TestListName=", "\"", messageArgs.ListName, "\"");
-            Process currentProcess = ExecuteMsbuildProject(messageArgs.ProjectPath, messageArgs.IpAddressSettings, additionalArgs);
+            var uniqueTestResultName = TimeStampGenerator.GenerateTrxFilePath(messageArgs.WorkingDir);
+            var additionalArgs = String.Concat("/p:TestListPath=\"", messageArgs.TestListPath, "\" /p:ResultsFilePath=", "\"", messageArgs.ResultsFilePath, "\"", " /p:TestListName=", "\"", messageArgs.ListName, "\"");
+            var currentProcess = ExecuteMsbuildProject(messageArgs.ProjectPath, messageArgs.IpAddressSettings, additionalArgs);
 
             return currentProcess;
         }
       
         public void WaitForProcessToFinish(int procId)
         {
-            Process proc = Process.GetProcessById(procId);
+            var proc = Process.GetProcessById(procId);
             proc.WaitForExit();
         }
 
         private string BuildMsBuildAdditionalArguments(string msbuildProjPath, IpAddressSettings ipAddressSettings, string additionalArgs, string currentAssemblyFullpath)
         {
-            string additionalArguments = String.Concat(msbuildProjPath, " ", additionalArgs, " ", "/fileLoggerParameters:LogFile=MsBuildLog.txt;append=true;Verbosity=normal;Encoding=UTF-8 /l:AutomationTestAssistantCore.MsBuildLogger.TcpIpLogger,",
+            var additionalArguments = String.Concat(msbuildProjPath, " ", additionalArgs, " ", "/fileLoggerParameters:LogFile=MsBuildLog.txt;append=true;Verbosity=normal;Encoding=UTF-8 /l:AutomationTestAssistantCore.MsBuildLogger.TcpIpLogger,",
                 currentAssemblyFullpath, ";Ip=", ipAddressSettings.GetIPAddress(), ";Port=", ipAddressSettings.Port, ";");
 
             return additionalArguments;

@@ -21,8 +21,8 @@ namespace ImplementCopyPaste
     {
         public static bool IsSerializable(object obj)
         {
-            MemoryStream mem = new MemoryStream();
-            BinaryFormatter bin = new BinaryFormatter();
+            var mem = new MemoryStream();
+            var bin = new BinaryFormatter();
             try
             {
                 bin.Serialize(mem, obj);

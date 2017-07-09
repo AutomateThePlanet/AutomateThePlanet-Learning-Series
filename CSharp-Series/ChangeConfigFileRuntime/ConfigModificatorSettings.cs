@@ -23,9 +23,9 @@ namespace ChangeConfigFileRuntime
 
         public ConfigModificatorSettings(string rootNode, string nodeForEdit, string configPath)
         {
-            this.RootNode = rootNode;
-            this.NodeForEdit = nodeForEdit;
-            this.ConfigPath = configPath;
+            RootNode = rootNode;
+            NodeForEdit = nodeForEdit;
+            ConfigPath = configPath;
         }
     }
 }

@@ -39,18 +39,18 @@ namespace MSBuildTcpIPLogger
         {
             try
             {
-                this.InitializeParameters();
+                InitializeParameters();
 
-                this.SubscribeToEvents(eventSource);
+                SubscribeToEvents(eventSource);
 
                 log.Info("Initialize MS Build Logger!");
                 
-                string ipStr = GetParameterValue("ip");
-                IPAddress ipServer = IPAddress.Parse(ipStr);
-                int port = int.Parse(GetParameterValue("port"));
+                var ipStr = GetParameterValue("ip");
+                var ipServer = IPAddress.Parse(ipStr);
+                var port = int.Parse(GetParameterValue("port"));
                 log.InfoFormat("MS Build Logger port to write {0}", port);
                 
-                clientSocketWriter = new System.Net.Sockets.TcpClient();
+                clientSocketWriter = new TcpClient();
                 clientSocketWriter.Connect(ipServer, port);
                 networkStream = clientSocketWriter.GetStream();
                 Thread.Sleep(1000);
@@ -73,18 +73,18 @@ namespace MSBuildTcpIPLogger
         {
             try
             {
-                this.paramaterBag = new Dictionary<string, string>();
+                paramaterBag = new Dictionary<string, string>();
                 log.Info("Initialize Logger params");
                 if (!string.IsNullOrEmpty(Parameters))
                 {
-                    foreach (string paramString in this.Parameters.Split(";".ToCharArray()))
+                    foreach (var paramString in Parameters.Split(";".ToCharArray()))
                     {
-                        string[] keyValue = paramString.Split("=".ToCharArray());
+                        var keyValue = paramString.Split("=".ToCharArray());
                         if (keyValue == null || keyValue.Length < 2)
                         {
                             continue;
                         }
-                        this.ProcessParam(keyValue[0].ToLower(), keyValue[1]);
+                        ProcessParam(keyValue[0].ToLower(), keyValue[1]);
                     }
                 }
             }
@@ -140,7 +140,7 @@ namespace MSBuildTcpIPLogger
                 throw new ArgumentException("value");
             }
             
-            string paramKey = name.ToUpper();
+            var paramKey = name.ToUpper();
             try
             {
                 if (paramaterBag.ContainsKey(paramKey))
@@ -170,7 +170,7 @@ namespace MSBuildTcpIPLogger
                 throw new ArgumentNullException("name");
             }
 
-            string paramName = name.ToUpper();
+            var paramName = name.ToUpper();
             
             string value = null;
             if (paramaterBag.ContainsKey(paramName))
@@ -201,27 +201,27 @@ namespace MSBuildTcpIPLogger
         private void SubscribeToEvents(IEventSource eventSource)
         {
             eventSource.BuildStarted +=
-                new BuildStartedEventHandler(this.BuildStarted);
+                new BuildStartedEventHandler(BuildStarted);
             eventSource.BuildFinished +=
-                new BuildFinishedEventHandler(this.BuildFinished);
+                new BuildFinishedEventHandler(BuildFinished);
             eventSource.ProjectStarted +=
-                new ProjectStartedEventHandler(this.ProjectStarted);
+                new ProjectStartedEventHandler(ProjectStarted);
             eventSource.ProjectFinished +=
-                new ProjectFinishedEventHandler(this.ProjectFinished);
+                new ProjectFinishedEventHandler(ProjectFinished);
             eventSource.TargetStarted +=
-                new TargetStartedEventHandler(this.TargetStarted);
+                new TargetStartedEventHandler(TargetStarted);
             eventSource.TargetFinished +=
-                new TargetFinishedEventHandler(this.TargetFinished);
+                new TargetFinishedEventHandler(TargetFinished);
             eventSource.TaskStarted +=
-                new TaskStartedEventHandler(this.TaskStarted);
+                new TaskStartedEventHandler(TaskStarted);
             eventSource.TaskFinished +=
-                new TaskFinishedEventHandler(this.TaskFinished);
+                new TaskFinishedEventHandler(TaskFinished);
             eventSource.ErrorRaised +=
-                new BuildErrorEventHandler(this.BuildError);
+                new BuildErrorEventHandler(BuildError);
             eventSource.WarningRaised +=
-                new BuildWarningEventHandler(this.BuildWarning);
+                new BuildWarningEventHandler(BuildWarning);
             eventSource.MessageRaised +=
-                new BuildMessageEventHandler(this.BuildMessage);
+                new BuildMessageEventHandler(BuildMessage);
         }
         
         #region Logging handlers
@@ -287,7 +287,7 @@ namespace MSBuildTcpIPLogger
             
         private void SendMessage(string line)
         {
-            Byte[] sendBytes = Encoding.ASCII.GetBytes(line);
+            var sendBytes = Encoding.ASCII.GetBytes(line);
             networkStream.Write(sendBytes, 0, sendBytes.Length);
             networkStream.Flush();
             log.InfoFormat("MS Build logger send to server the message {0}", line);

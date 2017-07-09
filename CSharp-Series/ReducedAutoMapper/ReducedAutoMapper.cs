@@ -23,6 +23,11 @@ namespace ReducedAutoMapper
 
         private Dictionary<object, object> mappingTypes;
 
+        public ReducedAutoMapper()
+        {
+            MappingTypes = new Dictionary<object, object>();
+        }
+
         public static ReducedAutoMapper Instance 
         {
             get
@@ -39,11 +44,11 @@ namespace ReducedAutoMapper
         {
             get
             {
-                return this.mappingTypes;
+                return mappingTypes;
             }
             set
             {
-                this.mappingTypes = value;
+                mappingTypes = value;
             }
         }
 
@@ -51,9 +56,9 @@ namespace ReducedAutoMapper
             where TSource : new()
             where TDestination : new()
         {
-            if (!this.MappingTypes.ContainsKey(typeof(TSource)))
+            if (!MappingTypes.ContainsKey(typeof(TSource)))
             {
-                this.MappingTypes.Add(typeof(TSource), typeof(TDestination));
+                MappingTypes.Add(typeof(TSource), typeof(TDestination));
             }
         }
 
@@ -79,21 +84,21 @@ namespace ReducedAutoMapper
             }
 
             var realObjectType = realObject.GetType();
-            PropertyInfo[] properties = realObjectType.GetProperties();
-            foreach (PropertyInfo currentRealProperty in properties)
+            var properties = realObjectType.GetProperties();
+            foreach (var currentRealProperty in properties)
             {
-                PropertyInfo currentDtoProperty = dtoObject.GetType().GetProperty(currentRealProperty.Name);
+                var currentDtoProperty = dtoObject.GetType().GetProperty(currentRealProperty.Name);
                 if (currentDtoProperty == null)
                 {
                     ////Debug.WriteLine("The property {0} was not found in the DTO object in order to be mapped. Because of that we skip to map it.", currentRealProperty.Name);
                 }
                 else
                 {
-                    if (this.MappingTypes.ContainsKey(currentRealProperty.PropertyType) && shouldMapInnerEntities)
+                    if (MappingTypes.ContainsKey(currentRealProperty.PropertyType) && shouldMapInnerEntities)
                     {
-                        object mapToObject = this.mappingTypes[currentRealProperty.PropertyType];
+                        var mapToObject = mappingTypes[currentRealProperty.PropertyType];
                         var types = new Type[] { currentRealProperty.PropertyType, (Type)mapToObject };
-                        MethodInfo method = GetType().GetMethod("Map").MakeGenericMethod(types);
+                        var method = GetType().GetMethod("Map").MakeGenericMethod(types);
                         var realObjectPropertyValue = currentRealProperty.GetValue(realObject, null);
                         var objects = new object[]
                         {
@@ -132,7 +137,7 @@ namespace ReducedAutoMapper
                             currentDtoProperty.SetValue(dtoObject, null);
                         }
                     }
-                    else if (!this.MappingTypes.ContainsKey(currentRealProperty.PropertyType))
+                    else if (!MappingTypes.ContainsKey(currentRealProperty.PropertyType))
                     {
                         // If the property is not custom type just set normally the value.
                         if (currentDtoProperty.CanWrite)

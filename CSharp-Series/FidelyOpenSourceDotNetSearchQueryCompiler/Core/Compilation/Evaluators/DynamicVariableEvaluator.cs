@@ -37,7 +37,7 @@ namespace Fidely.Framework.Compilation.Evaluators
         public DynamicVariableEvaluator(IOperandBuilder builder)
         {
             this.builder = builder;
-            this.evaluators = new Dictionary<Regex, Func<Match, object>>();
+            evaluators = new Dictionary<Regex, Func<Match, object>>();
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Fidely.Framework.Compilation.Evaluators
             {
                 throw new ArgumentNullException("pattern");
             }
-            this.RegisterVariable(new Regex(pattern, RegexOptions.Compiled), procedure, item);
+            RegisterVariable(new Regex(pattern, RegexOptions.Compiled), procedure, item);
         }
 
         /// <summary>
@@ -78,8 +78,8 @@ namespace Fidely.Framework.Compilation.Evaluators
 
             Logger.Verbose("Registered the specified pattern '{0}'.", regex.ToString());
 
-            this.evaluators[regex] = procedure;
-            this.Register(item);
+            evaluators[regex] = procedure;
+            Register(item);
         }
 
         /// <summary>
@@ -97,14 +97,14 @@ namespace Fidely.Framework.Compilation.Evaluators
                 throw new ArgumentNullException("value");
             }
 
-            foreach (KeyValuePair<Regex, Func<Match, object>> eval in this.evaluators)
+            foreach (var eval in evaluators)
             {
-                Match match = eval.Key.Match(value);
+                var match = eval.Key.Match(value);
                 if (match.Success)
                 {
-                    object result = eval.Value(match);
+                    var result = eval.Value(match);
                     Logger.Verbose("Evaluated as '{0} : {1}'.", result.ToString(), result.GetType().FullName);
-                    return this.builder.BuildUp(result);
+                    return builder.BuildUp(result);
                 }
             }
 
@@ -118,10 +118,10 @@ namespace Fidely.Framework.Compilation.Evaluators
         /// <returns>The cloned instance.</returns>
         public override OperandEvaluator Clone()
         {
-            var instance = new DynamicVariableEvaluator(this.builder);
-            foreach (Regex key in this.evaluators.Keys)
+            var instance = new DynamicVariableEvaluator(builder);
+            foreach (var key in evaluators.Keys)
             {
-                instance.evaluators.Add(key, this.evaluators[key]);
+                instance.evaluators.Add(key, evaluators[key]);
             }
             return instance;
         }

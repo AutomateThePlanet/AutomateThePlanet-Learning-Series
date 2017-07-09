@@ -27,39 +27,39 @@ namespace Fidely.Framework.Processing
 
         internal StrongLinkedWordTokenizer(IEnumerable<FidelyOperator> operators)
         {
-            this.mappings = new Dictionary<string, IToken>();
+            mappings = new Dictionary<string, IToken>();
 
-            this.mappings.Add(OpenedParenthesisToken.Symbol, new OpenedParenthesisToken());
-            this.mappings.Add(ClosedParenthesisToken.Symbol, new ClosedParenthesisToken());
+            mappings.Add(OpenedParenthesisToken.Symbol, new OpenedParenthesisToken());
+            mappings.Add(ClosedParenthesisToken.Symbol, new ClosedParenthesisToken());
 
-            foreach (FidelyOperator op in operators)
+            foreach (var op in operators)
             {
                 if (op is ComparativeOperator)
                 {
-                    this.mappings.Add(op.Symbol, new ComparativeOperatorToken((ComparativeOperator)op));
+                    mappings.Add(op.Symbol, new ComparativeOperatorToken((ComparativeOperator)op));
                 }
                 else
                 {
-                    this.mappings.Add(op.Symbol, new CalculatingOperatorToken((CalculatingOperator)op));
+                    mappings.Add(op.Symbol, new CalculatingOperatorToken((CalculatingOperator)op));
                 }
             }
         }
 
         protected override IEnumerable<IToken> Tokenize(UncategorizedToken token)
         {
-            Logger.Info("Tokenizing the specified uncategorized token '{0}' with '{1}'.", token.Value, this.GetType().FullName);
+            Logger.Info("Tokenizing the specified uncategorized token '{0}' with '{1}'.", token.Value, GetType().FullName);
 
             var result = new List<IToken>();
 
-            string value = token.Value;
-            int current = 0;
-            int startIndex = 0;
+            var value = token.Value;
+            var current = 0;
+            var startIndex = 0;
 
             while (current < value.Length)
             {
                 Logger.Verbose("Progressing tokenization (current index = '{0}', start index = '{1}').", current, startIndex);
 
-                foreach (string symbol in this.mappings.Keys.Where(o => o.Length <= value.Length - current).OrderByDescending(o => o.Length))
+                foreach (var symbol in mappings.Keys.Where(o => o.Length <= value.Length - current).OrderByDescending(o => o.Length))
                 {
                     if (value.Substring(current, symbol.Length).Equals(symbol, StringComparison.OrdinalIgnoreCase))
                     {
@@ -70,7 +70,7 @@ namespace Fidely.Framework.Processing
                         }
                         current += symbol.Length - 1;
                         startIndex = current + 1;
-                        result.Add(this.mappings[symbol]);
+                        result.Add(mappings[symbol]);
                         Logger.Verbose("Extracted an operand token '{0}'.", result.Last().Value);
                         break;
                     }

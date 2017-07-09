@@ -22,10 +22,10 @@ namespace YouTubePlaylistAPI
 
         public static KeyValuePair<string, string> ParseTitle(string text)
         {
-            Regex regexNamespaceInitializations = new Regex(RegexSongPattern, RegexOptions.None);
+            var regexNamespaceInitializations = new Regex(RegexSongPattern, RegexOptions.None);
 
-            Match m = regexNamespaceInitializations.Match(text);
-            KeyValuePair<string, string> currentSong = default(KeyValuePair<string, string>);
+            var m = regexNamespaceInitializations.Match(text);
+            var currentSong = default(KeyValuePair<string, string>);
             if (m.Success)
             {
                 currentSong = new KeyValuePair<string, string>(m.Groups["Artist"].ToString(), m.Groups["Name"].ToString());

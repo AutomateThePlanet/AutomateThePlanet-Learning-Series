@@ -27,7 +27,7 @@ namespace WhichWorksFasterNullDefault
 
             var watch = new Stopwatch();
             watch.Start();
-            for (int i = 0; i < iterations; i++)
+            for (var i = 0; i < iterations; i++)
             {
                 actionToProfile();
             }
@@ -38,7 +38,7 @@ namespace WhichWorksFasterNullDefault
 
         public static string FormatProfileResults(long iterations, TimeSpan profileResults)
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             sb.AppendLine(string.Format("Total: {0:0.00} ms ({1:N0} ticks) (over {2:N0} iterations)",
               profileResults.TotalMilliseconds, profileResults.Ticks, iterations));
             var avgElapsedMillisecondsPerRun = profileResults.TotalMilliseconds / (double)iterations;

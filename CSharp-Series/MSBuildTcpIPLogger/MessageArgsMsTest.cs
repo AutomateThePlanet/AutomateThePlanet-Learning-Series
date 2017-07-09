@@ -30,9 +30,9 @@ namespace MSBuildTcpIPLogger
         public MessageArgsMsTest(Command command, string projectPath, IpAddressSettings ipAddressSettings, string workingDir, string testListContent, string testListName, string resultsFilePath)
             : base(command, projectPath, ipAddressSettings, workingDir)
         {
-            this.TestListContent = testListContent;
-            this.ResultsFilePath = resultsFilePath;
-            this.ListName = testListName;
+            TestListContent = testListContent;
+            ResultsFilePath = resultsFilePath;
+            ListName = testListName;
         }
 
         public MessageArgsMsTest()
@@ -45,7 +45,7 @@ namespace MSBuildTcpIPLogger
             if (!String.IsNullOrEmpty(TestListContent))
             {
                 TestListPath = Path.GetTempFileName();
-                StreamWriter sw = new StreamWriter(TestListPath, false, Encoding.UTF8);
+                var sw = new StreamWriter(TestListPath, false, Encoding.UTF8);
                 TestListContent = TestListContent.TrimStart('?');
                 sw.WriteLine(TestListContent);
                 sw.Close();

@@ -26,9 +26,9 @@ namespace YouTubePlaylistAPI
         protected void NotifyPropertyChanged([CallerMemberName]
                                              string propertyName = "")
         {
-            if (this.PropertyChanged != null)
+            if (PropertyChanged != null)
             {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }

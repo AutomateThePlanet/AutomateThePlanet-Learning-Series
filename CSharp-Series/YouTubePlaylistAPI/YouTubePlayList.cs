@@ -17,8 +17,8 @@ namespace YouTubePlaylistAPI
     {
         public YouTubePlayList(string name, string id)
         {
-            this.Name = name;
-            this.Id = id;
+            Name = name;
+            Id = id;
         }
 
         public string Name { get; set; }

@@ -25,11 +25,11 @@ namespace ChangeConfigFileRuntime
         public void EditCarsXml()
         {
 
-            string appConfigFilePath = string.Concat(Assembly.GetExecutingAssembly().Location, ".config");
-            ConfigModificatorSettings appConfigWriterSettings =
+            var appConfigFilePath = string.Concat(Assembly.GetExecutingAssembly().Location, ".config");
+            var appConfigWriterSettings =
                 new ConfigModificatorSettings("//appSettings", "//add[@key='{0}']", appConfigFilePath);
 
-            string value = ConfigurationManager.AppSettings["testKey1"];
+            var value = ConfigurationManager.AppSettings["testKey1"];
             Console.WriteLine("Value before modification: {0}", value);
 
             ConfigModificator.ChangeValueByKey(
@@ -40,11 +40,11 @@ namespace ChangeConfigFileRuntime
 
             ConfigModificator.RefreshAppSettings();
             value = ConfigurationManager.AppSettings["testKey1"];
-            System.Console.WriteLine("Value after modification: {0}", value);
+            Console.WriteLine("Value after modification: {0}", value);
 
             //Example how to change Custom XML configuration
-            string carsConfigFilePath = "Cars.xml";
-            ConfigModificatorSettings carsConfigWriterSettings =
+            var carsConfigFilePath = "Cars.xml";
+            var carsConfigWriterSettings =
                 new ConfigModificatorSettings("//cars", "//car[@name='{0}']", carsConfigFilePath);
 
             ConfigModificator.ChangeValueByKey(

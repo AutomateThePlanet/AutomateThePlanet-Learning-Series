@@ -34,7 +34,7 @@ namespace MSBuildTcpIPLogger
 
         public IpAddressSettings(string wholeAddress)
         {
-            string[] IpAddressA = wholeAddress.Split(':');
+            var IpAddressA = wholeAddress.Split(':');
             //IPAddress = IPAddress.Parse(IpAddressA[0]);
             IpString = IpAddressA[0];
             Port = int.Parse(IpAddressA[1]);
@@ -42,7 +42,7 @@ namespace MSBuildTcpIPLogger
 
         public override string ToString()
         {
-            return String.Format("{0} {1}", IpString, this.Port);
+            return String.Format("{0} {1}", IpString, Port);
         }
 
         public IPAddress GetIPAddress()

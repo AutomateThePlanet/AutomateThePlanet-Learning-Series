@@ -38,7 +38,7 @@ namespace Fidely.Framework.Compilation.Objects
         /// <returns>The default search query compiler that is optimized for LINQ to Object.</returns>
         public static SearchQueryCompiler<T> BuildUpDefaultCompilerForObject<T>(this SearchQueryCompilerBuilder instance)
         {
-            ObjectCompilerSetting setting = instance.BuildUpDefaultObjectCompilerSetting<T>();
+            var setting = instance.BuildUpDefaultObjectCompilerSetting<T>();
             return instance.BuildUpCompiler<T>(setting);
         }
 

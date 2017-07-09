@@ -63,7 +63,7 @@ namespace Fidely.Framework.Compilation.Objects.Operators
         /// <returns>The cloned instance.</returns>
         public override FidelyOperator Clone()
         {
-            return new Equal<T>(this.Symbol, this.ignoreCase, this.Independency, this.Description);
+            return new Equal<T>(Symbol, ignoreCase, Independency, Description);
         }
 
         /// <summary>
@@ -85,12 +85,12 @@ namespace Fidely.Framework.Compilation.Objects.Operators
             }
             else
             {
-                MethodCallExpression l = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(left.Expression, typeof(object)));
-                MethodCallExpression r = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(right.Expression, typeof(object)));
+                var l = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(left.Expression, typeof(object)));
+                var r = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(right.Expression, typeof(object)));
 
-                if (this.ignoreCase)
+                if (ignoreCase)
                 {
-                    MethodInfo toLower = typeof(string).GetMethod("ToLower", BindingFlags.Instance | BindingFlags.Public, null, new Type[] { }, null);
+                    var toLower = typeof(string).GetMethod("ToLower", BindingFlags.Instance | BindingFlags.Public, null, new Type[] { }, null);
                     return Expression.Equal(Expression.Call(l, toLower), Expression.Call(r, toLower));
                 }
                 else

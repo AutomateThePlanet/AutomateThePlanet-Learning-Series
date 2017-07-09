@@ -31,14 +31,14 @@ namespace Fidely.Framework.Compilation.Evaluators
         /// </summary>
         protected OperandEvaluator()
         {
-            this.autocompleteItems = new List<IAutoCompleteItem>();
+            autocompleteItems = new List<IAutoCompleteItem>();
         }
 
         internal IEnumerable<IAutoCompleteItem> AutocompleteItems
         {
             get
             {
-                return this.autocompleteItems;
+                return autocompleteItems;
             }
         }
 
@@ -64,7 +64,7 @@ namespace Fidely.Framework.Compilation.Evaluators
         /// <param name="item">The autocomplete item.</param>
         protected void Register(IAutoCompleteItem item)
         {
-            this.autocompleteItems.Add(item);
+            autocompleteItems.Add(item);
         }
 
         /// <summary>
@@ -75,9 +75,9 @@ namespace Fidely.Framework.Compilation.Evaluators
         protected void Warn(string format, params object[] args)
         {
             Logger.Warn(format, args);
-            if (this.WarningNotifier != null)
+            if (WarningNotifier != null)
             {
-                this.WarningNotifier.Notify(this.GetType(), "", format, args);
+                WarningNotifier.Notify(GetType(), "", format, args);
             }
         }
     }

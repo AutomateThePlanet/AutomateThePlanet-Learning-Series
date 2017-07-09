@@ -37,8 +37,8 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
         /// </summary>
         protected BaseBuiltInEvaluator()
         {
-            this.mapping = new Dictionary<string, PropertyInfo>();
-            this.builder = new OperandBuilder();
+            mapping = new Dictionary<string, PropertyInfo>();
+            builder = new OperandBuilder();
         }
 
         /// <summary>
@@ -54,14 +54,14 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
                 return null;
             }
 
-            string propertyName = value.ToUpperInvariant();
-            if (!this.mapping.ContainsKey(propertyName))
+            var propertyName = value.ToUpperInvariant();
+            if (!mapping.ContainsKey(propertyName))
             {
                 return null;
             }
 
-            PropertyInfo property = this.mapping[propertyName];
-            return this.builder.BuildUp(current, property);
+            var property = mapping[propertyName];
+            return builder.BuildUp(current, property);
         }
 
         /// <summary>
@@ -70,11 +70,11 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
         /// <returns>The cloned instance.</returns>
         public override OperandEvaluator Clone()
         {
-            BaseBuiltInEvaluator instance = this.CreateInstance();
-            instance.builder = this.builder;
-            foreach (string key in this.mapping.Keys)
+            var instance = CreateInstance();
+            instance.builder = builder;
+            foreach (var key in mapping.Keys)
             {
-                instance.mapping.Add(key, this.mapping[key]);
+                instance.mapping.Add(key, mapping[key]);
             }
             return instance;
         }
@@ -85,21 +85,21 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
         /// <param name="property">The property information.</param>
         protected void Register(PropertyInfo property)
         {
-            this.mapping[property.Name.ToUpperInvariant()] = property;
+            mapping[property.Name.ToUpperInvariant()] = property;
 
             var description = Attribute.GetCustomAttribute(property, typeof(DescriptionAttribute)) as DescriptionAttribute;
-            this.Register(new AutoCompleteItem(property.Name, (description != null) ? description.Description : ""));
+            Register(new AutoCompleteItem(property.Name, (description != null) ? description.Description : ""));
 
             foreach (AliasAttribute alias in property.GetCustomAttributes(typeof(AliasAttribute), false))
             {
-                this.mapping[alias.Name.ToUpperInvariant()] = this.mapping[property.Name.ToUpperInvariant()];
+                mapping[alias.Name.ToUpperInvariant()] = mapping[property.Name.ToUpperInvariant()];
                 if (String.IsNullOrEmpty(alias.Description) && description != null)
                 {
-                    this.Register(new AutoCompleteItem(alias.Name, description.Description));
+                    Register(new AutoCompleteItem(alias.Name, description.Description));
                 }
                 else
                 {
-                    this.Register(new AutoCompleteItem(alias.Name, alias.Description));
+                    Register(new AutoCompleteItem(alias.Name, alias.Description));
                 }
             }
         }

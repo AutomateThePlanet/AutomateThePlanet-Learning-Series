@@ -27,8 +27,8 @@ namespace Fidely.Framework.Compilation.Objects
         internal ObjectCompilerSetting()
         {
             var builder = new OperandBuilder();
-            this.DynamicVariableEvaluator = new DynamicVariableEvaluator(builder);
-            this.StaticVariableEvaluator = new StaticVariableEvaluator(builder);
+            DynamicVariableEvaluator = new DynamicVariableEvaluator(builder);
+            StaticVariableEvaluator = new StaticVariableEvaluator(builder);
         }
 
         /// <summary>

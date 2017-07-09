@@ -44,11 +44,11 @@ namespace YouTubePlaylistAPI
 
         public List<IYouTubeSong> GetPlayListSongs(string userEmail, string playListId)
         {
-            List<IYouTubeSong> playListSongs = new List<IYouTubeSong>();
+            var playListSongs = new List<IYouTubeSong>();
 
             try
             {
-                YouTubeServiceClient service = new YouTubeServiceClient();
+                var service = new YouTubeServiceClient();
                 service.GetPlayListSongsInternalAsync(userEmail, playListId, playListSongs).Wait();
             }
             catch (AggregateException ex)
@@ -64,11 +64,11 @@ namespace YouTubePlaylistAPI
 
         public bool RemoveSongFromPlaylist(string userEmail, string playlistItemId)
         {
-            bool isSuccessfullyRemoved = false;
+            var isSuccessfullyRemoved = false;
 
             try
             {
-                YouTubeServiceClient service = new YouTubeServiceClient();
+                var service = new YouTubeServiceClient();
                 service.RemoveSongFromPlaylistAsync(userEmail, playlistItemId).Wait();
                 isSuccessfullyRemoved = true;
             }
@@ -86,18 +86,18 @@ namespace YouTubePlaylistAPI
 
         private async Task RemoveSongFromPlaylistAsync(string userEmail, string playlistItemId)
         {
-            var youtubeService = await this.GetYouTubeService(userEmail);
-            PlaylistItemsResource.DeleteRequest deleteRequest = youtubeService.PlaylistItems.Delete(playlistItemId);
-            string result = await deleteRequest.ExecuteAsync();
+            var youtubeService = await GetYouTubeService(userEmail);
+            var deleteRequest = youtubeService.PlaylistItems.Delete(playlistItemId);
+            var result = await deleteRequest.ExecuteAsync();
         }
 
         public bool AddSongToPlaylist(string userEmail, string songId, string playlistId)
         {
-            bool isSuccessfullyAdded = false;
+            var isSuccessfullyAdded = false;
 
             try
             {
-                YouTubeServiceClient service = new YouTubeServiceClient();
+                var service = new YouTubeServiceClient();
                 service.AddSongToPlaylistAsync(userEmail, songId, playlistId).Wait();
                 isSuccessfullyAdded = true;
             }
@@ -119,11 +119,11 @@ namespace YouTubePlaylistAPI
             YouTubeSong song,
             int position)
         {
-            bool isSuccessfullyUpdated = false;
+            var isSuccessfullyUpdated = false;
 
             try
             {
-                YouTubeServiceClient service = new YouTubeServiceClient();
+                var service = new YouTubeServiceClient();
                 service.UpdatePlaylistItemAsync(userEmail, song.SongId, playlistId, song.PlayListItemId, position).Wait();
                 isSuccessfullyUpdated = true;
             }
@@ -141,11 +141,11 @@ namespace YouTubePlaylistAPI
 
         public List<YouTubePlayList> GetUserPlayLists(string userEmail)
         {
-            List<YouTubePlayList> playLists = new List<YouTubePlayList>();
+            var playLists = new List<YouTubePlayList>();
 
             try
             {
-                YouTubeServiceClient service = new YouTubeServiceClient();
+                var service = new YouTubeServiceClient();
                 service.GetUserPlayListsAsync(userEmail, playLists).Wait();
             }
             catch (AggregateException ex)
@@ -161,14 +161,14 @@ namespace YouTubePlaylistAPI
 
         private async Task GetPlayListSongsInternalAsync(string userEmail, string playListId, List<IYouTubeSong> playListSongs)
         {
-            var youtubeService = await this.GetYouTubeService(userEmail);
+            var youtubeService = await GetYouTubeService(userEmail);
 
             var channelsListRequest = youtubeService.Channels.List("contentDetails");
             channelsListRequest.Mine = true;
             var nextPageToken = "";
             while (nextPageToken != null)
             {
-                PlaylistItemsResource.ListRequest listRequest = youtubeService.PlaylistItems.List("contentDetails");
+                var listRequest = youtubeService.PlaylistItems.List("contentDetails");
                 listRequest.MaxResults = 50;
                 listRequest.PlaylistId = playListId;
                 listRequest.PageToken = nextPageToken;
@@ -179,13 +179,13 @@ namespace YouTubePlaylistAPI
                 }
                 foreach (var playlistItem in response.Items)
                 {
-                    VideosResource.ListRequest videoR = youtubeService.Videos.List("snippet,contentDetails,status");
+                    var videoR = youtubeService.Videos.List("snippet,contentDetails,status");
                     videoR.Id = playlistItem.ContentDetails.VideoId;
                     var responseV = await videoR.ExecuteAsync();
                     if (responseV.Items.Count > 0)
                     {
-                        KeyValuePair<string, string> parsedSong = SongTitleParser.ParseTitle(responseV.Items[0].Snippet.Title);
-                        ulong? duration = new DurationParser().GetDuration(responseV.Items[0].ContentDetails.Duration);
+                        var parsedSong = SongTitleParser.ParseTitle(responseV.Items[0].Snippet.Title);
+                        var duration = new DurationParser().GetDuration(responseV.Items[0].ContentDetails.Duration);
                         IYouTubeSong currentSong = new YouTubeSong(parsedSong.Key, parsedSong.Value, responseV.Items[0].Snippet.Title, responseV.Items[0].Id, playlistItem.Id, duration);
                         playListSongs.Add(currentSong);
                         Debug.WriteLine(currentSong.Title);
@@ -197,7 +197,7 @@ namespace YouTubePlaylistAPI
 
         private async Task GetUserPlayListsAsync(string userEmail, List<YouTubePlayList> playLists)
         {
-            var youtubeService = await this.GetYouTubeService(userEmail);
+            var youtubeService = await GetYouTubeService(userEmail);
 
             var channelsListRequest = youtubeService.Channels.List("contentDetails");
             channelsListRequest.Mine = true;
@@ -205,7 +205,7 @@ namespace YouTubePlaylistAPI
             playlists.PageToken = "";
             playlists.MaxResults = 50;
             playlists.Mine = true;
-            PlaylistListResponse presponse = await playlists.ExecuteAsync();
+            var presponse = await playlists.ExecuteAsync();
             foreach (var currentPlayList in presponse.Items)
             {
                 playLists.Add(new YouTubePlayList(currentPlayList.Snippet.Title, currentPlayList.Id));
@@ -214,7 +214,7 @@ namespace YouTubePlaylistAPI
 
         private async Task AddSongToPlaylistAsync(string userEmail, string songId, string playlistId)
         {
-            var youtubeService = await this.GetYouTubeService(userEmail);
+            var youtubeService = await GetYouTubeService(userEmail);
             var newPlaylistItem = new PlaylistItem();
             newPlaylistItem.Snippet = new PlaylistItemSnippet();
             newPlaylistItem.Snippet.PlaylistId = playlistId;
@@ -226,7 +226,7 @@ namespace YouTubePlaylistAPI
 
         private async Task UpdatePlaylistItemAsync(string userEmail, string songId, string playlistId, string playlistItemId, int position)
         {
-            var youtubeService = await this.GetYouTubeService(userEmail);
+            var youtubeService = await GetYouTubeService(userEmail);
             var newPlaylistItem = new PlaylistItem();
             newPlaylistItem.Snippet = new PlaylistItemSnippet();
             newPlaylistItem.Snippet.PlaylistId = playlistId;
@@ -255,13 +255,13 @@ namespace YouTubePlaylistAPI
                     },
                     userEmail,
                     CancellationToken.None,
-                    new FileDataStore(this.GetType().ToString()));
+                    new FileDataStore(GetType().ToString()));
             }
 
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
-                ApplicationName = this.GetType().ToString()
+                ApplicationName = GetType().ToString()
             });
 
             return youtubeService;

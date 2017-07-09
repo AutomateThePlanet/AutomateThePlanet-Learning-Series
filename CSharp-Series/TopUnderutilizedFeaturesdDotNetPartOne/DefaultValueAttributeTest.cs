@@ -22,7 +22,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
             // Use the DefaultValue propety of each property to actually set it, via reflection.
             foreach (PropertyDescriptor prop in TypeDescriptor.GetProperties(this))
             {
-                DefaultValueAttribute attr = (DefaultValueAttribute)prop.Attributes[typeof(DefaultValueAttribute)];
+                var attr = (DefaultValueAttribute)prop.Attributes[typeof(DefaultValueAttribute)];
                 if (attr != null)
                 {
                     prop.SetValue(this, attr.Value);
@@ -41,7 +41,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
 
         public override string ToString()
         {
-            return string.Format("{0} {1} is {2}.", this.FirstName, this.LastName, this.Age);
+            return string.Format("{0} {1} is {2}.", FirstName, LastName, Age);
         }
     }
 }

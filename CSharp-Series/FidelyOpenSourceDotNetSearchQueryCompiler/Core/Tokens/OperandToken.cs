@@ -30,14 +30,14 @@ namespace Fidely.Framework.Tokens
                 throw new ArgumentNullException("value");
             }
 
-            this.Value = value;
+            Value = value;
         }
 
         public string Value { get; private set; }
 
         public override string ToString()
         {
-            return string.Format("[@:{0}]", this.Value);
+            return string.Format("[@:{0}]", Value);
         }
     }
 }

@@ -35,38 +35,38 @@ namespace ReducedAutoMapper
 
             var watch = new Stopwatch();
             watch.Start();
-            for (int i = 0; i < iterations; i++)
+            for (var i = 0; i < iterations; i++)
             {
                 actionToProfile();
             }
             watch.Stop();
-            System.Console.WriteLine(description);
-            System.Console.WriteLine("Total: {0:0.00} ms ({1:N0} ticks) (over {2:N0} iterations)",
+            Console.WriteLine(description);
+            Console.WriteLine("Total: {0:0.00} ms ({1:N0} ticks) (over {2:N0} iterations)",
                 watch.ElapsedMilliseconds, watch.ElapsedTicks, iterations);
             var avgElapsedMillisecondsPerRun = watch.ElapsedMilliseconds / iterations;
             var avgElapsedTicksPerRun = watch.ElapsedMilliseconds / iterations;
-            System.Console.WriteLine("AVG: {0:0.00} ms ({1:N0} ticks) (over {2:N0} iterations)",
+            Console.WriteLine("AVG: {0:0.00} ms ({1:N0} ticks) (over {2:N0} iterations)",
                 avgElapsedMillisecondsPerRun, avgElapsedTicksPerRun, iterations);
         }
 
         static void MapObjectsReduceAutoMapper()
         {
-            List<FirstObject> firstObjects = new List<FirstObject>();
-            List<MapFirstObject> mapFirstObjects = new List<MapFirstObject>();
+            var firstObjects = new List<FirstObject>();
+            var mapFirstObjects = new List<MapFirstObject>();
 
             ReducedAutoMapper.Instance.CreateMap<FirstObject, MapFirstObject>();
             ReducedAutoMapper.Instance.CreateMap<SecondObject, MapSecondObject>();
             ReducedAutoMapper.Instance.CreateMap<ThirdObject, MapThirdObject>();
-            for (int i = 0; i < 10000; i++)
+            for (var i = 0; i < 10000; i++)
             {
-                FirstObject firstObject =
+                var firstObject =
                     new FirstObject(Guid.NewGuid().ToString(), Guid.NewGuid().ToString(), Guid.NewGuid().ToString(), (decimal)12.2, DateTime.Now,
                         new SecondObject(Guid.NewGuid().ToString(), Guid.NewGuid().ToString(), Guid.NewGuid().ToString(), (decimal)11.2));
                 firstObjects.Add(firstObject);
             }
             foreach (var currentObject in firstObjects)
             {
-                MapFirstObject mapSecObj = ReducedAutoMapper.Instance.Map<FirstObject, MapFirstObject>(currentObject);
+                var mapSecObj = ReducedAutoMapper.Instance.Map<FirstObject, MapFirstObject>(currentObject);
                 mapFirstObjects.Add(mapSecObj);
             }
         }

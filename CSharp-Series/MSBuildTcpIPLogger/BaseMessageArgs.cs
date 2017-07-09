@@ -25,15 +25,15 @@ namespace MSBuildTcpIPLogger
 
         public BaseMessageArgs(Command command, string projectPath, IpAddressSettings ipAddressSettings)
         {
-            this.Command = command;
-            this.ProjectPath = projectPath;
-            this.IpAddressSettings = ipAddressSettings;
+            Command = command;
+            ProjectPath = projectPath;
+            IpAddressSettings = ipAddressSettings;
         }
 
         public BaseMessageArgs(Command command, string projectPath, IpAddressSettings ipAddressSettings, string workingDir)
             : this(command, projectPath, ipAddressSettings)
         {
-            this.WorkingDir = workingDir;
+            WorkingDir = workingDir;
         }
 
         public BaseMessageArgs()

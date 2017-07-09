@@ -27,11 +27,11 @@ namespace WindowsRegistryReadWrite
 
         protected void Write(string subKeys, Object value)
         {
-            string[] subKeyNames = subKeys.Split('/');
-            List<RegistryKey> registryKeys = new List<RegistryKey>();
-            for (int i = 0; i < subKeyNames.Length; i++)
+            var subKeyNames = subKeys.Split('/');
+            var registryKeys = new List<RegistryKey>();
+            for (var i = 0; i < subKeyNames.Length; i++)
             {
-                RegistryKey currentRegistryKey = default(RegistryKey);
+                var currentRegistryKey = default(RegistryKey);
                 if (i == 0)
                 {
                     currentRegistryKey = Registry.CurrentUser.CreateSubKey(subKeyNames[i]);
@@ -47,20 +47,20 @@ namespace WindowsRegistryReadWrite
                 registryKeys.Add(currentRegistryKey);
             }
 
-            this.CloseAllRegistryKeys(registryKeys);
+            CloseAllRegistryKeys(registryKeys);
         }
 
         protected Object Read(string subKeys)
         {
-            Object result = default(Object);
+            var result = default(Object);
 
             try
             {
-                string[] subKeyNames = subKeys.Split('/');
-                List<RegistryKey> registryKeys = new List<RegistryKey>();
-                for (int i = 0; i < subKeyNames.Length - 1; i++)
+                var subKeyNames = subKeys.Split('/');
+                var registryKeys = new List<RegistryKey>();
+                for (var i = 0; i < subKeyNames.Length - 1; i++)
                 {
-                    RegistryKey currentRegistryKey = default(RegistryKey);
+                    var currentRegistryKey = default(RegistryKey);
                     if (i == 0)
                     {
                         currentRegistryKey = Registry.CurrentUser.OpenSubKey(subKeyNames[i]);
@@ -86,14 +86,14 @@ namespace WindowsRegistryReadWrite
 
         protected int ReadInt(string subKeys)
         {
-            int result = (int)this.Read(subKeys);
+            var result = (int)Read(subKeys);
 
             return result;
         }
 
         protected double? ReadDouble(string subKeys)
         {
-            object obj = this.Read(subKeys);
+            var obj = Read(subKeys);
             double? result = null;
             if (obj != null)
             {
@@ -105,8 +105,8 @@ namespace WindowsRegistryReadWrite
 
         protected bool ReadBool(string subKeys)
         {
-            bool result = default(bool);
-            string resultStr = (string)this.Read(subKeys);
+            var result = default(bool);
+            var resultStr = (string)Read(subKeys);
             if (!string.IsNullOrEmpty(resultStr))
             {
                 result = bool.Parse(resultStr);
@@ -117,8 +117,8 @@ namespace WindowsRegistryReadWrite
 
         protected string ReadStr(string subKeys)
         {
-            string result = string.Empty;
-            string resultStr = (string)this.Read(subKeys);
+            var result = string.Empty;
+            var resultStr = (string)Read(subKeys);
             if (!string.IsNullOrEmpty(resultStr))
             {
                 result = resultStr;
@@ -129,7 +129,7 @@ namespace WindowsRegistryReadWrite
 
         protected string GenerateMergedKey(params string[] keys)
         {
-            string result = this.MainRegistrySubKey;
+            var result = MainRegistrySubKey;
             foreach (var currentKey in keys)
             {
                 result = string.Join("/", result, currentKey);
@@ -140,7 +140,7 @@ namespace WindowsRegistryReadWrite
 
         private void CloseAllRegistryKeys(List<RegistryKey> registryKeys)
         {
-            for (int i = 0; i < registryKeys.Count - 1; i++)
+            for (var i = 0; i < registryKeys.Count - 1; i++)
             {
                 registryKeys[i].Close();
             }

@@ -19,10 +19,10 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
     {
         public static void DisplayNumbersOnConsole(__arglist)
         {
-            ArgIterator ai = new ArgIterator(__arglist);
+            var ai = new ArgIterator(__arglist);
             while (ai.GetRemainingCount() > 0)
             {
-                TypedReference tr = ai.GetNextArg();
+                var tr = ai.GetNextArg();
                 Console.WriteLine(TypedReference.ToObject(tr));
             }
         }

@@ -34,9 +34,9 @@ namespace Fidely.Framework
         /// </summary>
         public CompilerSetting()
         {
-            this.CacheSize = DefaultCacheSize;
-            this.Operators = new List<FidelyOperator>();
-            this.Evaluators = new List<OperandEvaluator>();
+            CacheSize = DefaultCacheSize;
+            Operators = new List<FidelyOperator>();
+            Evaluators = new List<OperandEvaluator>();
         }
 
         /// <summary>
@@ -62,14 +62,14 @@ namespace Fidely.Framework
         {
             var items = new List<IAutoCompleteItem>();
 
-            foreach (OperandEvaluator evaluator in this.Evaluators)
+            foreach (var evaluator in Evaluators)
             {
                 items.AddRange(evaluator.AutocompleteItems);
             }
 
-            foreach (FidelyOperator op in this.Operators)
+            foreach (var op in Operators)
             {
-                items.Add(new AutoCompleteItem(op.Symbol, this.GetOperatorDescription(op)));
+                items.Add(new AutoCompleteItem(op.Symbol, GetOperatorDescription(op)));
             }
 
             return items;

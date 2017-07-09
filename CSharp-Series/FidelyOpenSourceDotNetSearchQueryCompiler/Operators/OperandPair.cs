@@ -21,8 +21,8 @@ namespace Fidely.Framework.Compilation.Objects.Operators
     {
         internal OperandPair(Operand left, Operand right)
         {
-            this.Left = left;
-            this.Right = right;
+            Left = left;
+            Right = right;
         }
 
         internal Operand Left { get; private set; }
@@ -31,17 +31,17 @@ namespace Fidely.Framework.Compilation.Objects.Operators
 
         internal bool Are(Type type)
         {
-            return this.Left.OperandType == type && this.Right.OperandType == type;
+            return Left.OperandType == type && Right.OperandType == type;
         }
 
         internal bool Are(Type type1, Type type2)
         {
-            return (this.Left.OperandType == type1 && this.Right.OperandType == type2) || (this.Left.OperandType == type2 && this.Right.OperandType == type1);
+            return (Left.OperandType == type1 && Right.OperandType == type2) || (Left.OperandType == type2 && Right.OperandType == type1);
         }
 
         internal bool AreStrictly(Type type1, Type type2)
         {
-            return this.Left.OperandType == type1 && this.Right.OperandType == type2;
+            return Left.OperandType == type1 && Right.OperandType == type2;
         }
     }
 }

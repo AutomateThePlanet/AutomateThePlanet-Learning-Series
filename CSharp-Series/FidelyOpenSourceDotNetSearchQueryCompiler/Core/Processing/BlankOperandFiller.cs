@@ -28,14 +28,14 @@ namespace Fidely.Framework.Processing
 
             var result = new List<IToken>();
 
-            List<IToken> tokens = input.ToList();
+            var tokens = input.ToList();
             tokens.Insert(0, new StartToken());
             tokens.Add(new EndToken());
 
-            for (int i = 0; i < tokens.Count - 1; i++)
+            for (var i = 0; i < tokens.Count - 1; i++)
             {
-                IToken left = tokens[i];
-                IToken right = tokens[i + 1];
+                var left = tokens[i];
+                var right = tokens[i + 1];
 
                 result.Add(left);
 

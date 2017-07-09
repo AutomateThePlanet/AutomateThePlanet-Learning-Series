@@ -27,7 +27,7 @@ namespace Fidely.Framework.Processing
 
             var stack = new Stack<IToken>();
 
-            foreach (IToken token in tokens)
+            foreach (var token in tokens)
             {
                 if (token is OpenedParenthesisToken)
                 {
@@ -47,7 +47,7 @@ namespace Fidely.Framework.Processing
             }
 
             var result = new List<IToken>(tokens);
-            foreach (IToken parenthesis in stack)
+            foreach (var parenthesis in stack)
             {
                 if (parenthesis is OpenedParenthesisToken)
                 {

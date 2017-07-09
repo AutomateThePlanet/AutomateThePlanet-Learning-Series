@@ -20,13 +20,13 @@ namespace ReducedAutoMapper
     {
         public FirstObject(string firstName, string secondName, string poNumber, decimal price, DateTime skipDateTime, SecondObject secondObject)
         {
-            this.FirstName = firstName;
-            this.SecondName = secondName;
-            this.PoNumber = poNumber;
-            this.Price = price;
-            this.SkipDateTime = skipDateTime;
-            this.SecondObjectEntity = secondObject;
-            this.SecondObjects = new List<SecondObject>();
+            FirstName = firstName;
+            SecondName = secondName;
+            PoNumber = poNumber;
+            Price = price;
+            SkipDateTime = skipDateTime;
+            SecondObjectEntity = secondObject;
+            SecondObjects = new List<SecondObject>();
         }
 
         public FirstObject()

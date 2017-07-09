@@ -23,10 +23,10 @@ namespace ReducedAutoMapper
     {
         public SecondObject(string firstNameS, string secondNameS, string poNumberS, decimal priceS)
         {
-            this.FirstNameS = firstNameS;
-            this.SecondNameS = secondNameS;
-            this.PoNumberS = poNumberS;
-            this.PriceS = priceS;
+            FirstNameS = firstNameS;
+            SecondNameS = secondNameS;
+            PoNumberS = poNumberS;
+            PriceS = priceS;
             ThirdObject1 = new ThirdObject();
             ThirdObject2 = new ThirdObject();
             ThirdObject3 = new ThirdObject();

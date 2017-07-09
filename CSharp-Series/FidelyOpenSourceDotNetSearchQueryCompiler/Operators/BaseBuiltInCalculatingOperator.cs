@@ -44,12 +44,12 @@ namespace Fidely.Framework.Compilation.Objects.Operators
         {
             if (description == null)
             {
-                var attribute = Attribute.GetCustomAttribute(this.GetType(), typeof(DescriptionAttribute)) as DescriptionAttribute;
-                this.Description = (attribute != null) ? attribute.Description : "";
+                var attribute = Attribute.GetCustomAttribute(GetType(), typeof(DescriptionAttribute)) as DescriptionAttribute;
+                Description = (attribute != null) ? attribute.Description : "";
             }
             else
             {
-                this.Description = description;
+                Description = description;
             }
         }
 

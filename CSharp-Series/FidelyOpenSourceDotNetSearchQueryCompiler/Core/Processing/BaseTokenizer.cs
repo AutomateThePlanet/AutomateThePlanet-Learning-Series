@@ -25,7 +25,7 @@ namespace Fidely.Framework.Processing
     {
         public IEnumerable<IToken> Filter(IEnumerable<IToken> tokens)
         {
-            Logger.Info("Tokenizing the specified token collection with '{0}'.", this.GetType().FullName);
+            Logger.Info("Tokenizing the specified token collection with '{0}'.", GetType().FullName);
 
             if (tokens == null)
             {
@@ -35,7 +35,7 @@ namespace Fidely.Framework.Processing
 
             var result = new List<IToken>();
 
-            foreach (IToken token in tokens)
+            foreach (var token in tokens)
             {
                 if (token == null)
                 {
@@ -46,7 +46,7 @@ namespace Fidely.Framework.Processing
                 if (token is UncategorizedToken)
                 {
                     Logger.Verbose("Found uncategorized token '{0}'.", token.Value);
-                    result.AddRange(this.Tokenize((UncategorizedToken)token));
+                    result.AddRange(Tokenize((UncategorizedToken)token));
                 }
                 else
                 {

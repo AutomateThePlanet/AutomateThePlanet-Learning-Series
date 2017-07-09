@@ -63,7 +63,7 @@ namespace Fidely.Framework.Compilation.Objects.Operators
         /// <returns>The cloned instance.</returns>
         public override FidelyOperator Clone()
         {
-            return new PrefixSearch<T>(this.Symbol, this.ignoreCase, this.Independency, this.Description);
+            return new PrefixSearch<T>(Symbol, ignoreCase, Independency, Description);
         }
 
         /// <summary>
@@ -76,18 +76,18 @@ namespace Fidely.Framework.Compilation.Objects.Operators
         {
             Logger.Info("Comparing operands (left = '{0}', right = '{1}').", left.OperandType.FullName, right.OperandType.FullName);
 
-            MethodCallExpression l = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(left.Expression, typeof(object)));
-            MethodCallExpression r = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(right.Expression, typeof(object)));
+            var l = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(left.Expression, typeof(object)));
+            var r = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(right.Expression, typeof(object)));
 
-            if (this.ignoreCase)
+            if (ignoreCase)
             {
-                MethodInfo startsWith = typeof(string).GetMethod("StartsWith", new Type[] { typeof(string) });
-                MethodInfo toLower = typeof(string).GetMethod("ToLower", BindingFlags.Instance | BindingFlags.Public, null, new Type[] { }, null);
+                var startsWith = typeof(string).GetMethod("StartsWith", new Type[] { typeof(string) });
+                var toLower = typeof(string).GetMethod("ToLower", BindingFlags.Instance | BindingFlags.Public, null, new Type[] { }, null);
                 return Expression.Call(Expression.Call(l, toLower), startsWith, Expression.Call(r, toLower));
             }
             else
             {
-                MethodInfo startsWith = typeof(string).GetMethod("StartsWith", new Type[] { typeof(string) });
+                var startsWith = typeof(string).GetMethod("StartsWith", new Type[] { typeof(string) });
                 return Expression.Call(l, startsWith, r);
             }
         }

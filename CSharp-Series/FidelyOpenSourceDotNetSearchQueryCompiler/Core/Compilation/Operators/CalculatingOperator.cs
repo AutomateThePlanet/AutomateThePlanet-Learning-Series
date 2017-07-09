@@ -30,7 +30,7 @@ namespace Fidely.Framework.Compilation.Operators
         /// <param name="priority">The priority of this operator.</param>
         protected CalculatingOperator(string symbol, int priority) : this(symbol, priority, OperatorIndependency.Strong)
         {
-            this.Priority = priority;
+            Priority = priority;
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace Fidely.Framework.Compilation.Operators
         /// <param name="independency">The independency of this operator.</param>
         protected CalculatingOperator(string symbol, int priority, OperatorIndependency independency) : base(symbol, independency)
         {
-            this.Priority = priority;
+            Priority = priority;
         }
 
         /// <summary>

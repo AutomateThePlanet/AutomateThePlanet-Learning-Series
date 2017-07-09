@@ -29,7 +29,7 @@ namespace GetPropertyNamesUsingLambdaExpressions
 
         public static List<string> GetMemberNames<T>(this T instance, params Expression<Func<T, object>>[] expressions)
         {
-            List<string> memberNames = new List<string>();
+            var memberNames = new List<string>();
             foreach (var cExpression in expressions)
             {
                 memberNames.Add(GetMemberName(cExpression.Body));

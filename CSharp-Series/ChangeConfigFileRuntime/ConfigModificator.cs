@@ -21,8 +21,8 @@ namespace ChangeConfigFileRuntime
     {
         public static void ChangeValueByKey(string key, string value, string attributeForChange, ConfigModificatorSettings configWriterSettings)
         {
-            XmlDocument doc = ConfigModificator.LoadConfigDocument(configWriterSettings.ConfigPath);
-            XmlNode rootNode = doc.SelectSingleNode(configWriterSettings.RootNode);
+            var doc = LoadConfigDocument(configWriterSettings.ConfigPath);
+            var rootNode = doc.SelectSingleNode(configWriterSettings.RootNode);
 
             if (rootNode == null)
             {
@@ -30,7 +30,7 @@ namespace ChangeConfigFileRuntime
             }
             try
             {
-                XmlElement elem = (XmlElement)rootNode.SelectSingleNode(string.Format(configWriterSettings.NodeForEdit, key));
+                var elem = (XmlElement)rootNode.SelectSingleNode(string.Format(configWriterSettings.NodeForEdit, key));
                 elem.SetAttribute(attributeForChange, value);
                 doc.Save(configWriterSettings.ConfigPath);
             }

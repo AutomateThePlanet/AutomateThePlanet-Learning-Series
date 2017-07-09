@@ -31,8 +31,8 @@ namespace Fidely.Framework.Compilation
         /// <param name="operandType">The type of the value of this operand.</param>
         public Operand(Expression expression, Type operandType)
         {
-            this.Expression = expression;
-            this.OperandType = operandType;
+            Expression = expression;
+            OperandType = operandType;
         }
 
         /// <summary>
@@ -51,8 +51,8 @@ namespace Fidely.Framework.Compilation
         /// <returns>The string representation of an instance of this class.</returns>
         public override string ToString()
         {
-            string expression = (this.Expression != null) ? this.Expression.ToString() : "null";
-            string type = (this.OperandType != null) ? this.OperandType.FullName : "null";
+            var expression = (Expression != null) ? Expression.ToString() : "null";
+            var type = (OperandType != null) ? OperandType.FullName : "null";
             return String.Format(CultureInfo.CurrentUICulture, "{0}:{1}", expression, type);
         }
     }

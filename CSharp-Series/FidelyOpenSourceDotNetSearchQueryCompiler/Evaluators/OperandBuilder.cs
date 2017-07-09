@@ -45,31 +45,31 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
 
             if (property.PropertyType.IsGenericType && property.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
             {
-                Type type = property.PropertyType.GetGenericArguments()[0];
-                MemberExpression value = Expression.Property(instance, property);
-                if (this.IsNumber(type))
+                var type = property.PropertyType.GetGenericArguments()[0];
+                var value = Expression.Property(instance, property);
+                if (IsNumber(type))
                 {
                     Logger.Verbose("Generating an operand (type = '{0}').", typeof(decimal).FullName);
-                    ConditionalExpression expression = Expression.Condition(Expression.Property(value, property.PropertyType.GetProperty("HasValue")), Expression.Property(value, property.PropertyType.GetProperty("Value")), Expression.Default(type));
+                    var expression = Expression.Condition(Expression.Property(value, property.PropertyType.GetProperty("HasValue")), Expression.Property(value, property.PropertyType.GetProperty("Value")), Expression.Default(type));
                     return new Operand(Expression.Convert(expression, typeof(decimal)), typeof(decimal));
                 }
                 else if (type == typeof(Guid) || type == typeof(DateTime) || type == typeof(DateTimeOffset) || type == typeof(TimeSpan) || type == typeof(string))
                 {
                     Logger.Verbose("Generating an operand (type = '{0}').", type.FullName);
-                    ConditionalExpression expression = Expression.Condition(Expression.Property(value, property.PropertyType.GetProperty("HasValue")), Expression.Property(value, property.PropertyType.GetProperty("Value")), Expression.Default(type));
+                    var expression = Expression.Condition(Expression.Property(value, property.PropertyType.GetProperty("HasValue")), Expression.Property(value, property.PropertyType.GetProperty("Value")), Expression.Default(type));
                     return new Operand(expression, type);
                 }
                 else
                 {
                     Logger.Verbose("Generating an operand (type = '{0}').", typeof(string).FullName);
-                    ConditionalExpression expression = Expression.Condition(Expression.Property(value, property.PropertyType.GetProperty("HasValue")), Expression.Call(Expression.Property(value, property.PropertyType.GetProperty("Value")), typeof(object).GetMethod("ToString")), Expression.Constant(""));
+                    var expression = Expression.Condition(Expression.Property(value, property.PropertyType.GetProperty("HasValue")), Expression.Call(Expression.Property(value, property.PropertyType.GetProperty("Value")), typeof(object).GetMethod("ToString")), Expression.Constant(""));
                     return new Operand(expression, typeof(string));
                 }
             }
             else
             {
-                Type type = property.PropertyType;
-                if (this.IsNumber(type))
+                var type = property.PropertyType;
+                if (IsNumber(type))
                 {
                     Logger.Verbose("Generating an operand (type = '{0}').", typeof(decimal).FullName);
                     return new Operand(Expression.Convert(Expression.Property(instance, property), typeof(decimal)), typeof(decimal));
@@ -96,8 +96,8 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
                 return new BlankOperand();
             }
 
-            Type type = value.GetType();
-            if (this.IsNumber(type))
+            var type = value.GetType();
+            if (IsNumber(type))
             {
                 Logger.Verbose("Generating an operand (type = '{0}').", typeof(decimal).FullName);
                 return new Operand(Expression.Convert(Expression.Constant(value), typeof(decimal)), typeof(decimal));
@@ -121,7 +121,7 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
 
         Operand IOperandBuilder.BuildUp(object value)
         {
-            return this.BuildUp(value);
+            return BuildUp(value);
         }
     }
 }

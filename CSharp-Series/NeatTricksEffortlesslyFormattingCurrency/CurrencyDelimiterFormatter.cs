@@ -25,7 +25,7 @@ namespace NeatTricksEffortlesslyFormattingCurrency
             DigitsFormattingSettings digitsFormattingSettings = DigitsFormattingSettings.None,
             int precesion = 2)
         {
-            string result = ToStringUsDigitsFormattingInternal(number, digitsFormattingSettings, precesion);
+            var result = ToStringUsDigitsFormattingInternal(number, digitsFormattingSettings, precesion);
 
             return result;
         }
@@ -35,7 +35,7 @@ namespace NeatTricksEffortlesslyFormattingCurrency
             DigitsFormattingSettings digitsFormattingSettings = DigitsFormattingSettings.None,
             int precesion = 2)
         {
-            string result = ToStringUsDigitsFormattingInternal(number, digitsFormattingSettings, precesion);
+            var result = ToStringUsDigitsFormattingInternal(number, digitsFormattingSettings, precesion);
 
             return result;
         }
@@ -51,9 +51,9 @@ namespace NeatTricksEffortlesslyFormattingCurrency
                       IEquatable<T>,
                       IFormattable
         {
-            string formattedDigits = string.Empty;
-            string currentNoComaFormatSpecifier = string.Concat("#.", new string('0', precesion));
-            string currentComaFormatSpecifier = string.Concat("##,#.", new string('0', precesion));
+            var formattedDigits = string.Empty;
+            var currentNoComaFormatSpecifier = string.Concat("#.", new string('0', precesion));
+            var currentComaFormatSpecifier = string.Concat("##,#.", new string('0', precesion));
             formattedDigits =
                              digitsFormattingSettings.HasFlag(DigitsFormattingSettings.NoComma) ? number.ToString(currentNoComaFormatSpecifier, usCultureInfo) :
                               number.ToString(currentComaFormatSpecifier, usCultureInfo);
@@ -78,9 +78,9 @@ namespace NeatTricksEffortlesslyFormattingCurrency
             DigitsFormattingSettings digitsFormattingSettings = DigitsFormattingSettings.None,
             int precesion = 2)
         {
-            string formattedDigits = string.Empty;
-            string currentNoComaFormatSpecifier = string.Concat("#.", new string('0', precesion));
-            string currentComaFormatSpecifier = string.Concat("##,#.", new string('0', precesion));
+            var formattedDigits = string.Empty;
+            var currentNoComaFormatSpecifier = string.Concat("#.", new string('0', precesion));
+            var currentComaFormatSpecifier = string.Concat("##,#.", new string('0', precesion));
             formattedDigits =
                              digitsFormattingSettings.HasFlag(DigitsFormattingSettings.NoComma) ? number.ToString(currentNoComaFormatSpecifier, usCultureInfo) :
                               number.ToString(currentComaFormatSpecifier, usCultureInfo);

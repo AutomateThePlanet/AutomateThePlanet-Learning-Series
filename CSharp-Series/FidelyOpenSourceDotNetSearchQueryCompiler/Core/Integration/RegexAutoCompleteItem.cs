@@ -49,8 +49,8 @@ namespace Fidely.Framework.Integration
                 throw new ArgumentNullException("completeProcedure");
             }
 
-            this.DisplayName = displayName;
-            this.Description = description ?? "";
+            DisplayName = displayName;
+            Description = description ?? "";
             this.isMatchProcedure = isMatchProcedure;
             this.completeProcedure = completeProcedure;
         }
@@ -73,7 +73,7 @@ namespace Fidely.Framework.Integration
         /// <returns>True if the specified value can be completed by this item, otherwise false.</returns>
         public bool IsMatch(string value, MatchingOption matchingOption)
         {
-            return this.isMatchProcedure(value, matchingOption);
+            return isMatchProcedure(value, matchingOption);
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Fidely.Framework.Integration
         /// <returns>The completed value.</returns>
         public string Complete(string value, MatchingOption matchingOption)
         {
-            return this.completeProcedure(value, matchingOption);
+            return completeProcedure(value, matchingOption);
         }
     }
 }

@@ -35,7 +35,7 @@ namespace ImplementCopyPaste
 
         public bool Equals(TestCase other)
         {
-            return this.TestCaseId.Equals(other.TestCaseId);
+            return TestCaseId.Equals(other.TestCaseId);
         }
     }
 }

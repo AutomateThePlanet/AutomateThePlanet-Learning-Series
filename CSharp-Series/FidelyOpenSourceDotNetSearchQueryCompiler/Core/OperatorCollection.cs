@@ -43,7 +43,7 @@ namespace Fidely.Framework
         /// </summary>
         public OperatorCollection()
         {
-            this.items = new List<FidelyOperator>();
+            items = new List<FidelyOperator>();
         }
 
         /// <summary>
@@ -64,12 +64,12 @@ namespace Fidely.Framework
             {
                 throw new ArgumentException(String.Format(CultureInfo.CurrentUICulture, "Failed to register the specified operator because its symbol '{0}' is the reserved symbol.", item.Symbol), "item");
             }
-            if (this.items.Any(o => o.Symbol.Equals(item.Symbol, StringComparison.OrdinalIgnoreCase)))
+            if (items.Any(o => o.Symbol.Equals(item.Symbol, StringComparison.OrdinalIgnoreCase)))
             {
                 throw new ArgumentException(String.Format(CultureInfo.CurrentUICulture, "Failed to register the specified operator because its symbol '{0}' is already registered.", item.Symbol), "item");
             }
 
-            this.items.Add(item);
+            items.Add(item);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Fidely.Framework
         /// <returns>The enumerator that iterates through the collection.</returns>
         public IEnumerator<FidelyOperator> GetEnumerator()
         {
-            return this.items.GetEnumerator();
+            return items.GetEnumerator();
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Fidely.Framework
         /// <returns>The enumerator that iterates through the collection.</returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return this.items.GetEnumerator();
+            return items.GetEnumerator();
         }
     }
 }

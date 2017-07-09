@@ -20,9 +20,9 @@ namespace GetAssemblyPropertiesWithoutLockingFile
     {
         public Test(string fullName, string className, Guid methodId)
         {
-            this.FullName = fullName;
-            this.ClassName = className;
-            this.MethodId = methodId;
+            FullName = fullName;
+            ClassName = className;
+            MethodId = methodId;
         }
 
         public string FullName { get; set; }
@@ -33,7 +33,7 @@ namespace GetAssemblyPropertiesWithoutLockingFile
 
         public override string ToString()
         {
-            return String.Format("{0}, {1}, {2}", this.FullName, this.ClassName, this.MethodId);
+            return String.Format("{0}, {1}, {2}", FullName, ClassName, MethodId);
         }
     }
 }

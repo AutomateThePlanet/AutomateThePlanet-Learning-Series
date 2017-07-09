@@ -21,13 +21,13 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
         {
             // 1. dynamic example
             dynamic dynamicVariable;
-            int i = 20;
+            var i = 20;
             dynamicVariable = (dynamic)i;
             Console.WriteLine(dynamicVariable);
-            string stringVariable = "Example string.";
+            var stringVariable = "Example string.";
             dynamicVariable = (dynamic)stringVariable;
             Console.WriteLine(dynamicVariable);
-            DateTime dateTimeVariable = DateTime.Today;
+            var dateTimeVariable = DateTime.Today;
             dynamicVariable = (dynamic)dateTimeVariable;
             Console.WriteLine(dynamicVariable);
             // The expression returns true unless dynamicVariable has the value null. 
@@ -76,7 +76,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
             // returns the same result as the above statement
             Console.WriteLine(yourSingle ?? -2.4f);
             // Use it to create protected dictionary get
-            Dictionary<int, string> names = new Dictionary<int, string>();
+            var names = new Dictionary<int, string>();
             names.Add(0, "Willy");
             Console.WriteLine(names.GetValueOrDefault(1));
         }
@@ -85,12 +85,12 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
         public void ZipFileFrameworkFourExample()
         {
             // 4.ZipFile in .NET(.NET Framework 4.6 and 4.5)
-            string startPath = Path.Combine(string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "\\Start"));
-            string resultPath = Path.Combine(string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "\\Result"));
+            var startPath = Path.Combine(string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "\\Start"));
+            var resultPath = Path.Combine(string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "\\Result"));
             Directory.CreateDirectory(startPath);
             Directory.CreateDirectory(resultPath);
-            string zipPath = Path.Combine(string.Concat(resultPath, "\\", Guid.NewGuid().ToString(), ".zip"));
-            string extractPath = Path.Combine(string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "\\Extract"));
+            var zipPath = Path.Combine(string.Concat(resultPath, "\\", Guid.NewGuid().ToString(), ".zip"));
+            var extractPath = Path.Combine(string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "\\Extract"));
             Directory.CreateDirectory(extractPath);
             ZipFile.CreateFromDirectory(startPath, zipPath);
             ZipFile.ExtractToDirectory(zipPath, extractPath);
@@ -130,8 +130,8 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
         public void VolatileExample()
         {
             // 8.volatile example
-            DimensionTester firstDimension = new DimensionTester();
-            Thread secondDimension = new Thread(firstDimension.StartPartyInAnotherDimension);
+            var firstDimension = new DimensionTester();
+            var secondDimension = new Thread(firstDimension.StartPartyInAnotherDimension);
             secondDimension.Start(firstDimension);
             Thread.Sleep(5000);
             firstDimension.shouldPartyContinue = false;
@@ -142,7 +142,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
         public void GlobalExample()
         {
             // 9. global::  example
-            global::System.Console.WriteLine("Wine is constant proof that God loves us and loves to see us happy. -Benjamin Franklin");
+            Console.WriteLine("Wine is constant proof that God loves us and loves to see us happy. -Benjamin Franklin");
         }
 
         [TestMethod]
@@ -150,7 +150,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
         {
             // 10. DebuggerDisplayAttribute & DebuggerStepThroughAttribute example
             // 11. DebuggerDisplayAttribute example
-            DebuggerDisplayTest buf = new DebuggerDisplayTest();
+            var buf = new DebuggerDisplayTest();
             buf.SquirrelFirstNameName = "Buffalo";
             buf.SquirrelLastNameName = "Bill";
             buf.Age = 20;
@@ -251,16 +251,16 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
             var cp = new CompilerParameters();
             cp.ReferencedAssemblies.Add("System.dll");
             cp.GenerateExecutable = false;
-            CompilerResults cr = csharpCodeProvider.CompileAssemblyFromSource(cp, sourceCode);
+            var cr = csharpCodeProvider.CompileAssemblyFromSource(cp, sourceCode);
 
             return cr.CompiledAssembly;
         }
 
         private static void ExecuteFromAssembly(Assembly assembly)
         {
-            Type helloKittyPrinterType = assembly.GetType("HelloKittyPrinter");
-            MethodInfo printMethod = helloKittyPrinterType.GetMethod("Print");
-            object kitty = assembly.CreateInstance("HelloKittyPrinter");
+            var helloKittyPrinterType = assembly.GetType("HelloKittyPrinter");
+            var printMethod = helloKittyPrinterType.GetMethod("Print");
+            var kitty = assembly.CreateInstance("HelloKittyPrinter");
             printMethod.Invoke(kitty, BindingFlags.InvokeMethod, null, null, CultureInfo.CurrentCulture);
         }
 

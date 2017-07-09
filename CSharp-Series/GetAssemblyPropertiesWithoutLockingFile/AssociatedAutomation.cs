@@ -19,17 +19,17 @@ namespace GetAssemblyPropertiesWithoutLockingFile
 
         public AssociatedAutomation()
         {
-            this.TestName = NONE;
-            this.Assembly = NONE;
-            this.Type = NONE;
+            TestName = NONE;
+            Assembly = NONE;
+            Type = NONE;
         }
 
         public AssociatedAutomation(string testInfo)
         {
-            string[] infos = testInfo.Split(',');
-            this.TestName = infos[1];
-            this.Assembly = infos[2];
-            this.Type = infos[3];
+            var infos = testInfo.Split(',');
+            TestName = infos[1];
+            Assembly = infos[2];
+            Type = infos[3];
         }
 
         public string Type { get; set; }
@@ -40,7 +40,7 @@ namespace GetAssemblyPropertiesWithoutLockingFile
 
         public override string ToString()
         {
-            return string.Format("Type: {0} Assembly: {1} TestName: {2}", this.Type, this.Assembly, this.TestName);
+            return string.Format("Type: {0} Assembly: {1} TestName: {2}", Type, Assembly, TestName);
         }
     }
 }

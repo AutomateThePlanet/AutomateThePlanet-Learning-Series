@@ -25,9 +25,9 @@ namespace Fidely.Framework
     {
         internal WarningNotifiedEventArgs(Type notifiedBy, string symbol, string message)
         {
-            this.NotifiedBy = notifiedBy;
-            this.Symbol = symbol;
-            this.Message = message;
+            NotifiedBy = notifiedBy;
+            Symbol = symbol;
+            Message = message;
         }
 
         /// <summary>

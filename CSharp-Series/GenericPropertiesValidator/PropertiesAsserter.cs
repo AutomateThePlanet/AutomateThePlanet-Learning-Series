@@ -40,13 +40,13 @@ namespace GenericPropertiesValidator
 
         public void Assert(T expectedObject, T realObject, params string[] propertiesNotToCompare)
         {
-            PropertyInfo[] properties = realObject.GetType().GetProperties();
-            foreach (PropertyInfo currentRealProperty in properties)
+            var properties = realObject.GetType().GetProperties();
+            foreach (var currentRealProperty in properties)
             {
                 if (!propertiesNotToCompare.Contains(currentRealProperty.Name))
                 {
-                    PropertyInfo currentExpectedProperty = expectedObject.GetType().GetProperty(currentRealProperty.Name);
-                    string exceptionMessage =
+                    var currentExpectedProperty = expectedObject.GetType().GetProperty(currentRealProperty.Name);
+                    var exceptionMessage =
                         string.Format("The property {0} of class {1} was not as expected.", currentRealProperty.Name, currentRealProperty.DeclaringType.Name);
 
                     if (currentRealProperty.PropertyType != typeof(DateTime) && currentRealProperty.PropertyType != typeof(DateTime?))
@@ -67,14 +67,14 @@ namespace GenericPropertiesValidator
 
         public void Assert<T>(T expectedObject, T realObject, params Expression<Func<T, object>>[] propertiesNotToCompareExpressions)
         {
-            PropertyInfo[] properties = realObject.GetType().GetProperties();
-            List<string> propertiesNotToCompare = GetMemberNames(propertiesNotToCompareExpressions);
-            foreach (PropertyInfo currentRealProperty in properties)
+            var properties = realObject.GetType().GetProperties();
+            var propertiesNotToCompare = GetMemberNames(propertiesNotToCompareExpressions);
+            foreach (var currentRealProperty in properties)
             {
                 if (!propertiesNotToCompare.Contains(currentRealProperty.Name))
                 {
-                    PropertyInfo currentExpectedProperty = expectedObject.GetType().GetProperty(currentRealProperty.Name);
-                    string exceptionMessage =
+                    var currentExpectedProperty = expectedObject.GetType().GetProperty(currentRealProperty.Name);
+                    var exceptionMessage =
                         string.Format("The property {0} of class {1} was not as expected.", currentRealProperty.Name, currentRealProperty.DeclaringType.Name);
 
                     if (currentRealProperty.PropertyType != typeof(DateTime) && currentRealProperty.PropertyType != typeof(DateTime?))
@@ -95,7 +95,7 @@ namespace GenericPropertiesValidator
 
         private static List<string> GetMemberNames<T>(params Expression<Func<T, object>>[] expressions)
         {
-            List<string> memberNames = new List<string>();
+            var memberNames = new List<string>();
             foreach (var cExpression in expressions)
             {
                 memberNames.Add(GetMemberName(cExpression.Body));

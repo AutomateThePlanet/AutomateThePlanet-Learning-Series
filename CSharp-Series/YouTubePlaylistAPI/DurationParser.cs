@@ -22,16 +22,16 @@ namespace YouTubePlaylistAPI
 
         public ulong? GetDuration(string durationStr)
         {
-            ulong? durationResult = default(ulong?);
-            Regex regexNamespaceInitializations = new Regex(durationRegexExpression, RegexOptions.None);
-            Match m = regexNamespaceInitializations.Match(durationStr);
+            var durationResult = default(ulong?);
+            var regexNamespaceInitializations = new Regex(durationRegexExpression, RegexOptions.None);
+            var m = regexNamespaceInitializations.Match(durationStr);
             if (m.Success)
             {
-                string minutesStr = m.Groups["minutes"].Value;
-                string secondsStr = m.Groups["seconds"].Value;
-                int minutes = int.Parse(minutesStr);
-                int seconds = int.Parse(secondsStr);
-                TimeSpan duration = new TimeSpan(0, minutes, seconds);
+                var minutesStr = m.Groups["minutes"].Value;
+                var secondsStr = m.Groups["seconds"].Value;
+                var minutes = int.Parse(minutesStr);
+                var seconds = int.Parse(secondsStr);
+                var duration = new TimeSpan(0, minutes, seconds);
                 durationResult = (ulong)duration.Ticks;
             }
 

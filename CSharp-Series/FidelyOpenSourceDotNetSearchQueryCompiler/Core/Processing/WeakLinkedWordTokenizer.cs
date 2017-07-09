@@ -27,33 +27,33 @@ namespace Fidely.Framework.Processing
 
         internal WeakLinkedWordTokenizer(IEnumerable<FidelyOperator> operators)
         {
-            this.mappings = new Dictionary<string, IToken>();
+            mappings = new Dictionary<string, IToken>();
 
-            this.mappings.Add(LogicalAndOperatorToken.Symbol, new LogicalAndOperatorToken());
-            this.mappings.Add(LogicalOrOperatorToken.Symbol, new LogicalOrOperatorToken());
+            mappings.Add(LogicalAndOperatorToken.Symbol, new LogicalAndOperatorToken());
+            mappings.Add(LogicalOrOperatorToken.Symbol, new LogicalOrOperatorToken());
 
-            foreach (FidelyOperator op in operators)
+            foreach (var op in operators)
             {
                 if (op is ComparativeOperator)
                 {
-                    this.mappings.Add(op.Symbol, new ComparativeOperatorToken((ComparativeOperator)op));
+                    mappings.Add(op.Symbol, new ComparativeOperatorToken((ComparativeOperator)op));
                 }
                 else
                 {
-                    this.mappings.Add(op.Symbol, new CalculatingOperatorToken((CalculatingOperator)op));
+                    mappings.Add(op.Symbol, new CalculatingOperatorToken((CalculatingOperator)op));
                 }
             }
         }
 
         protected override IEnumerable<IToken> Tokenize(UncategorizedToken token)
         {
-            Logger.Info("Tokenizing the specified uncategorized token '{0}' with '{1}'.", token.Value, this.GetType().FullName);
+            Logger.Info("Tokenizing the specified uncategorized token '{0}' with '{1}'.", token.Value, GetType().FullName);
 
             var result = new List<IToken>();
 
-            string value = token.Value;
-            int current = 0;
-            int startIndex = 0;
+            var value = token.Value;
+            var current = 0;
+            var startIndex = 0;
 
             while (current < value.Length)
             {
@@ -63,11 +63,11 @@ namespace Fidely.Framework.Processing
                 {
                     if (startIndex < current)
                     {
-                        string operand = value.Substring(startIndex, current - startIndex);
-                        string symbol = this.mappings.Keys.FirstOrDefault(o => o.Equals(operand, StringComparison.OrdinalIgnoreCase));
+                        var operand = value.Substring(startIndex, current - startIndex);
+                        var symbol = mappings.Keys.FirstOrDefault(o => o.Equals(operand, StringComparison.OrdinalIgnoreCase));
                         if (symbol != null)
                         {
-                            result.Add(this.mappings[symbol]);
+                            result.Add(mappings[symbol]);
                             Logger.Verbose("Extracted an operator token '{0}'.", symbol);
                         }
                         else

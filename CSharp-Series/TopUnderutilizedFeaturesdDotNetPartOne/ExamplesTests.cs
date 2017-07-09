@@ -31,8 +31,8 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
             // 1.1. Curry Invoke Function Example
             Func<int, int, int, int> addNumbers = (x, y, z) => x + y + z;
             var f1 = addNumbers.Curry();
-            Func<int, Func<int, int>> f2 = f1(3);
-            Func<int, int> f3 = f2(4);
+            var f2 = f1(3);
+            var f3 = f2(4);
             Console.WriteLine(f3(5));
         }
 
@@ -41,14 +41,14 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
         {
             // 1.2. Partial Invoke Function Example
             Func<int, int, int, int> sumNumbers = (x, y, z) => x + y + z;
-            Func<int, int> f4 = sumNumbers.Partial(3, 4);
+            var f4 = sumNumbers.Partial(3, 4);
         }
 
         [TestMethod]
         public void ObsoleteAttributeExample()
         {
             // 2. Obsolete Attribute Test
-            Console.WriteLine(TopUnderutilizedFeaturesdDotNetPartOne.ObsoleteExample.OrderDetailTotal);
+            Console.WriteLine(ObsoleteExample.OrderDetailTotal);
             Console.WriteLine();
             ////Console.WriteLine(TopUnderutilizedFeaturesdDotNetPartOne.ObsoleteExample.CalculateOrderDetailTotal());
         }
@@ -57,7 +57,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
         public void DefaultValueAttributeExample()
         {
             // 3. Default Value Attribute Example
-            DefaultValueAttributeTest defaultValueAtt = new DefaultValueAttributeTest();
+            var defaultValueAtt = new DefaultValueAttributeTest();
             Console.WriteLine(defaultValueAtt);
         }
 
@@ -74,11 +74,11 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
         {
             // 5. Default Value Operator ?? example
             int? x = null;
-            int y = x ?? -1;
+            var y = x ?? -1;
             Console.WriteLine("y now equals -1 because x was null => {0}", y);
-            int i = TopUnderutilizedFeaturesdDotNetPartOne.DefaultValueOperatorExample.GetNullableInt() ?? default(int);
+            var i = TopUnderutilizedFeaturesdDotNetPartOne.DefaultValueOperatorExample.GetNullableInt() ?? default(int);
             Console.WriteLine("i equals now 0 because GetNullableInt() returned null => {0}", i);
-            string s = TopUnderutilizedFeaturesdDotNetPartOne.DefaultValueOperatorExample.GetStringValue();
+            var s = TopUnderutilizedFeaturesdDotNetPartOne.DefaultValueOperatorExample.GetStringValue();
             Console.WriteLine("Returns 'Unspecified' because s is null => {0}", s ?? "Unspecified");
         }       
 
@@ -86,9 +86,9 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
         public void WeakReferenceExample()
         {
             // 6. WeakReference example
-            WeakReferenceTest hugeObject = new WeakReferenceTest();
+            var hugeObject = new WeakReferenceTest();
             hugeObject.SharkFirstName = "Sharky";
-            WeakReference w = new WeakReference(hugeObject);
+            var w = new WeakReference(hugeObject);
             hugeObject = null;
             GC.Collect();
             Console.WriteLine((w.Target as WeakReferenceTest).SharkFirstName);
@@ -98,8 +98,8 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
         public void BigIntegerExample()
         {
             // 8. BigInteger example
-            string positiveString = "91389681247993671255432112000000";
-            string negativeString = "-90315837410896312071002088037140000";
+            var positiveString = "91389681247993671255432112000000";
+            var negativeString = "-90315837410896312071002088037140000";
             BigInteger posBigInt = 0;
             BigInteger negBigInt = 0;
             posBigInt = BigInteger.Parse(positiveString);
@@ -112,11 +112,11 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
         public void UndocumentedCSharpTypesKeywordsExample()
         {
             // 9. Undocumented C# Types and Keywords __arglist __reftype __makeref __refvalue example
-            int i = 21;
-            TypedReference tr = __makeref(i);
-            Type t = __reftype(tr);
+            var i = 21;
+            var tr = __makeref(i);
+            var t = __reftype(tr);
             Console.WriteLine(t.ToString());
-            int rv = __refvalue( tr,int);
+            var rv = __refvalue( tr,int);
             Console.WriteLine(rv);
             ArglistTest.DisplayNumbersOnConsole(__arglist(1, 2, 3, 5, 6));
         }
@@ -151,10 +151,10 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
         public void EnvironmentFailFastExample()
         {
             // 12. Environment.FailFast() example
-            string s = Console.ReadLine();
+            var s = Console.ReadLine();
             try
             {
-                int i = int.Parse(s);
+                var i = int.Parse(s);
                 if (i == 42) Environment.FailFast("Special number entered");
             }
             finally
@@ -185,7 +185,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
         public void ParallelForExample()
         {
             // 14.1. Parallel For example
-            int[] nums = Enumerable.Range(0, 1000000).ToArray();
+            var nums = Enumerable.Range(0, 1000000).ToArray();
             long total = 0;
             // Use type parameter to make subtotal a long, not an int
             Parallel.For<long>(0, nums.Length, () => 0, (j, loop, subtotal) =>
@@ -202,7 +202,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
         public void ParallelFoeachExample()
         {
             // 14.2 Parallel Foeach example
-            int[] nums = Enumerable.Range(0, 1000000).ToArray();
+            var nums = Enumerable.Range(0, 1000000).ToArray();
             long total = 0;
             Parallel.ForEach<int, long>(nums, // source collection
                                         () => 0, // method to initialize the local variable

@@ -27,9 +27,9 @@ namespace CSharp.Series.NLog.UnitTests
         {
             //Arrange
             var logger = Mock.Create<ILogger>();
-            string loggedMessage = string.Empty;
+            var loggedMessage = string.Empty;
             Mock.Arrange(() => logger.LogInfo(Arg.AnyString)).DoInstead(() => loggedMessage = "Automate The Planet rocks!");
-            Calculator calculator = new Calculator(logger);
+            var calculator = new Calculator(logger);
 
             //Act
             calculator.Sum(1, 1);

@@ -30,7 +30,7 @@ namespace Fidely.Framework
         /// <param name="name">The alias name.</param>
         public AliasAttribute(string name)
         {
-            this.Name = name;
+            Name = name;
         }
 
         /// <summary>

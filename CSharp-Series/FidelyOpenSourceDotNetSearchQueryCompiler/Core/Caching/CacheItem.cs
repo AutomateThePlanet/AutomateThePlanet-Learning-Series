@@ -22,9 +22,9 @@ namespace Fidely.Framework.Caching
     {
         public CacheItem(TKey key, TValue value)
         {
-            this.Key = key;
-            this.Value = value;
-            this.Hits = 0;
+            Key = key;
+            Value = value;
+            Hits = 0;
         }
 
         public TKey Key { get; private set; }

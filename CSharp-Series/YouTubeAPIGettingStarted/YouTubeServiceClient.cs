@@ -49,14 +49,14 @@ namespace YouTubeAPIGettingStarted
                     new[] { YouTubeService.Scope.YoutubeReadonly },
                     userEmail,
                     CancellationToken.None,
-                    new FileDataStore(this.GetType().ToString())
+                    new FileDataStore(GetType().ToString())
                 );
             }
 
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
-                ApplicationName = this.GetType().ToString()
+                ApplicationName = GetType().ToString()
             });
 
             return youtubeService;

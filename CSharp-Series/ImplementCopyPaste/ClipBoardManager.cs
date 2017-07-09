@@ -20,8 +20,8 @@ namespace ImplementCopyPaste
         public static T GetFromClipboard()
         {
             T retrievedObj = null;
-            System.Windows.Forms.IDataObject dataObj = Clipboard.GetDataObject();
-            string format = typeof(T).FullName;
+            var dataObj = Clipboard.GetDataObject();
+            var format = typeof(T).FullName;
             if (dataObj.GetDataPresent(format))
             {
                 retrievedObj = dataObj.GetData(format) as T;
@@ -31,8 +31,8 @@ namespace ImplementCopyPaste
         
         public static void CopyToClipboard(T objectToCopy)
         {
-            DataFormats.Format format = DataFormats.GetFormat(typeof(T).FullName);
-            System.Windows.Forms.IDataObject dataObj = new DataObject();
+            var format = DataFormats.GetFormat(typeof(T).FullName);
+            IDataObject dataObj = new DataObject();
             dataObj.SetData(format.Name, false, objectToCopy);
             Clipboard.SetDataObject(dataObj, false);
         }

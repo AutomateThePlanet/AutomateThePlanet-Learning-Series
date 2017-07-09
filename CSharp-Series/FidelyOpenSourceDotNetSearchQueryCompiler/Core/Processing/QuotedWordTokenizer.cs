@@ -24,13 +24,13 @@ namespace Fidely.Framework.Processing
     {
         protected override IEnumerable<IToken> Tokenize(UncategorizedToken token)
         {
-            Logger.Info("Tokenizing the specified uncategorized token '{0}' with '{1}'.", token.Value, this.GetType().FullName);
+            Logger.Info("Tokenizing the specified uncategorized token '{0}' with '{1}'.", token.Value, GetType().FullName);
 
             var result = new List<IToken>();
 
-            string value = token.Value;
-            int current = 0;
-            int startIndex = 0;
+            var value = token.Value;
+            var current = 0;
+            var startIndex = 0;
 
             while (current < token.Value.Length)
             {
@@ -44,7 +44,7 @@ namespace Fidely.Framework.Processing
                         Logger.Verbose("Extracted an uncategorized token '{0}'.", result.Last().Value);
                     }
 
-                    int endIndex = value.IndexOf(value[current], current + 1);
+                    var endIndex = value.IndexOf(value[current], current + 1);
                     if (endIndex != -1)
                     {
                         result.Add(BuildUpToken(value[current], value.Substring(current + 1, endIndex - (current + 1))));

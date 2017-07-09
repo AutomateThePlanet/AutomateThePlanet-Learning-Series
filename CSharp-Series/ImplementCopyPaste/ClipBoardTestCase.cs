@@ -21,8 +21,8 @@ namespace ImplementCopyPaste
     {
         public ClipBoardTestCase(List<TestCase> testCases, ClipBoardCommand clipBoardCommand)
         {
-            this.TestCases = testCases;
-            this.ClipBoardCommand = clipBoardCommand;
+            TestCases = testCases;
+            ClipBoardCommand = clipBoardCommand;
         }
 
         public List<TestCase> TestCases { get; set; }

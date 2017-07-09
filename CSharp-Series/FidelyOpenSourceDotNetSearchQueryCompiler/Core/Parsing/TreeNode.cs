@@ -22,12 +22,12 @@ namespace Fidely.Framework.Parsing
     {
         internal TreeNode()
         {
-            this.Value = new BlankOperandToken();
+            Value = new BlankOperandToken();
         }
 
         internal TreeNode(IToken token)
         {
-            this.Value = token;
+            Value = token;
         }
 
         internal IToken Value { get; private set; }
@@ -40,7 +40,7 @@ namespace Fidely.Framework.Parsing
 
         internal void Freeze()
         {
-            this.IsFreezed = true;
+            IsFreezed = true;
         }
     }
 }

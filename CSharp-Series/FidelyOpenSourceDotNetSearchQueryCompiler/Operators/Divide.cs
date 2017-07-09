@@ -64,12 +64,12 @@ namespace Fidely.Framework.Compilation.Objects.Operators
             }
             else
             {
-                this.Warn("'{0}' doesn't support to divide '{1}' and '{2}'.", this.GetType().FullName, left.OperandType.FullName, right.OperandType.FullName);
+                Warn("'{0}' doesn't support to divide '{1}' and '{2}'.", GetType().FullName, left.OperandType.FullName, right.OperandType.FullName);
 
-                MethodCallExpression l = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(left.Expression, typeof(object)));
-                MethodCallExpression r = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(right.Expression, typeof(object)));
-                MethodInfo method = typeof(string).GetMethod("Concat", BindingFlags.Static | BindingFlags.Public, null, new Type[] { typeof(string), typeof(string), typeof(string) }, null);
-                result = new Operand(Expression.Call(null, method, l, Expression.Constant(this.Symbol), r), typeof(string));
+                var l = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(left.Expression, typeof(object)));
+                var r = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(right.Expression, typeof(object)));
+                var method = typeof(string).GetMethod("Concat", BindingFlags.Static | BindingFlags.Public, null, new Type[] { typeof(string), typeof(string), typeof(string) }, null);
+                result = new Operand(Expression.Call(null, method, l, Expression.Constant(Symbol), r), typeof(string));
             }
 
             Logger.Info("Divided operands (result = '{0}').", result.OperandType.FullName);
@@ -83,7 +83,7 @@ namespace Fidely.Framework.Compilation.Objects.Operators
         /// <returns>The cloned instance.</returns>
         public override FidelyOperator Clone()
         {
-            return new Divide(this.Symbol, this.Priority, this.Independency, this.Description);
+            return new Divide(Symbol, Priority, Independency, Description);
         }
     }
 }

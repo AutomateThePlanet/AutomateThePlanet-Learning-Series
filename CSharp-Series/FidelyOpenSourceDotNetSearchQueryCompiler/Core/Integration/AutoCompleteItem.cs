@@ -34,8 +34,8 @@ namespace Fidely.Framework.Integration
                 throw new ArgumentNullException("displayName");
             }
 
-            this.DisplayName = displayName;
-            this.Description = description ?? "";
+            DisplayName = displayName;
+            Description = description ?? "";
         }
 
         /// <summary>
@@ -67,11 +67,11 @@ namespace Fidely.Framework.Integration
 
             if (matchingOption.Mode == MatchingMode.Partial)
             {
-                return this.DisplayName.ToUpperInvariant().Contains(value.ToUpperInvariant());
+                return DisplayName.ToUpperInvariant().Contains(value.ToUpperInvariant());
             }
             else
             {
-                return this.DisplayName.ToUpperInvariant().StartsWith(value.ToUpperInvariant(), StringComparison.OrdinalIgnoreCase);
+                return DisplayName.ToUpperInvariant().StartsWith(value.ToUpperInvariant(), StringComparison.OrdinalIgnoreCase);
             }
         }
 
@@ -83,7 +83,7 @@ namespace Fidely.Framework.Integration
         /// <returns>The completed value.</returns>
         public string Complete(string value, MatchingOption matchingOption)
         {
-            return this.DisplayName;
+            return DisplayName;
         }
     }
 }

@@ -29,7 +29,7 @@ namespace YouTubePlaylistAPI
 
         public YouTubeSong()
         {
-            this.SongGuid = Guid.NewGuid();
+            SongGuid = Guid.NewGuid();
         }
 
         public YouTubeSong(
@@ -41,23 +41,23 @@ namespace YouTubePlaylistAPI
             ulong? duration)
             : this()
         {
-            this.Artist = artist;
-            this.Title = title;
-            this.OriginalTitle = originalTitle;
-            this.SongId = songId;
-            this.PlayListItemId = playlistItemId;
-            this.Duration = duration;
+            Artist = artist;
+            Title = title;
+            OriginalTitle = originalTitle;
+            SongId = songId;
+            PlayListItemId = playlistItemId;
+            Duration = duration;
         }
 
         public YouTubeSong(IYouTubeSong iYouTubeSong)
         {
-            this.Artist = iYouTubeSong.Artist;
-            this.Title = iYouTubeSong.Title;
-            this.SongId = iYouTubeSong.SongId;
-            this.PlayListItemId = iYouTubeSong.PlayListItemId;
-            this.Duration = iYouTubeSong.Duration;
-            this.OriginalTitle = iYouTubeSong.OriginalTitle;
-            this.SongGuid = iYouTubeSong.SongGuid;
+            Artist = iYouTubeSong.Artist;
+            Title = iYouTubeSong.Title;
+            SongId = iYouTubeSong.SongId;
+            PlayListItemId = iYouTubeSong.PlayListItemId;
+            Duration = iYouTubeSong.Duration;
+            OriginalTitle = iYouTubeSong.OriginalTitle;
+            SongGuid = iYouTubeSong.SongGuid;
         }
 
         public string PlayListItemId { get; set; }
@@ -68,13 +68,13 @@ namespace YouTubePlaylistAPI
         {
             get
             {
-                return this.artist;
+                return artist;
             }
 
             set
             {
-                this.artist = value;
-                this.NotifyPropertyChanged();
+                artist = value;
+                NotifyPropertyChanged();
             }
         }
 
@@ -82,13 +82,13 @@ namespace YouTubePlaylistAPI
         {
             get
             {
-                return this.originalTitle;
+                return originalTitle;
             }
 
             set
             {
-                this.originalTitle = value;
-                this.NotifyPropertyChanged();
+                originalTitle = value;
+                NotifyPropertyChanged();
             }
         }
 
@@ -96,14 +96,14 @@ namespace YouTubePlaylistAPI
         {
             get
             {
-                return this.songGuid;
+                return songGuid;
             }
 
             set
             {
-                if (this.songGuid == default(Guid))
+                if (songGuid == default(Guid))
                 {
-                    this.songGuid = value;
+                    songGuid = value;
                 }
             }
         }
@@ -112,13 +112,13 @@ namespace YouTubePlaylistAPI
         {
             get
             {
-                return this.songId;
+                return songId;
             }
 
             set
             {
-                this.songId = value;
-                this.NotifyPropertyChanged();
+                songId = value;
+                NotifyPropertyChanged();
             }
         }
 
@@ -126,7 +126,7 @@ namespace YouTubePlaylistAPI
         {
             get
             {
-                return string.Concat("https://www.youtube.com/watch?v=", this.SongId);
+                return string.Concat("https://www.youtube.com/watch?v=", SongId);
             }
         }
 
@@ -134,13 +134,13 @@ namespace YouTubePlaylistAPI
         {
             get
             {
-                return this.title;
+                return title;
             }
 
             set
             {
-                this.title = value;
-                this.NotifyPropertyChanged();
+                title = value;
+                NotifyPropertyChanged();
             }
         }
 
@@ -148,7 +148,7 @@ namespace YouTubePlaylistAPI
 
         public bool Equals(YouTubeSong other)
         {
-            return this.SongId.Equals(other.SongId);
+            return SongId.Equals(other.SongId);
         }
     }
 }

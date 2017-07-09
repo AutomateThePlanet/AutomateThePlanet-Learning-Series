@@ -36,13 +36,13 @@ namespace Fidely.Framework.Parsing
 
             if (tokens.Count() == 0)
             {
-                return this.BuildUpDefaultComparativeNode(new TreeNode());
+                return BuildUpDefaultComparativeNode(new TreeNode());
             }
 
             var nodes = new Stack<TreeNode>();
             var stack = new Stack<IToken>();
 
-            foreach (IToken token in tokens)
+            foreach (var token in tokens)
             {
                 if (token is OperandToken)
                 {
@@ -52,9 +52,9 @@ namespace Fidely.Framework.Parsing
                 {
                     while (!(stack.Peek() is OpenedParenthesisToken))
                     {
-                        TreeNode right = nodes.Pop();
-                        TreeNode left = nodes.Pop();
-                        TreeNode node = this.BuildUpTreeNode((OperatorToken)stack.Pop(), left, right);
+                        var right = nodes.Pop();
+                        var left = nodes.Pop();
+                        var node = BuildUpTreeNode((OperatorToken)stack.Pop(), left, right);
                         nodes.Push(node);
                     }
                     nodes.Peek().Freeze();
@@ -82,9 +82,9 @@ namespace Fidely.Framework.Parsing
                             }
                         }
 
-                        TreeNode r = nodes.Pop();
-                        TreeNode l = nodes.Pop();
-                        TreeNode node = this.BuildUpTreeNode((OperatorToken)stack.Pop(), l, r);
+                        var r = nodes.Pop();
+                        var l = nodes.Pop();
+                        var node = BuildUpTreeNode((OperatorToken)stack.Pop(), l, r);
                         nodes.Push(node);
                     }
                     stack.Push(token);
@@ -93,15 +93,15 @@ namespace Fidely.Framework.Parsing
 
             while (stack.Count > 0)
             {
-                TreeNode r = nodes.Pop();
-                TreeNode l = nodes.Pop();
-                TreeNode node = this.BuildUpTreeNode((OperatorToken)stack.Pop(), l, r);
+                var r = nodes.Pop();
+                var l = nodes.Pop();
+                var node = BuildUpTreeNode((OperatorToken)stack.Pop(), l, r);
                 nodes.Push(node);
             }
 
             if (nodes.Peek().Value is OperandToken || nodes.Peek().Value is CalculatingOperatorToken)
             {
-                nodes.Push(this.BuildUpDefaultComparativeNode(nodes.Pop()));
+                nodes.Push(BuildUpDefaultComparativeNode(nodes.Pop()));
             }
 
             return nodes.Pop();
@@ -116,7 +116,7 @@ namespace Fidely.Framework.Parsing
             {
                 if (left.Value is CalculatingOperatorToken || left.Value is OperandToken)
                 {
-                    node.Left = this.BuildUpDefaultComparativeNode(left);
+                    node.Left = BuildUpDefaultComparativeNode(left);
                 }
                 else
                 {
@@ -125,7 +125,7 @@ namespace Fidely.Framework.Parsing
 
                 if (right.Value is CalculatingOperatorToken || right.Value is OperandToken)
                 {
-                    node.Right = this.BuildUpDefaultComparativeNode(right);
+                    node.Right = BuildUpDefaultComparativeNode(right);
                 }
                 else
                 {
@@ -147,7 +147,7 @@ namespace Fidely.Framework.Parsing
                     }
                     else
                     {
-                        TreeNode r = and.Left.Right;
+                        var r = and.Left.Right;
                         while (r.Value is LogicalOperatorToken || r.Value is ComparativeOperatorToken)
                         {
                             r = r.Right;
@@ -172,7 +172,7 @@ namespace Fidely.Framework.Parsing
                     }
                     else
                     {
-                        TreeNode l = and.Right.Left;
+                        var l = and.Right.Left;
                         while (l.Value is LogicalOperatorToken || l.Value is ComparativeOperatorToken)
                         {
                             l = l.Left;
@@ -205,7 +205,7 @@ namespace Fidely.Framework.Parsing
                 {
                     var and = new TreeNode(new LogicalAndOperatorToken());
                     and.Left = left;
-                    and.Right = this.BuildUpDefaultComparativeNode(node);
+                    and.Right = BuildUpDefaultComparativeNode(node);
                     node.Left = new TreeNode();
                     root = and;
                 }
@@ -217,7 +217,7 @@ namespace Fidely.Framework.Parsing
                 if (right.Value is LogicalOperatorToken || right.Value is ComparativeOperatorToken)
                 {
                     var and = new TreeNode(new LogicalAndOperatorToken());
-                    and.Left = this.BuildUpDefaultComparativeNode(node);
+                    and.Left = BuildUpDefaultComparativeNode(node);
                     and.Right = right;
                     node.Right = new TreeNode();
                     if (root != null)
@@ -245,7 +245,7 @@ namespace Fidely.Framework.Parsing
 
         private TreeNode BuildUpDefaultComparativeNode(TreeNode node)
         {
-            var comparative = new TreeNode(new ComparativeOperatorToken(this.defaultOperator));
+            var comparative = new TreeNode(new ComparativeOperatorToken(defaultOperator));
             comparative.Left = new TreeNode();
             comparative.Right = node;
             return comparative;
