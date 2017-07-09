@@ -25,35 +25,35 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
     [Binding]
     public class SignInPageLoginBehaviour : WaitableActionBehaviour
     {
-        private readonly SignInPage signInPage;
-        private readonly ShippingAddressPage shippingAddressPage;
-        private ClientLoginInfo clientLoginInfo;
+        private readonly SignInPage _signInPage;
+        private readonly ShippingAddressPage _shippingAddressPage;
+        private ClientLoginInfo _clientLoginInfo;
 
         public SignInPageLoginBehaviour()
         {
-            this.signInPage = UnityContainerFactory.GetContainer().Resolve<SignInPage>();
-            this.shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
+            _signInPage = UnityContainerFactory.GetContainer().Resolve<SignInPage>();
+            _shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
         }
 
         [When(@"I login with email = ""([^""]*)"" and pass = ""([^""]*)""")]
         public void LoginWithEmailAndPass(string email, string password)
         {
-            this.clientLoginInfo = new ClientLoginInfo
+            _clientLoginInfo = new ClientLoginInfo
             {
                 Email = email,
                 Password = password
             };
-            base.Execute();
+            Execute();
         }
 
         protected override void PerformPostActWait()
         {
-            this.shippingAddressPage.WaitForPageToLoad();
+            _shippingAddressPage.WaitForPageToLoad();
         }
 
         protected override void PerformAct()
         {
-            this.signInPage.Login(this.clientLoginInfo.Email, this.clientLoginInfo.Password);
+            _signInPage.Login(_clientLoginInfo.Email, _clientLoginInfo.Password);
         }
     }
 }

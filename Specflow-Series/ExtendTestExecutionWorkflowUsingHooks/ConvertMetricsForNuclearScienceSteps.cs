@@ -22,14 +22,14 @@ namespace ExtendTestExecutionWorkflowUsingHooks
     [Binding]
     public class ConvertMetricsForNuclearScienceSteps
     {
-        private readonly HomePage homePage;
-        private readonly KilowattHoursPage kilowattHoursPage;
+        private readonly HomePage _homePage;
+        private readonly KilowattHoursPage _kilowattHoursPage;
 
         public ConvertMetricsForNuclearScienceSteps()
         {
-            this.homePage = 
+            _homePage = 
                 UnityContainerFactory.GetContainer().Resolve<HomePage>();
-            this.kilowattHoursPage = 
+            _kilowattHoursPage = 
                 UnityContainerFactory.GetContainer().Resolve<KilowattHoursPage>();
         }
 
@@ -50,38 +50,38 @@ namespace ExtendTestExecutionWorkflowUsingHooks
         {
             ////this.homePage = new HomePage(Driver.Browser);
             ////this.homePage = UnityContainerFactory.GetContainer().Resolve<HomePage>();
-            this.homePage.Open();
+            _homePage.Open();
         }
 
         [When(@"navigate to Energy and power section")]
         public void WhenNavigateToEnergyAndPowerSection()
         {
-            this.homePage.EnergyAndPowerAnchor.Click();
+            _homePage.EnergyAndPowerAnchor.Click();
         }
 
         [When(@"navigate to Kilowatt-hours")]
         public void WhenNavigateToKilowatt_Hours()
         {
-            this.homePage.KilowattHours.Click();
+            _homePage.KilowattHours.Click();
         }
 
         [When(@"choose conversions to Newton-meters")]
         public void WhenChooseConversionsToNewton_Meters()
         {
             ////this.kilowattHoursPage = new KilowattHoursPage(Driver.Browser);
-            this.kilowattHoursPage.KilowatHoursToNewtonMetersAnchor.Click();
+            _kilowattHoursPage.KilowatHoursToNewtonMetersAnchor.Click();
         }
 
         [When(@"type (.*) kWh")]
         public void WhenTypeKWh(double kWh)
         {
-            this.kilowattHoursPage.ConvertKilowattHoursToNewtonMeters(kWh);
+            _kilowattHoursPage.ConvertKilowattHoursToNewtonMeters(kWh);
         }
 
         [Then(@"assert that (.*) Nm are displayed as answer")]
         public void ThenAssertThatENmAreDisplayedAsAnswer(string expectedNewtonMeters)
         {
-            this.kilowattHoursPage.AssertFahrenheit(expectedNewtonMeters);
+            _kilowattHoursPage.AssertFahrenheit(expectedNewtonMeters);
         }
     }
 }

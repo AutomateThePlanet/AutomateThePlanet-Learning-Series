@@ -27,7 +27,7 @@ namespace HandlingParameters
         public void NavigateToItemUrl(Table productsTable)
         {
             var itemPage = UnityContainerFactory.GetContainer().Resolve<ItemPage>();
-            IEnumerable<dynamic> products = productsTable.CreateDynamicSet();
+            var products = productsTable.CreateDynamicSet();
             foreach (var product in products)
             {
                 itemPage.Navigate(string.Concat(product.Url, "?", product.AffilicateCode));

@@ -22,7 +22,7 @@ namespace HandlingParameters.Pages.HomePage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//a[contains(@title,'Energy Conversion')]"));
+                return Driver.FindElement(By.XPath("//a[contains(@title,'Energy Conversion')]"));
             }
         }
 
@@ -30,7 +30,7 @@ namespace HandlingParameters.Pages.HomePage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//a[contains(text(),'Kilowatt-hours')]"));
+                return Driver.FindElement(By.XPath("//a[contains(text(),'Kilowatt-hours')]"));
             }
         }
     }

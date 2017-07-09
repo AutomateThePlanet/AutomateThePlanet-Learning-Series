@@ -30,7 +30,7 @@ namespace GettingStartedSpecflow
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Convert Metrics for Nuclear Science", "\tTo do my nuclear-related job\r\n\tAs a Nuclear Engineer \r\n\tI want to be able to con" +
+            var featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Convert Metrics for Nuclear Science", "\tTo do my nuclear-related job\r\n\tAs a Nuclear Engineer \r\n\tI want to be able to con" +
                     "vert different metrics.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -82,7 +82,7 @@ namespace GettingStartedSpecflow
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("testingFramework")]
         public virtual void SuccessfullyConvertKilowatt_HoursToNewton_Meters()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully Convert Kilowatt-hours to Newton-meters", new string[] {
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully Convert Kilowatt-hours to Newton-meters", new string[] {
                         "testingFramework"});
 #line 10
 this.ScenarioSetup(scenarioInfo);

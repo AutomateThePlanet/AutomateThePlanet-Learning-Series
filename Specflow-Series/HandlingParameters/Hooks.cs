@@ -31,16 +31,16 @@ namespace HandlingParameters
         {
             System.Console.WriteLine("Execute BeforeTestRun- RegisterPages");
             Driver.StartBrowser(BrowserTypes.Chrome);
-            HandlingParameters.Base.UnityContainerFactory.GetContainer().RegisterType<HomePage>(new ContainerControlledLifetimeManager());
-            HandlingParameters.Base.UnityContainerFactory.GetContainer().RegisterType<KilowattHoursPage>(new ContainerControlledLifetimeManager());
-            HandlingParameters.Base.UnityContainerFactory.GetContainer().RegisterType<SecondsToMinutesPage>(new ContainerControlledLifetimeManager());
+            Base.UnityContainerFactory.GetContainer().RegisterType<HomePage>(new ContainerControlledLifetimeManager());
+            Base.UnityContainerFactory.GetContainer().RegisterType<KilowattHoursPage>(new ContainerControlledLifetimeManager());
+            Base.UnityContainerFactory.GetContainer().RegisterType<SecondsToMinutesPage>(new ContainerControlledLifetimeManager());
         }
 
         [BeforeTestRun(Order = 2)]
         public static void RegisterDriver()
         {
             System.Console.WriteLine("Execute BeforeTestRun- RegisterDriver");
-            HandlingParameters.Base.UnityContainerFactory.GetContainer().RegisterInstance<IWebDriver>(Driver.Browser);
+            Base.UnityContainerFactory.GetContainer().RegisterInstance<IWebDriver>(Driver.Browser);
         }
 
         // Reuse browser for the whole run.

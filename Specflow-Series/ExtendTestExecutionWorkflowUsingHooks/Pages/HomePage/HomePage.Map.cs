@@ -21,7 +21,7 @@ namespace ExtendTestExecutionWorkflowUsingHooks.Pages
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//a[contains(@title,'Energy Conversion')]"));
+                return Driver.FindElement(By.XPath("//a[contains(@title,'Energy Conversion')]"));
             }
         }
 
@@ -29,7 +29,7 @@ namespace ExtendTestExecutionWorkflowUsingHooks.Pages
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//a[contains(text(),'Kilowatt-hours')]"));
+                return Driver.FindElement(By.XPath("//a[contains(text(),'Kilowatt-hours')]"));
             }
         }
     }

@@ -18,7 +18,7 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.Core
     {
         public virtual void Execute()
         {
-            this.PerformAct();
+            PerformAct();
         }
 
         protected abstract void PerformAct();

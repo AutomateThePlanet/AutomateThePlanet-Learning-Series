@@ -22,7 +22,7 @@ namespace GettingStartedSpecflow.Pages
         {
             get
             {
-                return this.driver.FindElement(By.Id("argumentConv"));
+                return Driver.FindElement(By.Id("argumentConv"));
             }
         }
 
@@ -30,7 +30,7 @@ namespace GettingStartedSpecflow.Pages
         {
             get
             {
-                return this.driver.FindElement(By.Id("answer"));
+                return Driver.FindElement(By.Id("answer"));
             }
         }
         
@@ -38,7 +38,7 @@ namespace GettingStartedSpecflow.Pages
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//a[contains(text(),'Kilowatt-hours to Newton-meters')]"));
+                return Driver.FindElement(By.XPath("//a[contains(text(),'Kilowatt-hours to Newton-meters')]"));
             }
         }
     }

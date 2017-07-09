@@ -24,13 +24,13 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
     [Binding]
     public class PreviewShoppingCartPageProceedBehaviour : WaitableActionBehaviour
     {
-        private readonly PreviewShoppingCartPage previewShoppingCartPage;
-        private readonly SignInPage signInPage;
+        private readonly PreviewShoppingCartPage _previewShoppingCartPage;
+        private readonly SignInPage _signInPage;
 
         public PreviewShoppingCartPageProceedBehaviour()
         {
-            this.previewShoppingCartPage = UnityContainerFactory.GetContainer().Resolve<PreviewShoppingCartPage>();
-            this.signInPage = UnityContainerFactory.GetContainer().Resolve<SignInPage>(); 
+            _previewShoppingCartPage = UnityContainerFactory.GetContainer().Resolve<PreviewShoppingCartPage>();
+            _signInPage = UnityContainerFactory.GetContainer().Resolve<SignInPage>(); 
         }
 
         [When(@"then I click the 'proceed to checkout' button")]
@@ -41,12 +41,12 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
 
         protected override void PerformAct()
         {
-            this.previewShoppingCartPage.ClickProceedToCheckoutButton();
+            _previewShoppingCartPage.ClickProceedToCheckoutButton();
         }
 
         protected override void PerformPostActWait()
         {
-            this.signInPage.WaitForPageToLoad();
+            _signInPage.WaitForPageToLoad();
         }
     }
 }

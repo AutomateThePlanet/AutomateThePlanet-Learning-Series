@@ -21,7 +21,7 @@ namespace HandlingParameters.Pages.CelsiusFahrenheitPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("argumentConv"));
+                return Driver.FindElement(By.Id("argumentConv"));
             }
         }
 
@@ -29,7 +29,7 @@ namespace HandlingParameters.Pages.CelsiusFahrenheitPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("answer"));
+                return Driver.FindElement(By.Id("answer"));
             }
         }
 
@@ -37,7 +37,7 @@ namespace HandlingParameters.Pages.CelsiusFahrenheitPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("format"));
+                return Driver.FindElement(By.Id("format"));
             }
         }
         
@@ -45,7 +45,7 @@ namespace HandlingParameters.Pages.CelsiusFahrenheitPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//a[contains(text(),'Kilowatt-hours to Newton-meters')]"));
+                return Driver.FindElement(By.XPath("//a[contains(text(),'Kilowatt-hours to Newton-meters')]"));
             }
         }
     }

@@ -33,8 +33,8 @@ namespace GettingStartedSpecflow.Pages
 
         public void ConvertKilowattHoursToNewtonMeters(double kWh)
         {
-            this.CelsiusInput.SendKeys(kWh.ToString());
-            this.driverWait.Until(drv => this.Answer != null);
+            CelsiusInput.SendKeys(kWh.ToString());
+            DriverWait.Until(drv => Answer != null);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace ExtendTestExecutionWorkflowUsingHooks
         [BeforeTestRun(Order = 1)]
         public static void RegisterPages()
         {
-            System.Console.WriteLine("Execute BeforeTestRun- RegisterPages");
+            Console.WriteLine("Execute BeforeTestRun- RegisterPages");
             Driver.StartBrowser(BrowserTypes.Chrome);
             UnityContainerFactory.GetContainer().RegisterType<HomePage>(new ContainerControlledLifetimeManager());
             UnityContainerFactory.GetContainer().RegisterType<KilowattHoursPage>(new ContainerControlledLifetimeManager());
@@ -38,7 +38,7 @@ namespace ExtendTestExecutionWorkflowUsingHooks
         [BeforeTestRun(Order = 2)]
         public static void RegisterDriver()
         {
-            System.Console.WriteLine("Execute BeforeTestRun- RegisterDriver");
+            Console.WriteLine("Execute BeforeTestRun- RegisterDriver");
             UnityContainerFactory.GetContainer().RegisterInstance<IWebDriver>(Driver.Browser);
         }
 
@@ -46,7 +46,7 @@ namespace ExtendTestExecutionWorkflowUsingHooks
         [AfterTestRun]
         public static void AfterTestRun()
         {
-            System.Console.WriteLine("Execute AfterTestRun- StopBrowser");
+            Console.WriteLine("Execute AfterTestRun- StopBrowser");
             Driver.StopBrowser();
         }
 
@@ -71,20 +71,20 @@ namespace ExtendTestExecutionWorkflowUsingHooks
 
             // New Browser Instance for each test.
             ////Driver.StartBrowser(BrowserTypes.Chrome);
-            System.Console.WriteLine("Execute BeforeScenario- StartBrowser");
+            Console.WriteLine("Execute BeforeScenario- StartBrowser");
         }
 
         [BeforeScenario(Order = 1)]
         public static void LoginUser()
         {
-            System.Console.WriteLine("Execute BeforeScenario- LoginUser");
+            Console.WriteLine("Execute BeforeScenario- LoginUser");
             // Login to your site.
         }
 
         [AfterScenario(Order = 2)]
         public static void CloseBrowser()
         {
-            System.Console.WriteLine("Execute AfterScenario- CloseBrowser");
+            Console.WriteLine("Execute AfterScenario- CloseBrowser");
             // New Browser Instance for each test.
             ////Driver.StopBrowser();
         }
@@ -93,20 +93,20 @@ namespace ExtendTestExecutionWorkflowUsingHooks
         [AfterScenario("hooksExample")]
         public static void LogoutUser()
         {
-            System.Console.WriteLine("Execute AfterScenario- LogoutUser");
+            Console.WriteLine("Execute AfterScenario- LogoutUser");
             // Logout the user
         }
 
         [BeforeStep]
         public void BeforeStep()
         {
-            System.Console.WriteLine("BeforeStep- Start Timer");
+            Console.WriteLine("BeforeStep- Start Timer");
         }
 
         [AfterStep]
         public static void AfterStep()
         {
-            System.Console.WriteLine("BeforeStep- Log something in DB.");
+            Console.WriteLine("BeforeStep- Log something in DB.");
         }
     }
 }

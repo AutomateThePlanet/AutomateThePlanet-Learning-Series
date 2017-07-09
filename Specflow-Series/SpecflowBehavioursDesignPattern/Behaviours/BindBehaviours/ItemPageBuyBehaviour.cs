@@ -23,11 +23,11 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
     [Binding]
     public class ItemPageBuyBehaviour : ActionBehaviour
     {
-        private readonly ItemPage itemPage;
+        private readonly ItemPage _itemPage;
 
         public ItemPageBuyBehaviour()
         {
-            this.itemPage = UnityContainerFactory.GetContainer().Resolve<ItemPage>(); 
+            _itemPage = UnityContainerFactory.GetContainer().Resolve<ItemPage>(); 
         }
 
         [When(@"I click the 'buy now' button")]
@@ -38,7 +38,7 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
 
         protected override void PerformAct()
         {
-            this.itemPage.ClickBuyNowButton();
+            _itemPage.ClickBuyNowButton();
         }
     }
 }

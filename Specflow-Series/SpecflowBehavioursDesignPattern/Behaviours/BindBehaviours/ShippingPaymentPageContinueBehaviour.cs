@@ -23,11 +23,11 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
     [Binding]
     public class ShippingPaymentPageContinueBehaviour : ActionBehaviour
     {
-        private readonly ShippingPaymentPage shippingPaymentPage;
+        private readonly ShippingPaymentPage _shippingPaymentPage;
 
         public ShippingPaymentPageContinueBehaviour()
         {
-            this.shippingPaymentPage = UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>(); 
+            _shippingPaymentPage = UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>(); 
         }
 
         [When(@"click shipping payment top 'continue' button")]
@@ -38,7 +38,7 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
 
         protected override void PerformAct()
         {
-            this.shippingPaymentPage.ClickTopContinueButton();
+            _shippingPaymentPage.ClickTopContinueButton();
         }
     }
 }

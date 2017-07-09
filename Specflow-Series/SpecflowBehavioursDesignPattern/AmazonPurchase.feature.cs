@@ -30,7 +30,7 @@ namespace SpecflowBehavioursDesignPattern
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Create Purchase in Amazon", "\tIn order to receive a book online\r\n\tAs a client\r\n\tI want to be able to choose it" +
+            var featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Create Purchase in Amazon", "\tIn order to receive a book online\r\n\tAs a client\r\n\tI want to be able to choose it" +
                     " through the browser and pay for it online", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -75,7 +75,7 @@ namespace SpecflowBehavioursDesignPattern
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("testingFramework")]
         public virtual void CreateSuccessfullPurchaseWhenBillingCountryIsUnitedStatesWithAmericanExpressCard()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Successfull Purchase When Billing Country Is United States with American E" +
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Successfull Purchase When Billing Country Is United States with American E" +
                     "xpress Card", new string[] {
                         "testingFramework"});
 #line 7

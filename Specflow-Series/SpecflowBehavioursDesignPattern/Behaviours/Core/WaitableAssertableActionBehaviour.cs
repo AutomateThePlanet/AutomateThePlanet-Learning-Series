@@ -18,12 +18,12 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.Core
     {
         protected virtual void Execute()
         {
-            this.PerformPreActWait();
-            this.PerformPreActAssert();
-            this.PerformAct();
-            this.PerformPostActAssert();
-            this.PerformPostActWait();
-            this.PerformPostActWaitAssert();
+            PerformPreActWait();
+            PerformPreActAssert();
+            PerformAct();
+            PerformPostActAssert();
+            PerformPostActWait();
+            PerformPostActWaitAssert();
         }
 
         protected virtual void PerformPreActWait()

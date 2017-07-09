@@ -21,18 +21,18 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.StepsBehaviours
 {
     public class ItemPageNavigationBehaviour : ActionBehaviour
     {
-        private readonly ItemPage itemPage;
-        private readonly string itemUrl;
+        private readonly ItemPage _itemPage;
+        private readonly string _itemUrl;
 
         public ItemPageNavigationBehaviour(string itemUrl)
         {
-            this.itemPage = UnityContainerFactory.GetContainer().Resolve<ItemPage>();
-            this.itemUrl = itemUrl;
+            _itemPage = UnityContainerFactory.GetContainer().Resolve<ItemPage>();
+            _itemUrl = itemUrl;
         }
 
         protected override void PerformAct()
         {
-            this.itemPage.Navigate(this.itemUrl);
+            _itemPage.Navigate(_itemUrl);
         }
     }
 }

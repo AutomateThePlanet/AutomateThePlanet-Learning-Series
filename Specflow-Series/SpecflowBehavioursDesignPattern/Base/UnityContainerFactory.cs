@@ -18,16 +18,16 @@ namespace SpecflowBehavioursDesignPattern.Base
 {
     public static class UnityContainerFactory
     {
-        private static IUnityContainer unityContainer;
+        private static IUnityContainer _unityContainer;
 
         static UnityContainerFactory()
         {
-            unityContainer = new UnityContainer();
+            _unityContainer = new UnityContainer();
         }
 
         public static IUnityContainer GetContainer()
         {
-            return unityContainer;
+            return _unityContainer;
         }
     }
 }

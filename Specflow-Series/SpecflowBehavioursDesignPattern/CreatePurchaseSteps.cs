@@ -128,7 +128,7 @@ namespace SpecflowBehavioursDesignPattern
         public void AssertOrderTotalPrice(string itemPrice)
         {
             var placeOrderPage = UnityContainerFactory.GetContainer().Resolve<PlaceOrderPage>();
-            double totalPrice = double.Parse(itemPrice);
+            var totalPrice = double.Parse(itemPrice);
             placeOrderPage.AssertOrderTotalPrice(totalPrice);
         }
     }

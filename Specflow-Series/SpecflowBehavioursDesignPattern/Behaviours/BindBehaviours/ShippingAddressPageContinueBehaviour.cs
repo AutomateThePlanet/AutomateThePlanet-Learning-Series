@@ -23,11 +23,11 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
     [Binding]
     public class ShippingAddressPageContinueBehaviour : ActionBehaviour
     {
-        private readonly ShippingAddressPage shippingAddressPage;
+        private readonly ShippingAddressPage _shippingAddressPage;
 
         public ShippingAddressPageContinueBehaviour()
         {
-            this.shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
+            _shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
         }
 
         [When(@"click shipping address page 'continue' button")]
@@ -38,7 +38,7 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
 
         protected override void PerformAct()
         {
-            this.shippingAddressPage.ClickContinueButton();
+            _shippingAddressPage.ClickContinueButton();
         }
     }
 }

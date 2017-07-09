@@ -25,20 +25,20 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
     [Binding]
     public class ShippingAddressPageFillDifferentBillingBehaviour : ActionBehaviour
     {
-        private readonly ShippingAddressPage shippingAddressPage;
-        private readonly ShippingPaymentPage shippingPaymentPage;
-        private ClientPurchaseInfo clientPurchaseInfo;
+        private readonly ShippingAddressPage _shippingAddressPage;
+        private readonly ShippingPaymentPage _shippingPaymentPage;
+        private ClientPurchaseInfo _clientPurchaseInfo;
 
         public ShippingAddressPageFillDifferentBillingBehaviour()
         {
-            this.shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
-            this.shippingPaymentPage = UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>();
+            _shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
+            _shippingPaymentPage = UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>();
         }
 
         [When(@"I choose to fill different billing, full name = ""([^""]*)"", country = ""([^""]*)"", Adress = ""([^""]*)"", city = ""([^""]*)"", state = ""([^""]*)"", zip = ""([^""]*)"" and phone = ""([^""]*)""")]
         public void FillDifferentBillingInfo(string fullName, string country, string address, string state, string city, string zip, string phone)
         {
-            this.clientPurchaseInfo = new ClientPurchaseInfo(
+            _clientPurchaseInfo = new ClientPurchaseInfo(
                 new ClientAddressInfo()
                 {
                     FullName = fullName,
@@ -49,15 +49,15 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
                     Zip = zip,
                     Phone = phone
                 });
-            base.Execute();
+            Execute();
         }
 
         protected override void PerformAct()
         {
-            this.shippingAddressPage.ClickDifferentBillingCheckBox(this.clientPurchaseInfo);
-            this.shippingAddressPage.ClickContinueButton();
-            this.shippingPaymentPage.ClickBottomContinueButton();
-            this.shippingAddressPage.FillBillingInfo(this.clientPurchaseInfo);
+            _shippingAddressPage.ClickDifferentBillingCheckBox(_clientPurchaseInfo);
+            _shippingAddressPage.ClickContinueButton();
+            _shippingPaymentPage.ClickBottomContinueButton();
+            _shippingAddressPage.FillBillingInfo(_clientPurchaseInfo);
         }
     }
 }

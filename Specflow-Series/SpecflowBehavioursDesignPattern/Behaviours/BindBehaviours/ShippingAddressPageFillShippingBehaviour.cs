@@ -24,18 +24,18 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
     [Binding]
     public class ShippingAddressPageFillShippingBehaviour : ActionBehaviour
     {
-        private readonly ShippingAddressPage shippingAddressPage;
-        private ClientPurchaseInfo clientPurchaseInfo;
+        private readonly ShippingAddressPage _shippingAddressPage;
+        private ClientPurchaseInfo _clientPurchaseInfo;
 
         public ShippingAddressPageFillShippingBehaviour()
         {
-            this.shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
+            _shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
         }
 
         [When(@"I type full name = ""([^""]*)"", country = ""([^""]*)"", Adress = ""([^""]*)"", city = ""([^""]*)"", state = ""([^""]*)"", zip = ""([^""]*)"" and phone = ""([^""]*)""")]
         public void FillShippingInfo(string fullName, string country, string address, string state, string city, string zip, string phone)
         {
-            this.clientPurchaseInfo = new ClientPurchaseInfo(
+            _clientPurchaseInfo = new ClientPurchaseInfo(
                 new ClientAddressInfo()
                 {
                     FullName = fullName,
@@ -46,13 +46,13 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
                     Zip = zip,
                     Phone = phone
                 });
-            shippingAddressPage.FillShippingInfo(clientPurchaseInfo);
-            base.Execute();
+            _shippingAddressPage.FillShippingInfo(_clientPurchaseInfo);
+            Execute();
         }
 
         protected override void PerformAct()
         {
-            this.shippingAddressPage.FillShippingInfo(this.clientPurchaseInfo);
+            _shippingAddressPage.FillShippingInfo(_clientPurchaseInfo);
         }
     }
 }

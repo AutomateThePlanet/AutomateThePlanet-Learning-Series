@@ -30,7 +30,7 @@ namespace ExtendTestExecutionWorkflowUsingHooks
         [BeforeTestRun(Order = 1)]
         public static void RegisterPages()
         {
-            System.Console.WriteLine("BeforeTestRun");
+            Console.WriteLine("BeforeTestRun");
             Driver.StartBrowser(BrowserTypes.Chrome);
             UnityContainerFactory.GetContainer().RegisterType<HomePage>(new ContainerControlledLifetimeManager());
             UnityContainerFactory.GetContainer().RegisterType<KilowattHoursPage>(new ContainerControlledLifetimeManager());
@@ -39,7 +39,7 @@ namespace ExtendTestExecutionWorkflowUsingHooks
         [BeforeTestRun(Order = 2)]
         public static void RegisterDriver()
         {
-            System.Console.WriteLine("Execute BeforeTestRun- RegisterDriver");
+            Console.WriteLine("Execute BeforeTestRun- RegisterDriver");
             UnityContainerFactory.GetContainer().RegisterInstance<IWebDriver>(Driver.Browser);
         }
 
@@ -47,44 +47,44 @@ namespace ExtendTestExecutionWorkflowUsingHooks
         [AfterTestRun]
         public static void AfterTestRun()
         {
-            System.Console.WriteLine("AfterTestRun");
+            Console.WriteLine("AfterTestRun");
             Driver.StopBrowser();
         }
 
         [BeforeFeature]
         public static void BeforeFeature()
         {
-            System.Console.WriteLine("BeforeFeature");
+            Console.WriteLine("BeforeFeature");
         }
 
         [AfterFeature]
         public static void AfterFeature()
         {
-            System.Console.WriteLine("AfterFeature");
+            Console.WriteLine("AfterFeature");
         }
 
         [BeforeScenario]
         public void LoginUser()
         {
-            System.Console.WriteLine("BeforeScenario");
+            Console.WriteLine("BeforeScenario");
         }
 
         [AfterScenario(Order = 1)]
         public void AfterScenario()
         {
-            System.Console.WriteLine("AfterScenario");
+            Console.WriteLine("AfterScenario");
         }
 
         [BeforeStep]
         public void BeforeStep()
         {
-            System.Console.WriteLine("BeforeStep");
+            Console.WriteLine("BeforeStep");
         }
 
         [AfterStep]
         public void AfterStep()
         {
-            System.Console.WriteLine("AfterStep");
+            Console.WriteLine("AfterStep");
         }
     }
 }

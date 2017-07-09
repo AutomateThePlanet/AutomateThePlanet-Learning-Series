@@ -16,15 +16,15 @@ namespace SpecflowBehavioursDesignPattern.Data
 {
     public class ClientPurchaseInfo
     {
-        public ClientPurchaseInfo(SpecflowBehavioursDesignPattern.Data.ClientAddressInfo addressInfo)
+        public ClientPurchaseInfo(ClientAddressInfo addressInfo)
         {
-            this.BillingInfo = addressInfo;
-            this.ShippingInfo = addressInfo;
+            BillingInfo = addressInfo;
+            ShippingInfo = addressInfo;
         }
 
-        public SpecflowBehavioursDesignPattern.Data.ClientAddressInfo BillingInfo { get; set; }
+        public ClientAddressInfo BillingInfo { get; set; }
 
-        public SpecflowBehavioursDesignPattern.Data.ClientAddressInfo ShippingInfo { get; set; }
+        public ClientAddressInfo ShippingInfo { get; set; }
 
         public string CouponCode { get; set; }
     }

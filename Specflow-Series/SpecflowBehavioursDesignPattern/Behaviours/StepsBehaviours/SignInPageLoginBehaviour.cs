@@ -23,25 +23,25 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.StepsBehaviours
 {
     public class SignInPageLoginBehaviour : WaitableActionBehaviour
     {
-        private readonly SignInPage signInPage;
-        private readonly ShippingAddressPage shippingAddressPage;
-        private readonly ClientLoginInfo clientLoginInfo;
+        private readonly SignInPage _signInPage;
+        private readonly ShippingAddressPage _shippingAddressPage;
+        private readonly ClientLoginInfo _clientLoginInfo;
 
         public SignInPageLoginBehaviour(ClientLoginInfo clientLoginInfo)
         {
-            this.signInPage = UnityContainerFactory.GetContainer().Resolve<SignInPage>();
-            this.shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
-            this.clientLoginInfo = clientLoginInfo;
+            _signInPage = UnityContainerFactory.GetContainer().Resolve<SignInPage>();
+            _shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
+            _clientLoginInfo = clientLoginInfo;
         }
 
         protected override void PerformPostActWait()
         {
-            this.shippingAddressPage.WaitForPageToLoad();
+            _shippingAddressPage.WaitForPageToLoad();
         }
 
         protected override void PerformAct()
         {
-            this.signInPage.Login(this.clientLoginInfo.Email, this.clientLoginInfo.Password);
+            _signInPage.Login(_clientLoginInfo.Email, _clientLoginInfo.Password);
         }
     }
 }

@@ -33,8 +33,8 @@ namespace HandlingParameters.Pages.SecondsToMinutesPage
 
         public void ConvertSecondsToMintes(double seconds)
         {
-            this.SecondsInput.SendKeys(seconds.ToString());
-            this.driverWait.Until(drv => this.Answer != null);
+            SecondsInput.SendKeys(seconds.ToString());
+            DriverWait.Until(drv => Answer != null);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace HandlingParameters.Pages.SecondsToMinutesPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("argumentConv"));
+                return Driver.FindElement(By.Id("argumentConv"));
             }
         }
 
@@ -29,7 +29,7 @@ namespace HandlingParameters.Pages.SecondsToMinutesPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("answer"));
+                return Driver.FindElement(By.Id("answer"));
             }
         }
     }

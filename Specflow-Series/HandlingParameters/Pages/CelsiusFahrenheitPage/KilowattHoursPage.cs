@@ -37,14 +37,14 @@ namespace HandlingParameters.Pages.CelsiusFahrenheitPage
             double kWh,
             Format format = CelsiusFahrenheitPage.Format.Decimal)
         {
-            this.CelsiusInput.SendKeys(kWh.ToString());
+            CelsiusInput.SendKeys(kWh.ToString());
             if (format != CelsiusFahrenheitPage.Format.Decimal)
             {
-                string formatText =
-                    Enum.GetName(typeof(CelsiusFahrenheitPage.Format), format);
-                new SelectElement(this.Format).SelectByText(formatText);
+                var formatText =
+                    Enum.GetName(typeof(Format), format);
+                new SelectElement(Format).SelectByText(formatText);
             }
-            this.driverWait.Until(drv => this.Answer != null);
+            DriverWait.Until(drv => Answer != null);
         }
     }
 }

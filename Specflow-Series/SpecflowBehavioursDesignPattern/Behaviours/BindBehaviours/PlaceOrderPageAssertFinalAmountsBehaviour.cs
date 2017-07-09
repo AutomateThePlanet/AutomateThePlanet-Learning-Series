@@ -23,25 +23,25 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
     [Binding]
     public class PlaceOrderPageAssertFinalAmountsBehaviour : AssertBehaviour
     {
-        private readonly PlaceOrderPage placeOrderPage;
-        private string itemPrice;
+        private readonly PlaceOrderPage _placeOrderPage;
+        private string _itemPrice;
 
         public PlaceOrderPageAssertFinalAmountsBehaviour()
         {
-            this.placeOrderPage = UnityContainerFactory.GetContainer().Resolve<PlaceOrderPage>();
+            _placeOrderPage = UnityContainerFactory.GetContainer().Resolve<PlaceOrderPage>();
         }
 
         [Then(@"assert that order total price = ""([^""]*)""")]
         public void AssertOrderTotalPrice(string itemPrice)
         {
-            this.itemPrice = itemPrice;
-            this.Execute();
+            _itemPrice = itemPrice;
+            Execute();
         }
 
         protected override void Assert()
         {
-            double totalPrice = double.Parse(this.itemPrice);
-            this.placeOrderPage.AssertOrderTotalPrice(totalPrice);
+            var totalPrice = double.Parse(_itemPrice);
+            _placeOrderPage.AssertOrderTotalPrice(totalPrice);
         }
     }
 }

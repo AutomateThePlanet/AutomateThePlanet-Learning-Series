@@ -30,7 +30,7 @@ namespace HandlingParameters
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Convert Metrics for Nuclear Science", "\tTo do my nuclear-related job\r\n\tAs a Nuclear Engineer \r\n\tI want to be able to con" +
+            var featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Convert Metrics for Nuclear Science", "\tTo do my nuclear-related job\r\n\tAs a Nuclear Engineer \r\n\tI want to be able to con" +
                     "vert different metrics.", ProgrammingLanguage.CSharp, new string[] {
                         "firefox"});
             testRunner.OnFeatureStart(featureInfo);
@@ -75,7 +75,7 @@ namespace HandlingParameters
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("firefox")]
         public virtual void SuccessfullyConvertKilowatt_HoursToNewton_Meters()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully Convert Kilowatt-hours to Newton-meters", ((string[])(null)));
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully Convert Kilowatt-hours to Newton-meters", ((string[])(null)));
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
@@ -100,7 +100,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("firefox")]
         public virtual void SuccessfullyConvertKilowatt_HoursToNewton_MetersInFractionsFormat()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully Convert Kilowatt-hours to Newton-meters in Fractions format", ((string[])(null)));
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully Convert Kilowatt-hours to Newton-meters in Fractions format", ((string[])(null)));
 #line 15
 this.ScenarioSetup(scenarioInfo);
 #line 16
@@ -125,7 +125,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("firefox")]
         public virtual void SuccessfullyConvertSecondsToMinutes()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully Convert Seconds to Minutes", ((string[])(null)));
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully Convert Seconds to Minutes", ((string[])(null)));
 #line 23
 this.ScenarioSetup(scenarioInfo);
 #line 24
@@ -144,7 +144,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("firefox")]
         public virtual void SuccessfullyConvertSecondsToMinutesNoMinutes()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully Convert Seconds to Minutes No Minutes", ((string[])(null)));
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully Convert Seconds to Minutes No Minutes", ((string[])(null)));
 #line 28
 this.ScenarioSetup(scenarioInfo);
 #line 29
@@ -159,7 +159,7 @@ this.ScenarioSetup(scenarioInfo);
         
         public virtual void SuccessfullyConvertSecondsToMinutesTable(string seconds, string minutes, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully Convert Seconds to Minutes Table", exampleTags);
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully Convert Seconds to Minutes Table", exampleTags);
 #line 33
 this.ScenarioSetup(scenarioInfo);
 #line 34
@@ -230,11 +230,11 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("firefox")]
         public virtual void AddAmazonProductsWithAffiliateCodes()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Amazon Products with Affiliate Codes", ((string[])(null)));
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Amazon Products with Affiliate Codes", ((string[])(null)));
 #line 45
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+            var table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Url",
                         "AffilicateCode"});
             table1.AddRow(new string[] {

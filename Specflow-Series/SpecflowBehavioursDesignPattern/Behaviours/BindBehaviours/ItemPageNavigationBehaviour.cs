@@ -27,24 +27,24 @@ namespace SpecflowBehavioursDesignPattern.Behaviours.BindBehaviours
         // The base behavior classes no more implement the IBehavior interface.
         // There is no more BehaviourExecutor.
         // The parameters are no more passed through the constructors.
-        private readonly ItemPage itemPage;
-        private string itemUrl;
+        private readonly ItemPage _itemPage;
+        private string _itemUrl;
 
         public ItemPageNavigationBehaviour()
         {
-            this.itemPage = UnityContainerFactory.GetContainer().Resolve<ItemPage>();
+            _itemPage = UnityContainerFactory.GetContainer().Resolve<ItemPage>();
         }
 
         [When(@"I navigate to ""([^""]*)""")]
         public void NavigateToItemUrl(string itemUrl)
         {
-            this.itemUrl = itemUrl;
-            base.Execute();
+            _itemUrl = itemUrl;
+            Execute();
         }
         
         protected override void PerformAct()
         {
-            this.itemPage.Navigate(this.itemUrl);
+            _itemPage.Navigate(_itemUrl);
         }
     }
 }
