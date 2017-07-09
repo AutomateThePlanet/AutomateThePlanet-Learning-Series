@@ -32,8 +32,8 @@ namespace MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout
         {
             ////this.driver = new FirefoxDriver();
             ////this.driver = new InternetExplorerDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers");
-            Driver = new ChromeDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers");
-            Driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
+            Driver = new ChromeDriver();
+            Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(5);
         }
 
         [TestCleanup]
