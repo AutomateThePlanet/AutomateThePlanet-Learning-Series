@@ -12,56 +12,57 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using CodeProjectStatisticsCalculator.Pages.ItemPage;
-using CsvHelper;
-using Fclp;
-using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using CodeProjectStatisticsCalculator.Pages.ItemPage;
+using CsvHelper;
+using Fclp;
+using OpenQA.Selenium.Chrome;
 
 namespace CodeProjectStatisticsCalculator
 {
     class Program
     {
-        private static string filePath = string.Empty;
-        private static string yearInput = string.Empty;
-        private static int year = -1;
-        private static int profileId = 0;
-        private static string profileIdInput = string.Empty;
-        private static List<Article> articlesInfos;
+        private static string _filePath = string.Empty;
+        private static string _yearInput = string.Empty;
+        private static int _year = -1;
+        private static int _profileId = 0;
+        private static string _profileIdInput = string.Empty;
+        private static List<Article> _articlesInfos;
+
         static void Main(string[] args)
         {
             var commandLineParser = new FluentCommandLineParser();
 
-            commandLineParser.Setup<string>('p', "path").Callback(s => filePath = s);
-            commandLineParser.Setup<string>('y', "year").Callback(y => yearInput = y);
-            commandLineParser.Setup<string>('i', "profileId").Callback(p => profileIdInput = p);
+            commandLineParser.Setup<string>('p', "path").Callback(s => _filePath = s);
+            commandLineParser.Setup<string>('y', "year").Callback(y => _yearInput = y);
+            commandLineParser.Setup<string>('i', "profileId").Callback(p => _profileIdInput = p);
             commandLineParser.Parse(args);
 
-            bool isProfileIdCorrect = int.TryParse(profileIdInput, out profileId);
-            if (string.IsNullOrEmpty(profileIdInput) || !isProfileIdCorrect)
+            var isProfileIdCorrect = int.TryParse(_profileIdInput, out _profileId);
+            if (string.IsNullOrEmpty(_profileIdInput) || !isProfileIdCorrect)
             {
                 Console.WriteLine("Please specify a correct profileId.");
                 return;
             }
-            if (string.IsNullOrEmpty(filePath))
+            if (string.IsNullOrEmpty(_filePath))
             {
                 Console.WriteLine("Please specify a correct file path.");
                 return;
             }
-            if (!string.IsNullOrEmpty(yearInput))
+            if (!string.IsNullOrEmpty(_yearInput))
             {
-                bool isYearCorrect = int.TryParse(yearInput, out year);
+                var isYearCorrect = int.TryParse(_yearInput, out _year);
                 if (!isYearCorrect)
                 {
                     Console.WriteLine("Please specify a correct year!");
                     return;
                 }
             }
-            articlesInfos = GetAllArticlesInfos();
-            if (year == -1)
+            _articlesInfos = GetAllArticlesInfos();
+            if (_year == -1)
             {
                 CreateReportAllTime();
             }
@@ -71,22 +72,22 @@ namespace CodeProjectStatisticsCalculator
             }
            
 
-            Console.WriteLine("Total VIEWS: {0}", articlesInfos.Sum(x => x.Views));
+            Console.WriteLine("Total VIEWS: {0}", _articlesInfos.Sum(x => x.Views));
             Console.ReadLine();
         }
 
         private static void CreateReportAllTime()
         {
-            TextWriter textWriter = new StreamWriter(filePath);
+            TextWriter textWriter = new StreamWriter(_filePath);
             var csv = new CsvWriter(textWriter);
-            csv.WriteRecords(articlesInfos.OrderByDescending(x => x.Views));
+            csv.WriteRecords(_articlesInfos.OrderByDescending(x => x.Views));
         }
 
         private static void CreateReportYear()
         {
-            TextWriter currentYearTextWriter = new StreamWriter(filePath);
+            TextWriter currentYearTextWriter = new StreamWriter(_filePath);
             var csv = new CsvWriter(currentYearTextWriter);
-            csv.WriteRecords(articlesInfos.Where(x => x.PublishDate.Year.Equals(year)).OrderByDescending(x => x.Views));
+            csv.WriteRecords(_articlesInfos.Where(x => x.PublishDate.Year.Equals(_year)).OrderByDescending(x => x.Views));
         }
 
         private static List<Article> GetAllArticlesInfos()
@@ -94,17 +95,17 @@ namespace CodeProjectStatisticsCalculator
             var articlesInfos = new List<Article>();
             using (var driver = new ChromeDriver())
             {
-                var articlePage = new ArticlesPage(driver, profileId);
+                var articlePage = new ArticlesPage(driver, _profileId);
                 articlesInfos.AddRange(articlePage.GetArticlesByUrl("#Articles"));
             }
             using (var driver = new ChromeDriver())
             {
-                var articlePage = new ArticlesPage(driver, profileId);
+                var articlePage = new ArticlesPage(driver, _profileId);
                 articlesInfos.AddRange(articlePage.GetArticlesByUrl("#TechnicalBlog"));
             }
             using (var driver = new ChromeDriver())
             {
-                var articlePage = new ArticlesPage(driver, profileId);
+                var articlePage = new ArticlesPage(driver, _profileId);
                 articlesInfos.AddRange(articlePage.GetArticlesByUrl("#Tip"));
             }
 

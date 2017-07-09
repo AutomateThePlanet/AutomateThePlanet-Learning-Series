@@ -18,22 +18,22 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
 {
     public class WebDriverRedirectStrategy : IRedirectStrategy
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
 
         public void Initialize()
         {
-            this.driver = new FirefoxDriver();
+            _driver = new FirefoxDriver();
         }
 
         public void Dispose()
         {
-            this.driver.Quit();
+            _driver.Quit();
         }
 
         public string NavigateToFromUrl(string fromUrl)
         {
-            this.driver.Navigate().GoToUrl(fromUrl);
-            string currentSitesUrl = this.driver.Url;
+            _driver.Navigate().GoToUrl(fromUrl);
+            var currentSitesUrl = _driver.Url;
 
             return currentSitesUrl;
         }

@@ -19,7 +19,7 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects
     public class Site
     {
         [XmlElement(ElementName = "redirects")]
-        public TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Redirects Redirects { get; set; }
+        public Redirects Redirects { get; set; }
 
         [XmlAttribute(AttributeName = "url")]
         public string Url { get; set; }

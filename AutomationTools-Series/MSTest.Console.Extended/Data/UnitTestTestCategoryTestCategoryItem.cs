@@ -17,7 +17,7 @@
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
 public partial class UnitTestTestCategoryTestCategoryItem
 {
-    private string testCategoryField;
+    private string _testCategoryField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -25,11 +25,11 @@ public partial class UnitTestTestCategoryTestCategoryItem
     {
         get
         {
-            return this.testCategoryField;
+            return _testCategoryField;
         }
         set
         {
-            this.testCategoryField = value;
+            _testCategoryField = value;
         }
     }
 }

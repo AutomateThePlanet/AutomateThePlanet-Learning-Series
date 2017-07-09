@@ -19,51 +19,51 @@ namespace MSTest.Console.Extended.Data
     [XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public partial class TestRunTestSettingsDeployment
     {
-        private string userDeploymentRootField;
+        private string _userDeploymentRootField;
 
-        private bool useDefaultDeploymentRootField;
+        private bool _useDefaultDeploymentRootField;
 
-        private string runDeploymentRootField;
+        private string _runDeploymentRootField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string userDeploymentRoot
+        [XmlAttributeAttribute()]
+        public string UserDeploymentRoot
         {
             get
             {
-                return this.userDeploymentRootField;
+                return _userDeploymentRootField;
             }
             set
             {
-                this.userDeploymentRootField = value;
+                _userDeploymentRootField = value;
             }
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool useDefaultDeploymentRoot
+        [XmlAttributeAttribute()]
+        public bool UseDefaultDeploymentRoot
         {
             get
             {
-                return this.useDefaultDeploymentRootField;
+                return _useDefaultDeploymentRootField;
             }
             set
             {
-                this.useDefaultDeploymentRootField = value;
+                _useDefaultDeploymentRootField = value;
             }
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string runDeploymentRoot
+        [XmlAttributeAttribute()]
+        public string RunDeploymentRoot
         {
             get
             {
-                return this.runDeploymentRootField;
+                return _runDeploymentRootField;
             }
             set
             {
-                this.runDeploymentRootField = value;
+                _runDeploymentRootField = value;
             }
         }
     }

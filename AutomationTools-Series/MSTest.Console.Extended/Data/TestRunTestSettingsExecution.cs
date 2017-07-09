@@ -19,20 +19,20 @@ namespace MSTest.Console.Extended.Data
     [XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public partial class TestRunTestSettingsExecution
     {
-        private object testTypeSpecificField;
+        private object _testTypeSpecificField;
 
-        private TestRunTestSettingsExecutionAgentRule agentRuleField;
+        private TestRunTestSettingsExecutionAgentRule _agentRuleField;
 
         /// <remarks/>
         public object TestTypeSpecific
         {
             get
             {
-                return this.testTypeSpecificField;
+                return _testTypeSpecificField;
             }
             set
             {
-                this.testTypeSpecificField = value;
+                _testTypeSpecificField = value;
             }
         }
 
@@ -41,11 +41,11 @@ namespace MSTest.Console.Extended.Data
         {
             get
             {
-                return this.agentRuleField;
+                return _agentRuleField;
             }
             set
             {
-                this.agentRuleField = value;
+                _agentRuleField = value;
             }
         }
     }

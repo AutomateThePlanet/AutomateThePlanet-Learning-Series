@@ -20,7 +20,7 @@ using log4net;
 namespace MSTest.Console.Extended.UnitTests.ProcessExecutionProviderTests
 {
     [TestClass]
-    public class ProcessExecutionProviderTests_ExecuteProcessWithAdditionalArguments_Should
+    public class ProcessExecutionProviderTestsExecuteProcessWithAdditionalArgumentsShould
     {
         [TestMethod]
         public void StartProcessWithArguments()

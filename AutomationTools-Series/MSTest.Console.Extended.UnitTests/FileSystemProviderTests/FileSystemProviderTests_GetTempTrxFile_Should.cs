@@ -20,7 +20,7 @@ using Telerik.JustMock;
 namespace MSTest.Console.Extended.UnitTests.FileSystemProviderTests
 {
     [TestClass]
-    public class FileSystemProviderTests_GetTempTrxFile_Should
+    public class FileSystemProviderTestsGetTempTrxFileShould
     {
         [TestMethod]
         public void GetTempTrxFile()

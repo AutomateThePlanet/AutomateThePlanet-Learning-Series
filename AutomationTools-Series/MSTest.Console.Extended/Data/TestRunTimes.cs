@@ -19,67 +19,67 @@ namespace MSTest.Console.Extended.Data
     [XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public partial class TestRunTimes
     {
-        private System.DateTime creationField;
+        private System.DateTime _creationField;
 
-        private System.DateTime queuingField;
+        private System.DateTime _queuingField;
 
-        private System.DateTime startField;
+        private System.DateTime _startField;
 
-        private System.DateTime finishField;
+        private System.DateTime _finishField;
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public System.DateTime creation
+        public System.DateTime Creation
         {
             get
             {
-                return this.creationField;
+                return _creationField;
             }
             set
             {
-                this.creationField = value;
+                _creationField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public System.DateTime queuing
+        public System.DateTime Queuing
         {
             get
             {
-                return this.queuingField;
+                return _queuingField;
             }
             set
             {
-                this.queuingField = value;
+                _queuingField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public System.DateTime start
+        public System.DateTime Start
         {
             get
             {
-                return this.startField;
+                return _startField;
             }
             set
             {
-                this.startField = value;
+                _startField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public System.DateTime finish
+        public System.DateTime Finish
         {
             get
             {
-                return this.finishField;
+                return _finishField;
             }
             set
             {
-                this.finishField = value;
+                _finishField = value;
             }
         }
     }

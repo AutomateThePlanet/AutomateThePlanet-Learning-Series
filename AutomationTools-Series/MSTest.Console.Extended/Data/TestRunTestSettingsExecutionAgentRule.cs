@@ -19,19 +19,19 @@ namespace MSTest.Console.Extended.Data
     [XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public partial class TestRunTestSettingsExecutionAgentRule
     {
-        private string nameField;
+        private string _nameField;
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public string name
+        public string Name
         {
             get
             {
-                return this.nameField;
+                return _nameField;
             }
             set
             {
-                this.nameField = value;
+                _nameField = value;
             }
         }
     }

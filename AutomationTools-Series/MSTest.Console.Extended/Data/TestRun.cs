@@ -17,39 +17,39 @@ namespace MSTest.Console.Extended.Data
 {
     /// <remarks/>
     [XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010", IsNullable = false)]
     public partial class TestRun
     {
-        private TestRunTestSettings testSettingsField;
+        private TestRunTestSettings _testSettingsField;
 
-        private TestRunTimes timesField;
+        private TestRunTimes _timesField;
 
-        private TestRunResultSummary resultSummaryField;
+        private TestRunResultSummary _resultSummaryField;
 
-        private TestRunUnitTest[] testDefinitionsField;
+        private TestRunUnitTest[] _testDefinitionsField;
 
-        private TestRunTestList[] testListsField;
+        private TestRunTestList[] _testListsField;
 
-        private TestRunTestEntry[] testEntriesField;
+        private TestRunTestEntry[] _testEntriesField;
 
-        private TestRunUnitTestResult[] resultsField;
+        private TestRunUnitTestResult[] _resultsField;
 
-        private string idField;
+        private string _idField;
 
-        private string nameField;
+        private string _nameField;
 
-        private string runUserField;
+        private string _runUserField;
 
         /// <remarks/>
         public TestRunTestSettings TestSettings
         {
             get
             {
-                return this.testSettingsField;
+                return _testSettingsField;
             }
             set
             {
-                this.testSettingsField = value;
+                _testSettingsField = value;
             }
         }
 
@@ -58,11 +58,11 @@ namespace MSTest.Console.Extended.Data
         {
             get
             {
-                return this.timesField;
+                return _timesField;
             }
             set
             {
-                this.timesField = value;
+                _timesField = value;
             }
         }
 
@@ -71,109 +71,109 @@ namespace MSTest.Console.Extended.Data
         {
             get
             {
-                return this.resultSummaryField;
+                return _resultSummaryField;
             }
             set
             {
-                this.resultSummaryField = value;
+                _resultSummaryField = value;
             }
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("UnitTest", IsNullable = false)]
+        [XmlArrayItemAttribute("UnitTest", IsNullable = false)]
         public TestRunUnitTest[] TestDefinitions
         {
             get
             {
-                return this.testDefinitionsField;
+                return _testDefinitionsField;
             }
             set
             {
-                this.testDefinitionsField = value;
+                _testDefinitionsField = value;
             }
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("TestList", IsNullable = false)]
+        [XmlArrayItemAttribute("TestList", IsNullable = false)]
         public TestRunTestList[] TestLists
         {
             get
             {
-                return this.testListsField;
+                return _testListsField;
             }
             set
             {
-                this.testListsField = value;
+                _testListsField = value;
             }
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("TestEntry", IsNullable = false)]
+        [XmlArrayItemAttribute("TestEntry", IsNullable = false)]
         public TestRunTestEntry[] TestEntries
         {
             get
             {
-                return this.testEntriesField;
+                return _testEntriesField;
             }
             set
             {
-                this.testEntriesField = value;
+                _testEntriesField = value;
             }
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("UnitTestResult", IsNullable = false)]
+        [XmlArrayItemAttribute("UnitTestResult", IsNullable = false)]
         public TestRunUnitTestResult[] Results
         {
             get
             {
-                return this.resultsField;
+                return _resultsField;
             }
             set
             {
-                this.resultsField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute]
-        public string id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
+                _resultsField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public string name
+        public string Id
         {
             get
             {
-                return this.nameField;
+                return _idField;
             }
             set
             {
-                this.nameField = value;
+                _idField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public string runUser
+        public string Name
         {
             get
             {
-                return this.runUserField;
+                return _nameField;
             }
             set
             {
-                this.runUserField = value;
+                _nameField = value;
+            }
+        }
+
+        /// <remarks/>
+        [XmlAttributeAttribute]
+        public string RunUser
+        {
+            get
+            {
+                return _runUserField;
+            }
+            set
+            {
+                _runUserField = value;
             }
         }
     }

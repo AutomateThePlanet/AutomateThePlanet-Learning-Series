@@ -19,67 +19,67 @@ namespace MSTest.Console.Extended.Data
     [XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public partial class TestRunUnitTestTestMethod
     {
-        private string codeBaseField;
+        private string _codeBaseField;
 
-        private string adapterTypeNameField;
+        private string _adapterTypeNameField;
 
-        private string classNameField;
+        private string _classNameField;
 
-        private string nameField;
+        private string _nameField;
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public string codeBase
+        public string CodeBase
         {
             get
             {
-                return this.codeBaseField;
+                return _codeBaseField;
             }
             set
             {
-                this.codeBaseField = value;
+                _codeBaseField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public string adapterTypeName
+        public string AdapterTypeName
         {
             get
             {
-                return this.adapterTypeNameField;
+                return _adapterTypeNameField;
             }
             set
             {
-                this.adapterTypeNameField = value;
+                _adapterTypeNameField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public string className
+        public string ClassName
         {
             get
             {
-                return this.classNameField;
+                return _classNameField;
             }
             set
             {
-                this.classNameField = value;
+                _classNameField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public string name
+        public string Name
         {
             get
             {
-                return this.nameField;
+                return _nameField;
             }
             set
             {
-                this.nameField = value;
+                _nameField = value;
             }
         }
     }

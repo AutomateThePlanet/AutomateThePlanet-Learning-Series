@@ -20,13 +20,13 @@ namespace CodeProjectStatisticsCalculator.Base
 {
     public abstract class BasePage
     {
-        protected IWebDriver driver;
-        protected WebDriverWait driverWait;
+        protected IWebDriver Driver;
+        protected WebDriverWait DriverWait;
 
         public BasePage(IWebDriver driver)
         {
-            this.driver = driver;
-            this.driverWait = new WebDriverWait(driver, new TimeSpan(0, 0, 30));
+            this.Driver = driver;
+            DriverWait = new WebDriverWait(driver, new TimeSpan(0, 0, 30));
         }
 
         public virtual string Url
@@ -39,11 +39,11 @@ namespace CodeProjectStatisticsCalculator.Base
 
         public virtual void Open(string part = "")
         {
-            if (string.IsNullOrEmpty(this.Url))
+            if (string.IsNullOrEmpty(Url))
             {
                 throw new ArgumentException("The main URL cannot be null or empty.");
             }
-            this.driver.Navigate().GoToUrl(string.Concat(this.Url, part));
+            Driver.Navigate().GoToUrl(string.Concat(Url, part));
         }
     }
 }

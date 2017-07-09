@@ -22,7 +22,7 @@ using Telerik.JustMock;
 namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
 {
     [TestClass]
-    public class MsTestTestRunProvider_GetAllFailedTests_Should
+    public class MsTestTestRunProviderGetAllFailedTestsShould
     {
         [TestMethod]
         public void GetAllFailedTests_WhenAllArePassed()
@@ -30,7 +30,7 @@ namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
             var log = Mock.Create<ILog>();
             Mock.Arrange(() => log.Info(Arg.AnyString));
             var consoleArgumentsProvider = Mock.Create<IConsoleArgumentsProvider>();
-            string newFileName = Path.GetTempFileName();
+            var newFileName = Path.GetTempFileName();
             Mock.Arrange(() => consoleArgumentsProvider.NewTestResultPath).Returns(newFileName);
             var fileSystemProvider = new FileSystemProvider(consoleArgumentsProvider);
             var testRun = fileSystemProvider.DeserializeTestRun("NoExceptions.trx");
@@ -46,7 +46,7 @@ namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
             var log = Mock.Create<ILog>();
             Mock.Arrange(() => log.Info(Arg.AnyString));
             var consoleArgumentsProvider = Mock.Create<IConsoleArgumentsProvider>();
-            string newFileName = Path.GetTempFileName();
+            var newFileName = Path.GetTempFileName();
             Mock.Arrange(() => consoleArgumentsProvider.NewTestResultPath).Returns(newFileName);
             var fileSystemProvider = new FileSystemProvider(consoleArgumentsProvider);
             var testRun = fileSystemProvider.DeserializeTestRun("Exceptions.trx");

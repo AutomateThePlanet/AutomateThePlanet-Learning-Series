@@ -21,7 +21,7 @@ using Telerik.JustMock;
 namespace MSTest.Console.Extended.UnitTests.ProcessExecutionProviderTests
 {
     [TestClass]
-    public class ProcessExecutionProviderTests_CurrentProcessWaitForExit_Should
+    public class ProcessExecutionProviderTestsCurrentProcessWaitForExitShould
     {
         [TestMethod]
         public void FinishCorrectly()

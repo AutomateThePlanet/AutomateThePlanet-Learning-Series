@@ -17,19 +17,19 @@
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
 public partial class UnitTestOwnersOwner
 {
-    private string nameField;
+    private string _nameField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
+    public string Name
     {
         get
         {
-            return this.nameField;
+            return _nameField;
         }
         set
         {
-            this.nameField = value;
+            _nameField = value;
         }
     }
 }

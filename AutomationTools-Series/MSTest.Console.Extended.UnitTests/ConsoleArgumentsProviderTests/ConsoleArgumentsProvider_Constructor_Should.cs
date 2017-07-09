@@ -19,7 +19,7 @@ using MSTest.Console.Extended.Infrastructure;
 namespace MSTest.Console.Extended.UnitTests.ConsoleArgumentsProviderTests
 {
     [TestClass]
-    public class ConsoleArgumentsProvider_Constructor_Should
+    public class ConsoleArgumentsProviderConstructorShould
     {
         [TestMethod]
         public void SetRetriesCount_When_RetriesCountArgumentPresent()

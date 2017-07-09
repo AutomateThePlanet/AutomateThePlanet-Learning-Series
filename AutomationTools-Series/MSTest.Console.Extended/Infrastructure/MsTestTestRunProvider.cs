@@ -22,20 +22,20 @@ namespace MSTest.Console.Extended.Infrastructure
 {
     public class MsTestTestRunProvider : IMsTestTestRunProvider
     {
-        private readonly ILog log;
-        private readonly IConsoleArgumentsProvider consoleArgumentsProvider;
+        private readonly ILog _log;
+        private readonly IConsoleArgumentsProvider _consoleArgumentsProvider;
 
         public MsTestTestRunProvider(IConsoleArgumentsProvider consoleArgumentsProvider, ILog log)
         {
-            this.consoleArgumentsProvider = consoleArgumentsProvider;
-            this.log = log;
+            this._consoleArgumentsProvider = consoleArgumentsProvider;
+            this._log = log;
         }
 
         public List<TestRunUnitTestResult> GetAllPassesTests(TestRun testRun)
         {
-            List<TestRunUnitTestResult> results = new List<TestRunUnitTestResult>();
+            var results = new List<TestRunUnitTestResult>();
 
-            results = testRun.Results.ToList().Where(x => x.outcome.Equals("Passed")).ToList();
+            results = testRun.Results.ToList().Where(x => x.Outcome.Equals("Passed")).ToList();
             return results;
         }
 
@@ -43,46 +43,46 @@ namespace MSTest.Console.Extended.Infrastructure
         {
             foreach (var currentTest in allTests)
             {
-                if (passedTests.Count(x => x.testId.Equals(currentTest.testId)) > 0)
+                if (passedTests.Count(x => x.TestId.Equals(currentTest.TestId)) > 0)
                 {
-                    currentTest.outcome = "Passed";
+                    currentTest.Outcome = "Passed";
                 }
             }
         }
 
         public List<TestRunUnitTestResult> GetAllNotPassedTests(List<TestRunUnitTestResult> allTests)
         {
-            List<TestRunUnitTestResult> results = new List<TestRunUnitTestResult>();
-            results = allTests.Where(x => !x.outcome.Equals("Passed")).ToList();
+            var results = new List<TestRunUnitTestResult>();
+            results = allTests.Where(x => !x.Outcome.Equals("Passed")).ToList();
             return results;
         }
 
         public void UpdateResultsSummary(TestRun testRun)
         {
-            testRun.ResultSummary.Counters.failed = (int)testRun.Results.ToList().Count(x => x.outcome.Equals("Failed"));
-            testRun.ResultSummary.Counters.passed = (int)testRun.Results.ToList().Count(x => x.outcome.Equals("Passed"));
-            if ((int)testRun.ResultSummary.Counters.passed != testRun.Results.Length)
+            testRun.ResultSummary.Counters.Failed = (int)testRun.Results.ToList().Count(x => x.Outcome.Equals("Failed"));
+            testRun.ResultSummary.Counters.Passed = (int)testRun.Results.ToList().Count(x => x.Outcome.Equals("Passed"));
+            if ((int)testRun.ResultSummary.Counters.Passed != testRun.Results.Length)
             {
-                testRun.ResultSummary.outcome = "Failed";
+                testRun.ResultSummary.Outcome = "Failed";
             }
             else
             {
-                testRun.ResultSummary.outcome = "Passed";
+                testRun.ResultSummary.Outcome = "Passed";
             }
         }
 
         public string GenerateAdditionalArgumentsForFailedTestsRun(List<TestRunUnitTestResult> failedTests, string newTestResultFilePath)
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             sb.Append(" ");
             foreach (var currentFailedTest in failedTests)
             {
-                sb.AppendFormat("/test:{0} ", currentFailedTest.testName);
-                System.Console.WriteLine("##### MSTestRetrier: Execute again {0}", currentFailedTest.testName);
-                this.log.InfoFormat("##### MSTestRetrier: Execute again {0}", currentFailedTest.testName);
+                sb.AppendFormat("/test:{0} ", currentFailedTest.TestName);
+                System.Console.WriteLine("##### MSTestRetrier: Execute again {0}", currentFailedTest.TestName);
+                _log.InfoFormat("##### MSTestRetrier: Execute again {0}", currentFailedTest.TestName);
             }
-            string additionalArgumentsForFailedTestsRun = string.Concat(this.consoleArgumentsProvider.ConsoleArguments, sb.ToString());
-            additionalArgumentsForFailedTestsRun = additionalArgumentsForFailedTestsRun.Replace(this.consoleArgumentsProvider.TestResultPath, newTestResultFilePath);
+            var additionalArgumentsForFailedTestsRun = string.Concat(_consoleArgumentsProvider.ConsoleArguments, sb.ToString());
+            additionalArgumentsForFailedTestsRun = additionalArgumentsForFailedTestsRun.Replace(_consoleArgumentsProvider.TestResultPath, newTestResultFilePath);
             additionalArgumentsForFailedTestsRun = additionalArgumentsForFailedTestsRun.TrimEnd();
             return additionalArgumentsForFailedTestsRun;
         }

@@ -20,18 +20,18 @@ namespace MSTest.Console.Extended.Data
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public partial class TestRunResultSummaryOutput
     {
-        private string stdOutField;
+        private string _stdOutField;
 
         /// <remarks/>
         public string StdOut
         {
             get
             {
-                return this.stdOutField;
+                return _stdOutField;
             }
             set
             {
-                this.stdOutField = value;
+                _stdOutField = value;
             }
         }
     }

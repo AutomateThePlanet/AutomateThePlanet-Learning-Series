@@ -19,14 +19,14 @@ namespace MSTest.Console.Extended.Infrastructure
 {
     public class ProcessExecutionProvider : IProcessExecutionProvider
     {
-        private readonly log4net.ILog log;
-        private readonly IConsoleArgumentsProvider consoleArgumentsProvider;
+        private readonly ILog _log;
+        private readonly IConsoleArgumentsProvider _consoleArgumentsProvider;
 
         public ProcessExecutionProvider(string microsoftTestConsoleExePath, IConsoleArgumentsProvider consoleArgumentsProvider, ILog log)
         {
-            this.MicrosoftTestConsoleExePath = microsoftTestConsoleExePath;
-            this.consoleArgumentsProvider = consoleArgumentsProvider;
-            this.log = log;
+            MicrosoftTestConsoleExePath = microsoftTestConsoleExePath;
+            this._consoleArgumentsProvider = consoleArgumentsProvider;
+            this._log = log;
         }
 
         public string MicrosoftTestConsoleExePath { get; set; }
@@ -37,34 +37,34 @@ namespace MSTest.Console.Extended.Infrastructure
         {
             if (string.IsNullOrEmpty(arguments))
             {
-                arguments = this.consoleArgumentsProvider.ConsoleArguments;
+                arguments = _consoleArgumentsProvider.ConsoleArguments;
             }
-            this.CurrentProcess = new Process();
-            ProcessStartInfo processStartInfo = new ProcessStartInfo(this.MicrosoftTestConsoleExePath, arguments);
+            CurrentProcess = new Process();
+            var processStartInfo = new ProcessStartInfo(MicrosoftTestConsoleExePath, arguments);
             processStartInfo.WindowStyle = ProcessWindowStyle.Normal;
             processStartInfo.RedirectStandardOutput = true;
             processStartInfo.RedirectStandardError = true;
             processStartInfo.UseShellExecute = false;
-            this.CurrentProcess.StartInfo = processStartInfo;
-            this.CurrentProcess.OutputDataReceived += (sender, args) =>
+            CurrentProcess.StartInfo = processStartInfo;
+            CurrentProcess.OutputDataReceived += (sender, args) =>
             {
                 System.Console.WriteLine(args.Data);
-                this.log.Info(args.Data);
+                _log.Info(args.Data);
             };
-            this.CurrentProcess.Start();
-            if (this.CurrentProcess != null)
+            CurrentProcess.Start();
+            if (CurrentProcess != null)
             {
-                this.CurrentProcess.BeginErrorReadLine();
+                CurrentProcess.BeginErrorReadLine();
             }
-            if (this.CurrentProcess != null)
+            if (CurrentProcess != null)
             {
-                this.CurrentProcess.BeginOutputReadLine();
+                CurrentProcess.BeginOutputReadLine();
             }
         }
 
         public void CurrentProcessWaitForExit()
         {
-            this.CurrentProcess.WaitForExit();
+            CurrentProcess.WaitForExit();
         }
     }
 }

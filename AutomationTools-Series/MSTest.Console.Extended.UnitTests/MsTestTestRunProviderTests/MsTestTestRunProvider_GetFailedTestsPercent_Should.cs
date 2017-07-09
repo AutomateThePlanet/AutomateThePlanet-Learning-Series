@@ -22,7 +22,7 @@ using Telerik.JustMock;
 namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
 {
     [TestClass]
-    public class MsTestTestRunProvider_GetFailedTestsPercent_Should
+    public class MsTestTestRunProviderGetFailedTestsPercentShould
     {
         [TestMethod]
         public void ReturnZero_WhenNoFailedTestsPresent()
@@ -32,8 +32,8 @@ namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
             var consoleArgumentsProvider = Mock.Create<IConsoleArgumentsProvider>();
             
             var microsoftTestTestRunProvider = new MsTestTestRunProvider(consoleArgumentsProvider, log);
-            List<TestRunUnitTestResult> failedTests = new List<TestRunUnitTestResult>();
-            List<TestRunUnitTestResult> allTests = new List<TestRunUnitTestResult>()
+            var failedTests = new List<TestRunUnitTestResult>();
+            var allTests = new List<TestRunUnitTestResult>()
             {
                 new TestRunUnitTestResult()
             };
@@ -50,11 +50,11 @@ namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
             var consoleArgumentsProvider = Mock.Create<IConsoleArgumentsProvider>();
             
             var microsoftTestTestRunProvider = new MsTestTestRunProvider(consoleArgumentsProvider, log);
-            List<TestRunUnitTestResult> failedTests = new List<TestRunUnitTestResult>()
+            var failedTests = new List<TestRunUnitTestResult>()
             {
                 new TestRunUnitTestResult()
             };
-            List<TestRunUnitTestResult> allTests = new List<TestRunUnitTestResult>()
+            var allTests = new List<TestRunUnitTestResult>()
             {
                 new TestRunUnitTestResult(),
                 new TestRunUnitTestResult()
@@ -72,8 +72,8 @@ namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
             var consoleArgumentsProvider = Mock.Create<IConsoleArgumentsProvider>();
             
             var microsoftTestTestRunProvider = new MsTestTestRunProvider(consoleArgumentsProvider, log);
-            List<TestRunUnitTestResult> failedTests = new List<TestRunUnitTestResult>();
-            List<TestRunUnitTestResult> allTests = new List<TestRunUnitTestResult>();
+            var failedTests = new List<TestRunUnitTestResult>();
+            var allTests = new List<TestRunUnitTestResult>();
             var failedTestsPercentage = microsoftTestTestRunProvider.CalculatedFailedTestsPercentage(failedTests, allTests);
 
             Assert.AreEqual<int>(0, failedTestsPercentage);

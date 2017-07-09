@@ -19,30 +19,30 @@ namespace MSTest.Console.Extended.Data
     [XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public partial class TestRunUnitTest
     {
-        private TestRunUnitTestExecution executionField;
+        private TestRunUnitTestExecution _executionField;
 
-        private TestRunUnitTestTestMethod testMethodField;
+        private TestRunUnitTestTestMethod _testMethodField;
 
-        private TestRunUnitTestOwners ownersField;
+        private TestRunUnitTestOwners _ownersField;
 
-        private TestRunUnitTestTestCategory testCategoryField;
+        private TestRunUnitTestTestCategory _testCategoryField;
 
-        private string nameField;
+        private string _nameField;
 
-        private string storageField;
+        private string _storageField;
 
-        private string idField;
+        private string _idField;
 
         /// <remarks/>
         public TestRunUnitTestOwners Owners
         {
             get
             {
-                return this.ownersField;
+                return _ownersField;
             }
             set
             {
-                this.ownersField = value;
+                _ownersField = value;
             }
         }
 
@@ -51,11 +51,11 @@ namespace MSTest.Console.Extended.Data
         {
             get
             {
-                return this.testCategoryField;
+                return _testCategoryField;
             }
             set
             {
-                this.testCategoryField = value;
+                _testCategoryField = value;
             }
         }
 
@@ -64,11 +64,11 @@ namespace MSTest.Console.Extended.Data
         {
             get
             {
-                return this.executionField;
+                return _executionField;
             }
             set
             {
-                this.executionField = value;
+                _executionField = value;
             }
         }
 
@@ -77,53 +77,53 @@ namespace MSTest.Console.Extended.Data
         {
             get
             {
-                return this.testMethodField;
+                return _testMethodField;
             }
             set
             {
-                this.testMethodField = value;
+                _testMethodField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public string name
+        public string Name
         {
             get
             {
-                return this.nameField;
+                return _nameField;
             }
             set
             {
-                this.nameField = value;
+                _nameField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public string storage
+        public string Storage
         {
             get
             {
-                return this.storageField;
+                return _storageField;
             }
             set
             {
-                this.storageField = value;
+                _storageField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public string id
+        public string Id
         {
             get
             {
-                return this.idField;
+                return _idField;
             }
             set
             {
-                this.idField = value;
+                _idField = value;
             }
         }
     }

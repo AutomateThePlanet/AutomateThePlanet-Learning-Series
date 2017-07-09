@@ -21,11 +21,11 @@ namespace MSTest.Console.Extended
 {
     public class Program
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(Program));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(Program));
 
         public static void Main(string[] args)
         {
-            string microsoftTestConsoleExePath = ConfigurationManager.AppSettings["MSTestConsoleRunnerPath"]; 
+            var microsoftTestConsoleExePath = ConfigurationManager.AppSettings["MSTestConsoleRunnerPath"]; 
             var consoleArgumentsProvider = new ConsoleArgumentsProvider(args);
             var engine = new TestExecutionService(
                 new MsTestTestRunProvider(consoleArgumentsProvider, LogManager.GetLogger(typeof(MsTestTestRunProvider))),
@@ -35,12 +35,12 @@ namespace MSTest.Console.Extended
                 LogManager.GetLogger(typeof(TestExecutionService)));
             try
             {
-                int result = engine.ExecuteWithRetry();
+                var result = engine.ExecuteWithRetry();
                 Environment.Exit(result);
             }
             catch (Exception ex)
             {
-                log.Error(string.Concat(ex.Message, ex.StackTrace));
+                Log.Error(string.Concat(ex.Message, ex.StackTrace));
             }
         }
     }

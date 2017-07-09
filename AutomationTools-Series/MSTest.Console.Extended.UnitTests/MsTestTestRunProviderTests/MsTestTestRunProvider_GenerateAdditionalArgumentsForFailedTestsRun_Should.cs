@@ -22,7 +22,7 @@ using Telerik.JustMock;
 namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
 {
     [TestClass]
-    public class MsTestTestRunProvider_GenerateAdditionalArgumentsForFailedTestsRun_Should
+    public class MsTestTestRunProviderGenerateAdditionalArgumentsForFailedTestsRunShould
     {
         [TestMethod]
         public void AddOneTestArgument_WhenOneFailedTestPresent()
@@ -30,7 +30,7 @@ namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
             var log = Mock.Create<ILog>();
             Mock.Arrange(() => log.Info(Arg.AnyString));
             var consoleArgumentsProvider = Mock.Create<IConsoleArgumentsProvider>();
-            string newTestResultsPath = Path.GetTempFileName();
+            var newTestResultsPath = Path.GetTempFileName();
             Mock.Arrange(() => consoleArgumentsProvider.ConsoleArguments).Returns(@"/resultsfile:""C:\Results.trx""");
             Mock.Arrange(() => consoleArgumentsProvider.TestResultPath).Returns(@"C:\Results.trx");
             var fileSystemProvider = new FileSystemProvider(consoleArgumentsProvider);
@@ -38,7 +38,7 @@ namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
             
             var microsoftTestTestRunProvider = new MsTestTestRunProvider(consoleArgumentsProvider, log);
             var failedTests = microsoftTestTestRunProvider.GetAllNotPassedTests(testRun.Results.ToList());
-            string additionalArguments = microsoftTestTestRunProvider.GenerateAdditionalArgumentsForFailedTestsRun(failedTests, newTestResultsPath);
+            var additionalArguments = microsoftTestTestRunProvider.GenerateAdditionalArgumentsForFailedTestsRun(failedTests, newTestResultsPath);
             Assert.AreEqual<string>(string.Format(@"/resultsfile:""{0}"" /test:TestConsoleExtended", newTestResultsPath), additionalArguments);
         }
 
@@ -48,14 +48,14 @@ namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
             var log = Mock.Create<ILog>();
             Mock.Arrange(() => log.Info(Arg.AnyString));
             var consoleArgumentsProvider = Mock.Create<IConsoleArgumentsProvider>();
-            string newTestResultsPath = Path.GetTempFileName();
+            var newTestResultsPath = Path.GetTempFileName();
             Mock.Arrange(() => consoleArgumentsProvider.ConsoleArguments).Returns(@"/resultsfile:""C:\Results.trx""");
             Mock.Arrange(() => consoleArgumentsProvider.TestResultPath).Returns(@"C:\Results.trx");
             var fileSystemProvider = new FileSystemProvider(consoleArgumentsProvider);
             var testRun = fileSystemProvider.DeserializeTestRun("Exceptions.trx");
             
             var microsoftTestTestRunProvider = new MsTestTestRunProvider(consoleArgumentsProvider, log);
-            string additionalArguments = microsoftTestTestRunProvider.GenerateAdditionalArgumentsForFailedTestsRun(testRun.Results.ToList(), newTestResultsPath);
+            var additionalArguments = microsoftTestTestRunProvider.GenerateAdditionalArgumentsForFailedTestsRun(testRun.Results.ToList(), newTestResultsPath);
             Assert.AreEqual<string>(string.Format(@"/resultsfile:""{0}"" /test:TestConsoleExtended /test:TestConsoleExtended_Second", newTestResultsPath), additionalArguments);
         }
     }

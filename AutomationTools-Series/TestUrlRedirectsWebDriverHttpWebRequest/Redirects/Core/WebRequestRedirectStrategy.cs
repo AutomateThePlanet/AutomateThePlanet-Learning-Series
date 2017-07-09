@@ -24,13 +24,13 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
 
         public string NavigateToFromUrl(string fromUrl)
         {
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(fromUrl);
+            var request = (HttpWebRequest)WebRequest.Create(fromUrl);
             request.Method = "HEAD";
             request.Timeout = (int)TimeSpan.FromHours(1).TotalMilliseconds;
-            string currentSitesUrl = string.Empty;
+            var currentSitesUrl = string.Empty;
             try
             {
-                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                using (var response = (HttpWebResponse)request.GetResponse())
                 {
                     currentSitesUrl = response.ResponseUri.ToString();
                 }

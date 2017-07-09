@@ -23,7 +23,7 @@ using Telerik.JustMock;
 namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
 {
     [TestClass]
-    public class MsTestTestRunProvider_UpdatePassedTests_Should
+    public class MsTestTestRunProviderUpdatePassedTestsShould
     {
         [TestMethod]
         public void UpdatePassedTests_WhenNoMatchingTestsExist()
@@ -31,7 +31,7 @@ namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
             var log = Mock.Create<ILog>();
             Mock.Arrange(() => log.Info(Arg.AnyString));
             var consoleArgumentsProvider = Mock.Create<IConsoleArgumentsProvider>();
-            string newFileName = Path.GetTempFileName();
+            var newFileName = Path.GetTempFileName();
             Mock.Arrange(() => consoleArgumentsProvider.NewTestResultPath).Returns(newFileName);
             var fileSystemProvider = new FileSystemProvider(consoleArgumentsProvider);
             var failedTestsRun = fileSystemProvider.DeserializeTestRun("Exceptions.trx");
@@ -40,7 +40,7 @@ namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
 
             var passedTests = microsoftTestTestRunProvider.GetAllPassesTests(passedTestRun);
             var failedTests = microsoftTestTestRunProvider.GetAllNotPassedTests(failedTestsRun.Results.ToList());
-            passedTests.ForEach(x => x.testId = Guid.NewGuid().ToString());
+            passedTests.ForEach(x => x.TestId = Guid.NewGuid().ToString());
 
             microsoftTestTestRunProvider.UpdatePassedTests(passedTests, failedTestsRun.Results.ToList());
 
@@ -54,7 +54,7 @@ namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
             var log = Mock.Create<ILog>();
             Mock.Arrange(() => log.Info(Arg.AnyString));
             var consoleArgumentsProvider = Mock.Create<IConsoleArgumentsProvider>();
-            string newFileName = Path.GetTempFileName();
+            var newFileName = Path.GetTempFileName();
             Mock.Arrange(() => consoleArgumentsProvider.NewTestResultPath).Returns(newFileName);
             var fileSystemProvider = new FileSystemProvider(consoleArgumentsProvider);
             var failedTestsRun = fileSystemProvider.DeserializeTestRun("Exceptions.trx");

@@ -23,7 +23,7 @@ namespace CodeProjectStatisticsCalculator.Pages.ItemPage
         {
             get
             {
-                return this.driver.FindElements(By.XPath("//tr[contains(@id,'CAR_MainArticleRow')]"));
+                return Driver.FindElements(By.XPath("//tr[contains(@id,'CAR_MainArticleRow')]"));
             }
         }
 

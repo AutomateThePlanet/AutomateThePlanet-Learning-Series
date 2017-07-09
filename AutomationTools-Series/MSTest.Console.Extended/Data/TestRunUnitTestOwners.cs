@@ -17,18 +17,18 @@
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
 public partial class TestRunUnitTestOwners
 {
-    private UnitTestOwnersOwner ownerField;
+    private UnitTestOwnersOwner _ownerField;
 
     /// <remarks/>
     public UnitTestOwnersOwner Owner
     {
         get
         {
-            return this.ownerField;
+            return _ownerField;
         }
         set
         {
-            this.ownerField = value;
+            _ownerField = value;
         }
     }
 }

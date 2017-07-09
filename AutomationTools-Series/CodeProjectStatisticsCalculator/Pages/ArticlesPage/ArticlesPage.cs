@@ -23,48 +23,48 @@ namespace CodeProjectStatisticsCalculator.Pages.ItemPage
 {
     public partial class ArticlesPage : BasePage
     {
-        private string viewsRegex = @".*Views: (?<Views>[0-9,]{1,})";
-        private string publishDateRegex = @".*Posted: (?<PublishDate>[0-9,A-Za-z ]{1,})";
-        private readonly int profileId;
+        private string _viewsRegex = @".*Views: (?<Views>[0-9,]{1,})";
+        private string _publishDateRegex = @".*Posted: (?<PublishDate>[0-9,A-Za-z ]{1,})";
+        private readonly int _profileId;
         public ArticlesPage(IWebDriver driver, int profileId) : base(driver)
         {
-            this.profileId = profileId;
+            this._profileId = profileId;
         }
 
         public override string Url
         {
             get
             {
-                return string.Format("https://www.codeproject.com/script/Articles/MemberArticles.aspx?amid={0}", this.profileId);
+                return string.Format("https://www.codeproject.com/script/Articles/MemberArticles.aspx?amid={0}", _profileId);
             }
         }
 
         public void Navigate(string part)
         {
-            base.Open(part);
+            Open(part);
         }
 
         public List<Article> GetArticlesByUrl(string sectionPart)
         {
-            this.Navigate(sectionPart);
+            Navigate(sectionPart);
             var articlesInfos = new List<Article>();
-            foreach (var articleRow in this.ArticlesRows.ToList())
+            foreach (var articleRow in ArticlesRows.ToList())
             {
                 if (!articleRow.Displayed)
                 {
                     continue;
                 }
                 var article = new Article();
-                var articleTitleElement = this.GetArticleTitleElement(articleRow);
+                var articleTitleElement = GetArticleTitleElement(articleRow);
                 article.Title = articleTitleElement.GetAttribute("innerHTML");
                 article.Url = articleTitleElement.GetAttribute("href");
-                var articleStatisticsElement = this.GetArticleStatisticsElement(articleRow);
+                var articleStatisticsElement = GetArticleStatisticsElement(articleRow);
 
-                string articleStatisticsElementSource = articleStatisticsElement.GetAttribute("innerHTML");
+                var articleStatisticsElementSource = articleStatisticsElement.GetAttribute("innerHTML");
                 if (!string.IsNullOrEmpty(articleStatisticsElementSource))
                 {
-                    article.Views = this.GetViewsCount(articleStatisticsElementSource);
-                    article.PublishDate = this.GetPublishDate(articleStatisticsElementSource);
+                    article.Views = GetViewsCount(articleStatisticsElementSource);
+                    article.PublishDate = GetPublishDate(articleStatisticsElementSource);
                 }
                 articlesInfos.Add(article);
             }
@@ -74,8 +74,8 @@ namespace CodeProjectStatisticsCalculator.Pages.ItemPage
 
         private double GetViewsCount(string articleStatisticsElementSource)
         {
-            var regexViews = new Regex(viewsRegex, RegexOptions.Singleline);
-            Match currentMatch = regexViews.Match(articleStatisticsElementSource);
+            var regexViews = new Regex(_viewsRegex, RegexOptions.Singleline);
+            var currentMatch = regexViews.Match(articleStatisticsElementSource);
             if (!currentMatch.Success)
             {
                 throw new ArgumentException("No content for the current statistics element.");
@@ -85,7 +85,7 @@ namespace CodeProjectStatisticsCalculator.Pages.ItemPage
 
         private DateTime GetPublishDate(string articleStatisticsElementSource)
         {
-            var regexPublishDate = new Regex(publishDateRegex, RegexOptions.IgnorePatternWhitespace);
+            var regexPublishDate = new Regex(_publishDateRegex, RegexOptions.IgnorePatternWhitespace);
             Match currentMatch = currentMatch = regexPublishDate.Match(articleStatisticsElementSource);
             if (!currentMatch.Success)
             {

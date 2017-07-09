@@ -20,13 +20,13 @@ using Telerik.JustMock;
 namespace MSTest.Console.Extended.UnitTests.FileSystemProviderTests
 {
     [TestClass]
-    public class FileSystemProviderTests_DeleteTestResultFiles_Should
+    public class FileSystemProviderTestsDeleteTestResultFilesShould
     {
         [TestMethod]
         public void NoDeletedFiles_WhenShouldDeleteOldTestResultFilesTrue()
         {
             var consoleArgumentsProvider = Mock.Create<IConsoleArgumentsProvider>();
-            string newFileName = Path.GetTempFileName();
+            var newFileName = Path.GetTempFileName();
             var file = File.CreateText(newFileName);
             file.Close();
 
@@ -41,10 +41,10 @@ namespace MSTest.Console.Extended.UnitTests.FileSystemProviderTests
         public void DeletedFiles_WhenShouldDeleteOldTestResultFilesFilesAndTwoFilesExist()
         {
             var consoleArgumentsProvider = Mock.Create<IConsoleArgumentsProvider>();
-            string newFileName = Path.GetTempFileName();
+            var newFileName = Path.GetTempFileName();
             var file = File.CreateText(newFileName);
             file.Close();
-            string newFileName1 = Path.GetTempFileName();
+            var newFileName1 = Path.GetTempFileName();
             file = File.CreateText(newFileName);
             file.Close();
             Mock.Arrange(() => consoleArgumentsProvider.ShouldDeleteOldTestResultFiles).Returns(true);
@@ -61,7 +61,7 @@ namespace MSTest.Console.Extended.UnitTests.FileSystemProviderTests
         public void DeletedFirstFile_WhenShouldDeleteOldTestResultFilesFilesAndSecondFileNotExist()
         {
             var consoleArgumentsProvider = Mock.Create<IConsoleArgumentsProvider>();
-            string newFileName = Path.GetTempFileName();
+            var newFileName = Path.GetTempFileName();
             var file = File.CreateText(newFileName);
             file.Close();
             Mock.Arrange(() => consoleArgumentsProvider.ShouldDeleteOldTestResultFiles).Returns(true);

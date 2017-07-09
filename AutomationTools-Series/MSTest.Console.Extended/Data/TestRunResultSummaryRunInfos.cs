@@ -20,18 +20,18 @@ namespace MSTest.Console.Extended.Data
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public partial class TestRunResultSummaryRunInfos
     {
-        private TestRunResultSummaryRunInfosRunInfo runInfoField;
+        private TestRunResultSummaryRunInfosRunInfo _runInfoField;
 
         /// <remarks/>
         public TestRunResultSummaryRunInfosRunInfo RunInfo
         {
             get
             {
-                return this.runInfoField;
+                return _runInfoField;
             }
             set
             {
-                this.runInfoField = value;
+                _runInfoField = value;
             }
         }
     }

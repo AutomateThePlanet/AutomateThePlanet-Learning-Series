@@ -19,259 +19,259 @@ namespace MSTest.Console.Extended.Data
     [XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public partial class TestRunResultSummaryCounters
     {
-        private int totalField;
+        private int _totalField;
 
-        private int executedField;
+        private int _executedField;
 
-        private int passedField;
+        private int _passedField;
 
-        private int errorField;
+        private int _errorField;
 
-        private int failedField;
+        private int _failedField;
 
-        private int timeoutField;
+        private int _timeoutField;
 
-        private int abortedField;
+        private int _abortedField;
 
-        private int inconclusiveField;
+        private int _inconclusiveField;
 
-        private int passedButRunAbortedField;
+        private int _passedButRunAbortedField;
 
-        private int notRunnableField;
+        private int _notRunnableField;
 
-        private int notExecutedField;
+        private int _notExecutedField;
 
-        private int disconnectedField;
+        private int _disconnectedField;
 
-        private int warningField;
+        private int _warningField;
 
-        private int completedField;
+        private int _completedField;
 
-        private int inProgressField;
+        private int _inProgressField;
 
-        private int pendingField;
+        private int _pendingField;
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int total
+        public int Total
         {
             get
             {
-                return this.totalField;
+                return _totalField;
             }
             set
             {
-                this.totalField = value;
+                _totalField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int executed
+        public int Executed
         {
             get
             {
-                return this.executedField;
+                return _executedField;
             }
             set
             {
-                this.executedField = value;
+                _executedField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int passed
+        public int Passed
         {
             get
             {
-                return this.passedField;
+                return _passedField;
             }
             set
             {
-                this.passedField = value;
+                _passedField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int error
+        public int Error
         {
             get
             {
-                return this.errorField;
+                return _errorField;
             }
             set
             {
-                this.errorField = value;
+                _errorField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int failed
+        public int Failed
         {
             get
             {
-                return this.failedField;
+                return _failedField;
             }
             set
             {
-                this.failedField = value;
+                _failedField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int timeout
+        public int Timeout
         {
             get
             {
-                return this.timeoutField;
+                return _timeoutField;
             }
             set
             {
-                this.timeoutField = value;
+                _timeoutField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int aborted
+        public int Aborted
         {
             get
             {
-                return this.abortedField;
+                return _abortedField;
             }
             set
             {
-                this.abortedField = value;
+                _abortedField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int inconclusive
+        public int Inconclusive
         {
             get
             {
-                return this.inconclusiveField;
+                return _inconclusiveField;
             }
             set
             {
-                this.inconclusiveField = value;
+                _inconclusiveField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int passedButRunAborted
+        public int PassedButRunAborted
         {
             get
             {
-                return this.passedButRunAbortedField;
+                return _passedButRunAbortedField;
             }
             set
             {
-                this.passedButRunAbortedField = value;
+                _passedButRunAbortedField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int notRunnable
+        public int NotRunnable
         {
             get
             {
-                return this.notRunnableField;
+                return _notRunnableField;
             }
             set
             {
-                this.notRunnableField = value;
+                _notRunnableField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int notExecuted
+        public int NotExecuted
         {
             get
             {
-                return this.notExecutedField;
+                return _notExecutedField;
             }
             set
             {
-                this.notExecutedField = value;
+                _notExecutedField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int disconnected
+        public int Disconnected
         {
             get
             {
-                return this.disconnectedField;
+                return _disconnectedField;
             }
             set
             {
-                this.disconnectedField = value;
+                _disconnectedField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int warning
+        public int Warning
         {
             get
             {
-                return this.warningField;
+                return _warningField;
             }
             set
             {
-                this.warningField = value;
+                _warningField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int completed
+        public int Completed
         {
             get
             {
-                return this.completedField;
+                return _completedField;
             }
             set
             {
-                this.completedField = value;
+                _completedField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int inProgress
+        public int InProgress
         {
             get
             {
-                return this.inProgressField;
+                return _inProgressField;
             }
             set
             {
-                this.inProgressField = value;
+                _inProgressField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public int pending
+        public int Pending
         {
             get
             {
-                return this.pendingField;
+                return _pendingField;
             }
             set
             {
-                this.pendingField = value;
+                _pendingField = value;
             }
         }
     }

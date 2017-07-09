@@ -20,30 +20,30 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
 {
     public class RedirectService : IDisposable
     {
-        readonly IRedirectStrategy redirectEngine;
-        private Sites sites;
+        readonly IRedirectStrategy _redirectEngine;
+        private Sites _sites;
 
         public RedirectService(IRedirectStrategy redirectEngine)
         {
-            this.redirectEngine = redirectEngine;
-            this.redirectEngine.Initialize();
-            this.InitializeRedirectUrls();
+            this._redirectEngine = redirectEngine;
+            this._redirectEngine.Initialize();
+            InitializeRedirectUrls();
         }
 
         public void TestRedirects()
         {
-            bool shouldFail = false;
+            var shouldFail = false;
 
-            foreach (var currentSite in this.sites.Site)
+            foreach (var currentSite in _sites.Site)
             {
-                Uri baseUri = new Uri(currentSite.Url);
+                var baseUri = new Uri(currentSite.Url);
 
                 foreach (var currentRedirect in currentSite.Redirects.Redirect)
                 {
-                    Uri currentFromUrl = new Uri(baseUri, currentRedirect.From);
-                    Uri currentToUrl = new Uri(baseUri, currentRedirect.To);
+                    var currentFromUrl = new Uri(baseUri, currentRedirect.From);
+                    var currentToUrl = new Uri(baseUri, currentRedirect.To);
 
-                    string currentSitesUrl = this.redirectEngine.NavigateToFromUrl(currentFromUrl.AbsoluteUri);
+                    var currentSitesUrl = _redirectEngine.NavigateToFromUrl(currentFromUrl.AbsoluteUri);
                     try
                     {
                         Assert.AreEqual<string>(currentToUrl.AbsoluteUri, currentSitesUrl);
@@ -64,14 +64,14 @@ namespace TestUrlRedirectsWebDriverHttpWebRequest.Redirects.Core
 
         public void Dispose()
         {
-            redirectEngine.Dispose();
+            _redirectEngine.Dispose();
         }
 
         private void InitializeRedirectUrls()
         {
-            XmlSerializer deserializer = new XmlSerializer(typeof(Sites));
+            var deserializer = new XmlSerializer(typeof(Sites));
             TextReader reader = new StreamReader(@"redirect-URLs.xml");
-            this.sites = (Sites)deserializer.Deserialize(reader);
+            _sites = (Sites)deserializer.Deserialize(reader);
             reader.Close();
         }
     }

@@ -21,17 +21,17 @@ namespace MSTest.Console.Extended.Infrastructure
 {
     public class FileSystemProvider : IFileSystemProvider
     {
-        private readonly IConsoleArgumentsProvider consoleArgumentsProvider;
+        private readonly IConsoleArgumentsProvider _consoleArgumentsProvider;
 
         public FileSystemProvider(IConsoleArgumentsProvider consoleArgumentsProvider)
         {
-            this.consoleArgumentsProvider = consoleArgumentsProvider;
+            this._consoleArgumentsProvider = consoleArgumentsProvider;
         }
     
         public void SerializeTestRun(TestRun updatedTestRun)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(TestRun));
-            TextWriter writer = new StreamWriter(this.consoleArgumentsProvider.NewTestResultPath);
+            var serializer = new XmlSerializer(typeof(TestRun));
+            TextWriter writer = new StreamWriter(_consoleArgumentsProvider.NewTestResultPath);
             using (writer)
             {
                 serializer.Serialize(writer, updatedTestRun); 
@@ -43,12 +43,12 @@ namespace MSTest.Console.Extended.Infrastructure
             TestRun testRun = null;
             if (string.IsNullOrEmpty(resultsPath))
             {
-                resultsPath = this.consoleArgumentsProvider.TestResultPath;
+                resultsPath = _consoleArgumentsProvider.TestResultPath;
             }
             if (File.Exists(resultsPath))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(TestRun));
-                StreamReader reader = new StreamReader(resultsPath);
+                var serializer = new XmlSerializer(typeof(TestRun));
+                var reader = new StreamReader(resultsPath);
                 testRun = (TestRun)serializer.Deserialize(reader);
                 reader.Close();
             }
@@ -57,12 +57,12 @@ namespace MSTest.Console.Extended.Infrastructure
 
         public void DeleteTestResultFiles()
         {
-            if (this.consoleArgumentsProvider.ShouldDeleteOldTestResultFiles)
+            if (_consoleArgumentsProvider.ShouldDeleteOldTestResultFiles)
             {
                 var filesToBeDeleted = new List<string>()
                 {
-                    this.consoleArgumentsProvider.TestResultPath,
-                    this.consoleArgumentsProvider.NewTestResultPath
+                    _consoleArgumentsProvider.TestResultPath,
+                    _consoleArgumentsProvider.NewTestResultPath
                 };
                 foreach (var currentFilePath in filesToBeDeleted)
                 {

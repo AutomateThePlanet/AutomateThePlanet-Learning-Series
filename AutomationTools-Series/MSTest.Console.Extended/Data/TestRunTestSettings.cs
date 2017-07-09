@@ -19,52 +19,52 @@ namespace MSTest.Console.Extended.Data
     [XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public partial class TestRunTestSettings
     {
-        private TestRunTestSettingsExecution executionField;
+        private TestRunTestSettingsExecution _executionField;
 
-        private TestRunTestSettingsDeployment deploymentField;
+        private TestRunTestSettingsDeployment _deploymentField;
 
-        private string nameField;
+        private string _nameField;
 
-        private string idField;
+        private string _idField;
 
         /// <remarks/>
         public TestRunTestSettingsExecution Execution
         {
             get
             {
-                return this.executionField;
+                return _executionField;
             }
             set
             {
-                this.executionField = value;
+                _executionField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public string name
+        public string Name
         {
             get
             {
-                return this.nameField;
+                return _nameField;
             }
             set
             {
-                this.nameField = value;
+                _nameField = value;
             }
         }
 
         /// <remarks/>
         [XmlAttributeAttribute]
-        public string id
+        public string Id
         {
             get
             {
-                return this.idField;
+                return _idField;
             }
             set
             {
-                this.idField = value;
+                _idField = value;
             }
         }
     }

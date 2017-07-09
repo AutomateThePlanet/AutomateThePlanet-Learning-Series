@@ -17,18 +17,18 @@
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
 public partial class TestRunUnitTestTestCategory
 {
-    private UnitTestTestCategoryTestCategoryItem testCategoryItemField;
+    private UnitTestTestCategoryTestCategoryItem _testCategoryItemField;
 
     /// <remarks/>
     public UnitTestTestCategoryTestCategoryItem TestCategoryItem
     {
         get
         {
-            return this.testCategoryItemField;
+            return _testCategoryItemField;
         }
         set
         {
-            this.testCategoryItemField = value;
+            _testCategoryItemField = value;
         }
     }
 }

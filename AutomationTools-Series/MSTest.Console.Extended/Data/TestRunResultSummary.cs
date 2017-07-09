@@ -19,24 +19,24 @@ namespace MSTest.Console.Extended.Data
     [XmlTypeAttribute(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public partial class TestRunResultSummary
     {
-        private TestRunResultSummaryCounters countersField;
+        private TestRunResultSummaryCounters _countersField;
 
-        private TestRunResultSummaryOutput outputField;
+        private TestRunResultSummaryOutput _outputField;
 
-        private TestRunResultSummaryRunInfos runInfosField;
+        private TestRunResultSummaryRunInfos _runInfosField;
 
-        private string outcomeField;
+        private string _outcomeField;
 
         /// <remarks/>
         public TestRunResultSummaryCounters Counters
         {
             get
             {
-                return this.countersField;
+                return _countersField;
             }
             set
             {
-                this.countersField = value;
+                _countersField = value;
             }
         }
 
@@ -45,11 +45,11 @@ namespace MSTest.Console.Extended.Data
         {
             get
             {
-                return this.outputField;
+                return _outputField;
             }
             set
             {
-                this.outputField = value;
+                _outputField = value;
             }
         }
 
@@ -58,25 +58,25 @@ namespace MSTest.Console.Extended.Data
         {
             get
             {
-                return this.runInfosField;
+                return _runInfosField;
             }
             set
             {
-                this.runInfosField = value;
+                _runInfosField = value;
             }
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string outcome
+        [XmlAttributeAttribute()]
+        public string Outcome
         {
             get
             {
-                return this.outcomeField;
+                return _outcomeField;
             }
             set
             {
-                this.outcomeField = value;
+                _outcomeField = value;
             }
         }
     }
