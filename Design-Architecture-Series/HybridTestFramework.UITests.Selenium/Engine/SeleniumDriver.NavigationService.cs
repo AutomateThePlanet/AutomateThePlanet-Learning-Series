@@ -61,24 +61,22 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 
         public void WaitForUrl(string url)
         {
-            this.driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(0));
             WebDriverWait wait = new WebDriverWait(this.driver, TimeSpan.FromSeconds(this.browserSettings.ScriptTimeout));
             wait.PollingInterval = TimeSpan.FromSeconds(0.8);
             wait.Until(x => string.Compare(x.Url, url, StringComparison.InvariantCultureIgnoreCase) == 0);
             this.RaiseNavigated(this.driver.Url);
-            this.driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3)); 
+            this.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         public void WaitForPartialUrl(string url)
         {
-            this.driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(0));
             WebDriverWait wait = new WebDriverWait(
                 this.driver, 
                 TimeSpan.FromSeconds(this.browserSettings.ScriptTimeout));
             wait.PollingInterval = TimeSpan.FromSeconds(0.8);
             wait.Until(x => x.Url.Contains(url) == true);
             this.RaiseNavigated(this.driver.Url);
-            this.driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3)); 
+            this.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         private void RaiseNavigated(string url)

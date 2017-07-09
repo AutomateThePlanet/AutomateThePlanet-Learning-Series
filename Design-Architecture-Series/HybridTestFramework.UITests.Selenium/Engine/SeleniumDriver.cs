@@ -33,8 +33,7 @@ namespace HybridTestFramework.UITests.Selenium.Engine
             this.browserSettings = browserSettings;
             this.ResolveBrowser(browserSettings);
             this.elementFinderService = new ElementFinderService(container);
-            driver.Manage().Timeouts().ImplicitlyWait(
-                TimeSpan.FromSeconds(browserSettings.ElementsWaitTimeout));
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(browserSettings.ElementsWaitTimeout);
         }
 
         private void ResolveBrowser(BrowserSettings browserSettings)
