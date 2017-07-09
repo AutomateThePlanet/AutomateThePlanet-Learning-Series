@@ -23,16 +23,16 @@ namespace AdvancedStrategyDesignPattern.Base
 {
     public class PurchaseContext
     {
-        private readonly IOrderPurchaseStrategy[] orderpurchaseStrategies;
+        private readonly IOrderPurchaseStrategy[] _orderpurchaseStrategies;
 
         public PurchaseContext(params IOrderPurchaseStrategy[] orderpurchaseStrategies)
         {
-            this.orderpurchaseStrategies = orderpurchaseStrategies;
+            _orderpurchaseStrategies = orderpurchaseStrategies;
         }
 
         public void PurchaseItem(string itemUrl, string itemPrice, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
         {
-            this.ValidateClientPurchaseInfo(clientPurchaseInfo);
+            ValidateClientPurchaseInfo(clientPurchaseInfo);
 
             ItemPage.Instance.Navigate(itemUrl);
             ItemPage.Instance.ClickBuyNowButton();
@@ -46,12 +46,12 @@ namespace AdvancedStrategyDesignPattern.Base
             ShippingAddressPage.Instance.ClickContinueButton();
             ShippingPaymentPage.Instance.ClickTopContinueButton();
 
-            this.ValidateOrderSummary(itemPrice, clientPurchaseInfo);
+            ValidateOrderSummary(itemPrice, clientPurchaseInfo);
         }
 
         public void ValidateClientPurchaseInfo(ClientPurchaseInfo clientPurchaseInfo)
         {
-            foreach (IOrderPurchaseStrategy currentStrategy in this.orderpurchaseStrategies)
+            foreach (var currentStrategy in _orderpurchaseStrategies)
             {
                 currentStrategy.ValidateClientPurchaseInfo(clientPurchaseInfo);
             }
@@ -59,7 +59,7 @@ namespace AdvancedStrategyDesignPattern.Base
 
         public void ValidateOrderSummary(string itemPrice, ClientPurchaseInfo clientPurchaseInfo)
         {
-            foreach (IOrderPurchaseStrategy currentStrategy in this.orderpurchaseStrategies)
+            foreach (var currentStrategy in _orderpurchaseStrategies)
             {
                 currentStrategy.AssertOrderSummary(itemPrice, clientPurchaseInfo);
             }

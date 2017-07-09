@@ -20,48 +20,48 @@ namespace RulesDesignPattern
 {
     public class RulesEvaluator
     {
-        private readonly List<RulesChain> rules;
+        private readonly List<RulesChain> _rules;
 
         public RulesEvaluator()
         {
-            this.rules = new List<RulesChain>();
+            _rules = new List<RulesChain>();
         }
 
         public RulesChain Eval(IRule rule)
         {
             var rulesChain = new RulesChain(rule);
-            this.rules.Add(rulesChain);
+            _rules.Add(rulesChain);
             return rulesChain;
         }
 
         public void OtherwiseEval(IRule alternativeRule)
         {
-            if (this.rules.Count == 0)
+            if (_rules.Count == 0)
             {
                 throw new ArgumentException("You cannot add ElseIf clause without If!");
             }
-            this.rules.Last().ElseRules.Add(new RulesChain(alternativeRule));
+            _rules.Last().ElseRules.Add(new RulesChain(alternativeRule));
         }
 
         public void OtherwiseDo(Action otherwiseAction)
         {
-            if (this.rules.Count == 0)
+            if (_rules.Count == 0)
             {
                 throw new ArgumentException("You cannot add Else clause without If!");
             }
-            this.rules.Last().ElseRules.Add(new RulesChain(new NullRule(otherwiseAction), true));
+            _rules.Last().ElseRules.Add(new RulesChain(new NullRule(otherwiseAction), true));
         }
 
         public void EvaluateRulesChains()
         {
-            this.Evaluate(this.rules, false);
+            Evaluate(_rules, false);
         }
 
         private void Evaluate(List<RulesChain> rulesToBeEvaluated, bool isAlternativeChain = false)
         {
-            foreach (RulesChain currentRuleChain in rulesToBeEvaluated)
+            foreach (var currentRuleChain in rulesToBeEvaluated)
             {
-                IRuleResult currentRulesChainResult = currentRuleChain.Rule.Eval();
+                var currentRulesChainResult = currentRuleChain.Rule.Eval();
                 if (currentRulesChainResult.IsSuccess)
                 {
                     currentRulesChainResult.Execute();
@@ -72,7 +72,7 @@ namespace RulesDesignPattern
                 }
                 else
                 {
-                    this.Evaluate(currentRuleChain.ElseRules, true);
+                    Evaluate(currentRuleChain.ElseRules, true);
                 }
             }
         }

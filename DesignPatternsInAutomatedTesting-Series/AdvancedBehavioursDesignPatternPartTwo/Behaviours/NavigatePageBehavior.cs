@@ -19,16 +19,16 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {
     public class NavigatePageBehavior : ActionBehaviour
     {
-        private readonly string expectedUrl;
+        private readonly string _expectedUrl;
 
         public NavigatePageBehavior(NavigatePageBehaviorDefinition definition)
         {
-            this.expectedUrl = definition.ExpectedUrl;
+            _expectedUrl = definition.ExpectedUrl;
         }
 
         protected override void PerformAct()
         {
-            Console.WriteLine(this.expectedUrl);
+            Console.WriteLine(_expectedUrl);
         }
     }
 }

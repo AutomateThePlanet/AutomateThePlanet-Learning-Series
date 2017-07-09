@@ -20,39 +20,39 @@ namespace DecoratorDesignPattern.Pages.ShippingAddressPage
     {
         public void ClickContinueButton()
         {
-            this.Map.ContinueButton.Click();
+            Map.ContinueButton.Click();
         }
 
-        public void FillShippingInfo(DecoratorDesignPattern.Data.ClientPurchaseInfo clientInfo)
+        public void FillShippingInfo(Data.ClientPurchaseInfo clientInfo)
         {
-            this.FillAddressInfoInternal(clientInfo);
+            FillAddressInfoInternal(clientInfo);
         }
 
-        public void ClickDifferentBillingCheckBox(DecoratorDesignPattern.Data.ClientPurchaseInfo clientInfo)
-        {
-            if (clientInfo.BillingInfo != null)
-            {
-                this.Map.DifferemtFromBillingCheckbox.Click();
-            }
-        }
-
-        public void FillBillingInfo(DecoratorDesignPattern.Data.ClientPurchaseInfo clientInfo)
+        public void ClickDifferentBillingCheckBox(Data.ClientPurchaseInfo clientInfo)
         {
             if (clientInfo.BillingInfo != null)
             {
-                this.FillAddressInfoInternal(clientInfo);
+                Map.DifferemtFromBillingCheckbox.Click();
             }
         }
 
-        private void FillAddressInfoInternal(DecoratorDesignPattern.Data.ClientPurchaseInfo clientInfo)
+        public void FillBillingInfo(Data.ClientPurchaseInfo clientInfo)
         {
-            this.Map.CountryDropDown.SelectByText(clientInfo.ShippingInfo.Country);
-            this.Map.FullNameInput.SendKeys(clientInfo.ShippingInfo.FullName);
-            this.Map.Address1Input.SendKeys(clientInfo.ShippingInfo.Address1);
-            this.Map.CityInput.SendKeys(clientInfo.ShippingInfo.City);
-            this.Map.ZipInput.SendKeys(clientInfo.ShippingInfo.Zip);
-            this.Map.PhoneInput.SendKeys(clientInfo.ShippingInfo.Phone);
-            this.Map.ShipToThisAddress.Click();
+            if (clientInfo.BillingInfo != null)
+            {
+                FillAddressInfoInternal(clientInfo);
+            }
+        }
+
+        private void FillAddressInfoInternal(Data.ClientPurchaseInfo clientInfo)
+        {
+            Map.CountryDropDown.SelectByText(clientInfo.ShippingInfo.Country);
+            Map.FullNameInput.SendKeys(clientInfo.ShippingInfo.FullName);
+            Map.Address1Input.SendKeys(clientInfo.ShippingInfo.Address1);
+            Map.CityInput.SendKeys(clientInfo.ShippingInfo.City);
+            Map.ZipInput.SendKeys(clientInfo.ShippingInfo.Zip);
+            Map.PhoneInput.SendKeys(clientInfo.ShippingInfo.Phone);
+            Map.ShipToThisAddress.Click();
         }
     }
 }

@@ -18,22 +18,22 @@ namespace RulesDesignPattern
 {
     public class PromotionalPurchaseRule : BaseRule
     {
-        private readonly PurchaseTestInput purchaseTestInput;
+        private readonly PurchaseTestInput _purchaseTestInput;
 
         public PromotionalPurchaseRule(PurchaseTestInput purchaseTestInput, Action actionToBeExecuted) : base(actionToBeExecuted)
         {
-            this.purchaseTestInput = purchaseTestInput;
+            _purchaseTestInput = purchaseTestInput;
         }
 
         public override IRuleResult Eval()
         {
-            if (string.IsNullOrEmpty(this.purchaseTestInput.CreditCardNumber) &&
-                !this.purchaseTestInput.IsWiretransfer &&
-                this.purchaseTestInput.IsPromotionalPurchase &&
-                this.purchaseTestInput.TotalPrice == 0)
+            if (string.IsNullOrEmpty(_purchaseTestInput.CreditCardNumber) &&
+                !_purchaseTestInput.IsWiretransfer &&
+                _purchaseTestInput.IsPromotionalPurchase &&
+                _purchaseTestInput.TotalPrice == 0)
             {
-                this.ruleResult.IsSuccess = true;
-                return this.ruleResult;
+                RuleResult.IsSuccess = true;
+                return RuleResult;
             }
             return new RuleResult();
         }

@@ -35,21 +35,21 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.ShippingAddress
 
         public void ClickContinueButton()
         {
-            this.Map.ContinueButton.Click();
+            Map.ContinueButton.Click();
         }
 
         public void FillShippingInfo(ClientInfo clientInfo)
         {
-            this.Map.SwitchToShippingFrame();
-            this.Map.CountryDropDown.SelectByText(clientInfo.Country);
-            this.Map.FirstName.SendKeys(clientInfo.FirstName);
-            this.Map.LastName.SendKeys(clientInfo.LastName);
-            this.Map.Address1.SendKeys(clientInfo.Address1);
-            this.Map.City.SendKeys(clientInfo.City);
-            this.Map.Zip.SendKeys(clientInfo.Zip);
-            this.Map.Phone.SendKeys(clientInfo.Phone);
-            this.Map.Email.SendKeys(clientInfo.Email);
-            this.Map.SwitchToDefault();
+            Map.SwitchToShippingFrame();
+            Map.CountryDropDown.SelectByText(clientInfo.Country);
+            Map.FirstName.SendKeys(clientInfo.FirstName);
+            Map.LastName.SendKeys(clientInfo.LastName);
+            Map.Address1.SendKeys(clientInfo.Address1);
+            Map.City.SendKeys(clientInfo.City);
+            Map.Zip.SendKeys(clientInfo.Zip);
+            Map.Phone.SendKeys(clientInfo.Phone);
+            Map.Email.SendKeys(clientInfo.Email);
+            Map.SwitchToDefault();
         }
 
         public double GetSubtotalAmount()

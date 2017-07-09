@@ -23,7 +23,7 @@ namespace FacadeDesignPattern.Pages.ItemPage
 
         public void ClickBuyNowButton()
         {
-            this.Map.BuyNowButton.Click();
+            Map.BuyNowButton.Click();
         }
     }
 }

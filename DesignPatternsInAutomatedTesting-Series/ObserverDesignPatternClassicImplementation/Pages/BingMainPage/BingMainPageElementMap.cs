@@ -17,18 +17,18 @@ namespace ObserverDesignPatternClassicImplementation.Pages
 {
     public class BingMainPageElementMap
     {
-        private readonly IWebDriver browser;
+        private readonly IWebDriver _browser;
 
         public BingMainPageElementMap(IWebDriver browser)
         {
-            this.browser = browser;
+            _browser = browser;
         }
 
         public IWebElement SearchBox 
         {
             get
             {
-                return this.browser.FindElement(By.Id("sb_form_q"));
+                return _browser.FindElement(By.Id("sb_form_q"));
             }
         }
 
@@ -36,7 +36,7 @@ namespace ObserverDesignPatternClassicImplementation.Pages
         {
             get
             {
-                return this.browser.FindElement(By.Id("sb_form_go"));
+                return _browser.FindElement(By.Id("sb_form_go"));
             }
         }
        
@@ -44,7 +44,7 @@ namespace ObserverDesignPatternClassicImplementation.Pages
         {
             get
             {
-                return this.browser.FindElement(By.Id("b_tween"));
+                return _browser.FindElement(By.Id("b_tween"));
             }
         }
     }

@@ -17,7 +17,7 @@ using OpenQA.Selenium;
 
 namespace SpecificationDesignPattern.BingMain
 {
-    public partial class BingMainPage : SpecificationDesignPattern.Base.BasePage
+    public partial class BingMainPage : Base.BasePage
     {
         public BingMainPage(IWebDriver driver) : base(driver)
         {
@@ -33,15 +33,15 @@ namespace SpecificationDesignPattern.BingMain
 
         public void Search(string textToType)
         {
-            this.SearchBox.Clear();
-            this.SearchBox.SendKeys(textToType);
-            this.GoButton.Click();
+            SearchBox.Clear();
+            SearchBox.SendKeys(textToType);
+            GoButton.Click();
         }
     
         public int GetResultsCount()
         {
-            int resultsCount = default(int);
-            resultsCount = int.Parse(this.ResultsCountDiv.Text);
+            var resultsCount = default(int);
+            resultsCount = int.Parse(ResultsCountDiv.Text);
             return resultsCount;
         }
     }

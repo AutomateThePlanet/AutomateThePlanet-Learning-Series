@@ -27,7 +27,7 @@ namespace ObserverDesignPatternClassicImplementation.Behaviors
 
         public override void PreTestInit(TestContext context, MemberInfo memberInfo)
         {
-            this.ThrowExceptionIfOwnerAttributeNotSet(memberInfo);
+            ThrowExceptionIfOwnerAttributeNotSet(memberInfo);
         }
 
         private void ThrowExceptionIfOwnerAttributeNotSet(MemberInfo memberInfo)

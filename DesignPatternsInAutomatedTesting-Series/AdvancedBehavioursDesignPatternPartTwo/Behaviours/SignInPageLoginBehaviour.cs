@@ -19,27 +19,27 @@ using Microsoft.Practices.Unity;
 
 namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {
-    public class SignInPageLoginBehaviour : AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core.WaitableActionBehaviour
+    public class SignInPageLoginBehaviour : Core.WaitableActionBehaviour
     {
-        private readonly SignInPage signInPage;
-        private readonly ShippingAddressPage shippingAddressPage;
-        private readonly AdvancedBehavioursDesignPatternPartTwo.Data.ClientLoginInfo clientLoginInfo;
+        private readonly SignInPage _signInPage;
+        private readonly ShippingAddressPage _shippingAddressPage;
+        private readonly Data.ClientLoginInfo _clientLoginInfo;
 
-        public SignInPageLoginBehaviour(AdvancedBehavioursDesignPatternPartTwo.Data.ClientLoginInfo clientLoginInfo)
+        public SignInPageLoginBehaviour(Data.ClientLoginInfo clientLoginInfo)
         {
-            this.signInPage = AdvancedBehavioursDesignPatternPartTwo.Base.UnityContainerFactory.GetContainer().Resolve<SignInPage>();
-            this.shippingAddressPage = AdvancedBehavioursDesignPatternPartTwo.Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
-            this.clientLoginInfo = clientLoginInfo;
+            _signInPage = Base.UnityContainerFactory.GetContainer().Resolve<SignInPage>();
+            _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
+            _clientLoginInfo = clientLoginInfo;
         }
 
         protected override void PerformAct()
         {
-            this.signInPage.Login(this.clientLoginInfo.Email, this.clientLoginInfo.Password);
+            _signInPage.Login(_clientLoginInfo.Email, _clientLoginInfo.Password);
         }
 
         protected override void PerformPostActWait()
         {
-            this.shippingAddressPage.WaitForPageToLoad();
+            _shippingAddressPage.WaitForPageToLoad();
         }
     }
 }

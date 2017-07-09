@@ -23,7 +23,7 @@ namespace FacadeDesignPattern.Pages.CheckoutPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("xo_tot_amt"));
+                return Browser.FindElement(By.Id("xo_tot_amt"));
             }
         }
     }

@@ -16,12 +16,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FacadeDesignPattern.Pages.ShippingAddressPage
 {
-    public class ShippingAddressPageValidator : FacadeDesignPattern.Core.BasePageValidator<ShippingAddressPageMap>
+    public class ShippingAddressPageValidator : Core.BasePageValidator<ShippingAddressPageMap>
     {
         public void Subtotal(string expectedSubtotal)
         {
             //AU $168.00
-            Assert.AreEqual<string>(expectedSubtotal, this.Map.Subtotal.Text);
+            Assert.AreEqual<string>(expectedSubtotal, Map.Subtotal.Text);
         }
     }
 }

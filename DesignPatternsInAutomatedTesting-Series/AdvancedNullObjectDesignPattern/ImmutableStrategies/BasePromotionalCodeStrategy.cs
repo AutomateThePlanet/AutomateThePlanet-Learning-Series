@@ -13,17 +13,17 @@
 // <site>http://automatetheplanet.com/</site>
 namespace AdvancedNullObjectDesignPattern.ImmutableStrategies
 {
-    using AdvancedNullObjectDesignPattern.Base;
+    using Base;
 
     public abstract class BasePromotionalCodeStrategy : IPurchasePromotionalCodeStrategy
     {
-        private static readonly NullPurchasePromotionalCodeStrategy nullPurchasePromotionalCodeStrategy = new NullPurchasePromotionalCodeStrategy();
+        private static readonly NullPurchasePromotionalCodeStrategy _nullPurchasePromotionalCodeStrategy = new NullPurchasePromotionalCodeStrategy();
 
-        public static NullPurchasePromotionalCodeStrategy NULL
+        public static NullPurchasePromotionalCodeStrategy Null
         {
             get
             {
-                return nullPurchasePromotionalCodeStrategy;
+                return _nullPurchasePromotionalCodeStrategy;
             }
         }
 

@@ -22,23 +22,23 @@ namespace PerfectSystemTestsDesign.Behaviours
 {
     public class ShippingAddressPageFillDifferentBillingBehaviour : ActionBehaviour
     {
-        private readonly ShippingAddressPage shippingAddressPage;
-        private readonly ShippingPaymentPage shippingPaymentPage;
-        private readonly PerfectSystemTestsDesign.Data.ClientPurchaseInfo clientPurchaseInfo;
+        private readonly ShippingAddressPage _shippingAddressPage;
+        private readonly ShippingPaymentPage _shippingPaymentPage;
+        private readonly ClientPurchaseInfo _clientPurchaseInfo;
 
         public ShippingAddressPageFillDifferentBillingBehaviour(ClientPurchaseInfo clientPurchaseInfo)
         {
-            this.shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
-            this.shippingPaymentPage = UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>();
-            this.clientPurchaseInfo = clientPurchaseInfo;
+            _shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
+            _shippingPaymentPage = UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>();
+            _clientPurchaseInfo = clientPurchaseInfo;
         }
 
         protected override void PerformAct()
         {
-            this.shippingAddressPage.ClickDifferentBillingCheckBox(this.clientPurchaseInfo);
-            this.shippingAddressPage.ClickContinueButton();
-            this.shippingPaymentPage.ClickBottomContinueButton();
-            this.shippingAddressPage.FillBillingInfo(this.clientPurchaseInfo);
+            _shippingAddressPage.ClickDifferentBillingCheckBox(_clientPurchaseInfo);
+            _shippingAddressPage.ClickContinueButton();
+            _shippingPaymentPage.ClickBottomContinueButton();
+            _shippingAddressPage.FillBillingInfo(_clientPurchaseInfo);
         }
     }
 }

@@ -35,12 +35,12 @@ namespace RulesDesignPattern
             
             var rulesEvaluator = new RulesEvaluator();
 
-            rulesEvaluator.Eval(new PromotionalPurchaseRule(purchaseTestInput, () => this.PerformUIAssert()));
-            rulesEvaluator.Eval(new CreditCardChargeRule(purchaseTestInput, 20, () => this.PerformUIAssert()));
-            rulesEvaluator.OtherwiseEval(new PromotionalPurchaseRule(purchaseTestInput, () => this.PerformUIAssert()));
+            rulesEvaluator.Eval(new PromotionalPurchaseRule(purchaseTestInput, () => PerformUiAssert()));
+            rulesEvaluator.Eval(new CreditCardChargeRule(purchaseTestInput, 20, () => PerformUiAssert()));
+            rulesEvaluator.OtherwiseEval(new PromotionalPurchaseRule(purchaseTestInput, () => PerformUiAssert()));
             rulesEvaluator.OtherwiseEval(new CreditCardChargeRule<CreditCardChargeRuleRuleResult>(purchaseTestInput, 30));
             rulesEvaluator.OtherwiseEval(new CreditCardChargeRule<CreditCardChargeRuleAssertResult>(purchaseTestInput, 40));
-            rulesEvaluator.OtherwiseEval(new CreditCardChargeRule(purchaseTestInput, 50, () => this.PerformUIAssert()));
+            rulesEvaluator.OtherwiseEval(new CreditCardChargeRule(purchaseTestInput, 50, () => PerformUiAssert()));
             rulesEvaluator.OtherwiseDo(() => Debug.WriteLine("Perform other UI actions"));          
             
             rulesEvaluator.EvaluateRulesChains();
@@ -61,14 +61,14 @@ namespace RulesDesignPattern
                 purchaseTestInput.IsPromotionalPurchase &&
                 purchaseTestInput.TotalPrice == 0)
             {
-                this.PerformUIAssert("Assert volume discount promotion amount. + additional UI actions");
+                PerformUiAssert("Assert volume discount promotion amount. + additional UI actions");
             }
             if (!string.IsNullOrEmpty(purchaseTestInput.CreditCardNumber) &&
                 !purchaseTestInput.IsWiretransfer &&
                 !purchaseTestInput.IsPromotionalPurchase &&
                 purchaseTestInput.TotalPrice > 20)
             {
-                this.PerformUIAssert("Assert that total amount label is over 20$ + additional UI actions");
+                PerformUiAssert("Assert that total amount label is over 20$ + additional UI actions");
             }
             else if (!string.IsNullOrEmpty(purchaseTestInput.CreditCardNumber) &&
                      !purchaseTestInput.IsWiretransfer &&
@@ -89,7 +89,7 @@ namespace RulesDesignPattern
                      !purchaseTestInput.IsPromotionalPurchase &&
                      purchaseTestInput.TotalPrice > 50)
             {
-                this.PerformUIAssert("Assert that total amount label is over 50$ + additional UI actions");
+                PerformUiAssert("Assert that total amount label is over 50$ + additional UI actions");
             }
             else
             {
@@ -97,7 +97,7 @@ namespace RulesDesignPattern
             }
         }
 
-        private void PerformUIAssert(string text = "Perform other UI actions")
+        private void PerformUiAssert(string text = "Perform other UI actions")
         {
             Debug.WriteLine(text);
         }

@@ -16,13 +16,13 @@ using OpenQA.Selenium;
 
 namespace FacadeDesignPattern.Pages.ItemPage
 {
-    public class ItemPageMap : FacadeDesignPattern.Core.BasePageElementMap
+    public class ItemPageMap : Core.BasePageElementMap
     {
         public IWebElement BuyNowButton
         {
             get
             {
-                return this.browser.FindElement(By.Id("binBtn_btn"));
+                return Browser.FindElement(By.Id("binBtn_btn"));
             }
         }
 
@@ -30,7 +30,7 @@ namespace FacadeDesignPattern.Pages.ItemPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("prcIsum"));
+                return Browser.FindElement(By.Id("prcIsum"));
             }
         }
     }

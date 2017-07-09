@@ -14,20 +14,20 @@
 
 namespace AdvancedSpecificationDesignPattern.Specifications.Core
 {
-    public class AndSpecification<TEntity> : AdvancedSpecificationDesignPattern.Specifications.Core.Specification<TEntity>
+    public class AndSpecification<TEntity> : Specification<TEntity>
     {
-        private readonly ISpecification<TEntity> leftSpecification;
-        private readonly ISpecification<TEntity> rightSpecification;
+        private readonly ISpecification<TEntity> _leftSpecification;
+        private readonly ISpecification<TEntity> _rightSpecification;
 
         public AndSpecification(ISpecification<TEntity> leftSpecification, ISpecification<TEntity> rightSpecification)
         {
-            this.leftSpecification = leftSpecification;
-            this.rightSpecification = rightSpecification;
+            _leftSpecification = leftSpecification;
+            _rightSpecification = rightSpecification;
         }
 
         public override bool IsSatisfiedBy(TEntity entity)
         {
-            return this.leftSpecification.IsSatisfiedBy(entity) && this.rightSpecification.IsSatisfiedBy(entity);
+            return _leftSpecification.IsSatisfiedBy(entity) && _rightSpecification.IsSatisfiedBy(entity);
         }
     }
 }

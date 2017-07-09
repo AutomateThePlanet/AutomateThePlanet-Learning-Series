@@ -13,16 +13,16 @@
 // <site>http://automatetheplanet.com/</site>
 namespace PerfectSystemTestsDesign.Behaviours.Core
 {
-    public class WaitableAssertableActionBehaviour : PerfectSystemTestsDesign.Behaviours.Core.IBehaviour
+    public class WaitableAssertableActionBehaviour : IBehaviour
     {
         public void Execute()
         {
-            this.PerformPreActWait();
-            this.PerformPreActAssert();
-            this.PerformAct();
-            this.PerformPostActAssert();
-            this.PerformPostActWait();
-            this.PerformPostActWaitAssert();
+            PerformPreActWait();
+            PerformPreActAssert();
+            PerformAct();
+            PerformPostActAssert();
+            PerformPostActWait();
+            PerformPostActWaitAssert();
         }
 
         protected virtual void PerformPreActWait()

@@ -18,17 +18,17 @@ namespace AdvancedNullObjectDesignPattern.SingletonStrategies
 {
     public class NullPurchasePromotionalCodeStrategy : IPurchasePromotionalCodeStrategy
     {
-        private static NullPurchasePromotionalCodeStrategy instance;
+        private static NullPurchasePromotionalCodeStrategy _instance;
 
-        public static NullPurchasePromotionalCodeStrategy NULL
+        public static NullPurchasePromotionalCodeStrategy Null
         {
             get
             {
-                if (instance == null)
+                if (_instance == null)
                 {
-                    instance = new NullPurchasePromotionalCodeStrategy();
+                    _instance = new NullPurchasePromotionalCodeStrategy();
                 }
-                return instance;
+                return _instance;
             }
         }
 

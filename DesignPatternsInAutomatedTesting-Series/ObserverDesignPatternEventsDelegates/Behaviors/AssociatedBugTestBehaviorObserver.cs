@@ -22,7 +22,7 @@ namespace ObserverDesignPatternEventsDelegates.Behaviors
     {
         protected override void PostTestCleanup(object sender, TestExecutionEventArgs e)
         {
-            int? bugId = this.TryGetBugId(e.MemberInfo);
+            var bugId = TryGetBugId(e.MemberInfo);
             if (bugId.HasValue)
             {
                 Console.WriteLine(string.Format("The test '{0}' is associated with bug id: {1}", e.TestContext.TestName, bugId.Value));
@@ -36,7 +36,7 @@ namespace ObserverDesignPatternEventsDelegates.Behaviors
         private int? TryGetBugId(MemberInfo memberInfo)
         {
             var knownIssueAttribute = memberInfo.GetCustomAttribute<KnownIssueAttribute>(true);
-            int? result = knownIssueAttribute == null ? null : (int?)knownIssueAttribute.BugId;
+            var result = knownIssueAttribute == null ? null : (int?)knownIssueAttribute.BugId;
             return result;
         }
     }

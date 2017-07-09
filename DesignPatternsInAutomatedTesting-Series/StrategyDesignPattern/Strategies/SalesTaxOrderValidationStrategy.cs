@@ -25,7 +25,7 @@ namespace StrategyDesignPattern.Strategies
     {
         public SalesTaxOrderValidationStrategy()
         {
-            this.SalesTaxCalculationService = new SalesTaxCalculationService();
+            SalesTaxCalculationService = new SalesTaxCalculationService();
         }
 
         public SalesTaxCalculationService SalesTaxCalculationService { get; set; }
@@ -33,8 +33,8 @@ namespace StrategyDesignPattern.Strategies
         public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
         {
             var currentState = (States)Enum.Parse(typeof(States), clientPurchaseInfo.ShippingInfo.State);
-            decimal currentItemPrice = decimal.Parse(itemsPrice);
-            decimal salesTax = this.SalesTaxCalculationService.Calculate(currentItemPrice, currentState, clientPurchaseInfo.ShippingInfo.Zip);
+            var currentItemPrice = decimal.Parse(itemsPrice);
+            var salesTax = SalesTaxCalculationService.Calculate(currentItemPrice, currentState, clientPurchaseInfo.ShippingInfo.Zip);
 
             PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(salesTax.ToString());
         }

@@ -20,14 +20,14 @@ namespace AdvancedStrategyDesignPattern.Data
     {
         public ClientPurchaseInfo(ClientAddressInfo addressInfo)
         {
-            this.BillingInfo = addressInfo;
-            this.ShippingInfo = addressInfo;
+            BillingInfo = addressInfo;
+            ShippingInfo = addressInfo;
         }
 
         public ClientPurchaseInfo(ClientAddressInfo billingInfo, ClientAddressInfo shippingInfo)
         {
-            this.BillingInfo = billingInfo;
-            this.ShippingInfo = shippingInfo;
+            BillingInfo = billingInfo;
+            ShippingInfo = shippingInfo;
         }
 
         public ClientAddressInfo BillingInfo { get; set; }

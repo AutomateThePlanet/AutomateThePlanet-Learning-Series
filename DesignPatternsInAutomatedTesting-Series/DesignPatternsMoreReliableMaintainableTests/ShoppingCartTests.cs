@@ -23,28 +23,28 @@ namespace DesignPatternsMoreReliableMaintainableTests
     [TestClass]
     public class ShoppingCartTests
     {
-        private IFactory<ShoppingCart> shoppingCartFactory;
-        private ShoppingCart shoppingCart;
-        private IWebDriver driver;
+        private IFactory<ShoppingCart> _shoppingCartFactory;
+        private ShoppingCart _shoppingCart;
+        private IWebDriver _driver;
 
         [TestInitialize]
         public void SetupTest()
         {
-            this.driver = new FirefoxDriver();
-            this.shoppingCartFactory = new ShoppingCartFactory(this.driver);
+            _driver = new FirefoxDriver();
+            _shoppingCartFactory = new ShoppingCartFactory(_driver);
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            this.driver.Quit();
+            _driver.Quit();
         }
 
         [TestMethod]
         public void Purchase_Book_Discounts()
         {
-            this.shoppingCart = this.shoppingCartFactory.Create();
-            this.shoppingCart.PurchaseItem("The Hitchhiker's Guide to the Galaxy", 22.2, new ClientInfo());
+            _shoppingCart = _shoppingCartFactory.Create();
+            _shoppingCart.PurchaseItem("The Hitchhiker's Guide to the Galaxy", 22.2, new ClientInfo());
         }
     }
 }

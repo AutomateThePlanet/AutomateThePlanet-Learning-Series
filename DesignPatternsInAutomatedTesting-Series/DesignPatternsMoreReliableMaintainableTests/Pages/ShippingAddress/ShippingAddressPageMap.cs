@@ -20,19 +20,19 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.ShippingAddress
 {
     public class ShippingAddressPageMap : BaseElementMap
     {
-        private readonly WebDriverWait driverWait;
+        private readonly WebDriverWait _driverWait;
 
         public ShippingAddressPageMap(IWebDriver driver) : base(driver)
         {
-            this.driverWait = new WebDriverWait(driver, new System.TimeSpan(0, 0, 30));
+            _driverWait = new WebDriverWait(driver, new System.TimeSpan(0, 0, 30));
         }
 
         public SelectElement CountryDropDown
         {
             get
             {
-                this.driverWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("country")); });
-                return new SelectElement(this.driver.FindElement(By.Name("country")));
+                _driverWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("country")); });
+                return new SelectElement(Driver.FindElement(By.Name("country")));
             }
         }
 
@@ -40,7 +40,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.ShippingAddress
         {
             get
             {
-                return this.driver.FindElement(By.Id("firstName"));
+                return Driver.FindElement(By.Id("firstName"));
             }
         }
 
@@ -48,7 +48,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.ShippingAddress
         {
             get
             {
-                return this.driver.FindElement(By.Id("lastName"));
+                return Driver.FindElement(By.Id("lastName"));
             }
         }
 
@@ -56,7 +56,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.ShippingAddress
         {
             get
             {
-                return this.driver.FindElement(By.Id("address1"));
+                return Driver.FindElement(By.Id("address1"));
             }
         }
 
@@ -64,7 +64,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.ShippingAddress
         {
             get
             {
-                return this.driver.FindElement(By.Id("city"));
+                return Driver.FindElement(By.Id("city"));
             }
         }
 
@@ -72,7 +72,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.ShippingAddress
         {
             get
             {
-                return this.driver.FindElement(By.Id("zip"));
+                return Driver.FindElement(By.Id("zip"));
             }
         }
 
@@ -80,7 +80,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.ShippingAddress
         {
             get
             {
-                return this.driver.FindElement(By.Id("dayphone1"));
+                return Driver.FindElement(By.Id("dayphone1"));
             }
         }
 
@@ -88,7 +88,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.ShippingAddress
         {
             get
             {
-                return this.driver.FindElement(By.Id("email"));
+                return Driver.FindElement(By.Id("email"));
             }
         }
 
@@ -96,7 +96,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.ShippingAddress
         {
             get
             {
-                return this.driver.FindElement(By.Id("xo_tot_amt"));
+                return Driver.FindElement(By.Id("xo_tot_amt"));
             }
         }
 
@@ -104,19 +104,19 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.ShippingAddress
         {
             get
             {
-                return this.driver.FindElement(By.Id("but_address_continue"));
+                return Driver.FindElement(By.Id("but_address_continue"));
             }
         }
 
         public void SwitchToShippingFrame()
         {
-            this.WaitForLogo();
-            this.driver.SwitchTo().Frame("shpFrame");
+            WaitForLogo();
+            Driver.SwitchTo().Frame("shpFrame");
         }
 
         private void WaitForLogo()
         {
-            this.driverWait.Until<IWebElement>((d) => { return d.FindElement(By.Id("gh-logo")); });
+            _driverWait.Until<IWebElement>((d) => { return d.FindElement(By.Id("gh-logo")); });
         }
     }
 }

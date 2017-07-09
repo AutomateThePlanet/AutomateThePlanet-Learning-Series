@@ -20,16 +20,16 @@ namespace ObserverDesignPatternIObservableIObserver
 {
     public class BaseTestBehaviorObserver : IObserver<ExecutionStatus>
     {
-        private IDisposable cancellation;
+        private IDisposable _cancellation;
 
         public virtual void Subscribe(IObservable<ExecutionStatus> provider)
         {
-            cancellation = provider.Subscribe(this);
+            _cancellation = provider.Subscribe(this);
         }
 
         public virtual void Unsubscribe()
         {
-            cancellation.Dispose();
+            _cancellation.Dispose();
         }
 
         public void OnNext(ExecutionStatus currentExecutionStatus)
@@ -37,19 +37,19 @@ namespace ObserverDesignPatternIObservableIObserver
             switch (currentExecutionStatus.ExecutionPhase)
             {
                 case ExecutionPhases.TestInstantiated:
-                    this.TestInstantiated(currentExecutionStatus.MemberInfo);
+                    TestInstantiated(currentExecutionStatus.MemberInfo);
                     break;
                 case ExecutionPhases.PreTestInit:
-                    this.PreTestInit(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
+                    PreTestInit(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
                     break;
                 case ExecutionPhases.PostTestInit:
-                    this.PostTestInit(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
+                    PostTestInit(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
                     break;
                 case ExecutionPhases.PreTestCleanup:
-                    this.PreTestCleanup(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
+                    PreTestCleanup(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
                     break;
                 case ExecutionPhases.PostTestCleanup:
-                    this.PostTestCleanup(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
+                    PostTestCleanup(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
                     break;
                 default:
                     break;

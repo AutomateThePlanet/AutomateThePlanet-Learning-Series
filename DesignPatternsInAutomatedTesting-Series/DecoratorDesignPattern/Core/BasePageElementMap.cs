@@ -18,18 +18,18 @@ namespace DecoratorDesignPattern.Core
 {
     public class BasePageElementMap
     {
-        protected IWebDriver browser;
-        protected WebDriverWait browserWait;
+        protected IWebDriver Browser;
+        protected WebDriverWait BrowserWait;
 
         public BasePageElementMap()
         {
-            this.browser = Driver.Browser;
-            this.browserWait = Driver.BrowserWait;
+            Browser = Driver.Browser;
+            BrowserWait = Driver.BrowserWait;
         }
 
         public void SwitchToDefault()
         {
-            this.browser.SwitchTo().DefaultContent();
+            Browser.SwitchTo().DefaultContent();
         }
     }
 }

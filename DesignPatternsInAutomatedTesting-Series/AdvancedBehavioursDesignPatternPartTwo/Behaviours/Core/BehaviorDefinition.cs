@@ -20,7 +20,7 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core
     {
         public BehaviorDefinition(Type behaviorType)
         {
-            this.BehaviorType = behaviorType;
+            BehaviorType = behaviorType;
         }
 
         internal Type BehaviorType { get; private set; }

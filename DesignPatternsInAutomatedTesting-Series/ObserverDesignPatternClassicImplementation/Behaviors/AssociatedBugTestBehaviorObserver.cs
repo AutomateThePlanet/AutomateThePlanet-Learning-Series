@@ -26,7 +26,7 @@ namespace ObserverDesignPatternClassicImplementation.Behaviors
 
         public override void PostTestCleanup(TestContext context, MemberInfo memberInfo)
         {
-            int? bugId = this.TryGetBugId(context, memberInfo);
+            var bugId = TryGetBugId(context, memberInfo);
             if (bugId.HasValue)
             {
                 Console.WriteLine(string.Format("The test '{0}' is associated with bug id: {1}", context.TestName, bugId.Value));
@@ -39,8 +39,8 @@ namespace ObserverDesignPatternClassicImplementation.Behaviors
 
         private int? TryGetBugId(TestContext context, MemberInfo memberInfo)
         {
-            var knownIssueAttribute = memberInfo.GetCustomAttribute<ObserverDesignPatternClassicImplementation.Attributes.KnownIssueAttribute>(true);
-            int? result = knownIssueAttribute == null ? null : (int?)knownIssueAttribute.BugId;
+            var knownIssueAttribute = memberInfo.GetCustomAttribute<Attributes.KnownIssueAttribute>(true);
+            var result = knownIssueAttribute == null ? null : (int?)knownIssueAttribute.BugId;
             return result;
         }
     }

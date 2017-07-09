@@ -14,7 +14,7 @@
 
 namespace FacadeDesignPattern.Pages.SignInPage
 {
-    public class SignInPageValidator : FacadeDesignPattern.Core.BasePageValidator<SignInPageMap>
+    public class SignInPageValidator : Core.BasePageValidator<SignInPageMap>
     {
     }
 }

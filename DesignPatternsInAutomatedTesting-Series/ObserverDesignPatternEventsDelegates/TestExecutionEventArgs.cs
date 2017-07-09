@@ -19,20 +19,20 @@ namespace ObserverDesignPatternEventsDelegates
 {
     public class TestExecutionEventArgs : EventArgs
     {
-        private readonly TestContext testContext;
-        private readonly MemberInfo memberInfo;
+        private readonly TestContext _testContext;
+        private readonly MemberInfo _memberInfo;
 
         public TestExecutionEventArgs(TestContext context, MemberInfo memberInfo)
         {
-            this.testContext = context;
-            this.memberInfo = memberInfo;
+            _testContext = context;
+            _memberInfo = memberInfo;
         }
 
         public MemberInfo MemberInfo
         {
             get
             {
-                return this.memberInfo;
+                return _memberInfo;
             }
         }
 
@@ -40,7 +40,7 @@ namespace ObserverDesignPatternEventsDelegates
         {
             get
             {
-                return this.testContext;
+                return _testContext;
             }
         }
     }

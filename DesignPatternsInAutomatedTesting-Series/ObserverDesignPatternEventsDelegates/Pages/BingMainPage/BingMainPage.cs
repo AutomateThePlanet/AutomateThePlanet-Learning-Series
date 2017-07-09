@@ -17,37 +17,37 @@ namespace ObserverDesignPatternEventsDelegates.Pages
 {
     public class BingMainPage
     {
-        private readonly IWebDriver browser;
-        private readonly string url = @"http://www.bing.com/";
+        private readonly IWebDriver _browser;
+        private readonly string _url = @"http://www.bing.com/";
 
         public BingMainPage(IWebDriver browser)
         {
-            this.browser = browser;
+            _browser = browser;
         }
 
         protected BingMainPageElementMap Map
         {
             get
             {
-                return new BingMainPageElementMap(this.browser);
+                return new BingMainPageElementMap(_browser);
             }
         }
 
         public BingMainPageValidator Validate()
         {
-            return new BingMainPageValidator(this.browser);
+            return new BingMainPageValidator(_browser);
         }
 
         public void Navigate()
         {
-            this.browser.Navigate().GoToUrl(this.url);
+            _browser.Navigate().GoToUrl(_url);
         }
 
         public void Search(string textToType)
         {
-            this.Map.SearchBox.Clear();
-            this.Map.SearchBox.SendKeys(textToType);
-            this.Map.GoButton.Click();
+            Map.SearchBox.Clear();
+            Map.SearchBox.SendKeys(textToType);
+            Map.GoButton.Click();
         }
     }
 }

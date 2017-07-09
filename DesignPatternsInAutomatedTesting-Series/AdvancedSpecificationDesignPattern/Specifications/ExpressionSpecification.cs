@@ -19,7 +19,7 @@ namespace AdvancedSpecificationDesignPattern.Specifications
 {
     public class ExpressionSpecification<TEntity> : Specification<TEntity>
     {
-        private readonly Func<TEntity, bool> expression;
+        private readonly Func<TEntity, bool> _expression;
 
         public ExpressionSpecification(Func<TEntity, bool> expression)
         {
@@ -27,12 +27,12 @@ namespace AdvancedSpecificationDesignPattern.Specifications
             {
                 throw new ArgumentNullException();
             }
-            this.expression = expression;
+            _expression = expression;
         }
 
         public override bool IsSatisfiedBy(TEntity entity)
         {
-            return this.expression(entity);
+            return _expression(entity);
         }
     }
 }

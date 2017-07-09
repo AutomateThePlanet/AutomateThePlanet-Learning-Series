@@ -19,17 +19,17 @@ namespace BehavioursDesignPattern.Behaviours
 {
     public class ShippingAddressPageFillShippingBehaviour : Behaviour
     {
-        private readonly ShippingAddressPage shippingAddressPage;
+        private readonly ShippingAddressPage _shippingAddressPage;
 
         // This version is compatible only with UnityBehaviorEngine.
         public ShippingAddressPageFillShippingBehaviour(ShippingAddressPage shippingAddressPage)
         {
-            this.shippingAddressPage = shippingAddressPage;
+            _shippingAddressPage = shippingAddressPage;
         }
 
         public override void PerformAct()
         {
-            this.shippingAddressPage.FillShippingInfo(PurchaseTestContext.ClientPurchaseInfo);
+            _shippingAddressPage.FillShippingInfo(PurchaseTestContext.ClientPurchaseInfo);
         }
     }
 }

@@ -20,16 +20,16 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {
     public class ItemPageBuyBehaviour : ActionBehaviour
     {
-        private readonly ItemPage itemPage;
+        private readonly ItemPage _itemPage;
 
         public ItemPageBuyBehaviour()
         {
-            this.itemPage = AdvancedBehavioursDesignPatternPartTwo.Base.UnityContainerFactory.GetContainer().Resolve<ItemPage>(); 
+            _itemPage = Base.UnityContainerFactory.GetContainer().Resolve<ItemPage>(); 
         }
 
         protected override void PerformAct()
         {
-            this.itemPage.ClickBuyNowButton();
+            _itemPage.ClickBuyNowButton();
         }
     }
 }

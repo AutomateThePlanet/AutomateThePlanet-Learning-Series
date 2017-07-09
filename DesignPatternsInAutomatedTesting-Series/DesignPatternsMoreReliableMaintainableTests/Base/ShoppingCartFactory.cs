@@ -22,19 +22,19 @@ namespace DesignPatternsMoreReliableMaintainableTests.Base
 {
     public class ShoppingCartFactory : IFactory<ShoppingCart>
     {
-        private readonly IWebDriver driver;
+        private readonly IWebDriver _driver;
 
         public ShoppingCartFactory(IWebDriver driver)
         {
-            this.driver = driver;
+            _driver = driver;
         }
 
         public ShoppingCart Create()
         {
-            var itemPage = new ItemPage(this.driver);
-            var signInPage = new SignInPage(this.driver);
-            var checkoutPage = new CheckoutPage(this.driver);
-            var shippingAddressPage = new ShippingAddressPage(this.driver);
+            var itemPage = new ItemPage(_driver);
+            var signInPage = new SignInPage(_driver);
+            var checkoutPage = new CheckoutPage(_driver);
+            var shippingAddressPage = new ShippingAddressPage(_driver);
             var purchaseFacade = new ShoppingCart(itemPage, signInPage, checkoutPage, shippingAddressPage);
             return purchaseFacade;
         }

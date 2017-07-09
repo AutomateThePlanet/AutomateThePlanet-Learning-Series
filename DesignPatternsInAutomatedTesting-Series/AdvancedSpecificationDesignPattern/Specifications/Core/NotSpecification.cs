@@ -14,18 +14,18 @@
 
 namespace AdvancedSpecificationDesignPattern.Specifications.Core
 {
-    public class NotSpecification<TEntity> : AdvancedSpecificationDesignPattern.Specifications.Core.Specification<TEntity>
+    public class NotSpecification<TEntity> : Specification<TEntity>
     {
-        private readonly ISpecification<TEntity> specification;
+        private readonly ISpecification<TEntity> _specification;
 
         public NotSpecification(ISpecification<TEntity> specification)
         {
-            this.specification = specification;
+            _specification = specification;
         }
 
         public override bool IsSatisfiedBy(TEntity entity)
         {
-            return !this.specification.IsSatisfiedBy(entity);
+            return !_specification.IsSatisfiedBy(entity);
         }
     }
 }

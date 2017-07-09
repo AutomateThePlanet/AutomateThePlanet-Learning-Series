@@ -20,7 +20,7 @@ namespace SingletonDesignPattern.Pages.BingMainPageSingletonDerived
     {
         public void ResultsCount(string expectedCount)
         {
-            Assert.IsTrue(this.Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
+            Assert.IsTrue(Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
         }
     }
 }

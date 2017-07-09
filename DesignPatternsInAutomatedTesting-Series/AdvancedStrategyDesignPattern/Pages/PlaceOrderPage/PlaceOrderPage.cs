@@ -14,7 +14,7 @@
 
 namespace AdvancedStrategyDesignPattern.Pages.PlaceOrderPage
 {
-    public class PlaceOrderPage : AdvancedStrategyDesignPattern.Core.BasePageSingleton<PlaceOrderPage, PlaceOrderPageMap, PlaceOrderPageValidator>
+    public class PlaceOrderPage : Core.BasePageSingleton<PlaceOrderPage, PlaceOrderPageMap, PlaceOrderPageValidator>
     {
     }
 }

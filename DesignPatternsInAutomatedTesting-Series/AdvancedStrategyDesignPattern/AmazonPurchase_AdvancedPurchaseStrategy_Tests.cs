@@ -20,7 +20,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AdvancedStrategyDesignPattern
 {
     [TestClass]
-    public class AmazonPurchase_AdvancedPurchaseStrategy_Tests
+    public class AmazonPurchaseAdvancedPurchaseStrategyTests
     { 
         [TestInitialize]
         public void SetupTest()
@@ -37,8 +37,8 @@ namespace AdvancedStrategyDesignPattern
         [TestMethod]
         public void Purchase_SeleniumTestingToolsCookbook()
         {
-            string itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
-            string itemPrice = "40.49";
+            var itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
+            var itemPrice = "40.49";
             var shippingInfo = new ClientAddressInfo()
             {
                 FullName = "John Smith",
@@ -68,7 +68,7 @@ namespace AdvancedStrategyDesignPattern
                 Password = "ASDFG_12345"
             };
 
-            new AdvancedStrategyDesignPattern.Base.PurchaseContext(new SalesTaxOrderPurchaseStrategy(), new VatTaxOrderPurchaseStrategy(), new GiftOrderPurchaseStrategy())
+            new Base.PurchaseContext(new SalesTaxOrderPurchaseStrategy(), new VatTaxOrderPurchaseStrategy(), new GiftOrderPurchaseStrategy())
                                                                                                                                                                            .PurchaseItem(itemUrl, itemPrice, clientLoginInfo, clientPurchaseInfo);
         }
     }

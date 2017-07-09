@@ -19,17 +19,17 @@ namespace BehavioursDesignPattern.Behaviours
 {
     public class ItemPageNavigationBehaviour : Behaviour
     {
-        private readonly ItemPage itemPage;
+        private readonly ItemPage _itemPage;
 
         // This version is compatible only with UnityBehaviorEngine.
         public ItemPageNavigationBehaviour(ItemPage itemPage)
         {
-            this.itemPage = itemPage;
+            _itemPage = itemPage;
         }
 
         public override void PerformAct()
         {
-            this.itemPage.Navigate(PurchaseTestContext.ItemUrl);
+            _itemPage.Navigate(PurchaseTestContext.ItemUrl);
         }
     }
 }

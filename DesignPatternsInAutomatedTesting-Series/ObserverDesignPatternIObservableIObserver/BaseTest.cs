@@ -22,15 +22,15 @@ namespace ObserverDesignPatternIObservableIObserver
     [TestClass]
     public class BaseTest
     {
-        private readonly MSTestExecutionProvider currentTestExecutionProvider;
-        private TestContext testContextInstance;
+        private readonly MsTestExecutionProvider _currentTestExecutionProvider;
+        private TestContext _testContextInstance;
 
         public BaseTest()
         {
-            this.currentTestExecutionProvider = new MSTestExecutionProvider();
-            this.InitializeTestExecutionBehaviorObservers(this.currentTestExecutionProvider);
-            var memberInfo = MethodInfo.GetCurrentMethod();
-            this.currentTestExecutionProvider.TestInstantiated(memberInfo);
+            _currentTestExecutionProvider = new MsTestExecutionProvider();
+            InitializeTestExecutionBehaviorObservers(_currentTestExecutionProvider);
+            var memberInfo = MethodBase.GetCurrentMethod();
+            _currentTestExecutionProvider.TestInstantiated(memberInfo);
         }
 
         public string BaseUrl { get; set; }
@@ -41,11 +41,11 @@ namespace ObserverDesignPatternIObservableIObserver
         {
             get
             {
-                return testContextInstance;
+                return _testContextInstance;
             }
             set
             {
-                testContextInstance = value;
+                _testContextInstance = value;
             }
         }
 
@@ -53,7 +53,7 @@ namespace ObserverDesignPatternIObservableIObserver
         {
             get
             {
-                return this.TestContext.TestName;
+                return TestContext.TestName;
             }
         }
 
@@ -71,18 +71,18 @@ namespace ObserverDesignPatternIObservableIObserver
         public void CoreTestInit()
         {
             var memberInfo = GetCurrentExecutionMethodInfo();
-            this.currentTestExecutionProvider.PreTestInit(this.TestContext, memberInfo);
-            this.TestInit();
-            this.currentTestExecutionProvider.PostTestInit(this.TestContext, memberInfo);
+            _currentTestExecutionProvider.PreTestInit(TestContext, memberInfo);
+            TestInit();
+            _currentTestExecutionProvider.PostTestInit(TestContext, memberInfo);
         }
 
         [TestCleanup]
         public void CoreTestCleanup()
         {
             var memberInfo = GetCurrentExecutionMethodInfo();
-            this.currentTestExecutionProvider.PreTestCleanup(this.TestContext, memberInfo);
-            this.TestCleanup();
-            this.currentTestExecutionProvider.PostTestCleanup(this.TestContext, memberInfo);
+            _currentTestExecutionProvider.PreTestCleanup(TestContext, memberInfo);
+            TestCleanup();
+            _currentTestExecutionProvider.PostTestCleanup(TestContext, memberInfo);
         }
 
         public virtual void TestInit()
@@ -95,11 +95,11 @@ namespace ObserverDesignPatternIObservableIObserver
 
         private MethodInfo GetCurrentExecutionMethodInfo()
         {
-            var memberInfo = this.GetType().GetMethod(this.TestContext.TestName);
+            var memberInfo = GetType().GetMethod(TestContext.TestName);
             return memberInfo;
         }
 
-        private void InitializeTestExecutionBehaviorObservers(MSTestExecutionProvider currentTestExecutionProvider)
+        private void InitializeTestExecutionBehaviorObservers(MsTestExecutionProvider currentTestExecutionProvider)
         {
             new AssociatedBugTestBehaviorObserver().Subscribe(currentTestExecutionProvider);
             new BrowserLaunchTestBehaviorObserver().Subscribe(currentTestExecutionProvider);

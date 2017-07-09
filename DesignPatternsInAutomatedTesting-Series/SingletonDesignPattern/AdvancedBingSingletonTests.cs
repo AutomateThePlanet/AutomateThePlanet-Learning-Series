@@ -45,9 +45,9 @@ namespace SingletonDesignPattern
         [TestMethod]
         public void SearchTextInBing_Advanced_PageObjectPattern_Singleton()
         {
-            SingletonDesignPattern.Pages.BingMainPageSingletonDerived.BingMainPage.Instance.Navigate();
-            SingletonDesignPattern.Pages.BingMainPageSingletonDerived.BingMainPage.Instance.Search("Automate The Planet");
-            SingletonDesignPattern.Pages.BingMainPageSingletonDerived.BingMainPage.Instance.Validate().ResultsCount(",000 RESULTS");
+            Pages.BingMainPageSingletonDerived.BingMainPage.Instance.Navigate();
+            Pages.BingMainPageSingletonDerived.BingMainPage.Instance.Search("Automate The Planet");
+            Pages.BingMainPageSingletonDerived.BingMainPage.Instance.Validate().ResultsCount(",000 RESULTS");
         }
     }
 }

@@ -19,50 +19,50 @@ namespace BehavioursDesignPattern.Behaviours.Core
 {
     public class UnityBehaviourEngine
     {
-        private readonly IUnityContainer unityContainer;
-        private readonly Dictionary<Type, Dictionary<BehaviourActions, Action>> overridenBehavioursActions;
+        private readonly IUnityContainer _unityContainer;
+        private readonly Dictionary<Type, Dictionary<BehaviourActions, Action>> _overridenBehavioursActions;
 
         public UnityBehaviourEngine(IUnityContainer unityContainer)
         {
-            this.unityContainer = unityContainer;
-            this.overridenBehavioursActions = new Dictionary<Type, Dictionary<BehaviourActions, Action>>();
+            _unityContainer = unityContainer;
+            _overridenBehavioursActions = new Dictionary<Type, Dictionary<BehaviourActions, Action>>();
         }
 
         public void Execute(params Type[] pageBehaviours)
         {
-            foreach (Type pageBehaviour in pageBehaviours)
+            foreach (var pageBehaviour in pageBehaviours)
             {
-                var currentbehaviour = this.unityContainer.Resolve(pageBehaviour) as Behaviour;
-                this.ExecuteBehaviourOperation(pageBehaviour, BehaviourActions.PreActAsserts, () => currentbehaviour.PerformPreActAsserts());
-                this.ExecuteBehaviourOperation(pageBehaviour, BehaviourActions.Act, () => currentbehaviour.PerformAct());
-                this.ExecuteBehaviourOperation(pageBehaviour, BehaviourActions.PostActAsserts, () => currentbehaviour.PerformPostActAsserts());
-                this.ExecuteBehaviourOperation(pageBehaviour, BehaviourActions.PostAct, () => currentbehaviour.PerformPostAct());
+                var currentbehaviour = _unityContainer.Resolve(pageBehaviour) as Behaviour;
+                ExecuteBehaviourOperation(pageBehaviour, BehaviourActions.PreActAsserts, () => currentbehaviour.PerformPreActAsserts());
+                ExecuteBehaviourOperation(pageBehaviour, BehaviourActions.Act, () => currentbehaviour.PerformAct());
+                ExecuteBehaviourOperation(pageBehaviour, BehaviourActions.PostActAsserts, () => currentbehaviour.PerformPostActAsserts());
+                ExecuteBehaviourOperation(pageBehaviour, BehaviourActions.PostAct, () => currentbehaviour.PerformPostAct());
             }
         }
 
-        public void ConfugureCustomBehaviour<ТBehavior>(BehaviourActions behaviourAction, Action action)
-            where ТBehavior : IBehaviour
+        public void ConfugureCustomBehaviour<TТBehavior>(BehaviourActions behaviourAction, Action action)
+            where TТBehavior : IBehaviour
         {
-            if (!this.overridenBehavioursActions.ContainsKey(typeof(ТBehavior)))
+            if (!_overridenBehavioursActions.ContainsKey(typeof(TТBehavior)))
             {
-                this.overridenBehavioursActions.Add(typeof(ТBehavior), new Dictionary<BehaviourActions, Action>());
+                _overridenBehavioursActions.Add(typeof(TТBehavior), new Dictionary<BehaviourActions, Action>());
             }
-            if (!this.overridenBehavioursActions[typeof(ТBehavior)].ContainsKey(behaviourAction))
+            if (!_overridenBehavioursActions[typeof(TТBehavior)].ContainsKey(behaviourAction))
             {
-                this.overridenBehavioursActions[typeof(ТBehavior)].Add(behaviourAction, action);
+                _overridenBehavioursActions[typeof(TТBehavior)].Add(behaviourAction, action);
             }
             else
             {
-                this.overridenBehavioursActions[typeof(ТBehavior)][behaviourAction] = action;
+                _overridenBehavioursActions[typeof(TТBehavior)][behaviourAction] = action;
             }
         }
 
         private void ExecuteBehaviourOperation(Type pageBehaviour, BehaviourActions behaviourAction, Action defaultBehaviourOperation)
         {
-            if (this.overridenBehavioursActions.ContainsKey(pageBehaviour.GetType()) &&
-                this.overridenBehavioursActions[pageBehaviour.GetType()].ContainsKey(behaviourAction))
+            if (_overridenBehavioursActions.ContainsKey(pageBehaviour.GetType()) &&
+                _overridenBehavioursActions[pageBehaviour.GetType()].ContainsKey(behaviourAction))
             {
-                this.overridenBehavioursActions[pageBehaviour.GetType()][behaviourAction].Invoke();
+                _overridenBehavioursActions[pageBehaviour.GetType()][behaviourAction].Invoke();
             }
             else
             {

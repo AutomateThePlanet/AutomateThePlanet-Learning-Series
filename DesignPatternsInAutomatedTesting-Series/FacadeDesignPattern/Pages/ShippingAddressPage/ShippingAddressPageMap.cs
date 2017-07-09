@@ -24,8 +24,8 @@ namespace FacadeDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                this.browserWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("country")); });
-                return new SelectElement(this.browser.FindElement(By.Name("country")));
+                BrowserWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("country")); });
+                return new SelectElement(Browser.FindElement(By.Name("country")));
             }
         }
 
@@ -33,7 +33,7 @@ namespace FacadeDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("firstName"));
+                return Browser.FindElement(By.Id("firstName"));
             }
         }
 
@@ -41,7 +41,7 @@ namespace FacadeDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("lastName"));
+                return Browser.FindElement(By.Id("lastName"));
             }
         }
 
@@ -49,7 +49,7 @@ namespace FacadeDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("address1"));
+                return Browser.FindElement(By.Id("address1"));
             }
         }
 
@@ -57,7 +57,7 @@ namespace FacadeDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("city"));
+                return Browser.FindElement(By.Id("city"));
             }
         }
 
@@ -65,7 +65,7 @@ namespace FacadeDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("zip"));
+                return Browser.FindElement(By.Id("zip"));
             }
         }
 
@@ -73,7 +73,7 @@ namespace FacadeDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("dayphone1"));
+                return Browser.FindElement(By.Id("dayphone1"));
             }
         }
 
@@ -81,7 +81,7 @@ namespace FacadeDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("email"));
+                return Browser.FindElement(By.Id("email"));
             }
         }
 
@@ -89,7 +89,7 @@ namespace FacadeDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("xo_tot_amt"));
+                return Browser.FindElement(By.Id("xo_tot_amt"));
             }
         }
 
@@ -97,19 +97,19 @@ namespace FacadeDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("but_address_continue"));
+                return Browser.FindElement(By.Id("but_address_continue"));
             }
         }
 
         public void SwitchToShippingFrame()
         {
-            this.WaitForLogo();
-            this.browser.SwitchTo().Frame("shpFrame");
+            WaitForLogo();
+            Browser.SwitchTo().Frame("shpFrame");
         }
 
         private void WaitForLogo()
         {
-            this.browserWait.Until<IWebElement>((d) => { return d.FindElement(By.Id("gh-logo")); });
+            BrowserWait.Until<IWebElement>((d) => { return d.FindElement(By.Id("gh-logo")); });
         }
     }
 }

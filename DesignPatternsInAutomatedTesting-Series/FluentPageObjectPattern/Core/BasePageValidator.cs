@@ -14,27 +14,27 @@
 
 namespace FluentPageObjectPattern.Core
 {
-    public class BasePageValidator<S, M, V>
-        where S : FluentPageObjectPattern.Core.BaseFluentPageSingleton<S, M, V>
-        where M : FluentPageObjectPattern.Core.BasePageElementMap, new()
-        where V : BasePageValidator<S, M, V>, new()
+    public class BasePageValidator<TS, TM, TV>
+        where TS : BaseFluentPageSingleton<TS, TM, TV>
+        where TM : BasePageElementMap, new()
+        where TV : BasePageValidator<TS, TM, TV>, new()
     {
-        protected S pageInstance;
+        protected TS PageInstance;
 
-        public BasePageValidator(S currentInstance)
+        public BasePageValidator(TS currentInstance)
         {
-            this.pageInstance = currentInstance;
+            PageInstance = currentInstance;
         }
 
         public BasePageValidator()
         {
         }
 
-        protected M Map
+        protected TM Map
         {
             get
             {
-                return new M();
+                return new TM();
             }
         }
     }

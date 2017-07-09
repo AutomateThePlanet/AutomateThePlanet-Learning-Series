@@ -16,13 +16,13 @@ using OpenQA.Selenium;
 
 namespace AdvancedStrategyDesignPattern.Pages.PreviewShoppingCartPage
 {
-    public class PreviewShoppingCartPageMap : AdvancedStrategyDesignPattern.Core.BasePageElementMap
+    public class PreviewShoppingCartPageMap : Core.BasePageElementMap
     {
         public IWebElement ProceedToCheckoutButton
         {
             get
             {
-                return this.browser.FindElement(By.Id("hlb-ptc-btn-native"));
+                return Browser.FindElement(By.Id("hlb-ptc-btn-native"));
             }
         }
 
@@ -30,7 +30,7 @@ namespace AdvancedStrategyDesignPattern.Pages.PreviewShoppingCartPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("a-autoid-0-announce"));
+                return Browser.FindElement(By.Id("a-autoid-0-announce"));
             }
         }
 
@@ -38,7 +38,7 @@ namespace AdvancedStrategyDesignPattern.Pages.PreviewShoppingCartPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("sc-buy-box-gift-checkbox"));
+                return Browser.FindElement(By.Id("sc-buy-box-gift-checkbox"));
             }
         }
     }

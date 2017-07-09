@@ -23,7 +23,7 @@ namespace DecoratorDesignPattern.Pages.SignInPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("signInSubmit-input"));
+                return Browser.FindElement(By.Id("signInSubmit-input"));
             }
         }
 
@@ -31,7 +31,7 @@ namespace DecoratorDesignPattern.Pages.SignInPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("ap_password"));
+                return Browser.FindElement(By.Id("ap_password"));
             }
         }
 
@@ -39,7 +39,7 @@ namespace DecoratorDesignPattern.Pages.SignInPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("ap_email"));
+                return Browser.FindElement(By.Id("ap_email"));
             }
         }
     }

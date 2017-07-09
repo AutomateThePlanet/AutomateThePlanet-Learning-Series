@@ -24,14 +24,14 @@ namespace IoCContainerPageObjectPattern.WikipediaMainPage
 
         public void Search(string textToType)
         {
-            this.Map.SearchBox.Clear();
-            this.Map.SearchBox.SendKeys(textToType);
-            this.Map.SearchBox.Click();
+            Map.SearchBox.Clear();
+            Map.SearchBox.SendKeys(textToType);
+            Map.SearchBox.Click();
         }
 
         public void ToggleContents()
         {
-            this.Map.ContentsToggleLink.Click();
+            Map.ContentsToggleLink.Click();
         }
     }
 }

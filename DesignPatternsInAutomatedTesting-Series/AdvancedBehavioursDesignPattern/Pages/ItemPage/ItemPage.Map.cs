@@ -21,7 +21,7 @@ namespace AdvancedBehavioursDesignPattern.Pages.ItemPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("add-to-cart-button"));
+                return Driver.FindElement(By.Id("add-to-cart-button"));
             }
         }
 
@@ -29,7 +29,7 @@ namespace AdvancedBehavioursDesignPattern.Pages.ItemPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("productTitle"));
+                return Driver.FindElement(By.Id("productTitle"));
             }
         }
     }

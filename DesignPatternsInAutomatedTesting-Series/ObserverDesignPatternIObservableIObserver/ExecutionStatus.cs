@@ -31,9 +31,9 @@ namespace ObserverDesignPatternIObservableIObserver
 
         public ExecutionStatus(TestContext testContext, MemberInfo memberInfo, ExecutionPhases executionPhase)
         {
-            this.TestContext = testContext;
-            this.MemberInfo = memberInfo;
-            this.ExecutionPhase = executionPhase;
+            TestContext = testContext;
+            MemberInfo = memberInfo;
+            ExecutionPhase = executionPhase;
         }
     }
 }

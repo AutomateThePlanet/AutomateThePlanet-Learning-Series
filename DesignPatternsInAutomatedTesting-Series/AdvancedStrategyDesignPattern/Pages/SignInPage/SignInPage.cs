@@ -14,13 +14,13 @@
 
 namespace AdvancedStrategyDesignPattern.Pages.SignInPage
 {
-    public class SignInPage : AdvancedStrategyDesignPattern.Core.BasePageSingleton<SignInPage, SignInPageMap>
+    public class SignInPage : Core.BasePageSingleton<SignInPage, SignInPageMap>
     {
         public void Login(string email, string password)
         {
-            this.Map.EmailInput.SendKeys(email);
-            this.Map.PasswordInput.SendKeys(password);
-            this.Map.SignInButton.Click();
+            Map.EmailInput.SendKeys(email);
+            Map.PasswordInput.SendKeys(password);
+            Map.SignInButton.Click();
         }
     }
 }

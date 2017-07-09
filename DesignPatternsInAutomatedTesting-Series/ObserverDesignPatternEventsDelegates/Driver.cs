@@ -20,23 +20,23 @@ namespace ObserverDesignPatternEventsDelegates
 {
     public static class Driver
     {
-        private static WebDriverWait browserWait;
+        private static WebDriverWait _browserWait;
 
-        private static IWebDriver browser;
+        private static IWebDriver _browser;
 
         public static IWebDriver Browser
         {
             get
             {
-                if (browser == null)
+                if (_browser == null)
                 {
                     throw new NullReferenceException("The WebDriver browser instance was not initialized. You should first call the method Start.");
                 }
-                return browser;
+                return _browser;
             }
             private set
             {
-                browser = value;
+                _browser = value;
             }
         }
 
@@ -44,15 +44,15 @@ namespace ObserverDesignPatternEventsDelegates
         {
             get
             {
-                if (browserWait == null || browser == null)
+                if (_browserWait == null || _browser == null)
                 {
                     throw new NullReferenceException("The WebDriver browser wait instance was not initialized. You should first call the method Start.");
                 }
-                return browserWait;
+                return _browserWait;
             }
             private set
             {
-                browserWait = value;
+                _browserWait = value;
             }
         }
 
@@ -61,7 +61,7 @@ namespace ObserverDesignPatternEventsDelegates
             switch (browserType)
             {
                 case BrowserTypes.Firefox:
-                    Driver.Browser = new FirefoxDriver();
+                    Browser = new FirefoxDriver();
                     break;
                 case BrowserTypes.InternetExplorer:
                     break;
@@ -70,7 +70,7 @@ namespace ObserverDesignPatternEventsDelegates
                 default:
                     break;
             }
-            BrowserWait = new WebDriverWait(Driver.Browser, TimeSpan.FromSeconds(defaultTimeOut));
+            BrowserWait = new WebDriverWait(Browser, TimeSpan.FromSeconds(defaultTimeOut));
         }
 
         public static void StopBrowser()

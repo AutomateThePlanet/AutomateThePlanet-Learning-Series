@@ -20,7 +20,7 @@ namespace BehavioursDesignPattern.Behaviours.Core
     {
         public static void Execute(params Type[] pageBehaviours)
         {
-            foreach (Type pageBehaviour in pageBehaviours)
+            foreach (var pageBehaviour in pageBehaviours)
             {
                 var currentbehaviour = Activator.CreateInstance(pageBehaviour) as Behaviour;
                 currentbehaviour.PerformPreActAsserts();

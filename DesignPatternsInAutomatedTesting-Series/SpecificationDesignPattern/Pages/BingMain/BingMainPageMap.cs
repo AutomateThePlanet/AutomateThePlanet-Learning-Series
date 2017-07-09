@@ -26,7 +26,7 @@ namespace SpecificationDesignPattern.Pages.BingMain
         {
             get
             {
-                return this.driver.FindElement(By.Id("sb_form_q"));
+                return Driver.FindElement(By.Id("sb_form_q"));
             }
         }
 
@@ -34,7 +34,7 @@ namespace SpecificationDesignPattern.Pages.BingMain
         {
             get
             {
-                return this.driver.FindElement(By.Id("sb_form_go"));
+                return Driver.FindElement(By.Id("sb_form_go"));
             }
         }
        
@@ -42,7 +42,7 @@ namespace SpecificationDesignPattern.Pages.BingMain
         {
             get
             {
-                return this.driver.FindElement(By.Id("b_tween"));
+                return Driver.FindElement(By.Id("b_tween"));
             }
         }
     }

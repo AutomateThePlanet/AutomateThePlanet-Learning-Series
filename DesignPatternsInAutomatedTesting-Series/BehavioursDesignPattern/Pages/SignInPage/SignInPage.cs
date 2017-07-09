@@ -25,9 +25,9 @@ namespace BehavioursDesignPattern.Pages.SignInPage
 
         public void Login(string email, string password)
         {
-            this.EmailInput.SendKeys(email);
-            this.PasswordInput.SendKeys(password);
-            this.SignInButton.Click();
+            EmailInput.SendKeys(email);
+            PasswordInput.SendKeys(password);
+            SignInButton.Click();
         }
 
         public void WaitForPageToLoad()

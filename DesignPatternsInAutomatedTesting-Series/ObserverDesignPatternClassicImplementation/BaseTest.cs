@@ -21,15 +21,15 @@ namespace ObserverDesignPatternClassicImplementation
     [TestClass]
     public class BaseTest
     {
-        private readonly ITestExecutionSubject currentTestExecutionSubject;
-        private TestContext testContextInstance;
+        private readonly ITestExecutionSubject _currentTestExecutionSubject;
+        private TestContext _testContextInstance;
 
         public BaseTest()
         {
-            this.currentTestExecutionSubject = new MSTestExecutionSubject();
-            this.InitializeTestExecutionBehaviorObservers(this.currentTestExecutionSubject);
-            var memberInfo = MethodInfo.GetCurrentMethod();
-            this.currentTestExecutionSubject.TestInstantiated(memberInfo);
+            _currentTestExecutionSubject = new MsTestExecutionSubject();
+            InitializeTestExecutionBehaviorObservers(_currentTestExecutionSubject);
+            var memberInfo = MethodBase.GetCurrentMethod();
+            _currentTestExecutionSubject.TestInstantiated(memberInfo);
         }
 
         public string BaseUrl { get; set; }
@@ -40,11 +40,11 @@ namespace ObserverDesignPatternClassicImplementation
         {
             get
             {
-                return testContextInstance;
+                return _testContextInstance;
             }
             set
             {
-                testContextInstance = value;
+                _testContextInstance = value;
             }
         }
 
@@ -52,7 +52,7 @@ namespace ObserverDesignPatternClassicImplementation
         {
             get
             {
-                return this.TestContext.TestName;
+                return TestContext.TestName;
             }
         }
 
@@ -70,18 +70,18 @@ namespace ObserverDesignPatternClassicImplementation
         public void CoreTestInit()
         {
             var memberInfo = GetCurrentExecutionMethodInfo();
-            this.currentTestExecutionSubject.PreTestInit(this.TestContext, memberInfo);
-            this.TestInit();
-            this.currentTestExecutionSubject.PostTestInit(this.TestContext, memberInfo);
+            _currentTestExecutionSubject.PreTestInit(TestContext, memberInfo);
+            TestInit();
+            _currentTestExecutionSubject.PostTestInit(TestContext, memberInfo);
         }
 
         [TestCleanup]
         public void CoreTestCleanup()
         {
             var memberInfo = GetCurrentExecutionMethodInfo();
-            this.currentTestExecutionSubject.PreTestCleanup(this.TestContext, memberInfo);
-            this.TestCleanup();
-            this.currentTestExecutionSubject.PostTestCleanup(this.TestContext, memberInfo);
+            _currentTestExecutionSubject.PreTestCleanup(TestContext, memberInfo);
+            TestCleanup();
+            _currentTestExecutionSubject.PostTestCleanup(TestContext, memberInfo);
 
         }
 
@@ -95,7 +95,7 @@ namespace ObserverDesignPatternClassicImplementation
 
         private MethodInfo GetCurrentExecutionMethodInfo()
         {
-            var memberInfo = this.GetType().GetMethod(this.TestContext.TestName);
+            var memberInfo = GetType().GetMethod(TestContext.TestName);
             return memberInfo;
         }
 

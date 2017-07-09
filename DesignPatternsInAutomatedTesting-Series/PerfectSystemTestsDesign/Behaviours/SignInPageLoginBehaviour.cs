@@ -18,27 +18,27 @@ using PerfectSystemTestsDesign.Pages.SignInPage;
 
 namespace PerfectSystemTestsDesign.Behaviours
 {
-    public class SignInPageLoginBehaviour : PerfectSystemTestsDesign.Behaviours.Core.WaitableActionBehaviour
+    public class SignInPageLoginBehaviour : Core.WaitableActionBehaviour
     {
-        private readonly SignInPage signInPage;
-        private readonly ShippingAddressPage shippingAddressPage;
-        private readonly PerfectSystemTestsDesign.Data.ClientLoginInfo clientLoginInfo;
+        private readonly SignInPage _signInPage;
+        private readonly ShippingAddressPage _shippingAddressPage;
+        private readonly Data.ClientLoginInfo _clientLoginInfo;
 
-        public SignInPageLoginBehaviour(PerfectSystemTestsDesign.Data.ClientLoginInfo clientLoginInfo)
+        public SignInPageLoginBehaviour(Data.ClientLoginInfo clientLoginInfo)
         {
-            this.signInPage = PerfectSystemTestsDesign.Base.UnityContainerFactory.GetContainer().Resolve<SignInPage>();
-            this.shippingAddressPage = PerfectSystemTestsDesign.Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
-            this.clientLoginInfo = clientLoginInfo;
+            _signInPage = Base.UnityContainerFactory.GetContainer().Resolve<SignInPage>();
+            _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
+            _clientLoginInfo = clientLoginInfo;
         }
 
         protected override void PerformPostActWait()
         {
-            this.shippingAddressPage.WaitForPageToLoad();
+            _shippingAddressPage.WaitForPageToLoad();
         }
 
         protected override void PerformAct()
         {
-            this.signInPage.Login(this.clientLoginInfo.Email, this.clientLoginInfo.Password);
+            _signInPage.Login(_clientLoginInfo.Email, _clientLoginInfo.Password);
         }
     }
 }

@@ -23,8 +23,8 @@ namespace AdvancedNullObjectDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                this.driverWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("enterAddressCountryCode")); });
-                return new SelectElement(this.driver.FindElement(By.Name("enterAddressCountryCode")));
+                DriverWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("enterAddressCountryCode")); });
+                return new SelectElement(Driver.FindElement(By.Name("enterAddressCountryCode")));
             }
         }
 
@@ -32,7 +32,7 @@ namespace AdvancedNullObjectDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressFullName"));
+                return Driver.FindElement(By.Id("enterAddressFullName"));
             }
         }
 
@@ -40,7 +40,7 @@ namespace AdvancedNullObjectDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressAddressLine1"));
+                return Driver.FindElement(By.Id("enterAddressAddressLine1"));
             }
         }
 
@@ -48,7 +48,7 @@ namespace AdvancedNullObjectDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressCity"));
+                return Driver.FindElement(By.Id("enterAddressCity"));
             }
         }
 
@@ -56,7 +56,7 @@ namespace AdvancedNullObjectDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressPostalCode"));
+                return Driver.FindElement(By.Id("enterAddressPostalCode"));
             }
         }
 
@@ -64,7 +64,7 @@ namespace AdvancedNullObjectDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("enterAddressPhoneNumber"));
+                return Driver.FindElement(By.Id("enterAddressPhoneNumber"));
             }
         }
 
@@ -72,7 +72,7 @@ namespace AdvancedNullObjectDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return new SelectElement(this.driver.FindElement(By.Name("AddressType")));
+                return new SelectElement(Driver.FindElement(By.Name("AddressType")));
             }
         }
 
@@ -80,7 +80,7 @@ namespace AdvancedNullObjectDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//input[@value='Continue']"));
+                return Driver.FindElement(By.XPath("//input[@value='Continue']"));
             }
         }
 
@@ -88,7 +88,7 @@ namespace AdvancedNullObjectDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.driver.FindElement(By.CssSelector("input.a-button-text"));
+                return Driver.FindElement(By.CssSelector("input.a-button-text"));
             }
         }
 
@@ -96,7 +96,7 @@ namespace AdvancedNullObjectDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("isBillingAddress"));
+                return Driver.FindElement(By.Id("isBillingAddress"));
             }
         }
     }

@@ -23,14 +23,14 @@ namespace StrategyDesignPattern.Strategies
     {
         public GiftOrderValidationStrategy()
         {
-            this.GiftWrappingPriceCalculationService = new GiftWrappingPriceCalculationService();
+            GiftWrappingPriceCalculationService = new GiftWrappingPriceCalculationService();
         }
 
         public GiftWrappingPriceCalculationService GiftWrappingPriceCalculationService { get; set; }
 
         public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
         {
-            decimal giftWrapPrice = this.GiftWrappingPriceCalculationService.Calculate(clientPurchaseInfo.GiftWrapping);
+            var giftWrapPrice = GiftWrappingPriceCalculationService.Calculate(clientPurchaseInfo.GiftWrapping);
 
             PlaceOrderPage.Instance.Validate().GiftWrapPrice(giftWrapPrice.ToString());
         }

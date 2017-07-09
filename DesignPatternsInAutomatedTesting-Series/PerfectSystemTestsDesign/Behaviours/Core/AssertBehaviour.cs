@@ -17,7 +17,7 @@ namespace PerfectSystemTestsDesign.Behaviours.Core
     {
         public void Execute()
         {
-            this.Assert();
+            Assert();
         }
 
         protected abstract void Assert();

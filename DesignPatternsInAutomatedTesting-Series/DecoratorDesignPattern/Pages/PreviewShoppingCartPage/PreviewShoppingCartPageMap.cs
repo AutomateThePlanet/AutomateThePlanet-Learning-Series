@@ -23,7 +23,7 @@ namespace DecoratorDesignPattern.Pages.PreviewShoppingCartPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("hlb-ptc-btn-native"));
+                return Browser.FindElement(By.Id("hlb-ptc-btn-native"));
             }
         }
 
@@ -31,7 +31,7 @@ namespace DecoratorDesignPattern.Pages.PreviewShoppingCartPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("a-autoid-0-announce"));
+                return Browser.FindElement(By.Id("a-autoid-0-announce"));
             }
         }
 
@@ -39,7 +39,7 @@ namespace DecoratorDesignPattern.Pages.PreviewShoppingCartPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("sc-buy-box-gift-checkbox"));
+                return Browser.FindElement(By.Id("sc-buy-box-gift-checkbox"));
             }
         }
     }

@@ -19,27 +19,27 @@ using DecoratorDesignPattern.Services;
 
 namespace DecoratorDesignPattern.Advanced.Strategies
 {
-    public class VatTaxOrderPurchaseStrategy : DecoratorDesignPattern.Advanced.Strategies.OrderPurchaseStrategyDecorator
+    public class VatTaxOrderPurchaseStrategy : OrderPurchaseStrategyDecorator
     {
-        private readonly VatTaxCalculationService vatTaxCalculationService;
-        private decimal vatTax;     
+        private readonly VatTaxCalculationService _vatTaxCalculationService;
+        private decimal _vatTax;     
 
-        public VatTaxOrderPurchaseStrategy(DecoratorDesignPattern.Advanced.Strategies.OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, DecoratorDesignPattern.Data.ClientPurchaseInfo clientPurchaseInfo) : base(orderPurchaseStrategy, itemsPrice, clientPurchaseInfo)
+        public VatTaxOrderPurchaseStrategy(OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, Data.ClientPurchaseInfo clientPurchaseInfo) : base(orderPurchaseStrategy, itemsPrice, clientPurchaseInfo)
         {
-            this.vatTaxCalculationService = new VatTaxCalculationService();
+            _vatTaxCalculationService = new VatTaxCalculationService();
         }
 
         public override decimal CalculateTotalPrice()
         {
-            var currentCountry = (Countries)Enum.Parse(typeof(Countries), this.clientPurchaseInfo.BillingInfo.Country);
-            this.vatTax = this.vatTaxCalculationService.Calculate(this.itemsPrice, currentCountry);
-            return this.orderPurchaseStrategy.CalculateTotalPrice() + this.vatTax;
+            var currentCountry = (Countries)Enum.Parse(typeof(Countries), ClientPurchaseInfo.BillingInfo.Country);
+            _vatTax = _vatTaxCalculationService.Calculate(ItemsPrice, currentCountry);
+            return OrderPurchaseStrategy.CalculateTotalPrice() + _vatTax;
         }
 
         public override void ValidateOrderSummary(decimal totalPrice)
         {
-            base.orderPurchaseStrategy.ValidateOrderSummary(totalPrice);
-            PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(this.vatTax.ToString());
+            OrderPurchaseStrategy.ValidateOrderSummary(totalPrice);
+            PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(_vatTax.ToString());
         }
     }
 }

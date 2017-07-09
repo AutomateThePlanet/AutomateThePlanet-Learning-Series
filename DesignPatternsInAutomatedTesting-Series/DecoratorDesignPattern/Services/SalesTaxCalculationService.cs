@@ -16,31 +16,31 @@ namespace DecoratorDesignPattern.Services
 {
     public class SalesTaxCalculationService
     {
-        public decimal Calculate(decimal price, DecoratorDesignPattern.Enums.States state, string zip)
+        public decimal Calculate(decimal price, Enums.States state, string zip)
         {
-            decimal taxPrice = default(decimal);
+            var taxPrice = default(decimal);
             // Call Real Web Service to determine the Sales Tax.
             switch (state)
             {
-                case DecoratorDesignPattern.Enums.States.Arizona:
+                case Enums.States.Arizona:
                     taxPrice = CalculateTaxPriceInternal(price, 7.125, zip);
                     break;
-                case DecoratorDesignPattern.Enums.States.Illinois:
+                case Enums.States.Illinois:
                     taxPrice = CalculateTaxPriceInternal(price, 3.75, zip);
                     break;
-                case DecoratorDesignPattern.Enums.States.Massachusetts:
+                case Enums.States.Massachusetts:
                     taxPrice = CalculateTaxPriceInternal(price, 6.25, zip);
                     break;
-                case DecoratorDesignPattern.Enums.States.California:
+                case Enums.States.California:
                     taxPrice = CalculateTaxPriceInternal(price, 2.50, zip);
                     break;
-                case DecoratorDesignPattern.Enums.States.Washington:
+                case Enums.States.Washington:
                     taxPrice = CalculateTaxPriceInternal(price, 3.10, zip);
                     break;
-                case DecoratorDesignPattern.Enums.States.NewJersey:
+                case Enums.States.NewJersey:
                     taxPrice = CalculateTaxPriceInternal(price, 7.00, zip);
                     break;
-                case DecoratorDesignPattern.Enums.States.Texas:
+                case Enums.States.Texas:
                     taxPrice = CalculateTaxPriceInternal(price, 8.15, zip);
                     break;
                 default:
@@ -53,7 +53,7 @@ namespace DecoratorDesignPattern.Services
 
         private static decimal CalculateTaxPriceInternal(decimal price, double percent, string zip)
         {
-            decimal taxPrice = price / (decimal)percent;
+            var taxPrice = price / (decimal)percent;
             return taxPrice;
         }
     }

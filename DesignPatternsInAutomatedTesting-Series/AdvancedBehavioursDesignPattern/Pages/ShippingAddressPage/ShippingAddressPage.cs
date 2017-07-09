@@ -25,39 +25,39 @@ namespace AdvancedBehavioursDesignPattern.Pages.ShippingAddressPage
 
         public void ClickContinueButton()
         {
-            this.ContinueButton.Click();
+            ContinueButton.Click();
         }
 
-        public void FillShippingInfo(AdvancedBehavioursDesignPattern.Data.ClientPurchaseInfo clientInfo)
+        public void FillShippingInfo(Data.ClientPurchaseInfo clientInfo)
         {
-            this.FillAddressInfoInternal(clientInfo);
+            FillAddressInfoInternal(clientInfo);
         }
 
-        public void ClickDifferentBillingCheckBox(AdvancedBehavioursDesignPattern.Data.ClientPurchaseInfo clientInfo)
-        {
-            if (clientInfo.BillingInfo != null)
-            {
-                this.DifferemtFromBillingCheckbox.Click();
-            }
-        }
-
-        public void FillBillingInfo(AdvancedBehavioursDesignPattern.Data.ClientPurchaseInfo clientInfo)
+        public void ClickDifferentBillingCheckBox(Data.ClientPurchaseInfo clientInfo)
         {
             if (clientInfo.BillingInfo != null)
             {
-                this.FillAddressInfoInternal(clientInfo);
+                DifferemtFromBillingCheckbox.Click();
             }
         }
 
-        private void FillAddressInfoInternal(AdvancedBehavioursDesignPattern.Data.ClientPurchaseInfo clientInfo)
+        public void FillBillingInfo(Data.ClientPurchaseInfo clientInfo)
         {
-            this.CountryDropDown.SelectByText(clientInfo.ShippingInfo.Country);
-            this.FullNameInput.SendKeys(clientInfo.ShippingInfo.FullName);
-            this.Address1Input.SendKeys(clientInfo.ShippingInfo.Address1);
-            this.CityInput.SendKeys(clientInfo.ShippingInfo.City);
-            this.ZipInput.SendKeys(clientInfo.ShippingInfo.Zip);
-            this.PhoneInput.SendKeys(clientInfo.ShippingInfo.Phone);
-            this.ShipToThisAddress.Click();
+            if (clientInfo.BillingInfo != null)
+            {
+                FillAddressInfoInternal(clientInfo);
+            }
+        }
+
+        private void FillAddressInfoInternal(Data.ClientPurchaseInfo clientInfo)
+        {
+            CountryDropDown.SelectByText(clientInfo.ShippingInfo.Country);
+            FullNameInput.SendKeys(clientInfo.ShippingInfo.FullName);
+            Address1Input.SendKeys(clientInfo.ShippingInfo.Address1);
+            CityInput.SendKeys(clientInfo.ShippingInfo.City);
+            ZipInput.SendKeys(clientInfo.ShippingInfo.Zip);
+            PhoneInput.SendKeys(clientInfo.ShippingInfo.Phone);
+            ShipToThisAddress.Click();
         }
 
         public void WaitForPageToLoad()

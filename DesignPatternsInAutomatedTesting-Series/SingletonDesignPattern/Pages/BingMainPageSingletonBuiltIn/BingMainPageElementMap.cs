@@ -23,7 +23,7 @@ namespace SingletonDesignPattern.Pages.BingMainPageSingletonBuiltIn
         {
             get
             {
-                return this.browser.FindElement(By.Id("sb_form_q"));
+                return Browser.FindElement(By.Id("sb_form_q"));
             }
         }
 
@@ -31,7 +31,7 @@ namespace SingletonDesignPattern.Pages.BingMainPageSingletonBuiltIn
         {
             get
             {
-                return this.browser.FindElement(By.Id("sb_form_go"));
+                return Browser.FindElement(By.Id("sb_form_go"));
             }
         }
        
@@ -39,7 +39,7 @@ namespace SingletonDesignPattern.Pages.BingMainPageSingletonBuiltIn
         {
             get
             {
-                return this.browser.FindElement(By.Id("b_tween"));
+                return Browser.FindElement(By.Id("b_tween"));
             }
         }
     }

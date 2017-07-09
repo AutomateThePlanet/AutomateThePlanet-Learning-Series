@@ -27,7 +27,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.Checkout
         {
             get
             {
-                return this.driver.FindElement(By.Id("xo_tot_amt"));
+                return Driver.FindElement(By.Id("xo_tot_amt"));
             }
         }
     }

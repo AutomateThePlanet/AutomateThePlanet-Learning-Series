@@ -18,8 +18,8 @@ namespace AdvancedBehavioursDesignPattern.Behaviours.Core
     {
         public void Execute()
         {
-            this.PerformAct();
-            this.PerformPostActWait();
+            PerformAct();
+            PerformPostActWait();
         }
 
         protected abstract void PerformAct();

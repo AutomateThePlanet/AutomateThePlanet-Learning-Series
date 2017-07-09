@@ -21,7 +21,7 @@ namespace PerfectSystemTestsDesign.Pages.ShippingPaymentPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id='shippingOptionFormId']/div[3]/div/div/span[1]/span/input"));
+                return Driver.FindElement(By.XPath("//*[@id='shippingOptionFormId']/div[3]/div/div/span[1]/span/input"));
             }
         }
 
@@ -29,7 +29,7 @@ namespace PerfectSystemTestsDesign.Pages.ShippingPaymentPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("continue-top"));
+                return Driver.FindElement(By.Id("continue-top"));
             }
         }
     }

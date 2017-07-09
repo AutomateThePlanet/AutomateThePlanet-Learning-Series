@@ -16,13 +16,13 @@ using OpenQA.Selenium;
 
 namespace StrategyDesignPattern.Pages.ItemPage
 {
-    public class ItemPageMap : StrategyDesignPattern.Core.BasePageElementMap
+    public class ItemPageMap : Core.BasePageElementMap
     {
         public IWebElement AddToCartButton
         {
             get
             {
-                return this.browser.FindElement(By.Id("add-to-cart-button"));
+                return Browser.FindElement(By.Id("add-to-cart-button"));
             }
         }
 
@@ -30,7 +30,7 @@ namespace StrategyDesignPattern.Pages.ItemPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("productTitle"));
+                return Browser.FindElement(By.Id("productTitle"));
             }
         }
     }

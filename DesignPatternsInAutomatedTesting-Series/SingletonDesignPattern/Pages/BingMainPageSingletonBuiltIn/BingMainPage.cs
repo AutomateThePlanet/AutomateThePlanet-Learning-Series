@@ -16,7 +16,7 @@ using SingletonDesignPattern.Core;
 
 namespace SingletonDesignPattern.Pages.BingMainPageSingletonBuiltIn
 {
-    public class BingMainPage : BasePage<SingletonDesignPattern.Pages.BingMainPageSingletonBuiltIn.BingMainPageElementMap, SingletonDesignPattern.Pages.BingMainPageSingletonBuiltIn.BingMainPageValidator>
+    public class BingMainPage : BasePage<BingMainPageElementMap, BingMainPageValidator>
     {
         public BingMainPage() : base(@"http://www.bing.com/")
         {
@@ -24,9 +24,9 @@ namespace SingletonDesignPattern.Pages.BingMainPageSingletonBuiltIn
 
         public void Search(string textToType)
         {
-            this.Map.SearchBox.Clear();
-            this.Map.SearchBox.SendKeys(textToType);
-            this.Map.GoButton.Click();
+            Map.SearchBox.Clear();
+            Map.SearchBox.SendKeys(textToType);
+            Map.GoButton.Click();
         }
     }
 }

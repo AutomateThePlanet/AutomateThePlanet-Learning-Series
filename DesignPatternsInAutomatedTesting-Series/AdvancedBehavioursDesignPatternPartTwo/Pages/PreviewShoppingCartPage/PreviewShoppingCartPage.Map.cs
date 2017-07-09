@@ -22,7 +22,7 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Pages.PreviewShoppingCartPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("hlb-ptc-btn-native"));
+                return Driver.FindElement(By.Id("hlb-ptc-btn-native"));
             }
         }
 
@@ -30,7 +30,7 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Pages.PreviewShoppingCartPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("sc-buy-box-gift-checkbox"));
+                return Driver.FindElement(By.Id("sc-buy-box-gift-checkbox"));
             }
         }
     }

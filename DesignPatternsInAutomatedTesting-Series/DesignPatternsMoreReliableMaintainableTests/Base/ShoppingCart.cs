@@ -22,32 +22,32 @@ namespace DesignPatternsMoreReliableMaintainableTests.Base
 {
     public class ShoppingCart
     {
-        private readonly IItemPage itemPage;
+        private readonly IItemPage _itemPage;
 
-        private readonly ISignInPage signInPage;
+        private readonly ISignInPage _signInPage;
 
-        private readonly ICheckoutPage checkoutPage;
+        private readonly ICheckoutPage _checkoutPage;
 
-        private readonly IShippingAddressPage shippingAddressPage;
+        private readonly IShippingAddressPage _shippingAddressPage;
 
         public ShoppingCart(IItemPage itemPage, ISignInPage signInPage, ICheckoutPage checkoutPage, IShippingAddressPage shippingAddressPage)
         {
-            this.itemPage = itemPage;
-            this.signInPage = signInPage;
-            this.checkoutPage = checkoutPage;
-            this.shippingAddressPage = shippingAddressPage;
+            _itemPage = itemPage;
+            _signInPage = signInPage;
+            _checkoutPage = checkoutPage;
+            _shippingAddressPage = shippingAddressPage;
         }
 
         public void PurchaseItem(string item, double itemPrice, ClientInfo clientInfo)
         {
-            this.itemPage.Open(item);
-            this.itemPage.AssertPrice(itemPrice);
-            this.itemPage.ClickBuyNowButton();
-            this.signInPage.ClickContinueAsGuestButton();
-            this.shippingAddressPage.FillShippingInfo(clientInfo);
-            this.shippingAddressPage.AssertSubtotalAmount(itemPrice);
-            this.shippingAddressPage.ClickContinueButton();
-            this.checkoutPage.AssertSubtotal(itemPrice);
+            _itemPage.Open(item);
+            _itemPage.AssertPrice(itemPrice);
+            _itemPage.ClickBuyNowButton();
+            _signInPage.ClickContinueAsGuestButton();
+            _shippingAddressPage.FillShippingInfo(clientInfo);
+            _shippingAddressPage.AssertSubtotalAmount(itemPrice);
+            _shippingAddressPage.ClickContinueButton();
+            _checkoutPage.AssertSubtotal(itemPrice);
         }
     }
 }

@@ -20,10 +20,10 @@ namespace AdvancedSpecificationDesignPattern
     {
         public OrderTestContext(PurchaseTestInput purchaseTestInput, OrderTestContextConfigurator orderTestContextConfigurator)
         {
-            this.PurchaseTestInput = purchaseTestInput;
-            this.IsPromoCodePurchase = orderTestContextConfigurator.FreePurchaseSpecification.Or(orderTestContextConfigurator.PromotionalPurchaseSpecification).
+            PurchaseTestInput = purchaseTestInput;
+            IsPromoCodePurchase = orderTestContextConfigurator.FreePurchaseSpecification.Or(orderTestContextConfigurator.PromotionalPurchaseSpecification).
             IsSatisfiedBy(purchaseTestInput);
-            this.IsCreditCardPurchase =
+            IsCreditCardPurchase =
                 orderTestContextConfigurator.CreditCardSpecification.And(orderTestContextConfigurator.WiretransferSpecification.Not()).And(orderTestContextConfigurator.FreePurchaseSpecification.Not()).And(orderTestContextConfigurator.PromotionalPurchaseSpecification.Not()).
                 IsSatisfiedBy(purchaseTestInput);
         }

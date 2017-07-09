@@ -18,12 +18,12 @@ namespace AdvancedSpecificationDesignPattern.Specifications.Core
     {
         public static ISpecification<TEntity> And<TEntity>(this ISpecification<TEntity> leftSpecification, ISpecification<TEntity> rightSpecification)
         {
-            return new AdvancedSpecificationDesignPattern.Specifications.Core.AndSpecification<TEntity>(leftSpecification, rightSpecification);
+            return new AndSpecification<TEntity>(leftSpecification, rightSpecification);
         }
 
         public static ISpecification<TEntity> Or<TEntity>(this ISpecification<TEntity> leftSpecification, ISpecification<TEntity> rightSpecification)
         {
-            return new AdvancedSpecificationDesignPattern.Specifications.Core.OrSpecification<TEntity>(leftSpecification, rightSpecification);
+            return new OrSpecification<TEntity>(leftSpecification, rightSpecification);
         }
 
         public static ISpecification<TEntity> Not<TEntity>(this ISpecification<TEntity> specification)

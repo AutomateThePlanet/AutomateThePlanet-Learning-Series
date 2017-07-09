@@ -23,7 +23,7 @@ namespace DecoratorDesignPattern.Pages.ItemPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("add-to-cart-button"));
+                return Browser.FindElement(By.Id("add-to-cart-button"));
             }
         }
 
@@ -31,7 +31,7 @@ namespace DecoratorDesignPattern.Pages.ItemPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("productTitle"));
+                return Browser.FindElement(By.Id("productTitle"));
             }
         }
     }

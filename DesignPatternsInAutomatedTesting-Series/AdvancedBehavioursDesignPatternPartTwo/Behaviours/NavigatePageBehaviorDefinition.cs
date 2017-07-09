@@ -21,7 +21,7 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
         public NavigatePageBehaviorDefinition(string expectedUrl) : 
             base(typeof(NavigatePageBehavior))
         {
-            this.ExpectedUrl = expectedUrl;
+            ExpectedUrl = expectedUrl;
         }
 
         internal string ExpectedUrl { get; private set; }

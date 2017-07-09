@@ -20,18 +20,18 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {
     public class ItemPageNavigationBehaviour : ActionBehaviour
     {
-        private readonly ItemPage itemPage;
-        private readonly string itemUrl;
+        private readonly ItemPage _itemPage;
+        private readonly string _itemUrl;
 
         public ItemPageNavigationBehaviour(string itemUrl)
         {
-            this.itemPage = AdvancedBehavioursDesignPatternPartTwo.Base.UnityContainerFactory.GetContainer().Resolve<ItemPage>();
-            this.itemUrl = itemUrl;
+            _itemPage = Base.UnityContainerFactory.GetContainer().Resolve<ItemPage>();
+            _itemUrl = itemUrl;
         }
 
         protected override void PerformAct()
         {
-            this.itemPage.Navigate(this.itemUrl);
+            _itemPage.Navigate(_itemUrl);
         }
     }
 }

@@ -16,11 +16,11 @@ using System.Linq;
 
 namespace IoCContainerPageObjectPattern.Base
 {
-    public interface IPage<M, V>
-        where M : BasePageElementMap, new()
-        where V : BasePageValidator<M>, new()
+    public interface IPage<TM, TV>
+        where TM : BasePageElementMap, new()
+        where TV : BasePageValidator<TM>, new()
     {
-        V Validate();
+        TV Validate();
 
         void Navigate(string part = "");
     }

@@ -14,16 +14,16 @@
 
 namespace AdvancedStrategyDesignPattern.Pages.PreviewShoppingCartPage
 {
-    public class PreviewShoppingCartPage : AdvancedStrategyDesignPattern.Core.BasePageSingleton<PreviewShoppingCartPage, PreviewShoppingCartPageMap>
+    public class PreviewShoppingCartPage : Core.BasePageSingleton<PreviewShoppingCartPage, PreviewShoppingCartPageMap>
     {
         public void ClickProceedToCheckoutButton()
         {
-            this.Map.ProceedToCheckoutButton.Click();
+            Map.ProceedToCheckoutButton.Click();
         }
 
         public void CheckOrderContainsGift()
         {
-            this.Map.ThisOrderContainsGiftCheckbox.Click();
+            Map.ThisOrderContainsGiftCheckbox.Click();
         }
     }
 }

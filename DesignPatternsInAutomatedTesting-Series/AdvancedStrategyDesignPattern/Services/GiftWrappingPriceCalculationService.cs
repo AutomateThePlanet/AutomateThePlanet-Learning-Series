@@ -20,7 +20,7 @@ namespace AdvancedStrategyDesignPattern.Services
     {
         public decimal Calculate(GiftWrappingStyles giftWrappingStyle)
         {
-            decimal giftWrappingPrice = default(decimal);
+            var giftWrappingPrice = default(decimal);
 
             // Call Real Web Service to determine the Gift Wrapping Tax.
             switch (giftWrappingStyle)

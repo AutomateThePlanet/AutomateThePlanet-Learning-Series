@@ -17,7 +17,7 @@ namespace PerfectSystemTestsDesign.Behaviours.Core
     {
         public void Execute()
         {
-            this.PerformAct();
+            PerformAct();
         }
 
         protected abstract void PerformAct();

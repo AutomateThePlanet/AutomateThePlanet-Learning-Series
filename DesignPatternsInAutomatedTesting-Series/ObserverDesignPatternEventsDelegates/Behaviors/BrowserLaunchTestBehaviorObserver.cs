@@ -22,7 +22,7 @@ namespace ObserverDesignPatternEventsDelegates.Behaviors
     {
         protected override void PreTestInit(object sender, TestExecutionEventArgs e)
         {
-            var browserType = this.GetExecutionBrowser(e.MemberInfo);
+            var browserType = GetExecutionBrowser(e.MemberInfo);
             Driver.StartBrowser(browserType);
         }
 
@@ -33,9 +33,9 @@ namespace ObserverDesignPatternEventsDelegates.Behaviors
 
         private BrowserTypes GetExecutionBrowser(MemberInfo memberInfo)
         {
-            BrowserTypes result = BrowserTypes.Firefox;
-            BrowserTypes classBrowserType = this.GetExecutionBrowserClassLevel(memberInfo.DeclaringType);
-            BrowserTypes methodBrowserType = this.GetExecutionBrowserMethodLevel(memberInfo);
+            var result = BrowserTypes.Firefox;
+            var classBrowserType = GetExecutionBrowserClassLevel(memberInfo.DeclaringType);
+            var methodBrowserType = GetExecutionBrowserMethodLevel(memberInfo);
             if (methodBrowserType != BrowserTypes.NotSet)
             {
                 result = methodBrowserType;

@@ -14,15 +14,15 @@
 
 namespace FluentPageObjectPattern.Core
 {
-    public abstract class BaseFluentPageSingleton<S, M> : ThreadSafeNestedContructorsBaseSingleton<S>
-        where M : BasePageElementMap, new()
-        where S : BaseFluentPageSingleton<S, M>
+    public abstract class BaseFluentPageSingleton<TS, TM> : ThreadSafeNestedContructorsBaseSingleton<TS>
+        where TM : BasePageElementMap, new()
+        where TS : BaseFluentPageSingleton<TS, TM>
     {
-        protected M Map
+        protected TM Map
         {
             get
             {
-                return new M();
+                return new TM();
             }
         }
 
@@ -32,14 +32,14 @@ namespace FluentPageObjectPattern.Core
         }
     }
 
-    public abstract class BaseFluentPageSingleton<S, M, V> : BaseFluentPageSingleton<S, M>
-        where M : BasePageElementMap, new()
-        where S : BaseFluentPageSingleton<S, M, V>
-        where V : BasePageValidator<S, M, V>, new()
+    public abstract class BaseFluentPageSingleton<TS, TM, TV> : BaseFluentPageSingleton<TS, TM>
+        where TM : BasePageElementMap, new()
+        where TS : BaseFluentPageSingleton<TS, TM, TV>
+        where TV : BasePageValidator<TS, TM, TV>, new()
     {
-        public V Validate()
+        public TV Validate()
         {
-            return new V();
+            return new TV();
         }
     }
 }

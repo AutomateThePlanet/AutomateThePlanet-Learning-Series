@@ -16,23 +16,23 @@ using AdvancedStrategyDesignPattern.Data;
 
 namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage
 {
-    public class ShippingAddressPage : AdvancedStrategyDesignPattern.Core.BasePageSingleton<ShippingAddressPage, ShippingAddressPageMap>
+    public class ShippingAddressPage : Core.BasePageSingleton<ShippingAddressPage, ShippingAddressPageMap>
     {
         public void ClickContinueButton()
         {
-            this.Map.ContinueButton.Click();
+            Map.ContinueButton.Click();
         }
 
         public void FillShippingInfo(ClientPurchaseInfo clientInfo)
         {
-            this.FillAddressInfoInternal(clientInfo);
+            FillAddressInfoInternal(clientInfo);
         }
 
         public void ClickDifferentBillingCheckBox(ClientPurchaseInfo clientInfo)
         {
             if (clientInfo.BillingInfo != null)
             {
-                this.Map.DifferemtFromBillingCheckbox.Click();
+                Map.DifferemtFromBillingCheckbox.Click();
             }
         }
 
@@ -40,19 +40,19 @@ namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage
         {
             if (clientInfo.BillingInfo != null)
             {
-                this.FillAddressInfoInternal(clientInfo);
+                FillAddressInfoInternal(clientInfo);
             }
         }
 
         private void FillAddressInfoInternal(ClientPurchaseInfo clientInfo)
         {
-            this.Map.CountryDropDown.SelectByText(clientInfo.ShippingInfo.Country);
-            this.Map.FullNameInput.SendKeys(clientInfo.ShippingInfo.FullName);
-            this.Map.Address1Input.SendKeys(clientInfo.ShippingInfo.Address1);
-            this.Map.CityInput.SendKeys(clientInfo.ShippingInfo.City);
-            this.Map.ZipInput.SendKeys(clientInfo.ShippingInfo.Zip);
-            this.Map.PhoneInput.SendKeys(clientInfo.ShippingInfo.Phone);
-            this.Map.ShipToThisAddress.Click();
+            Map.CountryDropDown.SelectByText(clientInfo.ShippingInfo.Country);
+            Map.FullNameInput.SendKeys(clientInfo.ShippingInfo.FullName);
+            Map.Address1Input.SendKeys(clientInfo.ShippingInfo.Address1);
+            Map.CityInput.SendKeys(clientInfo.ShippingInfo.City);
+            Map.ZipInput.SendKeys(clientInfo.ShippingInfo.Zip);
+            Map.PhoneInput.SendKeys(clientInfo.ShippingInfo.Phone);
+            Map.ShipToThisAddress.Click();
         }
     }
 }

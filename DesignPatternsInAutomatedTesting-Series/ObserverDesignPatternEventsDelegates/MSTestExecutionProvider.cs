@@ -17,7 +17,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ObserverDesignPatternEventsDelegates
 {
-    public class MSTestExecutionProvider : IExecutionProvider
+    public class MsTestExecutionProvider : IExecutionProvider
     {
         public event EventHandler<TestExecutionEventArgs> TestInstantiatedEvent;
 
@@ -31,27 +31,27 @@ namespace ObserverDesignPatternEventsDelegates
 
         public void PreTestInit(TestContext context, MemberInfo memberInfo)
         {
-            this.RaiseTestEvent(this.PreTestInitEvent, context, memberInfo);
+            RaiseTestEvent(PreTestInitEvent, context, memberInfo);
         }
 
         public void PostTestInit(TestContext context, MemberInfo memberInfo)
         {
-            this.RaiseTestEvent(this.PostTestInitEvent, context, memberInfo);
+            RaiseTestEvent(PostTestInitEvent, context, memberInfo);
         }
 
         public void PreTestCleanup(TestContext context, MemberInfo memberInfo)
         {
-            this.RaiseTestEvent(this.PreTestCleanupEvent, context, memberInfo);
+            RaiseTestEvent(PreTestCleanupEvent, context, memberInfo);
         }
 
         public void PostTestCleanup(TestContext context, MemberInfo memberInfo)
         {
-            this.RaiseTestEvent(this.PostTestCleanupEvent, context, memberInfo);
+            RaiseTestEvent(PostTestCleanupEvent, context, memberInfo);
         }
 
         public void TestInstantiated(MemberInfo memberInfo)
         {
-            this.RaiseTestEvent(this.TestInstantiatedEvent, null, memberInfo);
+            RaiseTestEvent(TestInstantiatedEvent, null, memberInfo);
         }
 
         private void RaiseTestEvent(EventHandler<TestExecutionEventArgs> eventHandler, TestContext testContext, MemberInfo memberInfo)

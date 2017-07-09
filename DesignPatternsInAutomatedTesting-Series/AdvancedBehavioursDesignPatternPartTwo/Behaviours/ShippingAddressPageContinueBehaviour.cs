@@ -20,16 +20,16 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {
     public class ShippingAddressPageContinueBehaviour : ActionBehaviour
     {
-        private readonly ShippingAddressPage shippingAddressPage;
+        private readonly ShippingAddressPage _shippingAddressPage;
 
         public ShippingAddressPageContinueBehaviour()
         {
-            this.shippingAddressPage = AdvancedBehavioursDesignPatternPartTwo.Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
+            _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
         }
 
         protected override void PerformAct()
         {
-            this.shippingAddressPage.ClickContinueButton();
+            _shippingAddressPage.ClickContinueButton();
         }
     }
 }

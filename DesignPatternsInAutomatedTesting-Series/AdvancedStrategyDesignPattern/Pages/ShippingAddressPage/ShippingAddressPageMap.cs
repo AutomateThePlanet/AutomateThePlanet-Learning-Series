@@ -17,14 +17,14 @@ using OpenQA.Selenium.Support.UI;
 
 namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage
 {
-    public class ShippingAddressPageMap : AdvancedStrategyDesignPattern.Core.BasePageElementMap
+    public class ShippingAddressPageMap : Core.BasePageElementMap
     {
         public SelectElement CountryDropDown
         {
             get
             {
-                this.browserWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("enterAddressCountryCode")); });
-                return new SelectElement(this.browser.FindElement(By.Name("enterAddressCountryCode")));
+                BrowserWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("enterAddressCountryCode")); });
+                return new SelectElement(Browser.FindElement(By.Name("enterAddressCountryCode")));
             }
         }
 
@@ -32,7 +32,7 @@ namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("enterAddressFullName"));
+                return Browser.FindElement(By.Id("enterAddressFullName"));
             }
         }
 
@@ -40,7 +40,7 @@ namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("enterAddressAddressLine1"));
+                return Browser.FindElement(By.Id("enterAddressAddressLine1"));
             }
         }
 
@@ -48,7 +48,7 @@ namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("enterAddressCity"));
+                return Browser.FindElement(By.Id("enterAddressCity"));
             }
         }
 
@@ -56,7 +56,7 @@ namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("enterAddressPostalCode"));
+                return Browser.FindElement(By.Id("enterAddressPostalCode"));
             }
         }
 
@@ -64,7 +64,7 @@ namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("enterAddressPhoneNumber"));
+                return Browser.FindElement(By.Id("enterAddressPhoneNumber"));
             }
         }
 
@@ -72,7 +72,7 @@ namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return new SelectElement(this.browser.FindElement(By.Name("AddressType")));
+                return new SelectElement(Browser.FindElement(By.Name("AddressType")));
             }
         }
 
@@ -80,7 +80,7 @@ namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.XPath("//input[@value='Continue']"));
+                return Browser.FindElement(By.XPath("//input[@value='Continue']"));
             }
         }
 
@@ -88,7 +88,7 @@ namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.CssSelector("input.a-button-text"));
+                return Browser.FindElement(By.CssSelector("input.a-button-text"));
             }
         }
 
@@ -96,7 +96,7 @@ namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("isBillingAddress"));
+                return Browser.FindElement(By.Id("isBillingAddress"));
             }
         }
     }

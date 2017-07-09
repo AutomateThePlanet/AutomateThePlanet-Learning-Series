@@ -20,24 +20,24 @@ namespace BehavioursDesignPattern.Behaviours
 {
     public class SignInPageLoginBehaviour : Behaviour
     {
-        private readonly SignInPage signInPage;
-        private readonly ShippingAddressPage shippingAddressPage;
+        private readonly SignInPage _signInPage;
+        private readonly ShippingAddressPage _shippingAddressPage;
 
         public SignInPageLoginBehaviour(SignInPage signInPage, ShippingAddressPage shippingAddressPage)
         {
-            this.signInPage = signInPage;
-            this.shippingAddressPage = shippingAddressPage;
+            _signInPage = signInPage;
+            _shippingAddressPage = shippingAddressPage;
         }
 
         public override void PerformAct()
         {
-            this.signInPage.Login(
+            _signInPage.Login(
                 PurchaseTestContext.ClientLoginInfo.Email, PurchaseTestContext.ClientLoginInfo.Password);
         }
 
         public override void PerformPostAct()
         {
-            this.shippingAddressPage.WaitForPageToLoad();
+            _shippingAddressPage.WaitForPageToLoad();
         }
     }
 }

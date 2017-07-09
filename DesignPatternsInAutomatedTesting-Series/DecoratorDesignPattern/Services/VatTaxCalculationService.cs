@@ -20,7 +20,7 @@ namespace DecoratorDesignPattern.Services
     {
         public decimal Calculate(decimal price, Countries country)
         {
-            decimal taxPrice = default(decimal);
+            var taxPrice = default(decimal);
             // Call Real Web Service to determine the VAT Tax.
             switch (country)
             {
@@ -46,7 +46,7 @@ namespace DecoratorDesignPattern.Services
 
         private static decimal CalculateTaxPriceInternal(decimal price, double percent)
         {
-            decimal taxPrice = price / (decimal)percent;
+            var taxPrice = price / (decimal)percent;
             return taxPrice;
         }
     }

@@ -22,7 +22,7 @@ namespace NullObjectDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
+                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
             }
         }
      
@@ -30,7 +30,7 @@ namespace NullObjectDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[5]/td[2]"));
+                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[5]/td[2]"));
             }
         }
 
@@ -38,7 +38,7 @@ namespace NullObjectDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("xocpnety_cnt"));
+                return Driver.FindElement(By.Id("xocpnety_cnt"));
             }
         }
     }

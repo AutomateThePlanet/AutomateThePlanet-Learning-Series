@@ -27,7 +27,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.Item
         {
             get
             {
-                return this.driver.FindElement(By.Id("binBtn_btn"));
+                return Driver.FindElement(By.Id("binBtn_btn"));
             }
         }
 
@@ -35,7 +35,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.Item
         {
             get
             {
-                return this.driver.FindElement(By.Id("prcIsum"));
+                return Driver.FindElement(By.Id("prcIsum"));
             }
         }
     }

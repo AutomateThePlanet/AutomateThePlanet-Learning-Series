@@ -18,26 +18,26 @@ namespace RulesDesignPattern
 {
     public abstract class BaseRule : IRule
     {
-        protected readonly RuleResult ruleResult;
+        protected readonly RuleResult RuleResult;
 
-        private readonly Action actionToBeExecuted;
+        private readonly Action _actionToBeExecuted;
 
         public BaseRule(Action actionToBeExecuted)
         {
-            this.actionToBeExecuted = actionToBeExecuted;
+            _actionToBeExecuted = actionToBeExecuted;
             if (actionToBeExecuted != null)
             {
-                this.ruleResult = new RuleResult(this.actionToBeExecuted);
+                RuleResult = new RuleResult(_actionToBeExecuted);
             }
             else
             {
-                this.ruleResult = new RuleResult();
+                RuleResult = new RuleResult();
             }
         }
 
         public BaseRule()
         {
-            this.ruleResult = new RuleResult();
+            RuleResult = new RuleResult();
         }
 
         public abstract IRuleResult Eval();

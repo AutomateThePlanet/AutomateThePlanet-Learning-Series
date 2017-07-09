@@ -18,24 +18,24 @@ namespace ObserverDesignPatternEventsDelegates.Pages
 {
     public class BingMainPageValidator
     {
-        private readonly IWebDriver browser;
+        private readonly IWebDriver _browser;
 
         public BingMainPageValidator(IWebDriver browser)
         {
-            this.browser = browser;
+            _browser = browser;
         }
 
         protected BingMainPageElementMap Map
         {
             get
             {
-                return new BingMainPageElementMap(this.browser);
+                return new BingMainPageElementMap(_browser);
             }
         }
 
         public void ResultsCount(string expectedCount)
         {
-            Assert.IsTrue(this.Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
+            Assert.IsTrue(Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
         }
     }
 }

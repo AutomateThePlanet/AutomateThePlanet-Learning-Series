@@ -21,25 +21,25 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
 {
     public partial class PlaceOrderPage : BasePage
     {
-        private readonly PurchaseTestInput purchaseTestInput;
-        private readonly PromotionalPurchaseSpecification promotionalPurchaseSpecification;
-        private readonly CreditCardSpecification creditCardSpecification;
-        private readonly WiretransferSpecification wiretransferSpecification;
-        private readonly FreePurchaseSpecification freePurchaseSpecification;
+        private readonly PurchaseTestInput _purchaseTestInput;
+        private readonly PromotionalPurchaseSpecification _promotionalPurchaseSpecification;
+        private readonly CreditCardSpecification _creditCardSpecification;
+        private readonly WiretransferSpecification _wiretransferSpecification;
+        private readonly FreePurchaseSpecification _freePurchaseSpecification;
 
         public PlaceOrderPage(IWebDriver driver, PurchaseTestInput purchaseTestInput) : base(driver)
         {
-            this.purchaseTestInput = purchaseTestInput;
-            this.promotionalPurchaseSpecification = new PromotionalPurchaseSpecification(purchaseTestInput);
-            this.wiretransferSpecification = new WiretransferSpecification(purchaseTestInput);
-            this.creditCardSpecification = new CreditCardSpecification(purchaseTestInput);
-            this.freePurchaseSpecification = new FreePurchaseSpecification();
-            this.IsPromoCodePurchase = this.freePurchaseSpecification.Or(this.promotionalPurchaseSpecification).IsSatisfiedBy(this.purchaseTestInput);
-            this.IsCreditCardPurchase = this.creditCardSpecification.
-            And(this.wiretransferSpecification.Not()).
-            And(this.freePurchaseSpecification.Not()).
-            And(this.promotionalPurchaseSpecification.Not()).
-            IsSatisfiedBy(this.purchaseTestInput);
+            _purchaseTestInput = purchaseTestInput;
+            _promotionalPurchaseSpecification = new PromotionalPurchaseSpecification(purchaseTestInput);
+            _wiretransferSpecification = new WiretransferSpecification(purchaseTestInput);
+            _creditCardSpecification = new CreditCardSpecification(purchaseTestInput);
+            _freePurchaseSpecification = new FreePurchaseSpecification();
+            IsPromoCodePurchase = _freePurchaseSpecification.Or(_promotionalPurchaseSpecification).IsSatisfiedBy(_purchaseTestInput);
+            IsCreditCardPurchase = _creditCardSpecification.
+            And(_wiretransferSpecification.Not()).
+            And(_freePurchaseSpecification.Not()).
+            And(_promotionalPurchaseSpecification.Not()).
+            IsSatisfiedBy(_purchaseTestInput);
         }
 
         public bool IsPromoCodePurchase { get; private set; }
@@ -71,14 +71,14 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
         ////}
         public void ChoosePaymentMethod()
         {
-            if (this.IsCreditCardPurchase)
+            if (IsCreditCardPurchase)
             {
-                this.CreditCard.SendKeys("371449635398431");
-                this.SecurityNumber.SendKeys("1234");
+                CreditCard.SendKeys("371449635398431");
+                SecurityNumber.SendKeys("1234");
             }
             else
             {
-                this.Wiretransfer.SendKeys("pathToFile");
+                Wiretransfer.SendKeys("pathToFile");
             }
         }
 
@@ -100,9 +100,9 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
         ////}
         public void TypePromotionalCode(string promoCode)
         {
-            if (this.IsPromoCodePurchase)
+            if (IsPromoCodePurchase)
             {
-                this.PromotionalCode.SendKeys(promoCode);
+                PromotionalCode.SendKeys(promoCode);
             }
         }
     }

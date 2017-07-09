@@ -18,17 +18,17 @@ namespace BehavioursDesignPattern.Behaviours
 {
     public class ShippingAddressPageContinueBehaviour : Behaviour
     {
-        private readonly ShippingAddressPage shippingAddressPage;
+        private readonly ShippingAddressPage _shippingAddressPage;
 
         // This version is compatible only with UnityBehaviorEngine.
         public ShippingAddressPageContinueBehaviour(ShippingAddressPage shippingAddressPage)
         {
-            this.shippingAddressPage = shippingAddressPage;
+            _shippingAddressPage = shippingAddressPage;
         }
 
         public override void PerformAct()
         {
-            this.shippingAddressPage.ClickContinueButton();
+            _shippingAddressPage.ClickContinueButton();
         }
     }
 }

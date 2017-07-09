@@ -23,11 +23,11 @@ namespace StrategyDesignPattern.Base
 {
     public class PurchaseContext
     {
-        private readonly IOrderValidationStrategy orderValidationStrategy;
+        private readonly IOrderValidationStrategy _orderValidationStrategy;
 
         public PurchaseContext(IOrderValidationStrategy orderValidationStrategy)
         {
-            this.orderValidationStrategy = orderValidationStrategy;
+            _orderValidationStrategy = orderValidationStrategy;
         }
 
         public void PurchaseItem(string itemUrl, string itemPrice, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
@@ -40,7 +40,7 @@ namespace StrategyDesignPattern.Base
             ShippingAddressPage.Instance.ClickContinueButton();
             ShippingPaymentPage.Instance.ClickBottomContinueButton();
             ShippingPaymentPage.Instance.ClickTopContinueButton();
-            this.orderValidationStrategy.ValidateOrderSummary(itemPrice, clientPurchaseInfo);
+            _orderValidationStrategy.ValidateOrderSummary(itemPrice, clientPurchaseInfo);
         }
     }
 }

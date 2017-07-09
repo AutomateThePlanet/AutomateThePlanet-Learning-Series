@@ -18,35 +18,35 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ObserverDesignPatternClassicImplementation
 {
-    public class MSTestExecutionSubject : ITestExecutionSubject
+    public class MsTestExecutionSubject : ITestExecutionSubject
     {
-        private readonly List<ITestBehaviorObserver> testBehaviorObservers;
+        private readonly List<ITestBehaviorObserver> _testBehaviorObservers;
 
-        public MSTestExecutionSubject()
+        public MsTestExecutionSubject()
         {
-            this.testBehaviorObservers = new List<ITestBehaviorObserver>();
+            _testBehaviorObservers = new List<ITestBehaviorObserver>();
         }
 
         public void Attach(ITestBehaviorObserver observer)
         {
-            testBehaviorObservers.Add(observer);
+            _testBehaviorObservers.Add(observer);
         }
 
         public void Detach(ITestBehaviorObserver observer)
         {
-            testBehaviorObservers.Remove(observer);
+            _testBehaviorObservers.Remove(observer);
         }
 
         public void PreTestInit(TestContext context, MemberInfo memberInfo)
         {
-            foreach (var currentObserver in this.testBehaviorObservers)
+            foreach (var currentObserver in _testBehaviorObservers)
             {
                 currentObserver.PreTestInit(context, memberInfo);
             }
         }
         public void PostTestInit(TestContext context, MemberInfo memberInfo)
         {
-            foreach (var currentObserver in this.testBehaviorObservers)
+            foreach (var currentObserver in _testBehaviorObservers)
             {
                 currentObserver.PostTestInit(context, memberInfo);
             }
@@ -54,7 +54,7 @@ namespace ObserverDesignPatternClassicImplementation
 
         public void PreTestCleanup(TestContext context, MemberInfo memberInfo)
         {
-            foreach (var currentObserver in this.testBehaviorObservers)
+            foreach (var currentObserver in _testBehaviorObservers)
             {
                 currentObserver.PreTestCleanup(context, memberInfo);
             }
@@ -62,7 +62,7 @@ namespace ObserverDesignPatternClassicImplementation
 
         public void PostTestCleanup(TestContext context, MemberInfo memberInfo)
         {
-            foreach (var currentObserver in this.testBehaviorObservers)
+            foreach (var currentObserver in _testBehaviorObservers)
             {
                 currentObserver.PostTestCleanup(context, memberInfo);
             }
@@ -70,7 +70,7 @@ namespace ObserverDesignPatternClassicImplementation
 
         public void TestInstantiated(MemberInfo memberInfo)
         {
-            foreach (var currentObserver in this.testBehaviorObservers)
+            foreach (var currentObserver in _testBehaviorObservers)
             {
                 currentObserver.TestInstantiated(memberInfo);
             }

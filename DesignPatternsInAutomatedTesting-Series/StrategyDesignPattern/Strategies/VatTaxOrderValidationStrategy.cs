@@ -25,7 +25,7 @@ namespace StrategyDesignPattern.Strategies
     {
         public VatTaxOrderValidationStrategy()
         {
-            this.VatTaxCalculationService = new VatTaxCalculationService();
+            VatTaxCalculationService = new VatTaxCalculationService();
         }
 
         public VatTaxCalculationService VatTaxCalculationService { get; set; }
@@ -33,8 +33,8 @@ namespace StrategyDesignPattern.Strategies
         public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
         {
             var currentCountry = (Countries)Enum.Parse(typeof(Countries), clientPurchaseInfo.BillingInfo.Country);
-            decimal currentItemPrice = decimal.Parse(itemsPrice);
-            decimal vatTax = this.VatTaxCalculationService.Calculate(currentItemPrice, currentCountry);
+            var currentItemPrice = decimal.Parse(itemsPrice);
+            var vatTax = VatTaxCalculationService.Calculate(currentItemPrice, currentCountry);
 
             PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(vatTax.ToString());
         }

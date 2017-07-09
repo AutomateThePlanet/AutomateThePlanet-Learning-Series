@@ -24,8 +24,8 @@ namespace DecoratorDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                this.browserWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("enterAddressCountryCode")); });
-                return new SelectElement(this.browser.FindElement(By.Name("enterAddressCountryCode")));
+                BrowserWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("enterAddressCountryCode")); });
+                return new SelectElement(Browser.FindElement(By.Name("enterAddressCountryCode")));
             }
         }
 
@@ -33,7 +33,7 @@ namespace DecoratorDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("enterAddressFullName"));
+                return Browser.FindElement(By.Id("enterAddressFullName"));
             }
         }
 
@@ -41,7 +41,7 @@ namespace DecoratorDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("enterAddressAddressLine1"));
+                return Browser.FindElement(By.Id("enterAddressAddressLine1"));
             }
         }
 
@@ -49,7 +49,7 @@ namespace DecoratorDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("enterAddressCity"));
+                return Browser.FindElement(By.Id("enterAddressCity"));
             }
         }
 
@@ -57,7 +57,7 @@ namespace DecoratorDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("enterAddressPostalCode"));
+                return Browser.FindElement(By.Id("enterAddressPostalCode"));
             }
         }
 
@@ -65,7 +65,7 @@ namespace DecoratorDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("enterAddressPhoneNumber"));
+                return Browser.FindElement(By.Id("enterAddressPhoneNumber"));
             }
         }
 
@@ -73,7 +73,7 @@ namespace DecoratorDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return new SelectElement(this.browser.FindElement(By.Name("AddressType")));
+                return new SelectElement(Browser.FindElement(By.Name("AddressType")));
             }
         }
 
@@ -81,7 +81,7 @@ namespace DecoratorDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.XPath("//input[@value='Continue']"));
+                return Browser.FindElement(By.XPath("//input[@value='Continue']"));
             }
         }
 
@@ -89,7 +89,7 @@ namespace DecoratorDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.CssSelector("input.a-button-text"));
+                return Browser.FindElement(By.CssSelector("input.a-button-text"));
             }
         }
 
@@ -97,7 +97,7 @@ namespace DecoratorDesignPattern.Pages.ShippingAddressPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("isBillingAddress"));
+                return Browser.FindElement(By.Id("isBillingAddress"));
             }
         }
     }

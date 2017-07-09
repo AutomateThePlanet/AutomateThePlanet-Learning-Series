@@ -16,35 +16,35 @@ using System;
 
 namespace DecoratorDesignPattern.Advanced.Strategies
 {
-    public abstract class OrderPurchaseStrategyDecorator : DecoratorDesignPattern.Advanced.Strategies.OrderPurchaseStrategy
+    public abstract class OrderPurchaseStrategyDecorator : OrderPurchaseStrategy
     {
-        protected readonly DecoratorDesignPattern.Advanced.Strategies.OrderPurchaseStrategy orderPurchaseStrategy;
-        protected readonly DecoratorDesignPattern.Data.ClientPurchaseInfo clientPurchaseInfo;
-        protected readonly decimal itemsPrice;
+        protected readonly OrderPurchaseStrategy OrderPurchaseStrategy;
+        protected readonly Data.ClientPurchaseInfo ClientPurchaseInfo;
+        protected readonly decimal ItemsPrice;
 
-        public OrderPurchaseStrategyDecorator(DecoratorDesignPattern.Advanced.Strategies.OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, DecoratorDesignPattern.Data.ClientPurchaseInfo clientPurchaseInfo)
+        public OrderPurchaseStrategyDecorator(OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, Data.ClientPurchaseInfo clientPurchaseInfo)
         {
-            this.orderPurchaseStrategy = orderPurchaseStrategy;
-            this.itemsPrice = itemsPrice;
-            this.clientPurchaseInfo = clientPurchaseInfo;
+            OrderPurchaseStrategy = orderPurchaseStrategy;
+            ItemsPrice = itemsPrice;
+            ClientPurchaseInfo = clientPurchaseInfo;
         }
 
         public override decimal CalculateTotalPrice()
         {
-            this.ValidateOrderStrategy();
+            ValidateOrderStrategy();
 
-            return this.orderPurchaseStrategy.CalculateTotalPrice();
+            return OrderPurchaseStrategy.CalculateTotalPrice();
         }
 
         public override void ValidateOrderSummary(decimal totalPrice)
         {
-            this.ValidateOrderStrategy();
-            this.orderPurchaseStrategy.ValidateOrderSummary(totalPrice);
+            ValidateOrderStrategy();
+            OrderPurchaseStrategy.ValidateOrderSummary(totalPrice);
         }
 
         private void ValidateOrderStrategy()
         {
-            if (this.orderPurchaseStrategy == null)
+            if (OrderPurchaseStrategy == null)
             {
                 throw new Exception("The OrderPurchaseStrategy should be first initialized.");
             }

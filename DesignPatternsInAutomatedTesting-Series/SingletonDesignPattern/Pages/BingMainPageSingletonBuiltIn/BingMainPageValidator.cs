@@ -17,11 +17,11 @@ using SingletonDesignPattern.Core;
 
 namespace SingletonDesignPattern.Pages.BingMainPageSingletonBuiltIn
 {
-    public class BingMainPageValidator : BasePageValidator<SingletonDesignPattern.Pages.BingMainPageSingletonBuiltIn.BingMainPageElementMap>
+    public class BingMainPageValidator : BasePageValidator<BingMainPageElementMap>
     {
         public void ResultsCount(string expectedCount)
         {
-            Assert.IsTrue(this.Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
+            Assert.IsTrue(Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
         }
     }
 }

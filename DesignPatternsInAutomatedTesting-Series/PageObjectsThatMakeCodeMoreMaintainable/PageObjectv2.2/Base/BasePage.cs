@@ -19,18 +19,18 @@ namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv22.Base
 {
     public abstract class BasePage
     {
-        protected IWebDriver driver;
+        protected IWebDriver Driver;
 
         public BasePage(IWebDriver driver)
         {
-            this.driver = driver;
+            Driver = driver;
         }
 
         public abstract string Url { get; }
 
         public virtual void Open(string part = "")
         {
-            this.driver.Navigate().GoToUrl(string.Concat(this.Url, part));
+            Driver.Navigate().GoToUrl(string.Concat(Url, part));
         }
     }
 }

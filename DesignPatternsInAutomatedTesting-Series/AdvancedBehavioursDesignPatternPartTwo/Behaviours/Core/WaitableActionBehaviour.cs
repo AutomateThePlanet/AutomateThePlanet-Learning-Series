@@ -14,12 +14,12 @@
 
 namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core
 {
-    public abstract class WaitableActionBehaviour : AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core.IBehaviour
+    public abstract class WaitableActionBehaviour : IBehaviour
     {
         public void Execute()
         {
-            this.PerformAct();
-            this.PerformPostActWait();
+            PerformAct();
+            PerformPostActWait();
         }
 
         protected abstract void PerformAct();

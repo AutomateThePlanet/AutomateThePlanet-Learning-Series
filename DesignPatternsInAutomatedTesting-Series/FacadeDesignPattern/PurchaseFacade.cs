@@ -24,20 +24,20 @@ namespace PatternsInAutomatedTests.Advanced.Ebay
 {
     public class PurchaseFacade
     {
-        private ItemPage itemPage;
-        private CheckoutPage checkoutPage;
-        private ShippingAddressPage shippingAddressPage;
-        private SignInPage signInPage;
+        private ItemPage _itemPage;
+        private CheckoutPage _checkoutPage;
+        private ShippingAddressPage _shippingAddressPage;
+        private SignInPage _signInPage;
 
         public ItemPage ItemPage 
         {
             get
             {
-                if (this.itemPage == null)
+                if (_itemPage == null)
                 {
-                    this.itemPage = new ItemPage();
+                    _itemPage = new ItemPage();
                 }
-                return this.itemPage;
+                return _itemPage;
             }
         }
 
@@ -45,11 +45,11 @@ namespace PatternsInAutomatedTests.Advanced.Ebay
         {
             get
             {
-                if (this.signInPage == null)
+                if (_signInPage == null)
                 {
-                    this.signInPage = new SignInPage();
+                    _signInPage = new SignInPage();
                 }
-                return this.signInPage;
+                return _signInPage;
             }
         }
 
@@ -57,11 +57,11 @@ namespace PatternsInAutomatedTests.Advanced.Ebay
         {
             get
             {
-                if (this.checkoutPage == null)
+                if (_checkoutPage == null)
                 {
-                    this.checkoutPage = new CheckoutPage();
+                    _checkoutPage = new CheckoutPage();
                 }
-                return this.checkoutPage;
+                return _checkoutPage;
             }
         }
 
@@ -69,24 +69,24 @@ namespace PatternsInAutomatedTests.Advanced.Ebay
         {
             get
             {
-                if (this.shippingAddressPage == null)
+                if (_shippingAddressPage == null)
                 {
-                    this.shippingAddressPage = new ShippingAddressPage();
+                    _shippingAddressPage = new ShippingAddressPage();
                 }
-                return this.shippingAddressPage;
+                return _shippingAddressPage;
             }
         }
 
         public void PurchaseItem(string item, string itemPrice, ClientInfo clientInfo)
         {
-            this.ItemPage.Navigate(item);
-            this.ItemPage.Validate().Price(itemPrice);
-            this.ItemPage.ClickBuyNowButton();
-            this.SignInPage.ClickContinueAsGuestButton();
-            this.ShippingAddressPage.FillShippingInfo(clientInfo);
-            this.ShippingAddressPage.Validate().Subtotal(itemPrice);
-            this.ShippingAddressPage.ClickContinueButton();
-            this.CheckoutPage.Validate().Subtotal(itemPrice);
+            ItemPage.Navigate(item);
+            ItemPage.Validate().Price(itemPrice);
+            ItemPage.ClickBuyNowButton();
+            SignInPage.ClickContinueAsGuestButton();
+            ShippingAddressPage.FillShippingInfo(clientInfo);
+            ShippingAddressPage.Validate().Subtotal(itemPrice);
+            ShippingAddressPage.ClickContinueButton();
+            CheckoutPage.Validate().Subtotal(itemPrice);
         }
     }
 }

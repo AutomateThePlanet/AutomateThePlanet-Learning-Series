@@ -16,13 +16,13 @@ using OpenQA.Selenium;
 
 namespace AdvancedStrategyDesignPattern.Pages.SignInPage
 {
-    public class SignInPageMap : AdvancedStrategyDesignPattern.Core.BasePageElementMap
+    public class SignInPageMap : Core.BasePageElementMap
     {
         public IWebElement SignInButton
         {
             get
             {
-                return this.browser.FindElement(By.Id("signInSubmit-input"));
+                return Browser.FindElement(By.Id("signInSubmit-input"));
             }
         }
 
@@ -30,7 +30,7 @@ namespace AdvancedStrategyDesignPattern.Pages.SignInPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("ap_password"));
+                return Browser.FindElement(By.Id("ap_password"));
             }
         }
 
@@ -38,7 +38,7 @@ namespace AdvancedStrategyDesignPattern.Pages.SignInPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("ap_email"));
+                return Browser.FindElement(By.Id("ap_email"));
             }
         }
     }

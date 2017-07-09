@@ -23,7 +23,7 @@ namespace IoCContainerPageObjectPattern.WikipediaMainPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("searchInput"));
+                return Browser.FindElement(By.Id("searchInput"));
             }
         }
 
@@ -31,7 +31,7 @@ namespace IoCContainerPageObjectPattern.WikipediaMainPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("searchButton"));
+                return Browser.FindElement(By.Id("searchButton"));
             }
         }
 
@@ -39,7 +39,7 @@ namespace IoCContainerPageObjectPattern.WikipediaMainPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("togglelink"));
+                return Browser.FindElement(By.Id("togglelink"));
             }
         }
 
@@ -47,7 +47,7 @@ namespace IoCContainerPageObjectPattern.WikipediaMainPage
         {
             get
             {
-                return this.browser.FindElement(By.XPath("//*[@id='toc']/ul"));
+                return Browser.FindElement(By.XPath("//*[@id='toc']/ul"));
             }
         }
     }

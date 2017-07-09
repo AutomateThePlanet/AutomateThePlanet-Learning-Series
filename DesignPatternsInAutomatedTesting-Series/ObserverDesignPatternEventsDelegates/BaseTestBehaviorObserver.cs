@@ -20,20 +20,20 @@ namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.DotNetEvents
     {
         public void Subscribe(IExecutionProvider provider)
         {
-            provider.TestInstantiatedEvent += this.TestInstantiated;
-            provider.PreTestInitEvent += this.PreTestInit;
-            provider.PostTestInitEvent += this.PostTestInit;
-            provider.PreTestCleanupEvent += this.PreTestCleanup;
-            provider.PostTestCleanupEvent += this.PostTestCleanup;
+            provider.TestInstantiatedEvent += TestInstantiated;
+            provider.PreTestInitEvent += PreTestInit;
+            provider.PostTestInitEvent += PostTestInit;
+            provider.PreTestCleanupEvent += PreTestCleanup;
+            provider.PostTestCleanupEvent += PostTestCleanup;
         }
 
         public void Unsubscribe(IExecutionProvider provider)
         {
-            provider.TestInstantiatedEvent -= this.TestInstantiated;
-            provider.PreTestInitEvent -= this.PreTestInit;
-            provider.PostTestInitEvent -= this.PostTestInit;
-            provider.PreTestCleanupEvent -= this.PreTestCleanup;
-            provider.PostTestCleanupEvent -= this.PostTestCleanup;
+            provider.TestInstantiatedEvent -= TestInstantiated;
+            provider.PreTestInitEvent -= PreTestInit;
+            provider.PostTestInitEvent -= PostTestInit;
+            provider.PreTestCleanupEvent -= PreTestCleanup;
+            provider.PostTestCleanupEvent -= PostTestCleanup;
         }
 
         protected virtual void TestInstantiated(object sender, TestExecutionEventArgs e)

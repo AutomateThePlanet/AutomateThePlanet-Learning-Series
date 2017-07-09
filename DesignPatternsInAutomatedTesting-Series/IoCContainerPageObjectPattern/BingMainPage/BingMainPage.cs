@@ -25,49 +25,49 @@ namespace IoCContainerPageObjectPattern.BingMainPage
 
         public void Search(string textToType)
         {
-            this.Map.SearchBox.Clear();
-            this.Map.SearchBox.SendKeys(textToType);
-            this.Map.GoButton.Click();
+            Map.SearchBox.Clear();
+            Map.SearchBox.SendKeys(textToType);
+            Map.GoButton.Click();
         }
 
         public void ClickImages()
         {
-            this.Map.ImagesLink.Click();
+            Map.ImagesLink.Click();
         }
 
         public void SetSize(Sizes size)
         {
-            this.Map.Sizes.SelectByIndex((int)size);
+            Map.Sizes.SelectByIndex((int)size);
         }
 
         public void SetColor(Colors color)
         {
-            this.Map.Color.SelectByIndex((int)color);
+            Map.Color.SelectByIndex((int)color);
         }
 
         public void SetTypes(Types type)
         {
-            this.Map.Type.SelectByIndex((int)type);
+            Map.Type.SelectByIndex((int)type);
         }
 
         public void SetLayout(Layouts layout)
         {
-            this.Map.Layout.SelectByIndex((int)layout);
+            Map.Layout.SelectByIndex((int)layout);
         }
 
         public void SetPeople(People people)
         {
-            this.Map.People.SelectByIndex((int)people);
+            Map.People.SelectByIndex((int)people);
         }
 
         public void SetDate(Dates date)
         {
-            this.Map.Date.SelectByIndex((int)date);
+            Map.Date.SelectByIndex((int)date);
         }
 
         public void SetLicense(Licenses license)
         {
-            this.Map.License.SelectByIndex((int)license);
+            Map.License.SelectByIndex((int)license);
         }
     }
 }

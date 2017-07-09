@@ -18,25 +18,25 @@ using Microsoft.Practices.Unity;
 
 namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {
-    public class PreviewShoppingCartPageProceedBehaviour : AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core.WaitableActionBehaviour
+    public class PreviewShoppingCartPageProceedBehaviour : Core.WaitableActionBehaviour
     {
-        private readonly PreviewShoppingCartPage previewShoppingCartPage;
-        private readonly SignInPage signInPage;
+        private readonly PreviewShoppingCartPage _previewShoppingCartPage;
+        private readonly SignInPage _signInPage;
 
         public PreviewShoppingCartPageProceedBehaviour()
         {
-            this.previewShoppingCartPage = AdvancedBehavioursDesignPatternPartTwo.Base.UnityContainerFactory.GetContainer().Resolve<PreviewShoppingCartPage>();
-            this.signInPage = AdvancedBehavioursDesignPatternPartTwo.Base.UnityContainerFactory.GetContainer().Resolve<SignInPage>(); 
+            _previewShoppingCartPage = Base.UnityContainerFactory.GetContainer().Resolve<PreviewShoppingCartPage>();
+            _signInPage = Base.UnityContainerFactory.GetContainer().Resolve<SignInPage>(); 
         }
 
         protected override void PerformAct()
         {
-            this.previewShoppingCartPage.ClickProceedToCheckoutButton();
+            _previewShoppingCartPage.ClickProceedToCheckoutButton();
         }
 
         protected override void PerformPostActWait()
         {
-            this.signInPage.WaitForPageToLoad();
+            _signInPage.WaitForPageToLoad();
         }
     }
 }

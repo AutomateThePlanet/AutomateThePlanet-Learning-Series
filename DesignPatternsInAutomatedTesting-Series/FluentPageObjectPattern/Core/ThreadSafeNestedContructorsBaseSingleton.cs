@@ -38,14 +38,14 @@ namespace FluentPageObjectPattern.Core
 
             public static T CreateInstance(Type type)
             {
-                ConstructorInfo[] ctorsPublic = type.GetConstructors(BindingFlags.Instance | BindingFlags.Public);
+                var ctorsPublic = type.GetConstructors(BindingFlags.Instance | BindingFlags.Public);
 
                 if (ctorsPublic.Length > 0)
                 {
                     throw new Exception(string.Concat(type.FullName, " has one or more public constructors so the property cannot be enforced."));
                 }
 
-                ConstructorInfo nonPublicConstructor =
+                var nonPublicConstructor =
                     type.GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic, null, new Type[0], new ParameterModifier[0]);
 
                 if (nonPublicConstructor == null)

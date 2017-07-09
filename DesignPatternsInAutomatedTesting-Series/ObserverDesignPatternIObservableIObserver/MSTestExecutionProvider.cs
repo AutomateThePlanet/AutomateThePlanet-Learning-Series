@@ -19,52 +19,52 @@ using PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver.Enu
 
 namespace ObserverDesignPatternIObservableIObserver
 {
-    public class MSTestExecutionProvider : IObservable<ExecutionStatus>, IDisposable, ITestExecutionProvider
+    public class MsTestExecutionProvider : IObservable<ExecutionStatus>, IDisposable, ITestExecutionProvider
     {
-        private readonly List<IObserver<ExecutionStatus>> testBehaviorObservers;
+        private readonly List<IObserver<ExecutionStatus>> _testBehaviorObservers;
 
-        public MSTestExecutionProvider()
+        public MsTestExecutionProvider()
         {
-            this.testBehaviorObservers = new List<IObserver<ExecutionStatus>>();
+            _testBehaviorObservers = new List<IObserver<ExecutionStatus>>();
         }
 
         public void PreTestInit(TestContext context, MemberInfo memberInfo)
         {
-            this.NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PreTestInit);
+            NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PreTestInit);
         }
 
         public void PostTestInit(TestContext context, MemberInfo memberInfo)
         {
-            this.NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PostTestInit);
+            NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PostTestInit);
         }
 
         public void PreTestCleanup(TestContext context, MemberInfo memberInfo)
         {
-            this.NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PreTestCleanup);
+            NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PreTestCleanup);
         }
 
         public void PostTestCleanup(TestContext context, MemberInfo memberInfo)
         {
-            this.NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PostTestCleanup);
+            NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PostTestCleanup);
         }
 
         public void TestInstantiated(MemberInfo memberInfo)
         {
-            this.NotifyObserversExecutionPhase(null, memberInfo, ExecutionPhases.TestInstantiated);
+            NotifyObserversExecutionPhase(null, memberInfo, ExecutionPhases.TestInstantiated);
         }
 
         public IDisposable Subscribe(IObserver<ExecutionStatus> observer)
         {
-            if (!testBehaviorObservers.Contains(observer))
+            if (!_testBehaviorObservers.Contains(observer))
             {
-                testBehaviorObservers.Add(observer);
+                _testBehaviorObservers.Add(observer);
             }
-            return new Unsubscriber<ExecutionStatus>(testBehaviorObservers, observer);
+            return new Unsubscriber<ExecutionStatus>(_testBehaviorObservers, observer);
         }
 
         private void NotifyObserversExecutionPhase(TestContext context, MemberInfo memberInfo, ExecutionPhases executionPhase)
         {
-            foreach (var currentObserver in this.testBehaviorObservers)
+            foreach (var currentObserver in _testBehaviorObservers)
             {
                 currentObserver.OnNext(new ExecutionStatus(context, memberInfo, executionPhase));
             }
@@ -72,12 +72,12 @@ namespace ObserverDesignPatternIObservableIObserver
 
         public void Dispose()
         {
-            foreach (var currentObserver in this.testBehaviorObservers)
+            foreach (var currentObserver in _testBehaviorObservers)
             {
                 currentObserver.OnCompleted();
             }
 
-            this.testBehaviorObservers.Clear();
+            _testBehaviorObservers.Clear();
         }
     }
 }

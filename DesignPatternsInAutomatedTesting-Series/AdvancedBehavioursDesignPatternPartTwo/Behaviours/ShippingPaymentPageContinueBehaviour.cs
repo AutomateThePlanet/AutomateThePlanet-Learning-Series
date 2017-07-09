@@ -20,16 +20,16 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {
     public class ShippingPaymentPageContinueBehaviour : ActionBehaviour
     {
-        private readonly ShippingPaymentPage shippingPaymentPage;
+        private readonly ShippingPaymentPage _shippingPaymentPage;
 
         public ShippingPaymentPageContinueBehaviour()
         {
-            this.shippingPaymentPage = AdvancedBehavioursDesignPatternPartTwo.Base.UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>(); 
+            _shippingPaymentPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>(); 
         }
 
         protected override void PerformAct()
         {
-            this.shippingPaymentPage.ClickTopContinueButton();
+            _shippingPaymentPage.ClickTopContinueButton();
         }
     }
 }

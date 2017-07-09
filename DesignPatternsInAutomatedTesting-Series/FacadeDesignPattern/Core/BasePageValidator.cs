@@ -14,14 +14,14 @@
 
 namespace FacadeDesignPattern.Core
 {
-    public class BasePageValidator<M>
-        where M : BasePageElementMap, new()
+    public class BasePageValidator<TM>
+        where TM : BasePageElementMap, new()
     {
-        protected M Map
+        protected TM Map
         {
             get
             {
-                return new M();
+                return new TM();
             }
         }
     }

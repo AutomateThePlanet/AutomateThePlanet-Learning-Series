@@ -20,12 +20,12 @@ namespace DecoratorDesignPattern.Pages.ShippingPaymentPage
     {
         public void ClickBottomContinueButton()
         {
-            this.Map.BottomContinueButton.Click();
+            Map.BottomContinueButton.Click();
         }
 
         public void ClickTopContinueButton()
         {
-            this.Map.TopContinueButton.Click();
+            Map.TopContinueButton.Click();
         }
     }
 }

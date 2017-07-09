@@ -16,13 +16,13 @@ using OpenQA.Selenium;
 
 namespace FacadeDesignPattern.Pages.SignInPage
 {
-    public class SignInPageMap : FacadeDesignPattern.Core.BasePageElementMap
+    public class SignInPageMap : Core.BasePageElementMap
     {
         public IWebElement ContinueAsGuestButton
         {
             get
             {
-                return this.browser.FindElement(By.Id("gtChk"));
+                return Browser.FindElement(By.Id("gtChk"));
             }
         }
     }

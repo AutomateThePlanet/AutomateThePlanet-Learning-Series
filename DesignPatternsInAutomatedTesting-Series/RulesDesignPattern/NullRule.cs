@@ -22,8 +22,8 @@ namespace RulesDesignPattern
 
         public override IRuleResult Eval()
         {
-            this.ruleResult.IsSuccess = true;
-            return this.ruleResult;
+            RuleResult.IsSuccess = true;
+            return RuleResult;
         }
     }
 }

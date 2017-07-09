@@ -16,18 +16,18 @@ using DecoratorDesignPattern.Pages.PlaceOrderPage;
 
 namespace DecoratorDesignPattern.Advanced.Strategies
 {
-    public class TotalPriceOrderPurchaseStrategy : DecoratorDesignPattern.Advanced.Strategies.OrderPurchaseStrategy
+    public class TotalPriceOrderPurchaseStrategy : OrderPurchaseStrategy
     {
-        private readonly decimal itemsPrice;
+        private readonly decimal _itemsPrice;
 
         public TotalPriceOrderPurchaseStrategy(decimal itemsPrice)
         {
-            this.itemsPrice = itemsPrice;
+            _itemsPrice = itemsPrice;
         }
 
         public override decimal CalculateTotalPrice()
         {
-            return this.itemsPrice;
+            return _itemsPrice;
         }
 
         public override void ValidateOrderSummary(decimal totalPrice)

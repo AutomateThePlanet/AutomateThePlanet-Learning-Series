@@ -22,7 +22,7 @@ namespace NullObjectDesignPattern.Pages.SignInPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("signInSubmit-input"));
+                return Driver.FindElement(By.Id("signInSubmit-input"));
             }
         }
 
@@ -30,7 +30,7 @@ namespace NullObjectDesignPattern.Pages.SignInPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("ap_password"));
+                return Driver.FindElement(By.Id("ap_password"));
             }
         }
 
@@ -38,7 +38,7 @@ namespace NullObjectDesignPattern.Pages.SignInPage
         {
             get
             {
-                return this.driver.FindElement(By.Id("ap_email"));
+                return Driver.FindElement(By.Id("ap_email"));
             }
         }
     }

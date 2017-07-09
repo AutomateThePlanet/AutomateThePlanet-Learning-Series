@@ -18,14 +18,14 @@ namespace DecoratorDesignPattern.Data
     {
         public ClientPurchaseInfo(ClientAddressInfo addressInfo)
         {
-            this.BillingInfo = addressInfo;
-            this.ShippingInfo = addressInfo;
+            BillingInfo = addressInfo;
+            ShippingInfo = addressInfo;
         }
 
         public ClientPurchaseInfo(ClientAddressInfo billingInfo, ClientAddressInfo shippingInfo)
         {
-            this.BillingInfo = billingInfo;
-            this.ShippingInfo = shippingInfo;
+            BillingInfo = billingInfo;
+            ShippingInfo = shippingInfo;
         }
 
         public ClientAddressInfo BillingInfo { get; set; }
@@ -34,6 +34,6 @@ namespace DecoratorDesignPattern.Data
 
         public string DeliveryType { get; set; }
 
-        public DecoratorDesignPattern.Enums.GiftWrappingStyles GiftWrapping { get; set; }
+        public Enums.GiftWrappingStyles GiftWrapping { get; set; }
     }
 }

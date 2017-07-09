@@ -17,10 +17,10 @@ using IoCContainerPageObjectPattern.Enums;
 
 namespace IoCContainerPageObjectPattern.BingMainPage.HardCore
 {
-    public interface IBingMainPage<M, V>
-    : IPage<M, V>
-        where M : BasePageElementMap, new()
-        where V : BasePageValidator<M>, new() 
+    public interface IBingMainPage<TM, TV>
+    : IPage<TM, TV>
+        where TM : BasePageElementMap, new()
+        where TV : BasePageValidator<TM>, new() 
     {
         void Search(string textToType);
 

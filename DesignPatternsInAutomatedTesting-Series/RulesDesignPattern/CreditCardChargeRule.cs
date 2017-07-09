@@ -18,24 +18,24 @@ namespace RulesDesignPattern
 {
     public class CreditCardChargeRule : BaseRule
     {
-        private readonly PurchaseTestInput purchaseTestInput;
-        private readonly decimal totalPriceLowerBoundary;
+        private readonly PurchaseTestInput _purchaseTestInput;
+        private readonly decimal _totalPriceLowerBoundary;
 
         public CreditCardChargeRule(PurchaseTestInput purchaseTestInput, decimal totalPriceLowerBoundary, Action actionToBeExecuted) : base(actionToBeExecuted)
         {
-            this.purchaseTestInput = purchaseTestInput;
-            this.totalPriceLowerBoundary = totalPriceLowerBoundary;
+            _purchaseTestInput = purchaseTestInput;
+            _totalPriceLowerBoundary = totalPriceLowerBoundary;
         }
         
         public override IRuleResult Eval()
         {
-            if (!string.IsNullOrEmpty(this.purchaseTestInput.CreditCardNumber) &&
-                !this.purchaseTestInput.IsWiretransfer &&
-                !this.purchaseTestInput.IsPromotionalPurchase &&
-                this.purchaseTestInput.TotalPrice > this.totalPriceLowerBoundary)
+            if (!string.IsNullOrEmpty(_purchaseTestInput.CreditCardNumber) &&
+                !_purchaseTestInput.IsWiretransfer &&
+                !_purchaseTestInput.IsPromotionalPurchase &&
+                _purchaseTestInput.TotalPrice > _totalPriceLowerBoundary)
             {
-                this.ruleResult.IsSuccess = true;
-                return this.ruleResult;
+                RuleResult.IsSuccess = true;
+                return RuleResult;
             }
             return new RuleResult();
         }

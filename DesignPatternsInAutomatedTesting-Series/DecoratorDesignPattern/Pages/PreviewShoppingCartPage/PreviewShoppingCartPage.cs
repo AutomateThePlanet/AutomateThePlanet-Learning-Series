@@ -20,12 +20,12 @@ namespace DecoratorDesignPattern.Pages.PreviewShoppingCartPage
     {
         public void ClickProceedToCheckoutButton()
         {
-            this.Map.ProceedToCheckoutButton.Click();
+            Map.ProceedToCheckoutButton.Click();
         }
 
         public void CheckOrderContainsGift()
         {
-            this.Map.ThisOrderContainsGiftCheckbox.Click();
+            Map.ThisOrderContainsGiftCheckbox.Click();
         }
     }
 }

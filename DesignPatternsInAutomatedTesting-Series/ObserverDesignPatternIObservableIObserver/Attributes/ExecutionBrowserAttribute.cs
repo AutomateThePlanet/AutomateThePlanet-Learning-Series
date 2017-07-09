@@ -20,7 +20,7 @@ namespace ObserverDesignPatternIObservableIObserver.Attributes
     {
         public ExecutionBrowserAttribute(BrowserTypes browser)
         {
-            this.BrowserType = browser;
+            BrowserType = browser;
         }
 
         public BrowserTypes BrowserType { get; set; }

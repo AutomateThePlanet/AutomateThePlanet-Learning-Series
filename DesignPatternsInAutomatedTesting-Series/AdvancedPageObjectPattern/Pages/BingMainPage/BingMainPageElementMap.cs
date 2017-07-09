@@ -22,7 +22,7 @@ namespace AdvancedPageObjectPattern.Pages.BingMainPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("sb_form_q"));
+                return Browser.FindElement(By.Id("sb_form_q"));
             }
         }
 
@@ -30,7 +30,7 @@ namespace AdvancedPageObjectPattern.Pages.BingMainPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("sb_form_go"));
+                return Browser.FindElement(By.Id("sb_form_go"));
             }
         }
        
@@ -38,7 +38,7 @@ namespace AdvancedPageObjectPattern.Pages.BingMainPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("b_tween"));
+                return Browser.FindElement(By.Id("b_tween"));
             }
         }
     }

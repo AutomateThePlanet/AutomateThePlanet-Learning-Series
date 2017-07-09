@@ -16,15 +16,15 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Data
 {
     public class ClientPurchaseInfo
     {
-        public ClientPurchaseInfo(AdvancedBehavioursDesignPatternPartTwo.Data.ClientAddressInfo addressInfo)
+        public ClientPurchaseInfo(ClientAddressInfo addressInfo)
         {
-            this.BillingInfo = addressInfo;
-            this.ShippingInfo = addressInfo;
+            BillingInfo = addressInfo;
+            ShippingInfo = addressInfo;
         }
 
-        public AdvancedBehavioursDesignPatternPartTwo.Data.ClientAddressInfo BillingInfo { get; set; }
+        public ClientAddressInfo BillingInfo { get; set; }
 
-        public AdvancedBehavioursDesignPatternPartTwo.Data.ClientAddressInfo ShippingInfo { get; set; }
+        public ClientAddressInfo ShippingInfo { get; set; }
 
         public string CouponCode { get; set; }
     }

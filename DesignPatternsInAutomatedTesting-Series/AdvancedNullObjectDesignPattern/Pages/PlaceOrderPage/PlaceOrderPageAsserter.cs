@@ -20,7 +20,7 @@ namespace AdvancedNullObjectDesignPattern.Pages.PlaceOrderPage
     {
         public static void AssertOrderTotalPrice(this PlaceOrderPage page, double totalPrice, double discountPrice)
         {
-            double expectedTotalPrice = totalPrice - discountPrice;
+            var expectedTotalPrice = totalPrice - discountPrice;
             Assert.AreEqual<string>(expectedTotalPrice.ToString(), page.TotalPrice.Text);
         }
     }

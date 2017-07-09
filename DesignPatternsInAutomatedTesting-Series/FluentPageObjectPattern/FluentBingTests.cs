@@ -23,19 +23,19 @@ namespace FluentPageObjectPattern
         [TestInitialize]
         public void SetupTest()
         {
-            FluentPageObjectPattern.Core.Driver.StartBrowser();
+            Core.Driver.StartBrowser();
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            FluentPageObjectPattern.Core.Driver.StopBrowser();
+            Core.Driver.StopBrowser();
         }
 
         [TestMethod]
         public void SearchForImageFuent()
         {
-            FluentPageObjectPattern.Pages
+            Pages
                                    .BingMainPage
                                    .BingMainPage
                                    .Instance

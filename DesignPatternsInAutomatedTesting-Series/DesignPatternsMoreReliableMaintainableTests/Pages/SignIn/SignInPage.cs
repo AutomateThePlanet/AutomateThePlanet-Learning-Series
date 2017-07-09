@@ -33,7 +33,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.SignIn
 
         public void ClickContinueAsGuestButton()
         {
-            this.Map.ContinueAsGuestButton.Click();
+            Map.ContinueAsGuestButton.Click();
         }
     }
 }

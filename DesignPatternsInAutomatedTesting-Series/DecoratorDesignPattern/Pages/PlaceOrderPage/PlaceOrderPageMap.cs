@@ -23,7 +23,7 @@ namespace DecoratorDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
+                return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
             }
         }
 
@@ -31,7 +31,7 @@ namespace DecoratorDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[5]/td[2]"));
+                return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[5]/td[2]"));
             }
         }
 
@@ -39,7 +39,7 @@ namespace DecoratorDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[1]/td[2]"));
+                return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[1]/td[2]"));
             }
         }
 
@@ -47,7 +47,7 @@ namespace DecoratorDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[4]/td[2]"));
+                return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[4]/td[2]"));
             }
         }
 
@@ -55,7 +55,7 @@ namespace DecoratorDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
+                return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
             }
         }
 
@@ -63,7 +63,7 @@ namespace DecoratorDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
+                return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
             }
         }
     }

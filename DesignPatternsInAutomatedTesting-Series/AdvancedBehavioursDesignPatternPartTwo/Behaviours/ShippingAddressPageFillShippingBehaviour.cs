@@ -20,18 +20,18 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {
     public class ShippingAddressPageFillShippingBehaviour : ActionBehaviour
     {
-        private readonly ShippingAddressPage shippingAddressPage;
-        private readonly AdvancedBehavioursDesignPatternPartTwo.Data.ClientPurchaseInfo clientPurchaseInfo;
+        private readonly ShippingAddressPage _shippingAddressPage;
+        private readonly Data.ClientPurchaseInfo _clientPurchaseInfo;
 
-        public ShippingAddressPageFillShippingBehaviour(AdvancedBehavioursDesignPatternPartTwo.Data.ClientPurchaseInfo clientPurchaseInfo)
+        public ShippingAddressPageFillShippingBehaviour(Data.ClientPurchaseInfo clientPurchaseInfo)
         {
-            this.shippingAddressPage = AdvancedBehavioursDesignPatternPartTwo.Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
-            this.clientPurchaseInfo = clientPurchaseInfo;
+            _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
+            _clientPurchaseInfo = clientPurchaseInfo;
         }
 
         protected override void PerformAct()
         {
-            this.shippingAddressPage.FillShippingInfo(this.clientPurchaseInfo);
+            _shippingAddressPage.FillShippingInfo(_clientPurchaseInfo);
         }
     }
 }

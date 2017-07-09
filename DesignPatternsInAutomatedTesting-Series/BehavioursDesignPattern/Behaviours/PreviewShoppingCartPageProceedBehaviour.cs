@@ -19,24 +19,24 @@ namespace BehavioursDesignPattern.Behaviours
 {
     public class PreviewShoppingCartPageProceedBehaviour : Behaviour
     {
-        private readonly PreviewShoppingCartPage previewShoppingCartPage;
-        private readonly SignInPage signInPage;
+        private readonly PreviewShoppingCartPage _previewShoppingCartPage;
+        private readonly SignInPage _signInPage;
 
         // This version is compatible only with UnityBehaviorEngine.
         public PreviewShoppingCartPageProceedBehaviour(PreviewShoppingCartPage previewShoppingCartPage, SignInPage signInPage)
         {
-            this.previewShoppingCartPage = previewShoppingCartPage;
-            this.signInPage = signInPage;
+            _previewShoppingCartPage = previewShoppingCartPage;
+            _signInPage = signInPage;
         }
 
         public override void PerformAct()
         {
-            this.previewShoppingCartPage.ClickProceedToCheckoutButton();
+            _previewShoppingCartPage.ClickProceedToCheckoutButton();
         }
 
         public override void PerformPostAct()
         {
-            this.signInPage.WaitForPageToLoad();
+            _signInPage.WaitForPageToLoad();
         }
     }
 }

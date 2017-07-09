@@ -14,16 +14,16 @@
 
 namespace AdvancedStrategyDesignPattern.Pages.ShippingPaymentPage
 {
-    public class ShippingPaymentPage : AdvancedStrategyDesignPattern.Core.BasePageSingleton<ShippingPaymentPage, ShippingPaymentPageMap>
+    public class ShippingPaymentPage : Core.BasePageSingleton<ShippingPaymentPage, ShippingPaymentPageMap>
     {
         public void ClickBottomContinueButton()
         {
-            this.Map.BottomContinueButton.Click();
+            Map.BottomContinueButton.Click();
         }
 
         public void ClickTopContinueButton()
         {
-            this.Map.TopContinueButton.Click();
+            Map.TopContinueButton.Click();
         }
     }
 }

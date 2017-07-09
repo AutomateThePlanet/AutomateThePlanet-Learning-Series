@@ -20,20 +20,20 @@ namespace IoCContainerPageObjectPattern.Base
 {
     public static class PageFactory
     {
-        private static readonly IUnityContainer container; 
+        private static readonly IUnityContainer Container; 
 
         static PageFactory()
         {
             var fileMap = new ExeConfigurationFileMap { ExeConfigFilename = "unity.config" };
-            Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
+            var configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
             var unitySection = (UnityConfigurationSection)configuration.GetSection("unity");
-            container = new UnityContainer(); 
-            container.LoadConfiguration(unitySection);
+            Container = new UnityContainer(); 
+            Container.LoadConfiguration(unitySection);
         }
 
         public static T Get<T>()
         {
-            return container.Resolve<T>();
+            return Container.Resolve<T>();
         }
     }
 }

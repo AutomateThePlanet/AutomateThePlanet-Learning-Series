@@ -27,7 +27,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.SignIn
         {
             get
             {
-                return this.driver.FindElement(By.Id("gtChk"));
+                return Driver.FindElement(By.Id("gtChk"));
             }
         }
     }

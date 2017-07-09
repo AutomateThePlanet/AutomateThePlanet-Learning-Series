@@ -19,17 +19,17 @@ namespace BehavioursDesignPattern.Behaviours
 {
     public class ItemPageBuyBehaviour : Behaviour
     {
-        private readonly ItemPage itemPage;
+        private readonly ItemPage _itemPage;
 
         // This version is compatible only with UnityBehaviorEngine.
         public ItemPageBuyBehaviour(ItemPage itemPage)
         {
-            this.itemPage = itemPage;
+            _itemPage = itemPage;
         }
 
         public override void PerformAct()
         {
-            this.itemPage.ClickBuyNowButton();
+            _itemPage.ClickBuyNowButton();
         }
     }
 }

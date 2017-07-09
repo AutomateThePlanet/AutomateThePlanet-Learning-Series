@@ -42,8 +42,8 @@ namespace NullObjectDesignPattern
         [TestMethod]
         public void Purchase_SeleniumTestingToolsCookbook()
         {
-            string itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
-            string itemPrice = "40.49";
+            var itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
+            var itemPrice = "40.49";
             var clientPurchaseInfo = new ClientPurchaseInfo(
                 new ClientAddressInfo()
                 {
@@ -54,15 +54,17 @@ namespace NullObjectDesignPattern
                     City = "New York City",
                     Zip = "10001-2121",
                     Phone = "00164644885569"
-                });
-            clientPurchaseInfo.CouponCode = "99PERDIS";
+                })
+            {
+                CouponCode = "99PERDIS"
+            };
             var clientLoginInfo = new ClientLoginInfo()
             {
                 Email = "g3984159@trbvm.com",
                 Password = "ASDFG_12345"
             };
 
-            var purchaseContext = new NullObjectDesignPattern.Base.PurchaseContext(new NullObjectDesignPattern.Strategies.NullPurchasePromotionalCodeStrategy(),
+            var purchaseContext = new Base.PurchaseContext(new Strategies.NullPurchasePromotionalCodeStrategy(),
                 new ItemPage(Driver.Browser),
                 new PreviewShoppingCartPage(Driver.Browser),
                 new SignInPage(Driver.Browser),

@@ -22,14 +22,14 @@ namespace DecoratorDesignPattern.Advanced.Base
 {
     public class PurchaseContext
     {
-        private readonly DecoratorDesignPattern.Advanced.Strategies.OrderPurchaseStrategy orderPurchaseStrategy;
+        private readonly Strategies.OrderPurchaseStrategy _orderPurchaseStrategy;
 
-        public PurchaseContext(DecoratorDesignPattern.Advanced.Strategies.OrderPurchaseStrategy orderPurchaseStrategy)
+        public PurchaseContext(Strategies.OrderPurchaseStrategy orderPurchaseStrategy)
         {
-            this.orderPurchaseStrategy = orderPurchaseStrategy;
+            _orderPurchaseStrategy = orderPurchaseStrategy;
         }
 
-        public void PurchaseItem(string itemUrl, string itemPrice, DecoratorDesignPattern.Data.ClientLoginInfo clientLoginInfo, DecoratorDesignPattern.Data.ClientPurchaseInfo clientPurchaseInfo)
+        public void PurchaseItem(string itemUrl, string itemPrice, Data.ClientLoginInfo clientLoginInfo, Data.ClientPurchaseInfo clientPurchaseInfo)
         {
             ItemPage.Instance.Navigate(itemUrl);
             ItemPage.Instance.ClickBuyNowButton();
@@ -42,8 +42,8 @@ namespace DecoratorDesignPattern.Advanced.Base
             ShippingAddressPage.Instance.FillBillingInfo(clientPurchaseInfo);
             ShippingAddressPage.Instance.ClickContinueButton();
             ShippingPaymentPage.Instance.ClickTopContinueButton();
-            decimal expectedTotalPrice = this.orderPurchaseStrategy.CalculateTotalPrice();
-            this.orderPurchaseStrategy.ValidateOrderSummary(expectedTotalPrice);
+            var expectedTotalPrice = _orderPurchaseStrategy.CalculateTotalPrice();
+            _orderPurchaseStrategy.ValidateOrderSummary(expectedTotalPrice);
         }
     }
 }

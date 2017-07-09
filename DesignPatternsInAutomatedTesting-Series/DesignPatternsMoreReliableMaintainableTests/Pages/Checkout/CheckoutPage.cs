@@ -34,8 +34,8 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.Checkout
 
         public double GetTotalPrice()
         {
-            double result = default(double);
-            string totalPriceText = this.Map.TotalPrice.Text;
+            var result = default(double);
+            var totalPriceText = Map.TotalPrice.Text;
             result = double.Parse(totalPriceText);
 
             return result;

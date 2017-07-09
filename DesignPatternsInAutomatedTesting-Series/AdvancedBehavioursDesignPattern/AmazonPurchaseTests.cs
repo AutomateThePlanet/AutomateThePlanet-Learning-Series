@@ -31,28 +31,28 @@ namespace AdvancedBehavioursDesignPattern
     [TestClass]
     public class AmazonPurchaseTests
     {
-        private static readonly IUnityContainer container = new UnityContainer();
+        private static readonly IUnityContainer Container = new UnityContainer();
 
         [TestInitialize]
         public void SetupTest()
         {
-            AdvancedBehavioursDesignPattern.Core.Driver.StartBrowser();
-            container.RegisterType<ItemPage>(new ContainerControlledLifetimeManager());
-            container.RegisterType<PreviewShoppingCartPage>(new ContainerControlledLifetimeManager());
-            container.RegisterType<SignInPage>(new ContainerControlledLifetimeManager());
-            container.RegisterType<ShippingAddressPage>(new ContainerControlledLifetimeManager());
-            container.RegisterType<ShippingPaymentPage>(new ContainerControlledLifetimeManager());
-            container.RegisterType<PlaceOrderPage>(new ContainerControlledLifetimeManager());
-            container.RegisterType<ItemPageBuyBehaviour>(new ContainerControlledLifetimeManager());
-            container.RegisterType<ItemPageNavigationBehaviour>(new ContainerControlledLifetimeManager());
-            container.RegisterType<PlaceOrderPageAssertFinalAmountsBehaviour>(new ContainerControlledLifetimeManager());
-            container.RegisterType<PreviewShoppingCartPageProceedBehaviour>(new ContainerControlledLifetimeManager());
-            container.RegisterType<ShippingAddressPageContinueBehaviour>(new ContainerControlledLifetimeManager());
-            container.RegisterType<ShippingAddressPageFillDifferentBillingBehaviour>(new ContainerControlledLifetimeManager());
-            container.RegisterType<ShippingAddressPageFillShippingBehaviour>(new ContainerControlledLifetimeManager());
-            container.RegisterType<ShippingPaymentPageContinueBehaviour>(new ContainerControlledLifetimeManager());
-            container.RegisterType<SignInPageLoginBehaviour>(new ContainerControlledLifetimeManager());
-            container.RegisterInstance<IWebDriver>(Driver.Browser);
+            Driver.StartBrowser();
+            Container.RegisterType<ItemPage>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<PreviewShoppingCartPage>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<SignInPage>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<ShippingAddressPage>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<ShippingPaymentPage>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<PlaceOrderPage>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<ItemPageBuyBehaviour>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<ItemPageNavigationBehaviour>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<PlaceOrderPageAssertFinalAmountsBehaviour>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<PreviewShoppingCartPageProceedBehaviour>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<ShippingAddressPageContinueBehaviour>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<ShippingAddressPageFillDifferentBillingBehaviour>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<ShippingAddressPageFillShippingBehaviour>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<ShippingPaymentPageContinueBehaviour>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<SignInPageLoginBehaviour>(new ContainerControlledLifetimeManager());
+            Container.RegisterInstance<IWebDriver>(Driver.Browser);
         }
 
         [TestCleanup]
@@ -76,8 +76,10 @@ namespace AdvancedBehavioursDesignPattern
                     City = "New York City",
                     Zip = "10001-2121",
                     Phone = "00164644885569"
-                });
-            clientPurchaseInfo.CouponCode = "99PERDIS";
+                })
+            {
+                CouponCode = "99PERDIS"
+            };
             var clientLoginInfo = new ClientLoginInfo()
             {
                 Email = "g3984159@trbvm.com",

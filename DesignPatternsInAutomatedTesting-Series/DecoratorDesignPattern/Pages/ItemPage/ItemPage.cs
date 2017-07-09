@@ -24,7 +24,7 @@ namespace DecoratorDesignPattern.Pages.ItemPage
 
         public void ClickBuyNowButton()
         {
-            this.Map.AddToCartButton.Click();
+            Map.AddToCartButton.Click();
         }
 
         public override void Navigate(string part)

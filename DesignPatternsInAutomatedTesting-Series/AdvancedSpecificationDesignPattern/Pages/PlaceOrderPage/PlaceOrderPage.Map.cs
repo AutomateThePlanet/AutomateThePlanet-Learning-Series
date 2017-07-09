@@ -22,7 +22,7 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
+                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
             }
         }
 
@@ -30,7 +30,7 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[5]/td[2]"));
+                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[5]/td[2]"));
             }
         }
 
@@ -38,7 +38,7 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[1]/td[2]"));
+                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[1]/td[2]"));
             }
         }
 
@@ -46,7 +46,7 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[4]/td[2]"));
+                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[4]/td[2]"));
             }
         }
 
@@ -54,7 +54,7 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
+                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
             }
         }
 
@@ -62,7 +62,7 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
+                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
             }
         }
 
@@ -70,7 +70,7 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id='creditCard']/table/tbody/tr[2]/td[2]"));
+                return Driver.FindElement(By.XPath("//*[@id='creditCard']/table/tbody/tr[2]/td[2]"));
             }
         }
 
@@ -78,7 +78,7 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id='securityNumber']/table/tbody/tr[2]/td[2]"));
+                return Driver.FindElement(By.XPath("//*[@id='securityNumber']/table/tbody/tr[2]/td[2]"));
             }
         }
 
@@ -86,7 +86,7 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id=creditCardOwner']/table/tbody/tr[2]/td[2]"));
+                return Driver.FindElement(By.XPath("//*[@id=creditCardOwner']/table/tbody/tr[2]/td[2]"));
             }
         }
 
@@ -94,7 +94,7 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id=wiretransfer']/table/tbody/tr[2]/td[2]"));
+                return Driver.FindElement(By.XPath("//*[@id=wiretransfer']/table/tbody/tr[2]/td[2]"));
             }
         }
 
@@ -102,7 +102,7 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
         {
             get
             {
-                return this.driver.FindElement(By.XPath("//*[@id=promotionalCode']/table/tbody/tr[2]/td[2]"));
+                return Driver.FindElement(By.XPath("//*[@id=promotionalCode']/table/tbody/tr[2]/td[2]"));
             }
         }
     }

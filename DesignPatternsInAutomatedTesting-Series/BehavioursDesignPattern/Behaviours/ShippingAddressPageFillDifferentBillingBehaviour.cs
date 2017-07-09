@@ -19,22 +19,22 @@ namespace BehavioursDesignPattern.Behaviours
 {
     public class ShippingAddressPageFillDifferentBillingBehaviour : Behaviour
     {
-        private readonly ShippingAddressPage shippingAddressPage;
-        private readonly ShippingPaymentPage shippingPaymentPage;
+        private readonly ShippingAddressPage _shippingAddressPage;
+        private readonly ShippingPaymentPage _shippingPaymentPage;
 
         // This version is compatible only with UnityBehaviorEngine.
         public ShippingAddressPageFillDifferentBillingBehaviour(ShippingAddressPage shippingAddressPage, ShippingPaymentPage shippingPaymentPage)
         {
-            this.shippingAddressPage = shippingAddressPage;
-            this.shippingPaymentPage = shippingPaymentPage;
+            _shippingAddressPage = shippingAddressPage;
+            _shippingPaymentPage = shippingPaymentPage;
         }
 
         public override void PerformAct()
         {
-            this.shippingAddressPage.ClickDifferentBillingCheckBox(PurchaseTestContext.ClientPurchaseInfo);
-            this.shippingAddressPage.ClickContinueButton();
-            this.shippingPaymentPage.ClickBottomContinueButton();
-            this.shippingAddressPage.FillBillingInfo(PurchaseTestContext.ClientPurchaseInfo);
+            _shippingAddressPage.ClickDifferentBillingCheckBox(PurchaseTestContext.ClientPurchaseInfo);
+            _shippingAddressPage.ClickContinueButton();
+            _shippingPaymentPage.ClickBottomContinueButton();
+            _shippingAddressPage.FillBillingInfo(PurchaseTestContext.ClientPurchaseInfo);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace IoCContainerPageObjectPattern.BingMainPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("sb_form_q"));
+                return Browser.FindElement(By.Id("sb_form_q"));
             }
         }
 
@@ -32,7 +32,7 @@ namespace IoCContainerPageObjectPattern.BingMainPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("sb_form_go"));
+                return Browser.FindElement(By.Id("sb_form_go"));
             }
         }
        
@@ -40,7 +40,7 @@ namespace IoCContainerPageObjectPattern.BingMainPage
         {
             get
             {
-                return this.browser.FindElement(By.Id("b_tween"));
+                return Browser.FindElement(By.Id("b_tween"));
             }
         }
 
@@ -48,7 +48,7 @@ namespace IoCContainerPageObjectPattern.BingMainPage
         {
             get
             {
-                return this.browser.FindElement(By.LinkText("Images"));
+                return Browser.FindElement(By.LinkText("Images"));
             }
         }
 
@@ -56,7 +56,7 @@ namespace IoCContainerPageObjectPattern.BingMainPage
         {
             get
             {
-                return new SelectElement(this.browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Size']")));
+                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Size']")));
             }
         }
 
@@ -64,7 +64,7 @@ namespace IoCContainerPageObjectPattern.BingMainPage
         {
             get
             {
-                return new SelectElement(this.browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Color']")));
+                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Color']")));
             }
         }
 
@@ -72,7 +72,7 @@ namespace IoCContainerPageObjectPattern.BingMainPage
         {
             get
             {
-                return new SelectElement(this.browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Type']")));
+                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Type']")));
             }
         }
 
@@ -80,7 +80,7 @@ namespace IoCContainerPageObjectPattern.BingMainPage
         {
             get
             {
-                return new SelectElement(this.browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Layout']")));
+                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Layout']")));
             }
         }
 
@@ -88,7 +88,7 @@ namespace IoCContainerPageObjectPattern.BingMainPage
         {
             get
             {
-                return new SelectElement(this.browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'People']")));
+                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'People']")));
             }
         }
 
@@ -96,7 +96,7 @@ namespace IoCContainerPageObjectPattern.BingMainPage
         {
             get
             {
-                return new SelectElement(this.browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Date']")));
+                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Date']")));
             }
         }
 
@@ -104,7 +104,7 @@ namespace IoCContainerPageObjectPattern.BingMainPage
         {
             get
             {
-                return new SelectElement(this.browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'License']")));
+                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'License']")));
             }
         }
     }

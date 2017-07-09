@@ -29,23 +29,23 @@ using OpenQA.Selenium;
 namespace AdvancedNullObjectDesignPattern
 {
     [TestClass]
-    public class AmazonPurchase_UnityNullObjectTests
+    public class AmazonPurchaseUnityNullObjectTests
     {
-        private static readonly IUnityContainer container = new UnityContainer();
+        private static readonly IUnityContainer Container = new UnityContainer();
 
         [TestInitialize]
         public void SetupTest()
         {
             Driver.StartBrowser();
-            container.RegisterType<ItemPage>(new ContainerControlledLifetimeManager());
-            container.RegisterType<PreviewShoppingCartPage>(new ContainerControlledLifetimeManager());
-            container.RegisterType<SignInPage>(new ContainerControlledLifetimeManager());
-            container.RegisterType<ShippingAddressPage>(new ContainerControlledLifetimeManager());
-            container.RegisterType<ShippingPaymentPage>(new ContainerControlledLifetimeManager());
-            container.RegisterType<PlaceOrderPage>(new ContainerControlledLifetimeManager());
-            container.RegisterType<PurchaseContext>(new ContainerControlledLifetimeManager());
-            container.RegisterType<IPurchasePromotionalCodeStrategy, NullPurchasePromotionalCodeStrategy>(new ContainerControlledLifetimeManager());
-            container.RegisterInstance<IWebDriver>(Driver.Browser);
+            Container.RegisterType<ItemPage>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<PreviewShoppingCartPage>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<SignInPage>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<ShippingAddressPage>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<ShippingPaymentPage>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<PlaceOrderPage>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<PurchaseContext>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<IPurchasePromotionalCodeStrategy, NullPurchasePromotionalCodeStrategy>(new ContainerControlledLifetimeManager());
+            Container.RegisterInstance<IWebDriver>(Driver.Browser);
         }
 
         [TestCleanup]
@@ -57,8 +57,8 @@ namespace AdvancedNullObjectDesignPattern
         [TestMethod]
         public void Purchase_SeleniumTestingToolsCookbook()
         {
-            string itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
-            string itemPrice = "40.49";
+            var itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
+            var itemPrice = "40.49";
             var clientPurchaseInfo = new ClientPurchaseInfo(
                 new ClientAddressInfo()
                 {
@@ -69,16 +69,18 @@ namespace AdvancedNullObjectDesignPattern
                     City = "New York City",
                     Zip = "10001-2121",
                     Phone = "00164644885569"
-                });
-            clientPurchaseInfo.CouponCode = "99PERDIS";
+                })
+            {
+                CouponCode = "99PERDIS"
+            };
             var clientLoginInfo = new ClientLoginInfo()
             {
                 Email = "g3984159@trbvm.com",
                 Password = "ASDFG_12345"
             };
-            container.RegisterInstance<IPurchasePromotionalCodeStrategy>(
-                new UiPurchasePromotionalCodeStrategy(container.Resolve<PlaceOrderPage>(), 40.49));
-            PurchaseContext purchaseContext = container.Resolve<PurchaseContext>();
+            Container.RegisterInstance<IPurchasePromotionalCodeStrategy>(
+                new UiPurchasePromotionalCodeStrategy(Container.Resolve<PlaceOrderPage>(), 40.49));
+            var purchaseContext = Container.Resolve<PurchaseContext>();
             purchaseContext.PurchaseItem(itemUrl, itemPrice, clientLoginInfo, clientPurchaseInfo);
         }
     }

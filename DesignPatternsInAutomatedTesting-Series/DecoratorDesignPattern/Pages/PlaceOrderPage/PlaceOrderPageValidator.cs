@@ -17,36 +17,36 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DecoratorDesignPattern.Pages.PlaceOrderPage
 {
-    public class PlaceOrderPageValidator : BasePageValidator<DecoratorDesignPattern.Pages.PlaceOrderPage.PlaceOrderPageMap>
+    public class PlaceOrderPageValidator : BasePageValidator<PlaceOrderPageMap>
     {
         public void ItemsPrice(string expectedPrice)
         {
-            Assert.AreEqual<string>(expectedPrice, this.Map.ItemsPrice.Text);
+            Assert.AreEqual<string>(expectedPrice, Map.ItemsPrice.Text);
         }
 
         public void BeforeTaxesPrice(string expectedPrice)
         {
-            Assert.AreEqual<string>(expectedPrice, this.Map.TotalBeforeTaxPrice.Text);
+            Assert.AreEqual<string>(expectedPrice, Map.TotalBeforeTaxPrice.Text);
         }
 
         public void EstimatedTaxPrice(string expectedPrice)
         {
-            Assert.AreEqual<string>(expectedPrice, this.Map.EstimatedTaxPrice.Text);
+            Assert.AreEqual<string>(expectedPrice, Map.EstimatedTaxPrice.Text);
         }
 
         public void OrderTotalPrice(string expectedPrice)
         {
-            Assert.AreEqual<string>(expectedPrice, this.Map.TotalPrice.Text);
+            Assert.AreEqual<string>(expectedPrice, Map.TotalPrice.Text);
         }
 
         public void GiftWrapPrice(string expectedPrice)
         {
-            Assert.AreEqual<string>(expectedPrice, this.Map.GiftWrapPrice.Text);
+            Assert.AreEqual<string>(expectedPrice, Map.GiftWrapPrice.Text);
         }
 
         public void ShippingTaxPrice(string expectedPrice)
         {
-            Assert.AreEqual<string>(expectedPrice, this.Map.ShippingTax.Text);
+            Assert.AreEqual<string>(expectedPrice, Map.ShippingTax.Text);
         }
     }
 }

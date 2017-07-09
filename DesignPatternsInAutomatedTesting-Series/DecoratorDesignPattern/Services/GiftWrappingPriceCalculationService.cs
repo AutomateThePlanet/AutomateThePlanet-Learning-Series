@@ -16,26 +16,26 @@ namespace DecoratorDesignPattern.Services
 {
     public class GiftWrappingPriceCalculationService
     {
-        public decimal Calculate(DecoratorDesignPattern.Enums.GiftWrappingStyles giftWrappingStyle)
+        public decimal Calculate(Enums.GiftWrappingStyles giftWrappingStyle)
         {
-            decimal giftWrappingPrice = default(decimal);
+            var giftWrappingPrice = default(decimal);
 
             // Call Real Web Service to determine the Gift Wrapping Tax.
             switch (giftWrappingStyle)
             {
-                case DecoratorDesignPattern.Enums.GiftWrappingStyles.Fancy:
+                case Enums.GiftWrappingStyles.Fancy:
                     giftWrappingPrice = 10.5M;
                     break;
-                case DecoratorDesignPattern.Enums.GiftWrappingStyles.Cheap:
+                case Enums.GiftWrappingStyles.Cheap:
                     giftWrappingPrice = 1.5M;
                     break;
-                case DecoratorDesignPattern.Enums.GiftWrappingStyles.UltraFancy:
+                case Enums.GiftWrappingStyles.UltraFancy:
                     giftWrappingPrice = 30.2M;
                     break;
-                case DecoratorDesignPattern.Enums.GiftWrappingStyles.Paper:
+                case Enums.GiftWrappingStyles.Paper:
                     giftWrappingPrice = 0.2M;
                     break;
-                case DecoratorDesignPattern.Enums.GiftWrappingStyles.None:
+                case Enums.GiftWrappingStyles.None:
                 default:
                     giftWrappingPrice = 0.0M;
                     break;

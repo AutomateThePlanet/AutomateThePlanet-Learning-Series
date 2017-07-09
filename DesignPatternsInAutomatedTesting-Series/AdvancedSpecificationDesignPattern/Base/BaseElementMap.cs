@@ -18,16 +18,16 @@ namespace AdvancedSpecificationDesignPattern.Base
 {
     public abstract class BaseElementMap
     {
-        protected IWebDriver driver;
+        protected IWebDriver Driver;
 
         public BaseElementMap(IWebDriver driver)
         {
-            this.driver = driver;
+            Driver = driver;
         }
 
         public void SwitchToDefault()
         {
-            this.driver.SwitchTo().DefaultContent();
+            Driver.SwitchTo().DefaultContent();
         }
     }
 }

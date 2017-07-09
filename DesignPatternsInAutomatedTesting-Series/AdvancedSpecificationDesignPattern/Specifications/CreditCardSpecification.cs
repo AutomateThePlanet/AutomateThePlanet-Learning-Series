@@ -19,16 +19,16 @@ namespace AdvancedSpecificationDesignPattern.Specifications
 {
     public class CreditCardSpecification : Specification<PurchaseTestInput>
     {
-        private readonly PurchaseTestInput purchaseTestInput;
+        private readonly PurchaseTestInput _purchaseTestInput;
 
         public CreditCardSpecification(PurchaseTestInput purchaseTestInput)
         {
-            this.purchaseTestInput = purchaseTestInput;
+            _purchaseTestInput = purchaseTestInput;
         }
 
         public override bool IsSatisfiedBy(PurchaseTestInput entity)
         {
-            return !string.IsNullOrEmpty(this.purchaseTestInput.CreditCardNumber);
+            return !string.IsNullOrEmpty(_purchaseTestInput.CreditCardNumber);
         }
     }
 }

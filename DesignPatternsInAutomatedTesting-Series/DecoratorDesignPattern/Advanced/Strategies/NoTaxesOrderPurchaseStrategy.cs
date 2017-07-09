@@ -18,13 +18,13 @@ namespace DecoratorDesignPattern.Advanced.Strategies
 {
     public class NoTaxesOrderPurchaseStrategy : OrderPurchaseStrategyDecorator
     {
-        public NoTaxesOrderPurchaseStrategy(OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, DecoratorDesignPattern.Data.ClientPurchaseInfo clientPurchaseInfo) : base(orderPurchaseStrategy, itemsPrice, clientPurchaseInfo)
+        public NoTaxesOrderPurchaseStrategy(OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, Data.ClientPurchaseInfo clientPurchaseInfo) : base(orderPurchaseStrategy, itemsPrice, clientPurchaseInfo)
         {
         }
 
         public override void ValidateOrderSummary(decimal totalPrice)
         {
-            base.orderPurchaseStrategy.ValidateOrderSummary(totalPrice);
+            OrderPurchaseStrategy.ValidateOrderSummary(totalPrice);
             PlaceOrderPage.Instance.Validate().EstimatedTaxPrice("0.00");
         }
     }

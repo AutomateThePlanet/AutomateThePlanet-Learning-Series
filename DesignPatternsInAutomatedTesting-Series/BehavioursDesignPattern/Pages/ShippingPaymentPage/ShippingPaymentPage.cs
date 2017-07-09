@@ -25,12 +25,12 @@ namespace BehavioursDesignPattern.Pages.ShippingPaymentPage
 
         public void ClickBottomContinueButton()
         {
-            this.BottomContinueButton.Click();
+            BottomContinueButton.Click();
         }
 
         public void ClickTopContinueButton()
         {
-            this.TopContinueButton.Click();
+            TopContinueButton.Click();
         }
     }
 }

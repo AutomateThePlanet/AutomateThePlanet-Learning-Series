@@ -19,13 +19,13 @@ namespace ObserverDesignPatternEventsDelegates
 {
     [TestClass]
     [ExecutionBrowser(BrowserTypes.Chrome)]
-    public class BingTestsDotNetEvents : ObserverDesignPatternEventsDelegates.BaseTest
+    public class BingTestsDotNetEvents : BaseTest
     {
         [TestMethod]
         [ExecutionBrowser(BrowserTypes.Firefox)]
         public void SearchTextInBing_First_Observer()
         {
-            BingMainPage bingMainPage = new BingMainPage(Driver.Browser);
+            var bingMainPage = new BingMainPage(Driver.Browser);
             bingMainPage.Navigate();
             bingMainPage.Search("Automate The Planet");
             bingMainPage.Validate().ResultsCount("10");

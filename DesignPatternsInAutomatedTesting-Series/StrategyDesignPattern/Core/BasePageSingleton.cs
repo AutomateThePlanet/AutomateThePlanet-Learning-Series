@@ -14,19 +14,19 @@
 
 namespace StrategyDesignPattern.Core
 {
-    public abstract class BasePageSingleton<S, M> : ThreadSafeLazyBaseSingleton<S>
-        where M : BasePageElementMap, new()
-        where S : BasePageSingleton<S, M>, new()
+    public abstract class BasePageSingleton<TS, TM> : ThreadSafeLazyBaseSingleton<TS>
+        where TM : BasePageElementMap, new()
+        where TS : BasePageSingleton<TS, TM>, new()
     {
         public BasePageSingleton()
         {
         }
 
-        protected M Map
+        protected TM Map
         {
             get
             {
-                return new M();
+                return new TM();
             }
         }
 
@@ -36,14 +36,14 @@ namespace StrategyDesignPattern.Core
         }
     }
 
-    public abstract class BasePageSingleton<S, M, V> : StrategyDesignPattern.Core.BasePageSingleton<S, M>
-        where M : BasePageElementMap, new()
-        where V : BasePageValidator<M>, new()
-        where S : BasePageSingleton<S, M, V>, new()
+    public abstract class BasePageSingleton<TS, TM, TV> : BasePageSingleton<TS, TM>
+        where TM : BasePageElementMap, new()
+        where TV : BasePageValidator<TM>, new()
+        where TS : BasePageSingleton<TS, TM, TV>, new()
     {
-        public V Validate()
+        public TV Validate()
         {
-            return new V();
+            return new TV();
         }
     }
 }

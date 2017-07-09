@@ -22,25 +22,25 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FacadeDesignPattern
 {
     [TestClass]
-    public class EbayPurchase_Without_PurchaseFaceade_Tests
+    public class EbayPurchaseWithoutPurchaseFaceadeTests
     { 
         [TestInitialize]
         public void SetupTest()
         {
-            FacadeDesignPattern.Core.Driver.StartBrowser();
+            Core.Driver.StartBrowser();
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            FacadeDesignPattern.Core.Driver.StopBrowser();
+            Core.Driver.StopBrowser();
         }
 
         [TestMethod]
         public void Purchase_Casio_GShock()
         {
-            string itemUrl = "Casio-G-Shock-Standard-GA-100-1A2-Mens-Watch-Brand-New-/161209550414?pt=LH_DefaultDomain_15&hash=item2588d6864e";
-            string itemPrice = "AU $168.00";
+            var itemUrl = "Casio-G-Shock-Standard-GA-100-1A2-Mens-Watch-Brand-New-/161209550414?pt=LH_DefaultDomain_15&hash=item2588d6864e";
+            var itemPrice = "AU $168.00";
             var currentClientInfo = new ClientInfo()
             {
                 FirstName = "Anton",
@@ -70,8 +70,8 @@ namespace FacadeDesignPattern
         [TestMethod]
         public void Purchase_WhiteOpticalKeyboard()
         {
-            string itemUrl = "Wireless-White-2-4G-Optical-Keyboard-and-Mouse-USB-Receiver-Kit-For-PC-/360649772948?pt=LH_DefaultDomain_2&hash=item53f866cf94";
-            string itemPrice = "C $20.86";
+            var itemUrl = "Wireless-White-2-4G-Optical-Keyboard-and-Mouse-USB-Receiver-Kit-For-PC-/360649772948?pt=LH_DefaultDomain_2&hash=item53f866cf94";
+            var itemPrice = "C $20.86";
             var currentClientInfo = new ClientInfo()
             {
                 FirstName = "Anton",

@@ -20,16 +20,16 @@ namespace AdvancedSpecificationDesignPattern.Specifications
 {
     public class WiretransferSpecification : Specification<PurchaseTestInput>
     {
-        private readonly PurchaseTestInput purchaseTestInput;
+        private readonly PurchaseTestInput _purchaseTestInput;
 
         public WiretransferSpecification(PurchaseTestInput purchaseTestInput)
         {
-            this.purchaseTestInput = purchaseTestInput;
+            _purchaseTestInput = purchaseTestInput;
         }
 
         public override bool IsSatisfiedBy(PurchaseTestInput entity)
         {
-            return this.purchaseTestInput.IsWiretransfer;
+            return _purchaseTestInput.IsWiretransfer;
         }
     }
 }

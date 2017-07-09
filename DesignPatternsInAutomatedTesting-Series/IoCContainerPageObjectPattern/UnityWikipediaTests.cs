@@ -23,17 +23,17 @@ namespace IoCContainerPageObjectPattern
     [TestClass]
     public class UnityWikipediaTests
     {
-        private static readonly IUnityContainer pageFactory = new UnityContainer();
+        private static readonly IUnityContainer PageFactory = new UnityContainer();
 
         [AssemblyInitialize()]
         public static void MyTestInitialize(TestContext testContext)
         {
             var fileMap = new ExeConfigurationFileMap { ExeConfigFilename = "unity.config" };
-            Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
+            var configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
             var unitySection = (UnityConfigurationSection)configuration.GetSection("unity");
-            pageFactory.LoadConfiguration(unitySection);
+            PageFactory.LoadConfiguration(unitySection);
 
-            pageFactory.RegisterType<IWikipediaMainPage, IoCContainerPageObjectPattern.WikipediaMainPage.WikipediaMainPage>(new ContainerControlledLifetimeManager());
+            PageFactory.RegisterType<IWikipediaMainPage, WikipediaMainPage.WikipediaMainPage>(new ContainerControlledLifetimeManager());
         }
 
         [TestInitialize]
@@ -51,7 +51,7 @@ namespace IoCContainerPageObjectPattern
         [TestMethod]
         public void TestWikiContentsToggle()
         {
-            var wikiPage = new IoCContainerPageObjectPattern.WikipediaMainPage.WikipediaMainPage();
+            var wikiPage = new WikipediaMainPage.WikipediaMainPage();
             wikiPage.Navigate();
             wikiPage.Search("Quality assurance");
             wikiPage.Validate().ToogleLinkTextHide();
@@ -65,7 +65,7 @@ namespace IoCContainerPageObjectPattern
         public void TestWikiContentsToggle_Unity()
         {
             ////var wikiPage = PageFactory.Get<IWikipediaMainPage>();
-            IWikipediaMainPage wikiPage = pageFactory.Resolve<IWikipediaMainPage>();
+            var wikiPage = PageFactory.Resolve<IWikipediaMainPage>();
             wikiPage.Navigate();
             wikiPage.Search("Quality assurance");
             wikiPage.Validate().ToogleLinkTextHide();

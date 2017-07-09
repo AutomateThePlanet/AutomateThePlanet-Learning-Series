@@ -27,7 +27,7 @@ namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv21
         {
             get
             {
-                return this.driver.FindElement(By.Id("sb_form_q"));
+                return Driver.FindElement(By.Id("sb_form_q"));
             }
         }
 
@@ -35,7 +35,7 @@ namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv21
         {
             get
             {
-                return this.driver.FindElement(By.Id("sb_form_go"));
+                return Driver.FindElement(By.Id("sb_form_go"));
             }
         }
        
@@ -43,7 +43,7 @@ namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv21
         {
             get
             {
-                return this.driver.FindElement(By.Id("b_tween"));
+                return Driver.FindElement(By.Id("b_tween"));
             }
         }
 
@@ -51,7 +51,7 @@ namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv21
         {
             get
             {
-                return this.driver.FindElement(By.LinkText("I'm Feeling Lucky"));
+                return Driver.FindElement(By.LinkText("I'm Feeling Lucky"));
             }
         }
     }

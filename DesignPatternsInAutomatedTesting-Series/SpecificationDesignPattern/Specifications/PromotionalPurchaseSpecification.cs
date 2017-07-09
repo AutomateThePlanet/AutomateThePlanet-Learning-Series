@@ -17,18 +17,18 @@ using SpecificationDesignPattern.Data;
 
 namespace SpecificationDesignPattern.Specifications
 {
-    public class PromotionalPurchaseSpecification : SpecificationDesignPattern.Specifications.Core.Specification<PurchaseTestInput>
+    public class PromotionalPurchaseSpecification : Core.Specification<PurchaseTestInput>
     {
-        private readonly PurchaseTestInput purchaseTestInput;
+        private readonly PurchaseTestInput _purchaseTestInput;
 
         public PromotionalPurchaseSpecification(PurchaseTestInput purchaseTestInput)
         {
-            this.purchaseTestInput = purchaseTestInput;
+            _purchaseTestInput = purchaseTestInput;
         }
 
         public override bool IsSatisfiedBy(PurchaseTestInput entity)
         {
-            return this.purchaseTestInput.IsPromotionalPurchase && this.purchaseTestInput.TotalPrice < 5;
+            return _purchaseTestInput.IsPromotionalPurchase && _purchaseTestInput.TotalPrice < 5;
         }
     }
 }

@@ -20,9 +20,9 @@ namespace DecoratorDesignPattern.Pages.SignInPage
     {
         public void Login(string email, string password)
         {
-            this.Map.EmailInput.SendKeys(email);
-            this.Map.PasswordInput.SendKeys(password);
-            this.Map.SignInButton.Click();
+            Map.EmailInput.SendKeys(email);
+            Map.PasswordInput.SendKeys(password);
+            Map.SignInButton.Click();
         }
     }
 }

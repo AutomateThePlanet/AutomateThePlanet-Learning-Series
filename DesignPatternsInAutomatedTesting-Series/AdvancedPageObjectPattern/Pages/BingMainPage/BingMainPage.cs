@@ -22,9 +22,9 @@ namespace AdvancedPageObjectPattern.Pages.BingMainPage
 
         public void Search(string textToType)
         {
-            this.Map.SearchBox.Clear();
-            this.Map.SearchBox.SendKeys(textToType);
-            this.Map.GoButton.Click();
+            Map.SearchBox.Clear();
+            Map.SearchBox.SendKeys(textToType);
+            Map.GoButton.Click();
         }
     }
 }

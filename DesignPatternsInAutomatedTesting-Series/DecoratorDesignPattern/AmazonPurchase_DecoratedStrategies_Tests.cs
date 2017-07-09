@@ -20,7 +20,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DecoratorDesignPattern
 {
     [TestClass]
-    public class AmazonPurchase_DecoratedStrategies_Tests
+    public class AmazonPurchaseDecoratedStrategiesTests
     { 
         [TestInitialize]
         public void SetupTest()
@@ -37,8 +37,8 @@ namespace DecoratorDesignPattern
         [TestMethod]
         public void Purchase_SeleniumTestingToolsCookbook_DecoratedStrategies()
         {
-            string itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
-            decimal itemPrice = 40.49m;
+            var itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
+            var itemPrice = 40.49m;
             var shippingInfo = new ClientAddressInfo()
             {
                 FullName = "John Smith",
@@ -60,16 +60,16 @@ namespace DecoratorDesignPattern
             };
             var clientPurchaseInfo = new ClientPurchaseInfo(billingInfo, shippingInfo)
             {
-                GiftWrapping = DecoratorDesignPattern.Enums.GiftWrappingStyles.Fancy
+                GiftWrapping = Enums.GiftWrappingStyles.Fancy
             };
             var clientLoginInfo = new ClientLoginInfo()
             {
                 Email = "g3984159@trbvm.com",
                 Password = "ASDFG_12345"
             };
-            DecoratorDesignPattern.Advanced.Strategies.OrderPurchaseStrategy orderPurchaseStrategy = new DecoratorDesignPattern.Advanced.Strategies.TotalPriceOrderPurchaseStrategy(itemPrice);
-            orderPurchaseStrategy = new DecoratorDesignPattern.Advanced.Strategies.SalesTaxOrderPurchaseStrategy(orderPurchaseStrategy, itemPrice, clientPurchaseInfo);
-            orderPurchaseStrategy = new DecoratorDesignPattern.Advanced.Strategies.VatTaxOrderPurchaseStrategy(orderPurchaseStrategy, itemPrice, clientPurchaseInfo);
+            Advanced.Strategies.OrderPurchaseStrategy orderPurchaseStrategy = new Advanced.Strategies.TotalPriceOrderPurchaseStrategy(itemPrice);
+            orderPurchaseStrategy = new Advanced.Strategies.SalesTaxOrderPurchaseStrategy(orderPurchaseStrategy, itemPrice, clientPurchaseInfo);
+            orderPurchaseStrategy = new Advanced.Strategies.VatTaxOrderPurchaseStrategy(orderPurchaseStrategy, itemPrice, clientPurchaseInfo);
 
             new PurchaseContext(orderPurchaseStrategy).PurchaseItem(itemUrl, itemPrice.ToString(), clientLoginInfo, clientPurchaseInfo);
         }

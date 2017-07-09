@@ -26,19 +26,19 @@ namespace AdvancedNullObjectDesignPattern.Pages.ShippingAddressPage
 
         public void ClickContinueButton()
         {
-            this.ContinueButton.Click();
+            ContinueButton.Click();
         }
 
         public void FillShippingInfo(ClientPurchaseInfo clientInfo)
         {
-            this.FillAddressInfoInternal(clientInfo);
+            FillAddressInfoInternal(clientInfo);
         }
 
         public void ClickDifferentBillingCheckBox(ClientPurchaseInfo clientInfo)
         {
             if (clientInfo.BillingInfo != null)
             {
-                this.DifferemtFromBillingCheckbox.Click();
+                DifferemtFromBillingCheckbox.Click();
             }
         }
 
@@ -46,19 +46,19 @@ namespace AdvancedNullObjectDesignPattern.Pages.ShippingAddressPage
         {
             if (clientInfo.BillingInfo != null)
             {
-                this.FillAddressInfoInternal(clientInfo);
+                FillAddressInfoInternal(clientInfo);
             }
         }
 
         private void FillAddressInfoInternal(ClientPurchaseInfo clientInfo)
         {
-            this.CountryDropDown.SelectByText(clientInfo.ShippingInfo.Country);
-            this.FullNameInput.SendKeys(clientInfo.ShippingInfo.FullName);
-            this.Address1Input.SendKeys(clientInfo.ShippingInfo.Address1);
-            this.CityInput.SendKeys(clientInfo.ShippingInfo.City);
-            this.ZipInput.SendKeys(clientInfo.ShippingInfo.Zip);
-            this.PhoneInput.SendKeys(clientInfo.ShippingInfo.Phone);
-            this.ShipToThisAddress.Click();
+            CountryDropDown.SelectByText(clientInfo.ShippingInfo.Country);
+            FullNameInput.SendKeys(clientInfo.ShippingInfo.FullName);
+            Address1Input.SendKeys(clientInfo.ShippingInfo.Address1);
+            CityInput.SendKeys(clientInfo.ShippingInfo.City);
+            ZipInput.SendKeys(clientInfo.ShippingInfo.Zip);
+            PhoneInput.SendKeys(clientInfo.ShippingInfo.Phone);
+            ShipToThisAddress.Click();
         }
     }
 }

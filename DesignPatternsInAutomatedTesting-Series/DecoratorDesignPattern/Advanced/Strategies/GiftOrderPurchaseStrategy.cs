@@ -19,24 +19,24 @@ namespace DecoratorDesignPattern.Advanced.Strategies
 {
     public class GiftOrderPurchaseStrategy : OrderPurchaseStrategyDecorator
     {
-        private readonly GiftWrappingPriceCalculationService giftWrappingPriceCalculationService;
-        private decimal giftWrapPrice;
+        private readonly GiftWrappingPriceCalculationService _giftWrappingPriceCalculationService;
+        private decimal _giftWrapPrice;
 
-        public GiftOrderPurchaseStrategy(OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, DecoratorDesignPattern.Data.ClientPurchaseInfo clientPurchaseInfo) : base(orderPurchaseStrategy, itemsPrice, clientPurchaseInfo)
+        public GiftOrderPurchaseStrategy(OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, Data.ClientPurchaseInfo clientPurchaseInfo) : base(orderPurchaseStrategy, itemsPrice, clientPurchaseInfo)
         {
-            this.giftWrappingPriceCalculationService = new GiftWrappingPriceCalculationService();
+            _giftWrappingPriceCalculationService = new GiftWrappingPriceCalculationService();
         }
 
         public override decimal CalculateTotalPrice()
         {
-            this.giftWrapPrice = this.giftWrappingPriceCalculationService.Calculate(this.clientPurchaseInfo.GiftWrapping);
-            return this.orderPurchaseStrategy.CalculateTotalPrice() + this.giftWrapPrice;
+            _giftWrapPrice = _giftWrappingPriceCalculationService.Calculate(ClientPurchaseInfo.GiftWrapping);
+            return OrderPurchaseStrategy.CalculateTotalPrice() + _giftWrapPrice;
         }
 
         public override void ValidateOrderSummary(decimal totalPrice)
         {
-            base.orderPurchaseStrategy.ValidateOrderSummary(totalPrice);
-            PlaceOrderPage.Instance.Validate().GiftWrapPrice(this.giftWrapPrice.ToString());
+            OrderPurchaseStrategy.ValidateOrderSummary(totalPrice);
+            PlaceOrderPage.Instance.Validate().GiftWrapPrice(_giftWrapPrice.ToString());
         }
     }
 }

@@ -19,17 +19,17 @@ namespace BehavioursDesignPattern.Behaviours
 {
     public class ShippingPaymentPageContinueBehaviour : Behaviour
     {
-        private readonly ShippingPaymentPage shippingPaymentPage;
+        private readonly ShippingPaymentPage _shippingPaymentPage;
 
         // This version is compatible only with UnityBehaviorEngine.
         public ShippingPaymentPageContinueBehaviour(ShippingPaymentPage shippingPaymentPage)
         {
-            this.shippingPaymentPage = shippingPaymentPage;
+            _shippingPaymentPage = shippingPaymentPage;
         }
 
         public override void PerformAct()
         {
-            this.shippingPaymentPage.ClickTopContinueButton();
+            _shippingPaymentPage.ClickTopContinueButton();
         }
     }
 }

@@ -17,9 +17,9 @@ namespace SingletonDesignPattern.Base
     public abstract class ThreadSafeBaseSingleton<T>
         where T : new()
     {
-        private static readonly object lockObject = new object();
+        private static readonly object LockObject = new object();
 
-        private static T instance;
+        private static T _instance;
 
         private ThreadSafeBaseSingleton()
         {
@@ -29,17 +29,17 @@ namespace SingletonDesignPattern.Base
         {
             get
             {
-                if (instance == null)
+                if (_instance == null)
                 {
-                    lock (lockObject)
+                    lock (LockObject)
                     {
-                        if (instance == null)
+                        if (_instance == null)
                         {
-                            instance = new T();
+                            _instance = new T();
                         }
                     }
                 }
-                return instance;
+                return _instance;
             }
         }
     }

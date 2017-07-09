@@ -14,16 +14,16 @@
 
 namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core
 {
-    public class WaitableAssertableActionBehaviour : AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core.IBehaviour
+    public class WaitableAssertableActionBehaviour : IBehaviour
     {
         public void Execute()
         {
-            this.PerformPreActWait();
-            this.PerformPreActAssert();
-            this.PerformAct();
-            this.PerformPostActAssert();
-            this.PerformPostActWait();
-            this.PerformPostActWaitAssert();
+            PerformPreActWait();
+            PerformPreActAssert();
+            PerformAct();
+            PerformPostActAssert();
+            PerformPostActWait();
+            PerformPostActWaitAssert();
         }
 
         protected virtual void PerformPreActWait()

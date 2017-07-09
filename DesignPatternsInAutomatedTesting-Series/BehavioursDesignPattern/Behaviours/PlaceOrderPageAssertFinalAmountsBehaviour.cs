@@ -18,18 +18,18 @@ namespace BehavioursDesignPattern.Behaviours
 {
     public class PlaceOrderPageAssertFinalAmountsBehaviour : Behaviour
     {
-        private readonly PlaceOrderPage placeOrderPage;
+        private readonly PlaceOrderPage _placeOrderPage;
 
         // This version is compatible only with UnityBehaviorEngine.
         public PlaceOrderPageAssertFinalAmountsBehaviour(PlaceOrderPage placeOrderPage)
         {
-            this.placeOrderPage = placeOrderPage;
+            _placeOrderPage = placeOrderPage;
         }
 
         public override void PerformAct()
         {
-            double totalPrice = double.Parse(PurchaseTestContext.ItemPrice);
-            this.placeOrderPage.AssertOrderTotalPrice(totalPrice);
+            var totalPrice = double.Parse(PurchaseTestContext.ItemPrice);
+            _placeOrderPage.AssertOrderTotalPrice(totalPrice);
         }
     }
 }

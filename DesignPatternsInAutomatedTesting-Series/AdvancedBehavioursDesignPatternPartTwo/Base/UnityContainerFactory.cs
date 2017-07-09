@@ -18,16 +18,16 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Base
 {
     public static class UnityContainerFactory
     {
-        private static readonly IUnityContainer unityContainer;
+        private static readonly IUnityContainer UnityContainer;
 
         static UnityContainerFactory()
         {
-            unityContainer = new UnityContainer();
+            UnityContainer = new UnityContainer();
         }
 
         public static IUnityContainer GetContainer()
         {
-            return unityContainer;
+            return UnityContainer;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace FacadeDesignPattern.Pages.CheckoutPage
         public void Subtotal(string expectedSubtotal)
         {
             //AU $168.00
-            Assert.AreEqual<string>(expectedSubtotal, this.Map.TotalPrice.Text);
+            Assert.AreEqual<string>(expectedSubtotal, Map.TotalPrice.Text);
         }
     }
 }

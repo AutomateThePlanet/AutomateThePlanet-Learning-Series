@@ -19,12 +19,12 @@ namespace PageObjectPattern.Selenium.Bing.Pages
 {
     public class BingMainPage
     {
-        private readonly IWebDriver driver;
-        private readonly string url = @"http://www.bing.com/";
+        private readonly IWebDriver _driver;
+        private readonly string _url = @"http://www.bing.com/";
 
         public BingMainPage(IWebDriver browser)
         {
-            this.driver = browser;
+            _driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
@@ -39,19 +39,19 @@ namespace PageObjectPattern.Selenium.Bing.Pages
 
         public void Navigate()
         {
-            this.driver.Navigate().GoToUrl(this.url);            
+            _driver.Navigate().GoToUrl(_url);            
         }
 
         public void Search(string textToType)
         {
-            this.SearchBox.Clear();
-            this.SearchBox.SendKeys(textToType);
-            this.GoButton.Click();
+            SearchBox.Clear();
+            SearchBox.SendKeys(textToType);
+            GoButton.Click();
         }
 
         public void ValidateResultsCount(string expectedCount)
         {
-            Assert.IsTrue(this.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
+            Assert.IsTrue(ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
         }
     }
 }

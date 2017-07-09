@@ -23,12 +23,12 @@ namespace PerfectSystemTestsDesign.Base
 {
     public class ShoppingCart
     {
-        private readonly ItemPage itemPage;
-        private readonly PreviewShoppingCartPage previewShoppingCartPage;
-        private readonly SignInPage signInPage;
-        private readonly ShippingAddressPage shippingAddressPage;
-        private readonly ShippingPaymentPage shippingPaymentPage;
-        private readonly PlaceOrderPage placeOrderPage;
+        private readonly ItemPage _itemPage;
+        private readonly PreviewShoppingCartPage _previewShoppingCartPage;
+        private readonly SignInPage _signInPage;
+        private readonly ShippingAddressPage _shippingAddressPage;
+        private readonly ShippingPaymentPage _shippingPaymentPage;
+        private readonly PlaceOrderPage _placeOrderPage;
 
         public ShoppingCart(
             ItemPage itemPage,
@@ -38,12 +38,12 @@ namespace PerfectSystemTestsDesign.Base
             ShippingPaymentPage shippingPaymentPage,
             PlaceOrderPage placeOrderPage)
         {
-            this.itemPage = itemPage;
-            this.previewShoppingCartPage = previewShoppingCartPage;
-            this.signInPage = signInPage;
-            this.shippingAddressPage = shippingAddressPage;
-            this.shippingPaymentPage = shippingPaymentPage;
-            this.placeOrderPage = placeOrderPage;
+            _itemPage = itemPage;
+            _previewShoppingCartPage = previewShoppingCartPage;
+            _signInPage = signInPage;
+            _shippingAddressPage = shippingAddressPage;
+            _shippingPaymentPage = shippingPaymentPage;
+            _placeOrderPage = placeOrderPage;
         }
 
         public void PurchaseItem(
@@ -52,19 +52,19 @@ namespace PerfectSystemTestsDesign.Base
             ClientLoginInfo clientLoginInfo,
             ClientPurchaseInfo clientPurchaseInfo)
         {
-            this.itemPage.Navigate(itemUrl);
-            this.itemPage.ClickBuyNowButton();
-            this.previewShoppingCartPage.ClickProceedToCheckoutButton();
-            this.signInPage.Login(clientLoginInfo.Email, clientLoginInfo.Password);
-            this.shippingAddressPage.FillShippingInfo(clientPurchaseInfo);
-            this.shippingAddressPage.ClickDifferentBillingCheckBox(clientPurchaseInfo);
-            this.shippingAddressPage.ClickContinueButton();
-            this.shippingPaymentPage.ClickBottomContinueButton();
-            this.shippingAddressPage.FillBillingInfo(clientPurchaseInfo);
-            this.shippingAddressPage.ClickContinueButton();
-            this.shippingPaymentPage.ClickTopContinueButton();
-            double totalPrice = double.Parse(itemPrice);
-            this.placeOrderPage.AssertOrderTotalPrice(totalPrice);
+            _itemPage.Navigate(itemUrl);
+            _itemPage.ClickBuyNowButton();
+            _previewShoppingCartPage.ClickProceedToCheckoutButton();
+            _signInPage.Login(clientLoginInfo.Email, clientLoginInfo.Password);
+            _shippingAddressPage.FillShippingInfo(clientPurchaseInfo);
+            _shippingAddressPage.ClickDifferentBillingCheckBox(clientPurchaseInfo);
+            _shippingAddressPage.ClickContinueButton();
+            _shippingPaymentPage.ClickBottomContinueButton();
+            _shippingAddressPage.FillBillingInfo(clientPurchaseInfo);
+            _shippingAddressPage.ClickContinueButton();
+            _shippingPaymentPage.ClickTopContinueButton();
+            var totalPrice = double.Parse(itemPrice);
+            _placeOrderPage.AssertOrderTotalPrice(totalPrice);
         }
     }
 }

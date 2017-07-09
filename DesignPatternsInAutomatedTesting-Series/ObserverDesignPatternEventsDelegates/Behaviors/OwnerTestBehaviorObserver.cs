@@ -22,7 +22,7 @@ namespace ObserverDesignPatternEventsDelegates.Behaviors
     {
         protected override void PreTestInit(object sender, TestExecutionEventArgs e)
         {
-            this.ThrowExceptionIfOwnerAttributeNotSet(e.MemberInfo);
+            ThrowExceptionIfOwnerAttributeNotSet(e.MemberInfo);
         }
 
         private void ThrowExceptionIfOwnerAttributeNotSet(MemberInfo memberInfo)

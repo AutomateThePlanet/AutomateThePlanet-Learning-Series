@@ -14,7 +14,7 @@
 
 namespace AdvancedStrategyDesignPattern.Pages.ItemPage
 {
-    public class ItemPage : AdvancedStrategyDesignPattern.Core.BasePageSingleton<ItemPage, ItemPageMap, ItemPageValidator>
+    public class ItemPage : Core.BasePageSingleton<ItemPage, ItemPageMap, ItemPageValidator>
     {
         public ItemPage()
         {
@@ -22,7 +22,7 @@ namespace AdvancedStrategyDesignPattern.Pages.ItemPage
 
         public void ClickBuyNowButton()
         {
-            this.Map.AddToCartButton.Click();
+            Map.AddToCartButton.Click();
         }
 
         public override void Navigate(string part)

@@ -17,13 +17,13 @@ using OpenQA.Selenium;
 
 namespace SpecificationDesignPattern.BingMain
 {
-    public partial class BingMainPage : SpecificationDesignPattern.Base.BasePage
+    public partial class BingMainPage : Base.BasePage
     {
         public IWebElement SearchBox
         {
             get
             {
-                return this.driver.FindElement(By.Id("sb_form_q"));
+                return Driver.FindElement(By.Id("sb_form_q"));
             }
         }
 
@@ -31,7 +31,7 @@ namespace SpecificationDesignPattern.BingMain
         {
             get
             {
-                return this.driver.FindElement(By.Id("sb_form_go"));
+                return Driver.FindElement(By.Id("sb_form_go"));
             }
         }
 
@@ -39,7 +39,7 @@ namespace SpecificationDesignPattern.BingMain
         {
             get
             {
-                return this.driver.FindElement(By.Id("b_tween"));
+                return Driver.FindElement(By.Id("b_tween"));
             }
         }
     }

@@ -17,11 +17,11 @@ namespace RulesDesignPattern
 {
     public class RuleResult : IRuleResult
     {
-        private readonly Delegate actionToBeExecuted;
+        private readonly Delegate _actionToBeExecuted;
 
         public RuleResult(Delegate actionToBeExecuted)
         {
-            this.actionToBeExecuted = actionToBeExecuted;
+            _actionToBeExecuted = actionToBeExecuted;
         }
 
         public RuleResult()
@@ -32,9 +32,9 @@ namespace RulesDesignPattern
 
         public void Execute()
         {
-            if (this.actionToBeExecuted != null)
+            if (_actionToBeExecuted != null)
             {
-                this.actionToBeExecuted.DynamicInvoke();
+                _actionToBeExecuted.DynamicInvoke();
             }
         }
     }

@@ -16,12 +16,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdvancedStrategyDesignPattern.Pages.ItemPage
 {
-    public class ItemPageValidator : AdvancedStrategyDesignPattern.Core.BasePageValidator<ItemPageMap>
+    public class ItemPageValidator : Core.BasePageValidator<ItemPageMap>
     {
         public void ProductTitle(string expectedTitle)
         {
             //Selenium Testing Tools Cookbook
-            Assert.AreEqual<string>(expectedTitle, this.Map.ProductTitle.Text);
+            Assert.AreEqual<string>(expectedTitle, Map.ProductTitle.Text);
         }
     }
 }

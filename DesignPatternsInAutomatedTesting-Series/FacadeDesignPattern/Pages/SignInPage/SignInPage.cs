@@ -24,7 +24,7 @@ namespace FacadeDesignPattern.Pages.SignInPage
 
         public void ClickContinueAsGuestButton()
         {
-            this.Map.ContinueAsGuestButton.Click();
+            Map.ContinueAsGuestButton.Click();
         }
     }
 }

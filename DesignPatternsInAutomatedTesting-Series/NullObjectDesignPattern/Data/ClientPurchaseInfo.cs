@@ -18,8 +18,8 @@ namespace NullObjectDesignPattern.Data
     {
         public ClientPurchaseInfo(ClientAddressInfo addressInfo)
         {
-            this.BillingInfo = addressInfo;
-            this.ShippingInfo = addressInfo;
+            BillingInfo = addressInfo;
+            ShippingInfo = addressInfo;
         }
 
         public ClientAddressInfo BillingInfo { get; set; }

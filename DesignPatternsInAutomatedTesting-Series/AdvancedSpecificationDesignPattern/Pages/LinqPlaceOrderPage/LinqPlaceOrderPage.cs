@@ -21,19 +21,19 @@ namespace AdvancedSpecificationDesignPattern.Pages.LinqPlaceOrderPage
 {
     public partial class LinqPlaceOrderPage : BasePage
     {
-        private readonly PurchaseTestInput purchaseTestInput;
-        private readonly ISpecification<PurchaseTestInput> promotionalPurchaseSpecification;
-        private readonly ISpecification<PurchaseTestInput> creditCardSpecification;
-        private readonly ISpecification<PurchaseTestInput> wiretransferSpecification;
-        private readonly ISpecification<PurchaseTestInput> freePurchaseSpecification;
+        private readonly PurchaseTestInput _purchaseTestInput;
+        private readonly ISpecification<PurchaseTestInput> _promotionalPurchaseSpecification;
+        private readonly ISpecification<PurchaseTestInput> _creditCardSpecification;
+        private readonly ISpecification<PurchaseTestInput> _wiretransferSpecification;
+        private readonly ISpecification<PurchaseTestInput> _freePurchaseSpecification;
 
         public LinqPlaceOrderPage(IWebDriver driver, PurchaseTestInput purchaseTestInput) : base(driver)
         {
-            this.purchaseTestInput = purchaseTestInput;
-            this.creditCardSpecification = new ExpressionSpecification<PurchaseTestInput>(x => !string.IsNullOrEmpty(x.CreditCardNumber));
-            this.freePurchaseSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.TotalPrice == 0);
-            this.wiretransferSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.IsWiretransfer);
-            this.promotionalPurchaseSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.IsPromotionalPurchase && x.TotalPrice < 5);
+            _purchaseTestInput = purchaseTestInput;
+            _creditCardSpecification = new ExpressionSpecification<PurchaseTestInput>(x => !string.IsNullOrEmpty(x.CreditCardNumber));
+            _freePurchaseSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.TotalPrice == 0);
+            _wiretransferSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.IsWiretransfer);
+            _promotionalPurchaseSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.IsPromotionalPurchase && x.TotalPrice < 5);
         }
 
         public override string Url
@@ -46,18 +46,18 @@ namespace AdvancedSpecificationDesignPattern.Pages.LinqPlaceOrderPage
 
         public void ChoosePaymentMethod()
         {
-            if (this.creditCardSpecification.
-            And(this.wiretransferSpecification.Not()).
-            And(this.freePurchaseSpecification.Not()).
-            And(this.promotionalPurchaseSpecification.Not()).
-            IsSatisfiedBy(this.purchaseTestInput))
+            if (_creditCardSpecification.
+            And(_wiretransferSpecification.Not()).
+            And(_freePurchaseSpecification.Not()).
+            And(_promotionalPurchaseSpecification.Not()).
+            IsSatisfiedBy(_purchaseTestInput))
             {
-                this.CreditCard.SendKeys("371449635398431");
-                this.SecurityNumber.SendKeys("1234");
+                CreditCard.SendKeys("371449635398431");
+                SecurityNumber.SendKeys("1234");
             }
             else
             {
-                this.Wiretransfer.SendKeys("pathToFile");
+                Wiretransfer.SendKeys("pathToFile");
             }
         }
     }

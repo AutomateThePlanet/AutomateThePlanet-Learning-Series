@@ -21,8 +21,8 @@ namespace FluentPageObjectPattern.Pages.BingMainPage
     {
         public BingMainPage ResultsCount(string expectedCount)
         {
-            Assert.IsTrue(this.Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
-            return this.pageInstance;
+            Assert.IsTrue(Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
+            return PageInstance;
         }
     }
 }

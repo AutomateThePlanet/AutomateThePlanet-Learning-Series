@@ -19,19 +19,19 @@ namespace PerfectSystemTestsDesign.Behaviours
 {
     public class PlaceOrderPageAssertFinalAmountsBehaviour : AssertBehaviour
     {
-        private readonly PlaceOrderPage placeOrderPage;
-        private readonly string itemPrice;
+        private readonly PlaceOrderPage _placeOrderPage;
+        private readonly string _itemPrice;
 
         public PlaceOrderPageAssertFinalAmountsBehaviour(string itemPrice)
         {
-            this.placeOrderPage = PerfectSystemTestsDesign.Base.UnityContainerFactory.GetContainer().Resolve<PlaceOrderPage>();
-            this.itemPrice = itemPrice;
+            _placeOrderPage = Base.UnityContainerFactory.GetContainer().Resolve<PlaceOrderPage>();
+            _itemPrice = itemPrice;
         }
 
         protected override void Assert()
         {
-            double totalPrice = double.Parse(this.itemPrice);
-            this.placeOrderPage.AssertOrderTotalPrice(totalPrice);
+            var totalPrice = double.Parse(_itemPrice);
+            _placeOrderPage.AssertOrderTotalPrice(totalPrice);
         }
     }
 }

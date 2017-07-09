@@ -20,12 +20,12 @@ namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv21.Base
     public abstract class BasePage<TMap>
         where TMap : BaseElementMap
     {
-        protected IWebDriver driver;
+        protected IWebDriver Driver;
 
         public BasePage(IWebDriver driver, TMap map)
         {
-            this.driver = driver;
-            this.Map = map;
+            Driver = driver;
+            Map = map;
         }
 
         public TMap Map { get; private set; }
@@ -34,7 +34,7 @@ namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv21.Base
 
         public virtual void Open(string part = "")
         {
-            this.driver.Navigate().GoToUrl(string.Concat(this.Url, part));
+            Driver.Navigate().GoToUrl(string.Concat(Url, part));
         }
     }
 }

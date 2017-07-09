@@ -22,9 +22,9 @@ namespace RulesDesignPattern
     {
         public RulesChain(IRule mainRule, bool isLastInChain = false)
         {
-            this.IsLastInChain = isLastInChain;
-            this.ElseRules = new List<RulesChain>();
-            this.Rule = mainRule;
+            IsLastInChain = isLastInChain;
+            ElseRules = new List<RulesChain>();
+            Rule = mainRule;
         }
 
         public IRule Rule { get; set; }

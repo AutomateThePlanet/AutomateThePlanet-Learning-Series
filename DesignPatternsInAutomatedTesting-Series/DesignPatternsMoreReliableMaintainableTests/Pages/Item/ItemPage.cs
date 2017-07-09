@@ -34,7 +34,7 @@ namespace DesignPatternsMoreReliableMaintainableTests.Pages.Item
 
         public void ClickBuyNowButton()
         {
-            this.Map.BuyNowButton.Click();
+            Map.BuyNowButton.Click();
         }
 
         public double GetPrice()

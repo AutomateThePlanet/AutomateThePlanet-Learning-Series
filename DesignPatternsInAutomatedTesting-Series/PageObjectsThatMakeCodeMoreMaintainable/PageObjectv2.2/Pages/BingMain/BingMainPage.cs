@@ -34,15 +34,15 @@ namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv22
 
         public void Search(string textToType)
         {
-            this.SearchBox.Clear();
-            this.SearchBox.SendKeys(textToType);
-            this.GoButton.Click();
+            SearchBox.Clear();
+            SearchBox.SendKeys(textToType);
+            GoButton.Click();
         }
     
         public int GetResultsCount()
         {
-            int resultsCount = default(int);
-            resultsCount = int.Parse(this.ResultsCountDiv.Text);
+            var resultsCount = default(int);
+            resultsCount = int.Parse(ResultsCountDiv.Text);
             return resultsCount;
         }
     }

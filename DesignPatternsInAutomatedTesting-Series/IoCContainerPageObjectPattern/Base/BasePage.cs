@@ -16,38 +16,38 @@ using IoCContainerPageObjectPattern.Core;
 
 namespace IoCContainerPageObjectPattern.Base
 {
-    public class BasePage<M>
-        where M : BasePageElementMap, new()
+    public class BasePage<TM>
+        where TM : BasePageElementMap, new()
     {
-        protected readonly string url;
+        protected readonly string Url;
 
         public BasePage(string url)
         {
-            this.url = url;
+            Url = url;
         }
 
         public BasePage()
         {
-            this.url = null;
+            Url = null;
         }
 
-        protected M Map
+        protected TM Map
         {
             get
             {
-                return new M();
+                return new TM();
             }
         }
 
         public virtual void Navigate(string part = "")
         {
-            Driver.Browser.Navigate().GoToUrl(string.Concat(this.url, part));
+            Driver.Browser.Navigate().GoToUrl(string.Concat(Url, part));
         }
     }
 
-    public class BasePage<M, V> : BasePage<M>
-        where M : IoCContainerPageObjectPattern.Base.BasePageElementMap, new()
-        where V : IoCContainerPageObjectPattern.Base.BasePageValidator<M>, new()
+    public class BasePage<TM, TV> : BasePage<TM>
+        where TM : BasePageElementMap, new()
+        where TV : BasePageValidator<TM>, new()
     {
         public BasePage(string url) : base(url)
         {
@@ -57,9 +57,9 @@ namespace IoCContainerPageObjectPattern.Base
         {
         }
 
-        public V Validate()
+        public TV Validate()
         {
-            return new V();
+            return new TV();
         }
     }
 }

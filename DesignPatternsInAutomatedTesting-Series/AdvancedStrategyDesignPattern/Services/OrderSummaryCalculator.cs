@@ -20,15 +20,15 @@ namespace AdvancedStrategyDesignPattern.Services
     {
         public OrderSummaryCalculator()
         {
-            this.ShippingCostsCalculationService = new ShippingCostsCalculationService();
+            ShippingCostsCalculationService = new ShippingCostsCalculationService();
         }
 
         public ShippingCostsCalculationService ShippingCostsCalculationService { get; set; }
 
         public decimal CalculateTotalPrice(decimal itemsPrice, decimal estimatedTax, ClientPurchaseInfo clientPurchaseInfo)
         {
-            decimal totalPrice = default(decimal);
-            decimal shippingCosts = this.CalculateShippingPrice(clientPurchaseInfo);
+            var totalPrice = default(decimal);
+            var shippingCosts = CalculateShippingPrice(clientPurchaseInfo);
             totalPrice = itemsPrice + estimatedTax + shippingCosts;
 
             return totalPrice;
@@ -36,8 +36,8 @@ namespace AdvancedStrategyDesignPattern.Services
 
         public decimal CalculateBeforeTaxPrice(decimal itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
         {
-            decimal beforeTaxPrice = default(decimal);
-            decimal shippingCosts = this.CalculateShippingPrice(clientPurchaseInfo);
+            var beforeTaxPrice = default(decimal);
+            var shippingCosts = CalculateShippingPrice(clientPurchaseInfo);
             beforeTaxPrice = itemsPrice + shippingCosts;
 
             return beforeTaxPrice;
@@ -45,7 +45,7 @@ namespace AdvancedStrategyDesignPattern.Services
 
         public decimal CalculateShippingPrice(ClientPurchaseInfo clientPurchaseInfo)
         {
-            decimal shippingCosts = this.ShippingCostsCalculationService.Calculate(clientPurchaseInfo.ShippingInfo.Country, clientPurchaseInfo.ShippingInfo.State, clientPurchaseInfo.ShippingInfo.Address1, clientPurchaseInfo.ShippingInfo.Zip);
+            var shippingCosts = ShippingCostsCalculationService.Calculate(clientPurchaseInfo.ShippingInfo.Country, clientPurchaseInfo.ShippingInfo.State, clientPurchaseInfo.ShippingInfo.Address1, clientPurchaseInfo.ShippingInfo.Zip);
             return shippingCosts;
         }
     }

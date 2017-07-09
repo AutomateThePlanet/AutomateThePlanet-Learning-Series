@@ -19,11 +19,11 @@ namespace ObserverDesignPatternClassicImplementation
 {
     public class BaseTestBehaviorObserver : ITestBehaviorObserver
     {
-        private readonly ITestExecutionSubject testExecutionSubject;
+        private readonly ITestExecutionSubject _testExecutionSubject;
 
         public BaseTestBehaviorObserver(ITestExecutionSubject testExecutionSubject)
         {
-            this.testExecutionSubject = testExecutionSubject;
+            _testExecutionSubject = testExecutionSubject;
             testExecutionSubject.Attach(this);
         }
 

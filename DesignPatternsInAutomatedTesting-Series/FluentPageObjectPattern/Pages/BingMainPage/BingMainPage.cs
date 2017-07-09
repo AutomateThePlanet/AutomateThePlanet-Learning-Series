@@ -27,57 +27,57 @@ namespace FluentPageObjectPattern.Pages.BingMainPage
 
         public BingMainPage Search(string textToType)
         {
-            this.Map.SearchBox.Clear();
-            this.Map.SearchBox.SendKeys(textToType);
-            this.Map.GoButton.Click();
+            Map.SearchBox.Clear();
+            Map.SearchBox.SendKeys(textToType);
+            Map.GoButton.Click();
             return this;
         }
 
         public BingMainPage ClickImages()
         {
-            this.Map.ImagesLink.Click();
+            Map.ImagesLink.Click();
             return this;
         }
 
         public BingMainPage SetSize(Sizes size)
         {
-            this.Map.Sizes.SelectByIndex((int)size);
+            Map.Sizes.SelectByIndex((int)size);
             return this;
         }
 
         public BingMainPage SetColor(Colors color)
         {
-            this.Map.Color.SelectByIndex((int)color);
+            Map.Color.SelectByIndex((int)color);
             return this;
         }
 
         public BingMainPage SetTypes(Types type)
         {
-            this.Map.Type.SelectByIndex((int)type);
+            Map.Type.SelectByIndex((int)type);
             return this;
         }
 
         public BingMainPage SetLayout(Layouts layout)
         {
-            this.Map.Layout.SelectByIndex((int)layout);
+            Map.Layout.SelectByIndex((int)layout);
             return this;
         }
 
         public BingMainPage SetPeople(People people)
         {
-            this.Map.People.SelectByIndex((int)people);
+            Map.People.SelectByIndex((int)people);
             return this;
         }
 
         public BingMainPage SetDate(Dates date)
         {
-            this.Map.Date.SelectByIndex((int)date);
+            Map.Date.SelectByIndex((int)date);
             return this;
         }
 
         public BingMainPage SetLicense(Licenses license)
         {
-            this.Map.License.SelectByIndex((int)license);
+            Map.License.SelectByIndex((int)license);
             return this;
         }
     }

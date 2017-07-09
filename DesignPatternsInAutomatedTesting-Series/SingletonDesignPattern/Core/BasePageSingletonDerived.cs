@@ -16,19 +16,19 @@ using SingletonDesignPattern.Base;
 
 namespace SingletonDesignPattern.Core
 {
-    public abstract class BasePageSingletonDerived<S, M> : ThreadSafeNestedContructorsBaseSingleton<S>
-        where M : BasePageElementMap, new()
-        where S : BasePageSingletonDerived<S, M>
+    public abstract class BasePageSingletonDerived<TS, TM> : ThreadSafeNestedContructorsBaseSingleton<TS>
+        where TM : BasePageElementMap, new()
+        where TS : BasePageSingletonDerived<TS, TM>
     {
         public BasePageSingletonDerived()
         {
         }
 
-        protected M Map
+        protected TM Map
         {
             get
             {
-                return new M();
+                return new TM();
             }
         }
 
@@ -38,14 +38,14 @@ namespace SingletonDesignPattern.Core
         }
     }
 
-    public abstract class BasePageSingletonDerived<S, M, V> : BasePageSingletonDerived<S, M>
-        where M : BasePageElementMap, new()
-        where V : BasePageValidator<M>, new()
-        where S : BasePageSingletonDerived<S, M, V>
+    public abstract class BasePageSingletonDerived<TS, TM, TV> : BasePageSingletonDerived<TS, TM>
+        where TM : BasePageElementMap, new()
+        where TV : BasePageValidator<TM>, new()
+        where TS : BasePageSingletonDerived<TS, TM, TV>
     {
-        public V Validate()
+        public TV Validate()
         {
-            return new V();
+            return new TV();
         }
     }
 }

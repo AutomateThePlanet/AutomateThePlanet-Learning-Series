@@ -25,12 +25,12 @@ namespace AdvancedNullObjectDesignPattern.Pages.PreviewShoppingCartPage
 
         public void ClickProceedToCheckoutButton()
         {
-            this.ProceedToCheckoutButton.Click();
+            ProceedToCheckoutButton.Click();
         }
 
         public void CheckOrderContainsGift()
         {
-            this.ThisOrderContainsGiftCheckbox.Click();
+            ThisOrderContainsGiftCheckbox.Click();
         }
     }
 }

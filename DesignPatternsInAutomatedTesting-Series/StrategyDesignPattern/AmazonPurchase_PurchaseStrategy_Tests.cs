@@ -21,7 +21,7 @@ using StrategyDesignPattern.Strategies;
 namespace StrategyDesignPattern
 {
     [TestClass]
-    public class AmazonPurchase_PurchaseStrategy_Tests
+    public class AmazonPurchasePurchaseStrategyTests
     { 
         [TestInitialize]
         public void SetupTest()
@@ -38,9 +38,9 @@ namespace StrategyDesignPattern
         [TestMethod]
         public void Purchase_SeleniumTestingToolsCookbook()
         {
-            string itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
-            string itemPrice = "40.49";
-            ClientPurchaseInfo clientPurchaseInfo = new ClientPurchaseInfo(
+            var itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
+            var itemPrice = "40.49";
+            var clientPurchaseInfo = new ClientPurchaseInfo(
             new ClientAddressInfo()
             {
                 FullName = "John Smith",
@@ -54,7 +54,7 @@ namespace StrategyDesignPattern
             {
                 GiftWrapping = GiftWrappingStyles.None
             };
-            ClientLoginInfo clientLoginInfo = new ClientLoginInfo()
+            var clientLoginInfo = new ClientLoginInfo()
             {
                 Email = "g3984159@trbvm.com",
                 Password = "ASDFG_12345"

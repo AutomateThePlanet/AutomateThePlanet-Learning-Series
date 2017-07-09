@@ -26,19 +26,19 @@ namespace StrategyDesignPattern.Base
     {
         public void PurchaseItemSalesTax(string itemUrl, string itemPrice, string taxAmount, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
         {
-            this.PurchaseItemInternal(itemUrl, clientLoginInfo, clientPurchaseInfo);
+            PurchaseItemInternal(itemUrl, clientLoginInfo, clientPurchaseInfo);
             PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(taxAmount);
         }
 
         public void PurchaseItemGiftWrapping(string itemUrl, string itemPrice, string giftWrapTax, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
         {
-            this.PurchaseItemInternal(itemUrl, clientLoginInfo, clientPurchaseInfo);
+            PurchaseItemInternal(itemUrl, clientLoginInfo, clientPurchaseInfo);
             PlaceOrderPage.Instance.Validate().GiftWrapPrice(giftWrapTax);
         }
 
         public void PurchaseItemShippingTax(string itemUrl, string itemPrice, string shippingTax, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
         {
-            this.PurchaseItemInternal(itemUrl, clientLoginInfo, clientPurchaseInfo);
+            PurchaseItemInternal(itemUrl, clientLoginInfo, clientPurchaseInfo);
             PlaceOrderPage.Instance.Validate().ShippingTaxPrice(shippingTax);
         }
 

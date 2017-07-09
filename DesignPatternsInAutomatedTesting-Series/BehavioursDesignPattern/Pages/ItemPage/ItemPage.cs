@@ -34,13 +34,13 @@ namespace BehavioursDesignPattern.Pages.ItemPage
 
         public void ClickBuyNowButton()
         {
-            this.AddToCartButton.Click();
+            AddToCartButton.Click();
         }
 
         public void Navigate(string part)
         {
             ///Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743
-            base.Open(part);
+            Open(part);
         }
     }
 }
