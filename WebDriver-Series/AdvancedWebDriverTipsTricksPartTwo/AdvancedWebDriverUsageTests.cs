@@ -28,6 +28,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Threading;
 
 namespace AdvancedWebDriverTipsTricksPartTwo
@@ -95,7 +96,7 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         {
             _driver.Navigate().GoToUrl(@"https://demos.telerik.com/aspnet-ajax/ajaxpanel/application-scenarios/file-upload/defaultcs.aspx");
             var element = _driver.FindElement(By.Id("ctl00_ContentPlaceholder1_RadUpload1file0"));
-            var filePath = @"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\bin\Debug\WebDriver.xml";
+            var filePath =  Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "WebDriver.xml");
             element.SendKeys(filePath);
         }
 

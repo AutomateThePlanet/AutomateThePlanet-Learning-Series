@@ -133,7 +133,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void ExecuteInHeadlessBrowser()
         {
-            _driver = new PhantomJSDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers");
+            _driver = new PhantomJSDriver();
             _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
             WaitUntilLoaded();
             var js = _driver as IJavaScriptExecutor;
@@ -145,8 +145,8 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void CheckIfElementIsVisible()
         {
-            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
-            Assert.IsTrue(_driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[2]/div/div")).Displayed);
+            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com");
+            Assert.IsTrue(_driver.FindElement(By.LinkText("Go to the blog")).Displayed);
         }
 
         // 9. Manage Cookies
@@ -213,7 +213,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
             });
         }
 
-        public void TakeFullScreenshot(IWebDriver driver, String filename)
+        public void TakeFullScreenshot(IWebDriver driver, string filename)
         {
             var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
             screenshot.SaveAsFile(filename, ImageFormat.Png);
