@@ -45,7 +45,7 @@ namespace TestingTechniques.UnitTests
         //////[TestCase("–2147483649", 0, ExpectedException = typeof(ArgumentException), ExpectedMessage = ShouldBeIntegerExpectionMessage)]
         public void ValidateCalculateSubscriptionPrice1(string ageInput, decimal expectedPrice)
         {
-            decimal actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice(ageInput);
+            var actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice(ageInput);
 
             Assert.AreEqual(expectedPrice, actualPrice);
         }
@@ -54,7 +54,7 @@ namespace TestingTechniques.UnitTests
         public void ValidateCalculateSubscriptionPrice_Free([Random(min: 1, max: 5, count: 1)]
                                                             int ageInput)
         {
-            decimal actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice(ageInput.ToString());
+            var actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice(ageInput.ToString());
 
             Assert.AreEqual(0, actualPrice);
         }
@@ -63,7 +63,7 @@ namespace TestingTechniques.UnitTests
         public void ValidateCalculateSubscriptionPrice_20lv([Random(min: 6, max: 18, count: 1)]
                                                             int ageInput)
         {
-            decimal actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice(ageInput.ToString());
+            var actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice(ageInput.ToString());
 
             Assert.AreEqual(20, actualPrice);
         }
@@ -72,7 +72,7 @@ namespace TestingTechniques.UnitTests
         public void ValidateCalculateSubscriptionPrice_40lv([Random(min: 19, max: 64, count: 1)]
                                                             int ageInput)
         {
-            decimal actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice(ageInput.ToString());
+            var actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice(ageInput.ToString());
 
             Assert.AreEqual(40, actualPrice);
         }
@@ -81,7 +81,7 @@ namespace TestingTechniques.UnitTests
         public void ValidateCalculateSubscriptionPrice_5lv([Random(min: 65, max: 122, count: 1)]
                                                            int ageInput)
         {
-            decimal actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice(ageInput.ToString());
+            var actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice(ageInput.ToString());
 
             Assert.AreEqual(5, actualPrice);
         }
@@ -90,7 +90,7 @@ namespace TestingTechniques.UnitTests
         ////[ExpectedException(typeof(ArgumentException), ExpectedMessage = ShouldBeIntegerExpectionMessage)]
         public void ValidateCalculateSubscriptionPrice_NotInteger()
         {
-            decimal actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice("invalid");
+            var actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice("invalid");
 
             Assert.AreEqual(5, actualPrice);
         }
@@ -99,7 +99,7 @@ namespace TestingTechniques.UnitTests
         ////[ExpectedException(typeof(ArgumentException), ExpectedMessage = GreaterThanZeroExpectionMessage)]
         public void ValidateCalculateSubscriptionPrice_InvalidZero()
         {
-            decimal actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice("0");
+            var actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice("0");
 
             Assert.AreEqual(5, actualPrice);
         }
@@ -108,7 +108,7 @@ namespace TestingTechniques.UnitTests
         ////[ExpectedException(typeof(ArgumentException), ExpectedMessage = SmallerThan123ExpectionMessage)]
         public void ValidateCalculateSubscriptionPrice_InvalidGreater122()
         {
-            decimal actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice("1000");
+            var actualPrice = TransportSubscriptionCardPriceCalculator.CalculateSubscriptionPrice("1000");
 
             Assert.AreEqual(5, actualPrice);
         }

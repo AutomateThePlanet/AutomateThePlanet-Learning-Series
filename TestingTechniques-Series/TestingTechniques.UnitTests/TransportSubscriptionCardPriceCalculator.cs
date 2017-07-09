@@ -26,9 +26,9 @@ namespace TestingTechniques.UnitTests
 
         public static decimal CalculateSubscriptionPrice(string ageInput)
         {
-            decimal subscriptionPrice = default(decimal);
-            int age = default(int);
-            bool isInteger = int.TryParse(ageInput, out age);
+            var subscriptionPrice = default(decimal);
+            var age = default(int);
+            var isInteger = int.TryParse(ageInput, out age);
 
             if (!isInteger)
             {
