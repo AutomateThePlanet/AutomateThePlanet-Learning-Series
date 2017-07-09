@@ -10,7 +10,7 @@
 // limitations under the License.
 // </copyright>
 // <author>Anton Angelov</author>
-// <site>http://automatetheplanet.com/</site>
+// <site>https://automatetheplanet.com/</site>
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ui.Automation.Core.Controls.Controls;

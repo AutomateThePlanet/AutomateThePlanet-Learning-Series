@@ -10,7 +10,7 @@
 // limitations under the License.
 // </copyright>
 // <author>Anton Angelov</author>
-// <site>http://automatetheplanet.com/</site>
+// <site>https://automatetheplanet.com/</site>
 using System.Web;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
@@ -123,7 +123,7 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         [TestMethod]
         public void MovingBetweenTabs()
         {
-            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com/compelling-sunday-14022016/");
+            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com/compelling-sunday-14022016/");
             _driver.FindElement(By.LinkText("10 Advanced WebDriver Tips and Tricks Part 1")).Click();
             _driver.FindElement(By.LinkText("The Ultimate Guide To Unit Testing in ASP.NET MVC")).Click();
             var windowHandles = _driver.WindowHandles;
@@ -153,7 +153,7 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         [TestMethod]
         public void ScrollFocusToControl()
         {
-            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com/compelling-sunday-14022016/");
+            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com/compelling-sunday-14022016/");
             var link = _driver.FindElement(By.PartialLinkText("Previous post"));
             var jsToBeExecuted = string.Format("window.scroll(0, {0});", link.Location.Y);
             ((IJavaScriptExecutor)_driver).ExecuteScript(jsToBeExecuted);
@@ -165,8 +165,8 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         [TestMethod]
         public void FocusOnControl()
         {
-            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com/compelling-sunday-14022016/");
-            var link = _driver.FindElement(By.PartialLinkText("Previous post"));
+            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com/compelling-sunday-14022016/");
+            var link = _driver.FindElement(By.PartialLinkText("Subscribe"));
 
             // 9.1. Option 1.
             link.SendKeys(string.Empty);

@@ -10,7 +10,7 @@
 // limitations under the License.
 // </copyright>
 // <author>Anton Angelov</author>
-// <site>http://automatetheplanet.com/</site>
+// <site>https://automatetheplanet.com/</site>
 using System;
 using System.Xml.Serialization;
 using System.Collections.Generic;

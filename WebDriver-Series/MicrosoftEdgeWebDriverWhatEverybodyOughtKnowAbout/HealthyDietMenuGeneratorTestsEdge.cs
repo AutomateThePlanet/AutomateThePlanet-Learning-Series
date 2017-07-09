@@ -10,7 +10,7 @@
 // limitations under the License.
 // </copyright>
 // <author>Anton Angelov</author>
-// <site>http://automatetheplanet.com/</site>
+// <site>https://automatetheplanet.com/</site>
 using System;
 using System.IO;
 using System.Reflection;
@@ -47,7 +47,7 @@ namespace MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout
         [TestMethod]
         public void FillAwsomeDietTest()
         {
-            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com/healthy-diet-menu-generator/");
+            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com/healthy-diet-menu-generator/");
             var addAdditionalSugarCheckbox = _driver.FindElement(By.Id("ninja_forms_field_18"));
             addAdditionalSugarCheckbox.Click();
             var ventiCoffeeRadioButton = _driver.FindElement(By.Id("ninja_forms_field_19_1"));

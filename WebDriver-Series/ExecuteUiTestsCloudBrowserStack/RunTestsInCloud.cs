@@ -10,7 +10,7 @@
 // limitations under the License.
 // </copyright>
 // <author>Anton Angelov</author>
-// <site>http://automatetheplanet.com/</site>
+// <site>https://automatetheplanet.com/</site>
 
 using System;
 using NUnit.Framework;
@@ -62,7 +62,7 @@ namespace ExecuteUiTestsCloudBrowserStack
         [Test]
         public void ScrollFocusToControl_InCloud_ShouldFail()
         {
-            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com/compelling-sunday-14022016/");
+            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com/compelling-sunday-14022016/");
             var link = _driver.FindElement(By.PartialLinkText("Previous post"));
             var jsToBeExecuted = $"window.scroll(0, {link.Location.Y});";
             ((IJavaScriptExecutor)_driver).ExecuteScript(jsToBeExecuted);

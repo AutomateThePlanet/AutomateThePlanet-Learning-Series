@@ -10,7 +10,7 @@
 // limitations under the License.
 // </copyright>
 // <author>Anton Angelov</author>
-// <site>http://automatetheplanet.com/</site>
+// <site>https://automatetheplanet.com/</site>
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -19,7 +19,7 @@ namespace WebDriverCloudLoadTesting.Pages.AutomateThePlanet
     public partial class HomePage
     {
         private readonly IWebDriver _driver;
-        private readonly string _url = @"http://automatetheplanet.com";
+        private readonly string _url = @"https://automatetheplanet.com";
 
         public HomePage(IWebDriver browser)
         {

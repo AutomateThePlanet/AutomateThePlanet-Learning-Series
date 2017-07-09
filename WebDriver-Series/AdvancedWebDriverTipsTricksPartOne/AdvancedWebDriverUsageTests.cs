@@ -10,7 +10,7 @@
 // limitations under the License.
 // </copyright>
 // <author>Anton Angelov</author>
-// <site>http://automatetheplanet.com/</site>
+// <site>https://automatetheplanet.com/</site>
 using System.Web;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
@@ -76,7 +76,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void WebDriverAdvancedUsage_TakingFullScrenenScreenshot()
         {
-            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com");
             WaitUntilLoaded();
             var tempFilePath = Path.GetTempFileName().Replace(".tmp", ".png");
             TakeFullScreenshot(_driver, tempFilePath);
@@ -86,7 +86,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void WebDriverAdvancedUsage_TakingElementScreenshot()
         {
-            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com");
             WaitUntilLoaded();
             var tempFilePath = Path.GetTempFileName().Replace(".tmp", ".png");
             TakeScreenshotOfElement(_driver, By.XPath("//*[@id='tve_editor']/div[2]/div[2]/div/div"), tempFilePath);
@@ -111,7 +111,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void GetHtmlSourceOfWebElement()
         {
-            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com");
             WaitUntilLoaded();
             var element = _driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[3]/div/div"));
             var sourceHtml = element.GetAttribute("innerHTML");
@@ -121,7 +121,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void ExecuteJavaScript()
         {
-            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com");
             WaitUntilLoaded();
             var js = _driver as IJavaScriptExecutor;
             var title = (string)js.ExecuteScript("return document.title");
@@ -134,7 +134,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
         public void ExecuteInHeadlessBrowser()
         {
             _driver = new PhantomJSDriver();
-            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com");
             WaitUntilLoaded();
             var js = _driver as IJavaScriptExecutor;
             var title = (string)js.ExecuteScript("return document.title");
@@ -153,7 +153,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void ManageCookies()
         {
-            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com");
 
             // 9.1. Add new cookie
             var cookie = new OpenQA.Selenium.Cookie("key", "value");
@@ -181,7 +181,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void MaximizeWindow()
         {
-            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com");
             _driver.Manage().Window.Maximize();
         }
 

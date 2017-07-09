@@ -10,7 +10,7 @@
 // limitations under the License.
 // </copyright>
 // <author>Anton Angelov</author>
-// <site>http://automatetheplanet.com/</site>
+// <site>https://automatetheplanet.com/</site>
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -18,7 +18,7 @@ namespace MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout.Pages
 {
     public class HealthyDietGeneratorPage
     {
-        public readonly string Url = @"http://automatetheplanet.com/healthy-diet-menu-generator/";
+        public readonly string Url = @"https://automatetheplanet.com/healthy-diet-menu-generator/";
 
         public HealthyDietGeneratorPage(IWebDriver browser)
         {

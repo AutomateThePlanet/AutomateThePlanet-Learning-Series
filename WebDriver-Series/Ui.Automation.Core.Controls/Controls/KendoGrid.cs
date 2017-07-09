@@ -10,7 +10,7 @@
 // limitations under the License.
 // </copyright>
 // <author>Anton Angelov</author>
-// <site>http://automatetheplanet.com/</site>
+// <site>https://automatetheplanet.com/</site>
 
 using Newtonsoft.Json;
 using OpenQA.Selenium;
@@ -93,7 +93,7 @@ namespace Ui.Automation.Core.Controls.Controls
         {
             ////this.Driver.FullWaitUntilReady();
             var jsToBeExecuted = GetGridReference();
-            jsToBeExecuted = string.Concat(jsToBeExecuted, "return JSON.stringify(grid.dataSource.data());");
+            jsToBeExecuted = string.Concat(jsToBeExecuted, "return JSON.stringify(grid.dataItems());");
             var jsResults = _driver.ExecuteScript(jsToBeExecuted);
             var items = JsonConvert.DeserializeObject<List<T>>(jsResults.ToString());
             return items;
