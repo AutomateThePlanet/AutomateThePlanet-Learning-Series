@@ -113,7 +113,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
         {
             _driver.Navigate().GoToUrl(@"https://automatetheplanet.com");
             WaitUntilLoaded();
-            var element = _driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[3]/div/div"));
+            var element = _driver.FindElement(By.Id("logo"));
             var sourceHtml = element.GetAttribute("innerHTML");
             Debug.WriteLine(sourceHtml);
         }

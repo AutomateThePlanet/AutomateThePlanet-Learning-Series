@@ -43,6 +43,7 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         {
             _driver = new FirefoxDriver();
             _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             // 10 Advanced WebDriver Tips and Tricks Part 2
             // 6. Change Firefox user agent
             ////FirefoxProfileManager profileManager = new FirefoxProfileManager();
@@ -125,14 +126,15 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         {
             _driver.Navigate().GoToUrl(@"https://automatetheplanet.com/compelling-sunday-14022016/");
             _driver.FindElement(By.LinkText("10 Advanced WebDriver Tips and Tricks Part 1")).Click();
-            _driver.FindElement(By.LinkText("The Ultimate Guide To Unit Testing in ASP.NET MVC")).Click();
             var windowHandles = _driver.WindowHandles;
             var firstTab = windowHandles.First();
             var lastTab = windowHandles.Last();
             _driver.SwitchTo().Window(lastTab);
-            Assert.AreEqual("The Ultimate Guide To Unit Testing in ASP.NET MVC", _driver.Title);
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText("1. Taking a Screenshot")));
+            Assert.AreEqual("10 Advanced WebDriver Tips and Tricks Part 1", _driver.Title);
             _driver.SwitchTo().Window(firstTab);
-            Assert.AreEqual("Compelling Sunday – 19 Posts on Programming and Quality Assurance", _driver.Title);
+            Assert.AreEqual("Compelling Sunday – 19 Posts on Programming and QA", _driver.Title);
         }
 
         // 5. Navigation History
