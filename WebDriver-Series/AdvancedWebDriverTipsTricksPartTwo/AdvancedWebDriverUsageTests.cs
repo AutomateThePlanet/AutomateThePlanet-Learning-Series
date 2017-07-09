@@ -156,11 +156,12 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         public void ScrollFocusToControl()
         {
             _driver.Navigate().GoToUrl(@"https://automatetheplanet.com/compelling-sunday-14022016/");
-            var link = _driver.FindElement(By.PartialLinkText("Previous post"));
+            var link = _driver.FindElement(By.LinkText("10 Advanced WebDriver Tips and Tricks Part 1"));
             var jsToBeExecuted = string.Format("window.scroll(0, {0});", link.Location.Y);
             ((IJavaScriptExecutor)_driver).ExecuteScript(jsToBeExecuted);
+            link = _driver.FindElement(By.LinkText("10 Advanced WebDriver Tips and Tricks Part 1"));
             link.Click();
-            Assert.AreEqual("10 Advanced WebDriver Tips and Tricks - Part 1", _driver.Title);
+            Assert.AreEqual("10 Advanced WebDriver Tips and Tricks Part 1", _driver.Title);
         }
 
         // 10. Focus on a Control

@@ -29,7 +29,7 @@ namespace WebDriverCloudLoadTesting
         public void SetupTest()
         {
             _driver = new PhantomJSDriver();
-            _driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 30));
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         [TestCleanup]
