@@ -45,7 +45,7 @@ namespace SpeedUpSeleniumTestsRamFactsMyths
             ////this.driver = new InternetExplorerDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers", options);
 
             _driver = new ChromeDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers");
-            _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
+            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
         }
 
         [TestCleanup]

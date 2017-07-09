@@ -41,7 +41,7 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         public void SetupTest()
         {
             _driver = new FirefoxDriver();
-            _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
+            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
             // 10 Advanced WebDriver Tips and Tricks Part 2
             // 6. Change Firefox user agent
             ////FirefoxProfileManager profileManager = new FirefoxProfileManager();

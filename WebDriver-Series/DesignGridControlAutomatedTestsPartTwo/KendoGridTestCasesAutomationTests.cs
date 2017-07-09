@@ -36,7 +36,7 @@ namespace DesignGridControlAutomatedTestsPartTwo
         public void SetupTest()
         {
             _driver = new FirefoxDriver();
-            _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
+            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
         }
 
         [TestCleanup]

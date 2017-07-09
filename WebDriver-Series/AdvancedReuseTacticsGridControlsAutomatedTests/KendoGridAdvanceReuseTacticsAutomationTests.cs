@@ -37,7 +37,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
         public void SetupTest()
         {
             _driver = new FirefoxDriver();
-            _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
+            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
             _gridPage = new GridFilterPage(_driver);
             _freightColumnAsserter = new FreightColumnAsserter(_gridPage);
             _orderDateColumnAsserter = new GridTestCases.OrderDateColumnAsserter(_gridPage);

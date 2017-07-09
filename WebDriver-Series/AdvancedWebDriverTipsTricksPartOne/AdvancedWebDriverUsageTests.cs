@@ -63,7 +63,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
             ////options.PageLoadStrategy = InternetExplorerPageLoadStrategy.Eager;
             ////this.driver = new InternetExplorerDriver(@"D:\Projects\PatternsInAutomation.Tests\WebDriver.Series.Tests\Drivers", options);
             _driver = new FirefoxDriver();
-            _driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));         
+            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
         }
 
         [TestCleanup]
@@ -97,7 +97,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
         public void SetPageLoadTimeout()
         {
             // 2.1. Set Default Page Load Timeout
-            _driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
+            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
 
             // 2.2. Wait Until Page is Fully Loaded via JS
             WaitUntilLoaded();
@@ -108,15 +108,15 @@ namespace AdvancedWebDriverTipsTricksPartOne
         }
 
         
-                                [TestMethod]
-                                public void GetHtmlSourceOfWebElement()
-                                {
-                                    _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
-                                    WaitUntilLoaded();
-                                    var element = _driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[3]/div/div"));
-                                    var sourceHtml = element.GetAttribute("innerHTML");
-                                    Debug.WriteLine(sourceHtml);
-                                }
+        [TestMethod]
+        public void GetHtmlSourceOfWebElement()
+        {
+            _driver.Navigate().GoToUrl(@"http://automatetheplanet.com");
+            WaitUntilLoaded();
+            var element = _driver.FindElement(By.XPath("//*[@id='tve_editor']/div[2]/div[3]/div/div"));
+            var sourceHtml = element.GetAttribute("innerHTML");
+            Debug.WriteLine(sourceHtml);
+        }
 
         [TestMethod]
         public void ExecuteJavaScript()
