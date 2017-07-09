@@ -11,41 +11,37 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
-using System;
 
 namespace MostUnderratedWebDriverLocatorXPath
 {
     [TestClass]
     public class XpathExpressions
     {
-        public IWebDriver Driver { get; set; }
-        public WebDriverWait Wait { get; set; }
+        private IWebDriver _driver;
 
         [TestInitialize]
         public void SetupTest()
         {
-            Driver = new FirefoxDriver();
-            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
+            _driver = new FirefoxDriver();
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            Driver.Quit();
+            _driver.Quit();
         }
 
         [TestMethod]
         public void Find_Column_Table_XPath()
         {
-            Driver.Navigate().GoToUrl(@"http://www.tutorialspoint.com/html/html_tables.htm");
-            var expression = By.XPath("/html/body/div[1]/div/div/div/div[2]/div[1]/div/div[6]/table/tbody");
-            Wait.Until(x => x.FindElement(expression));
-            var element = Driver.FindElement(By.XPath("//td[contains(text(), '5000')]/preceding-sibling::td[1]"));
-            Assert.AreEqual<string>("Ramesh Raman", element.Text);
+            _driver.Navigate().GoToUrl(@"http://www.tutorialspoint.com/html/html_tables.htm");
+            var element = _driver.FindElement(By.XPath("//td[contains(text(), '5000')]/preceding-sibling::td[1]"));
+            Assert.AreEqual("Ramesh Raman", element.Text);
         }
     }
 }
