@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Getting Started with WebDriver CSharp in 10 Minutes", "1. Getting Started with WebDriver CSharp in 10 Minutes", "{72C5F509-1F8B-4DF4-B76A-1CBCF0B6E924}"
 	ProjectSection(SolutionItems) = preProject
@@ -133,6 +133,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "24. Capture Full Page Scree
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullPageScreenshotHtmlToCanvas", "FullPageScreenshotHtmlToCanvas\FullPageScreenshotHtmlToCanvas.csproj", "{E68218BF-0D5A-4B2D-9875-F8C7E2737FF3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "25. Build Browser Extension for Full Page Screenshots and Use It in WebDriver Tests", "25. Build Browser Extension for Full Page Screenshots and Use It in WebDriver Tests", "{57963618-C9D6-4743-B1BC-54C0B04578A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildBrowserExtensionFullPageScreenshots", "BuildBrowserExtensionFullPageScreenshots\BuildBrowserExtensionFullPageScreenshots.csproj", "{3CF1B3CE-3646-4A20-A9FC-22E49E104A69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -255,6 +259,10 @@ Global
 		{E68218BF-0D5A-4B2D-9875-F8C7E2737FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E68218BF-0D5A-4B2D-9875-F8C7E2737FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E68218BF-0D5A-4B2D-9875-F8C7E2737FF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF1B3CE-3646-4A20-A9FC-22E49E104A69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF1B3CE-3646-4A20-A9FC-22E49E104A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF1B3CE-3646-4A20-A9FC-22E49E104A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF1B3CE-3646-4A20-A9FC-22E49E104A69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -296,6 +304,7 @@ Global
 		{AA322464-1E28-4914-BED1-F286D6511A75} = {40A7B6A5-F3E1-4457-8D2A-74AD74735300}
 		{561A67B8-1D8D-4828-B1B7-0D7EFA6A8241} = {541201EF-5897-4CFD-BDE8-5935A524B166}
 		{E68218BF-0D5A-4B2D-9875-F8C7E2737FF3} = {D6C0275E-1538-4B1F-8B05-75C44BEAF4B5}
+		{3CF1B3CE-3646-4A20-A9FC-22E49E104A69} = {57963618-C9D6-4743-B1BC-54C0B04578A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}
