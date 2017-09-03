@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.10
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Getting Started with WebDriver CSharp in 10 Minutes", "1. Getting Started with WebDriver CSharp in 10 Minutes", "{72C5F509-1F8B-4DF4-B76A-1CBCF0B6E924}"
 	ProjectSection(SolutionItems) = preProject
@@ -141,6 +141,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "26. Automate Windows Deskto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStartedWinDriver", "GettingStartedWinDriver\GettingStartedWinDriver.csproj", "{9C427C18-4668-4B37-A8D4-310CC5DB5B8C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "27. Windows WebDriver- WinAppDriver- Page Objects", "27. Windows WebDriver- WinAppDriver- Page Objects", "{26EFF10A-A757-4AD2-80F0-A8BFEE7A7F99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinAppDriverPageObjects", "WinAppDriverPageObjects\WinAppDriverPageObjects.csproj", "{C695688C-51FE-45B9-ABCD-593A28D53CC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -271,6 +275,10 @@ Global
 		{9C427C18-4668-4B37-A8D4-310CC5DB5B8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C427C18-4668-4B37-A8D4-310CC5DB5B8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C427C18-4668-4B37-A8D4-310CC5DB5B8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C695688C-51FE-45B9-ABCD-593A28D53CC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C695688C-51FE-45B9-ABCD-593A28D53CC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C695688C-51FE-45B9-ABCD-593A28D53CC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C695688C-51FE-45B9-ABCD-593A28D53CC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -314,6 +322,7 @@ Global
 		{E68218BF-0D5A-4B2D-9875-F8C7E2737FF3} = {D6C0275E-1538-4B1F-8B05-75C44BEAF4B5}
 		{3CF1B3CE-3646-4A20-A9FC-22E49E104A69} = {57963618-C9D6-4743-B1BC-54C0B04578A8}
 		{9C427C18-4668-4B37-A8D4-310CC5DB5B8C} = {263BED32-64D8-4446-92AB-118E4E2B34C8}
+		{C695688C-51FE-45B9-ABCD-593A28D53CC1} = {26EFF10A-A757-4AD2-80F0-A8BFEE7A7F99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}
