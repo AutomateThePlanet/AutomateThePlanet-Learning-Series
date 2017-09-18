@@ -58,7 +58,7 @@ namespace MSTest.Console.Extended.Infrastructure
             Match currentMatch = r1.Match(this.ConsoleArguments);
             if (!currentMatch.Success)
             {
-                throw new ArgumentException("You need to specify path to test results.");
+                throw new ArgumentException("You need to specify path to test results. Paths with spaces are not supported");
             }
             this.TestResultPath = currentMatch.Groups["ResultsFilePath"].Value;
         }
