@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Getting Started with WebDriver CSharp in 10 Minutes", "1. Getting Started with WebDriver CSharp in 10 Minutes", "{72C5F509-1F8B-4DF4-B76A-1CBCF0B6E924}"
 	ProjectSection(SolutionItems) = preProject
@@ -145,6 +145,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "27. Windows WebDriver- WinA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinAppDriverPageObjects", "WinAppDriverPageObjects\WinAppDriverPageObjects.csproj", "{C695688C-51FE-45B9-ABCD-593A28D53CC1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "28. Headless Execution of WebDriver Tests- Chrome", "28. Headless Execution of WebDriver Tests- Chrome", "{1A399EE2-D259-4902-8A29-B1AA78983A99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadlessTestsChrome", "HeadlessTestsChrome\HeadlessTestsChrome.csproj", "{2AD69BC2-3420-411A-99D5-EF1143E55926}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -279,6 +283,10 @@ Global
 		{C695688C-51FE-45B9-ABCD-593A28D53CC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C695688C-51FE-45B9-ABCD-593A28D53CC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C695688C-51FE-45B9-ABCD-593A28D53CC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AD69BC2-3420-411A-99D5-EF1143E55926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD69BC2-3420-411A-99D5-EF1143E55926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD69BC2-3420-411A-99D5-EF1143E55926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD69BC2-3420-411A-99D5-EF1143E55926}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -323,6 +331,7 @@ Global
 		{3CF1B3CE-3646-4A20-A9FC-22E49E104A69} = {57963618-C9D6-4743-B1BC-54C0B04578A8}
 		{9C427C18-4668-4B37-A8D4-310CC5DB5B8C} = {263BED32-64D8-4446-92AB-118E4E2B34C8}
 		{C695688C-51FE-45B9-ABCD-593A28D53CC1} = {26EFF10A-A757-4AD2-80F0-A8BFEE7A7F99}
+		{2AD69BC2-3420-411A-99D5-EF1143E55926} = {1A399EE2-D259-4902-8A29-B1AA78983A99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}
