@@ -84,23 +84,29 @@ namespace MSTest.Console.Extended.Infrastructure
                 this.log.InfoFormat("##### MSTestRetrier: Execute again {0}", currentFailedTest.testName);
             }
 
-            string oldAgruments = this.consoleArgumentsProvider.ConsoleArguments;
+            string oldArgmentsWithoutTestList = ExcludeTestListFromConsoleArguments(this.consoleArgumentsProvider.ConsoleArguments);
 
-            // Exclude original test list from command line arguments
-            Regex r1 = new Regex(testToRunRegexPattern, RegexOptions.Singleline);
-            foreach (Match currentMatch in r1.Matches(oldAgruments))
-            {
-                if (currentMatch.Success)
-                {
-                    oldAgruments = oldAgruments.Replace(currentMatch.Groups[0].Value, "");
-                }
-            }
-
-            string additionalArgumentsForFailedTestsRun = string.Concat(oldAgruments, sb.ToString());
+            string additionalArgumentsForFailedTestsRun = string.Concat(oldArgmentsWithoutTestList, sb.ToString());
 
             additionalArgumentsForFailedTestsRun = additionalArgumentsForFailedTestsRun.Replace(this.consoleArgumentsProvider.TestResultPath, newTestResultFilePath);
             additionalArgumentsForFailedTestsRun = additionalArgumentsForFailedTestsRun.TrimEnd();
             return additionalArgumentsForFailedTestsRun;
+        }
+
+        private string ExcludeTestListFromConsoleArguments(string oldArguments)
+        {
+            string oldArgmentsWithoutTestList = oldArguments;
+
+            Regex r1 = new Regex(testToRunRegexPattern, RegexOptions.Singleline);
+            foreach (Match currentMatch in r1.Matches(oldArguments))
+            {
+                if (currentMatch.Success)
+                {
+                    oldArgmentsWithoutTestList = oldArgmentsWithoutTestList.Replace(currentMatch.Groups[0].Value, "");
+                }
+            }
+            
+            return oldArgmentsWithoutTestList;
         }
 
         public int CalculatedFailedTestsPercentage(List<TestRunUnitTestResult> failedTests, List<TestRunUnitTestResult> allTests)
