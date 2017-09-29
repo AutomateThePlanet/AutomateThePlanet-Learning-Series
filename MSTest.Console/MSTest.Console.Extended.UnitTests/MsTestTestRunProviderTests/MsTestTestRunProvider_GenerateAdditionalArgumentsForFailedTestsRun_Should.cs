@@ -58,5 +58,24 @@ namespace MSTest.Console.Extended.UnitTests.MsTestTestRunProviderTests
             string additionalArguments = microsoftTestTestRunProvider.GenerateAdditionalArgumentsForFailedTestsRun(testRun.Results.ToList(), newTestResultsPath);
             Assert.AreEqual<string>(string.Format(@"/resultsfile:""{0}"" /test:TestConsoleExtended /test:TestConsoleExtended_Second", newTestResultsPath), additionalArguments);
         }
+
+        [TestMethod]
+        public void ExcludeTestListFromConsoleArguments_WhenTestListPresent()
+        {
+            var log = Mock.Create<ILog>();
+            Mock.Arrange(() => log.Info(Arg.AnyString));
+            var consoleArgumentsProvider = Mock.Create<IConsoleArgumentsProvider>();
+            string newTestResultsPath = Path.GetTempFileName();
+            Mock.Arrange(() => consoleArgumentsProvider.ConsoleArguments).Returns(@"/resultsfile:""C:\Results.trx"" /test:testmask1 /test:testmask2 /retriesCount:3");
+            Mock.Arrange(() => consoleArgumentsProvider.TestResultPath).Returns(@"C:\Results.trx");
+            var fileSystemProvider = new FileSystemProvider(consoleArgumentsProvider);
+            var testRun = fileSystemProvider.DeserializeTestRun("Exceptions.trx");
+
+            var microsoftTestTestRunProvider = new MsTestTestRunProvider(consoleArgumentsProvider, log);
+            string additionalArguments = microsoftTestTestRunProvider.GenerateAdditionalArgumentsForFailedTestsRun(testRun.Results.ToList(), newTestResultsPath);
+
+            // Check if "/test:testmask1 /test:testmask2" parameters are removed from command line arguments
+            Assert.AreEqual<string>(string.Format(@"/resultsfile:""{0}""   /retriesCount:3 /test:TestConsoleExtended /test:TestConsoleExtended_Second", newTestResultsPath), additionalArguments);
+        }
     }
 }

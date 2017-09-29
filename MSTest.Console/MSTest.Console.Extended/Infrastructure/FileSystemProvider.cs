@@ -16,6 +16,7 @@ using System.IO;
 using System.Xml.Serialization;
 using MSTest.Console.Extended.Data;
 using MSTest.Console.Extended.Interfaces;
+using System;
 
 namespace MSTest.Console.Extended.Infrastructure
 {
@@ -51,6 +52,10 @@ namespace MSTest.Console.Extended.Infrastructure
                 StreamReader reader = new StreamReader(resultsPath);
                 testRun = (TestRun)serializer.Deserialize(reader);
                 reader.Close();
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Cannot deserialize {0}", resultsPath));
             }
             return testRun;
         }

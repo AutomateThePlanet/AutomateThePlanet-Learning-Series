@@ -23,8 +23,8 @@ namespace MSTest.Console.Extended.Infrastructure
 {
     public class ConsoleArgumentsProvider : IConsoleArgumentsProvider
     {
-        private readonly string testResultFilePathRegexPattern = @".*resultsfile:(?<ResultsFilePath>[1-9A-Za-z\\:._]{1,})";
-        private readonly string testNewResultFilePathRegexPattern = @".*(?<NewResultsFilePathArgument>/newResultsfile:(?<NewResultsFilePath>[1-9A-Za-z\\:._]{1,}))";
+        private readonly string testResultFilePathRegexPattern = @".*resultsfile:(?<ResultsFilePath>[0-9A-Za-z\\:._-]{1,})";
+        private readonly string testNewResultFilePathRegexPattern = @".*(?<NewResultsFilePathArgument>/newResultsfile:(?<NewResultsFilePath>[0-9A-Za-z\\:._-]{1,}))";
         private readonly string retriesRegexPattern = @".*(?<RetriesArgument>/retriesCount:(?<RetriesCount>[0-9]{1})).*";
         private readonly string failedTestsThresholdRegexPattern = @".*(?<ThresholdArgument>/threshold:(?<ThresholdCount>[0-9]{1,3})).*";
         private readonly string deleteOldFilesRegexPattern = @".*(?<DeleteOldFilesArgument>/deleteOldResultsFiles:(?<DeleteOldFilesValue>[a-zA-Z]{4,5})).*";
@@ -58,7 +58,7 @@ namespace MSTest.Console.Extended.Infrastructure
             Match currentMatch = r1.Match(this.ConsoleArguments);
             if (!currentMatch.Success)
             {
-                throw new ArgumentException("You need to specify path to test results.");
+                throw new ArgumentException("You need to specify path to test results. Paths with spaces are not supported");
             }
             this.TestResultPath = currentMatch.Groups["ResultsFilePath"].Value;
         }
