@@ -89,6 +89,23 @@ namespace MSTest.Console.Extended.UnitTests.ConsoleArgumentsProviderTests
         }
 
         [TestMethod]
+        public void SetTestResultsPath_WhenTestResultsPathContainsAtSymbol()
+        {
+            string[] args = 
+            {
+                @"/resultsfile:C:\Results@FF.trx",
+                @"/testcontainer:C:\Frontend\Tests.dll",
+                "/nologo",
+                "/category:MSTestConsoleExtendedTEST",
+                "/retriesCount:3",
+                "/deleteOldResultsFiles:true",
+                @"/newResultsfile:C:\ResultsNew.trx"
+            };
+            var consoleArgumentsProvider = new ConsoleArgumentsProvider(args);
+            Assert.AreEqual<string>(@"C:\Results@FF.trx", consoleArgumentsProvider.TestResultPath);
+        }
+
+        [TestMethod]
         public void SetTestResultsPath_WhenTestResultsPathContainsDigit()
         {
             string[] args = 
@@ -187,6 +204,23 @@ namespace MSTest.Console.Extended.UnitTests.ConsoleArgumentsProviderTests
             };
             var consoleArgumentsProvider = new ConsoleArgumentsProvider(args);
             Assert.AreEqual<string>(@"C:\ResultsNew1.trx", consoleArgumentsProvider.NewTestResultPath);
+        }
+
+        [TestMethod]
+        public void SetNewTestResultsPath_WhenNewTestResultsPathContainsAtSymbol()
+        {
+            string[] args =
+            {
+                @"/resultsfile:C:\Results1.trx",
+                @"/testcontainer:C:\Frontend\Tests.dll",
+                "/nologo",
+                "/category:MSTestConsoleExtendedTEST",
+                "/retriesCount:3",
+                "/deleteOldResultsFiles:true",
+                @"/newResultsfile:C:\Results@1\New1.trx"
+            };
+            var consoleArgumentsProvider = new ConsoleArgumentsProvider(args);
+            Assert.AreEqual<string>(@"C:\Results@1\New1.trx", consoleArgumentsProvider.NewTestResultPath);
         }
 
         [TestMethod]

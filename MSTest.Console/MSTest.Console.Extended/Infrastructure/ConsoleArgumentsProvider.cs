@@ -23,8 +23,8 @@ namespace MSTest.Console.Extended.Infrastructure
 {
     public class ConsoleArgumentsProvider : IConsoleArgumentsProvider
     {
-        private readonly string testResultFilePathRegexPattern = @".*resultsfile:(?<ResultsFilePath>[0-9A-Za-z\\:._-]{1,})";
-        private readonly string testNewResultFilePathRegexPattern = @".*(?<NewResultsFilePathArgument>/newResultsfile:(?<NewResultsFilePath>[0-9A-Za-z\\:._-]{1,}))";
+        private readonly string testResultFilePathRegexPattern = @".*resultsfile:(?<ResultsFilePath>[0-9A-Za-z\\:._@\s-]{1,})";
+        private readonly string testNewResultFilePathRegexPattern = @".*(?<NewResultsFilePathArgument>/newResultsfile:(?<NewResultsFilePath>[0-9A-Za-z\\:._@\s-]{1,}))";
         private readonly string retriesRegexPattern = @".*(?<RetriesArgument>/retriesCount:(?<RetriesCount>[0-9]{1})).*";
         private readonly string failedTestsThresholdRegexPattern = @".*(?<ThresholdArgument>/threshold:(?<ThresholdCount>[0-9]{1,3})).*";
         private readonly string deleteOldFilesRegexPattern = @".*(?<DeleteOldFilesArgument>/deleteOldResultsFiles:(?<DeleteOldFilesValue>[a-zA-Z]{4,5})).*";
@@ -60,7 +60,7 @@ namespace MSTest.Console.Extended.Infrastructure
             {
                 throw new ArgumentException("You need to specify path to test results. Paths with spaces are not supported");
             }
-            this.TestResultPath = currentMatch.Groups["ResultsFilePath"].Value;
+            this.TestResultPath = currentMatch.Groups["ResultsFilePath"].Value.Trim();
         }
 
         private void InitializeNewTestResultsPath()
@@ -73,7 +73,7 @@ namespace MSTest.Console.Extended.Infrastructure
             }
             else
             {
-                this.NewTestResultPath = currentMatch.Groups["NewResultsFilePath"].Value;
+                this.NewTestResultPath = currentMatch.Groups["NewResultsFilePath"].Value.Trim();
                 this.ConsoleArguments = this.ConsoleArguments.Replace(currentMatch.Groups["NewResultsFilePathArgument"].Value, string.Empty);
             }
         }
