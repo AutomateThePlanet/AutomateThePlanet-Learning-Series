@@ -50,9 +50,20 @@ namespace FullPageScreenshotHtmlToCanvas
 
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                 wait.IgnoreExceptionTypes(typeof(InvalidOperationException));
-                wait.Until(wd => ((IJavaScriptExecutor)wd).ExecuteScript("return canvasImgContentDecoded;") != null);
-                var pngContent = (string)js.ExecuteScript("return canvasImgContentDecoded;");
+                wait.Until(
+                    wd =>
+                    {
+                        string response = (string)js.ExecuteScript
+                            ("return (typeof canvasImgContentDecoded === 'undefined' || canvasImgContentDecoded === null)");
+                        if (string.IsNullOrEmpty(response))
+                        {
+                            return false;
+                        }
 
+                        return bool.Parse(response);
+                    });
+                wait.Until(wd => !string.IsNullOrEmpty((string)js.ExecuteScript("return canvasImgContentDecoded;")));
+                var pngContent = (string)js.ExecuteScript("return canvasImgContentDecoded;");
                 pngContent = pngContent.Replace("data:image/png;base64,", string.Empty);
                 byte[] data = Convert.FromBase64String(pngContent);
                 var tempFilePath = Path.GetTempFileName().Replace(".tmp", ".png");

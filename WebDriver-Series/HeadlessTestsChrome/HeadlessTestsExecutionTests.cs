@@ -108,6 +108,25 @@ namespace HeadlessTestsChrome
             );
         }
 
+        [Test]
+        public void TestFirefoxHeadlessExecutionTime()
+        {
+            Profile
+            (
+                "TestFirefoxHeadlessExecutionTime",
+                10,
+                () =>
+                {
+                    var options = new FirefoxOptions();
+                    options.AddArguments("--headless");
+                    using (IWebDriver driver = new FirefoxDriver(options))
+                    {
+                        PerformTestOperations(driver);
+                    }
+                }
+            );
+        }
+
         private void PerformTestOperations(IWebDriver driver)
         {
             string testPagePath = "http://htmlpreview.github.io/?https://github.com/angelovstanton/AutomateThePlanet/blob/master/WebDriver-Series/TestPage.html";
