@@ -80,6 +80,10 @@ namespace MSTest.Console.Extended.Services
                     failedTests = this.microsoftTestTestRunProvider.GetAllNotPassedTests(testRun.Results.ToList());
                 }
             }
+            else
+            {
+                this.log.InfoFormat("Percentage of failed tests {0} is over threshold {1}, will not restart", failedTestsPercentage, this.consoleArgumentsProvider.FailedTestsThreshold);
+            }
             if (failedTests.Count > 0)
             {
                 areAllTestsGreen = 1;

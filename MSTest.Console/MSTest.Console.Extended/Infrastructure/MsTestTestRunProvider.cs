@@ -17,11 +17,13 @@ using System.Text;
 using log4net;
 using MSTest.Console.Extended.Data;
 using MSTest.Console.Extended.Interfaces;
+using System.Text.RegularExpressions;
 
 namespace MSTest.Console.Extended.Infrastructure
 {
     public class MsTestTestRunProvider : IMsTestTestRunProvider
     {
+        private readonly string testToRunRegexPattern = @".test:[0-9A-Za-z._-]+";
         private readonly ILog log;
         private readonly IConsoleArgumentsProvider consoleArgumentsProvider;
 
@@ -81,10 +83,30 @@ namespace MSTest.Console.Extended.Infrastructure
                 System.Console.WriteLine("##### MSTestRetrier: Execute again {0}", currentFailedTest.testName);
                 this.log.InfoFormat("##### MSTestRetrier: Execute again {0}", currentFailedTest.testName);
             }
-            string additionalArgumentsForFailedTestsRun = string.Concat(this.consoleArgumentsProvider.ConsoleArguments, sb.ToString());
+
+            string oldArgmentsWithoutTestList = ExcludeTestListFromConsoleArguments(this.consoleArgumentsProvider.ConsoleArguments);
+
+            string additionalArgumentsForFailedTestsRun = string.Concat(oldArgmentsWithoutTestList, sb.ToString());
+
             additionalArgumentsForFailedTestsRun = additionalArgumentsForFailedTestsRun.Replace(this.consoleArgumentsProvider.TestResultPath, newTestResultFilePath);
             additionalArgumentsForFailedTestsRun = additionalArgumentsForFailedTestsRun.TrimEnd();
             return additionalArgumentsForFailedTestsRun;
+        }
+
+        private string ExcludeTestListFromConsoleArguments(string oldArguments)
+        {
+            string oldArgmentsWithoutTestList = oldArguments;
+
+            Regex r1 = new Regex(testToRunRegexPattern, RegexOptions.Singleline);
+            foreach (Match currentMatch in r1.Matches(oldArguments))
+            {
+                if (currentMatch.Success)
+                {
+                    oldArgmentsWithoutTestList = oldArgmentsWithoutTestList.Replace(currentMatch.Groups[0].Value, "");
+                }
+            }
+            
+            return oldArgmentsWithoutTestList;
         }
 
         public int CalculatedFailedTestsPercentage(List<TestRunUnitTestResult> failedTests, List<TestRunUnitTestResult> allTests)
