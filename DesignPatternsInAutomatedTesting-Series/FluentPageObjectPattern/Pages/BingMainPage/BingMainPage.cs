@@ -19,7 +19,7 @@ namespace FluentPageObjectPattern.Pages.BingMainPage
 {
     public class BingMainPage : BaseFluentPageSingleton<BingMainPage, BingMainPageElementMap, BingMainPageValidator>
     {
-        public BingMainPage Navigate(string url = "http://www.bing.com/")
+        public new BingMainPage Navigate(string url = "http://www.bing.com/")
         {
             base.Navigate(url);
             return this;

@@ -26,7 +26,7 @@ namespace FluentPageObjectPattern.Core
             }
         }
 
-        public virtual void Navigate(string url = "")
+        protected void Navigate(string url = "")
         {
             Driver.Browser.Navigate().GoToUrl(string.Concat(url));
         }

@@ -25,23 +25,12 @@ namespace HuddlePageObjectsPartialClassesCSharpSeven
     {
         private static IWebDriver _driver;
 
-        [TestInitialize]
-        public void TestInit()
-        {
-            _driver = new ChromeDriver();
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-        }
-
-        [TestCleanup]
-        public void TestCleanup()
-        {
-            _driver.Quit();
-        }
-
         [AssemblyInitialize]
         public static void AssemblyInitialize(TestContext testContext)
         {
             DisposeDriverService.TestRunStartTime = DateTime.Now;
+            _driver = new ChromeDriver();
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         [AssemblyCleanup]

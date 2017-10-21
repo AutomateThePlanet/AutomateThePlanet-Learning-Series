@@ -2,20 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\WebDriver-Series",
+    "\\WebDriver-Series\\FinishHimKillAllWebDrivers",
+    "\\WebDriver-Series\\FinishHimKillAllWebDrivers\\Pages",
+    "\\WebDriver-Series\\FullPageScreenshotHtmlToCanvas",
     "\\WebDriver-Series\\WebDriverCsharpSeven",
     "\\WebDriver-Series\\WebDriverCsharpSeven\\DigitSeparators",
     "\\WebDriver-Series\\WebDriverCsharpSeven\\ExpressionBodiesContructor",
     "\\WebDriver-Series\\WebDriverCsharpSeven\\ExpressionBodiesProperties",
-    "\\WebDriver-Series\\WebDriverCsharpSeven\\LocalFunctions",
-    "\\WebDriver-Series\\WebDriverCsharpSeven\\ThrowExpressions",
-    "\\WebDriver-Series\\WebDriverTestsCSharpSix",
-    "\\WebDriver-Series\\WebDriverTestsCSharpSix\\CSharpSix",
-    "\\WebDriver-Series\\WebDriverTestsCSharpSix\\CSharpSix\\Auto-Property Initializers",
-    "\\WebDriver-Series\\WebDriverTestsCSharpSix\\CSharpSix\\ExpressionBodiesFunctions",
-    "\\WebDriver-Series\\WebDriverTestsCSharpSix\\CSharpSix\\ExpressionBodiesFunctions\\ImprovedVersion",
-    "\\WebDriver-Series\\WebDriverTestsCSharpSix\\CSharpSix\\Null Conditional Operator",
-    "\\WebDriver-Series\\WebDriverTestsCSharpSix\\CSharpSix\\Null Conditional Operator\\ShippingAddressPage"
+    "\\WebDriver-Series\\WebDriverCsharpSeven\\LocalFunctions"
   ],
-  "SelectedNode": "\\WebDriver-Series\\WebDriverCsharpSeven\\ExpressionBodiesProperties\\ShippingAddressPage.Map.cs",
+  "SelectedNode": "\\WebDriver-Series\\FullPageScreenshotHtmlToCanvas\\ScreenshotsTests.cs",
   "PreviewInSolutionExplorer": false
 }

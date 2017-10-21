@@ -11,21 +11,17 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>https://automatetheplanet.com/</site>
-using System;
+
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 
 namespace FinishHimKillAllWebDrivers.Pages
 {
     public partial class BingMainPage
     {
         private readonly IWebDriver _driver;
-        private readonly WebDriverWait _driverWait;
         private readonly string _url = @"http://www.bing.com/";
         
         public BingMainPage(IWebDriver browser) => _driver = browser;
-
-        public BingMainPage(WebDriverWait wait) => _driverWait = wait ?? throw new ArgumentNullException(nameof(wait));
         
         public void Navigate() => _driver.Navigate().GoToUrl(_url);
 
