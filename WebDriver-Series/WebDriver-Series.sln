@@ -159,11 +159,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadlessTestsFirefox", "Hea
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Page Objects- Partial Classes Singleton", "7. Page Objects- Partial Classes Singleton", "{E78B108A-19C4-4F81-886F-09A13EEB52A9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. Page Objects- Partial Classes Base Classes", "8. Page Objects- Partial Classes Base Classes", "{65A048AA-F70D-408D-8301-5A5D6E747A39}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. Page Objects- Partial Classes Base Pages", "8. Page Objects- Partial Classes Base Pages", "{65A048AA-F70D-408D-8301-5A5D6E747A39}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9. Page Objects- Elements Access Styles", "9. Page Objects- Elements Access Styles", "{F6471DF7-D876-4BF0-9887-DA88E4903825}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. Simple App Design Pattern for Page Objects", "10. Simple App Design Pattern for Page Objects", "{C1F07384-4D08-4DF1-9C6B-D5DA9223D8BE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. App Design Pattern for Page Objects", "10. App Design Pattern for Page Objects", "{C1F07384-4D08-4DF1-9C6B-D5DA9223D8BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsPartialClassesSingleton", "HuddlePageObjectsPartialClassesSingleton\HuddlePageObjectsPartialClassesSingleton.csproj", "{1CC3570C-1802-4631-BE19-8C0F88C8CEEA}"
 EndProject

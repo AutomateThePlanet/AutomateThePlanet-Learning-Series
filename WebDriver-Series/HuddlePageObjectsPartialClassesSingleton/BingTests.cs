@@ -11,8 +11,8 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>https://automatetheplanet.com/</site>
-
 using System;
+using HuddlePageObjectsPartialClassesSingleton.Pages.SingletonBingMainPage;
 using HuddlePageObjectsPartialClassesSingleton.SingletonBingMainPage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
