@@ -56,7 +56,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BingTests.cs" />
+    <Compile Include="Core\App.cs" />
+    <Compile Include="Core\AssertedNavigatablePage.cs" />
+    <Compile Include="Core\AssertedPage.cs" />
+    <Compile Include="Core\BrowserType.cs" />
+    <Compile Include="Core\IAssert.cs" />
+    <Compile Include="Core\NavigatablePage.cs" />
+    <Compile Include="Core\Page.cs" />
+    <Compile Include="Pages\BingMainPage\BingMainPage.Actions.cs" />
+    <Compile Include="Pages\BingMainPage\BingMainPage.Asserts.cs" />
+    <Compile Include="Pages\BingMainPage\BingMainPage.Elements.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
