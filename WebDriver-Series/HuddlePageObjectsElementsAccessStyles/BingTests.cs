@@ -17,7 +17,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
-namespace HuddlePageObjectsElementsStringProperties
+namespace HuddlePageObjectsElementsAccessStyles
 {
     [TestClass]
     public class BingTests
@@ -41,8 +41,10 @@ namespace HuddlePageObjectsElementsStringProperties
         public void SearchTextInBing_First()
         {
             var bingMainPage = new BingMainPage(_driver);
+
             bingMainPage.Navigate();
             bingMainPage.Search("Automate The Planet");
+
             bingMainPage.AssertResultsCount("236,000 RESULTS");
         }
     }

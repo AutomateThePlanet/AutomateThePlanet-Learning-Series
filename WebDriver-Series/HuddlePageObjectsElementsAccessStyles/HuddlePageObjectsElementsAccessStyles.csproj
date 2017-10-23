@@ -56,7 +56,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BingMainPage\BingMainPage.Actions.cs" />
+    <Compile Include="BingMainPage\BingMainPage.Asserts.cs" />
+    <Compile Include="BingMainPage\BingMainPage.Elements.cs" />
+    <Compile Include="BingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

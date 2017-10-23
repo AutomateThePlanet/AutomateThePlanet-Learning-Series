@@ -216,7 +216,7 @@ namespace AdvancedWebDriverTipsTricksPartOne
         public void TakeFullScreenshot(IWebDriver driver, string filename)
         {
             var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
-            screenshot.SaveAsFile(filename, ImageFormat.Png);
+            screenshot.SaveAsFile(filename, ScreenshotImageFormat.Png);
         }
 
         public void TakeScreenshotOfElement(IWebDriver driver, By by, string fileName)
