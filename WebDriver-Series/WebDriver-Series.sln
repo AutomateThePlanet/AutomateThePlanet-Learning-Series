@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Getting Started with WebDriver CSharp in 10 Minutes", "1. Getting Started with WebDriver CSharp in 10 Minutes", "{72C5F509-1F8B-4DF4-B76A-1CBCF0B6E924}"
 	ProjectSection(SolutionItems) = preProject
@@ -157,6 +157,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30. Headless Execution of W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadlessTestsFirefox", "HeadlessTestsFirefox\HeadlessTestsFirefox.csproj", "{B10FBBD9-9CB0-41B7-B8ED-A5950EBE962C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Page Objects- Partial Classes Singleton", "7. Page Objects- Partial Classes Singleton", "{E78B108A-19C4-4F81-886F-09A13EEB52A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. Page Objects- Partial Classes Base Classes", "8. Page Objects- Partial Classes Base Classes", "{65A048AA-F70D-408D-8301-5A5D6E747A39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9. Page Objects- Elements Access Styles", "9. Page Objects- Elements Access Styles", "{F6471DF7-D876-4BF0-9887-DA88E4903825}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. Simple App Design Pattern for Page Objects", "10. Simple App Design Pattern for Page Objects", "{C1F07384-4D08-4DF1-9C6B-D5DA9223D8BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsPartialClassesSingleton", "HuddlePageObjectsPartialClassesSingleton\HuddlePageObjectsPartialClassesSingleton.csproj", "{1CC3570C-1802-4631-BE19-8C0F88C8CEEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsPartialClassesBaseClasses", "HuddlePageObjectsPartialClassesBaseClasses\HuddlePageObjectsPartialClassesBaseClasses.csproj", "{8E7A864B-C92D-4792-9EA5-F63B48D44591}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsElementsAccessStyles", "HuddlePageObjectsElementsAccessStyles\HuddlePageObjectsElementsAccessStyles.csproj", "{2A828F78-FE22-4044-B6AB-CA5AED162D02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsAppDesignPattern", "HuddlePageObjectsAppDesignPattern\HuddlePageObjectsAppDesignPattern.csproj", "{E1D0EC3D-96FB-43E8-9143-F8EF78882539}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -303,6 +319,22 @@ Global
 		{B10FBBD9-9CB0-41B7-B8ED-A5950EBE962C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B10FBBD9-9CB0-41B7-B8ED-A5950EBE962C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B10FBBD9-9CB0-41B7-B8ED-A5950EBE962C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CC3570C-1802-4631-BE19-8C0F88C8CEEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CC3570C-1802-4631-BE19-8C0F88C8CEEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CC3570C-1802-4631-BE19-8C0F88C8CEEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CC3570C-1802-4631-BE19-8C0F88C8CEEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E7A864B-C92D-4792-9EA5-F63B48D44591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E7A864B-C92D-4792-9EA5-F63B48D44591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E7A864B-C92D-4792-9EA5-F63B48D44591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E7A864B-C92D-4792-9EA5-F63B48D44591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A828F78-FE22-4044-B6AB-CA5AED162D02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A828F78-FE22-4044-B6AB-CA5AED162D02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A828F78-FE22-4044-B6AB-CA5AED162D02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A828F78-FE22-4044-B6AB-CA5AED162D02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1D0EC3D-96FB-43E8-9143-F8EF78882539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1D0EC3D-96FB-43E8-9143-F8EF78882539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1D0EC3D-96FB-43E8-9143-F8EF78882539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1D0EC3D-96FB-43E8-9143-F8EF78882539}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -350,6 +382,14 @@ Global
 		{2AD69BC2-3420-411A-99D5-EF1143E55926} = {1A399EE2-D259-4902-8A29-B1AA78983A99}
 		{CCAB0F07-8FE2-4B26-AF69-15C3DB9ADCBA} = {2F6491ED-5E5D-437C-A8A8-1355B63DB9AB}
 		{B10FBBD9-9CB0-41B7-B8ED-A5950EBE962C} = {4A1EC2D7-1B32-42DD-BB7B-439BA70E6251}
+		{E78B108A-19C4-4F81-886F-09A13EEB52A9} = {D5E1B798-3F73-4EB0-A675-21EB232443FE}
+		{65A048AA-F70D-408D-8301-5A5D6E747A39} = {D5E1B798-3F73-4EB0-A675-21EB232443FE}
+		{F6471DF7-D876-4BF0-9887-DA88E4903825} = {D5E1B798-3F73-4EB0-A675-21EB232443FE}
+		{C1F07384-4D08-4DF1-9C6B-D5DA9223D8BE} = {D5E1B798-3F73-4EB0-A675-21EB232443FE}
+		{1CC3570C-1802-4631-BE19-8C0F88C8CEEA} = {E78B108A-19C4-4F81-886F-09A13EEB52A9}
+		{8E7A864B-C92D-4792-9EA5-F63B48D44591} = {65A048AA-F70D-408D-8301-5A5D6E747A39}
+		{2A828F78-FE22-4044-B6AB-CA5AED162D02} = {F6471DF7-D876-4BF0-9887-DA88E4903825}
+		{E1D0EC3D-96FB-43E8-9143-F8EF78882539} = {C1F07384-4D08-4DF1-9C6B-D5DA9223D8BE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}
