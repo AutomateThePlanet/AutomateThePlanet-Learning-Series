@@ -13,6 +13,7 @@
 // <site>https://automatetheplanet.com/</site>
 
 using System;
+using HuddlePageObjectsElementsAccessStyles.PublicPropertiesElements;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
@@ -38,7 +39,7 @@ namespace HuddlePageObjectsElementsAccessStyles
         }
 
         [TestMethod]
-        public void SearchTextInBing_First()
+        public void PublicProperties_SearchTextInBing_First()
         {
             var bingMainPage = new BingMainPage(_driver);
 
@@ -46,6 +47,52 @@ namespace HuddlePageObjectsElementsAccessStyles
             bingMainPage.Search("Automate The Planet");
 
             bingMainPage.AssertResultsCount("236,000 RESULTS");
+        }
+
+        [TestMethod]
+        public void PublicProperties_SearchTextInBing_UseElementsDirectly()
+        {
+            var bingMainPage = new BingMainPage(_driver);
+
+            bingMainPage.Navigate();
+            bingMainPage.SearchBox.SendKeys("Automate The Planet");
+            bingMainPage.GoButton.Click();
+
+            Assert.AreEqual(bingMainPage.ResultsCountDiv, "236,000 RESULTS");
+        }
+
+        [TestMethod]
+        public void PrivateFields_SearchTextInBing_First()
+        {
+            var bingMainPage = new PrivateElementsNotAccessibleInTests.BingMainPage(_driver);
+
+            bingMainPage.Navigate();
+            bingMainPage.Search("Automate The Planet");
+
+            bingMainPage.AssertResultsCount("236,000 RESULTS");
+        }
+
+        [TestMethod]
+        public void ElementsAsProperties_SearchTextInBing_First()
+        {
+            var bingMainPage = new ElementsExposedAsProperties.BingMainPage(_driver);
+
+            bingMainPage.Navigate();
+            bingMainPage.Search("Automate The Planet");
+
+            bingMainPage.AssertResultsCount("236,000 RESULTS");
+        }
+
+        [TestMethod]
+        public void ElementsAsProperties_SearchTextInBing_UseElementsDirectly()
+        {
+            var bingMainPage = new ElementsExposedAsProperties.BingMainPage(_driver);
+
+            bingMainPage.Navigate();
+            bingMainPage.Elements.SearchBox.SendKeys("Automate The Planet");
+            bingMainPage.Elements.GoButton.Click();
+
+            Assert.AreEqual(bingMainPage.Elements.ResultsCountDiv, "236,000 RESULTS");
         }
     }
 }

@@ -56,9 +56,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BingMainPage\BingMainPage.Actions.cs" />
-    <Compile Include="BingMainPage\BingMainPage.Asserts.cs" />
-    <Compile Include="BingMainPage\BingMainPage.Elements.cs" />
+    <Compile Include="ProtectedElementsNotAccessibleInTests\BingMainPage\BingChildPage.Actions.cs" />
+    <Compile Include="ProtectedElementsNotAccessibleInTests\BingMainPage\BingMainPage.Actions.cs" />
+    <Compile Include="ProtectedElementsNotAccessibleInTests\BingMainPage\BingMainPage.Asserts.cs" />
+    <Compile Include="ProtectedElementsNotAccessibleInTests\BingMainPage\BingMainPage.Elements.cs" />
+    <Compile Include="PrivateElementsNotAccessibleInTests\BingMainPage\BingMainPage.Actions.cs" />
+    <Compile Include="PrivateElementsNotAccessibleInTests\BingMainPage\BingMainPage.Asserts.cs" />
+    <Compile Include="PrivateElementsNotAccessibleInTests\BingMainPage\BingMainPage.Elements.cs" />
+    <Compile Include="ElementsExposedAsProperties\BingMainPage\BingMainPage.Actions.cs" />
+    <Compile Include="ElementsExposedAsProperties\BingMainPage\BingMainPage.Asserts.cs" />
+    <Compile Include="ElementsExposedAsProperties\BingMainPage\BingMainPageElements.cs" />
+    <Compile Include="PublicPropertiesElements\BingMainPage\BingMainPage.Actions.cs" />
+    <Compile Include="PublicPropertiesElements\BingMainPage\BingMainPage.Asserts.cs" />
+    <Compile Include="PublicPropertiesElements\BingMainPage\BingMainPage.Elements.cs" />
     <Compile Include="BingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

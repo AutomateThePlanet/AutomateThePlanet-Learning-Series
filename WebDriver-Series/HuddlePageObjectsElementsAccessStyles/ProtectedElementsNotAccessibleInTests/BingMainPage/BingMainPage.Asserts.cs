@@ -13,7 +13,7 @@
 // <site>https://automatetheplanet.com/</site>
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HuddlePageObjectsElementsAccessStyles
+namespace HuddlePageObjectsElementsAccessStyles.ProtectedElementsNotAccessibleInTests
 {
     public partial class BingMainPage
     {

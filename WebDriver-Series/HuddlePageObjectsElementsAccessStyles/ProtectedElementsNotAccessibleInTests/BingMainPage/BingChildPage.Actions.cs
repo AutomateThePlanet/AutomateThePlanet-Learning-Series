@@ -13,22 +13,17 @@
 // <site>https://automatetheplanet.com/</site>
 using OpenQA.Selenium;
 
-namespace HuddlePageObjectsElementsAccessStyles
+namespace HuddlePageObjectsElementsAccessStyles.ProtectedElementsNotAccessibleInTests
 {
-    public partial class BingMainPage
+    public partial class BingChildPage : BingMainPage
     {
-        private readonly IWebDriver _driver;
-        private readonly string _url = @"http://www.bing.com/";
-
-        public BingMainPage(IWebDriver browser) => _driver = browser;
-
-        public void Navigate() => _driver.Navigate().GoToUrl(_url);
-        
-        public void Search(string textToType)
+        public BingChildPage(IWebDriver driver) : base(driver)
         {
-            SearchBox.Clear();
-            SearchBox.SendKeys(textToType);
-            GoButton.Click();
+        }
+
+        public void SomeAction()
+        {
+            // only here can access the protected elements.
         }
     }
 }
