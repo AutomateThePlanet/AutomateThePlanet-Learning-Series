@@ -56,7 +56,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BingMainPageNoBaseClass\BingMainPage.Actions.cs" />
+    <Compile Include="BingMainPageNoBaseClass\BingMainPage.Asserts.cs" />
+    <Compile Include="BingMainPageNoBaseClass\BingMainPage.Elements.cs" />
+    <Compile Include="BingMainPage\BingMainPage.Actions.cs" />
+    <Compile Include="BingMainPage\BingMainPage.Asserts.cs" />
+    <Compile Include="BingMainPage\BingMainPage.Elements.cs" />
+    <Compile Include="BingTests.cs" />
+    <Compile Include="Core\AssertedNavigatablePage.cs" />
+    <Compile Include="Core\AssertedPage.cs" />
+    <Compile Include="Core\IAssert.cs" />
+    <Compile Include="Core\NavigatablePage.cs" />
+    <Compile Include="Core\Page.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
