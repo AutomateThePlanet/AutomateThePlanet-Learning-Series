@@ -24,34 +24,19 @@ namespace HuddlePageObjectsElementsStringProperties
     [TestClass]
     public class BingTests
     {
-        ////private IWebDriver _driver;
         private App _app;
 
         [TestInitialize]
         public void TestInitialize()
         {
-            ////_driver = new FirefoxDriver();
-            ////_driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             _app = new App();
         }
 
         [TestCleanup]
         public void TestCleanup()
         {
-            ////_driver.Quit();
             _app.Dispose();
         }
-
-        ////[TestMethod]
-        ////public void SearchTextInBing_First()
-        ////{
-        ////    var bingMainPage = new BingMainPage(_driver);
-
-        ////    bingMainPage.GoTo();
-        ////    bingMainPage.Search("Automate The Planet");
-
-        ////    bingMainPage.AssertResultsCount("236,000 RESULTS");
-        ////}
 
         [TestMethod]
         public void UseApp_SearchTextInBing_UseElementsDirectly()

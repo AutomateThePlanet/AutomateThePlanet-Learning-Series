@@ -1,31 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Getting Started with WebDriver CSharp in 10 Minutes", "1. Getting Started with WebDriver CSharp in 10 Minutes", "{72C5F509-1F8B-4DF4-B76A-1CBCF0B6E924}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Getting Started with WebDriver CSharp in 10 Minutes", "01. Getting Started with WebDriver CSharp in 10 Minutes", "{72C5F509-1F8B-4DF4-B76A-1CBCF0B6E924}"
 	ProjectSection(SolutionItems) = preProject
 		readme-1.txt = readme-1.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Most Underrated WebDriver Locator – XPath", "2. Most Underrated WebDriver Locator – XPath", "{9581A39C-C842-4E83-B573-FC7A6437ECDB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Most Underrated WebDriver Locator – XPath", "02. Most Underrated WebDriver Locator – XPath", "{9581A39C-C842-4E83-B573-FC7A6437ECDB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. WebDriver Selenium Tor Integration CSharp Code", "3. WebDriver Selenium Tor Integration CSharp Code", "{EB810675-2136-41E0-A8D1-98726AC7365C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. WebDriver Selenium Tor Integration CSharp Code", "03. WebDriver Selenium Tor Integration CSharp Code", "{EB810675-2136-41E0-A8D1-98726AC7365C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Test URL Redirects with WebDriver and HttpWebRequest", "4. Test URL Redirects with WebDriver and HttpWebRequest", "{BE01D5B9-5072-4C37-9378-7E310354C1C4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Test URL Redirects with WebDriver and HttpWebRequest", "04. Test URL Redirects with WebDriver and HttpWebRequest", "{BE01D5B9-5072-4C37-9378-7E310354C1C4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Microsoft Edge WebDriver- What Everybody Ought to Know About", "5. Microsoft Edge WebDriver- What Everybody Ought to Know About", "{9BE3D20D-40CB-4C1A-A689-42A066D66DE9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Microsoft Edge WebDriver- What Everybody Ought to Know About", "05. Microsoft Edge WebDriver- What Everybody Ought to Know About", "{9BE3D20D-40CB-4C1A-A689-42A066D66DE9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Speed up Selenium Tests through RAM Facts and Myths", "6. Speed up Selenium Tests through RAM Facts and Myths", "{059A76F8-9555-4AF6-B768-44ABEE248CAA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06. Speed up Selenium Tests through RAM Facts and Myths", "06. Speed up Selenium Tests through RAM Facts and Myths", "{059A76F8-9555-4AF6-B768-44ABEE248CAA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Automate Telerik Kendo Grid with WebDriver and JavaScript", "7. Automate Telerik Kendo Grid with WebDriver and JavaScript", "{DD666112-9F80-4218-B544-69F9394CD683}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07. Automate Telerik Kendo Grid with WebDriver and JavaScript", "07. Automate Telerik Kendo Grid with WebDriver and JavaScript", "{DD666112-9F80-4218-B544-69F9394CD683}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. Create Custom Selenium IDE Export to WebDriver", "8. Create Custom Selenium IDE Export to WebDriver", "{BA40A9A7-A335-49A9-B4B8-14255D34BF9E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08. Create Custom Selenium IDE Export to WebDriver", "08. Create Custom Selenium IDE Export to WebDriver", "{BA40A9A7-A335-49A9-B4B8-14255D34BF9E}"
 	ProjectSection(SolutionItems) = preProject
 		readme-8.txt = readme-8.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9. 10 Advanced WebDriver Tips and Tricks Part 1", "9. 10 Advanced WebDriver Tips and Tricks Part 1", "{7EFD7458-6993-459F-8958-DB35B30D57B1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09. 10 Advanced WebDriver Tips and Tricks Part 1", "09. 10 Advanced WebDriver Tips and Tricks Part 1", "{7EFD7458-6993-459F-8958-DB35B30D57B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. 10 Advanced WebDriver Tips and Tricks Part 2", "10. 10 Advanced WebDriver Tips and Tricks Part 2", "{FA877A2E-835E-4F35-B5F8-E78C5E405BD6}"
 EndProject
@@ -71,7 +71,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ui.Automation.Core.Controls
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Huddle", "Huddle", "{BE6A56F4-A917-4E07-849B-37616836E1A4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Page Objects- Partial Classes FindsBy Attributes", "1. Page Objects- Partial Classes FindsBy Attributes", "{6D90459B-F297-45DF-A81F-B84D03DA41A6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Page Objects- Partial Classes FindsBy Attributes", "01. Page Objects- Partial Classes FindsBy Attributes", "{6D90459B-F297-45DF-A81F-B84D03DA41A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsPartialClassesFindsByAttributes", "ImprovedPageObjects\HuddlePageObjectsPartialClassesFindsByAttributes.csproj", "{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8}"
 EndProject
@@ -87,19 +87,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18. 5 Reasons You Should Us
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverCsharpSeven", "WebDriverCsharpSeven\WebDriverCsharpSeven.csproj", "{5E74BB21-7F89-468F-A8F0-3683A4172E22}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Page Objects- Partial Classes with Properties", "2. Page Objects- Partial Classes with Properties", "{E09EB29E-71F0-4153-96CF-DC5854E59B7E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Page Objects- Partial Classes with Properties", "02. Page Objects- Partial Classes with Properties", "{E09EB29E-71F0-4153-96CF-DC5854E59B7E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Page Objects- Partial Classes CSharp 7 Features", "3. Page Objects- Partial Classes CSharp 7 Features", "{E6701FCE-0F57-4D86-9058-98E4D299ECBD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Page Objects- Partial Classes CSharp 7 Features", "03. Page Objects- Partial Classes CSharp 7 Features", "{E6701FCE-0F57-4D86-9058-98E4D299ECBD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Page Objects- Partial Classes Fluent API", "4. Page Objects- Partial Classes Fluent API", "{36764F76-E9DD-44E8-97FA-8CC0442CAC48}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Page Objects- Partial Classes Fluent API", "04. Page Objects- Partial Classes Fluent API", "{36764F76-E9DD-44E8-97FA-8CC0442CAC48}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Page Objects- Partial Classes String Properties", "5. Page Objects- Partial Classes String Properties", "{4349683B-C860-4048-9A98-B9D1E9F04FCA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Page Objects- Partial Classes String Properties", "05. Page Objects- Partial Classes String Properties", "{4349683B-C860-4048-9A98-B9D1E9F04FCA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Page Objects Series", "Page Objects Series", "{D5E1B798-3F73-4EB0-A675-21EB232443FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsPartialClassesProperties", "HuddlePageObjectsPartialClassesProperties\HuddlePageObjectsPartialClassesProperties.csproj", "{FBDA99E9-196E-43B8-A74E-B7F0DEA8710B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Page Objects- Page Sections", "6. Page Objects- Page Sections", "{7E7184D4-07BA-4F0C-B410-BB4BD95760AE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06. Page Objects- Page Sections", "06. Page Objects- Page Sections", "{7E7184D4-07BA-4F0C-B410-BB4BD95760AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsPartialClassesCSharpSeven", "HuddlePageObjectsPartialClassesCSharpSeven\HuddlePageObjectsPartialClassesCSharpSeven.csproj", "{53E1B957-7528-4F9D-BF51-F02F453C6B15}"
 EndProject
@@ -157,11 +157,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30. Headless Execution of W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadlessTestsFirefox", "HeadlessTestsFirefox\HeadlessTestsFirefox.csproj", "{B10FBBD9-9CB0-41B7-B8ED-A5950EBE962C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Page Objects- Partial Classes Singleton", "7. Page Objects- Partial Classes Singleton", "{E78B108A-19C4-4F81-886F-09A13EEB52A9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07. Page Objects- Partial Classes Singleton", "07. Page Objects- Partial Classes Singleton", "{E78B108A-19C4-4F81-886F-09A13EEB52A9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. Page Objects- Partial Classes Base Pages", "8. Page Objects- Partial Classes Base Pages", "{65A048AA-F70D-408D-8301-5A5D6E747A39}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08. Page Objects- Partial Classes Base Pages", "08. Page Objects- Partial Classes Base Pages", "{65A048AA-F70D-408D-8301-5A5D6E747A39}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9. Page Objects- Elements Access Styles", "9. Page Objects- Elements Access Styles", "{F6471DF7-D876-4BF0-9887-DA88E4903825}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09. Page Objects- Elements Access Styles", "09. Page Objects- Elements Access Styles", "{F6471DF7-D876-4BF0-9887-DA88E4903825}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. App Design Pattern for Page Objects", "10. App Design Pattern for Page Objects", "{C1F07384-4D08-4DF1-9C6B-D5DA9223D8BE}"
 EndProject
@@ -172,6 +172,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsElementsAccessStyles", "HuddlePageObjectsElementsAccessStyles\HuddlePageObjectsElementsAccessStyles.csproj", "{2A828F78-FE22-4044-B6AB-CA5AED162D02}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsAppDesignPattern", "HuddlePageObjectsAppDesignPattern\HuddlePageObjectsAppDesignPattern.csproj", "{E1D0EC3D-96FB-43E8-9143-F8EF78882539}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "31. WebDriver- Capture and Modify HTTP Traffic", "31. WebDriver- Capture and Modify HTTP Traffic", "{DE6B56FE-C905-47F5-AA8E-9EBB999988F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureModifyHttpTraffic", "CaptureModifyHttpTraffic\CaptureModifyHttpTraffic.csproj", "{6294F3D1-D272-4CAC-837F-92ED65451EFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -335,6 +339,10 @@ Global
 		{E1D0EC3D-96FB-43E8-9143-F8EF78882539}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1D0EC3D-96FB-43E8-9143-F8EF78882539}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1D0EC3D-96FB-43E8-9143-F8EF78882539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6294F3D1-D272-4CAC-837F-92ED65451EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6294F3D1-D272-4CAC-837F-92ED65451EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6294F3D1-D272-4CAC-837F-92ED65451EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6294F3D1-D272-4CAC-837F-92ED65451EFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -390,6 +398,7 @@ Global
 		{8E7A864B-C92D-4792-9EA5-F63B48D44591} = {65A048AA-F70D-408D-8301-5A5D6E747A39}
 		{2A828F78-FE22-4044-B6AB-CA5AED162D02} = {F6471DF7-D876-4BF0-9887-DA88E4903825}
 		{E1D0EC3D-96FB-43E8-9143-F8EF78882539} = {C1F07384-4D08-4DF1-9C6B-D5DA9223D8BE}
+		{6294F3D1-D272-4CAC-837F-92ED65451EFE} = {DE6B56FE-C905-47F5-AA8E-9EBB999988F8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}

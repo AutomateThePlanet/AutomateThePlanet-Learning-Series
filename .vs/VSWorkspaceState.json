@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WebDriver-Series",
+    "\\MSTest.Console",
+    "\\MSTest.Console\\MSTest.Console.Extended",
+    "\\MSTest.Console\\MSTest.Console.Extended\\Infrastructure",
+    "\\MSTest.Console\\MSTest.Console.Extended\\Services",
     "\\WebDriver-Series\\FinishHimKillAllWebDrivers",
     "\\WebDriver-Series\\FinishHimKillAllWebDrivers\\Pages",
     "\\WebDriver-Series\\FullPageScreenshotHtmlToCanvas",
     "\\WebDriver-Series\\WebDriverCsharpSeven",
-    "\\WebDriver-Series\\WebDriverCsharpSeven\\DigitSeparators",
-    "\\WebDriver-Series\\WebDriverCsharpSeven\\ExpressionBodiesContructor",
-    "\\WebDriver-Series\\WebDriverCsharpSeven\\ExpressionBodiesProperties",
-    "\\WebDriver-Series\\WebDriverCsharpSeven\\LocalFunctions"
+    "\\WebDriver-Series\\WebDriverCsharpSeven\\DigitSeparators"
   ],
-  "SelectedNode": "\\WebDriver-Series\\FullPageScreenshotHtmlToCanvas\\ScreenshotsTests.cs",
+  "SelectedNode": "\\MSTest.Console\\MSTest.Console.Extended\\Services\\TestExecutionService.cs",
   "PreviewInSolutionExplorer": false
 }
