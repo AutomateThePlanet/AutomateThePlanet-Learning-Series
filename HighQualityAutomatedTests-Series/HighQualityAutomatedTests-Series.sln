@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Apply Coding Convention Using EditorConfig", "01. Apply Coding Convention Using EditorConfig", "{D29AFE5D-82D6-47FD-AB11-3629545D4C3C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. High-Quality Automated Tests- Consistent Coding Styles Using EditorConfig", "01. High-Quality Automated Tests- Consistent Coding Styles Using EditorConfig", "{D29AFE5D-82D6-47FD-AB11-3629545D4C3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

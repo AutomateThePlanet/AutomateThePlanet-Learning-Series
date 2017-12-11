@@ -1,3 +1,3 @@
-﻿Article: https://automatetheplanet.com/coding-convention-editorconfig
-URL: High-Quality Automated Tests- Apply Coding Convention Using EditorConfig C# 
+﻿Article: https://automatetheplanet.com/coding-styles-editorconfig/
+URL: High-Quality Automated Tests- Consistent Coding Styles Using EditorConfig
 Publish Date: 11.12.2017
