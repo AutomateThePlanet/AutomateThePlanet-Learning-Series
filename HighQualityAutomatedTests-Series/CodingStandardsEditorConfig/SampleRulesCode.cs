@@ -46,10 +46,10 @@ namespace CodingStandardsEditorConfig
             // csharp_indent_block_contents = false
             if (isEarthRound)
             {
-                var answerOfUniverse = 42;
+            var answerOfUniverse = 42;
             }
 
-            // Indent Block Contents
+            // 2. Indent Block Contents
 
             var answerOfEverything = 42;
 
@@ -66,9 +66,9 @@ namespace CodingStandardsEditorConfig
             switch (answerOfEverything)
             {
                 case 42:
-                    break;
+                break;
                 case 13:
-                    break;
+                break;
             }
 
             // 3. Prefer Braces
@@ -95,11 +95,11 @@ namespace CodingStandardsEditorConfig
             }
 
             // csharp_space_after_keywords_in_control_flow_statements = false
-            if (isEarthRound)
+            if(isEarthRound)
             {
             }
 
-            while (isEarthRound)
+            while(isEarthRound)
             {
             }
 
@@ -108,6 +108,7 @@ namespace CodingStandardsEditorConfig
                 System.Console.WriteLine(s);
             };
 
+            // 6. Style Conditional Delegate Call
             // csharp_style_conditional_delegate_call = true:error
             spaceshipOne?.Invoke("98");
 
@@ -241,7 +242,6 @@ namespace CodingStandardsEditorConfig
 
         // 7. Style Expression Bodied Accessors
         // csharp_style_expression_bodied_accessors = true:error
-
         private int? fuelType;
         public int? FuelType
         {
@@ -301,16 +301,18 @@ namespace CodingStandardsEditorConfig
             get { return 13; }
         }
 
+        
+
+
+        }
+
+        // 5. Space before Colon in Inheritance Clause
+
+        //// csharp_space_before_colon_in_inheritance_clause = true
+        //public class SpaceShipOne : Rocket
+
+        //// csharp_space_before_colon_in_inheritance_clause = false
+        //public class SpaceShipOne: Rocket
+
 
     }
-
-    // 5. Space before Colon in Inheritance Clause
-
-    //// csharp_space_before_colon_in_inheritance_clause = true
-    //public class SpaceShipOne : Rocket
-
-    //// csharp_space_before_colon_in_inheritance_clause = false
-    //public class SpaceShipOne : Rocket
-
-
-}

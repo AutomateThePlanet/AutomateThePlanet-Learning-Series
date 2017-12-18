@@ -12,6 +12,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. High-Quality Automated Tests- Consistent Coding Styles Using EditorConfig", "01. High-Quality Automated Tests- Consistent Coding Styles Using EditorConfig", "{D29AFE5D-82D6-47FD-AB11-3629545D4C3C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Top 10 EditorConfig Styles Part 1", "02. Top 10 EditorConfig Styles Part 1", "{F3D3C3A1-F270-4975-8E01-D450279EA7B3}"
+	ProjectSection(SolutionItems) = preProject
+		readme-2.txt = readme-2.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Top 10 EditorConfig Styles Part 3", "03. Top 10 EditorConfig Styles Part 3", "{042BE882-C0BB-4696-BE52-749334FA6056}"
+	ProjectSection(SolutionItems) = preProject
+		readme-3.txt = readme-3.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
