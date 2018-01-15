@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingStandardsEditorConfig", "CodingStandardsEditorConfig\CodingStandardsEditorConfig.csproj", "{A2E9F7B0-870D-4BBF-B1B7-55B86FE3326B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{93C60157-8532-4CC3-8177-89FE8A7AAC41}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. High-Quality Automated Tests- Consistent Coding Styles Using EditorConfig", "01. High-Quality Automated Tests- Consistent Coding Styles Using EditorConfig", "{D29AFE5D-82D6-47FD-AB11-3629545D4C3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Top 10 EditorConfig Styles Part 1", "02. Top 10 EditorConfig Styles Part 1", "{F3D3C3A1-F270-4975-8E01-D450279EA7B3}"
+	ProjectSection(SolutionItems) = preProject
+		readme-2.txt = readme-2.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Top 10 EditorConfig Styles Part 2", "03. Top 10 EditorConfig Styles Part 2", "{042BE882-C0BB-4696-BE52-749334FA6056}"
+	ProjectSection(SolutionItems) = preProject
+		readme-3.txt = readme-3.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2E9F7B0-870D-4BBF-B1B7-55B86FE3326B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E9F7B0-870D-4BBF-B1B7-55B86FE3326B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E9F7B0-870D-4BBF-B1B7-55B86FE3326B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E9F7B0-870D-4BBF-B1B7-55B86FE3326B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A2E9F7B0-870D-4BBF-B1B7-55B86FE3326B} = {D29AFE5D-82D6-47FD-AB11-3629545D4C3C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CEB0181-1088-467F-B55B-0443BAD3AD07}
+	EndGlobalSection
+EndGlobal
