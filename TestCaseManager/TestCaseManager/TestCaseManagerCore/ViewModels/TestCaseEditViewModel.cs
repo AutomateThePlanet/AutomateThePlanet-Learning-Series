@@ -389,7 +389,7 @@ namespace TestCaseManagerCore.ViewModels
             log.InfoFormat("Test Case Saved Info: Title= {0}, Area= {1}, Priority= {2}, OwnerDisplayName= {3}", this.TestCase.Title, this.TestCase.Area, this.TestCase.Priority, this.TestCase.OwnerDisplayName);
             TestCase savedTestCase;
             int? suiteId = this.TestCase.ITestSuiteBase != null ? this.TestCase.TestSuiteId : null;
-            if (String.IsNullOrEmpty(this.TestBase.Title))
+            if (string.IsNullOrEmpty(this.TestBase.Title))
             {
                 ModernDialog.ShowMessage("Test case title cannot be empty!", "Warning", MessageBoxButton.OK);
                 return null;
@@ -429,7 +429,7 @@ namespace TestCaseManagerCore.ViewModels
             this.SharedStep.OwnerDisplayName = this.TestBase.OwnerDisplayName;
             log.InfoFormat("Shared Step Saved Info: Title= {0}, Area= {1}, Priority= {2}, OwnerDisplayName= {3}", this.SharedStep.Title, this.SharedStep.Area, this.SharedStep.Priority, this.SharedStep.OwnerDisplayName);
             SharedStep savedSharedStep;
-            if (String.IsNullOrEmpty(this.TestBase.Title))
+            if (string.IsNullOrEmpty(this.TestBase.Title))
             {
                 ModernDialog.ShowMessage("Shared Step title cannot be empty!", "Warning", MessageBoxButton.OK);
                 return null;
@@ -882,7 +882,7 @@ namespace TestCaseManagerCore.ViewModels
         {
             foreach (TestStep currentTestStep in this.ObservableTestSteps)
             {
-                currentTestStep.Title = String.Empty;
+                currentTestStep.Title = string.Empty;
             }
         }
 

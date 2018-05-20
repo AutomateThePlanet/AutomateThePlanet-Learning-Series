@@ -50,7 +50,7 @@ namespace AAngelov.Utilities.Configuration
         /// <param name="appSettingsNode">The application settings node.</param>
         /// <param name="nodeForEdit">The node for edit.</param>
         /// <param name="configPath">The configuration path.</param>
-        public ConfigModificatorSettings(String appSettingsNode, String nodeForEdit, string configPath)
+        public ConfigModificatorSettings(string appSettingsNode, string nodeForEdit, string configPath)
         {
             this.RootNode = appSettingsNode;
             this.NodeForEdit = nodeForEdit;
@@ -62,7 +62,7 @@ namespace AAngelov.Utilities.Configuration
         /// </summary>
         /// <param name="appSettingsNode">The application settings node.</param>
         /// <param name="configPath">The configuration path.</param>
-        public ConfigModificatorSettings(String appSettingsNode, string configPath)
+        public ConfigModificatorSettings(string appSettingsNode, string configPath)
         {
             this.RootNode = appSettingsNode;
             this.ConfigPath = configPath;

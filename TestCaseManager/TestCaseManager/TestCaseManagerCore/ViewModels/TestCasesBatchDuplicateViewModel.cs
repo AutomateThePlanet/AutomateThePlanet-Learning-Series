@@ -629,7 +629,7 @@ namespace TestCaseManagerCore.ViewModels
                 var project = testManagementService.GetTeamProject(currentProjectName);
                 foreach (var member in project.TfsIdentityStore.AllUserIdentities)
                 {
-                    if (member.TeamFoundationId != default(Guid) && !String.IsNullOrEmpty(member.DisplayName) && member.DisplayName.Contains(" ") && this.ObservableTeamFoundationIdentityNames.Where(x => x.TeamFoundationId == member.TeamFoundationId).ToArray().Count() == 0)
+                    if (member.TeamFoundationId != default(Guid) && !string.IsNullOrEmpty(member.DisplayName) && member.DisplayName.Contains(" ") && this.ObservableTeamFoundationIdentityNames.Where(x => x.TeamFoundationId == member.TeamFoundationId).ToArray().Count() == 0)
                     {
                         this.ObservableTeamFoundationIdentityNames.Add(new TeamFoundationIdentityName(member.TeamFoundationId, member.DisplayName));
                     }
@@ -804,7 +804,7 @@ namespace TestCaseManagerCore.ViewModels
         /// <returns>new shared step id</returns>
         private List<int> GetNewSharedStepIds(int currentSharedStepId, ICollection<SharedStepIdReplacePair> sharedStepIdReplacePairs)
         {
-            string newSharedStepIds = String.Empty;
+            string newSharedStepIds = string.Empty;
             List<int> sharedStepIds = new List<int>();
             bool isAdded = false;
             foreach (SharedStepIdReplacePair currentPair in sharedStepIdReplacePairs)

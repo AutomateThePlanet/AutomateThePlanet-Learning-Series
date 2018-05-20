@@ -63,7 +63,7 @@ namespace Fidely.Framework.Processing
             {
                 Logger.Verbose("Progressing tokenization (current index = '{0}', start index = '{1}').", current, startIndex);
 
-                if (Char.IsWhiteSpace(value[current]))
+                if (char.IsWhiteSpace(value[current]))
                 {
                     if (startIndex < current)
                     {

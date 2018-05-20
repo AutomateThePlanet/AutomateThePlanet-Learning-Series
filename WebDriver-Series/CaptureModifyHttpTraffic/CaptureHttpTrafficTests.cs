@@ -12,7 +12,6 @@
 // <author>Anton Angelov</author>
 // <site>https://automatetheplanet.com/</site>
 
-using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,16 +32,15 @@ namespace CaptureModifyHttpTraffic
     {
         private IWebDriver _driver;
         private ProxyServer _proxyServer;
-        private readonly IDictionary<Guid, Proxy.Request> _requestsHistory = 
-            new ConcurrentDictionary<Guid, Proxy.Request>();
-        private readonly IDictionary<Guid, Proxy.Response> _responsesHistory = 
-            new ConcurrentDictionary<Guid, Proxy.Response>();
+        private readonly IDictionary<int, Proxy.Request> _requestsHistory = 
+            new ConcurrentDictionary<int, Proxy.Request>();
+        private readonly IDictionary<int, Proxy.Response> _responsesHistory = 
+            new ConcurrentDictionary<int, Proxy.Response>();
 
         [OneTimeSetUp]
         public void ClassInit()
         {
             _proxyServer = new ProxyServer();
-            _proxyServer.TrustRootCertificate = true;
             var explicitEndPoint = new ExplicitProxyEndPoint(System.Net.IPAddress.Any, 18882, true);
             _proxyServer.AddEndPoint(explicitEndPoint);
             _proxyServer.Start();
@@ -134,64 +132,58 @@ namespace CaptureModifyHttpTraffic
             Assert.IsFalse(areThereLargeImages);
         }
 
-        private async Task OnRequestCaptureTrafficEventHandler(object sender, SessionEventArgs e)
-        {
-            await Task.Run(
-                () =>
+        private async Task OnRequestCaptureTrafficEventHandler(object sender, SessionEventArgs e) => await Task.Run(
+            () =>
+            {
+                if (!_requestsHistory.ContainsKey(e.WebSession.Request.GetHashCode()) && e.WebSession != null && e.WebSession.Request != null)
                 {
-                    if (!_requestsHistory.ContainsKey(e.Id))
-                    {
-                        _requestsHistory.Add(e.Id, e.WebSession.Request);
-                    }
-                });
-        }
+                    _requestsHistory.Add(e.WebSession.Request.GetHashCode(), e.WebSession.Request);
+                }
+            });
 
-        private async Task OnRequestBlockResourceEventHandler(object sender, SessionEventArgs e)
+        private void OnRequestBlockResourceEventHandler(object sender, SessionEventArgs e)
         {
             if (e.WebSession.Request.RequestUri.ToString().Contains("analytics"))
             {
                 string customBody = string.Empty;
-                await e.Ok(Encoding.UTF8.GetBytes(customBody));
+                e.Ok(Encoding.UTF8.GetBytes(customBody));
             }
         }
 
-        private async Task OnRequestRedirectTrafficEventHandler(object sender, SessionEventArgs e)
+        private void OnRequestRedirectTrafficEventHandler(object sender, SessionEventArgs e)
         {
             if (e.WebSession.Request.RequestUri.AbsoluteUri.Contains("logo.svg"))
             {
-                await e.Redirect("https://automatetheplanet.com/wp-content/uploads/2016/12/homepage-img-1.svg");
+                e.Redirect("https://automatetheplanet.com/wp-content/uploads/2016/12/homepage-img-1.svg");
             }
         }
 
-        private async Task OnRequestModifyTrafficEventHandler(object sender, SessionEventArgs e)
+        private void OnRequestModifyTrafficEventHandler(object sender, SessionEventArgs e)
         {
             var method = e.WebSession.Request.Method.ToUpper();
 
             if ((method == "POST" || method == "PUT" || method == "PATCH" || method == "GET"))
             {
                 //Get/Set request body bytes
-                byte[] bodyBytes = await e.GetRequestBody();
-                await e.SetRequestBody(bodyBytes);
+                byte[] bodyBytes = e.GetRequestBody().Result;
+                e.SetRequestBody(bodyBytes);
 
                 //Get/Set request body as string
-                string bodyString = await e.GetRequestBodyAsString();
-                await e.SetRequestBodyString(bodyString);
+                string bodyString = e.GetRequestBodyAsString().Result;
+                e.SetRequestBodyString(bodyString);
             }
         }
 
-        private async Task OnResponseCaptureTrafficEventHandler(object sender, SessionEventArgs e)
-        {
-            await Task.Run(
-                () =>
+        private async Task OnResponseCaptureTrafficEventHandler(object sender, SessionEventArgs e) => await Task.Run(
+            () =>
+            {
+                if (!_responsesHistory.ContainsKey(e.WebSession.Response.GetHashCode()) && e.WebSession != null && e.WebSession.Response != null)
                 {
-                    if (!_responsesHistory.ContainsKey(e.Id))
-                    {
-                        _responsesHistory.Add(e.Id, e.WebSession.Response);
-                    }
-                });
-        }
+                    _responsesHistory.Add(e.WebSession.Response.GetHashCode(), e.WebSession.Response);
+                }
+            });
 
-        private async Task OnResponseModifyTrafficEventHandler(object sender, SessionEventArgs e)
+        private void OnResponseModifyTrafficEventHandler(object sender, SessionEventArgs e)
         {
             if (e.WebSession.Request.Method == "GET" || e.WebSession.Request.Method == "POST")
             {
@@ -199,11 +191,11 @@ namespace CaptureModifyHttpTraffic
                 {
                     if (e.WebSession.Response.ContentType != null && e.WebSession.Response.ContentType.Trim().ToLower().Contains("text/html"))
                     {
-                        byte[] bodyBytes = await e.GetResponseBody();
-                        await e.SetResponseBody(bodyBytes);
+                        byte[] bodyBytes = e.GetResponseBody().Result;
+                        e.SetResponseBody(bodyBytes);
 
-                        string body = await e.GetResponseBodyAsString();
-                        await e.SetResponseBodyString(body);
+                        string body = e.GetResponseBodyAsString().Result;
+                        e.SetResponseBodyString(body);
                     }
                 }
             }

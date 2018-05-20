@@ -59,7 +59,7 @@ namespace Fidely.Framework
             var trace = new StackTrace();
             var frame = trace.GetFrame(2);
             var type = frame.GetMethod().ReflectedType;
-            logger.TraceEvent(category, 1, String.Format(CultureInfo.CurrentUICulture, "[{0:yyyy-MM-dd hh:mm:ss.fff zzz}] [{1}] {2}", DateTimeOffset.Now, type.FullName, format), args);
+            logger.TraceEvent(category, 1, string.Format(CultureInfo.CurrentUICulture, "[{0:yyyy-MM-dd hh:mm:ss.fff zzz}] [{1}] {2}", DateTimeOffset.Now, type.FullName, format), args);
         }
     }
 }

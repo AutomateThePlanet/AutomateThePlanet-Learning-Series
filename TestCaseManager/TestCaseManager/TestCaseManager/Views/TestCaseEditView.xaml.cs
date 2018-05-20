@@ -1483,7 +1483,7 @@ namespace TestCaseManagerApp.Views
             // If there isnt't items in the grid, we add a fake one in order the paste operation to be enabled
             if (this.TestCaseEditViewModel.ObservableTestSteps.Count == 0 && isPasteEnabled)
             {
-                this.TestCaseEditViewModel.ObservableTestSteps.Add(new TestStep(false, String.Empty, default(Guid), 0, String.Empty, String.Empty));
+                this.TestCaseEditViewModel.ObservableTestSteps.Add(new TestStep(false, string.Empty, default(Guid), 0, string.Empty, string.Empty));
                 this.dgTestSteps.SelectedIndex = 0;
                 this.editViewContext.IsFakeItemInserted = true;
             }

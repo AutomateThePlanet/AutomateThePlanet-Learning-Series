@@ -56,7 +56,7 @@ namespace AAngelov.Utilities.UI.Managers
             // Default to the My Documents folder. 
             dialog.RootFolder = Environment.SpecialFolder.Personal;
             DialogResult result = dialog.ShowDialog();
-            string folderPath = String.Empty;
+            string folderPath = string.Empty;
             if (result == DialogResult.OK)
             {
                 folderPath = dialog.SelectedPath;

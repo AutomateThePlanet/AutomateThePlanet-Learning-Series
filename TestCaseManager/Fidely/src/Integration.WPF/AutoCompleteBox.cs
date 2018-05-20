@@ -249,7 +249,7 @@ namespace Fidely.Framework.Integration.WPF
 
             var query = textBox.Text;
             var i = textBox.CaretIndex - 1;
-            while (i >= 0 && query[i] != '(' && query[i] != ')' && !Char.IsWhiteSpace(query[i]))
+            while (i >= 0 && query[i] != '(' && query[i] != ')' && !char.IsWhiteSpace(query[i]))
             {
                 i--;
             }
@@ -266,7 +266,7 @@ namespace Fidely.Framework.Integration.WPF
 
             var query = textBox.Text;
             var i = textBox.CaretIndex;
-            while (i < query.Length && query[i] != '(' && query[i] != ')' && !Char.IsWhiteSpace(query[i]))
+            while (i < query.Length && query[i] != '(' && query[i] != ')' && !char.IsWhiteSpace(query[i]))
             {
                 i++;
             }

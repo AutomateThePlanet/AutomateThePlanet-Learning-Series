@@ -681,10 +681,10 @@ namespace TestCaseManagerCore.ViewModels
                 {
                     continue;
                 }
-                string infoMessage = String.Empty;
+                string infoMessage = string.Empty;
                 try
                 {
-                    infoMessage = String.Format("Start Migrating Shared Step with Source Id= {0}", currentSourceSharedStep.Id);
+                    infoMessage = string.Format("Start Migrating Shared Step with Source Id= {0}", currentSourceSharedStep.Id);
                     log.Info(infoMessage);
                     this.ProgressConcurrentQueue.Enqueue(infoMessage);
 
@@ -694,7 +694,7 @@ namespace TestCaseManagerCore.ViewModels
                     this.sharedStepsMapping.Add(currentSourceSharedStep.ISharedStep.Id, newSharedStep.ISharedStep.Id);
 
                     this.sharedStepsMigrationLogManager.Log(currentSourceSharedStep.Id, newSharedStep.ISharedStep.Id, true);
-                    infoMessage = String.Format("Shared Step Migrated SUCCESSFULLY: Source Id= {0}, Destination Id= {1}", currentSourceSharedStep.Id, newSharedStep.ISharedStep.Id);
+                    infoMessage = string.Format("Shared Step Migrated SUCCESSFULLY: Source Id= {0}, Destination Id= {1}", currentSourceSharedStep.Id, newSharedStep.ISharedStep.Id);
                     log.Info(infoMessage);
                     this.ProgressConcurrentQueue.Enqueue(infoMessage);
                 }
@@ -752,7 +752,7 @@ namespace TestCaseManagerCore.ViewModels
         private void DisplayNotProssedEntities(MigrationLogManager logManager)
         {
             List<MigrationRetryEntry> notProssedEntries = logManager.GetNotProssedEntries();
-            ModernDialog.ShowMessage(String.Format("Number of not processed: {0}", notProssedEntries.Count), "Warning", MessageBoxButton.OK);
+            ModernDialog.ShowMessage(string.Format("Number of not processed: {0}", notProssedEntries.Count), "Warning", MessageBoxButton.OK);
         }
 
         /// <summary>
@@ -789,10 +789,10 @@ namespace TestCaseManagerCore.ViewModels
                     continue;
                 }
 
-                string infoMessage = String.Empty;
+                string infoMessage = string.Empty;
                 try
                 {
-                    infoMessage = String.Format("Start Migrating Suite with Source Id= {0}", currentSuite.Id);
+                    infoMessage = string.Format("Start Migrating Suite with Source Id= {0}", currentSuite.Id);
                     log.Info(infoMessage);
                     this.ProgressConcurrentQueue.Enqueue(infoMessage);
                     int newSuiteId = 0;
@@ -819,7 +819,7 @@ namespace TestCaseManagerCore.ViewModels
                     }
 
                     this.suitesMigrationLogManager.Log(currentSuite.Id, newSuiteId, true);
-                    infoMessage = String.Format("Suite Migrated SUCCESSFULLY: Source Id= {0}, Destination Id= {1}", currentSuite.Id, newSuiteId);
+                    infoMessage = string.Format("Suite Migrated SUCCESSFULLY: Source Id= {0}, Destination Id= {1}", currentSuite.Id, newSuiteId);
                     log.Info(infoMessage);
                     this.ProgressConcurrentQueue.Enqueue(infoMessage);
                 }
@@ -870,10 +870,10 @@ namespace TestCaseManagerCore.ViewModels
                 {
                     continue;
                 }
-                string infoMessage = String.Empty;
+                string infoMessage = string.Empty;
                 try
                 {
-                    infoMessage = String.Format("Start Migrating Test Case with Source Id= {0}", currentSourceTestCase.Id);
+                    infoMessage = string.Format("Start Migrating Test Case with Source Id= {0}", currentSourceTestCase.Id);
                     log.Info(infoMessage);
                     this.ProgressConcurrentQueue.Enqueue(infoMessage);
 
@@ -905,7 +905,7 @@ namespace TestCaseManagerCore.ViewModels
                         TestCase newTestCase = currentSourceTestCase.Save(this.destinationTeamProject, this.destinationPreferences.TestPlan, true, null, currentSourceTestCaseTestSteps, false, isMigration: true);
                         this.testCasesMapping.Add(currentSourceTestCase.ITestCase.Id, newTestCase.ITestCase.Id);
                         this.testCasesMigrationLogManager.Log(currentSourceTestCase.ITestCase.Id, newTestCase.ITestCase.Id, true);
-                        infoMessage = String.Format("Test Case Migrated SUCCESSFULLY: Source Id= {0}, Destination Id= {1}", currentSourceTestCase.ITestCase.Id, newTestCase.ITestCase.Id);
+                        infoMessage = string.Format("Test Case Migrated SUCCESSFULLY: Source Id= {0}, Destination Id= {1}", currentSourceTestCase.ITestCase.Id, newTestCase.ITestCase.Id);
                         log.Info(infoMessage);
                         this.ProgressConcurrentQueue.Enqueue(infoMessage);
                     }
@@ -965,10 +965,10 @@ namespace TestCaseManagerCore.ViewModels
                 {
                     continue;
                 }
-                string infoMessage = String.Empty;
+                string infoMessage = string.Empty;
                 try
                 {
-                    infoMessage = String.Format("Start Adding to Suite Test Case with Source Id= {0}", currentSourceTestCase.Id);
+                    infoMessage = string.Format("Start Adding to Suite Test Case with Source Id= {0}", currentSourceTestCase.Id);
                     log.Info(infoMessage);
                     this.ProgressConcurrentQueue.Enqueue(infoMessage);
 
@@ -993,7 +993,7 @@ namespace TestCaseManagerCore.ViewModels
                                 destinationSuite.AddTestCase(currentDestinationTestCase.ITestCase);
 
                                 this.testCasesAddToSuitesMigrationLogManager.Log(currentSourceTestCase.ITestCase.Id, destinationSuite.Id, true);
-                                infoMessage = String.Format("Test Case SUCCESSFULLY added to Suite: Test Case Id= {0}, Suite Id= {1}", currentDestinationTestCase.ITestCase.Id, destinationSuite.Id);
+                                infoMessage = string.Format("Test Case SUCCESSFULLY added to Suite: Test Case Id= {0}, Suite Id= {1}", currentDestinationTestCase.ITestCase.Id, destinationSuite.Id);
                                 log.Info(infoMessage);
                                 this.ProgressConcurrentQueue.Enqueue(infoMessage);
                             }
@@ -1085,7 +1085,7 @@ namespace TestCaseManagerCore.ViewModels
                     {
                         break;
                     }
-                    string currentMessage = String.Empty;
+                    string currentMessage = string.Empty;
                     bool isLoggingMessageDequeued = queue.TryDequeue(out currentMessage);
 
                     if (isLoggingMessageDequeued)
@@ -1094,7 +1094,7 @@ namespace TestCaseManagerCore.ViewModels
                         {
                             try
                             {
-                                progressLabel.Content = String.Format("\n{0}", currentMessage);
+                                progressLabel.Content = string.Format("\n{0}", currentMessage);
                             }
                             catch
                             {

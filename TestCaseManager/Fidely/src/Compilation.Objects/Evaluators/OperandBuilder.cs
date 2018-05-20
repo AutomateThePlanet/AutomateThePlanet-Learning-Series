@@ -96,7 +96,10 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
         {
             Logger.Info("Generating an operand with value '{0}'.", value ?? "null");
 
-            if (value == null) return new BlankOperand();
+            if (value == null)
+            {
+                return new BlankOperand();
+            }
 
             var type = value.GetType();
             if (IsNumber(type))

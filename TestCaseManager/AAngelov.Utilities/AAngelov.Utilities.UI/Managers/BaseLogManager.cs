@@ -34,7 +34,7 @@ namespace AAngelov.Utilities.UI.Managers
         public void Initialize(FileType fileType, string resultsFilePrefix, string resultsFolder)
         {
             string fileExtension = BaseFileTypeManager.GetExtensionByFileType(fileType);
-            string uniqueFileName = String.Concat(resultsFilePrefix, DateTime.Now.ToString(DateTimeFormats.DateTimeShortFileFormat), fileExtension);
+            string uniqueFileName = string.Concat(resultsFilePrefix, DateTime.Now.ToString(DateTimeFormats.DateTimeShortFileFormat), fileExtension);
             this.FullResultFilePath = Path.Combine(resultsFolder, uniqueFileName);
         }
 
@@ -46,7 +46,7 @@ namespace AAngelov.Utilities.UI.Managers
         {
             string notepadPlusPath = @"C:\Program Files (x86)\Notepad++\notepad++.exe";
             string notepadPath = File.Exists(notepadPlusPath) ? notepadPlusPath : "notepad";
-            string configArg = File.Exists(notepadPlusPath) ? String.Format("{0} -lxml", configPath) : configPath;
+            string configArg = File.Exists(notepadPlusPath) ? string.Format("{0} -lxml", configPath) : configPath;
             System.Diagnostics.ProcessStartInfo procStartInfo =
                 new System.Diagnostics.ProcessStartInfo(notepadPath, configArg);
             procStartInfo.RedirectStandardOutput = true;

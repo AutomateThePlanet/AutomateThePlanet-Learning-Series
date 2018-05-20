@@ -75,7 +75,7 @@ namespace AAngelov.Utilities.UI.Views
         {
             this.PromptDialogViewModel.IsCanceled = true;
             UIRegistryManager.Instance.WriteIsWindowClosedFromX(false);
-            this.PromptDialogViewModel.Content = String.Empty;
+            this.PromptDialogViewModel.Content = string.Empty;
             Window window = Window.GetWindow(this);
             window.Close();
         }

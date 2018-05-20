@@ -1395,7 +1395,7 @@ namespace TestCaseManagerApp.Views
         private void SetNewExecutionOutcomeInternal(TestCaseExecutionType testCaseExecutionType)
         {
             bool shouldCommentWindowShow = RegistryManager.Instance.ReadShouldCommentWindowShow();
-            string comment = String.Empty;
+            string comment = string.Empty;
             bool isCanceled = false;
             if (shouldCommentWindowShow && testCaseExecutionType != TestCaseExecutionType.Active)
             {

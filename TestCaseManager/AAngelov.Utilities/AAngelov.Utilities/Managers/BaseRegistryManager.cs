@@ -38,7 +38,7 @@ namespace AAngelov.Utilities.Managers
         /// </summary>
         /// <param name="subKeys">Name of the sub key.</param>
         /// <param name="value">The value.</param>
-        protected void Write(string subKeys, Object value)
+        protected void Write(string subKeys, object value)
         {
             string[] subKeyNames = subKeys.Split('/');
             List<RegistryKey> registryKeys = new List<RegistryKey>();
@@ -68,9 +68,9 @@ namespace AAngelov.Utilities.Managers
         /// </summary>
         /// <param name="subKeys">The sub key.</param>
         /// <returns></returns>
-        protected Object Read(string subKeys)
+        protected object Read(string subKeys)
         {
-            Object result = default(Object);
+            var result = default(object);
 
             try
             {

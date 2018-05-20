@@ -58,7 +58,7 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
             foreach (AliasAttribute alias in property.GetCustomAttributes(typeof(AliasAttribute), false))
             {
                 mapping[alias.Name.ToUpperInvariant()] = mapping[property.Name.ToUpperInvariant()];
-                if (String.IsNullOrEmpty(alias.Description) && description != null)
+                if (string.IsNullOrEmpty(alias.Description) && description != null)
                 {
                     Register(new AutoCompleteItem(alias.Name, description.Description));
                 }

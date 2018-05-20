@@ -49,7 +49,7 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
             }
 
             var decimalValue = 0m;
-            if (Decimal.TryParse(value.ToString(), out decimalValue))
+            if (decimal.TryParse(value.ToString(), out decimalValue))
             {
                 Logger.Verbose("Evaluated the specified value as a number operand.");
                 return new Operand(Expression.Constant(decimalValue), typeof(decimal));

@@ -394,7 +394,7 @@ namespace TestCaseManagerCore.BusinessLogic.Managers
                             foreach (string currentKey in genericParameters[currentNamespace].Keys)
                             {
                                 initializeCount--;
-                                string strToBeReplaced = String.Concat("(", currentKey, ")");
+                                string strToBeReplaced = string.Concat("(", currentKey, ")");
                                 currentTestStep.ActionTitle = currentTestStep.ActionTitle.Replace(strToBeReplaced, genericParameters[currentNamespace][currentKey]);
                                 currentTestStep.ActionExpectedResult = currentTestStep.ActionExpectedResult.Replace(strToBeReplaced, genericParameters[currentNamespace][currentKey]);
                             }
@@ -409,7 +409,7 @@ namespace TestCaseManagerCore.BusinessLogic.Managers
                                         currentTestStep.Title = currentTestStep.OriginalTitle;
                                     }
                                     initializeCount--;
-                                    string strToBeReplaced = String.Concat("(", currentGenParam, ")");
+                                    string strToBeReplaced = string.Concat("(", currentGenParam, ")");
 
                                     currentTestStep.ActionTitle = currentTestStep.ActionTitle.Replace(strToBeReplaced, genericParameters[DefaultGuidString][currentGenParam]);
                                     currentTestStep.ActionExpectedResult = currentTestStep.ActionExpectedResult.Replace(strToBeReplaced, genericParameters[DefaultGuidString][currentGenParam]);
@@ -432,7 +432,7 @@ namespace TestCaseManagerCore.BusinessLogic.Managers
                                 reinitialized = true;
                             }
                             initializeCount--;
-                            string strToBeReplaced = String.Concat("(", currentGenParam, ")");
+                            string strToBeReplaced = string.Concat("(", currentGenParam, ")");
 
                             currentTestStep.ActionTitle = currentTestStep.ActionTitle.Replace(strToBeReplaced, genericParameters[DefaultGuidString][currentGenParam]);
                             currentTestStep.ActionExpectedResult = currentTestStep.ActionExpectedResult.Replace(strToBeReplaced, genericParameters[DefaultGuidString][currentGenParam]);
@@ -454,7 +454,7 @@ namespace TestCaseManagerCore.BusinessLogic.Managers
         /// <returns></returns>
         private static string AddParenthesesToParam(string param)
         {
-            return String.Concat("(", param, ")");
+            return string.Concat("(", param, ")");
         }
 
         /// <summary>

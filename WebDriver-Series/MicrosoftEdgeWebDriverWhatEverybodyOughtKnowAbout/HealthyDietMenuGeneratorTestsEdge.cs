@@ -32,7 +32,7 @@ namespace MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout
         {
             var options = new EdgeOptions()
             {
-                PageLoadStrategy = EdgePageLoadStrategy.Eager
+                PageLoadStrategy = PageLoadStrategy.Eager
             };
             _driver = new EdgeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), options);
             _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(5);

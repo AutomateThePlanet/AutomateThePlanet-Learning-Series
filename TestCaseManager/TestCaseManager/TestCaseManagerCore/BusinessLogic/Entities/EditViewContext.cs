@@ -110,7 +110,7 @@ namespace TestCaseManagerCore.BusinessLogic.Entities
 
         public override string ToString()
         {
-            return String.Format("TestCaseId= {0}, TestSuiteId= {1}, CreateNew= {2}, Duplicate= {3}, IsSharedStep= {4}, SharedStepId= {5}, ComeFromTestCase = {6}, CurrentEditedStepGuid= {7}", this.TestCaseId, this.TestSuiteId, this.CreateNew, this.Duplicate, this.IsSharedStep, this.SharedStepId, this.ComeFromTestCase, this.CurrentEditedStepGuid);
+            return string.Format("TestCaseId= {0}, TestSuiteId= {1}, CreateNew= {2}, Duplicate= {3}, IsSharedStep= {4}, SharedStepId= {5}, ComeFromTestCase = {6}, CurrentEditedStepGuid= {7}", this.TestCaseId, this.TestSuiteId, this.CreateNew, this.Duplicate, this.IsSharedStep, this.SharedStepId, this.ComeFromTestCase, this.CurrentEditedStepGuid);
         }
     }
 }

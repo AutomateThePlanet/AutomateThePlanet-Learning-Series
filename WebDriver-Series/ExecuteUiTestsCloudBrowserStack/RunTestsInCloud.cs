@@ -22,13 +22,13 @@ using OpenQA.Selenium.Support.UI;
 namespace ExecuteUiTestsCloudBrowserStack
 {
     [TestFixture]
-    public class RunTestsInCloud
+    public class BrowserStackRunTestsInCloud
     {
-        private string _username = "antonangelov2";
-        private string _authkey = "yxMDqyW62chvy3QycWRb";
+        private string _username = "soioa1";
+        private string _authkey = "pnFG3Ky2yLZ5muB1p46P";
         private IWebDriver _driver;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void SetupTest()
         {
             var caps = new DesiredCapabilities();
@@ -36,11 +36,11 @@ namespace ExecuteUiTestsCloudBrowserStack
             caps.SetCapability("build", "1.0");
 
             caps.SetCapability("os", "Windows");
-            caps.SetCapability("os_version", "8.1");
-            caps.SetCapability("browser", "Firefox");
-            caps.SetCapability("browser_version", "54.0");
+            caps.SetCapability("os_version", "10");
+            caps.SetCapability("browser", "Chrome");
+            caps.SetCapability("browser_version", "65.0");
             caps.SetCapability("resolution", "1366x768");
-            caps.SetCapability("browserstack.video", "true");
+            caps.SetCapability("browserstack.video", "false");
             
             caps.SetCapability("build", "version1");
             caps.SetCapability("project", "AutomateThePlanet");
@@ -48,12 +48,12 @@ namespace ExecuteUiTestsCloudBrowserStack
             caps.SetCapability("browserstack.user", _username);
             caps.SetCapability("browserstack.key", _authkey);
 
-            //_driver = new RemoteWebDriver(new Uri("http://hub-cloud.browserstack.com/wd/hub/"), caps, TimeSpan.FromSeconds(180));
-            _driver = new ChromeDriver();
+            _driver = new RemoteWebDriver(new Uri("http://hub-cloud.browserstack.com/wd/hub/"), caps, TimeSpan.FromSeconds(180));
+            //_driver = new ChromeDriver();
             ////_driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
         }
 
-        [TearDown]
+        [OneTimeTearDown]
         public void TeardownTest()
         {
             _driver.Quit();
@@ -62,7 +62,7 @@ namespace ExecuteUiTestsCloudBrowserStack
         [Test]
         public void ScrollFocusToControl_InCloud_ShouldFail()
         {
-            _driver.Navigate().GoToUrl(@"https://automatetheplanet.com/compelling-sunday-14022016/");
+            _driver.Navigate().GoToUrl(@"https://www.automatetheplanet.com/qa-process-architecture-business-services-part-three/");
             var link = _driver.FindElement(By.PartialLinkText("Previous post"));
             var jsToBeExecuted = $"window.scroll(0, {link.Location.Y});";
             ((IJavaScriptExecutor)_driver).ExecuteScript(jsToBeExecuted);

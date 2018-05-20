@@ -55,7 +55,7 @@ namespace AAngelov.Utilities.UI.Managers
             dialog.DefaultExt = BaseFileTypeManager.GetExtensionByFileType(fileType);
 
             bool? result = dialog.ShowDialog();
-            string resultFileName = String.Empty;
+            string resultFileName = string.Empty;
             if (result == true)
             {
                 resultFileName = dialog.FileName;				

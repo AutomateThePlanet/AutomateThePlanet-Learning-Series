@@ -67,7 +67,7 @@ namespace AAngelov.Utilities.Entities
         /// </returns>
         public override string ToString()
         {
-            return String.Format("{0}, {1}, {2}", this.FullName, this.ClassName, this.MethodId);
+            return string.Format("{0}, {1}, {2}", this.FullName, this.ClassName, this.MethodId);
         }
     }
 }

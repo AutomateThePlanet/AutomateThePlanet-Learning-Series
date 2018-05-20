@@ -49,7 +49,7 @@ namespace CaptureModifyHttpTraffic
             var certificateGenerator = new X509V3CertificateGenerator();
 
             // Serial Number
-            var serialNumber = BigIntegers.CreateRandomInRange(BigInteger.One, BigInteger.ValueOf(Int64.MaxValue), random);
+            var serialNumber = BigIntegers.CreateRandomInRange(BigInteger.One, BigInteger.ValueOf(long.MaxValue), random);
             certificateGenerator.SetSerialNumber(serialNumber);
 
             // Signature Algorithm

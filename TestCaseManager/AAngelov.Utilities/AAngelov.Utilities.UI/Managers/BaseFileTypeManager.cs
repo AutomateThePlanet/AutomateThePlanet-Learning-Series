@@ -28,7 +28,7 @@ namespace AAngelov.Utilities.UI.Managers
         /// <param name="fileType">Type of the file.</param>
         public static string GetFileFiltersByFileType(FileType fileType)
         {
-            string currentFileFilter = String.Empty;
+            string currentFileFilter = string.Empty;
             switch (fileType)
             {
                 case FileType.DLL:
@@ -48,7 +48,7 @@ namespace AAngelov.Utilities.UI.Managers
         /// <param name="fileType">Type of the file.</param>
         public static string GetExtensionByFileType(FileType fileType)
         {
-            string currentExtension = String.Empty;
+            string currentExtension = string.Empty;
             switch (fileType)
             {
                 case FileType.DLL:

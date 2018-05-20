@@ -55,7 +55,7 @@ namespace AAngelov.Utilities.Utilities
             }
             if (!System.IO.File.Exists(path))
             {
-                throw new ArgumentException(String.Format("path \"{0}\" does not exist", path));
+                throw new ArgumentException(string.Format("path \"{0}\" does not exist", path));
             }
         }
     }

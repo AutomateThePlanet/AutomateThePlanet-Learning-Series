@@ -132,9 +132,9 @@ namespace TestCaseManagerCore.BusinessLogic.Managers
             {
                 lastTestPoint = testPoints.Last();
             }
-            string mostRecentExecutionComment = String.Empty;
+            string mostRecentExecutionComment = string.Empty;
 
-            if (lastTestPoint != null && lastTestPoint.MostRecentResult != null && !String.IsNullOrEmpty(lastTestPoint.MostRecentResult.Comment))
+            if (lastTestPoint != null && lastTestPoint.MostRecentResult != null && !string.IsNullOrEmpty(lastTestPoint.MostRecentResult.Comment))
             {
                 mostRecentExecutionComment = lastTestPoint.MostRecentResult.Comment;
             }
@@ -359,7 +359,7 @@ namespace TestCaseManagerCore.BusinessLogic.Managers
             testPlan.Refresh();
             List<TestCase> testCasesList;
             testCasesList = new List<TestCase>();
-            string fullQuery = String.Format(AllTestCasesInTeamProjectQueryExpression, testManagementTeamProject.TeamProjectName);
+            string fullQuery = string.Format(AllTestCasesInTeamProjectQueryExpression, testManagementTeamProject.TeamProjectName);
             IEnumerable<ITestCase> allTestCases = testManagementTeamProject.TestCases.Query(fullQuery);
             foreach (var currentTestCase in allTestCases)
             {
@@ -542,7 +542,7 @@ namespace TestCaseManagerCore.BusinessLogic.Managers
         public static void AddTestCasesWithoutSuites(ITestManagementTeamProject testManagementTeamProject, ITestPlan testPlan, List<TestCase> testCasesList)
         {
             testPlan.Refresh();
-            string fullQuery = String.Format(AllTestCasesInTeamProjectQueryExpression, testManagementTeamProject.TeamProjectName);
+            string fullQuery = string.Format(AllTestCasesInTeamProjectQueryExpression, testManagementTeamProject.TeamProjectName);
             IEnumerable<ITestCase> allTestCases = testManagementTeamProject.TestCases.Query(fullQuery);
             foreach (var currentTestCase in allTestCases)
             {

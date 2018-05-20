@@ -19,7 +19,7 @@ namespace WinAppDriverPageObjects
             appCapabilities.SetCapability("app", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
             appCapabilities.SetCapability("deviceName", "WindowsPC");
             _driver = new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), appCapabilities);
-            _driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
             _calcStandardView = new CalculatorStandardView(_driver);
         }

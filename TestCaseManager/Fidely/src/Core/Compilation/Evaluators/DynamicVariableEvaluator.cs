@@ -52,7 +52,11 @@ namespace Fidely.Framework.Compilation.Evaluators
         /// <param name="item">The autocomplete item.</param>
         public void RegisterVariable(string pattern, Func<Match, object> procedure, RegexAutoCompleteItem item)
         {
-            if (pattern == null) throw new ArgumentNullException("pattern");
+            if (pattern == null)
+            {
+                throw new ArgumentNullException("pattern");
+            }
+
             RegisterVariable(new Regex(pattern, RegexOptions.Compiled), procedure, item);
         }
 
@@ -64,9 +68,20 @@ namespace Fidely.Framework.Compilation.Evaluators
         /// <param name="item">The autocomplete item.</param>
         public void RegisterVariable(Regex regex, Func<Match, object> procedure, RegexAutoCompleteItem item)
         {
-            if (regex == null) throw new ArgumentNullException("regex");
-            if (procedure == null) throw new ArgumentNullException("procedure");
-            if (item == null) throw new ArgumentNullException("item");
+            if (regex == null)
+            {
+                throw new ArgumentNullException("regex");
+            }
+
+            if (procedure == null)
+            {
+                throw new ArgumentNullException("procedure");
+            }
+
+            if (item == null)
+            {
+                throw new ArgumentNullException("item");
+            }
 
             Logger.Verbose("Registered the specified pattern '{0}'.", regex.ToString());
 
@@ -84,7 +99,10 @@ namespace Fidely.Framework.Compilation.Evaluators
         {
             Logger.Info("Evaluating the specified value '{0}'.", value ?? "null");
 
-            if (value == null) throw new ArgumentNullException("value");
+            if (value == null)
+            {
+                throw new ArgumentNullException("value");
+            }
 
             foreach (var eval in evaluators)
             {

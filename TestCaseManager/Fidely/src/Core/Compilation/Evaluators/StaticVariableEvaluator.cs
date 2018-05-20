@@ -62,12 +62,19 @@ namespace Fidely.Framework.Compilation.Evaluators
         /// <param name="description">The description of the registered variable.</param>
         public void RegisterVariable(string name, Func<object> procedure, string description)
         {
-            if (name == null) throw new ArgumentNullException("name");
-            if (procedure == null) throw new ArgumentNullException("procedure");
+            if (name == null)
+            {
+                throw new ArgumentNullException("name");
+            }
+
+            if (procedure == null)
+            {
+                throw new ArgumentNullException("procedure");
+            }
 
             if (evaluators.ContainsKey(name.ToUpperInvariant()))
             {
-                var message = String.Format(CultureInfo.CurrentUICulture, "Failed to register the specified variable '{0}' because this variable is already registered.", name);
+                var message = string.Format(CultureInfo.CurrentUICulture, "Failed to register the specified variable '{0}' because this variable is already registered.", name);
                 throw new ArgumentException(message, "name");
             }
 
@@ -88,7 +95,10 @@ namespace Fidely.Framework.Compilation.Evaluators
         {
             Logger.Info("Evaluating the specified value '{0}'.", value ?? "null");
 
-            if (value == null) throw new ArgumentNullException("value");
+            if (value == null)
+            {
+                throw new ArgumentNullException("value");
+            }
 
             if (!evaluators.ContainsKey(value.ToUpperInvariant()))
             {

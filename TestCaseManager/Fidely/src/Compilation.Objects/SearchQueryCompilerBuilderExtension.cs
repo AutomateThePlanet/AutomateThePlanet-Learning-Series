@@ -88,21 +88,21 @@ namespace Fidely.Framework.Compilation.Objects
         {
             var regex = new Regex("^(\\d+)(y|year)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
             var item = new RegexAutoCompleteItem("NNNyear", "Represents time span (e.g. 1year)", (v, o) => Regex.IsMatch(v, "^\\d+$"), (v, o) => v + "year");
-            evaluator.RegisterVariable(regex, o => TimeSpan.FromDays(Int32.Parse(o.Groups[1].Value, CultureInfo.CurrentCulture) * 365), item);
+            evaluator.RegisterVariable(regex, o => TimeSpan.FromDays(int.Parse(o.Groups[1].Value, CultureInfo.CurrentCulture) * 365), item);
         }
 
         private static void RegisterDynamicVariableEvaluatorForMonthTimeSpan(DynamicVariableEvaluator evaluator)
         {
             var regex = new Regex("^(\\d+)(m|month)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
             var item = new RegexAutoCompleteItem("NNNmonth", "Represents time span (e.g. 1month)", (v, o) => Regex.IsMatch(v, "^\\d+$"), (v, o) => v + "month");
-            evaluator.RegisterVariable(regex, o => TimeSpan.FromDays(Int32.Parse(o.Groups[1].Value, CultureInfo.CurrentCulture) * 30), item);
+            evaluator.RegisterVariable(regex, o => TimeSpan.FromDays(int.Parse(o.Groups[1].Value, CultureInfo.CurrentCulture) * 30), item);
         }
 
         private static void RegisterDynamicVariableEvaluatorForDayTimeSpan(DynamicVariableEvaluator evaluator)
         {
             var regex = new Regex("^(\\d+)(d|day)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
             var item = new RegexAutoCompleteItem("NNNday", "Represents time span (e.g. 1day)", (v, o) => Regex.IsMatch(v, "^\\d+$"), (v, o) => v + "day");
-            evaluator.RegisterVariable(regex, o => TimeSpan.FromDays(Int32.Parse(o.Groups[1].Value, CultureInfo.CurrentCulture)), item);
+            evaluator.RegisterVariable(regex, o => TimeSpan.FromDays(int.Parse(o.Groups[1].Value, CultureInfo.CurrentCulture)), item);
         }
     }
 }

@@ -56,7 +56,7 @@ namespace AAngelov.Utilities.UI.Views
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(this.PromptDialogViewModel.Content))
+            if (string.IsNullOrEmpty(this.PromptDialogViewModel.Content))
             {
                 ModernDialog.ShowMessage("Content cannot be empty!", "Warrning!", MessageBoxButton.OK);
             }
@@ -74,7 +74,7 @@ namespace AAngelov.Utilities.UI.Views
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.PromptDialogViewModel.IsCanceled = true;
-            this.PromptDialogViewModel.Content = String.Empty;
+            this.PromptDialogViewModel.Content = string.Empty;
             UIRegistryManager.Instance.WriteIsWindowClosedFromX(false);
             Window window = Window.GetWindow(this);
             window.Close();

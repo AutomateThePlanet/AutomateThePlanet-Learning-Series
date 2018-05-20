@@ -227,7 +227,7 @@ namespace Fidely.Framework
         {
             if (WarningNotified != null)
             {
-                WarningNotified(this, new WarningNotifiedEventArgs(notifiedBy, symbol, String.Format(CultureInfo.CurrentCulture, format, args)));
+                WarningNotified(this, new WarningNotifiedEventArgs(notifiedBy, symbol, string.Format(CultureInfo.CurrentCulture, format, args)));
             }
         }
     }
