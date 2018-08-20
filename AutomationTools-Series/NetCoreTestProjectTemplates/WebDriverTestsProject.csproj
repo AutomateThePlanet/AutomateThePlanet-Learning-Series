@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+      <IsPackable>false</IsPackable>
+      <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+      <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+
+    <PropertyGroup>
+        <CodeAnalysisRuleSet>StyleCopeRules.ruleset</CodeAnalysisRuleSet>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="readme-11.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="readme-11.txt" />
+    </ItemGroup>
+
+     <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0-preview-20180807-05" />
+        <PackageReference Include="MSTest.TestAdapter" Version="1.3.2" />
+        <PackageReference Include="MSTest.TestFramework" Version="1.3.2" />
+        <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.21.0" />
+        <PackageReference Include="Selenium.Support" Version="3.14.0" />
+        <PackageReference Include="Selenium.WebDriver" Version="3.14.0" />
+        <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="2.41.0" />
+        <PackageReference Include="Selenium.WebDriver.IEDriver" Version="3.14.0" />
+         <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008">
+             <NoWarn>NU1701</NoWarn>
+             <PrivateAssets>all</PrivateAssets>
+             <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+         </PackageReference>
+    </ItemGroup>
+
+     <ItemGroup>
+       <None Update=".editorconfig">
+         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+       </None>
+       <None Update="stylecop.json">
+         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+       </None>
+       <None Update="StyleCopeRules.ruleset">
+         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+       </None>
+     </ItemGroup>
+</Project>

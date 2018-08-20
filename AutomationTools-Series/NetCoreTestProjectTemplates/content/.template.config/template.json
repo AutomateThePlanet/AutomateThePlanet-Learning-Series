@@ -1,0 +1,8 @@
+﻿{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Anton Angelov",
+    "classifications": [ "WebDriver", "Test", "UITest" ],
+    "identity": "WebDriverTestsProject",
+    "name": "MSTest WebDriver Test Project",
+    "shortName": "mstest-webdriver-test-proj"
+}

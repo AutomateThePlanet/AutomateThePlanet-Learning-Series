@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>WebDriverTestsProject</id>
+    <version>1.0.0</version>
+    <description>
+      Creates the WebDriver MSTest test project.
+    </description>
+    <authors>Anton Angelov</authors>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+</package>
