@@ -35,7 +35,6 @@ namespace GettingStartedAppiumAndroidCSharp
             var args = new OptionCollector().AddArguments(GeneralOptionList.PreLaunch());
             _appiumLocalService = new AppiumServiceBuilder().UsingAnyFreePort().Build();
             _appiumLocalService.Start();
-            string testAppPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "ApiDemos-debug.apk");
             var desiredCaps = new DesiredCapabilities();
             desiredCaps.SetCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
             desiredCaps.SetCapability(MobileCapabilityType.PlatformName, "Android");

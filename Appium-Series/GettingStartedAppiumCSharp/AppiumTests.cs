@@ -29,7 +29,7 @@ namespace GettingStartedAppiumAndroidCSharp
     [TestClass]
     public class AppiumTests
     {
-        private static AndroidDriver<AppiumWebElement> _driver;
+        private static AndroidDriver<AndroidElement> _driver;
         private static AppiumLocalService _appiumLocalService;
 
         [ClassInitialize]
@@ -47,7 +47,7 @@ namespace GettingStartedAppiumAndroidCSharp
             desiredCaps.SetCapability(AndroidMobileCapabilityType.AppActivity, ".ApiDemos");
             desiredCaps.SetCapability(MobileCapabilityType.App, testAppPath);
 
-            _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, desiredCaps);
+            _driver = new AndroidDriver<AndroidElement>(_appiumLocalService, desiredCaps);
             _driver.CloseApp();
         }
 

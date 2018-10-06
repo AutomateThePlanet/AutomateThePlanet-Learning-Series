@@ -26,7 +26,7 @@ namespace GettingStartedAppiumAndroidCSharp
     [TestClass]
     public class LocatingElements
     {
-        private static AndroidDriver<AppiumWebElement> _driver;
+        private static AndroidDriver<AndroidElement> _driver;
         private static AppiumLocalService _appiumLocalService;
 
         [ClassInitialize]
@@ -44,7 +44,7 @@ namespace GettingStartedAppiumAndroidCSharp
             desiredCaps.SetCapability(AndroidMobileCapabilityType.AppActivity, ".view.ControlsMaterialDark");
             desiredCaps.SetCapability(MobileCapabilityType.App, testAppPath);
 
-            _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, desiredCaps);
+            _driver = new AndroidDriver<AndroidElement>(_appiumLocalService, desiredCaps);
             _driver.CloseApp();
         }
 
@@ -76,16 +76,16 @@ namespace GettingStartedAppiumAndroidCSharp
         [TestMethod]
         public void LocatingElementsTest()
         {
-            var button = _driver.FindElementById("button");
+            AndroidElement button = _driver.FindElementById("button");
             button.Click();
 
-            var checkBox = _driver.FindElementByClassName("android.widget.CheckBox");
+            AndroidElement checkBox = _driver.FindElementByClassName("android.widget.CheckBox");
             checkBox.Click();
 
-            var secondButton = _driver.FindElementByAndroidUIAutomator("new UiSelector().textContains(\"BUTTO\");");
+            AndroidElement secondButton = _driver.FindElementByAndroidUIAutomator("new UiSelector().textContains(\"BUTTO\");");
             secondButton.Click();
 
-            var thirdButton = _driver.FindElementByXPath("//*[@resource-id='com.example.android.apis:id/button']");
+            AndroidElement thirdButton = _driver.FindElementByXPath("//*[@resource-id='com.example.android.apis:id/button']");
             thirdButton.Click();
         }
 
