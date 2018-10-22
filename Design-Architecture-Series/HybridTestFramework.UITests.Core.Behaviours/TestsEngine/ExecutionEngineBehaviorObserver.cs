@@ -114,7 +114,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
                 #region Default Registration
                 
                 _unityContainer.RegisterType<IDriver, TestingFrameworkDriver>(
-                    new InjectionFactory(x => new TestingFrameworkDriver(_unityContainer, browserSettings)));
+                   new InjectionFactory(x => new TestingFrameworkDriver(_unityContainer, browserSettings)));
                 
                 #endregion
                 
@@ -149,7 +149,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
             }
             else if (_executionEngineType.Equals(ExecutionEngineType.WebDriver))
             {
-                _unityContainer.RegisterType<IDriver, SeleniumDriver>(
+                _unityContainer.RegisterType<IDriver>(
                     new InjectionFactory(x => new SeleniumDriver(_unityContainer, browserSettings)));
                 _driver = _unityContainer.Resolve<IDriver>();
                 
@@ -170,12 +170,12 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
             
             # region 11. Failed Tests Аnalysis - Decorator Design Pattern
             
-            _unityContainer.RegisterType<IEnumerable<IExceptionAnalysationHandler>, IExceptionAnalysationHandler[]>();
-            _unityContainer.RegisterType<IUiExceptionAnalyser, UiExceptionAnalyser>();
-            _unityContainer.RegisterType<IElementFinder, ExceptionAnalyzedElementFinder>(
-                new InjectionFactory(x => new ExceptionAnalyzedElementFinder(_driver, _unityContainer.Resolve<IUiExceptionAnalyser>())));
-            _unityContainer.RegisterType<INavigationService, ExceptionAnalyzedNavigationService>(
-                new InjectionFactory(x => new ExceptionAnalyzedNavigationService(_driver, _unityContainer.Resolve<IUiExceptionAnalyser>())));
+            ////_unityContainer.RegisterType<IEnumerable<IExceptionAnalysationHandler>, IExceptionAnalysationHandler[]>();
+            ////_unityContainer.RegisterType<IUiExceptionAnalyser, UiExceptionAnalyser>();
+            ////_unityContainer.RegisterType<IElementFinder>(
+            ////    new InjectionFactory(x => new ExceptionAnalyzedElementFinder(_driver, _unityContainer.Resolve<IUiExceptionAnalyser>())));
+            ////_unityContainer.RegisterType<INavigationService>(
+            ////    new InjectionFactory(x => new ExceptionAnalyzedNavigationService(_driver, _unityContainer.Resolve<IUiExceptionAnalyser>())));
         
             #endregion
         }

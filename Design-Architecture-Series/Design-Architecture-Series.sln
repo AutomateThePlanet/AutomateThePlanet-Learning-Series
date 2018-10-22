@@ -85,6 +85,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkConfigFiles", "WorkConf
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16. Full-Stack Test Automation Frameworks- Video Recording on Test Failure", "16. Full-Stack Test Automation Frameworks- Video Recording on Test Failure", "{B23F7A46-C0B3-4E37-9D55-DC536F6EE155}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoRecordingOnTestFailure", "VideoRecordingOnTestFailure\VideoRecordingOnTestFailure.csproj", "{2E13F53E-951E-41AE-B16D-4AE1F025D3A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -191,6 +193,10 @@ Global
 		{7CA5E612-3FAF-4E11-AAA0-0ADF9A204EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CA5E612-3FAF-4E11-AAA0-0ADF9A204EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CA5E612-3FAF-4E11-AAA0-0ADF9A204EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E13F53E-951E-41AE-B16D-4AE1F025D3A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E13F53E-951E-41AE-B16D-4AE1F025D3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E13F53E-951E-41AE-B16D-4AE1F025D3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E13F53E-951E-41AE-B16D-4AE1F025D3A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -211,6 +217,7 @@ Global
 		{B0B7E430-8C69-447A-96E7-4149F78FE56A} = {FD0CF9F6-7F89-477C-AAE8-EAC64A735E2A}
 		{9F727044-C993-4938-AFF5-E2A17539815B} = {79F5F189-3958-4044-91E0-F57CF2D6E0C9}
 		{7CA5E612-3FAF-4E11-AAA0-0ADF9A204EA1} = {6E548627-CE26-4212-A981-4127E5F7CE21}
+		{2E13F53E-951E-41AE-B16D-4AE1F025D3A5} = {B23F7A46-C0B3-4E37-9D55-DC536F6EE155}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1238C8D3-7A2C-4B78-82C8-692EE104B785}

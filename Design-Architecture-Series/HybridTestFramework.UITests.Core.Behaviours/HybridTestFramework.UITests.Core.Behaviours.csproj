@@ -124,7 +124,7 @@
     <Compile Include="TestsEngine\SecondVersion\ExecutionEngineBehaviorObserver.cs" />
     <Compile Include="VideoRecording\Attributes\VideoRecordingAttribute.cs" />
     <Compile Include="VideoRecording\Enums\VideoRecordingMode.cs" />
-    <Compile Include="VideoRecording\VideoBehaviorObserver.cs" />
+    <Compile Include="VideoRecording\VideoWorkflowPlugin.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\AutomateThePlanet.licenseheader">

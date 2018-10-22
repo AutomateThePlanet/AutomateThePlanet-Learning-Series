@@ -17,6 +17,9 @@ using Unity;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using System;
+using System.IO;
+using System.Reflection;
+using OpenQA.Selenium.Chrome;
 using Unity;
 
 namespace HybridTestFramework.UITests.Selenium.Engine
@@ -44,6 +47,7 @@ namespace HybridTestFramework.UITests.Selenium.Engine
                 case Browsers.NotSet:
                     break;
                 case Browsers.Chrome:
+                    _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
                     break;
                 case Browsers.Firefox:
                     _driver = new FirefoxDriver();
