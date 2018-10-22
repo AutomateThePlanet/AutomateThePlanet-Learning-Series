@@ -16,7 +16,7 @@ using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Controls;
 using HybridTestFramework.UITests.Selenium.Controls;
 using HybridTestFramework.UITests.Selenium.Engine;
-using Microsoft.Practices.Unity;
+using Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AdvancedElementFindExtensions.Pages.BingMain;
 

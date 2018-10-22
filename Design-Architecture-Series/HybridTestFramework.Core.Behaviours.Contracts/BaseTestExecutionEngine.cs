@@ -13,9 +13,10 @@
 // <site>http://automatetheplanet.com/</site>
 
 using HybridTestFramework.UITests.Core;
-using Microsoft.Practices.Unity;
+using Unity;
 using System;
 using System.Reflection;
+using Unity;
 
 namespace HybridTestFramework.Core.Behaviours.Contracts
 {

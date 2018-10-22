@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Create Hybrid Test Framework - Interface Contracts", "1. Create Hybrid Test Framework - Interface Contracts", "{D76CEE82-C798-45A7-8B36-3BC9053FD016}"
 EndProject
@@ -82,6 +82,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15. Create Hybrid Test Framework - Work with Config Files", "15. Create Hybrid Test Framework - Work with Config Files", "{6E548627-CE26-4212-A981-4127E5F7CE21}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkConfigFiles", "WorkConfigFiles\WorkConfigFiles.csproj", "{7CA5E612-3FAF-4E11-AAA0-0ADF9A204EA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16. Full-Stack Test Automation Frameworks- Video Recording on Test Failure", "16. Full-Stack Test Automation Frameworks- Video Recording on Test Failure", "{B23F7A46-C0B3-4E37-9D55-DC536F6EE155}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -209,5 +211,8 @@ Global
 		{B0B7E430-8C69-447A-96E7-4149F78FE56A} = {FD0CF9F6-7F89-477C-AAE8-EAC64A735E2A}
 		{9F727044-C993-4938-AFF5-E2A17539815B} = {79F5F189-3958-4044-91E0-F57CF2D6E0C9}
 		{7CA5E612-3FAF-4E11-AAA0-0ADF9A204EA1} = {6E548627-CE26-4212-A981-4127E5F7CE21}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1238C8D3-7A2C-4B78-82C8-692EE104B785}
 	EndGlobalSection
 EndGlobal

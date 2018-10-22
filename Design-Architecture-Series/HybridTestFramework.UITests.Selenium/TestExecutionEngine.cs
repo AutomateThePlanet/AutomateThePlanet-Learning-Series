@@ -20,8 +20,9 @@ using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator.Interfaces;
 using HybridTestFramework.UITests.Selenium.Controls;
 using HybridTestFramework.UITests.Selenium.Engine;
-using Microsoft.Practices.Unity;
+using Unity;
 using System.Collections.Generic;
+using Unity.Injection;
 
 namespace HybridTestFramework.UITests.Selenium
 {

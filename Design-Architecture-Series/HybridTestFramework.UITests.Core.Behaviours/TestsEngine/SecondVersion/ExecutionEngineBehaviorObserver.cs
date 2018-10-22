@@ -12,7 +12,7 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using Microsoft.Practices.Unity;
+using Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

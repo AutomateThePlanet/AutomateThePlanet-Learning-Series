@@ -13,10 +13,12 @@
 // <site>http://automatetheplanet.com/</site>
 using System;
 using HybridTestFramework.UITests.Selenium.Controls;
-using Microsoft.Practices.Unity;
+using Unity;
 using OpenQA.Selenium;
 using System.Collections.Generic;
 using HybridTestFramework.UITests.Core;
+using Unity;
+using Unity.Resolution;
 
 namespace HybridTestFramework.UITests.Selenium.Engine
 {

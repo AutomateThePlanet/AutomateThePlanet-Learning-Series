@@ -22,9 +22,9 @@ using HybridTestFramework.UITests.Core.Behaviours.VideoRecording.Enums;
 using HybridTestFramework.UITests.Core.Utilities;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator.Interfaces;
-using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using Unity;
 
 namespace FailedTestsAnalysisDecorator
 {

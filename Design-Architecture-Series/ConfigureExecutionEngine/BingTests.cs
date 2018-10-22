@@ -17,7 +17,7 @@ using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Behaviours;
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Attributes;
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Enums;
-using Microsoft.Practices.Unity;
+using Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ConfigureExecutionEngine

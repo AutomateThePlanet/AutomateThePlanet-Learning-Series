@@ -19,8 +19,10 @@ using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator.Interfaces;
 using HybridTestFramework.UITests.TestingFramework.Controls;
 using HybridTestFramework.UITests.TestingFramework.Engine;
-using Microsoft.Practices.Unity;
+using Unity;
 using System.Collections.Generic;
+using Unity;
+using Unity.Injection;
 
 namespace HybridTestFramework.UITests.TestingFramework
 {

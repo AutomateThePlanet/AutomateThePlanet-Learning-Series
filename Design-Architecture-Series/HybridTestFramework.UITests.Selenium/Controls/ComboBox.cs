@@ -13,9 +13,10 @@
 // <site>http://automatetheplanet.com/</site>
 
 using HybridTestFramework.UITests.Core.Controls;
-using Microsoft.Practices.Unity;
+using Unity;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using Unity;
 
 namespace HybridTestFramework.UITests.Selenium.Controls
 {

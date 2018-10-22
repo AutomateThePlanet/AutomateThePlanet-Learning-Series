@@ -13,7 +13,7 @@
 // <site>http://automatetheplanet.com/</site>
 
 using HybridTestFramework.UITests.Core.Utilities;
-using Microsoft.Practices.Unity;
+using Unity;
 using System;
 
 namespace HybridTestFramework.Core.Asserts

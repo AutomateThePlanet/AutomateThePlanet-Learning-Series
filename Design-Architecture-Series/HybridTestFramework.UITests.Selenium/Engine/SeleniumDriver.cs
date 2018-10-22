@@ -13,10 +13,11 @@
 // <site>http://automatetheplanet.com/</site>
 using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Enums;
-using Microsoft.Practices.Unity;
+using Unity;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using System;
+using Unity;
 
 namespace HybridTestFramework.UITests.Selenium.Engine
 {

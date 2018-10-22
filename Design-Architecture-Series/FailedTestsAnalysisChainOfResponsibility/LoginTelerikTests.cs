@@ -22,7 +22,7 @@ using HybridTestFramework.UITests.Core.Controls;
 using HybridTestFramework.UITests.Core.Extensions;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Practices.Unity;
+using Unity;
 
 namespace FailedTestsAnalysisChainOfResponsibility
 {

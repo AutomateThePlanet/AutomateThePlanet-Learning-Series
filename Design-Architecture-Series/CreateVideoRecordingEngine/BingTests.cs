@@ -19,7 +19,7 @@ using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Attributes;
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Enums;
 using HybridTestFramework.UITests.Core.Behaviours.VideoRecording.Attributes;
 using HybridTestFramework.UITests.Core.Behaviours.VideoRecording.Enums;
-using Microsoft.Practices.Unity;
+using Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CreateVideoRecordingEngine

@@ -13,9 +13,10 @@
 // <site>http://automatetheplanet.com/</site>
 
 using HybridTestFramework.UITests.Core.Controls;
-using Microsoft.Practices.Unity;
+using Unity;
 using HybridTestFramework.UITests.Core;
 using ArtOfTest.WebAii.Controls.HtmlControls;
+using Unity;
 
 namespace HybridTestFramework.UITests.TestingFramework.Controls
 {

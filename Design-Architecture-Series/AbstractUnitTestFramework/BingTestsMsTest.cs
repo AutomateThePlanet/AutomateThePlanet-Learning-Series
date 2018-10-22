@@ -20,8 +20,8 @@ using HybridTestFramework.UITests.Core.Controls;
 using HybridTestFramework.UITests.Core.Utilities;
 using HybridTestFramework.UITests.TestingFramework.Controls;
 using HybridTestFramework.UITests.TestingFramework.Engine;
-using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Unity;
 
 namespace AbstractUnitTestFramework
 {

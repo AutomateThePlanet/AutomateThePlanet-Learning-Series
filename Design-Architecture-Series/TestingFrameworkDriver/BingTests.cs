@@ -16,7 +16,7 @@ using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Controls;
 using HybridTestFramework.UITests.Core.Extensions;
 using HybridTestFramework.UITests.TestingFramework.Controls;
-using Microsoft.Practices.Unity;
+using Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Engine = HybridTestFramework.UITests.TestingFramework.Engine;

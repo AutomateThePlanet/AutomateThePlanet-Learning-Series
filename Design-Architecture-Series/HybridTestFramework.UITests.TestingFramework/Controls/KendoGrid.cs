@@ -17,7 +17,7 @@ using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Controls;
 using HybridTestFramework.UITests.Core.Data;
 using HybridTestFramework.UITests.Core.Enums;
-using Microsoft.Practices.Unity;
+using Unity;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

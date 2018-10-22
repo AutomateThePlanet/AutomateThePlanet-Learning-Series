@@ -15,12 +15,13 @@
 using HybridTestFramework.UITests.Core.Controls;
 using HybridTestFramework.UITests.Core.Data;
 using HybridTestFramework.UITests.Core.Enums;
-using Microsoft.Practices.Unity;
+using Unity;
 using Newtonsoft.Json;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Unity;
 
 namespace HybridTestFramework.UITests.Selenium.Controls
 {

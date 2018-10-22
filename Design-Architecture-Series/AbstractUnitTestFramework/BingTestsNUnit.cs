@@ -19,7 +19,7 @@ using HybridTestFramework.UITests.Core.Controls;
 using HybridTestFramework.UITests.Core.Utilities;
 using HybridTestFramework.UITests.TestingFramework.Controls;
 using HybridTestFramework.UITests.TestingFramework.Engine;
-using Microsoft.Practices.Unity;
+using Unity;
 using NUnit.Framework;
 using HybridTestFramework.Core.NUnit.Asserts;
 

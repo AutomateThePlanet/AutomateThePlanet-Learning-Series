@@ -16,9 +16,10 @@ using HybridTestFramework.UITests.Core.Behaviours.TestsEngine;
 using HybridTestFramework.UITests.Core.Behaviours.VideoRecording;
 using HybridTestFramework.UITests.Core.Utilities;
 using HybridTestFramework.UITests.Core.Utilities.VideoRecording;
-using Microsoft.Practices.Unity;
+using Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Reflection;
+using Unity;
 
 namespace HybridTestFramework.UITests.Core.Behaviours
 {
@@ -119,10 +120,10 @@ namespace HybridTestFramework.UITests.Core.Behaviours
             IUnityContainer container)
         {
             var executionEngine = new ExecutionEngineBehaviorObserver(container);
-            var videoRecording = 
-                new VideoBehaviorObserver(new MsExpressionEncoderVideoRecorder());
+            ////var videoRecording = 
+            ////    new VideoBehaviorObserver(new MsExpressionEncoderVideoRecorder());
             executionEngine.Subscribe(testExecutionProvider);
-            videoRecording.Subscribe(testExecutionProvider);
+            ////videoRecording.Subscribe(testExecutionProvider);
         }
 
         private MethodInfo GetCurrentExecutionMethodInfo()

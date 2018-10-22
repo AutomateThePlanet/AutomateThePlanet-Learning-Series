@@ -15,12 +15,14 @@
 using ArtOfTest.WebAii.Core;
 using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility;
-using Microsoft.Practices.Unity;
+using Unity;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using Unity;
+using Unity.Resolution;
 
 namespace HybridTestFramework.UITests.TestingFramework.Engine
 {

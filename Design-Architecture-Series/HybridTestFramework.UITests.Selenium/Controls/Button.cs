@@ -12,8 +12,9 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 using HybridTestFramework.UITests.Core.Controls;
-using Microsoft.Practices.Unity;
+using Unity;
 using OpenQA.Selenium;
+using Unity;
 
 namespace HybridTestFramework.UITests.Selenium.Controls
 {

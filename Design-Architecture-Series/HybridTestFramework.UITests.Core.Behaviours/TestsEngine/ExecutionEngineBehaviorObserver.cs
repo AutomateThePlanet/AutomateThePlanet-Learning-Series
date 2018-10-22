@@ -23,9 +23,11 @@ using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator.Interfaces;
 using HybridTestFramework.UITests.Selenium.Engine;
 using HybridTestFramework.UITests.TestingFramework.Engine;
-using Microsoft.Practices.Unity;
+using Unity;
 using System;
 using System.Reflection;
+using Unity;
+using Unity.Injection;
 using SeleniumControls = HybridTestFramework.UITests.Selenium.Controls;
 using TestingFrameworkControls = HybridTestFramework.UITests.TestingFramework.Controls;
 

@@ -19,7 +19,7 @@ using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.SecondVersion;
 using HybridTestFramework.UITests.Core.Utilities;
 using HybridTestFramework.UITests.Selenium;
 using ImprovedConfigureExecutionEngine.Pages.BingMain;
-using Microsoft.Practices.Unity;
+using Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
