@@ -1,5 +1,5 @@
 ﻿// <copyright file="ExecutionEngineBehaviorObserver.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2018 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -23,9 +23,11 @@ using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator.Interfaces;
 using HybridTestFramework.UITests.Selenium.Engine;
 using HybridTestFramework.UITests.TestingFramework.Engine;
-using Microsoft.Practices.Unity;
+using Unity;
 using System;
 using System.Reflection;
+using Unity;
+using Unity.Injection;
 using SeleniumControls = HybridTestFramework.UITests.Selenium.Controls;
 using TestingFrameworkControls = HybridTestFramework.UITests.TestingFramework.Controls;
 
@@ -112,7 +114,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
                 #region Default Registration
                 
                 _unityContainer.RegisterType<IDriver, TestingFrameworkDriver>(
-                    new InjectionFactory(x => new TestingFrameworkDriver(_unityContainer, browserSettings)));
+                   new InjectionFactory(x => new TestingFrameworkDriver(_unityContainer, browserSettings)));
                 
                 #endregion
                 
@@ -147,7 +149,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
             }
             else if (_executionEngineType.Equals(ExecutionEngineType.WebDriver))
             {
-                _unityContainer.RegisterType<IDriver, SeleniumDriver>(
+                _unityContainer.RegisterType<IDriver>(
                     new InjectionFactory(x => new SeleniumDriver(_unityContainer, browserSettings)));
                 _driver = _unityContainer.Resolve<IDriver>();
                 
@@ -168,12 +170,12 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
             
             # region 11. Failed Tests Аnalysis - Decorator Design Pattern
             
-            _unityContainer.RegisterType<IEnumerable<IExceptionAnalysationHandler>, IExceptionAnalysationHandler[]>();
-            _unityContainer.RegisterType<IUiExceptionAnalyser, UiExceptionAnalyser>();
-            _unityContainer.RegisterType<IElementFinder, ExceptionAnalyzedElementFinder>(
-                new InjectionFactory(x => new ExceptionAnalyzedElementFinder(_driver, _unityContainer.Resolve<IUiExceptionAnalyser>())));
-            _unityContainer.RegisterType<INavigationService, ExceptionAnalyzedNavigationService>(
-                new InjectionFactory(x => new ExceptionAnalyzedNavigationService(_driver, _unityContainer.Resolve<IUiExceptionAnalyser>())));
+            ////_unityContainer.RegisterType<IEnumerable<IExceptionAnalysationHandler>, IExceptionAnalysationHandler[]>();
+            ////_unityContainer.RegisterType<IUiExceptionAnalyser, UiExceptionAnalyser>();
+            ////_unityContainer.RegisterType<IElementFinder>(
+            ////    new InjectionFactory(x => new ExceptionAnalyzedElementFinder(_driver, _unityContainer.Resolve<IUiExceptionAnalyser>())));
+            ////_unityContainer.RegisterType<INavigationService>(
+            ////    new InjectionFactory(x => new ExceptionAnalyzedNavigationService(_driver, _unityContainer.Resolve<IUiExceptionAnalyser>())));
         
             #endregion
         }

@@ -1,5 +1,5 @@
 ﻿// <copyright file="BingTests.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2018 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -22,9 +22,9 @@ using HybridTestFramework.UITests.Core.Behaviours.VideoRecording.Enums;
 using HybridTestFramework.UITests.Core.Utilities;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator.Interfaces;
-using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using Unity;
 
 namespace FailedTestsAnalysisDecorator
 {

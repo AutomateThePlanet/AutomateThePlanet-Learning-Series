@@ -1,5 +1,5 @@
 ﻿// <copyright file="basetest.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2018 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -16,7 +16,7 @@ using HybridTestFramework.UITests.Core.Behaviours.TestsEngine;
 using HybridTestFramework.UITests.Core.Behaviours.VideoRecording;
 using HybridTestFramework.UITests.Core.Utilities;
 using HybridTestFramework.UITests.Core.Utilities.VideoRecording;
-using Microsoft.Practices.Unity;
+using Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Reflection;
 
@@ -26,54 +26,22 @@ namespace HybridTestFramework.UITests.Core.Behaviours
     public class BaseTest
     {
         private readonly TestExecutionProvider _currentTestExecutionProvider;
-        private IDriver _driver;
-        private readonly IUnityContainer _container;
-        private TestContext _testContextInstance;
 
         public BaseTest()
         {
-            _container = UnityContainerFactory.GetContainer();
-            _container.RegisterInstance(_container);
+            Container = UnityContainerFactory.GetContainer();
+            Container.RegisterInstance(Container);
             _currentTestExecutionProvider = new TestExecutionProvider();
-            InitializeTestExecutionBehaviorObservers(
-                _currentTestExecutionProvider, _container);
+            InitializeTestExecutionBehaviorObservers(_currentTestExecutionProvider, Container);
         }
 
-        public IDriver Driver
-        {
-            get
-            {
-                return _driver;
-            }
-        }
+        public IDriver Driver { get; private set; }
 
-        public IUnityContainer Container
-        {
-            get
-            {
-                return _container;
-            }
-        }
+        public IUnityContainer Container { get; }
 
-        public TestContext TestContext
-        {
-            get
-            {
-                return _testContextInstance;
-            }
-            set
-            {
-                _testContextInstance = value;
-            }
-        }
+        public TestContext TestContext { get; set; }
 
-        public string TestName
-        {
-            get
-            {
-                return TestContext.TestName;
-            }
-        }
+        public string TestName => TestContext.TestName;
 
         [TestInitialize]
         public void CoreTestInit()
@@ -83,7 +51,7 @@ namespace HybridTestFramework.UITests.Core.Behaviours
                 (TestOutcome)TestContext.CurrentTestOutcome, 
                 TestContext.TestName, 
                 memberInfo);
-            _driver = _container.Resolve<IDriver>();
+            Driver = Container.Resolve<IDriver>();
             TestInit();
             _currentTestExecutionProvider.PostTestInit(
                 (TestOutcome)TestContext.CurrentTestOutcome, 
@@ -119,8 +87,8 @@ namespace HybridTestFramework.UITests.Core.Behaviours
             IUnityContainer container)
         {
             var executionEngine = new ExecutionEngineBehaviorObserver(container);
-            var videoRecording = 
-                new VideoBehaviorObserver(new MsExpressionEncoderVideoRecorder());
+            var videoRecording =
+                new VideoWorkflowPlugin(new FFmpegVideoRecorder(), new VideoRecorderOutputProvider());
             executionEngine.Subscribe(testExecutionProvider);
             videoRecording.Subscribe(testExecutionProvider);
         }

@@ -1,5 +1,5 @@
 ﻿// <copyright file="ElementFinderService - Copy.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2018 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -16,12 +16,14 @@ using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Utilities;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.AmbientContext;
 using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility;
-using Microsoft.Practices.Unity;
+using Unity;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using Unity;
+using Unity.Resolution;
 
 namespace HybridTestFramework.UITests.TestingFramework.Engine
 {
