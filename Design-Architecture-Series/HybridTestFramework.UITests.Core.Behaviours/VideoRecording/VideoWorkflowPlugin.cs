@@ -13,7 +13,6 @@
 // <site>http://automatetheplanet.com/</site>
 
 using System;
-using System.Configuration;
 using System.IO;
 using System.Reflection;
 using HybridTestFramework.UITests.Core.Behaviours.VideoRecording.Attributes;

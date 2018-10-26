@@ -17,7 +17,6 @@ using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Controls;
 using Unity;
 using System.Web;
-using Unity;
 
 namespace HybridTestFramework.UITests.TestingFramework.Controls
 {

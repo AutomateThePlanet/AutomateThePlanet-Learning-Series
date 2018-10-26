@@ -11,7 +11,7 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-using System;
+
 using OpenQA.Selenium;
 
 namespace CreateHybridTestFrameworkInterfaceContracts.NonHybridVersion.Pages

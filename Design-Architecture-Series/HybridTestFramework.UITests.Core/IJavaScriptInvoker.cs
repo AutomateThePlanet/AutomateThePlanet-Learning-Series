@@ -17,5 +17,6 @@ namespace HybridTestFramework.UITests.Core
     public interface IJavaScriptInvoker
     {
         string InvokeScript(string script);
+        object ExecuteScript(string script, params object[] args);
     }
 }

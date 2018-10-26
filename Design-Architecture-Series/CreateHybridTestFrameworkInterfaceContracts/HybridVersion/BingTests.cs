@@ -1,5 +1,4 @@
-﻿using CreateHybridTestFrameworkInterfaceContracts.HybridVersion;
-using CreateHybridTestFrameworkInterfaceContracts.HybridVersion.Pages;
+﻿using CreateHybridTestFrameworkInterfaceContracts.HybridVersion.Pages;
 using HybridTestFramework.UITests.Core;
 // <copyright file="BingTests.cs" company="Automate The Planet Ltd.">
 // Copyright 2018 Automate The Planet Ltd.

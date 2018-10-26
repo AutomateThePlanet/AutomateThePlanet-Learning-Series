@@ -26,7 +26,7 @@ namespace CreateVideoRecordingEngine
 {
     [TestClass,
     ExecutionEngineAttribute(ExecutionEngineType.TestStudio, Browsers.Firefox),
-    VideoRecordingAttribute(VideoRecordingMode.OnlyFail)]
+    VideoRecordingAttribute(VideoRecordingMode.DoNotRecord)]
     public class BingTests : BaseTest
     {
         [TestMethod]

@@ -20,7 +20,6 @@ using HybridTestFramework.UITests.TestingFramework.Engine;
 using Unity;
 using System.Collections.Generic;
 using System.Linq;
-using Unity;
 
 namespace HybridTestFramework.UITests.TestingFramework.Controls
 {

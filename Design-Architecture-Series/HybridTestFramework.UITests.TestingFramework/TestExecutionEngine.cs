@@ -21,7 +21,6 @@ using HybridTestFramework.UITests.TestingFramework.Controls;
 using HybridTestFramework.UITests.TestingFramework.Engine;
 using Unity;
 using System.Collections.Generic;
-using Unity;
 using Unity.Injection;
 
 namespace HybridTestFramework.UITests.TestingFramework

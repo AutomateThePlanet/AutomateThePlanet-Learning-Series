@@ -24,5 +24,12 @@ namespace HybridTestFramework.UITests.Selenium.Engine
                 _driver as IJavaScriptExecutor;
             return (string)javaScriptExecutor.ExecuteScript(script);
         }
+
+        public object ExecuteScript(string script, params object[] args)
+        {
+            var javaScriptExecutor =
+                _driver as IJavaScriptExecutor;
+            return javaScriptExecutor.ExecuteScript(script, args);
+        }
     }
 }

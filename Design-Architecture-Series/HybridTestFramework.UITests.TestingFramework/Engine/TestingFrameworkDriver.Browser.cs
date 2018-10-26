@@ -14,7 +14,6 @@
 
 using ArtOfTest.WebAii.Core;
 using HybridTestFramework.UITests.Core;
-using System;
 
 namespace HybridTestFramework.UITests.TestingFramework.Engine
 {

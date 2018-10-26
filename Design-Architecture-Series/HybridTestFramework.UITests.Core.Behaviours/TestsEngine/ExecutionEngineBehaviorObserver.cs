@@ -12,21 +12,15 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using System.Collections.Generic;
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Attributes;
 using HybridTestFramework.UITests.Core.Behaviours.TestsEngine.Enums;
 using HybridTestFramework.UITests.Core.Controls;
-using HybridTestFramework.UITests.Core.Utilities;
-using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.AmbientContext;
-using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility;
-using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator;
-using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.Decorator.Interfaces;
 using HybridTestFramework.UITests.Selenium.Engine;
 using HybridTestFramework.UITests.TestingFramework.Engine;
 using Unity;
 using System;
 using System.Reflection;
-using Unity;
+using HybridTestFramework.UITests.Selenium.Plugins;
 using Unity.Injection;
 using SeleniumControls = HybridTestFramework.UITests.Selenium.Controls;
 using TestingFrameworkControls = HybridTestFramework.UITests.TestingFramework.Controls;
@@ -158,6 +152,8 @@ namespace HybridTestFramework.UITests.Core.Behaviours.TestsEngine
                 _unityContainer.RegisterType<IDiv, SeleniumControls.Div>();
                 _unityContainer.RegisterType<ISearch, SeleniumControls.Search>();
                 _unityContainer.RegisterType<IInputSubmit, SeleniumControls.InputSubmit>();
+
+                new HighlightElementEventHandlers().SubscribeToAll();
             }
             
             _unityContainer.RegisterInstance(_driver);

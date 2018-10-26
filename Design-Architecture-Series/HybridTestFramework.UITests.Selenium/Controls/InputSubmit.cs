@@ -14,7 +14,6 @@
 using HybridTestFramework.UITests.Core.Controls;
 using Unity;
 using OpenQA.Selenium;
-using Unity;
 
 namespace HybridTestFramework.UITests.Selenium.Controls
 {

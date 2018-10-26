@@ -12,7 +12,6 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 using HybridTestFramework.UITests.Core;
-using HybridTestFramework.UITests.Core.Enums;
 using Unity;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
@@ -20,7 +19,6 @@ using System;
 using System.IO;
 using System.Reflection;
 using OpenQA.Selenium.Chrome;
-using Unity;
 
 namespace HybridTestFramework.UITests.Selenium.Engine
 {
@@ -33,8 +31,8 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 
         public SeleniumDriver(IUnityContainer container, BrowserSettings browserSettings)
         {
-            this._container = container;
-            this._browserSettings = browserSettings;
+            _container = container;
+            _browserSettings = browserSettings;
             ResolveBrowser(browserSettings);
             _elementFinderService = new ElementFinderService(container);
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(browserSettings.ElementsWaitTimeout);

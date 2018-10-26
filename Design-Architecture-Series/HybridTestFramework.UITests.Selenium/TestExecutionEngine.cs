@@ -12,7 +12,6 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using System;
 using HybridTestFramework.Core.Behaviours.Contracts;
 using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Controls;
@@ -22,6 +21,7 @@ using HybridTestFramework.UITests.Selenium.Controls;
 using HybridTestFramework.UITests.Selenium.Engine;
 using Unity;
 using System.Collections.Generic;
+using HybridTestFramework.UITests.Selenium.Plugins;
 using Unity.Injection;
 
 namespace HybridTestFramework.UITests.Selenium
@@ -59,7 +59,7 @@ namespace HybridTestFramework.UITests.Selenium
                 new InjectionFactory(x => new ExceptionAnalyzedElementFinder(Driver, Container.Resolve<IUiExceptionAnalyser>())));
             Container.RegisterType<INavigationService, ExceptionAnalyzedNavigationService>(
                 new InjectionFactory(x => new ExceptionAnalyzedNavigationService(Driver, Container.Resolve<IUiExceptionAnalyser>())));
-            
+
             #endregion
         }
     }

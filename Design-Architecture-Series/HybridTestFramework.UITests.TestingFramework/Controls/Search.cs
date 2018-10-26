@@ -17,7 +17,6 @@ using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Core;
 using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Controls;
-using Unity;
 
 namespace HybridTestFramework.UITests.TestingFramework.Controls
 {

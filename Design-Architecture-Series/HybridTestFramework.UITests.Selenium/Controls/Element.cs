@@ -18,7 +18,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
-using Unity;
 
 namespace HybridTestFramework.UITests.Selenium.Controls
 {
@@ -30,8 +29,8 @@ namespace HybridTestFramework.UITests.Selenium.Controls
 
         public Element(IWebDriver driver, IWebElement webElement, IUnityContainer container)
         {
-            this.Driver = driver;
-            this.WebElement = webElement;
+            Driver = driver;
+            WebElement = webElement;
             ElementFinderService = new ElementFinderService(container);
         }
 
@@ -61,37 +60,13 @@ namespace HybridTestFramework.UITests.Selenium.Controls
             builder.MoveToElement(WebElement).Click().Build().Perform();
         }
 
-        public bool IsVisible
-        {
-            get
-            {
-                return WebElement.Displayed;
-            }
-        }
+        public bool IsVisible => WebElement.Displayed;
 
-        public int Width
-        {
-            get
-            {
-                return WebElement.Size.Width;
-            }
-        }
+        public int Width => WebElement.Size.Width;
 
-        public string CssClass
-        {
-            get
-            {
-                return WebElement.GetAttribute("className");
-            }
-        }
+        public string CssClass => WebElement.GetAttribute("className");
 
-        public string Content
-        {
-            get
-            {
-                return WebElement.Text;
-            }
-        }
+        public string Content => WebElement.Text;
 
         public TElement Find<TElement>(Core.By by) where TElement : class, IElement
         {

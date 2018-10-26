@@ -111,6 +111,10 @@
     <Compile Include="Engine\SeleniumDriver.JavascriptInvoker.cs" />
     <Compile Include="Engine\SeleniumDriver.DialogService.cs" />
     <Compile Include="Engine\SeleniumFrame.cs" />
+    <Compile Include="Events\ElementFinderServiceEvenHandlers.cs" />
+    <Compile Include="Events\NativeElementActionEventArgs.cs" />
+    <Compile Include="Plugins\ElementHighlighter.cs" />
+    <Compile Include="Plugins\HighlightElementEventHandlers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestExecutionEngine.cs" />
     <Compile Include="WebDriverExecutionEngineAttribute.cs" />
