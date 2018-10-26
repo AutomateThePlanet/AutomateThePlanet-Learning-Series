@@ -16,7 +16,7 @@ using HybridTestFramework.UITests.Selenium.Engine;
 
 namespace HybridTestFramework.UITests.Selenium.Events
 {
-    public class ElementFinderServiceEvenHandlers
+    public abstract class ElementFinderServiceEvenHandlers
     {
         public virtual void SubscribeToAll()
         {

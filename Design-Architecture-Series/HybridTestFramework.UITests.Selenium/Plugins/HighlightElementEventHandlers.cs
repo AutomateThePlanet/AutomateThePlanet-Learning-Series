@@ -17,6 +17,9 @@ namespace HybridTestFramework.UITests.Selenium.Plugins
 {
     public class HighlightElementEventHandlers : ElementFinderServiceEvenHandlers
     {
-        protected override void ReturningWrappedElementEventHandler(object sender, NativeElementActionEventArgs arg) => arg.Element.Highlight();
+        protected override void ReturningWrappedElementEventHandler(object sender, NativeElementActionEventArgs arg)
+        {
+            arg.Element.Highlight();
+        }
     }
 }
