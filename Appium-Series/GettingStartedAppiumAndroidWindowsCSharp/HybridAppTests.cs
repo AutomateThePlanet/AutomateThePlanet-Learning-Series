@@ -1,4 +1,4 @@
-// <copyright file="LocatingElements.cs" company="Automate The Planet Ltd.">
+// <copyright file="HybridAppTests.cs" company="Automate The Planet Ltd.">
 // Copyright 2018 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,21 +12,23 @@
 // <author>Anton Angelov</author>
 // <site>https://automatetheplanet.com/</site>
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
+using OpenQA.Selenium.Appium.Interfaces;
 using OpenQA.Selenium.Appium.Service;
 using OpenQA.Selenium.Appium.Service.Options;
 using OpenQA.Selenium.Remote;
 using System;
 using System.IO;
 
-namespace GettingStartedAppiumAndroidCSharp
+namespace GettingStartedAppiumAndroidWindows
 {
     [TestClass]
-    public class LocatingElements
+    public class HybridAppTests
     {
-        private static AndroidDriver<AndroidElement> _driver;
+        private static AndroidDriver<AppiumWebElement> _driver;
         private static AppiumLocalService _appiumLocalService;
 
         [ClassInitialize]
@@ -35,16 +37,15 @@ namespace GettingStartedAppiumAndroidCSharp
             var args = new OptionCollector().AddArguments(GeneralOptionList.PreLaunch());
             _appiumLocalService = new AppiumServiceBuilder().UsingAnyFreePort().Build();
             _appiumLocalService.Start();
-            string testAppPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "ApiDemos-debug.apk");
+            string testAppPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "selendroid-test-app-0.10.0.apk");
             var desiredCaps = new DesiredCapabilities();
             desiredCaps.SetCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
-            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppPackage, "com.example.android.apis");
             desiredCaps.SetCapability(MobileCapabilityType.PlatformName, "Android");
             desiredCaps.SetCapability(MobileCapabilityType.PlatformVersion, "7.1");
-            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppActivity, ".view.ControlsMaterialDark");
-            desiredCaps.SetCapability(MobileCapabilityType.App, testAppPath);
+            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppPackage, "io.selendroid.testapp");
+            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppActivity, "HomeScreenActivity");
 
-            _driver = new AndroidDriver<AndroidElement>(_appiumLocalService, desiredCaps);
+            _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, desiredCaps);
             _driver.CloseApp();
         }
 
@@ -54,7 +55,6 @@ namespace GettingStartedAppiumAndroidCSharp
             if (_driver != null)
             {
                 _driver.LaunchApp();
-                _driver.StartActivity("com.example.android.apis", ".view.ControlsMaterialDark");
             }
         }
 
@@ -74,34 +74,23 @@ namespace GettingStartedAppiumAndroidCSharp
         }
 
         [TestMethod]
-        public void LocatingElementsTest()
+        public void WebViewTestCase()
         {
-            AndroidElement button = _driver.FindElementById("button");
-            button.Click();
+            var webButton = _driver.FindElementById("io.selendroid.testapp:id/buttonStartWebview");
+            webButton.Click();
 
-            AndroidElement checkBox = _driver.FindElementByClassName("android.widget.CheckBox");
-            checkBox.Click();
+            var contexts = ((IContextAware)_driver).Contexts;
+            for (int i = 0; i < contexts.Count; i++)
+            {
+                if (contexts[i].Contains("WEBVIEW"))
+                {
+                    ((IContextAware)_driver).Context = contexts[i];
+                    break;
+                }
+            }
 
-            AndroidElement secondButton = _driver.FindElementByAndroidUIAutomator("new UiSelector().textContains(\"BUTTO\");");
-            secondButton.Click();
-
-            AndroidElement thirdButton = _driver.FindElementByXPath("//*[@resource-id='com.example.android.apis:id/button']");
-            thirdButton.Click();
-        }
-
-        [TestMethod]
-        public void LocatingElementInsideAnotherElementTest()
-        {
-            var mainElement = _driver.FindElementById("decor_content_parent");
-
-            var button = mainElement.FindElementById("button");
-            button.Click();
-
-            var checkBox = mainElement.FindElementByClassName("android.widget.CheckBox");
-            checkBox.Click();
-
-            var thirdButton = mainElement.FindElementByXPath("//*[@resource-id='com.example.android.apis:id/button']");
-            thirdButton.Click();
+            var sendMeYourNameButton = _driver.FindElement(By.XPath("/html/body/form/div/input[2]"));
+            sendMeYourNameButton.Click();
         }
     }
 }

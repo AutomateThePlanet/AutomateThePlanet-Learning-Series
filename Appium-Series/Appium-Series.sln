@@ -5,7 +5,11 @@ VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Getting Started with Appium CSharp in 10 Minutes", "01. Getting Started with Appium CSharp in 10 Minutes", "{72C5F509-1F8B-4DF4-B76A-1CBCF0B6E924}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GettingStartedAppiumAndroidCSharp", "GettingStartedAppiumCSharp\GettingStartedAppiumAndroidCSharp.csproj", "{56C2EDB4-7250-4E53-81F7-0DED2D809D94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GettingStartedAppiumAndroidWindows", "GettingStartedAppiumAndroidWindowsCSharp\GettingStartedAppiumAndroidWindows.csproj", "{A59AADE9-2755-42CC-A85C-337F03D3CE0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Getting Started with Appium iOS CSharp in 10 Minutes", "02. Getting Started with Appium iOS CSharp in 10 Minutes", "{A69ADAF7-0084-4EA9-A1B3-096CD3E07679}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GettingStartedAppiumIOSMacOS", "GettingStartedAppiumIOSMacOSCSharp\GettingStartedAppiumIOSMacOS.csproj", "{BD314DB0-A7C0-4877-BA07-1611573B2139}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +17,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{56C2EDB4-7250-4E53-81F7-0DED2D809D94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56C2EDB4-7250-4E53-81F7-0DED2D809D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56C2EDB4-7250-4E53-81F7-0DED2D809D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56C2EDB4-7250-4E53-81F7-0DED2D809D94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A59AADE9-2755-42CC-A85C-337F03D3CE0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A59AADE9-2755-42CC-A85C-337F03D3CE0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A59AADE9-2755-42CC-A85C-337F03D3CE0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A59AADE9-2755-42CC-A85C-337F03D3CE0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD314DB0-A7C0-4877-BA07-1611573B2139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD314DB0-A7C0-4877-BA07-1611573B2139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD314DB0-A7C0-4877-BA07-1611573B2139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD314DB0-A7C0-4877-BA07-1611573B2139}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{56C2EDB4-7250-4E53-81F7-0DED2D809D94} = {72C5F509-1F8B-4DF4-B76A-1CBCF0B6E924}
+		{A59AADE9-2755-42CC-A85C-337F03D3CE0C} = {72C5F509-1F8B-4DF4-B76A-1CBCF0B6E924}
+		{BD314DB0-A7C0-4877-BA07-1611573B2139} = {A69ADAF7-0084-4EA9-A1B3-096CD3E07679}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}

@@ -1,4 +1,4 @@
-// <copyright file="GestureTests.cs" company="Automate The Planet Ltd.">
+// <copyright file="LocatingElements.cs" company="Automate The Planet Ltd.">
 // Copyright 2018 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -19,15 +19,14 @@ using OpenQA.Selenium.Appium.Service;
 using OpenQA.Selenium.Appium.Service.Options;
 using OpenQA.Selenium.Remote;
 using System;
-using System.Drawing;
 using System.IO;
 
-namespace GettingStartedAppiumAndroidCSharp
+namespace GettingStartedAppiumAndroidWindows
 {
     [TestClass]
-    public class GestureTests
+    public class LocatingElements
     {
-        private static AndroidDriver<AppiumWebElement> _driver;
+        private static AndroidDriver<AndroidElement> _driver;
         private static AppiumLocalService _appiumLocalService;
 
         [ClassInitialize]
@@ -39,13 +38,13 @@ namespace GettingStartedAppiumAndroidCSharp
             string testAppPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "ApiDemos-debug.apk");
             var desiredCaps = new DesiredCapabilities();
             desiredCaps.SetCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
-            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppPackage, "io.appium.android.apis");
+            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppPackage, "com.example.android.apis");
             desiredCaps.SetCapability(MobileCapabilityType.PlatformName, "Android");
             desiredCaps.SetCapability(MobileCapabilityType.PlatformVersion, "7.1");
-            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppActivity, ".graphics.TouchRotateActivity");
+            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppActivity, ".view.ControlsMaterialDark");
             desiredCaps.SetCapability(MobileCapabilityType.App, testAppPath);
 
-            _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, desiredCaps);
+            _driver = new AndroidDriver<AndroidElement>(_appiumLocalService, desiredCaps);
             _driver.CloseApp();
         }
 
@@ -55,7 +54,7 @@ namespace GettingStartedAppiumAndroidCSharp
             if (_driver != null)
             {
                 _driver.LaunchApp();
-                _driver.StartActivity("io.appium.android.apis", ".graphics.TouchRotateActivity");
+                _driver.StartActivity("com.example.android.apis", ".view.ControlsMaterialDark");
             }
         }
 
@@ -75,43 +74,34 @@ namespace GettingStartedAppiumAndroidCSharp
         }
 
         [TestMethod]
-        public void SwipeTest()
+        public void LocatingElementsTest()
         {
-            _driver.StartActivity("io.appium.android.apis", ".graphics.FingerPaint");
-            var element = _driver.FindElementById("android:id/content");
-            Point point = element.Coordinates.LocationInDom;
-            Size size = element.Size;
-            _driver.Swipe
-            (
-                point.X + 5,
-                point.Y + 5,
-                point.X + size.Width - 5,
-                point.Y + size.Height - 5,
-                200
-            );
+            AndroidElement button = _driver.FindElementById("button");
+            button.Click();
 
-            _driver.Swipe
-            (
-                point.X + size.Width - 5,
-                point.Y + 5,
-                point.X + 5,
-                point.Y + size.Height - 5,
-                2000
-            );
+            AndroidElement checkBox = _driver.FindElementByClassName("android.widget.CheckBox");
+            checkBox.Click();
+
+            AndroidElement secondButton = _driver.FindElementByAndroidUIAutomator("new UiSelector().textContains(\"BUTTO\");");
+            secondButton.Click();
+
+            AndroidElement thirdButton = _driver.FindElementByXPath("//*[@resource-id='com.example.android.apis:id/button']");
+            thirdButton.Click();
         }
 
         [TestMethod]
-        public void PincTest()
+        public void LocatingElementInsideAnotherElementTest()
         {
-            var element = _driver.FindElementById("android:id/content");
-            _driver.Pinch(element);
-        }
+            var mainElement = _driver.FindElementById("decor_content_parent");
 
-        [TestMethod]
-        public void ZoomTest()
-        {
-            var element = _driver.FindElementById("android:id/content");
-            _driver.Zoom(element);
+            var button = mainElement.FindElementById("button");
+            button.Click();
+
+            var checkBox = mainElement.FindElementByClassName("android.widget.CheckBox");
+            checkBox.Click();
+
+            var thirdButton = mainElement.FindElementByXPath("//*[@resource-id='com.example.android.apis:id/button']");
+            thirdButton.Click();
         }
     }
 }

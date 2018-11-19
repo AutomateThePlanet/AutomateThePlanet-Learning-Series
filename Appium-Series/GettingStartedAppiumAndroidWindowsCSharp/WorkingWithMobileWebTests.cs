@@ -1,4 +1,4 @@
-// <copyright file="AppiumTests.cs" company="Automate The Planet Ltd.">
+// <copyright file="WorkingWithMobileWebTests.cs" company="Automate The Planet Ltd.">
 // Copyright 2018 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -12,24 +12,21 @@
 // <author>Anton Angelov</author>
 // <site>https://automatetheplanet.com/</site>
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
-using OpenQA.Selenium.Appium.MultiTouch;
 using OpenQA.Selenium.Appium.Service;
 using OpenQA.Selenium.Appium.Service.Options;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using System;
 using System.IO;
 
-namespace GettingStartedAppiumAndroidCSharp
+namespace GettingStartedAppiumAndroidWindows
 {
     [TestClass]
-    public class AppiumTests
+    public class WorkingWithMobileWebTests
     {
-        private static AndroidDriver<AndroidElement> _driver;
+        private static AndroidDriver<AppiumWebElement> _driver;
         private static AppiumLocalService _appiumLocalService;
 
         [ClassInitialize]
@@ -38,16 +35,13 @@ namespace GettingStartedAppiumAndroidCSharp
             var args = new OptionCollector().AddArguments(GeneralOptionList.PreLaunch());
             _appiumLocalService = new AppiumServiceBuilder().UsingAnyFreePort().Build();
             _appiumLocalService.Start();
-            string testAppPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "ApiDemos-debug.apk");
             var desiredCaps = new DesiredCapabilities();
             desiredCaps.SetCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
-            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppPackage, "io.appium.android.apis");
             desiredCaps.SetCapability(MobileCapabilityType.PlatformName, "Android");
             desiredCaps.SetCapability(MobileCapabilityType.PlatformVersion, "7.1");
-            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppActivity, ".ApiDemos");
-            desiredCaps.SetCapability(MobileCapabilityType.App, testAppPath);
+            desiredCaps.SetCapability(MobileCapabilityType.BrowserName, "Chrome");
 
-            _driver = new AndroidDriver<AndroidElement>(_appiumLocalService, desiredCaps);
+            _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, desiredCaps);
             _driver.CloseApp();
         }
 
@@ -57,7 +51,6 @@ namespace GettingStartedAppiumAndroidCSharp
             if (_driver != null)
             {
                 _driver.LaunchApp();
-                _driver.StartActivity("io.appium.android.apis", ".ApiDemos");
             }
         }
 
@@ -77,20 +70,11 @@ namespace GettingStartedAppiumAndroidCSharp
         }
 
         [TestMethod]
-        public void PerformActionsButtons()
+        public void GoToWebSite()
         {
-            By byScrollLocator = new ByAndroidUIAutomator("new UiSelector().text(\"Views\");");
-            var viewsButton = _driver.FindElement(byScrollLocator);
-            viewsButton.Click();
-
-            var controlsViewButton = _driver.FindElementByXPath("//*[@text='Controls']");
-            controlsViewButton.Click();
-
-            var lightThemeButton = _driver.FindElementByXPath("//*[@text='1. Light Theme']");
-            lightThemeButton.Click();
-            var saveButton = _driver.FindElementByXPath("//*[@text='Save']");
-
-            Assert.IsTrue(saveButton.Enabled);
+            _driver.Navigate().GoToUrl("http://demos.bellatrix.solutions/");
+            Console.WriteLine(_driver.PageSource);
+            Assert.IsTrue(_driver.PageSource.Contains("Shop"));
         }
     }
 }
