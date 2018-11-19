@@ -12,7 +12,6 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using System;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 using HybridTestFramework.UITests.Core;
 using HybridTestFramework.UITests.Core.Controls;

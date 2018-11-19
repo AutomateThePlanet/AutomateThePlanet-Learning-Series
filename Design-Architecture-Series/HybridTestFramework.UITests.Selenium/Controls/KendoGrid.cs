@@ -21,7 +21,6 @@ using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Unity;
 
 namespace HybridTestFramework.UITests.Selenium.Controls
 {
@@ -36,7 +35,7 @@ namespace HybridTestFramework.UITests.Selenium.Controls
             IUnityContainer container) : base(driver, webElement, container)
         {
             _gridId = webElement.GetAttribute("id");
-            this._driver = (IJavaScriptExecutor)driver;
+            _driver = (IJavaScriptExecutor)driver;
         }
 
         public void RemoveFilters()

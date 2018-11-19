@@ -13,7 +13,6 @@
 // <site>http://automatetheplanet.com/</site>
 
 using Unity;
-using Unity;
 
 namespace HybridTestFramework.UITests.Core.Utilities
 {

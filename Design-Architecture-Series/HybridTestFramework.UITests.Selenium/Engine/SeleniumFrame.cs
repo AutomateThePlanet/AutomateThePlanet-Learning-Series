@@ -21,7 +21,7 @@ namespace HybridTestFramework.UITests.Selenium.Engine
 
         public SeleniumFrame(string name)
         {
-            this._name = name;
+            _name = name;
         }
 
         public string Name

@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CreateHybridTestFrameworkInterfaceContracts.NonHybridVersion.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;

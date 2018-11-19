@@ -13,10 +13,8 @@
 // <site>http://automatetheplanet.com/</site>
 
 using HybridTestFramework.UITests.Core;
-using HybridTestFramework.UITests.Core.Utilities.ExceptionsAnalysis.ChainOfResponsibility;
 using Unity;
 using ArtOfTest.WebAii.Core;
-using Unity;
 
 namespace HybridTestFramework.UITests.TestingFramework.Engine
 {

@@ -11,11 +11,10 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-using System;
+
 using HybridTestFramework.UITests.Core.Controls;
 using Unity;
 using OpenQA.Selenium;
-using Unity;
 
 namespace HybridTestFramework.UITests.Selenium.Controls
 {

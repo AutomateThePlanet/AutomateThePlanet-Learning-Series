@@ -16,7 +16,6 @@ using HybridTestFramework.UITests.Core;
 using Unity;
 using System;
 using System.Reflection;
-using Unity;
 
 namespace HybridTestFramework.Core.Behaviours.Contracts
 {

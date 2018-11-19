@@ -12,7 +12,6 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 using System;
-using System.Configuration;
 using System.IO;
 
 namespace HybridTestFramework.UITests.Core.Utilities.VideoRecording

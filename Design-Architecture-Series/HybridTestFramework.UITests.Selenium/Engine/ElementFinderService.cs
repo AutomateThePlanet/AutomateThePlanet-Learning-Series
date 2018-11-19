@@ -16,25 +16,26 @@ using HybridTestFramework.UITests.Selenium.Controls;
 using Unity;
 using OpenQA.Selenium;
 using System.Collections.Generic;
-using HybridTestFramework.UITests.Core;
-using Unity;
+using HybridTestFramework.UITests.Selenium.Events;
 using Unity.Resolution;
 
 namespace HybridTestFramework.UITests.Selenium.Engine
 {
     public class ElementFinderService
     {
+        public static event EventHandler<NativeElementActionEventArgs> ReturningWrappedElement;
         private readonly IUnityContainer _container;
 
         public ElementFinderService(IUnityContainer container)
         {
-            this._container = container;
+            _container = container;
         }
 
         public TElement Find<TElement>(ISearchContext searchContext, Core.By by)
             where TElement : class, Core.Controls.IElement
         {
             var element = searchContext.FindElement(by.ToSeleniumBy());
+            ReturningWrappedElement?.Invoke(this, new NativeElementActionEventArgs(element));
             var result = ResolveElement<TElement>(searchContext, element);
 
             return result;

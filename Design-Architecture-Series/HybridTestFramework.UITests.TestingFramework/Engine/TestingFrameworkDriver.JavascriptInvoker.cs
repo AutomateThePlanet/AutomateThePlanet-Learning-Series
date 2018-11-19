@@ -22,5 +22,10 @@ namespace HybridTestFramework.UITests.TestingFramework.Engine
         {
             return _driver.ActiveBrowser.Actions.InvokeScript(script);
         }
+
+        public object ExecuteScript(string script, params object[] args)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
