@@ -68,7 +68,7 @@ namespace GettingStartedAppiumIOSMacOS
         [TestMethod]
         public void AddTwoNumbersTest()
         {
-            var numberOne = _driver.FindElementById("IntegerA");
+            IOSElement numberOne = _driver.FindElementById("IntegerA");
             var numberTwo = _driver.FindElementById("IntegerB");
             var compute = _driver.FindElementByName("ComputeSumButton");
             var answer = _driver.FindElementByName("Answer");
