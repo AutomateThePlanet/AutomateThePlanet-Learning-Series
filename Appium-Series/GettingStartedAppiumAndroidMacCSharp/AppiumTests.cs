@@ -16,7 +16,11 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
+using OpenQA.Selenium.Appium.MultiTouch;
 using OpenQA.Selenium.Appium.Service;
+using OpenQA.Selenium.Appium.Service.Options;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Remote;
 using System;
 using System.IO;
 
@@ -26,25 +30,22 @@ namespace GettingStartedAppiumAndroidMacCSharp
     public class AppiumTests
     {
         private static AndroidDriver<AndroidElement> _driver;
-        ////private static AppiumLocalService _appiumLocalService;
+        private static AppiumLocalService _appiumLocalService;
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
-            ////var args = new OptionCollector().AddArguments(GeneralOptionList.PreLaunch());
-            ////_appiumLocalService = new AppiumServiceBuilder().UsingAnyFreePort().Build();
-            ////_appiumLocalService.Start();
             string testAppPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "ApiDemos-debug.apk");
-            var desiredCaps = new AppiumOptions();
-            desiredCaps.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
-            desiredCaps.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, "io.appium.android.apis");
-            desiredCaps.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
-            desiredCaps.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "7.1");
-            desiredCaps.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, ".ApiDemos");
-            desiredCaps.AddAdditionalCapability(MobileCapabilityType.App, testAppPath);
+            var appiumOptions = new AppiumOptions();
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
+            appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, "io.appium.android.apis");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "7.1");
+            appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, ".ApiDemos");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.App, testAppPath);
 
             ////_driver = new AndroidDriver<AndroidElement>(_appiumLocalService, desiredCaps);
-            _driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), desiredCaps);
+            _driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), appiumOptions);
             _driver.CloseApp();
         }
 
