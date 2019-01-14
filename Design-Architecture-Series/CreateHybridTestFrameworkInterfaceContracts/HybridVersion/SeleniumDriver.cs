@@ -111,6 +111,8 @@ namespace CreateHybridTestFrameworkInterfaceContracts.HybridVersion
             throw new NotImplementedException();
         }
 
+        public object ExecuteScript(string script, params object[] args) => throw new NotImplementedException();
+
         public BrowserSettings BrowserSettings
         {
             get { throw new NotImplementedException(); }
