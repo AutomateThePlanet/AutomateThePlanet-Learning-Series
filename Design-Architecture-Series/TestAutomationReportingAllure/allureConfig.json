@@ -5,22 +5,6 @@
       "https://github.com/AutomateThePlanet/Meissa/issues/{issue}",
       "https://github.com/AutomateThePlanet/Meissa/projects/2#card-{tms}",
       "{link}"
-    ],
-    "brokenTestData":[
-      {
-        "name": "Ignored tests", 
-        "matchedStatuses": ["skipped"] 
-      },
-      {
-        "name": "Product Bug",
-        "matchedStatuses": ["broken", "failed"],
-        "messageRegex": ".*AssertionException.*"
-      },
-      {
-        "name": "Calculator Problem",
-        "matchedStatuses": ["failed"],
-        "traceRegex": ".*DivideByZeroException.*"
-      }
     ]
   }
 }
