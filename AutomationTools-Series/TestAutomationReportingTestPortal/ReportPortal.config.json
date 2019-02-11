@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/reportportal/agent-net-vstest/master/ReportPortal.VSTest.TestLogger/ReportPortal.config.schema",
+  "enabled": true,
+  "server": {
+    "url": "http://127.0.0.1:8080/api/v1/",
+    "project": "superadmin_personal",
+    "authentication": {
+      "uuid": "d8685bb4-2f2a-4335-9c8b-1f2a5d176d02"
+    }
+  },
+  "launch": {
+    "name": "Automate The Planet Test Portal Demo",
+    "description": "This is a demo run of the ATP demo examples for a demonstration of Test Portal integration with MSTest tests.",
+    "debugMode": false,
+    "tags": [ "Automate The Planet", "Test Reporting", "MSTEST" ]
+  }
+}

@@ -1,0 +1,3 @@
+﻿Article: Test Automation Reporting with Test Portal in .NET Projects
+URL:  http://automatetheplanet.com/test-automation-reporting-test-portal
+Publish Date: 11.02.2019
