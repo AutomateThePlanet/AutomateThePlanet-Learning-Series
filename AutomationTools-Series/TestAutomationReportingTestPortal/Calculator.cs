@@ -1,4 +1,4 @@
-﻿namespace TestAutomationReportingTestPortal
+﻿namespace TestAutomationReportingReportPortal
 {
     public class Calculator
     {

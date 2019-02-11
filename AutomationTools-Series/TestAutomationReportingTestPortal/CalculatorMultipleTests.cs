@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TestAutomationReportingTestPortal
+namespace TestAutomationReportingReportPortal
 {
     [TestClass]
     public class CalculatorMultipleTests

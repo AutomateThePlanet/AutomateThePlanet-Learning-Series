@@ -43,9 +43,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14. Test Automation Reporti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAutomationReportingAllure", "TestAutomationReportingAllure\TestAutomationReportingAllure.csproj", "{18FE269F-E430-430E-9C01-A1A959D83BEF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15. Test Automation Reporting with Test Portal in .NET Projects", "15. Test Automation Reporting with Test Portal in .NET Projects", "{043FAF5F-37B9-4BAD-8CE8-3FB0CAFF1957}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15. Test Automation Reporting with ReportPortal in .NET Projects", "15. Test Automation Reporting with ReportPortal in .NET Projects", "{043FAF5F-37B9-4BAD-8CE8-3FB0CAFF1957}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAutomationReportingTestPortal", "TestAutomationReportingTestPortal\TestAutomationReportingTestPortal.csproj", "{5649BA62-595C-4D4F-A84E-B45FAF110BB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAutomationReportingReportPortal", "TestAutomationReportingTestPortal\TestAutomationReportingReportPortal.csproj", "{5649BA62-595C-4D4F-A84E-B45FAF110BB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
