@@ -62,47 +62,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="v0.1\Base\WebPage.cs" />
-    <Compile Include="v0.1\Base\IFactory.cs" />
-    <Compile Include="v0.1\Base\IPage.cs" />
-    <Compile Include="v0.1\Base\ShoppingCart.cs" />
-    <Compile Include="v0.1\Base\ShoppingCartFactory.cs" />
-    <Compile Include="v0.1\Data\ClientInfo.cs" />
-    <Compile Include="v0.1\Pages\Checkout\CheckoutPage.cs" />
-    <Compile Include="v0.1\Pages\Checkout\CheckoutPage.Assertions.cs" />
-    <Compile Include="v0.1\Pages\Checkout\CheckoutPage.Elements.cs" />
-    <Compile Include="v0.1\Pages\Checkout\ICheckoutPage.cs" />
-    <Compile Include="v0.1\Pages\Item\IItemPage.cs" />
-    <Compile Include="v0.1\Pages\Item\ItemPage.cs" />
-    <Compile Include="v0.1\Pages\Item\ItemPage.Assertions.cs" />
-    <Compile Include="v0.1\Pages\Item\ItemPage.Elements.cs" />
-    <Compile Include="v0.1\Pages\ShippingAddress\IShippingAddressPage.cs" />
-    <Compile Include="v0.1\Pages\ShippingAddress\ShippingAddressPage.cs" />
-    <Compile Include="v0.1\Pages\ShippingAddress\ShippingAddressPage.Assertions.cs" />
-    <Compile Include="v0.1\Pages\ShippingAddress\ShippingAddressPage.Elements.cs" />
-    <Compile Include="v0.1\Pages\SignIn\ISignInPage.cs" />
-    <Compile Include="v0.1\Pages\SignIn\SignInPage.cs" />
-    <Compile Include="v0.1\Pages\SignIn\SignInPage.Elements.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="v0.1\ShoppingCartTests.cs" />
-    <Compile Include="v0.2\Base\IFactory.cs" />
-    <Compile Include="v0.2\Base\OldShoppingCart.cs" />
-    <Compile Include="v0.2\Base\ShoppingCart.cs" />
-    <Compile Include="v0.2\Base\ShoppingCartFactory.cs" />
-    <Compile Include="v0.2\Base\WebPage.cs" />
-    <Compile Include="v0.2\Data\ClientInfo.cs" />
-    <Compile Include="v0.2\Pages\Checkout\CheckoutPage.Assertions.cs" />
-    <Compile Include="v0.2\Pages\Checkout\CheckoutPage.cs" />
-    <Compile Include="v0.2\Pages\Checkout\CheckoutPage.Elements.cs" />
-    <Compile Include="v0.2\Pages\Item\ItemPage.Assertions.cs" />
-    <Compile Include="v0.2\Pages\Item\ItemPage.cs" />
-    <Compile Include="v0.2\Pages\Item\ItemPage.Elements.cs" />
-    <Compile Include="v0.2\Pages\ShippingAddress\ShippingAddressPage.Assertions.cs" />
-    <Compile Include="v0.2\Pages\ShippingAddress\ShippingAddressPage.cs" />
-    <Compile Include="v0.2\Pages\ShippingAddress\ShippingAddressPage.Elements.cs" />
-    <Compile Include="v0.2\Pages\SignIn\SignInPage.cs" />
-    <Compile Include="v0.2\Pages\SignIn\SignInPage.Elements.cs" />
-    <Compile Include="v0.2\ShoppingCartTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\AutomateThePlanet.licenseheader">
