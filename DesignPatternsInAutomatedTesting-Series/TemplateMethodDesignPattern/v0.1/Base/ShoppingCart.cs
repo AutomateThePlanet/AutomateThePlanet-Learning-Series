@@ -30,7 +30,10 @@ namespace TemplateMethodDesignPattern.Base.First
 
         private readonly IShippingAddressPage _shippingAddressPage;
 
-        public ShoppingCart(IItemPage itemPage, ISignInPage signInPage, ICheckoutPage checkoutPage, IShippingAddressPage shippingAddressPage)
+        public ShoppingCart(IItemPage itemPage, 
+            ISignInPage signInPage,
+            ICheckoutPage checkoutPage,
+            IShippingAddressPage shippingAddressPage)
         {
             _itemPage = itemPage;
             _signInPage = signInPage;
