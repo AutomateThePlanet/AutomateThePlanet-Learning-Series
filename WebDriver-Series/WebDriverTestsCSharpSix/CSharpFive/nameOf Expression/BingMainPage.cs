@@ -11,10 +11,9 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>https://automatetheplanet.com/</site>
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
 using System;
+using SeleniumExtras.PageObjects;
 
 namespace WebDriverTestsCSharpSix.CSharpFive.NameOfExpression
 {

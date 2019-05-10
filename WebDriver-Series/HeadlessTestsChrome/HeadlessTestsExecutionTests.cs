@@ -12,7 +12,6 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
-using OpenQA.Selenium.PhantomJS;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 
@@ -65,23 +64,6 @@ namespace HeadlessTestsChrome
                 () =>
                 {
                     using (IWebDriver driver = new EdgeDriver())
-                    {
-                        PerformTestOperations(driver);
-                    }
-                }
-            );
-        }
-
-        [Test]
-        public void TestPhantomJsExecutionTime()
-        {
-            Profile
-            (
-                "TestPhantomJsExecutionTime",
-                10,
-                () =>
-                {
-                    using (IWebDriver driver = new PhantomJSDriver())
                     {
                         PerformTestOperations(driver);
                     }

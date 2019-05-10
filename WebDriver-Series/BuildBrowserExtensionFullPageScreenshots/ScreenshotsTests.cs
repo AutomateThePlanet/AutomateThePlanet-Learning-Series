@@ -20,8 +20,8 @@ using System.Reflection;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
+using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace BuildBrowserExtensionFullPageScreenshots
 {
@@ -33,10 +33,6 @@ namespace BuildBrowserExtensionFullPageScreenshots
         {
             var options = new ChromeOptions();
             options.AddArguments($"load-extension={GetAssemblyDirectory()}\\FullPageScreenshotsExtension-Chrome\\");
-            var capabilities = new DesiredCapabilities();
-            capabilities.SetCapability(ChromeOptions.Capability, options);
-            var dc = DesiredCapabilities.Chrome();
-            dc.SetCapability(ChromeOptions.Capability, options);
 
             using (var driver = new ChromeDriver(options))
             {

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using Org.BouncyCastle.Asn1;
 using Org.BouncyCastle.Asn1.Pkcs;
 using Org.BouncyCastle.Asn1.X509;
@@ -53,8 +49,8 @@ namespace CaptureModifyHttpTraffic
             certificateGenerator.SetSerialNumber(serialNumber);
 
             // Signature Algorithm
-            const string signatureAlgorithm = "SHA256WithRSA";
-            certificateGenerator.SetSignatureAlgorithm(signatureAlgorithm);
+            ////const string signatureAlgorithm = "SHA256WithRSA";
+            ////certificateGenerator.SetSignatureAlgorithm(signatureAlgorithm);
 
             // Issuer and Subject Name
             var subjectDN = new X509Name(subjectName);
@@ -88,7 +84,7 @@ namespace CaptureModifyHttpTraffic
             // merge into X509Certificate2
             var x509 = new X509Certificate2(certificate.GetEncoded());
 
-            var seq = (Asn1Sequence)Asn1Object.FromByteArray(info.PrivateKey.GetDerEncoded());
+            var seq = (Asn1Sequence)Asn1Object.FromByteArray(info.GetDerEncoded());
             if (seq.Count != 9)
             {
                 //throw new PemException("malformed sequence in RSA private key");
@@ -144,9 +140,9 @@ namespace CaptureModifyHttpTraffic
             var serialNumber = BigIntegers.CreateRandomInRange(BigInteger.One, BigInteger.ValueOf(int.MaxValue), random);
             certificateGenerator.SetSerialNumber(serialNumber);
 
-            // Signature Algorithm
-            const string signatureAlgorithm = "SHA256WithRSA";
-            certificateGenerator.SetSignatureAlgorithm(signatureAlgorithm);
+            ////// Signature Algorithm
+            ////const string signatureAlgorithm = "SHA256WithRSA";
+            ////certificateGenerator.SetSignatureAlgorithm(signatureAlgorithm);
 
             // Issuer and Subject Name
             var subjectDN = new X509Name(subjectName);

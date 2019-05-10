@@ -42,6 +42,7 @@ namespace CaptureModifyHttpTraffic
         {
             _proxyServer = new ProxyServer();
             var explicitEndPoint = new ExplicitProxyEndPoint(System.Net.IPAddress.Any, 18882, true);
+            _proxyServer.CertificateManager.TrustRootCertificate(true);
             _proxyServer.AddEndPoint(explicitEndPoint);
             _proxyServer.Start();
             _proxyServer.SetAsSystemHttpProxy(explicitEndPoint);
@@ -133,72 +134,79 @@ namespace CaptureModifyHttpTraffic
         }
 
         private async Task OnRequestCaptureTrafficEventHandler(object sender, SessionEventArgs e) => await Task.Run(
-            () =>
+        () =>
+        {
+            if (!_requestsHistory.ContainsKey(e.HttpClient.Request.GetHashCode()) && e.HttpClient != null && e.HttpClient.Request != null)
             {
-                if (!_requestsHistory.ContainsKey(e.WebSession.Request.GetHashCode()) && e.WebSession != null && e.WebSession.Request != null)
+                _requestsHistory.Add(e.HttpClient.Request.GetHashCode(), e.HttpClient.Request);
+            }
+        });
+
+        private async Task OnRequestBlockResourceEventHandler(object sender, SessionEventArgs e)
+            => await Task.Run(
+                () =>
                 {
-                    _requestsHistory.Add(e.WebSession.Request.GetHashCode(), e.WebSession.Request);
-                }
-            });
+                    if (e.HttpClient.Request.RequestUri.ToString().Contains("analytics"))
+                    {
+                        string customBody = string.Empty;
+                        e.Ok(Encoding.UTF8.GetBytes(customBody));
+                    }
+                });
 
-        private void OnRequestBlockResourceEventHandler(object sender, SessionEventArgs e)
-        {
-            if (e.WebSession.Request.RequestUri.ToString().Contains("analytics"))
-            {
-                string customBody = string.Empty;
-                e.Ok(Encoding.UTF8.GetBytes(customBody));
-            }
-        }
+        private async Task OnRequestRedirectTrafficEventHandler(object sender, SessionEventArgs e)
+            => await Task.Run(
+                () =>
+                {
+                    if (e.HttpClient.Request.RequestUri.AbsoluteUri.Contains("logo.svg"))
+                    {
+                        e.Redirect("https://automatetheplanet.com/wp-content/uploads/2016/12/homepage-img-1.svg");
+                    }
+                });
 
-        private void OnRequestRedirectTrafficEventHandler(object sender, SessionEventArgs e)
-        {
-            if (e.WebSession.Request.RequestUri.AbsoluteUri.Contains("logo.svg"))
-            {
-                e.Redirect("https://automatetheplanet.com/wp-content/uploads/2016/12/homepage-img-1.svg");
-            }
-        }
+        private async Task OnRequestModifyTrafficEventHandler(object sender, SessionEventArgs e)
+            => await Task.Run(
+                () =>
+                {
+                    var method = e.HttpClient.Request.Method.ToUpper();
 
-        private void OnRequestModifyTrafficEventHandler(object sender, SessionEventArgs e)
-        {
-            var method = e.WebSession.Request.Method.ToUpper();
+                    if ((method == "POST" || method == "PUT" || method == "PATCH" || method == "GET"))
+                    {
+                        //Get/Set request body bytes
+                        byte[] bodyBytes = e.GetRequestBody().Result;
+                        e.SetRequestBody(bodyBytes);
 
-            if ((method == "POST" || method == "PUT" || method == "PATCH" || method == "GET"))
-            {
-                //Get/Set request body bytes
-                byte[] bodyBytes = e.GetRequestBody().Result;
-                e.SetRequestBody(bodyBytes);
-
-                //Get/Set request body as string
-                string bodyString = e.GetRequestBodyAsString().Result;
-                e.SetRequestBodyString(bodyString);
-            }
-        }
+                        //Get/Set request body as string
+                        string bodyString = e.GetRequestBodyAsString().Result;
+                        e.SetRequestBodyString(bodyString);
+                    }
+                });
 
         private async Task OnResponseCaptureTrafficEventHandler(object sender, SessionEventArgs e) => await Task.Run(
             () =>
             {
-                if (!_responsesHistory.ContainsKey(e.WebSession.Response.GetHashCode()) && e.WebSession != null && e.WebSession.Response != null)
+                if (!_responsesHistory.ContainsKey(e.HttpClient.Response.GetHashCode()) && e.HttpClient != null && e.HttpClient.Response != null)
                 {
-                    _responsesHistory.Add(e.WebSession.Response.GetHashCode(), e.WebSession.Response);
+                    _responsesHistory.Add(e.HttpClient.Response.GetHashCode(), e.HttpClient.Response);
                 }
             });
 
-        private void OnResponseModifyTrafficEventHandler(object sender, SessionEventArgs e)
-        {
-            if (e.WebSession.Request.Method == "GET" || e.WebSession.Request.Method == "POST")
+        private async Task OnResponseModifyTrafficEventHandler(object sender, SessionEventArgs e) => await Task.Run(
+            () =>
             {
-                if (e.WebSession.Response.StatusCode == 200)
+                if (e.HttpClient.Request.Method == "GET" || e.HttpClient.Request.Method == "POST")
                 {
-                    if (e.WebSession.Response.ContentType != null && e.WebSession.Response.ContentType.Trim().ToLower().Contains("text/html"))
+                    if (e.HttpClient.Response.StatusCode == 200)
                     {
-                        byte[] bodyBytes = e.GetResponseBody().Result;
-                        e.SetResponseBody(bodyBytes);
+                        if (e.HttpClient.Response.ContentType != null && e.HttpClient.Response.ContentType.Trim().ToLower().Contains("text/html"))
+                        {
+                            byte[] bodyBytes = e.GetResponseBody().Result;
+                            e.SetResponseBody(bodyBytes);
 
-                        string body = e.GetResponseBodyAsString().Result;
-                        e.SetResponseBodyString(body);
+                            string body = e.GetResponseBodyAsString().Result;
+                            e.SetResponseBodyString(body);
+                        }
                     }
                 }
-            }
-        }
+            });
     }
 }

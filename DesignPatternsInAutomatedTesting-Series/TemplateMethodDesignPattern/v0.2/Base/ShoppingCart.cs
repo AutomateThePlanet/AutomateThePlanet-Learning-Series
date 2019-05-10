@@ -18,22 +18,6 @@ namespace TemplateMethodDesignPattern.Base.Second
 {
     public abstract class ShoppingCart
     {
-        ////private readonly IItemPage _itemPage;
-
-        ////private readonly ISignInPage _signInPage;
-
-        ////private readonly ICheckoutPage _checkoutPage;
-
-        ////private readonly IShippingAddressPage _shippingAddressPage;
-
-        ////public ShoppingCart(IItemPage itemPage, ISignInPage signInPage, ICheckoutPage checkoutPage, IShippingAddressPage shippingAddressPage)
-        ////{
-        ////    _itemPage = itemPage;
-        ////    _signInPage = signInPage;
-        ////    _checkoutPage = checkoutPage;
-        ////    _shippingAddressPage = shippingAddressPage;
-        ////}
-
         public void PurchaseItem(string item, double itemPrice, ClientInfo clientInfo)
         {
             OpenItem(item);

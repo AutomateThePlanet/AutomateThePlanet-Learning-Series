@@ -18,6 +18,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
+using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace ExecuteUiTestsCloudBrowserStack
 {
@@ -31,24 +32,24 @@ namespace ExecuteUiTestsCloudBrowserStack
         [OneTimeSetUp]
         public void SetupTest()
         {
-            var caps = new DesiredCapabilities();
-            caps.SetCapability("browserstack.debug", "true");
-            caps.SetCapability("build", "1.0");
+            var options = new ChromeOptions();
+            options.AddAdditionalCapability("browserstack.debug", "true");
+            options.AddAdditionalCapability("build", "1.0");
 
-            caps.SetCapability("os", "Windows");
-            caps.SetCapability("os_version", "10");
-            caps.SetCapability("browser", "Chrome");
-            caps.SetCapability("browser_version", "65.0");
-            caps.SetCapability("resolution", "1366x768");
-            caps.SetCapability("browserstack.video", "false");
+            options.AddAdditionalCapability("os", "Windows");
+            options.AddAdditionalCapability("os_version", "10");
+            options.AddAdditionalCapability("browser", "Chrome");
+            options.AddAdditionalCapability("browser_version", "65.0");
+            options.AddAdditionalCapability("resolution", "1366x768");
+            options.AddAdditionalCapability("browserstack.video", "false");
             
-            caps.SetCapability("build", "version1");
-            caps.SetCapability("project", "AutomateThePlanet");
+            options.AddAdditionalCapability("build", "version1");
+            options.AddAdditionalCapability("project", "AutomateThePlanet");
 
-            caps.SetCapability("browserstack.user", _username);
-            caps.SetCapability("browserstack.key", _authkey);
+            options.AddAdditionalCapability("browserstack.user", _username);
+            options.AddAdditionalCapability("browserstack.key", _authkey);
 
-            _driver = new RemoteWebDriver(new Uri("http://hub-cloud.browserstack.com/wd/hub/"), caps, TimeSpan.FromSeconds(180));
+            _driver = new RemoteWebDriver(new Uri("http://hub-cloud.browserstack.com/wd/hub/"), options);
             //_driver = new ChromeDriver();
             ////_driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
         }

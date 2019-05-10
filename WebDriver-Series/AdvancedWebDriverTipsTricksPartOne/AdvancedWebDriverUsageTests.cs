@@ -11,24 +11,18 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>https://automatetheplanet.com/</site>
-using System.Web;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.PhantomJS;
-using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Net;
 using System.Threading;
+using OpenQA.Selenium.Support.UI;
+using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace AdvancedWebDriverTipsTricksPartOne
 {
@@ -133,7 +127,9 @@ namespace AdvancedWebDriverTipsTricksPartOne
         [TestMethod]
         public void ExecuteInHeadlessBrowser()
         {
-            _driver = new PhantomJSDriver();
+            var options = new ChromeOptions();
+            options.AddArguments("headless");
+            _driver = new ChromeDriver(options);
             _driver.Navigate().GoToUrl(@"https://automatetheplanet.com");
             WaitUntilLoaded();
             var js = _driver as IJavaScriptExecutor;
