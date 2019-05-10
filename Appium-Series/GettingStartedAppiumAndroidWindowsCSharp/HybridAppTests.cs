@@ -18,8 +18,6 @@ using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Appium.Interfaces;
 using OpenQA.Selenium.Appium.Service;
-using OpenQA.Selenium.Appium.Service.Options;
-using OpenQA.Selenium.Remote;
 using System;
 using System.IO;
 
@@ -34,18 +32,17 @@ namespace GettingStartedAppiumAndroidWindows
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
-            var args = new OptionCollector().AddArguments(GeneralOptionList.PreLaunch());
             _appiumLocalService = new AppiumServiceBuilder().UsingAnyFreePort().Build();
             _appiumLocalService.Start();
             string testAppPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "selendroid-test-app-0.10.0.apk");
-            var desiredCaps = new DesiredCapabilities();
-            desiredCaps.SetCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
-            desiredCaps.SetCapability(MobileCapabilityType.PlatformName, "Android");
-            desiredCaps.SetCapability(MobileCapabilityType.PlatformVersion, "7.1");
-            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppPackage, "io.selendroid.testapp");
-            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppActivity, "HomeScreenActivity");
+            var appiumOptions = new AppiumOptions();
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "7.1");
+            appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, "io.selendroid.testapp");
+            appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, "HomeScreenActivity");
 
-            _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, desiredCaps);
+            _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, appiumOptions);
             _driver.CloseApp();
         }
 
