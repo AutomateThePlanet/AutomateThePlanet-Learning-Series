@@ -13,7 +13,7 @@
 // <site>https://automatetheplanet.com/</site>
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace HuddlePageObjectsElementsStringProperties
 {

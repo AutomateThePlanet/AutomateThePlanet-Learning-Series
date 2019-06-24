@@ -38,7 +38,8 @@ namespace WebDriverSeleniumTorIntegration
             var desktopPath  = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             // You should set here the path to your Tor browser exe. Mine was installed on my desktop because of that I'm using the below path.
             var torBinaryPath = string.Concat(desktopPath, @"\Tor Browser\Browser\firefox.exe");
-            TorProcess = new Process();
+            var process = new Process();
+            TorProcess = process;
             TorProcess.StartInfo.FileName = torBinaryPath;
             TorProcess.StartInfo.Arguments = "-n";
             TorProcess.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
@@ -48,7 +49,11 @@ namespace WebDriverSeleniumTorIntegration
             profile.SetPreference("network.proxy.type", 1);
             profile.SetPreference("network.proxy.socks", "127.0.0.1");
             profile.SetPreference("network.proxy.socks_port", 9150);
-            Driver = new FirefoxDriver(profile);
+            var firefoxOptions = new FirefoxOptions
+            {
+                Profile = profile
+            };
+            Driver = new FirefoxDriver(firefoxOptions);
             Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(60));
         }
 

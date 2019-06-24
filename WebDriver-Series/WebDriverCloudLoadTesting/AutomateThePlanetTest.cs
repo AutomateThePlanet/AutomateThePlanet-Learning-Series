@@ -13,8 +13,8 @@
 // <site>https://automatetheplanet.com/</site>
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.PhantomJS;
 using System;
+using OpenQA.Selenium.Chrome;
 using WebDriverCloudLoadTesting.Pages.AutomateThePlanet;
 
 namespace WebDriverCloudLoadTesting
@@ -28,7 +28,9 @@ namespace WebDriverCloudLoadTesting
         [TestInitialize]
         public void SetupTest()
         {
-            _driver = new PhantomJSDriver();
+            var options = new ChromeOptions();
+            options.AddArguments("headless");
+            _driver = new ChromeDriver(options);
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 

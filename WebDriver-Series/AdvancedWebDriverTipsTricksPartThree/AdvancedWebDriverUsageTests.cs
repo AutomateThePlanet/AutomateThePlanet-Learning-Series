@@ -17,7 +17,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.PhantomJS;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -162,7 +161,11 @@ namespace AdvancedWebDriverTipsTricksPartThree
                 profile.SetPreference("browser.download.dir", downloadFolderPath);
                 profile.SetPreference("browser.download.manager.alertOnEXEOpen", false);
                 profile.SetPreference("browser.helperApps.neverAsk.saveToDisk", "application/msword, application/binary, application/ris, text/csv, image/png, application/pdf, text/html, text/plain, application/zip, application/x-zip, application/x-zip-compressed, application/download, application/octet-stream");
-                _driver = new FirefoxDriver(profile);
+                var firefoxOptions = new FirefoxOptions
+                                     {
+                                         Profile = profile
+                                     };
+                _driver = new FirefoxDriver(firefoxOptions);
 
                 _driver.Navigate().GoToUrl("https://www.telerik.com/download-trial-file/v2/telerik-testing-framework");
                 var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));

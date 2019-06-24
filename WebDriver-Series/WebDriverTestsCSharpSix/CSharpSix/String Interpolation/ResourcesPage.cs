@@ -13,9 +13,10 @@
 // <site>https://automatetheplanet.com/</site>
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
 using System;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.PageObjects;
+using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace WebDriverTestsCSharpSix.CSharpSix.StringInterpolation
 {

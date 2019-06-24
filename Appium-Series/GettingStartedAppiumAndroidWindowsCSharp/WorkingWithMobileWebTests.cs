@@ -16,58 +16,48 @@ using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Appium.Service;
-using OpenQA.Selenium.Appium.Service.Options;
-using OpenQA.Selenium.Remote;
 using System;
-using System.IO;
 
 namespace GettingStartedAppiumAndroidWindows
 {
     [TestClass]
     public class WorkingWithMobileWebTests
     {
-        private static AndroidDriver<AppiumWebElement> _driver;
-        private static AppiumLocalService _appiumLocalService;
+private static AndroidDriver<AppiumWebElement> _driver;
+private static AppiumLocalService _appiumLocalService;
 
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext context)
-        {
-            var args = new OptionCollector().AddArguments(GeneralOptionList.PreLaunch());
-            _appiumLocalService = new AppiumServiceBuilder().UsingAnyFreePort().Build();
-            _appiumLocalService.Start();
-            var desiredCaps = new DesiredCapabilities();
-            desiredCaps.SetCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
-            desiredCaps.SetCapability(MobileCapabilityType.PlatformName, "Android");
-            desiredCaps.SetCapability(MobileCapabilityType.PlatformVersion, "7.1");
-            desiredCaps.SetCapability(MobileCapabilityType.BrowserName, "Chrome");
+[ClassInitialize]
+public static void ClassInitialize(TestContext context)
+{
+    _appiumLocalService = new AppiumServiceBuilder().UsingAnyFreePort().Build();
+    _appiumLocalService.Start();
+    var appiumOptions = new AppiumOptions();
+    appiumOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
+    appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
+    appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "7.1");
+    appiumOptions.AddAdditionalCapability(MobileCapabilityType.BrowserName, "Chrome");
 
-            _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, desiredCaps);
-            _driver.CloseApp();
-        }
+    _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, appiumOptions);
+    _driver.CloseApp();
+}
 
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            if (_driver != null)
-            {
-                _driver.LaunchApp();
-            }
-        }
+[TestInitialize]
+public void TestInitialize()
+{
+    _driver?.LaunchApp();
+}
 
-        [TestCleanup]
-        public void TestCleanup()
-        {
-            if (_driver != null)
-            {
-                _driver.CloseApp();
-            }
-        }
+[TestCleanup]
+public void TestCleanup()
+{
+    _driver?.CloseApp();
+}
 
-        [ClassCleanup]
-        public static void ClassCleanup()
-        {
-            _appiumLocalService.Dispose();
-        }
+[ClassCleanup]
+public static void ClassCleanup()
+{
+    _appiumLocalService.Dispose();
+}
 
         [TestMethod]
         public void GoToWebSite()

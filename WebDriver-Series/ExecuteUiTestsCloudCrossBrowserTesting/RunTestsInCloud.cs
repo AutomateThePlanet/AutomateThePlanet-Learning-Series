@@ -15,8 +15,10 @@
 using System;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
+using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace ExecuteUiTestsCloudCrossBrowserTesting
 {
@@ -30,23 +32,23 @@ namespace ExecuteUiTestsCloudCrossBrowserTesting
         [SetUp]
         public void SetupTest()
         {
-            var caps = new DesiredCapabilities();
-            caps.SetCapability("name", "Basic Example");
-            caps.SetCapability("build", "1.0");
-            caps.SetCapability("browser_api_name", "Chrome58");
-            caps.SetCapability("os_api_name", "Win10-E15");
-            caps.SetCapability("screen_resolution", "1366x768");
+            var options = new ChromeOptions();
+            options.AddAdditionalCapability("name", "Basic Example");
+            options.AddAdditionalCapability("build", "1.0");
+            options.AddAdditionalCapability("browser_api_name", "Chrome58");
+            options.AddAdditionalCapability("os_api_name", "Win10-E15");
+            options.AddAdditionalCapability("screen_resolution", "1366x768");
 
             //////caps.SetCapability("browser_api_name", "FF46");
             //////caps.SetCapability("os_api_name", "Mac10.11");
             //////caps.SetCapability("screen_resolution", "1400x900");
-            caps.SetCapability("record_video", "true");
-            caps.SetCapability("record_network", "true");
+            options.AddAdditionalCapability("record_video", "true");
+            options.AddAdditionalCapability("record_network", "true");
 
-            caps.SetCapability("username", _username);
-            caps.SetCapability("password", _authkey);
+            options.AddAdditionalCapability("username", _username);
+            options.AddAdditionalCapability("password", _authkey);
             
-            _driver = new RemoteWebDriver(new Uri("http://hub.crossbrowsertesting.com:80/wd/hub"), caps, TimeSpan.FromSeconds(180));
+            _driver = new RemoteWebDriver(new Uri("http://hub.crossbrowsertesting.com:80/wd/hub"), options);
         }
 
         [TearDown]

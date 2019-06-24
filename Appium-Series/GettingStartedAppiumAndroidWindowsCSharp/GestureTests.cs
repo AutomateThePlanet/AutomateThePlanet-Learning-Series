@@ -21,6 +21,7 @@ using OpenQA.Selenium.Remote;
 using System;
 using System.Drawing;
 using System.IO;
+using OpenQA.Selenium.Appium.MultiTouch;
 
 namespace GettingStartedAppiumAndroidWindows
 {
@@ -37,15 +38,15 @@ namespace GettingStartedAppiumAndroidWindows
             _appiumLocalService = new AppiumServiceBuilder().UsingAnyFreePort().Build();
             _appiumLocalService.Start();
             string testAppPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "ApiDemos-debug.apk");
-            var desiredCaps = new DesiredCapabilities();
-            desiredCaps.SetCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
-            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppPackage, "io.appium.android.apis");
-            desiredCaps.SetCapability(MobileCapabilityType.PlatformName, "Android");
-            desiredCaps.SetCapability(MobileCapabilityType.PlatformVersion, "7.1");
-            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppActivity, ".graphics.TouchRotateActivity");
-            desiredCaps.SetCapability(MobileCapabilityType.App, testAppPath);
+            var appiumOptions = new AppiumOptions();
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
+            appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, "io.appium.android.apis");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "7.1");
+            appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, ".graphics.TouchRotateActivity");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.App, testAppPath);
 
-            _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, desiredCaps);
+            _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, appiumOptions);
             _driver.CloseApp();
         }
 
@@ -81,37 +82,14 @@ namespace GettingStartedAppiumAndroidWindows
             var element = _driver.FindElementById("android:id/content");
             Point point = element.Coordinates.LocationInDom;
             Size size = element.Size;
-            _driver.Swipe
-            (
-                point.X + 5,
-                point.Y + 5,
-                point.X + size.Width - 5,
-                point.Y + size.Height - 5,
-                200
-            );
 
-            _driver.Swipe
-            (
-                point.X + size.Width - 5,
-                point.Y + 5,
-                point.X + 5,
-                point.Y + size.Height - 5,
-                2000
-            );
-        }
+            new TouchAction(_driver)
+                .Press(point.X + 5, point.Y + 5)
+                .Wait(200)
+                .MoveTo(point.X + size.Width - 5, point.Y + size.Height - 5)
+                .Release()
+                .Perform();
 
-        [TestMethod]
-        public void PincTest()
-        {
-            var element = _driver.FindElementById("android:id/content");
-            _driver.Pinch(element);
-        }
-
-        [TestMethod]
-        public void ZoomTest()
-        {
-            var element = _driver.FindElementById("android:id/content");
-            _driver.Zoom(element);
         }
     }
 }

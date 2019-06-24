@@ -12,7 +12,7 @@
 // <author>Anton Angelov</author>
 // <site>https://automatetheplanet.com/</site>
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 using static WebDriverTestsCSharpSix.CSharpSix.StaticUsingSyntax.TimestampBuilder;
 using static WebDriverTestsCSharpSix.CSharpSix.StaticUsingSyntax.UniqueEmailGenerator;
 

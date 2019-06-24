@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
 using OpenQA.Selenium.Remote;
 using WinAppDriverPageObjects.Views;
@@ -15,10 +16,10 @@ namespace WinAppDriverPageObjects
         [SetUp]
         public void TestInit()
         {
-            var appCapabilities = new DesiredCapabilities();
-            appCapabilities.SetCapability("app", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
-            appCapabilities.SetCapability("deviceName", "WindowsPC");
-            _driver = new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), appCapabilities);
+            var options = new AppiumOptions();
+            options.AddAdditionalOption("app", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
+            options.AddAdditionalOption("deviceName", "WindowsPC");
+            _driver = new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), options);
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
             _calcStandardView = new CalculatorStandardView(_driver);

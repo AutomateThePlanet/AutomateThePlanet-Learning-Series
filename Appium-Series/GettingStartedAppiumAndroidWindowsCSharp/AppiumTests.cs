@@ -39,15 +39,15 @@ namespace GettingStartedAppiumAndroidWindows
             _appiumLocalService = new AppiumServiceBuilder().UsingAnyFreePort().Build();
             _appiumLocalService.Start();
             string testAppPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "ApiDemos-debug.apk");
-            var desiredCaps = new DesiredCapabilities();
-            desiredCaps.SetCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
-            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppPackage, "io.appium.android.apis");
-            desiredCaps.SetCapability(MobileCapabilityType.PlatformName, "Android");
-            desiredCaps.SetCapability(MobileCapabilityType.PlatformVersion, "7.1");
-            desiredCaps.SetCapability(AndroidMobileCapabilityType.AppActivity, ".ApiDemos");
-            desiredCaps.SetCapability(MobileCapabilityType.App, testAppPath);
+            var appiumOptions = new AppiumOptions();
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
+            appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, "io.appium.android.apis");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "7.1");
+            appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, ".ApiDemos");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.App, testAppPath);
 
-            _driver = new AndroidDriver<AndroidElement>(_appiumLocalService, desiredCaps);
+            _driver = new AndroidDriver<AndroidElement>(_appiumLocalService, appiumOptions);
             _driver.CloseApp();
         }
 

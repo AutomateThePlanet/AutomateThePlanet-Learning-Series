@@ -13,7 +13,7 @@
 // <site>https://automatetheplanet.com/</site>
 
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 using Ui.Automation.Core.Controls.Controls;
 
 namespace DesignGridControlAutomatedTestsPartThree.Pages

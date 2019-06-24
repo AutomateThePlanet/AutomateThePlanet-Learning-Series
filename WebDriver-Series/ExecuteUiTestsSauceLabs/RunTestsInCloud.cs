@@ -16,8 +16,10 @@ using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Support.UI;
 using System;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace ExecuteUiTestsSauceLabs
 {
@@ -31,20 +33,20 @@ namespace ExecuteUiTestsSauceLabs
         [SetUp]
         public void SetupTest()
         {
-            var caps = new DesiredCapabilities();
-            caps.SetCapability("browserstack.debug", "true");
-            caps.SetCapability("build", "1.0");
+            var options = new ChromeOptions();
+            options.AddAdditionalCapability("browserstack.debug", "true");
+            options.AddAdditionalCapability("build", "1.0");
 
-            caps.SetCapability("browserName", "Chrome");
-            caps.SetCapability("platform", "Windows 8.1");
-            caps.SetCapability("version", "49.0");
-            caps.SetCapability("screenResolution", "1280x800");
+            options.AddAdditionalCapability("browserName", "Chrome");
+            options.AddAdditionalCapability("platform", "Windows 8.1");
+            options.AddAdditionalCapability("version", "49.0");
+            options.AddAdditionalCapability("screenResolution", "1280x800");
 
-            caps.SetCapability("username", _username);
-            caps.SetCapability("accessKey", _authkey);
-            caps.SetCapability("name", TestContext.CurrentContext.Test.Name);
+            options.AddAdditionalCapability("username", _username);
+            options.AddAdditionalCapability("accessKey", _authkey);
+            options.AddAdditionalCapability("name", TestContext.CurrentContext.Test.Name);
 
-            _driver = new RemoteWebDriver(new Uri("http://ondemand.saucelabs.com:80/wd/hub"), caps, TimeSpan.FromSeconds(180));
+            _driver = new RemoteWebDriver(new Uri("http://ondemand.saucelabs.com:80/wd/hub"), options);
             _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
         }
 
