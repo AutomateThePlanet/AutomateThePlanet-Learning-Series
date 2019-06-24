@@ -1,0 +1,51 @@
+﻿{
+  "webSettings": {
+    "elementWaitTimeout": "30",
+    "chrome": {
+      "pageLoadTimeout": "120",
+      "scriptTimeout": "5",
+      "artificialDelayBeforeAction": "0"
+    },
+    "fireFox": {
+      "pageLoadTimeout": "30",
+      "scriptTimeout": "1",
+      "artificialDelayBeforeAction": "0"
+    },
+    "edge": {
+      "pageLoadTimeout": "30",
+      "scriptTimeout": "1",
+      "artificialDelayBeforeAction": "0"
+    },
+    "internetExplorer": {
+      "pageLoadTimeout": "30",
+      "scriptTimeout": "1",
+      "artificialDelayBeforeAction": "0"
+    },
+    "opera": {
+      "pageLoadTimeout": "30",
+      "scriptTimeout": "1",
+      "artificialDelayBeforeAction": "0"
+    },
+    "safari": {
+      "pageLoadTimeout": "30",
+      "scriptTimeout": "1",
+      "artificialDelayBeforeAction": "0"
+    }
+  },
+  "urlSettings": {
+    "ebayUrl": "http://www.ebay.com/",
+    "amazonUrl": "https://www.amazon.com/",
+    "kindleUrl": "https://read.amazon.com"
+  },
+  "billingInfoDefaultValues": {
+    "email": "angelov@yahoo.com",
+    "company": "Moon AG",
+    "country": "France",
+    "firstName": "Francoa",
+    "lastName": "Sonchifolia",
+    "phone": "+33186954328",
+    "zip": "75002",
+    "city": "Paris",
+    "address1": "9 Rue Mandar"
+  }
+}

@@ -1,0 +1,3 @@
+﻿Article: Handling Test Environments Data in Automated Tests
+URL:  http://automatetheplanet.com/handling-test-environments-data
+Publish Date: 25.06.2019
