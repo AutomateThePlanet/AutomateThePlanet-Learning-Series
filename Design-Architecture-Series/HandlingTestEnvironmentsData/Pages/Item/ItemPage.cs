@@ -25,7 +25,7 @@ namespace HandlingTestEnvironmentsData.Pages.Item.Second
         }
 
         ////protected override string Url => "http://www.ebay.com/itm/";
-        protected override string Url => UrlDeterminer.GetEbayUrl("itm");
+        protected override string Url => UrlDeterminer.GetEbayUrl("itm/");
 
         public void ClickBuyNowButton()
         {

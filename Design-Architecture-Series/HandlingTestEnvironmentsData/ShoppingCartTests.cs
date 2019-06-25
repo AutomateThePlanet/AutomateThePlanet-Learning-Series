@@ -17,7 +17,7 @@ using HandlingTestEnvironmentsData.Data.Second;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
+using System;
 using System.IO;
 using System.Reflection;
 
@@ -34,6 +34,8 @@ namespace HandlingTestEnvironmentsData.Second
         public void SetupTest()
         {
             _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Chrome.PageLoadTimeout);
+            _driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Chrome.ScriptTimeout);
             _shoppingCartFactory = new ShoppingCartFactory(_driver);
         }
 
@@ -53,14 +55,14 @@ namespace HandlingTestEnvironmentsData.Second
         // .NET Core does not support the DataSource attribute. If you try to access test data in this way in a .NET Core or UWP unit test project, 
         // you'll see an error similar to "'TestContext' does not contain a definition for 'DataRow' and no accessible extension method 'DataRow'
         // accepting a first argument of type 'TestContext' could be found (are you missing a using directive or an assembly reference?)".
-        ////[TestMethod]
-        ////[DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TestsData.csv", "TestsData#csv", DataAccessMethod.Sequential)]
-        ////public void Purchase_Book_DataDriven()
-        ////{
-        ////    string item = TestContext.DataRow["item"];          
-        ////    int expectedPrice = int.Parse(this.TestContext.DataRow["itemPrice"]);
-        ////    _shoppingCart = _shoppingCartFactory.CreateOldShoppingCart();
-        ////    _shoppingCart.PurchaseItem(item, expectedPrice, new ClientInfo());
-        ////}
+        //[TestMethod]
+        //[DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TestsData.csv", "TestsData#csv", DataAccessMethod.Sequential)]
+        //public void Purchase_Book_DataDriven()
+        //{
+        //    string item = TestContext.DataRow["item"];          
+        //    int expectedPrice = int.Parse(this.TestContext.DataRow["itemPrice"]);
+        //    _shoppingCart = _shoppingCartFactory.CreateOldShoppingCart();
+        //    _shoppingCart.PurchaseItem(item, expectedPrice, new ClientInfo());
+        //}
     }
 }

@@ -23,29 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="defaultValues.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>defaultValues.resx</DependentUpon>
-    </Compile>
-    <Compile Update="defaultValues.Release.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>defaultValues.Release.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <!--<EmbeddedResource Update="defaultValues.$(Configuration).resources">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>defaultValues.$(Configuration).Designer.cs</LastGenOutput>
-    </EmbeddedResource>-->
-    <EmbeddedResource Update="defaultValues.Release.resx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="testCases.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
