@@ -15,9 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Getting Started with Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GettingStartedAppiumAndroidMacCSharp", "GettingStartedAppiumAndroidMacCSharp\GettingStartedAppiumAndroidMacCSharp.csproj", "{F2DD1C3D-B1C2-427D-98A7-2EFDB844C1E0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Creating ADB Commands Library Appium CSharp", "04. Creating ADB Commands Library Appium CSharp", "{8A250BEC-9FAA-4EC1-ABA5-995DC6E6994D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Creating ADB Commands Library Appium CSharp", "05. Creating ADB Commands Library Appium CSharp", "{8A250BEC-9FAA-4EC1-ABA5-995DC6E6994D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdbCommandsLibraryAppium", "AdbCommandsLibraryAppium\AdbCommandsLibraryAppium.csproj", "{A87444CC-ED62-4D4D-989E-ECEB7833CC66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdbCommandsLibraryAppium", "AdbCommandsLibraryAppium\AdbCommandsLibraryAppium.csproj", "{A87444CC-ED62-4D4D-989E-ECEB7833CC66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Most Complete ADB Cheat Sheet", "04. Most Complete ADB Cheat Sheet", "{DC430288-B4A5-40B2-A7BE-FDC3746993B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
