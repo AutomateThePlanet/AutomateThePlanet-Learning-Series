@@ -72,17 +72,23 @@ namespace AdbCommandsLibraryAppium
         }
 
         [TestMethod]
-        public void PerformRandomShellCommand()
+        public void PerformRandomShellCommandAsJson()
         {
-            string result = _driver.ExecuteScript("mobile: shell", new AdbCommand("logcat").ToString()).ToString();
+            string result = _driver.ExecuteScript("mobile: shell", "{\"command\": \"dumpsys\", \"args\": [\"battery\", \"reset\"]}").ToString();
             Debug.WriteLine(result);
         }
 
         [TestMethod]
-        public void PerformShellCommandViaExntesionMethod()
+        public void PerformRandomShellCommand()
         {
-            string result = _driver.GetLogs();
+            string result = _driver.ExecuteScript("mobile: shell", new AdbCommand("dumpsys", "battery", "reset").ToString()).ToString();
             Debug.WriteLine(result);
+        }
+
+        [TestMethod]
+        public void PerformShellCommandViaExtensionMethod()
+        {
+            _driver.ResetBattery();
         }
     }
 }

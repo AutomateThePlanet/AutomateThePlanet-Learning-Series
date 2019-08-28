@@ -27,7 +27,7 @@ namespace AdbCommandsLibraryAppium
             ExecuteShellAdbCommand(androidDriver, $"dumpsys battery set level {level}");
         }
 
-        public static void ChangeBatteryReset(this AndroidDriver<AndroidElement> androidDriver)
+        public static void ResetBattery(this AndroidDriver<AndroidElement> androidDriver)
         {
            ExecuteShellAdbCommand(androidDriver, "adb shell dumpsys battery reset");
         }
