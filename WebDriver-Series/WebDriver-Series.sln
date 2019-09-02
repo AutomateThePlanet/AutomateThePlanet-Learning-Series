@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2010
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Getting Started with WebDriver CSharp in 10 Minutes", "01. Getting Started with WebDriver CSharp in 10 Minutes", "{72C5F509-1F8B-4DF4-B76A-1CBCF0B6E924}"
 	ProjectSection(SolutionItems) = preProject
@@ -177,6 +177,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "31. WebDriver- Capture and 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureModifyHttpTraffic", "CaptureModifyHttpTraffic\CaptureModifyHttpTraffic.csproj", "{6294F3D1-D272-4CAC-837F-92ED65451EFE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "32. Simple Factory Design Pattern- WebDriver Anonymous Browsing with Rotating Proxies", "32. Simple Factory Design Pattern- WebDriver Anonymous Browsing with Rotating Proxies", "{6B6A390A-181B-4D57-BDBF-6F38D2B89223}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleFactoryDesignPatternProxies", "FactoryDesignPatternProxies\SimpleFactoryDesignPatternProxies.csproj", "{C21594E1-D376-4DBB-8D3D-92C1E3D95D77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "33. Simple Factory Design Pattern- WebDriver Anonymous Browsing with Reverse Proxy", "33. Simple Factory Design Pattern- WebDriver Anonymous Browsing with Reverse Proxy", "{74682A3C-1D66-49E3-A2E6-CE3056DC64E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFactoryDesignPatternReverseProxy", "SimpleFactoryDesignPatternReverseProxy\SimpleFactoryDesignPatternReverseProxy.csproj", "{9456B000-3F1D-4E36-A05C-709A3CEF79A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -343,6 +351,14 @@ Global
 		{6294F3D1-D272-4CAC-837F-92ED65451EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6294F3D1-D272-4CAC-837F-92ED65451EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6294F3D1-D272-4CAC-837F-92ED65451EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C21594E1-D376-4DBB-8D3D-92C1E3D95D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C21594E1-D376-4DBB-8D3D-92C1E3D95D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C21594E1-D376-4DBB-8D3D-92C1E3D95D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C21594E1-D376-4DBB-8D3D-92C1E3D95D77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9456B000-3F1D-4E36-A05C-709A3CEF79A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9456B000-3F1D-4E36-A05C-709A3CEF79A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9456B000-3F1D-4E36-A05C-709A3CEF79A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9456B000-3F1D-4E36-A05C-709A3CEF79A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -399,6 +415,8 @@ Global
 		{2A828F78-FE22-4044-B6AB-CA5AED162D02} = {F6471DF7-D876-4BF0-9887-DA88E4903825}
 		{E1D0EC3D-96FB-43E8-9143-F8EF78882539} = {C1F07384-4D08-4DF1-9C6B-D5DA9223D8BE}
 		{6294F3D1-D272-4CAC-837F-92ED65451EFE} = {DE6B56FE-C905-47F5-AA8E-9EBB999988F8}
+		{C21594E1-D376-4DBB-8D3D-92C1E3D95D77} = {6B6A390A-181B-4D57-BDBF-6F38D2B89223}
+		{9456B000-3F1D-4E36-A05C-709A3CEF79A2} = {74682A3C-1D66-49E3-A2E6-CE3056DC64E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}
