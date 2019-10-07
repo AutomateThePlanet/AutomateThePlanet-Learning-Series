@@ -183,7 +183,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleFactoryDesignPatternP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "33. Simple Factory Design Pattern- WebDriver Anonymous Browsing with Reverse Proxy", "33. Simple Factory Design Pattern- WebDriver Anonymous Browsing with Reverse Proxy", "{74682A3C-1D66-49E3-A2E6-CE3056DC64E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFactoryDesignPatternReverseProxy", "SimpleFactoryDesignPatternReverseProxy\SimpleFactoryDesignPatternReverseProxy.csproj", "{9456B000-3F1D-4E36-A05C-709A3CEF79A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleFactoryDesignPatternReverseProxy", "SimpleFactoryDesignPatternReverseProxy\SimpleFactoryDesignPatternReverseProxy.csproj", "{9456B000-3F1D-4E36-A05C-709A3CEF79A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "34. Execute UI Tests in the Cloud- LambdaTest", "34. Execute UI Tests in the Cloud- LambdaTest", "{538E3095-91B8-4152-8535-BE6A74D319CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecuteUiTestsLambdaTest", "ExecuteUiTestsLambdaTest\ExecuteUiTestsLambdaTest.csproj", "{58701ED4-08EC-4825-A8EA-BC6828C3D618}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -359,6 +363,10 @@ Global
 		{9456B000-3F1D-4E36-A05C-709A3CEF79A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9456B000-3F1D-4E36-A05C-709A3CEF79A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9456B000-3F1D-4E36-A05C-709A3CEF79A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58701ED4-08EC-4825-A8EA-BC6828C3D618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58701ED4-08EC-4825-A8EA-BC6828C3D618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58701ED4-08EC-4825-A8EA-BC6828C3D618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58701ED4-08EC-4825-A8EA-BC6828C3D618}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -417,6 +425,7 @@ Global
 		{6294F3D1-D272-4CAC-837F-92ED65451EFE} = {DE6B56FE-C905-47F5-AA8E-9EBB999988F8}
 		{C21594E1-D376-4DBB-8D3D-92C1E3D95D77} = {6B6A390A-181B-4D57-BDBF-6F38D2B89223}
 		{9456B000-3F1D-4E36-A05C-709A3CEF79A2} = {74682A3C-1D66-49E3-A2E6-CE3056DC64E6}
+		{58701ED4-08EC-4825-A8EA-BC6828C3D618} = {538E3095-91B8-4152-8535-BE6A74D319CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}

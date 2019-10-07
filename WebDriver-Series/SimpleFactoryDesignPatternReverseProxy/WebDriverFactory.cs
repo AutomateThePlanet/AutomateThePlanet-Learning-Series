@@ -45,7 +45,7 @@ namespace SimpleFactoryDesignPatternReverseProxy
             _proxyServer.UpStreamHttpProxy = new ExternalProxy { HostName = ProxyService.CurrentProxyIpHost, Port = ProxyService.CurrentProxyIpPort };
             _proxyServer.UpStreamHttpsProxy = new ExternalProxy { HostName = ProxyService.CurrentProxyIpHost, Port = ProxyService.CurrentProxyIpPort };
 
-            var proxyChangerTimer = new System.Timers.Timer();
+            var proxyChangerTimer = new Timer();
             proxyChangerTimer.Elapsed += ChangeProxyEventHandler;
             proxyChangerTimer.Interval = SecondsToRefreshProxy * 1000;
             proxyChangerTimer.Enabled = true;
