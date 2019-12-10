@@ -1,0 +1,6 @@
+﻿{
+  "machineAutomationSettings": {
+    "isEnabled": "true",
+    "packagesToBeInstalled": [ "firefox --version=65.0.2", "https-everywhere-firefox", "opera" ]
+  }
+}

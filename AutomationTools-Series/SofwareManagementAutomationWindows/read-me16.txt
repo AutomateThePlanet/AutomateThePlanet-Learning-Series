@@ -1,0 +1,3 @@
+﻿Article: Software Management Automation in Automated Testing Windows
+URL:  http://automatetheplanet.com/software-management-automation-windows
+Publish Date: 11.12.2019
