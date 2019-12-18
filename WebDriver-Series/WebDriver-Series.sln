@@ -187,7 +187,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleFactoryDesignPatternR
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "34. Execute UI Tests in the Cloud- LambdaTest", "34. Execute UI Tests in the Cloud- LambdaTest", "{538E3095-91B8-4152-8535-BE6A74D319CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecuteUiTestsLambdaTest", "ExecuteUiTestsLambdaTest\ExecuteUiTestsLambdaTest.csproj", "{58701ED4-08EC-4825-A8EA-BC6828C3D618}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExecuteUiTestsLambdaTest", "ExecuteUiTestsLambdaTest\ExecuteUiTestsLambdaTest.csproj", "{58701ED4-08EC-4825-A8EA-BC6828C3D618}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "35. Execute Selenium WebDriver Tests in Docker Using Selenoid", "35. Execute Selenium WebDriver Tests in Docker Using Selenoid", "{4FF0F4BC-A545-4B5F-8CD7-7DD210C344C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriverTestsDockerSelenoid", "WebDriverTestsDockerSelenoid\WebDriverTestsDockerSelenoid.csproj", "{13963CDC-07AA-49EA-A5AD-3A795A3BD0B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -367,6 +371,10 @@ Global
 		{58701ED4-08EC-4825-A8EA-BC6828C3D618}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58701ED4-08EC-4825-A8EA-BC6828C3D618}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58701ED4-08EC-4825-A8EA-BC6828C3D618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13963CDC-07AA-49EA-A5AD-3A795A3BD0B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13963CDC-07AA-49EA-A5AD-3A795A3BD0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13963CDC-07AA-49EA-A5AD-3A795A3BD0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13963CDC-07AA-49EA-A5AD-3A795A3BD0B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -426,6 +434,7 @@ Global
 		{C21594E1-D376-4DBB-8D3D-92C1E3D95D77} = {6B6A390A-181B-4D57-BDBF-6F38D2B89223}
 		{9456B000-3F1D-4E36-A05C-709A3CEF79A2} = {74682A3C-1D66-49E3-A2E6-CE3056DC64E6}
 		{58701ED4-08EC-4825-A8EA-BC6828C3D618} = {538E3095-91B8-4152-8535-BE6A74D319CE}
+		{13963CDC-07AA-49EA-A5AD-3A795A3BD0B7} = {4FF0F4BC-A545-4B5F-8CD7-7DD210C344C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}
