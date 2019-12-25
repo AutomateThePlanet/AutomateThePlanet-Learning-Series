@@ -1,23 +1,33 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿// <copyright file="BenchmarkSelectProvider.cs" company="Automate The Planet Ltd.">
+// Copyright 2020 Automate The Planet Ltd.
+// Licensed under the Royalty-free End-user License Agreement, Version 1.0 (the "License");
+// You may not use this file except in compliance with the License.
+// You may obtain a copy of the License at http://bellatrix.solutions/licensing-royalty-free/
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+// </copyright>
+// <author>Anton Angelov</author>
+// <site>https://bellatrix.solutions/</site>
+
+using BenchmarkDotNet.Attributes;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
-using System.IO;
-using System.Reflection;
 
 namespace BenchmarkingAutomatedTesting
 {
     public class BenchmarkSelectProvider
     {
+        private const string TestPage = "http://htmlpreview.github.io/?https://github.com/angelovstanton/AutomateThePlanet/blob/master/WebDriver-Series/TestPage.html";
         private static IWebDriver _driver;
-        private static readonly string AssemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
         [GlobalSetup]
         public void GlobalSetup()
         {
-            ////string currentDir = Environment.CurrentDirectory;
-            ////string[] files = Directory.GetFiles(currentDir, "chromedriver.exe", SearchOption.AllDirectories);
-            _driver = new ChromeDriver(@"D:\SourceCode\AutomateThePlanet-Blog\AutomationTools-Series\BenchmarkingAutomatedTesting\bin\Release\netcoreapp3.1");
+            _driver = new ChromeDriver(DriverExecutablePathResolver.GetDriverExecutablePath());
         }
 
         [GlobalCleanup]
@@ -29,8 +39,7 @@ namespace BenchmarkingAutomatedTesting
         [Benchmark(Baseline = true)]
         public void BenchmarkSelectElementSelect()
         {
-            string testPagePath = "http://htmlpreview.github.io/?https://github.com/angelovstanton/AutomateThePlanet/blob/master/WebDriver-Series/TestPage.html";
-            _driver.Navigate().GoToUrl(testPagePath);
+            _driver.Navigate().GoToUrl(TestPage);
             var selects = _driver.FindElements(By.TagName("select"));
             foreach (var select in selects)
             {
@@ -42,8 +51,7 @@ namespace BenchmarkingAutomatedTesting
         [Benchmark]
         public void BenchmarkCustomSelect()
         {
-            string testPagePath = "http://htmlpreview.github.io/?https://github.com/angelovstanton/AutomateThePlanet/blob/master/WebDriver-Series/TestPage.html";
-            _driver.Navigate().GoToUrl(testPagePath);
+            _driver.Navigate().GoToUrl(TestPage);
             var selects = _driver.FindElements(By.TagName("select"));
             foreach (var select in selects)
             {
