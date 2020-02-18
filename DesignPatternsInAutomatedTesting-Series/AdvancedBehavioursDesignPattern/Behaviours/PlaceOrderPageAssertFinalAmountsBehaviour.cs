@@ -15,7 +15,7 @@
 using AdvancedBehavioursDesignPattern.Base;
 using AdvancedBehavioursDesignPattern.Behaviours.Core;
 using AdvancedBehavioursDesignPattern.Pages.PlaceOrderPage;
-using Microsoft.Practices.Unity;
+using Unity;
 
 namespace AdvancedBehavioursDesignPattern.Behaviours
 {

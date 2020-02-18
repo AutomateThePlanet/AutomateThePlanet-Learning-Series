@@ -22,9 +22,10 @@ using AdvancedBehavioursDesignPattern.Pages.PreviewShoppingCartPage;
 using AdvancedBehavioursDesignPattern.Pages.ShippingAddressPage;
 using AdvancedBehavioursDesignPattern.Pages.ShippingPaymentPage;
 using AdvancedBehavioursDesignPattern.Pages.SignInPage;
-using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using Unity;
+using Unity.Lifetime;
 
 namespace AdvancedBehavioursDesignPattern
 {

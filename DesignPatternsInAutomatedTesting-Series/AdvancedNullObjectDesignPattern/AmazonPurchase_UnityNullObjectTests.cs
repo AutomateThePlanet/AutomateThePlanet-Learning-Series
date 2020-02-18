@@ -22,9 +22,10 @@ using AdvancedNullObjectDesignPattern.Pages.ShippingAddressPage;
 using AdvancedNullObjectDesignPattern.Pages.ShippingPaymentPage;
 using AdvancedNullObjectDesignPattern.Pages.SignInPage;
 using AdvancedNullObjectDesignPattern.SingletonStrategies;
-using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using Unity;
+using Unity.Lifetime;
 
 namespace AdvancedNullObjectDesignPattern
 {

@@ -42,7 +42,7 @@ namespace TemplateMethodDesignPattern.Base.Second
             var signInPage = new SignInPage(_driver);
             var checkoutPage = new CheckoutPage(_driver);
             var shippingAddressPage = new ShippingAddressPage(_driver);
-            var oldShoppingCart = new NewShoppingCart(itemPage, signInPage, checkoutPage, shippingAddressPage);
+            var oldShoppingCart = new OldShoppingCart(itemPage, signInPage, checkoutPage, shippingAddressPage);
             return oldShoppingCart;
         }
     }

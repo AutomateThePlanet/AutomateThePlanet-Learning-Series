@@ -14,7 +14,7 @@
 
 using AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core;
 using AdvancedBehavioursDesignPatternPartTwo.Pages.ItemPage;
-using Microsoft.Practices.Unity;
+using Unity;
 
 namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {

@@ -17,7 +17,7 @@ using AdvancedBehavioursDesignPattern.Base;
 using AdvancedBehavioursDesignPattern.Behaviours.Core;
 using AdvancedBehavioursDesignPattern.Pages.ShippingAddressPage;
 using AdvancedBehavioursDesignPattern.Pages.SignInPage;
-using Microsoft.Practices.Unity;
+using Unity;
 using AdvancedBehavioursDesignPattern.Data;
 
 namespace AdvancedBehavioursDesignPattern.Behaviours

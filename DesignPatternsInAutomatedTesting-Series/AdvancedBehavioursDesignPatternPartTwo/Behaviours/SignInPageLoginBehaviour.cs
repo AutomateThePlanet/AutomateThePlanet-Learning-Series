@@ -15,7 +15,7 @@
 using System;
 using AdvancedBehavioursDesignPatternPartTwo.Pages.ShippingAddressPage;
 using AdvancedBehavioursDesignPatternPartTwo.Pages.SignInPage;
-using Microsoft.Practices.Unity;
+using Unity;
 
 namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {

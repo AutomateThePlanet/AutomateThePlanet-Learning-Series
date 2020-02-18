@@ -14,7 +14,7 @@
 
 using AdvancedBehavioursDesignPatternPartTwo.Pages.PreviewShoppingCartPage;
 using AdvancedBehavioursDesignPatternPartTwo.Pages.SignInPage;
-using Microsoft.Practices.Unity;
+using Unity;
 
 namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {

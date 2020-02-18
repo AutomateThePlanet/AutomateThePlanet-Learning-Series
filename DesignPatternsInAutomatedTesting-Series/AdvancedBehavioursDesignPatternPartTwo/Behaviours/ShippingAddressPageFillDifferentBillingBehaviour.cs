@@ -15,7 +15,7 @@
 using AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core;
 using AdvancedBehavioursDesignPatternPartTwo.Pages.ShippingAddressPage;
 using AdvancedBehavioursDesignPatternPartTwo.Pages.ShippingPaymentPage;
-using Microsoft.Practices.Unity;
+using Unity;
 
 namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {

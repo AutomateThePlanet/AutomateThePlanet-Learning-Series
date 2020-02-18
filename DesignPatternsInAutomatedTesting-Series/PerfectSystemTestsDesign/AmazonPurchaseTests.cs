@@ -11,7 +11,7 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-using Microsoft.Practices.Unity;
+using Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using PerfectSystemTestsDesign.Base;
@@ -24,6 +24,7 @@ using PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage;
 using PerfectSystemTestsDesign.Pages.ShippingAddressPage;
 using PerfectSystemTestsDesign.Pages.ShippingPaymentPage;
 using PerfectSystemTestsDesign.Pages.SignInPage;
+using Unity.Lifetime;
 
 namespace PerfectSystemTestsDesign
 {

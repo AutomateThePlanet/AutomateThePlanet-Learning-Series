@@ -13,7 +13,7 @@
 // <site>http://automatetheplanet.com/</site>
 
 using AdvancedBehavioursDesignPatternPartTwo.Pages.PlaceOrderPage;
-using Microsoft.Practices.Unity;
+using Unity;
 
 namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {

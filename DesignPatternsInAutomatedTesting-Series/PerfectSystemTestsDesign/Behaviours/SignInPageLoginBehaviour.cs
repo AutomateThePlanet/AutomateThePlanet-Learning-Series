@@ -12,7 +12,7 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 using System;
-using Microsoft.Practices.Unity;
+using Unity;
 using PerfectSystemTestsDesign.Pages.ShippingAddressPage;
 using PerfectSystemTestsDesign.Pages.SignInPage;
 

@@ -13,7 +13,8 @@
 // <site>http://automatetheplanet.com/</site>
 
 using AdvancedBehavioursDesignPatternPartTwo.Base;
-using Microsoft.Practices.Unity;
+using Unity;
+using Unity.Resolution;
 
 namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core
 {

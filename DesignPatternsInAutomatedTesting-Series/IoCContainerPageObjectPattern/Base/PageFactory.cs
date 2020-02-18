@@ -13,8 +13,8 @@
 // <site>http://automatetheplanet.com/</site>
 
 using System.Configuration;
-using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
+using Unity;
 
 namespace IoCContainerPageObjectPattern.Base
 {
