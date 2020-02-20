@@ -18,12 +18,8 @@ namespace AdapterDesignPattern
     {
         By By { get; }
         string Text { get; }
-        bool? Enabled { get; }
-        bool? Displayed { get; }
         void TypeText(string text);
         IElement FindElement(By locator);
         void Click();
-        string GetAttribute(string attributeName);
-        void WaitToExists();
     }
 }

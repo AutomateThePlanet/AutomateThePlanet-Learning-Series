@@ -16,7 +16,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace AdapterDesignPattern
 {
-     [TestClass]
+    [TestClass]
     public class ProductPurchaseTestsAdapter
     {
         private IDriver _driver;

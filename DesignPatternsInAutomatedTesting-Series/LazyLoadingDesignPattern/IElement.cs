@@ -22,8 +22,7 @@ namespace LazyLoadingDesignPattern
         bool? Displayed { get; }
         void TypeText(string text);
         IElement CreateElement(By locator);
+        IElementsList CreateElements(By locator);
         void Click();
-        string GetAttribute(string attributeName);
-        void WaitToExists();
     }
 }

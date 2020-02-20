@@ -19,7 +19,6 @@ namespace LazyLoadingDesignPattern
     public class DriverAdapter : IDriver
     {
         private readonly IWebDriver _driver;
-       
 
         public DriverAdapter(IWebDriver driver)
         {

@@ -21,20 +21,18 @@ namespace LazyLoadingDesignPattern
     public class ElementAdapter : IElement
     {
         private readonly IWebDriver _driver;
-        private readonly WebDriverWait _webDriverWait;
+        private readonly ElementFinderService _elementFinder;
 
-        public ElementAdapter(IWebDriver webDriver, By by)
+        public ElementAdapter(IWebDriver driver, By by)
         {
-            _driver = webDriver;
+            _driver = driver;
             By = by;
-            var timeout = TimeSpan.FromSeconds(30);
-            var sleepInterval = TimeSpan.FromSeconds(2);
-            _webDriverWait = new WebDriverWait(new SystemClock(), _driver, timeout, sleepInterval);
+            _elementFinder = new ElementFinderService(driver);
         }
 
         public IWebElement NativeWebElement
         {
-            get => FindElement(By);
+            get => _elementFinder.Find(By);
         }
 
         public By By { get; }
@@ -61,11 +59,6 @@ namespace LazyLoadingDesignPattern
             return new ElementsList(_driver, locator);
         }
 
-        public string GetAttribute(string attributeName)
-        {
-            return FindElement(By)?.GetAttribute(attributeName);
-        }
-
         public void TypeText(string text)
         {
             var webElement = NativeWebElement;
@@ -73,26 +66,10 @@ namespace LazyLoadingDesignPattern
             webElement?.SendKeys(text);
         }
 
-        public void WaitToExists()
-        {
-            var webDriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
-            webDriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By));
-        }
-
         private void WaitToBeClickable(By by)
         {
             var webDriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
             webDriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(by));
-        }
-
-        private IWebElement FindElement(By locator)
-        {
-            return _webDriverWait.Until(ExpectedConditions.ElementExists(locator));
-        }
-
-        private ReadOnlyCollection<IWebElement> FindElements(By locator)
-        {
-            return _webDriverWait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(locator));
         }
     }
 }

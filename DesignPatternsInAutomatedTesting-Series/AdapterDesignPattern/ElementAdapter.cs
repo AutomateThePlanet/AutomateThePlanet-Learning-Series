@@ -47,21 +47,10 @@ namespace AdapterDesignPattern
             return new ElementAdapter(_webDriver, _webElement?.FindElement(locator), locator);
         }
 
-        public string GetAttribute(string attributeName)
-        {
-            return _webElement?.GetAttribute(attributeName);
-        }
-
         public void TypeText(string text)
         {
             _webElement?.Clear();
             _webElement?.SendKeys(text);
-        }
-
-        public void WaitToExists()
-        {
-            var webDriverWait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(30));
-            webDriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By));
         }
 
         private void WaitToBeClickable(By by)

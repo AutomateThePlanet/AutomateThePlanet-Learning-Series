@@ -39,7 +39,6 @@ namespace ProxyDesignPattern
         public ReadOnlyCollection<IWebElement> FindElements(By @by)
         {
             return _webDriverWait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(@by));
-
         }
 
         public void Dispose()

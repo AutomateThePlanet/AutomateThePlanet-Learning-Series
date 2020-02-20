@@ -39,12 +39,7 @@ namespace CompositeDesignPattern
             _driver.GoToUrl("http://demos.bellatrix.solutions/");
 
             var addToCartButtons = _driver.CreateElements(By.XPath("//a[contains(text(),'Add to cart')]"));
-            var falcon0AddToCartButton = _driver.Create(By.CssSelector("[data-product_id*='28']"));
 
-            falcon0AddToCartButton.AssertFontSize("14px");
-            falcon0AddToCartButton.AssertFontWeight("600");
-
-            // no composite
             foreach (var addToCartButton in addToCartButtons)
             {
                 addToCartButton.AssertFontSize("14px");
@@ -57,6 +52,17 @@ namespace CompositeDesignPattern
             // composite ElementList
             addToCartButtons.AssertFontSize("14px");
             addToCartButtons.AssertFontWeight("600");
+        }
+
+        [TestMethod]
+        public void VerifyStylesOfAddToCartButton()
+        {
+            _driver.GoToUrl("http://demos.bellatrix.solutions/");
+
+            var falcon0AddToCartButton = _driver.Create(By.CssSelector("[data-product_id*='28']"));
+
+            falcon0AddToCartButton.AssertFontSize("14px");
+            falcon0AddToCartButton.AssertFontWeight("600");
         }
     }
 }

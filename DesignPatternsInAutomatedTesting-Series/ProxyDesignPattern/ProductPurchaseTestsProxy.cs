@@ -17,7 +17,7 @@ using System.Threading;
 
 namespace ProxyDesignPattern
 {
-     [TestClass]
+    [TestClass]
     public class ProductPurchaseTestsProxy
     {
         private IWebDriver _driver;

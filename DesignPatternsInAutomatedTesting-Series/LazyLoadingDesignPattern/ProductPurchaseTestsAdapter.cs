@@ -16,7 +16,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace LazyLoadingDesignPattern
 {
-     [TestClass]
+    [TestClass]
     public class ProductPurchaseTestsAdapter
     {
         private IDriver _driver;
