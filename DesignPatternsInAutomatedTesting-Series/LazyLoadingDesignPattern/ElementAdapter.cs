@@ -11,10 +11,8 @@
 // </copyright>
 // <author>Anton Angelov</author>
 using System;
-using System.Collections.ObjectModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
 
 namespace LazyLoadingDesignPattern
 {

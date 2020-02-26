@@ -42,10 +42,6 @@ namespace CompositeDesignPattern
 
         public string Text => NativeWebElement?.Text;
 
-        public bool? Enabled => NativeWebElement?.Enabled;
-
-        public bool? Displayed => NativeWebElement?.Displayed;
-
         public void Click()
         {
             WaitToBeClickable(By);
@@ -62,27 +58,11 @@ namespace CompositeDesignPattern
             return new ElementsList(_driver, locator);
         }
 
-        public string GetAttribute(string attributeName)
-        {
-            return FindElement(By)?.GetAttribute(attributeName);
-        }
-
         public void TypeText(string text)
         {
             var webElement = NativeWebElement;
             webElement?.Clear();
             webElement?.SendKeys(text);
-        }
-
-        public void WaitToExists()
-        {
-            var webDriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
-            webDriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By));
-        }
-
-        public string GetCssValue(string propertyName)
-        {
-            return NativeWebElement.GetCssValue(propertyName);
         }
 
         public void AssertBackgroundColor(string expectedBackgroundColor)

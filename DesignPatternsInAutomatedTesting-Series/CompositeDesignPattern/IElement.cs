@@ -18,13 +18,8 @@ namespace CompositeDesignPattern
     {
         By By { get; }
         string Text { get; }
-        bool? Enabled { get; }
-        bool? Displayed { get; }
         void TypeText(string text);
         IElement CreateElement(By locator);
         void Click();
-        string GetAttribute(string attributeName);
-        void WaitToExists();
-        string GetCssValue(string propertyName);
     }
 }

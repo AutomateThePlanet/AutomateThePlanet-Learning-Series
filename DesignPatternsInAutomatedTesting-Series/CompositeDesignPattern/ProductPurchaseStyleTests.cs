@@ -34,7 +34,18 @@ namespace CompositeDesignPattern
         }
 
         [TestMethod]
-        public void VerifyStylesOfAddToCartButtons()
+        public void VerifyStylesOfAddToCartButton()
+        {
+            _driver.GoToUrl("http://demos.bellatrix.solutions/");
+
+            var falcon0AddToCartButton = _driver.Create(By.CssSelector("[data-product_id*='28']"));
+
+            falcon0AddToCartButton.AssertFontSize("14px");
+            falcon0AddToCartButton.AssertFontWeight("600");
+        }
+
+        [TestMethod]
+        public void VerifyStylesOfAddToCartButtons_Version1()
         {
             _driver.GoToUrl("http://demos.bellatrix.solutions/");
 
@@ -45,24 +56,28 @@ namespace CompositeDesignPattern
                 addToCartButton.AssertFontSize("14px");
                 addToCartButton.AssertFontWeight("600");
             }
-
-            addToCartButtons.ForEach(e => e.AssertFontSize("14px"));
-            addToCartButtons.ForEach(e => e.AssertFontWeight("600"));
-
-            // composite ElementList
-            addToCartButtons.AssertFontSize("14px");
-            addToCartButtons.AssertFontWeight("600");
         }
 
         [TestMethod]
-        public void VerifyStylesOfAddToCartButton()
+        public void VerifyStylesOfAddToCartButtons_Version2()
         {
             _driver.GoToUrl("http://demos.bellatrix.solutions/");
 
-            var falcon0AddToCartButton = _driver.Create(By.CssSelector("[data-product_id*='28']"));
+            var addToCartButtons = _driver.CreateElements(By.XPath("//a[contains(text(),'Add to cart')]"));
 
-            falcon0AddToCartButton.AssertFontSize("14px");
-            falcon0AddToCartButton.AssertFontWeight("600");
+            addToCartButtons.ForEach(e => e.AssertFontSize("14px"));
+            addToCartButtons.ForEach(e => e.AssertFontWeight("600"));
+        }
+
+        [TestMethod]
+        public void VerifyStylesOfAddToCartButtons_Version3()
+        {
+            _driver.GoToUrl("http://demos.bellatrix.solutions/");
+
+            var addToCartButtons = _driver.CreateElements(By.XPath("//a[contains(text(),'Add to cart')]"));
+
+            addToCartButtons.AssertFontSize("14px");
+            addToCartButtons.AssertFontWeight("600");
         }
     }
 }
