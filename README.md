@@ -30,4 +30,5 @@ This way, you will have a **bookmark for easier access** and you will **show app
 Under each folder, you will find a separate solution file. Every article from the series has its folder and an info file. To run the examples from particular series you need only its folder.
 
 ![](https://github.com/angelovstanton/AutomateThePlanet/blob/master/series-folder-explanation.png)
-POWERED BY [<img src="https://github.com/angelovstanton/AutomateThePlanet/blob/master/jetbrains-variant-4.png">](https://www.jetbrains.com/?from=AutomateThePlanet)
+
+POWERED BY [<img src="https://github.com/angelovstanton/AutomateThePlanet/blob/master/jetbrains-variant-4.png">](https://www.jetbrains.com/?from=AutomateThePlanet | width=100)
