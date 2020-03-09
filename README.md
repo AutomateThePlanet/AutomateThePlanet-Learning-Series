@@ -31,4 +31,4 @@ Under each folder, you will find a separate solution file. Every article from th
 
 ![](https://github.com/angelovstanton/AutomateThePlanet/blob/master/series-folder-explanation.png)
 
-POWERED BY [<img src="https://github.com/angelovstanton/AutomateThePlanet/blob/master/jetbrains-variant-4.png" width="200" height="200">](https://www.jetbrains.com/?from=AutomateThePlanet)
+POWERED BY [<img src="https://github.com/angelovstanton/AutomateThePlanet/blob/master/jetbrains-variant-4.png" width="160" height="140">](https://www.jetbrains.com/?from=AutomateThePlanet)
