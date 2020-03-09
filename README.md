@@ -1,4 +1,4 @@
-![](https://github.com/angelovstanton/AutomateThePlanet/blob/master/automate-the-planet.jpg)
+![](https://github.com/angelovstanton/AutomateThePlanet/blob/master/github-atp-new-logo.jpg)
 
 Hi guys,
 
