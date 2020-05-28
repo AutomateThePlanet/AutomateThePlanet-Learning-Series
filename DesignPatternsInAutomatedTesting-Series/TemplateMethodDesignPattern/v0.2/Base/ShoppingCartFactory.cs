@@ -1,5 +1,5 @@
 ﻿// <copyright file="ShoppingCartFactory.cs" company="Automate The Planet Ltd.">
-// Copyright 2019 Automate The Planet Ltd.
+// Copyright 2020 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -42,7 +42,7 @@ namespace TemplateMethodDesignPattern.Base.Second
             var signInPage = new SignInPage(_driver);
             var checkoutPage = new CheckoutPage(_driver);
             var shippingAddressPage = new ShippingAddressPage(_driver);
-            var oldShoppingCart = new NewShoppingCart(itemPage, signInPage, checkoutPage, shippingAddressPage);
+            var oldShoppingCart = new OldShoppingCart(itemPage, signInPage, checkoutPage, shippingAddressPage);
             return oldShoppingCart;
         }
     }

@@ -1,5 +1,5 @@
 ﻿// <copyright file="AmazonPurchaseTests.cs" company="Automate The Planet Ltd.">
-// Copyright 2019 Automate The Planet Ltd.
+// Copyright 2020 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -21,9 +21,10 @@ using AdvancedBehavioursDesignPatternPartTwo.Pages.PreviewShoppingCartPage;
 using AdvancedBehavioursDesignPatternPartTwo.Pages.ShippingAddressPage;
 using AdvancedBehavioursDesignPatternPartTwo.Pages.ShippingPaymentPage;
 using AdvancedBehavioursDesignPatternPartTwo.Pages.SignInPage;
-using Microsoft.Practices.Unity;
+using Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using Unity.Lifetime;
 
 namespace AdvancedBehavioursDesignPatternPartTwo
 {

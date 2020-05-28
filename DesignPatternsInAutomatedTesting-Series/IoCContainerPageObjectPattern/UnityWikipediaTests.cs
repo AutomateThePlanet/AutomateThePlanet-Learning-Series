@@ -1,5 +1,5 @@
 ﻿// <copyright file="UnityWikipediaTests.cs" company="Automate The Planet Ltd.">
-// Copyright 2019 Automate The Planet Ltd.
+// Copyright 2020 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -14,9 +14,10 @@
 using System.Configuration;
 using IoCContainerPageObjectPattern.Core;
 using IoCContainerPageObjectPattern.WikipediaMainPage;
-using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
+using Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Unity.Lifetime;
 
 namespace IoCContainerPageObjectPattern
 {

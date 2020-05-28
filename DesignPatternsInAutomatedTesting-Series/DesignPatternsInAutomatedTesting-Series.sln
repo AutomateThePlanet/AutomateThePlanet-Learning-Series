@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "PatternsInAutomation.Diagrams", "ModelingProject\PatternsInAutomation.Diagrams.modelproj", "{FCA718C0-DE23-40B4-832B-4F67C176ECD6}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Page Object Pattern", "1. Page Object Pattern", "{3194CD1C-2DE7-405A-B71B-4D1169FB771B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Advanced Page Object Pattern", "2. Advanced Page Object Pattern", "{2072D630-717C-4CE2-AFBF-C2477BC62B09}"
@@ -111,7 +109,43 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "24. Template Method Design Pattern", "24. Template Method Design Pattern", "{B7008ECC-8772-4C32-8E30-B43FCA2A90BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethodDesignPattern", "TemplateMethodDesignPattern\TemplateMethodDesignPattern.csproj", "{102C4312-66F0-4B2D-830F-E2308675BF82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMethodDesignPattern", "TemplateMethodDesignPattern\TemplateMethodDesignPattern.csproj", "{102C4312-66F0-4B2D-830F-E2308675BF82}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "25. Proxy Design Pattern", "25. Proxy Design Pattern", "{3F5C2E6E-D668-405E-A63F-0C823DFF0A59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "27. Lazy Loading Design Pattern", "27. Lazy Loading Design Pattern", "{1BA858DC-E22B-4423-992D-B3A0C3B555F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "26. Adapter Design Pattern", "26. Adapter Design Pattern", "{D76E2063-FE2F-4F67-AD2F-1E6E413DA4B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "28. Composite Design Pattern", "28. Composite Design Pattern", "{1F7ECA3A-16B2-42D7-A850-C971381B50EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "29. Event Aggregator Design Pattern", "29. Event Aggregator Design Pattern", "{78FF4A54-AF92-4D9A-8741-9AE4687EF666}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30. Assembler Design Pattern", "30. Assembler Design Pattern", "{16CCD105-1AED-4978-9983-B68AC768C0A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "31. Object Pool Design Pattern", "31. Object Pool Design Pattern", "{0BCDA7BA-CD05-4E19-A207-C2B39851682B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "32. Simple Factory Design Pattern", "32. Simple Factory Design Pattern", "{2B9EB48C-735D-43F8-88DC-837929B21834}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "33. Factory Method Design Pattern", "33. Factory Method Design Pattern", "{F52079BE-74FB-40AA-BF21-457D64422A2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "34. Abstract Factory Design Pattern", "34. Abstract Factory Design Pattern", "{13C0B522-E9F3-42ED-851C-C66C4B6222A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "35. Builder Design Pattern", "35. Builder Design Pattern", "{588B210E-8538-40A6-AF3B-CB4AF9EC41B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "36. Prototype Design Pattern", "36. Prototype Design Pattern", "{3A31ACDB-829D-48D5-AC41-84CD42B9AF27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "37. Memento Design Pattern", "37. Memento Design Pattern", "{05CE1E8F-ED06-472B-BA24-E0EF8C12E145}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "38. Service Locator Design Pattern", "38. Service Locator Design Pattern", "{F1F1A267-2C1F-49E2-AF14-38BBEB638F3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyDesignPattern", "ProxyDesignPattern\ProxyDesignPattern.csproj", "{F99C5996-FFCE-43E5-9F9C-E10F624DABA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdapterDesignPattern", "AdapterDesignPattern\AdapterDesignPattern.csproj", "{D0E21FE9-0DA2-4680-9FF3-284A5204E517}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LazyLoadingDesignPattern", "LazyLoadingDesignPattern\LazyLoadingDesignPattern.csproj", "{9A758A4A-10D3-4035-A9D4-FC39A6DE05D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompositeDesignPattern", "CompositeDesignPattern\CompositeDesignPattern.csproj", "{A23956C3-AE29-42D8-B557-C2E73156227C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,10 +153,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FCA718C0-DE23-40B4-832B-4F67C176ECD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCA718C0-DE23-40B4-832B-4F67C176ECD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCA718C0-DE23-40B4-832B-4F67C176ECD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCA718C0-DE23-40B4-832B-4F67C176ECD6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E2DAC66D-8902-44E7-B58A-F6F36F10E7F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E2DAC66D-8902-44E7-B58A-F6F36F10E7F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2DAC66D-8902-44E7-B58A-F6F36F10E7F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -223,6 +253,22 @@ Global
 		{102C4312-66F0-4B2D-830F-E2308675BF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{102C4312-66F0-4B2D-830F-E2308675BF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{102C4312-66F0-4B2D-830F-E2308675BF82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F99C5996-FFCE-43E5-9F9C-E10F624DABA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F99C5996-FFCE-43E5-9F9C-E10F624DABA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F99C5996-FFCE-43E5-9F9C-E10F624DABA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F99C5996-FFCE-43E5-9F9C-E10F624DABA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0E21FE9-0DA2-4680-9FF3-284A5204E517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0E21FE9-0DA2-4680-9FF3-284A5204E517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0E21FE9-0DA2-4680-9FF3-284A5204E517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0E21FE9-0DA2-4680-9FF3-284A5204E517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A758A4A-10D3-4035-A9D4-FC39A6DE05D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A758A4A-10D3-4035-A9D4-FC39A6DE05D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A758A4A-10D3-4035-A9D4-FC39A6DE05D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A758A4A-10D3-4035-A9D4-FC39A6DE05D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A23956C3-AE29-42D8-B557-C2E73156227C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A23956C3-AE29-42D8-B557-C2E73156227C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A23956C3-AE29-42D8-B557-C2E73156227C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A23956C3-AE29-42D8-B557-C2E73156227C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -253,6 +299,10 @@ Global
 		{9A0A60B4-AE87-4424-AD23-1BB732C014B5} = {BBFDF962-CEE1-4DAE-AFD1-AC47BD289614}
 		{ADE75661-42DB-4A1E-8D65-34EFE360F620} = {F3BE854E-642D-4B99-AABC-BAFBABD57115}
 		{102C4312-66F0-4B2D-830F-E2308675BF82} = {B7008ECC-8772-4C32-8E30-B43FCA2A90BA}
+		{F99C5996-FFCE-43E5-9F9C-E10F624DABA2} = {3F5C2E6E-D668-405E-A63F-0C823DFF0A59}
+		{D0E21FE9-0DA2-4680-9FF3-284A5204E517} = {D76E2063-FE2F-4F67-AD2F-1E6E413DA4B6}
+		{9A758A4A-10D3-4035-A9D4-FC39A6DE05D6} = {1BA858DC-E22B-4423-992D-B3A0C3B555F1}
+		{A23956C3-AE29-42D8-B557-C2E73156227C} = {1F7ECA3A-16B2-42D7-A850-C971381B50EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCC0E615-49DE-48CB-ACBD-6246D95C74E9}
