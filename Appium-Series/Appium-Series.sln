@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdbCommandsLibraryAppium", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Most Complete ADB Cheat Sheet", "04. Most Complete ADB Cheat Sheet", "{DC430288-B4A5-40B2-A7BE-FDC3746993B9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06. Execute Android Appium Tests in Docker Containers Using Selenoid", "06. Execute Android Appium Tests in Docker Containers Using Selenoid", "{797DE126-B1D8-4E2D-8BEF-7734672C4C2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExecuteAndroidAppiumDocker", "ExecuteAndroidAppiumDocker\ExecuteAndroidAppiumDocker.csproj", "{E529DE85-F7C6-4430-902C-B6934DC8264A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,10 @@ Global
 		{A87444CC-ED62-4D4D-989E-ECEB7833CC66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A87444CC-ED62-4D4D-989E-ECEB7833CC66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A87444CC-ED62-4D4D-989E-ECEB7833CC66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E529DE85-F7C6-4430-902C-B6934DC8264A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E529DE85-F7C6-4430-902C-B6934DC8264A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E529DE85-F7C6-4430-902C-B6934DC8264A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E529DE85-F7C6-4430-902C-B6934DC8264A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +60,7 @@ Global
 		{BD314DB0-A7C0-4877-BA07-1611573B2139} = {A69ADAF7-0084-4EA9-A1B3-096CD3E07679}
 		{F2DD1C3D-B1C2-427D-98A7-2EFDB844C1E0} = {6998B754-89D5-428E-B170-8D563CD1876D}
 		{A87444CC-ED62-4D4D-989E-ECEB7833CC66} = {8A250BEC-9FAA-4EC1-ABA5-995DC6E6994D}
+		{E529DE85-F7C6-4430-902C-B6934DC8264A} = {797DE126-B1D8-4E2D-8BEF-7734672C4C2B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}
