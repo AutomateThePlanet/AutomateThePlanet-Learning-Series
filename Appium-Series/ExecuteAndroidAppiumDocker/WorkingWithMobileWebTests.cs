@@ -36,17 +36,10 @@ namespace ExecuteAndroidAppiumDocker
             appiumOptions.AddAdditionalCapability("desired-skin", "WSVGA");
             appiumOptions.AddAdditionalCapability("desired-screen-resolution", "1024x600");
 
-            try
-            {
-                var timeout = TimeSpan.FromSeconds(120);
-                _driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4444/wd/hub"), appiumOptions, timeout);
-                _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(120);
-                _driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(120);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
+            var timeout = TimeSpan.FromSeconds(120);
+            _driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4444/wd/hub"), appiumOptions, timeout);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(120);
+            _driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(120);
         }
 
         [TestCleanup]

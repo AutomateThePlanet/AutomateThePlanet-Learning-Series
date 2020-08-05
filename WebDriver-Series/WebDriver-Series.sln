@@ -203,7 +203,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackHoleProxyPattern", "Bl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "38. Headless Execution of WebDriver Tests- Edge", "38. Headless Execution of WebDriver Tests- Edge", "{62986F3F-1C3C-4AD9-97FB-EB0DE47E9AAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadlessTestsEdge", "HeadlessTestsEdge\HeadlessTestsEdge.csproj", "{BC794A9B-1E7E-4D3D-99A1-4B50A74DDC64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeadlessTestsEdge", "HeadlessTestsEdge\HeadlessTestsEdge.csproj", "{BC794A9B-1E7E-4D3D-99A1-4B50A74DDC64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "39. Serverless Execution of WebDriver Tests via Azure Functions", "39. Serverless Execution of WebDriver Tests via Azure Functions", "{1FE900D9-4A91-461F-A871-3BDFD44EEABD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriverTestsAzureFunctions", "WebDriverTestsAzureFunctions\WebDriverTestsAzureFunctions.csproj", "{69BD32D4-B89B-4964-888B-53D5C4068CE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -399,6 +403,10 @@ Global
 		{BC794A9B-1E7E-4D3D-99A1-4B50A74DDC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC794A9B-1E7E-4D3D-99A1-4B50A74DDC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC794A9B-1E7E-4D3D-99A1-4B50A74DDC64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69BD32D4-B89B-4964-888B-53D5C4068CE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69BD32D4-B89B-4964-888B-53D5C4068CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69BD32D4-B89B-4964-888B-53D5C4068CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69BD32D4-B89B-4964-888B-53D5C4068CE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -462,6 +470,7 @@ Global
 		{11A6DF7C-95D1-4112-8E81-8D0002864D80} = {C77BD0FB-36B1-40CB-93B3-142ABA8D1D16}
 		{EC3F9E2A-E701-4073-8C7D-33E19F709791} = {45E530B6-495E-4E97-943E-A0148186D92D}
 		{BC794A9B-1E7E-4D3D-99A1-4B50A74DDC64} = {62986F3F-1C3C-4AD9-97FB-EB0DE47E9AAB}
+		{69BD32D4-B89B-4964-888B-53D5C4068CE4} = {1FE900D9-4A91-461F-A871-3BDFD44EEABD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}
