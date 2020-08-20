@@ -20,8 +20,10 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -36,11 +38,36 @@ public class TipsTricksTests {
         System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
 
         // 5. Execute tests in headless Chrome
-        ChromeOptions options = new ChromeOptions();
-        // options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        // chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
+
+        // 22. Set HTTP Proxy ChromeDriver
+        // var proxy = new Proxy();
+        // proxy.setProxyType(Proxy.ProxyType.MANUAL);
+        // proxy.setAutodetect(false);
+        // proxy.setSslProxy("127.0.0.1:3239");
+        // chromeOptions.setProxy(proxy);
+
+        // 23. Set HTTP Proxy with Authentication ChromeDriver
+        // chromeOptions.addArguments("--proxy-server=http://user:password@127.0.0.1:3239");
+
+        // 24. tart ChromeDriver with an Packed Extension
+        // chromeOptions.addArguments("load-extension=/pathTo/extension");
+
+        // 25. Start ChromeDriver with an Unpacked Extension
+        // chromeOptions.addExtensions(new File("local/path/to/extension.crx"));
+
+        // 29. Verify File Downloaded ChromeDriver
+        // String downloadFilepath = "c:\\temp";
+//        HashMap<String, Object> chromePrefs = new HashMap<>();
+//        chromePrefs.put("profile.default_content_settings.popups", 0);
+//        chromePrefs.put("download.default_directory", downloadFilepath);
+//        chromeOptions.setExperimentalOption("prefs", chromePrefs);
+//        chromeOptions.addArguments("--test-type");
+//        chromeOptions.addArguments("start-maximized", "disable-popup-blocking");
 
         // 18.2. Handle SSL Certificate Error ChromeDrive
-        // options.addArguments("--ignore-certificate-errors");
+        // chromeOptions.addArguments("--ignore-certificate-errors");
 
         // 7. Use Specific Profile in Chrome
         // option.addArguments("user-data-dri=C:\\Users\\Your path to user\\Roaming\\Google\\Chrome\\User Data");
@@ -74,6 +101,9 @@ public class TipsTricksTests {
 
         // firefoxProfile.setAcceptUntrustedCertificates(true);
         // firefoxProfile.setAssumeUntrustedCertificateIssuer(false);
+
+        // 21. Start FirefoxDriver with Plugins
+        // firefoxProfile.addExtension(new File("C:\\extensionsLocation\\extension.xpi"));
 
         // firefoxOptions.setProfile(firefoxProfile);
         // WebDriver firefoxDriver = new FirefoxDriver(firefoxOptions);
@@ -237,8 +267,6 @@ public class TipsTricksTests {
         String jsToBeExecuted = String.format("window.scroll(0, {0});", ourMissionLink.getLocation().getY());
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
         javascriptExecutor.executeScript(jsToBeExecuted);
-
-
     }
 
     // 20. Focus on a Control
@@ -251,6 +279,50 @@ public class TipsTricksTests {
 
         Actions action = new Actions(driver);
         action.moveToElement(ourMissionLink).build().perform();
+    }
+
+    // 26. Assert a Button Enabled or Disabled
+    @Test
+    public void assertButtonEnabledDisabled() {
+        driver.navigate().to("http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_disabled");
+        driver.switchTo().frame("iframeResult");
+        var button  = driver.findElement(By.xpath("/html/body/button"));
+
+        Assert.assertFalse(button.isEnabled());
+    }
+
+    // 27. Set and Assert the Value of a Hidden Field
+    @Test
+    public void setHiddenField() {
+        //<input type="hidden" name="country" value="Bulgaria"/>
+
+        var theHiddenElem   = driver.findElement(By.name("country"));
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+        javascriptExecutor.executeScript("arguments[0].value='Germany';", theHiddenElem);
+        String hiddenFieldValue = theHiddenElem.getAttribute("value");
+
+        Assert.assertEquals("Germany", hiddenFieldValue);
+    }
+
+    // 29. Verify File Downloaded ChromeDriver
+    @Test
+    public void VerifyFileDownloadChrome() throws IOException {
+        var expectedFilePath = Paths.get("c:\\temp\\Testing_Framework_2015_3_1314_2_Free.exe");
+        try
+        {
+            driver.navigate().to("https://www.telerik.com/download-trial-file/v2/telerik-testing-framework");
+            wait.until(x -> Files.exists(expectedFilePath));
+            long bytes = Files.size(expectedFilePath);
+
+            Assert.assertEquals(4326192, bytes);
+        }
+        finally
+        {
+            if (Files.exists(expectedFilePath))
+            {
+                Files.delete(expectedFilePath);
+            }
+        }
     }
 
     // 1. Taking a Screenshot
@@ -284,6 +356,16 @@ public class TipsTricksTests {
             JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
             String isReady = (String) javascriptExecutor.executeScript("return document.readyState");
             return isReady.equals("complete");
+        });
+    }
+
+    // 28. Wait AJAX Call to Complete Using JQuery
+    private void waitForAjaxComplete() {
+        wait.until(x ->
+        {
+            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+            Boolean isAjaxCallComplete  = (Boolean) javascriptExecutor.executeScript("return window.jQuery != undefined && jQuery.active == 0");
+            return isAjaxCallComplete ;
         });
     }
 }
