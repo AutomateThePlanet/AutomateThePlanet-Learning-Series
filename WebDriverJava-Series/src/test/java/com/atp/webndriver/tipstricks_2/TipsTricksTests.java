@@ -38,9 +38,9 @@ public class TipsTricksTests {
         System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
 
         // 5. Execute tests in headless Chrome
-        ChromeOptions chromeOptions = new ChromeOptions();
-        // chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
-
+          ChromeOptions chromeOptions = new ChromeOptions();
+//        chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
+//        driver = new ChromeDriver(chromeOptions);
         // 22. Set HTTP Proxy ChromeDriver
         // var proxy = new Proxy();
         // proxy.setProxyType(Proxy.ProxyType.MANUAL);
@@ -105,6 +105,13 @@ public class TipsTricksTests {
         // 21. Start FirefoxDriver with Plugins
         // firefoxProfile.addExtension(new File("C:\\extensionsLocation\\extension.xpi"));
 
+        // 30. Verify File Downloaded FirefoxDriver
+//        String downloadFilepath = "c:\\temp";
+//        firefoxProfile.setPreference("browser.download.folderList", 2);
+//        firefoxProfile.setPreference("browser.download.dir", downloadFilepath);
+//        firefoxProfile.setPreference("browser.download.manager.alertOnEXEOpen", false);
+//        firefoxProfile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/msword, application/binary, application/ris, text/csv, image/png, application/pdf, text/html, text/plain, application/zip, application/x-zip, application/x-zip-compressed, application/download, application/octet-stream"));
+
         // firefoxOptions.setProfile(firefoxProfile);
         // WebDriver firefoxDriver = new FirefoxDriver(firefoxOptions);
     }
@@ -151,31 +158,38 @@ public class TipsTricksTests {
         System.out.println(title);
     }
 
-    // 3. Execute JavaScript
+    // 6. Check If an Element Is Visible
     @Test
     public void checkIfElementIsVisible() {
         driver.navigate().to("http://automatetheplanet.com");
-        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[1]/header/div/div[2]/div/div[2]/nav")).isDisplayed());
+        var element = driver.findElement(By.xpath("/html/body/div[1]/header/div/div[2]/div/div[2]/nav"));
+        Assert.assertTrue(element.isDisplayed());
     }
 
     @Test
     public void manageCookies() {
         driver.navigate().to("http://automatetheplanet.com");
 
+        // get all cookies
         var cookies = driver.manage().getCookies();
         for (Cookie cookie:cookies) {
             System.out.println(cookie.getName());
         }
 
+        // get a cookie by name
         var fbPixelCookie = driver.manage().getCookieNamed("_fbp");
 
+        // create a new cookie by name
         Cookie newCookie = new Cookie("customName", "customValue");
         driver.manage().addCookie(newCookie);
 
+        // delete a cookie
         driver.manage().deleteCookie(fbPixelCookie);
 
+        // delete a cookie by name
         driver.manage().deleteCookieNamed("customName");
 
+        // delete all cookies
         driver.manage().deleteAllCookies();
     }
 
