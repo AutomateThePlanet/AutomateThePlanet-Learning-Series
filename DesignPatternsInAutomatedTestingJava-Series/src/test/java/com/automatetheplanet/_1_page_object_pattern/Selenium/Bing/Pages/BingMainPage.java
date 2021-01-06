@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 public class BingMainPage {
-    private final WebDriver _driver;
-    private final String _url = "http://www.bing.com/";
+    private final WebDriver driver;
+    private final String url = "http://www.bing.com/";
 
     public BingMainPage(WebDriver browser) {
-        _driver = browser;
+        driver = browser;
         PageFactory.initElements(browser, this);
     }
 
@@ -25,7 +25,7 @@ public class BingMainPage {
     public WebElement resultsCountDiv;
 
     public void navigate() {
-        _driver.navigate().to(_url);
+        driver.navigate().to(url);
     }
 
     public void search(String textToType) {
@@ -35,6 +35,6 @@ public class BingMainPage {
     }
 
     public void validateResultsCount(String expectedCount) {
-        Assert.assertTrue(resultsCountDiv.getText().contains(expectedCount), "The results DIV doesn't contains the specified text.");
+        Assert.assertTrue(resultsCountDiv.getText().contains(expectedCount), "The results DIV doesn't contain the specified text.");
     }
 }

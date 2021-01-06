@@ -43,6 +43,6 @@ public class BingTests {
         var bingMainPage = new com.automatetheplanet._1_page_object_pattern.Pages.BingMainPage.BingMainPage(driver);
         bingMainPage.navigate();
         bingMainPage.search("Automate The Planet");
-        bingMainPage.validate().resultsCount("986,000 Results");
+        bingMainPage.validate().resultsCount(",000 Results");
     }
 }

@@ -3,28 +3,28 @@ package com.automatetheplanet._1_page_object_pattern.Pages.BingMainPage;
 import org.openqa.selenium.WebDriver;
 
 public class BingMainPage {
-    private final WebDriver _browser;
-    private final String _url = "http://www.bing.com/";
+    private final WebDriver browser;
+    private final String url = "http://www.bing.com/";
 
     public BingMainPage(WebDriver browser) {
-        _browser = browser;
+        this.browser = browser;
     }
-    protected BingMainPageElementMap map() {
-        return new BingMainPageElementMap(_browser);
+    protected BingMainPageElements elements() {
+        return new BingMainPageElements(browser);
     }
 
-    public BingMainPageValidator validate() {
-        return new BingMainPageValidator(_browser);
+    public BingMainPageAsserts validate() {
+        return new BingMainPageAsserts(browser);
     }
 
     public void navigate() {
-        _browser.navigate().to(_url);
+        browser.navigate().to(url);
     }
 
     public void search(String textToType) {
-        map().searchBox().clear();
-        map().searchBox().sendKeys(textToType);
-        map().goButton().click();
+        elements().searchBox().clear();
+        elements().searchBox().sendKeys(textToType);
+        elements().goButton().click();
     }
 
 }
