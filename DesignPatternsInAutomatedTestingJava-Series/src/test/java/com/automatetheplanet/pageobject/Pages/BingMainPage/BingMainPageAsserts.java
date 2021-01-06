@@ -1,4 +1,4 @@
-package com.automatetheplanet._1_page_object_pattern.Pages.BingMainPage;
+package com.automatetheplanet.pageobject.Pages.BingMainPage;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;

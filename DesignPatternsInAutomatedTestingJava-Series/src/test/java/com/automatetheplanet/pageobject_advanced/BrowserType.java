@@ -1,4 +1,4 @@
-package com.automatetheplanet._2_advanced_page_object_pattern;
+package com.automatetheplanet.pageobject_advanced;
 
 public enum BrowserType {
     FIREFOX,

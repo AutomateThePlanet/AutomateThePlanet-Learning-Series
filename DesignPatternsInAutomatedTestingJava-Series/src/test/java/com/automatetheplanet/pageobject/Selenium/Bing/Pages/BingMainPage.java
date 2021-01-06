@@ -1,4 +1,4 @@
-package com.automatetheplanet._1_page_object_pattern.Selenium.Bing.Pages;
+package com.automatetheplanet.pageobject.Selenium.Bing.Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

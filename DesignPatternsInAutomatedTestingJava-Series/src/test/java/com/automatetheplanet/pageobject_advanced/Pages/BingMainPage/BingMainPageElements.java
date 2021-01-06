@@ -1,11 +1,10 @@
-package com.automatetheplanet._2_advanced_page_object_pattern.Pages.BingMainPage;
+package com.automatetheplanet.pageobject_advanced.Pages.BingMainPage;
 
-import com.automatetheplanet._2_advanced_page_object_pattern.BasePageElements;
+import com.automatetheplanet.pageobject_advanced.BasePageElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class BingMainPageElements extends BasePageElements {
-
     public WebElement searchBox() {
         return browser.findElement(By.id("sb_form_q"));
     }
@@ -17,5 +16,4 @@ public class BingMainPageElements extends BasePageElements {
     public WebElement resultsCountDiv() {
         return browser.findElement(By.id("b_tween"));
     }
-
 }

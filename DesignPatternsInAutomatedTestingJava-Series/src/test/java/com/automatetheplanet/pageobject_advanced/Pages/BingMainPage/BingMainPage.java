@@ -1,6 +1,6 @@
-package com.automatetheplanet._2_advanced_page_object_pattern.Pages.BingMainPage;
+package com.automatetheplanet.pageobject_advanced.Pages.BingMainPage;
 
-import com.automatetheplanet._2_advanced_page_object_pattern.BasePage;
+import com.automatetheplanet.pageobject_advanced.BasePage;
 
 public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAsserts> {
     public BingMainPage() {
@@ -13,7 +13,7 @@ public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAss
     }
 
     @Override
-    public BingMainPageAsserts validate() {
+    public BingMainPageAsserts asserts() {
         return new BingMainPageAsserts();
     }
 

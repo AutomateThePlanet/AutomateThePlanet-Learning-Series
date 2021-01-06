@@ -1,4 +1,4 @@
-package com.automatetheplanet._2_advanced_page_object_pattern;
+package com.automatetheplanet.pageobject_advanced;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +11,7 @@ public class Driver {
 
     public static WebDriver getBrowser() {
         if (browser == null) {
-            throw new NullPointerException("The WebDriver browser instance was not initialized. You should first call the method Start.");
+            throw new NullPointerException("The WebDriver browser instance was not initialized. You should first call the start() method.");
         }
         return browser;
     }
@@ -22,7 +22,7 @@ public class Driver {
 
     public static WebDriverWait getBrowserWait() {
         if (browserWait == null || browser == null) {
-            throw new NullPointerException("The WebDriver browser wait instance was not initialized. You should first call the method Start.");
+            throw new NullPointerException("The WebDriver browser wait instance was not initialized. You should first call the start() method.");
         }
         return browserWait;
     }

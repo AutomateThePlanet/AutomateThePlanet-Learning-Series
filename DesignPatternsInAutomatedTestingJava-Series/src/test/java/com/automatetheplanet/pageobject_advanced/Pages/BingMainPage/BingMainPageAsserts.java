@@ -1,6 +1,6 @@
-package com.automatetheplanet._2_advanced_page_object_pattern.Pages.BingMainPage;
+package com.automatetheplanet.pageobject_advanced.Pages.BingMainPage;
 
-import com.automatetheplanet._2_advanced_page_object_pattern.BasePageAsserts;
+import com.automatetheplanet.pageobject_advanced.BasePageAsserts;
 import org.testng.Assert;
 
 public class BingMainPageAsserts extends BasePageAsserts {

@@ -1,6 +1,5 @@
-package com.automatetheplanet._1_page_object_pattern;
+package com.automatetheplanet.pageobject;
 
-import com.automatetheplanet._1_page_object_pattern.Selenium.Bing.Pages.BingMainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -31,18 +30,28 @@ public class BingTests {
     }
 
     @Test
-    public void searchTextInBing_First() {
-        var bingMainPage = new BingMainPage(driver);
+    public void searchTextInBing_SeleniumPageFactory() {
+        // Arrange
+        var bingMainPage = new com.automatetheplanet.pageobject.Selenium.Bing.Pages.BingMainPage(driver);
         bingMainPage.navigate();
+
+        // Act
         bingMainPage.search("Automate The Planet");
-        bingMainPage.assertsResultsCount("986,000 Results");
+
+        // Assert
+        bingMainPage.assertsResultsCount(",000 Results");
     }
 
     @Test
-    public void searchTextInBing_Second() {
-        var bingMainPage = new com.automatetheplanet._1_page_object_pattern.Pages.BingMainPage.BingMainPage(driver);
+    public void searchTextInBing_PageObjectPattern() {
+        // Arrange
+        var bingMainPage = new com.automatetheplanet.pageobject.Pages.BingMainPage.BingMainPage(driver);
         bingMainPage.navigate();
+
+        // Act
         bingMainPage.search("Automate The Planet");
+
+        // Assert
         bingMainPage.asserts().resultsCount(",000 Results");
     }
 }

@@ -1,6 +1,6 @@
-package com.automatetheplanet._2_advanced_page_object_pattern;
+package com.automatetheplanet.pageobject_advanced;
 
-public abstract class BasePage<TM extends BasePageElements, TV extends BasePageAsserts> {
+public abstract class BasePage<TElements extends BasePageElements, TAsserts extends BasePageAsserts> {
     protected final String url;
 
     public BasePage(String url) {
@@ -11,7 +11,7 @@ public abstract class BasePage<TM extends BasePageElements, TV extends BasePageA
         this.url = null;
     }
 
-    protected abstract TM elements();
+    protected abstract TElements elements();
 
     public void navigate(String part) {
         Driver.getBrowser().navigate().to(url.concat(part));
@@ -21,6 +21,5 @@ public abstract class BasePage<TM extends BasePageElements, TV extends BasePageA
         Driver.getBrowser().navigate().to(url);
     }
 
-    protected abstract TV asserts();
-
+    protected abstract TAsserts asserts();
 }
