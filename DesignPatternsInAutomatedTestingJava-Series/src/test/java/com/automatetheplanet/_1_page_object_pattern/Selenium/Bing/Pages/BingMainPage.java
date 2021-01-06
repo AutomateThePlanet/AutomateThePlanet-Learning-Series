@@ -34,7 +34,7 @@ public class BingMainPage {
         goButton.click();
     }
 
-    public void validateResultsCount(String expectedCount) {
+    public void assertsResultsCount(String expectedCount) {
         Assert.assertTrue(resultsCountDiv.getText().contains(expectedCount), "The results DIV doesn't contain the specified text.");
     }
 }

@@ -21,6 +21,6 @@ public abstract class BasePage<TM extends BasePageElements, TV extends BasePageA
         Driver.getBrowser().navigate().to(url);
     }
 
-    protected abstract TV validate();
+    protected abstract TV asserts();
 
 }

@@ -13,7 +13,7 @@ public class BingMainPage {
         return new BingMainPageElements(browser);
     }
 
-    public BingMainPageAsserts validate() {
+    public BingMainPageAsserts asserts() {
         return new BingMainPageAsserts(browser);
     }
 

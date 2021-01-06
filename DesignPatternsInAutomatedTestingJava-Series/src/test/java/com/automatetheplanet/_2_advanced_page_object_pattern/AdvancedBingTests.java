@@ -29,6 +29,6 @@ public class AdvancedBingTests {
         var bingMainPage = new BingMainPage();
         bingMainPage.navigate();
         bingMainPage.search("Automate The Planet");
-        bingMainPage.validate().resultsCount(",000 Results");
+        bingMainPage.asserts().resultsCount(",000 Results");
     }
 }
