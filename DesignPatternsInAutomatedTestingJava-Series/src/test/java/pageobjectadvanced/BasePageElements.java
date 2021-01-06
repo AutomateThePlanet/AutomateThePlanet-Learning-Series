@@ -1,4 +1,4 @@
-package com.automatetheplanet.pageobject_advanced;
+package pageobjectadvanced;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;

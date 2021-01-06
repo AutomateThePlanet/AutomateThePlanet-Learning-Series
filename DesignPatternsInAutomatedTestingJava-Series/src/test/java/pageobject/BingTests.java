@@ -1,4 +1,4 @@
-package com.automatetheplanet.pageobject;
+package pageobject;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -31,27 +31,21 @@ public class BingTests {
 
     @Test
     public void searchTextInBing_SeleniumPageFactory() {
-        // Arrange
-        var bingMainPage = new com.automatetheplanet.pageobject.Selenium.Bing.Pages.BingMainPage(driver);
+        var bingMainPage = new pageobject.selenium.bing.pages.BingMainPage(driver);
         bingMainPage.navigate();
 
-        // Act
         bingMainPage.search("Automate The Planet");
 
-        // Assert
         bingMainPage.assertsResultsCount(",000 Results");
     }
 
     @Test
     public void searchTextInBing_PageObjectPattern() {
-        // Arrange
-        var bingMainPage = new com.automatetheplanet.pageobject.Pages.BingMainPage.BingMainPage(driver);
+        var bingMainPage = new pageobject.pages.bingmainpage.BingMainPage(driver);
         bingMainPage.navigate();
 
-        // Act
         bingMainPage.search("Automate The Planet");
 
-        // Assert
         bingMainPage.asserts().resultsCount(",000 Results");
     }
 }

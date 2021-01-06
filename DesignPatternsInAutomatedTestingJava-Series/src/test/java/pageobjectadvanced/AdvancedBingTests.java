@@ -1,6 +1,6 @@
-package com.automatetheplanet.pageobject_advanced;
+package pageobjectadvanced;
 
-import com.automatetheplanet.pageobject_advanced.Pages.BingMainPage.BingMainPage;
+import pageobjectadvanced.pages.bingmainpage.BingMainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;

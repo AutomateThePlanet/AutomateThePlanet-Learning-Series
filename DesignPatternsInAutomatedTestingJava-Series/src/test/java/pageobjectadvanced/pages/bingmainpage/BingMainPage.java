@@ -1,6 +1,6 @@
-package com.automatetheplanet.pageobject_advanced.Pages.BingMainPage;
+package pageobjectadvanced.pages.bingmainpage;
 
-import com.automatetheplanet.pageobject_advanced.BasePage;
+import pageobjectadvanced.BasePage;
 
 public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAsserts> {
     public BingMainPage() {

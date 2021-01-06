@@ -1,4 +1,4 @@
-package com.automatetheplanet.pageobject_advanced;
+package pageobjectadvanced;
 
 public abstract class BasePage<TElements extends BasePageElements, TAsserts extends BasePageAsserts> {
     protected final String url;

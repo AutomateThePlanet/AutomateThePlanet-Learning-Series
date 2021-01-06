@@ -1,4 +1,4 @@
-package com.automatetheplanet.pageobject.Pages.BingMainPage;
+package pageobject.pages.bingmainpage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

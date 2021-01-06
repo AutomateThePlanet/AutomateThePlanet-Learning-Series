@@ -1,6 +1,6 @@
-package com.automatetheplanet.pageobject_advanced.Pages.BingMainPage;
+package pageobjectadvanced.pages.bingmainpage;
 
-import com.automatetheplanet.pageobject_advanced.BasePageElements;
+import pageobjectadvanced.BasePageElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
