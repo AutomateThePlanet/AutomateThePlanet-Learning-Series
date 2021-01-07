@@ -1,6 +1,6 @@
 package pageobjectadvanced;
 
-public abstract class BasePage<TElements extends BasePageElements, TAsserts extends BasePageAsserts> {
+public abstract class BasePage<ElementsТ extends BasePageElements, AssertsТ extends BasePageAsserts> {
     protected final String url;
 
     public BasePage(String url) {
@@ -11,7 +11,7 @@ public abstract class BasePage<TElements extends BasePageElements, TAsserts exte
         this.url = null;
     }
 
-    protected abstract TElements elements();
+    protected abstract ElementsТ elements();
 
     public void navigate(String part) {
         Driver.getBrowser().navigate().to(url.concat(part));
@@ -21,5 +21,5 @@ public abstract class BasePage<TElements extends BasePageElements, TAsserts exte
         Driver.getBrowser().navigate().to(url);
     }
 
-    protected abstract TAsserts asserts();
+    protected abstract AssertsТ asserts();
 }

@@ -1,5 +1,5 @@
 package pageobjectadvanced;
 
-public abstract class BasePageAsserts<TElements extends BasePageElements> {
-    protected abstract TElements elements();
+public abstract class BasePageAsserts<ElementsТ extends BasePageElements> {
+    protected abstract ElementsТ elements();
 }
