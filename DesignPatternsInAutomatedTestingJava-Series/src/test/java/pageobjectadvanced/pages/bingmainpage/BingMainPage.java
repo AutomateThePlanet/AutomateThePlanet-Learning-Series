@@ -18,8 +18,8 @@ public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAss
     }
 
     public void search(String textToType) {
-        elements().searchBox().clear();
-        elements().searchBox().sendKeys(textToType);
-        elements().goButton().click();
+        elements().searchBox.clear();
+        elements().searchBox.sendKeys(textToType);
+        elements().goButton.click();
     }
 }

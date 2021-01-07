@@ -10,6 +10,6 @@ public class BingMainPageAsserts extends BasePageAsserts {
     }
 
     public void resultsCount(String expectedCount) {
-        Assert.assertTrue(elements().resultsCountDiv().getText().contains(expectedCount), "The results DIV doesn't contain the specified text.");
+        Assert.assertTrue(elements().resultsCountDiv.getText().contains(expectedCount), "The results DIV doesn't contain the specified text.");
     }
 }
