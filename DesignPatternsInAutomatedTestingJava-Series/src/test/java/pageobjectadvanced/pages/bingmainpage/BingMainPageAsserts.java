@@ -4,7 +4,6 @@ import pageobjectadvanced.BasePageAsserts;
 import org.testng.Assert;
 
 public class BingMainPageAsserts extends BasePageAsserts {
-
     @Override
     protected BingMainPageElements elements() {
         return new BingMainPageElements();

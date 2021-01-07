@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class BingMainPageElements {
-
     private final WebDriver browser;
 
     public BingMainPageElements(WebDriver browser) {
@@ -23,5 +22,4 @@ public class BingMainPageElements {
     public WebElement resultsCountDiv() {
         return browser.findElement(By.id("b_tween"));
     }
-
 }

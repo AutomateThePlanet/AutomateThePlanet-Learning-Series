@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class BingMainPageAsserts {
-
     private final WebDriver browser;
 
     public BingMainPageAsserts(WebDriver browser) {

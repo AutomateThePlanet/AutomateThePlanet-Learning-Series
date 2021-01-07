@@ -26,5 +26,4 @@ public class BingMainPage {
         elements().searchBox().sendKeys(textToType);
         elements().goButton().click();
     }
-
 }

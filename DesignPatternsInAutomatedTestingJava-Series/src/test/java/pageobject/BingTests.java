@@ -30,7 +30,7 @@ public class BingTests {
     }
 
     @Test
-    public void searchTextInBing_SeleniumPageFactory() {
+    public void searchTextInBing_UsingSeleniumPageFactory() {
         var bingMainPage = new pageobject.selenium.bing.pages.BingMainPage(driver);
         bingMainPage.navigate();
 
@@ -40,7 +40,7 @@ public class BingTests {
     }
 
     @Test
-    public void searchTextInBing_PageObjectPattern() {
+    public void searchTextInBing_WithoutSeleniumPageFactory() {
         var bingMainPage = new pageobject.pages.bingmainpage.BingMainPage(driver);
         bingMainPage.navigate();
 

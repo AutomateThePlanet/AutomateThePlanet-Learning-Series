@@ -22,5 +22,4 @@ public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAss
         elements().searchBox().sendKeys(textToType);
         elements().goButton().click();
     }
-
 }
