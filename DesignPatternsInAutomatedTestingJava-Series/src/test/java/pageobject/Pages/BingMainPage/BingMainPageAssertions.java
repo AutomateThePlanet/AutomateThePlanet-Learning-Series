@@ -3,10 +3,10 @@ package pageobject.pages.bingmainpage;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class BingMainPageAsserts {
+public class BingMainPageAssertions {
     private final WebDriver browser;
 
-    public BingMainPageAsserts(WebDriver browser) {
+    public BingMainPageAssertions(WebDriver browser) {
         this.browser = browser;
     }
 

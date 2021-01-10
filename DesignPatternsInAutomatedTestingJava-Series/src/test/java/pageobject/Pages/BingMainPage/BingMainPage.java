@@ -13,8 +13,8 @@ public class BingMainPage {
         return new BingMainPageElements(browser);
     }
 
-    public BingMainPageAsserts asserts() {
-        return new BingMainPageAsserts(browser);
+    public BingMainPageAssertions assertions() {
+        return new BingMainPageAssertions(browser);
     }
 
     public void navigate() {

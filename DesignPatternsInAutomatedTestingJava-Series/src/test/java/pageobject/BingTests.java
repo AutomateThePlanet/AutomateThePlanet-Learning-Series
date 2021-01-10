@@ -46,6 +46,6 @@ public class BingTests {
 
         bingMainPage.search("Automate The Planet");
 
-        bingMainPage.asserts().resultsCount(",000 Results");
+        bingMainPage.assertions().resultsCount(",000 Results");
     }
 }

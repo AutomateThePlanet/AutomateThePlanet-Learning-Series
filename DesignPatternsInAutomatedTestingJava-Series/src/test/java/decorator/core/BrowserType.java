@@ -1,4 +1,4 @@
-package pageobjectadvanced;
+package decorator.core;
 
 public enum BrowserType {
     FIREFOX,
