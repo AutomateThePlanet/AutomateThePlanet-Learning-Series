@@ -10,19 +10,19 @@ public class BingMainPage {
     private final WebDriver driver;
     private final String url = "http://www.bing.com/";
 
+    @FindBy(id = "sb_form_q")
+    private WebElement searchBox;
+
+    @FindBy(xpath = "//label[@for='sb_form_go']")
+    private WebElement goButton;
+
+    @FindBy(id = "b_tween")
+    private WebElement resultsCountDiv;
+
     public BingMainPage(WebDriver browser) {
         driver = browser;
         PageFactory.initElements(browser, this);
     }
-
-    @FindBy(id = "sb_form_q")
-    public WebElement searchBox;
-
-    @FindBy(xpath = "//label[@for='sb_form_go']")
-    public WebElement goButton;
-
-    @FindBy(id = "b_tween")
-    public WebElement resultsCountDiv;
 
     public void navigate() {
         driver.navigate().to(url);
@@ -34,7 +34,7 @@ public class BingMainPage {
         goButton.click();
     }
 
-    public void assertsResultsCount(String expectedCount) {
+    public void assertResultsCount(String expectedCount) {
         Assert.assertTrue(resultsCountDiv.getText().contains(expectedCount), "The results DIV doesn't contain the specified text.");
     }
 }

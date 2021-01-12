@@ -36,7 +36,7 @@ public class BingTests {
 
         bingMainPage.search("Automate The Planet");
 
-        bingMainPage.assertsResultsCount(",000 Results");
+        bingMainPage.assertResultsCount(",000 Results");
     }
 
     @Test

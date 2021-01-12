@@ -1,16 +1,17 @@
-package decorator.pages.checkoutpage;
+package strategy.pages.checkoutpage;
 
-import decorator.core.BaseAssertions;
-import decorator.core.Driver;
-import decorator.enums.PaymentMethod;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import strategy.core.BaseAssertions;
+import strategy.core.Driver;
+import strategy.enums.PaymentMethod;
 
 import java.text.DecimalFormat;
 
 public class CheckoutAssertions extends BaseAssertions<CheckoutElements> {
 
-    private String formatCurrency(Number number) {
+    private String formatCurrency(double number) {
         DecimalFormat currencyFormat = new DecimalFormat("#,##0.00\u20ac");
         currencyFormat.setMaximumFractionDigits(2);
         currencyFormat.setMinimumFractionDigits(2);
@@ -21,15 +22,15 @@ public class CheckoutAssertions extends BaseAssertions<CheckoutElements> {
         Assert.assertEquals(elements().receivedMessage().getText(), "Order received");
     }
 
-    public void assertOrderSubtotalPrice(Number subtotalPrice) {
+    public void assertOrderSubtotalPrice(double subtotalPrice) {
         Assert.assertEquals(elements().orderDetailsSubtotal().getText(), formatCurrency(subtotalPrice));
     }
 
-    public void assertOrderDiscountPrice(Number discountPrice) {
+    public void assertOrderDiscountPrice(double discountPrice) {
         Assert.assertEquals(elements().orderDetailsDiscount().getText(), formatCurrency(discountPrice));
     }
 
-    public void assertOrderVatTaxPrice(Number vatTaxPrice) {
+    public void assertOrderVatTaxPrice(double vatTaxPrice) {
         Assert.assertEquals(elements().orderDetailsVatTax().getText(), formatCurrency(vatTaxPrice));
     }
 
@@ -37,9 +38,7 @@ public class CheckoutAssertions extends BaseAssertions<CheckoutElements> {
         Assert.assertEquals(elements().orderDetailsPaymentMethod().getText(), paymentMethod.toString());
     }
 
-    public void assertOrderTotalPrice(Number totalPrice) {
-        Driver.waitForAjax();
-        Driver.waitUntilPageLoadsCompletely();
+    public void assertOrderTotalPrice(double totalPrice) {
         Assert.assertEquals(elements().orderDetailsTotal().getText(), formatCurrency(totalPrice));
     }
 }

@@ -1,6 +1,6 @@
-package decorator.services;
+package strategyadvanced.services;
 
-import decorator.enums.CouponCode;
+import strategyadvanced.enums.CouponCode;
 
 public class CouponCodeCalculationService {
     double discount;

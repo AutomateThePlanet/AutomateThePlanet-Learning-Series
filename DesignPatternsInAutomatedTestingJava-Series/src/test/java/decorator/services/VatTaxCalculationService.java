@@ -2,12 +2,9 @@ package decorator.services;
 
 import decorator.enums.Country;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
 public class VatTaxCalculationService {
-    BigDecimal taxValue;
-    public BigDecimal calculate(BigDecimal price, Country country) {
+    double taxValue;
+    public double calculate(double price, Country country) {
         switch(country) {
             case BULGARIA:
             case UNITED_KINGDOM:
@@ -17,15 +14,15 @@ public class VatTaxCalculationService {
                 taxValue = calculateVATInternal(price, 20);
                 break;
             default:
-                taxValue = BigDecimal.valueOf(0);
+                taxValue = 0;
                 break;
         }
 
         return taxValue;
     }
 
-    private static BigDecimal calculateVATInternal(BigDecimal price, double percent) {
-        var taxValue = price.multiply(BigDecimal.valueOf(percent).divide(BigDecimal.valueOf(100), RoundingMode.CEILING));
+    private static double calculateVATInternal(double price, double percent) {
+        var taxValue = price*percent/100;
         return taxValue;
     }
 }

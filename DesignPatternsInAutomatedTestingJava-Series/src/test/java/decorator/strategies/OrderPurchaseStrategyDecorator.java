@@ -1,30 +1,28 @@
-package decorator.advanced.strategies;
+package decorator.strategies;
 
 import decorator.data.PurchaseInfo;
-
-import java.math.BigDecimal;
 
 public class OrderPurchaseStrategyDecorator extends OrderPurchaseStrategy {
     protected final OrderPurchaseStrategy orderPurchaseStrategy;
     protected final PurchaseInfo purchaseInfo;
-    protected final BigDecimal itemPrice;
+    protected final double itemPrice;
 
-    public OrderPurchaseStrategyDecorator(OrderPurchaseStrategy orderPurchaseStrategy, BigDecimal itemPrice, PurchaseInfo purchaseInfo) {
+    public OrderPurchaseStrategyDecorator(OrderPurchaseStrategy orderPurchaseStrategy, double itemPrice, PurchaseInfo purchaseInfo) {
         this.orderPurchaseStrategy = orderPurchaseStrategy;
         this.itemPrice = itemPrice;
         this.purchaseInfo = purchaseInfo;
     }
 
     @Override
-    public BigDecimal calculateTotalPrice() {
+    public double calculateTotalPrice() {
         validateOrderStrategy();
         return orderPurchaseStrategy.calculateTotalPrice();
     }
 
     @Override
-    public void validateOrderSummary(BigDecimal totalPrice) {
+    public void assertOrderSummary(double totalPrice) {
         validateOrderStrategy();
-        orderPurchaseStrategy.validateOrderSummary(totalPrice);
+        orderPurchaseStrategy.assertOrderSummary(totalPrice);
     }
 
     private void validateOrderStrategy() {

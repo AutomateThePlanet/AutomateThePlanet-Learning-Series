@@ -1,19 +1,17 @@
-package decorator;
+package strategyadvanced;
 
-import decorator.base.PurchaseContext;
-import decorator.strategies.CouponCodeOrderPurchaseStrategy;
-import decorator.strategies.OrderPurchaseStrategy;
-import decorator.strategies.TotalPriceOrderPurchaseStrategy;
-import decorator.strategies.VatTaxOrderPurchaseStrategy;
-import decorator.core.Driver;
-import decorator.data.PurchaseInfo;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import strategyadvanced.core.Driver;
+import strategyadvanced.data.PurchaseInfo;
+import strategyadvanced.strategies.CouponCodeOrderPurchaseStrategy;
+import strategyadvanced.strategies.VatTaxOrderPurchaseStrategy;
+import strategyadvanced.base.PurchaseContext;
 
-public class StorePurchaseDecoratedStrategiesTests {
+public class StorePurchaseAdvancedStrategyTests {
     @BeforeClass
     public static void classInit() {
         WebDriverManager.firefoxdriver().setup();
@@ -30,7 +28,7 @@ public class StorePurchaseDecoratedStrategiesTests {
     }
 
     @Test
-    public void purchase_Falcon9_DecoratedStrategies() {
+    public void purchase_Falcon9_Advanced_StrategyPattern() {
         var itemUrl = "falcon-9";
         var itemPrice = 50.00;
         var purchaseInfo = new PurchaseInfo();
@@ -46,10 +44,7 @@ public class StorePurchaseDecoratedStrategiesTests {
         purchaseInfo.setPhone("+491888999281");
         purchaseInfo.setCouponCode("happybirthday");
 
-        OrderPurchaseStrategy orderPurchaseStrategy = new TotalPriceOrderPurchaseStrategy(itemPrice);
-        orderPurchaseStrategy = new VatTaxOrderPurchaseStrategy(orderPurchaseStrategy, itemPrice, purchaseInfo);
-        orderPurchaseStrategy = new CouponCodeOrderPurchaseStrategy(orderPurchaseStrategy, itemPrice, purchaseInfo);
-
-        new PurchaseContext(orderPurchaseStrategy).PurchaseItem(itemUrl, purchaseInfo);
+        new PurchaseContext(new VatTaxOrderPurchaseStrategy(), new CouponCodeOrderPurchaseStrategy())
+                .PurchaseItem(itemUrl, itemPrice, purchaseInfo);
     }
 }

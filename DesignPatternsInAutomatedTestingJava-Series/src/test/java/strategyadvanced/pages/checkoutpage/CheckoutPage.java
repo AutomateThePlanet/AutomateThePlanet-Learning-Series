@@ -1,9 +1,9 @@
-package decorator.pages.checkoutpage;
+package strategyadvanced.pages.checkoutpage;
 
-import decorator.core.BasePage;
-import decorator.core.Driver;
-import decorator.data.PurchaseInfo;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import strategyadvanced.core.BasePage;
+import strategyadvanced.core.Driver;
+import strategyadvanced.data.PurchaseInfo;
 
 public class CheckoutPage extends BasePage<CheckoutElements, CheckoutAssertions> {
     public CheckoutPage() {
@@ -38,6 +38,7 @@ public class CheckoutPage extends BasePage<CheckoutElements, CheckoutAssertions>
         }
 
         Driver.waitForAjax();
+        Driver.getBrowserWait().until(ExpectedConditions.elementToBeClickable(elements().placeOrderButton()));
         elements().placeOrderButton().click();
     }
 }

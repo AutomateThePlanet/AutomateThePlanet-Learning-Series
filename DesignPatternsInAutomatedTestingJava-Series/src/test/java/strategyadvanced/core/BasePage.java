@@ -1,4 +1,4 @@
-package decorator.core;
+package strategyadvanced.core;
 
 import java.lang.reflect.ParameterizedType;
 
