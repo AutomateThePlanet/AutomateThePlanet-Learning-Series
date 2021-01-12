@@ -2,7 +2,7 @@ package pageobjectadvanced.pages.bingmainpage;
 
 import pageobjectadvanced.core.BasePage;
 
-public class BingMainPage extends BasePage<BingMainElements, BingMainAssertions> {
+public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAssertions> {
     public BingMainPage() {
         super("http://www.bing.com/");
     }

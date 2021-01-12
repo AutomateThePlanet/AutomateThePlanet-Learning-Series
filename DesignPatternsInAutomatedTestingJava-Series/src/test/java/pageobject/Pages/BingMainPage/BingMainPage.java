@@ -9,6 +9,7 @@ public class BingMainPage {
     public BingMainPage(WebDriver browser) {
         this.browser = browser;
     }
+
     protected BingMainPageElements elements() {
         return new BingMainPageElements(browser);
     }

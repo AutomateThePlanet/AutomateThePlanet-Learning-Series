@@ -1,7 +1,5 @@
 package decorator.core;
 
-import java.lang.reflect.ParameterizedType;
-
 public abstract class BasePage<ElementsT extends BaseElements, AssertionsT extends BaseAssertions<ElementsT>> {
     protected final String url;
 
@@ -11,13 +9,7 @@ public abstract class BasePage<ElementsT extends BaseElements, AssertionsT exten
 
     @SuppressWarnings("unchecked")
     protected ElementsT elements() {
-        try {
-            var elementsClass = (Class<ElementsT>) ((ParameterizedType) getClass()
-                    .getGenericSuperclass()).getActualTypeArguments()[0];
-            return elementsClass.getDeclaredConstructor().newInstance();
-        } catch (Exception e) {
-            return null;
-        }
+        return (ElementsT) ReflectionNewInstanceFactory.getTypeParameter(0, getClass());
     }
 
     public void navigate(String part) {
@@ -30,12 +22,6 @@ public abstract class BasePage<ElementsT extends BaseElements, AssertionsT exten
 
     @SuppressWarnings("unchecked")
     public AssertionsT assertions() {
-        try {
-            var assertionsClass = (Class<AssertionsT>) ((ParameterizedType) getClass()
-                    .getGenericSuperclass()).getActualTypeArguments()[1];
-            return assertionsClass.getDeclaredConstructor().newInstance();
-        } catch (Exception e) {
-            return null;
-        }
+        return (AssertionsT) ReflectionNewInstanceFactory.getTypeParameter(1, getClass());
     }
 }

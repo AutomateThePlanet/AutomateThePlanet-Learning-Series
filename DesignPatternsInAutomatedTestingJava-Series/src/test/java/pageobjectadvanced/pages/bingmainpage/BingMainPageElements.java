@@ -4,7 +4,7 @@ import pageobjectadvanced.core.BaseElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class BingMainElements extends BaseElements {
+public class BingMainPageElements extends BaseElements {
     public WebElement searchBox() {
         return browser.findElement(By.id("sb_form_q"));
     }

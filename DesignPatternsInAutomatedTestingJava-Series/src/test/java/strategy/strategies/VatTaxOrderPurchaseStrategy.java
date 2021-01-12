@@ -18,13 +18,13 @@ public class VatTaxOrderPurchaseStrategy implements OrderPurchaseStrategy {
 
     @Override
     public void assertOrderSummary(double itemPrice, PurchaseInfo purchaseInfo) {
-        var currentCountry = Arrays.stream(strategyadvanced.enums.Country.values())
+        var currentCountry = Arrays.stream(Country.values())
                 .filter(country -> country.toString().equals(purchaseInfo.getCountry()))
                 .toArray(Country[]::new)[0];
         var vatTax = vatTaxCalculationService.calculate(itemPrice, currentCountry, purchaseInfo);
 
         var checkoutPage = new CheckoutPage();
-        strategyadvanced.core.Driver.waitForAjax();
+        Driver.waitForAjax();
         Driver.waitUntilPageLoadsCompletely();
         checkoutPage.assertions().assertOrderVatTaxPrice(vatTax);
     }
