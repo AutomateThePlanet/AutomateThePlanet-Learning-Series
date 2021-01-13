@@ -9,7 +9,7 @@ public class BasePage<ElementsT extends BaseElements, AssertionsT extends BaseAs
 
     @SuppressWarnings("unchecked")
     protected ElementsT elements() {
-        return (ElementsT) ReflectionNewInstanceFactory.getTypeParameter(0, getClass());
+        return (ElementsT)ReflectionNewInstanceFactory.getTypeParameter(0, getClass());
     }
 
     public void navigate(String part) {
@@ -22,6 +22,6 @@ public class BasePage<ElementsT extends BaseElements, AssertionsT extends BaseAs
 
     @SuppressWarnings("unchecked")
     public AssertionsT assertions() {
-        return (AssertionsT) ReflectionNewInstanceFactory.getTypeParameter(1, getClass());
+        return (AssertionsT)ReflectionNewInstanceFactory.getTypeParameter(1, getClass());
     }
 }

@@ -45,6 +45,6 @@ public class StorePurchaseAdvancedStrategyTests {
         purchaseInfo.setCouponCode("happybirthday");
 
         new PurchaseContext(new VatTaxOrderPurchaseStrategy(), new CouponCodeOrderPurchaseStrategy())
-                .PurchaseItem(itemUrl, itemPrice, purchaseInfo);
+                .purchaseItem(itemUrl, itemPrice, purchaseInfo);
     }
 }

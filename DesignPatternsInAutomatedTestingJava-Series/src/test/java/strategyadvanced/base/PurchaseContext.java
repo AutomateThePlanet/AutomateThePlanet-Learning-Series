@@ -7,17 +7,19 @@ import strategyadvanced.pages.shoppingcartpage.ShoppingCartPage;
 
 public class PurchaseContext {
     private final OrderPurchaseStrategy[] orderPurchaseStrategies;
+    private final ItemPage itemPage;
+    private final ShoppingCartPage shoppingCartPage;
+    private final CheckoutPage checkoutPage;
 
     public PurchaseContext(OrderPurchaseStrategy... orderPurchaseStrategies) {
         this.orderPurchaseStrategies = orderPurchaseStrategies;
+        itemPage = new ItemPage();
+        shoppingCartPage = new ShoppingCartPage();
+        checkoutPage = new CheckoutPage();
     }
 
-    public void PurchaseItem(String itemUrl, double itemPrice, PurchaseInfo purchaseInfo) {
+    public void purchaseItem(String itemUrl, double itemPrice, PurchaseInfo purchaseInfo) {
         validatePurchaseInfo(purchaseInfo);
-
-        var itemPage = new ItemPage();
-        var shoppingCartPage = new ShoppingCartPage();
-        var checkoutPage = new CheckoutPage();
         itemPage.navigate(itemUrl);
         itemPage.clickBuyNowButton();
         itemPage.clickViewShoppingCartButton();

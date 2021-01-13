@@ -12,7 +12,7 @@ public class PurchaseContext {
         this.orderPurchaseStrategy = orderPurchaseStrategy;
     }
 
-    public void PurchaseItem(String itemUrl, double itemPrice, PurchaseInfo purchaseInfo) {
+    public void purchaseItem(String itemUrl, double itemPrice, PurchaseInfo purchaseInfo) {
         var itemPage = new ItemPage();
         var shoppingCartPage = new ShoppingCartPage();
         var checkoutPage = new CheckoutPage();

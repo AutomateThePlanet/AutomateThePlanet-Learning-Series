@@ -42,6 +42,6 @@ public class StorePurchaseStrategyTests {
         purchaseInfo.setZip("10115");
         purchaseInfo.setPhone("+491888999281");
 
-        new PurchaseContext(new VatTaxOrderPurchaseStrategy()).PurchaseItem(itemUrl, itemPrice, purchaseInfo);
+        new PurchaseContext(new VatTaxOrderPurchaseStrategy()).purchaseItem(itemUrl, itemPrice, purchaseInfo);
     }
 }

@@ -68,18 +68,12 @@ public class Driver {
     }
 
     public static void waitForAjax() {
-        var javascriptExecutor = (JavascriptExecutor) browser;
+        var javascriptExecutor = (JavascriptExecutor)browser;
         browserWait.until(d -> javascriptExecutor.executeScript("return window.jQuery != undefined && jQuery.active == 0"));
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            throw new RuntimeException(e);
-        }
     }
 
     public static void waitUntilPageLoadsCompletely() {
-        var javascriptExecutor = (JavascriptExecutor) browser;
+        var javascriptExecutor = (JavascriptExecutor)browser;
         browserWait.until(d -> javascriptExecutor.executeScript("return document.readyState").toString().equals("complete"));
     }
 }

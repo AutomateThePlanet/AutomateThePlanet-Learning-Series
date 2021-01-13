@@ -50,6 +50,6 @@ public class StorePurchaseDecoratedStrategiesTests {
         orderPurchaseStrategy = new VatTaxOrderPurchaseStrategy(orderPurchaseStrategy, itemPrice, purchaseInfo);
         orderPurchaseStrategy = new CouponCodeOrderPurchaseStrategy(orderPurchaseStrategy, itemPrice, purchaseInfo);
 
-        new PurchaseContext(orderPurchaseStrategy).PurchaseItem(itemUrl, purchaseInfo);
+        new PurchaseContext(orderPurchaseStrategy).purchaseItem(itemUrl, purchaseInfo);
     }
 }
