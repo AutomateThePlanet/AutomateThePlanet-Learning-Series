@@ -1,7 +1,5 @@
 package strategy.core;
 
-import pageobjectadvanced.core.ReflectionNewInstanceFactory;
-
 public abstract class BasePage<ElementsT extends BaseElements, AssertionsT extends BaseAssertions<ElementsT>> {
     protected final String url;
 
