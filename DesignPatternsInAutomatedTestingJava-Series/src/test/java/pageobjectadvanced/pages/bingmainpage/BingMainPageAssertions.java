@@ -1,7 +1,7 @@
 package pageobjectadvanced.pages.bingmainpage;
 
-import pageobjectadvanced.core.BaseAssertions;
 import org.testng.Assert;
+import pageobjectadvanced.core.BaseAssertions;
 
 public class BingMainPageAssertions extends BaseAssertions<BingMainPageElements> {
     public void resultsCount(String expectedCount) {

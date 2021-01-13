@@ -1,10 +1,10 @@
 package strategyadvanced.strategies;
 
-import strategyadvanced.services.CouponCodeCalculationService;
+import strategyadvanced.base.OrderPurchaseStrategy;
 import strategyadvanced.core.Driver;
 import strategyadvanced.data.PurchaseInfo;
 import strategyadvanced.pages.checkoutpage.CheckoutPage;
-import strategyadvanced.base.OrderPurchaseStrategy;
+import strategyadvanced.services.CouponCodeCalculationService;
 
 public class CouponCodeOrderPurchaseStrategy implements OrderPurchaseStrategy {
     private final CouponCodeCalculationService couponCodeCalculationService;

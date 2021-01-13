@@ -1,9 +1,9 @@
 package strategyadvanced.strategies;
 
+import strategyadvanced.base.OrderPurchaseStrategy;
 import strategyadvanced.core.Driver;
 import strategyadvanced.data.PurchaseInfo;
 import strategyadvanced.pages.checkoutpage.CheckoutPage;
-import strategyadvanced.base.OrderPurchaseStrategy;
 
 public class NoTaxOrderPurchaseStrategy implements OrderPurchaseStrategy {
     @Override

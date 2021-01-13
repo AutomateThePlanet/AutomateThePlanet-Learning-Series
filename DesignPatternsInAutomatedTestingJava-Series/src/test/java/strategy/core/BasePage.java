@@ -7,9 +7,8 @@ public abstract class BasePage<ElementsT extends BaseElements, AssertionsT exten
         this.url = url;
     }
 
-    @SuppressWarnings("unchecked")
     protected ElementsT elements() {
-        return (ElementsT)ReflectionNewInstanceFactory.getTypeParameter(0, getClass());
+        return NewInstanceFactory.createByTypeParameter(getClass(), 0);
     }
 
     public void navigate(String part) {
@@ -20,8 +19,7 @@ public abstract class BasePage<ElementsT extends BaseElements, AssertionsT exten
         Driver.getBrowser().navigate().to(url);
     }
 
-    @SuppressWarnings("unchecked")
     public AssertionsT assertions() {
-        return (AssertionsT)ReflectionNewInstanceFactory.getTypeParameter(1, getClass());
+        return NewInstanceFactory.createByTypeParameter(getClass(), 1);
     }
 }

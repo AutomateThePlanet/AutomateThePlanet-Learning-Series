@@ -1,10 +1,10 @@
 package decorator.base;
 
-import decorator.strategies.OrderPurchaseStrategy;
 import decorator.data.PurchaseInfo;
 import decorator.pages.checkoutpage.CheckoutPage;
 import decorator.pages.itempage.ItemPage;
 import decorator.pages.shoppingcartpage.ShoppingCartPage;
+import decorator.strategies.OrderPurchaseStrategy;
 
 public class PurchaseContext {
     private final OrderPurchaseStrategy orderPurchaseStrategy;

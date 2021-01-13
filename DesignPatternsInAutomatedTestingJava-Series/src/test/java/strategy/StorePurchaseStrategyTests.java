@@ -27,7 +27,7 @@ public class StorePurchaseStrategyTests {
     }
 
     @Test
-    public void purchase_Falcon9_StrategyPattern() {
+    public void purchaseFalcon9_UsingStrategyPattern() {
         var itemUrl = "falcon-9";
         var itemPrice = 50.00;
         var purchaseInfo = new PurchaseInfo();

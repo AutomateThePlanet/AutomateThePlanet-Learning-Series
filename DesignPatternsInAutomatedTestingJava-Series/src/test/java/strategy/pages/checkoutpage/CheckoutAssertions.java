@@ -1,10 +1,7 @@
 package strategy.pages.checkoutpage;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import strategy.core.BaseAssertions;
-import strategy.core.Driver;
 import strategy.enums.PaymentMethod;
 
 import java.text.DecimalFormat;

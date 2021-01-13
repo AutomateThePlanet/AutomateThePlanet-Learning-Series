@@ -1,9 +1,5 @@
 package decorator.enums;
 
-import org.apache.commons.lang3.StringUtils;
-
-import java.util.regex.Pattern;
-
 public enum Country {
     BULGARIA ("Bulgaria"),
     UNITED_KINGDOM ("United Kingdom"),

@@ -1,11 +1,11 @@
 package strategy.strategies;
 
 import strategy.base.OrderPurchaseStrategy;
-import strategy.data.PurchaseInfo;
-import strategy.services.VatTaxCalculationService;
 import strategy.core.Driver;
+import strategy.data.PurchaseInfo;
 import strategy.enums.Country;
 import strategy.pages.checkoutpage.CheckoutPage;
+import strategy.services.VatTaxCalculationService;
 
 import java.util.Arrays;
 

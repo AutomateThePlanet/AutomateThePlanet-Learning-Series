@@ -3,7 +3,6 @@ package decorator.pages.checkoutpage;
 import decorator.core.BaseAssertions;
 import decorator.core.Driver;
 import decorator.enums.PaymentMethod;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import java.text.DecimalFormat;

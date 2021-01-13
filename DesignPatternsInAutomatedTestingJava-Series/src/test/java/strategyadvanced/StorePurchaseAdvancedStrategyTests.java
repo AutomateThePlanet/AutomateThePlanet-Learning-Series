@@ -5,11 +5,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import strategyadvanced.base.PurchaseContext;
 import strategyadvanced.core.Driver;
 import strategyadvanced.data.PurchaseInfo;
 import strategyadvanced.strategies.CouponCodeOrderPurchaseStrategy;
 import strategyadvanced.strategies.VatTaxOrderPurchaseStrategy;
-import strategyadvanced.base.PurchaseContext;
 
 public class StorePurchaseAdvancedStrategyTests {
     @BeforeClass
@@ -28,7 +28,7 @@ public class StorePurchaseAdvancedStrategyTests {
     }
 
     @Test
-    public void purchase_Falcon9_Advanced_StrategyPattern() {
+    public void purchaseFalcon9_UsingAdvancedStrategyPattern() {
         var itemUrl = "falcon-9";
         var itemPrice = 50.00;
         var purchaseInfo = new PurchaseInfo();

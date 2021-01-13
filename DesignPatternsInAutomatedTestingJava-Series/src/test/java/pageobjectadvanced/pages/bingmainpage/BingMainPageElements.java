@@ -1,8 +1,8 @@
 package pageobjectadvanced.pages.bingmainpage;
 
-import pageobjectadvanced.core.BaseElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import pageobjectadvanced.core.BaseElements;
 
 public class BingMainPageElements extends BaseElements {
     public WebElement searchBox() {

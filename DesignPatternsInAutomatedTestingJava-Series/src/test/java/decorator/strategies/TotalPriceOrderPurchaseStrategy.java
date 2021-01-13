@@ -1,7 +1,7 @@
 package decorator.strategies;
 
-import decorator.pages.checkoutpage.CheckoutPage;
 import decorator.core.Driver;
+import decorator.pages.checkoutpage.CheckoutPage;
 
 public class TotalPriceOrderPurchaseStrategy extends OrderPurchaseStrategy {
     private final double itemsPrice;

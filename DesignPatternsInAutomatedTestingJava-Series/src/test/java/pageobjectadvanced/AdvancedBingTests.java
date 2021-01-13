@@ -1,12 +1,12 @@
 package pageobjectadvanced;
 
-import pageobjectadvanced.core.Driver;
-import pageobjectadvanced.pages.bingmainpage.BingMainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pageobjectadvanced.core.Driver;
+import pageobjectadvanced.pages.bingmainpage.BingMainPage;
 
 public class AdvancedBingTests {
     @BeforeClass
@@ -25,7 +25,7 @@ public class AdvancedBingTests {
     }
 
     @Test
-    public void searchTextInBing_Advanced_PageObjectPattern() {
+    public void searchTextInBing_UsingAdvancedPageObjectPattern() {
         var bingMainPage = new BingMainPage();
         bingMainPage.navigate();
 
