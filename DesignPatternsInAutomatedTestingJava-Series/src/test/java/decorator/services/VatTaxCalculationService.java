@@ -15,7 +15,8 @@ package decorator.services;
 import decorator.enums.Country;
 
 public class VatTaxCalculationService {
-    double taxValue;
+    private double taxValue;
+
     public double calculate(double price, Country country) {
         switch(country) {
             case BULGARIA:

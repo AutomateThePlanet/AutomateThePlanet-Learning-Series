@@ -12,20 +12,13 @@
  */
 package pageobjectadvanced;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageobjectadvanced.core.Driver;
 import pageobjectadvanced.pages.bingmainpage.BingMainPage;
 
 public class AdvancedBingTests {
-    @BeforeClass
-    public static void classInit() {
-        WebDriverManager.firefoxdriver().setup();
-    }
-
     @BeforeMethod
     public void testInit() {
         Driver.startBrowser();
@@ -37,7 +30,7 @@ public class AdvancedBingTests {
     }
 
     @Test
-    public void searchTextInBing_UsingAdvancedPageObjectPattern() {
+    public void searchTextInBing_when_AdvancedPageObjectPatternUsed() {
         var bingMainPage = new BingMainPage();
         bingMainPage.navigate();
 

@@ -40,7 +40,7 @@ public class StorePurchaseWithFacadeTests {
     }
 
     @Test
-    public void purchaseFalcon9_UsingFacadePattern() {
+    public void subtotalPriceOfFalcon9CalculatedCorrect_when_FacadePatternUsed() {
         var itemUrl = "falcon-9";
         var itemPrice = 50.00;
         var purchaseInfo = new PurchaseInfo();
@@ -62,7 +62,7 @@ public class StorePurchaseWithFacadeTests {
     }
 
     @Test
-    public void purchaseSaturnV_UsingFacadePattern() {
+    public void subtotalPriceOfSaturnVCalculatedCorrect_when_FacadePatternUsed() {
         var itemUrl = "saturn-v";
         var itemPrice = 120.00;
         var purchaseInfo = new PurchaseInfo();

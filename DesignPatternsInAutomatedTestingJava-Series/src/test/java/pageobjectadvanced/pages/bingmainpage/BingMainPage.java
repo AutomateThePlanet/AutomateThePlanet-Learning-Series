@@ -15,8 +15,9 @@ package pageobjectadvanced.pages.bingmainpage;
 import pageobjectadvanced.core.BasePage;
 
 public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAssertions> {
-    public BingMainPage() {
-        super("http://www.bing.com/");
+    @Override
+    protected String getUrl() {
+        return "http://www.bing.com/";
     }
 
     public void search(String textToType) {

@@ -19,18 +19,11 @@ import decorator.strategies.CouponCodeOrderPurchaseStrategy;
 import decorator.strategies.OrderPurchaseStrategy;
 import decorator.strategies.TotalPriceOrderPurchaseStrategy;
 import decorator.strategies.VatTaxOrderPurchaseStrategy;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class StorePurchaseDecoratedStrategiesTests {
-    @BeforeClass
-    public static void classInit() {
-        WebDriverManager.firefoxdriver().setup();
-    }
-
     @BeforeMethod
     public void testInit() {
         Driver.startBrowser();
@@ -42,7 +35,7 @@ public class StorePurchaseDecoratedStrategiesTests {
     }
 
     @Test
-    public void purchaseFalcon9_UsingDecoratedStrategiesPattern() {
+    public void totalPriceCalculatedCorrect_when_AtCheckoutAndDecoratedStrategyPatternUsed() {
         var itemUrl = "falcon-9";
         var itemPrice = 50.00;
         var purchaseInfo = new PurchaseInfo();

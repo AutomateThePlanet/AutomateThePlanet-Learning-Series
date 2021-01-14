@@ -15,11 +15,13 @@ package decorator.pages.checkoutpage;
 import decorator.core.BasePage;
 import decorator.core.Driver;
 import decorator.data.PurchaseInfo;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CheckoutPage extends BasePage<CheckoutElements, CheckoutAssertions> {
-    public CheckoutPage() {
-        super("http://demos.bellatrix.solutions/checkout/");
+    @Override
+    protected String getUrl() {
+        return "http://demos.bellatrix.solutions/checkout/";
     }
 
     public void fillBillingInfo(PurchaseInfo purchaseInfo) {
@@ -50,6 +52,8 @@ public class CheckoutPage extends BasePage<CheckoutElements, CheckoutAssertions>
         }
 
         Driver.waitForAjax();
+        Driver.getBrowserWait().until(ExpectedConditions.elementToBeClickable(elements().placeOrderButton()));
+        Driver.getBrowserWait().until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='blockUI blockOverlay']")));
         elements().placeOrderButton().click();
     }
 }

@@ -20,11 +20,11 @@ public enum Country {
     FRANCE ("France"),
     CHINA ("China");
 
+    private final String name;
+
     Country(String name) {
         this.name = name;
     }
-
-    String name;
 
     @Override
     public String toString() {

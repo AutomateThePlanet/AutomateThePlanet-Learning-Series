@@ -12,14 +12,16 @@
  */
 package strategyadvanced.pages.checkoutpage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import strategyadvanced.core.BasePage;
 import strategyadvanced.core.Driver;
 import strategyadvanced.data.PurchaseInfo;
 
 public class CheckoutPage extends BasePage<CheckoutElements, CheckoutAssertions> {
-    public CheckoutPage() {
-        super("http://demos.bellatrix.solutions/checkout/");
+    @Override
+    protected String getUrl() {
+        return "http://demos.bellatrix.solutions/checkout/";
     }
 
     public void fillBillingInfo(PurchaseInfo purchaseInfo) {
@@ -51,6 +53,7 @@ public class CheckoutPage extends BasePage<CheckoutElements, CheckoutAssertions>
 
         Driver.waitForAjax();
         Driver.getBrowserWait().until(ExpectedConditions.elementToBeClickable(elements().placeOrderButton()));
+        Driver.getBrowserWait().until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='blockUI blockOverlay']")));
         elements().placeOrderButton().click();
     }
 }

@@ -16,11 +16,13 @@ import facade.core.BasePage;
 import facade.core.Driver;
 import facade.data.PurchaseInfo;
 import facade.pages.interfaces.CheckoutPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class BellatrixDemosCheckoutPage extends BasePage<BellatrixDemoCheckoutElements, BellatrixDemoCheckoutAssertions> implements CheckoutPage {
-    public BellatrixDemosCheckoutPage() {
-        super("http://demos.bellatrix.solutions/checkout/");
+    @Override
+    protected String getUrl() {
+        return "http://demos.bellatrix.solutions/checkout/";
     }
 
     @Override
@@ -53,6 +55,7 @@ public class BellatrixDemosCheckoutPage extends BasePage<BellatrixDemoCheckoutEl
 
         Driver.waitForAjax();
         Driver.getBrowserWait().until(ExpectedConditions.elementToBeClickable(elements().placeOrderButton()));
+        Driver.getBrowserWait().until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='blockUI blockOverlay']")));
         elements().placeOrderButton().click();
     }
 

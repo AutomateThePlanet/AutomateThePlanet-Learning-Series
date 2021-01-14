@@ -16,8 +16,9 @@ import facade.core.BasePage;
 import facade.pages.interfaces.ItemPage;
 
 public class BellatrixDemoItemPage extends BasePage<BellatrixDemoItemElements, BellatrixDemoItemAssertions> implements ItemPage {
-    public BellatrixDemoItemPage() {
-        super("http://demos.bellatrix.solutions/product/");
+    @Override
+    protected String getUrl() {
+        return "http://demos.bellatrix.solutions/product/";
     }
 
     @Override

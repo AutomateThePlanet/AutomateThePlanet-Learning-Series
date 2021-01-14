@@ -16,6 +16,7 @@ import decorator.enums.CouponCode;
 
 public class CouponCodeCalculationService {
     double discount;
+
     public double calculate(double price, String couponCode) {
         if (couponCode == null) {
             return 0;

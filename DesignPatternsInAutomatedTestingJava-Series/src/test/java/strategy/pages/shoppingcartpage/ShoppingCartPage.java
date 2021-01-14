@@ -15,8 +15,9 @@ package strategy.pages.shoppingcartpage;
 import strategy.core.BasePage;
 
 public class ShoppingCartPage extends BasePage<ShoppingCartElements, ShoppingCartAssertions> {
-    public ShoppingCartPage() {
-        super("http://demos.bellatrix.solutions/checkout/");
+    @Override
+    protected String getUrl() {
+        return "http://demos.bellatrix.solutions/cart/";
     }
 
     @Override

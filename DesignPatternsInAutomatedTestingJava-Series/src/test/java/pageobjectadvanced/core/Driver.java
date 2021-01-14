@@ -14,6 +14,8 @@ package pageobjectadvanced.core;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -51,10 +53,12 @@ public class Driver {
                 setBrowser(new FirefoxDriver());
                 break;
             case CHROME:
-                //setBrowser(new ChromeDriver());
+                WebDriverManager.chromedriver().setup();
+                setBrowser(new ChromeDriver());
                 break;
             case EDGE:
-                //setBrowser(new EdgeDriver());
+                WebDriverManager.edgedriver().setup();
+                setBrowser(new EdgeDriver());
                 break;
             default:
                 break;

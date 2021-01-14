@@ -16,8 +16,9 @@ import facade.core.BasePage;
 import facade.pages.interfaces.ShoppingCartPage;
 
 public class BellatrixDemoShoppingCartPage extends BasePage<BellatrixDemoShoppingCartElements, BellatrixDemoShoppingCartAssertions> implements ShoppingCartPage {
-    public BellatrixDemoShoppingCartPage() {
-        super("http://demos.bellatrix.solutions/checkout/");
+    @Override
+    protected String getUrl() {
+        return "http://demos.bellatrix.solutions/cart/";
     }
 
     @Override

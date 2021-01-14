@@ -14,14 +14,20 @@ package strategyadvanced.pages.shoppingcartpage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import strategyadvanced.core.BaseElements;
+import strategyadvanced.core.Driver;
 
 public class ShoppingCartElements extends BaseElements {
     public WebElement proceedToCheckoutButton() {
-        return browser.findElement(By.xpath("//a[contains(@class,'checkout-button')]"));
+        String locator = "//a[contains(@class,'checkout-button')]";
+        Driver.getBrowserWait().until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+        return browser.findElement(By.xpath(locator));
     }
 
     public WebElement shoppingCartSubtotalPrice() {
-        return browser.findElement(By.xpath("//tr[@class='cart-subtotal']//bdi"));
+        String locator = "//tr[@class='cart-subtotal']//bdi";
+        Driver.getBrowserWait().until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+        return browser.findElement(By.xpath(locator));
     }
 }
