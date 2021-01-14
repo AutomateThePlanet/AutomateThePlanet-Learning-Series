@@ -40,7 +40,7 @@ public class StorePurchaseWithoutFacadeTests {
     }
 
     @Test
-    public void subtotalPriceOfFalcon9CalculatedCorrect_when_NoFacadePatternUsed_first() {
+    public void subtotalPriceOfFalcon9CalculatedCorrect_when_NoFacadePatternUsed() {
         var itemUrl = "falcon-9";
         var itemPrice = 50.00;
         var purchaseInfo = new PurchaseInfo();
