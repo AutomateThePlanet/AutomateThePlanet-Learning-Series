@@ -1,9 +1,9 @@
-package strategyadvanced.pages.itempage;
+package facade.pages.bellatrixdemositempage;
 
+import facade.core.BaseAssertions;
 import org.testng.Assert;
-import strategyadvanced.core.BaseAssertions;
 
-public class ItemAssertions extends BaseAssertions<ItemElements> {
+public class BellatrixDemoItemAssertions extends BaseAssertions<BellatrixDemoItemElements> {
     public void assertProductPrice(double productPrice) {
         Assert.assertEquals(elements().productPrice().getText(), formatCurrency(productPrice));
     }

@@ -1,9 +1,9 @@
-package strategy.pages.shoppingcartpage;
+package facade.pages.bellatrixdemosshoppingcartpage;
 
+import facade.core.BaseAssertions;
 import org.testng.Assert;
-import strategy.core.BaseAssertions;
 
-public class ShoppingCartAssertions extends BaseAssertions<ShoppingCartElements> {
+public class BellatrixDemoShoppingCartAssertions extends BaseAssertions<BellatrixDemoShoppingCartElements> {
     public void assertShoppingCartSubtotalPrice(double subtotalPrice) {
         Assert.assertEquals(elements().shoppingCartSubtotalPrice().getText(), formatCurrency(subtotalPrice));
     }

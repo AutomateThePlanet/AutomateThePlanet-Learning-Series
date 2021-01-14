@@ -8,4 +8,8 @@ public class ShoppingCartElements extends BaseElements {
     public WebElement proceedToCheckoutButton() {
         return browser.findElement(By.xpath("//a[contains(@class,'checkout-button')]"));
     }
+
+    public WebElement shoppingCartSubtotalPrice() {
+        return browser.findElement(By.xpath("//tr[@class='cart-subtotal']//bdi"));
+    }
 }

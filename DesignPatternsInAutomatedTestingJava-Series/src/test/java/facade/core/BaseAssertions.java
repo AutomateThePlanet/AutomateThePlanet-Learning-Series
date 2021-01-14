@@ -1,4 +1,4 @@
-package strategy.core;
+package facade.core;
 
 import java.text.DecimalFormat;
 

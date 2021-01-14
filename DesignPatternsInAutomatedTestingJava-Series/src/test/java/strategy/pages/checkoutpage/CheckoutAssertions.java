@@ -4,17 +4,7 @@ import org.testng.Assert;
 import strategy.core.BaseAssertions;
 import strategy.enums.PaymentMethod;
 
-import java.text.DecimalFormat;
-
 public class CheckoutAssertions extends BaseAssertions<CheckoutElements> {
-
-    private String formatCurrency(double number) {
-        DecimalFormat currencyFormat = new DecimalFormat("#,##0.00\u20ac");
-        currencyFormat.setMaximumFractionDigits(2);
-        currencyFormat.setMinimumFractionDigits(2);
-        return currencyFormat.format(number);
-    }
-
     public void assertOrderReceived() {
         Assert.assertEquals(elements().receivedMessage().getText(), "Order received");
     }

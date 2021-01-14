@@ -1,11 +1,11 @@
-package strategy.pages.checkoutpage;
+package facade.pages.bellatrixdemoscheckoutpage;
 
+import facade.core.BaseElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import strategy.core.BaseElements;
 
-public class CheckoutElements extends BaseElements {
+public class BellatrixDemoCheckoutElements extends BaseElements {
 
     public WebElement billingFirstName() {
         return browser.findElement(By.id("billing_first_name"));

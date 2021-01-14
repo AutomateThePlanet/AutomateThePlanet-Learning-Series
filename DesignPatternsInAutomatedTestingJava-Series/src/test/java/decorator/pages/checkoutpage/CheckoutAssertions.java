@@ -5,30 +5,20 @@ import decorator.core.Driver;
 import decorator.enums.PaymentMethod;
 import org.testng.Assert;
 
-import java.text.DecimalFormat;
-
 public class CheckoutAssertions extends BaseAssertions<CheckoutElements> {
-
-    private String formatCurrency(Number number) {
-        DecimalFormat currencyFormat = new DecimalFormat("#,##0.00\u20ac");
-        currencyFormat.setMaximumFractionDigits(2);
-        currencyFormat.setMinimumFractionDigits(2);
-        return currencyFormat.format(number);
-    }
-
     public void assertOrderReceived() {
         Assert.assertEquals(elements().receivedMessage().getText(), "Order received");
     }
 
-    public void assertOrderSubtotalPrice(Number subtotalPrice) {
+    public void assertOrderSubtotalPrice(double subtotalPrice) {
         Assert.assertEquals(elements().orderDetailsSubtotal().getText(), formatCurrency(subtotalPrice));
     }
 
-    public void assertOrderDiscountPrice(Number discountPrice) {
+    public void assertOrderDiscountPrice(double discountPrice) {
         Assert.assertEquals(elements().orderDetailsDiscount().getText(), formatCurrency(discountPrice));
     }
 
-    public void assertOrderVatTaxPrice(Number vatTaxPrice) {
+    public void assertOrderVatTaxPrice(double vatTaxPrice) {
         Assert.assertEquals(elements().orderDetailsVatTax().getText(), formatCurrency(vatTaxPrice));
     }
 
@@ -36,7 +26,7 @@ public class CheckoutAssertions extends BaseAssertions<CheckoutElements> {
         Assert.assertEquals(elements().orderDetailsPaymentMethod().getText(), paymentMethod.toString());
     }
 
-    public void assertOrderTotalPrice(Number totalPrice) {
+    public void assertOrderTotalPrice(double totalPrice) {
         Driver.waitForAjax();
         Driver.waitUntilPageLoadsCompletely();
         Assert.assertEquals(elements().orderDetailsTotal().getText(), formatCurrency(totalPrice));

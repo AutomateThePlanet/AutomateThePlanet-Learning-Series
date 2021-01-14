@@ -2,6 +2,7 @@ package strategyadvanced.pages.checkoutpage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import strategyadvanced.core.BaseElements;
 
 public class CheckoutElements extends BaseElements {
@@ -75,31 +76,44 @@ public class CheckoutElements extends BaseElements {
     }
 
     public WebElement receivedMessage() {
+        browserWait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("h1")));
         return browser.findElement(By.tagName("h1"));
     }
 
     public WebElement orderDetailsSubtotal() {
-        return browser.findElement(By.xpath("//th[text()='Subtotal:']/following-sibling::td/span"));
+        String locator = "//th[text()='Subtotal:']/following-sibling::td/span";
+        browserWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+        return browser.findElement(By.xpath(locator));
     }
 
     public WebElement orderDetailsDiscount() {
-        return browser.findElement(By.xpath("//th[text()='Discount:']/following-sibling::td/span"));
+        String locator = "//th[text()='Discount:']/following-sibling::td/span";
+        browserWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+        return browser.findElement(By.xpath(locator));
     }
 
     public WebElement orderDetailsVatTax() {
-        return browser.findElement(By.xpath("//th[text()='VAT:']/following-sibling::td/span"));
+        String locator = "//th[text()='VAT:']/following-sibling::td/span";
+        browserWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+        return browser.findElement(By.xpath(locator));
     }
 
     public WebElement orderDetailsPaymentMethod() {
-        return browser.findElement(By.xpath("//th[text()='Payment method:']/following-sibling::td/span"));
+        String locator = "//th[text()='Payment method:']/following-sibling::td/span";
+        browserWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+        return browser.findElement(By.xpath(locator));
     }
 
     public WebElement orderDetailsNote() {
-        return browser.findElement(By.xpath("//th[text()='Note:']/following-sibling::td/span"));
+        String locator = "//th[text()='Note:']/following-sibling::td/span";
+        browserWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+        return browser.findElement(By.xpath(locator));
     }
 
     public WebElement orderDetailsTotal() {
-        return browser.findElement(By.xpath("//th[text()='Total:']/following-sibling::td/span"));
+        String locator = "//th[text()='Total:']/following-sibling::td/span";
+        browserWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+        return browser.findElement(By.xpath(locator));
     }
 
     public WebElement getCountryOptionByName(String countryName) {

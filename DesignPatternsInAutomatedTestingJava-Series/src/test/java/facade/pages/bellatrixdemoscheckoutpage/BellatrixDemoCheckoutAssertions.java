@@ -1,10 +1,11 @@
-package strategyadvanced.pages.checkoutpage;
+package facade.pages.bellatrixdemoscheckoutpage;
 
+import facade.core.BaseAssertions;
+import facade.enums.PaymentMethod;
 import org.testng.Assert;
-import strategyadvanced.core.BaseAssertions;
-import strategyadvanced.enums.PaymentMethod;
 
-public class CheckoutAssertions extends BaseAssertions<CheckoutElements> {
+public class BellatrixDemoCheckoutAssertions extends BaseAssertions<BellatrixDemoCheckoutElements> {
+
     public void assertOrderReceived() {
         Assert.assertEquals(elements().receivedMessage().getText(), "Order received");
     }

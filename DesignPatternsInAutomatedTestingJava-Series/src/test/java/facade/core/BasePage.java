@@ -1,4 +1,4 @@
-package pageobjectadvanced.core;
+package facade.core;
 
 public abstract class BasePage<ElementsT extends BaseElements, AssertionsT extends BaseAssertions<ElementsT>> {
     protected final String url;

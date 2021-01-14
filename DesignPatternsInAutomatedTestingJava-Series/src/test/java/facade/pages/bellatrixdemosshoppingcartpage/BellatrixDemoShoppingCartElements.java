@@ -1,10 +1,10 @@
-package decorator.pages.shoppingcartpage;
+package facade.pages.bellatrixdemosshoppingcartpage;
 
-import decorator.core.BaseElements;
+import facade.core.BaseElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class ShoppingCartElements extends BaseElements {
+public class BellatrixDemoShoppingCartElements extends BaseElements {
     public WebElement proceedToCheckoutButton() {
         return browser.findElement(By.xpath("//a[contains(@class,'checkout-button')]"));
     }

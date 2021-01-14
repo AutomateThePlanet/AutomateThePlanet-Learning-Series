@@ -13,6 +13,10 @@ public class ItemElements extends BaseElements {
         return browser.findElement(By.tagName("h1"));
     }
 
+    public WebElement productPrice() {
+        return browser.findElement(By.xpath("//div[@class='summary entry-summary']//ins//bdi"));
+    }
+
     public WebElement viewShoppingCartButton() {
         return browser.findElement(By.className("cart-contents"));
     }
