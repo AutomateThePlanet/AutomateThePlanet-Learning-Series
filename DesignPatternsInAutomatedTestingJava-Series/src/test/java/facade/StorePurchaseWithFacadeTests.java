@@ -17,18 +17,11 @@ import facade.data.PurchaseInfo;
 import facade.pages.bellatrixdemoscheckoutpage.BellatrixDemoCheckoutPage;
 import facade.pages.bellatrixdemositempage.BellatrixDemoItemPage;
 import facade.pages.bellatrixdemosshoppingcartpage.BellatrixDemoShoppingCartPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class StorePurchaseWithFacadeTests {
-    @BeforeClass
-    public static void classInit() {
-        WebDriverManager.firefoxdriver().setup();
-    }
-
     @BeforeMethod
     public void testInit() {
         Driver.startBrowser();
@@ -58,7 +51,7 @@ public class StorePurchaseWithFacadeTests {
         var shoppingCartPage = new BellatrixDemoShoppingCartPage();
         var checkoutPage = new BellatrixDemoCheckoutPage();
 
-        new ShoppingCart(itemPage, shoppingCartPage, checkoutPage).purchaseItem(itemUrl, itemPrice, purchaseInfo);
+        new PurchaseFacade(itemPage, shoppingCartPage, checkoutPage).purchaseItem(itemUrl, itemPrice, purchaseInfo);
     }
 
     @Test
@@ -80,6 +73,6 @@ public class StorePurchaseWithFacadeTests {
         var shoppingCartPage = new BellatrixDemoShoppingCartPage();
         var checkoutPage = new BellatrixDemoCheckoutPage();
 
-        new ShoppingCart(itemPage, shoppingCartPage, checkoutPage).purchaseItem(itemUrl, itemPrice, purchaseInfo);
+        new PurchaseFacade(itemPage, shoppingCartPage, checkoutPage).purchaseItem(itemUrl, itemPrice, purchaseInfo);
     }
 }

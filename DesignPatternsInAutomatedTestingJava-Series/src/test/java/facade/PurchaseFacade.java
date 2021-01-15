@@ -10,12 +10,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package bellatrixdemos;
+package facade;
 
-import bellatrixdemos.data.PurchaseInfo;
-import bellatrixdemos.pages.interfaces.CheckoutPage;
-import bellatrixdemos.pages.interfaces.ItemPage;
-import bellatrixdemos.pages.interfaces.ShoppingCartPage;
+import facade.data.PurchaseInfo;
+import facade.pages.interfaces.CheckoutPage;
+import facade.pages.interfaces.ItemPage;
+import facade.pages.interfaces.ShoppingCartPage;
 
 public class PurchaseFacade {
     private final ItemPage itemPage;

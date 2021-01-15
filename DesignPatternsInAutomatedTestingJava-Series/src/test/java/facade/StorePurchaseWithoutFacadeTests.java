@@ -17,18 +17,11 @@ import facade.data.PurchaseInfo;
 import facade.pages.bellatrixdemoscheckoutpage.BellatrixDemoCheckoutPage;
 import facade.pages.bellatrixdemositempage.BellatrixDemoItemPage;
 import facade.pages.bellatrixdemosshoppingcartpage.BellatrixDemoShoppingCartPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class StorePurchaseWithoutFacadeTests {
-    @BeforeClass
-    public static void classInit() {
-        WebDriverManager.firefoxdriver().setup();
-    }
-
     @BeforeMethod
     public void testInit() {
         Driver.startBrowser();
