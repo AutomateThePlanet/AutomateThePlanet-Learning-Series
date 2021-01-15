@@ -10,15 +10,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package pageobject.pagestemp.bingmainpagetemp;
+package pageobject.pages.bingmainpage;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
-public class BingMainPageAssertions {
+public class BingMainPage {
     private final WebDriver browser;
+    private final String url = "http://www.bing.com/";
 
-    public BingMainPageAssertions(WebDriver browser) {
+    public BingMainPage(WebDriver browser) {
         this.browser = browser;
     }
 
@@ -26,7 +26,17 @@ public class BingMainPageAssertions {
         return new BingMainPageElements(browser);
     }
 
-    public void resultsCount(String expectedCount) {
-        Assert.assertTrue(elements().resultsCountDiv().getText().contains(expectedCount), "The results DIV doesn't contain the specified text.");
+    public BingMainPageAssertions assertions() {
+        return new BingMainPageAssertions(browser);
+    }
+
+    public void navigate() {
+        browser.navigate().to(url);
+    }
+
+    public void search(String textToType) {
+        elements().searchBox().clear();
+        elements().searchBox().sendKeys(textToType);
+        elements().goButton().click();
     }
 }
