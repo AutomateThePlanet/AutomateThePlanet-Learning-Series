@@ -20,7 +20,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pageobject.pages.bingmainpage.BingMainPage;
 
 public class BingTests {
     public WebDriver driver;
@@ -54,7 +53,7 @@ public class BingTests {
 
     @Test
     public void searchTextInBing_WithoutSeleniumPageFactory() {
-        var bingMainPage = new BingMainPage(driver);
+        var bingMainPage = new pageobject.pages.bingmainpage.BingMainPage(driver);
         bingMainPage.navigate();
 
         bingMainPage.search("Automate The Planet");
