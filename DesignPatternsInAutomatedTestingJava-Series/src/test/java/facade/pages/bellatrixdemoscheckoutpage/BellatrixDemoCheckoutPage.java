@@ -19,7 +19,7 @@ import facade.pages.interfaces.CheckoutPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class BellatrixDemosCheckoutPage extends BasePage<BellatrixDemoCheckoutElements, BellatrixDemoCheckoutAssertions> implements CheckoutPage {
+public class BellatrixDemoCheckoutPage extends BasePage<BellatrixDemoCheckoutElements, BellatrixDemoCheckoutAssertions> implements CheckoutPage {
     @Override
     protected String getUrl() {
         return "http://demos.bellatrix.solutions/checkout/";

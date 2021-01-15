@@ -14,7 +14,7 @@ package facade;
 
 import facade.core.Driver;
 import facade.data.PurchaseInfo;
-import facade.pages.bellatrixdemoscheckoutpage.BellatrixDemosCheckoutPage;
+import facade.pages.bellatrixdemoscheckoutpage.BellatrixDemoCheckoutPage;
 import facade.pages.bellatrixdemositempage.BellatrixDemoItemPage;
 import facade.pages.bellatrixdemosshoppingcartpage.BellatrixDemoShoppingCartPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -56,7 +56,7 @@ public class StorePurchaseWithoutFacadeTests {
         purchaseInfo.setPhone("+491888999281");
         var itemPage = new BellatrixDemoItemPage();
         var shoppingCartPage = new BellatrixDemoShoppingCartPage();
-        var checkoutPage = new BellatrixDemosCheckoutPage();
+        var checkoutPage = new BellatrixDemoCheckoutPage();
 
         itemPage.navigate(itemUrl);
         itemPage.assertions().assertProductPrice(itemPrice);
@@ -85,7 +85,7 @@ public class StorePurchaseWithoutFacadeTests {
         purchaseInfo.setPhone("+491888999281");
         var itemPage = new BellatrixDemoItemPage();
         var shoppingCartPage = new BellatrixDemoShoppingCartPage();
-        var checkoutPage = new BellatrixDemosCheckoutPage();
+        var checkoutPage = new BellatrixDemoCheckoutPage();
 
         itemPage.navigate(itemUrl);
         itemPage.assertions().assertProductPrice(itemPrice);
