@@ -17,12 +17,12 @@ import bellatrixdemos.pages.interfaces.CheckoutPage;
 import bellatrixdemos.pages.interfaces.ItemPage;
 import bellatrixdemos.pages.interfaces.ShoppingCartPage;
 
-public class ShoppingCart {
+public class PurchaseFacade {
     private final ItemPage itemPage;
     private final ShoppingCartPage shoppingCartPage;
     private final CheckoutPage checkoutPage;
 
-    public ShoppingCart(ItemPage itempage, ShoppingCartPage shoppingCartPage, CheckoutPage checkoutPage) {
+    public PurchaseFacade(ItemPage itempage, ShoppingCartPage shoppingCartPage, CheckoutPage checkoutPage) {
         this.itemPage = itempage;
         this.shoppingCartPage = shoppingCartPage;
         this.checkoutPage = checkoutPage;

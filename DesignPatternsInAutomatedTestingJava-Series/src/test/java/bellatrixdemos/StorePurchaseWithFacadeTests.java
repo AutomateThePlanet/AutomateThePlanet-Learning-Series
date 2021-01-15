@@ -51,7 +51,7 @@ public class StorePurchaseWithFacadeTests {
         var shoppingCartPage = new BellatrixDemoShoppingCartPage();
         var checkoutPage = new BellatrixDemoCheckoutPage();
 
-        new ShoppingCart(itemPage, shoppingCartPage, checkoutPage).purchaseItem(itemUrl, itemPrice, purchaseInfo);
+        new PurchaseFacade(itemPage, shoppingCartPage, checkoutPage).purchaseItem(itemUrl, itemPrice, purchaseInfo);
     }
 
     @Test
@@ -73,6 +73,6 @@ public class StorePurchaseWithFacadeTests {
         var shoppingCartPage = new BellatrixDemoShoppingCartPage();
         var checkoutPage = new BellatrixDemoCheckoutPage();
 
-        new ShoppingCart(itemPage, shoppingCartPage, checkoutPage).purchaseItem(itemUrl, itemPrice, purchaseInfo);
+        new PurchaseFacade(itemPage, shoppingCartPage, checkoutPage).purchaseItem(itemUrl, itemPrice, purchaseInfo);
     }
 }
