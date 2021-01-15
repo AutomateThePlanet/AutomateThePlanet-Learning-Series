@@ -1,6 +1,6 @@
 /*
  * Copyright 2021 Automate The Planet Ltd.
- * Author: Anton Angelov
+ * Author: Teodor Nikolov
  * Licensed under the Apache License, Version 2.0 (the "License");
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -20,6 +20,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pageobject.pagestemp.bingmainpagetemp.BingMainPage;
 
 public class BingTests {
     public WebDriver driver;
@@ -43,7 +44,7 @@ public class BingTests {
 
     @Test
     public void searchTextInBing_UsingSeleniumPageFactory() {
-        var bingMainPage = new pageobject.selenium.bing.pages.BingMainPage(driver);
+        var bingMainPage = new pageobject.seleniumtemp.bingtemp.pagestemp.BingMainPage(driver);
         bingMainPage.navigate();
 
         bingMainPage.search("Automate The Planet");
@@ -53,7 +54,7 @@ public class BingTests {
 
     @Test
     public void searchTextInBing_WithoutSeleniumPageFactory() {
-        var bingMainPage = new pageobject.pages.bingmainpage.BingMainPage(driver);
+        var bingMainPage = new BingMainPage(driver);
         bingMainPage.navigate();
 
         bingMainPage.search("Automate The Planet");
