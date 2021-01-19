@@ -31,7 +31,7 @@ namespace PageObjectPattern.Selenium.Bing.Pages
         [FindsBy(How = How.Id, Using = "sb_form_q")]
         public IWebElement SearchBox { get; set; }
 
-        [FindsBy(How = How.Id, Using = "sb_form_go")]
+        [FindsBy(How = How.XPath, Using = "//label[@for='sb_form_go']")]
         public IWebElement GoButton { get; set; }
 
         [FindsBy(How = How.Id, Using = "b_tween")]
