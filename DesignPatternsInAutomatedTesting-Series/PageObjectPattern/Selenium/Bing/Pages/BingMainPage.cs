@@ -51,7 +51,7 @@ namespace PageObjectPattern.Selenium.Bing.Pages
 
         public void ValidateResultsCount(string expectedCount)
         {
-            Assert.IsTrue(ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
+            Assert.IsTrue(ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contain the specified text.");
         }
     }
 }
