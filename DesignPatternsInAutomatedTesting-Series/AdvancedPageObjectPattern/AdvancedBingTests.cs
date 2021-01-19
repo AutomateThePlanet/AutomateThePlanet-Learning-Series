@@ -38,7 +38,7 @@ namespace AdvancedPageObjectPattern
             var bingMainPage = new BingMainPage();
             bingMainPage.Navigate();
             bingMainPage.Search("Automate The Planet");
-            bingMainPage.Validate().ResultsCount(",000 RESULTS");
+            bingMainPage.Validate().ResultsCount(",000 Results");
         }
     }
 }
