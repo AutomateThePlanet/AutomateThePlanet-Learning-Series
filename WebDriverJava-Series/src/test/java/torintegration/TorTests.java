@@ -1,4 +1,4 @@
-package com.atp.webdriver.torintegration_1;
+package torintegration;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.*;
