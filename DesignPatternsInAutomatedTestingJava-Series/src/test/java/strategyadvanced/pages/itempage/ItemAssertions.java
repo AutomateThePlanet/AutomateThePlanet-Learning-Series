@@ -10,6 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package strategyadvanced.pages.itempage;
 
 import org.testng.Assert;
