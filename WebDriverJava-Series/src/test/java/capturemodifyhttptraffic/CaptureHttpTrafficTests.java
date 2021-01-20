@@ -90,9 +90,11 @@ public class CaptureHttpTrafficTests {
 
     private void assertNoErrorCodes() {
         var harEntries = proxyServer.getHar().getLog().getEntries();
-        boolean areTheErrorCodes = harEntries.stream().anyMatch(r -> r.getResponse().getStatus() > 400 && r.getResponse().getStatus() < 599);
+        boolean areThereErrorCodes = harEntries.stream().anyMatch(r
+                -> r.getResponse().getStatus() > 400
+                && r.getResponse().getStatus() < 599);
 
-        Assert.assertTrue(areTheErrorCodes);
+        Assert.assertFalse(areThereErrorCodes);
     }
 
     private void assertRequestMade(String url) {
@@ -104,7 +106,9 @@ public class CaptureHttpTrafficTests {
 
     private void assertNoLargeImagesRequested() {
         var harEntries = proxyServer.getHar().getLog().getEntries();
-        boolean areThereLargeImages = harEntries.stream().anyMatch(r -> r.getResponse().getContent().getMimeType().startsWith("image") && r.getResponse().getContent().getSize() > 40000);
+        boolean areThereLargeImages = harEntries.stream().anyMatch(r
+                -> r.getResponse().getContent().getMimeType().startsWith("image")
+                && r.getResponse().getContent().getSize() > 40000);
 
         Assert.assertFalse(areThereLargeImages);
     }
