@@ -1,6 +1,6 @@
 /*
  * Copyright 2021 Automate The Planet Ltd.
- * Author: Anton Angelov
+ * Author: Teodor Nikolov
  * Licensed under the Apache License, Version 2.0 (the "License");
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -10,33 +10,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package pageobject.pages.bingmainpage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
-public class BingMainPage {
+public class BingMainPageElements {
     private final WebDriver browser;
-    private final String url = "http://www.bing.com/";
 
-    public BingMainPage(WebDriver browser) {
+    public BingMainPageElements(WebDriver browser) {
         this.browser = browser;
     }
 
-    protected BingMainPageElements elements() {
-        return new BingMainPageElements(browser);
+    public WebElement searchBox() {
+        return browser.findElement(By.id("sb_form_q"));
     }
 
-    public BingMainPageAssertions assertions() {
-        return new BingMainPageAssertions(browser);
+    public WebElement goButton() {
+        return browser.findElement(By.xpath("//label[@for='sb_form_go']"));
     }
 
-    public void navigate() {
-        browser.navigate().to(url);
-    }
-
-    public void search(String textToType) {
-        elements().searchBox().clear();
-        elements().searchBox().sendKeys(textToType);
-        elements().goButton().click();
+    public WebElement resultsCountDiv() {
+        return browser.findElement(By.id("b_tween"));
     }
 }

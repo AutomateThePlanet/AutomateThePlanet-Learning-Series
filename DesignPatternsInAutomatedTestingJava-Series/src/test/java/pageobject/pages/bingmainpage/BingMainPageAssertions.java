@@ -1,6 +1,6 @@
 /*
  * Copyright 2021 Automate The Planet Ltd.
- * Author: Anton Angelov
+ * Author: Teodor Nikolov
  * Licensed under the Apache License, Version 2.0 (the "License");
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -10,28 +10,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package pageobject.pages.bingmainpage;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
-public class BingMainPageElements {
+public class BingMainPageAssertions {
     private final WebDriver browser;
 
-    public BingMainPageElements(WebDriver browser) {
+    public BingMainPageAssertions(WebDriver browser) {
         this.browser = browser;
     }
 
-    public WebElement searchBox() {
-        return browser.findElement(By.id("sb_form_q"));
+    protected BingMainPageElements elements() {
+        return new BingMainPageElements(browser);
     }
 
-    public WebElement goButton() {
-        return browser.findElement(By.xpath("//label[@for='sb_form_go']"));
-    }
-
-    public WebElement resultsCountDiv() {
-        return browser.findElement(By.id("b_tween"));
+    public void resultsCount(String expectedCount) {
+        Assert.assertTrue(elements().resultsCountDiv().getText().contains(expectedCount), "The results DIV doesn't contain the specified text.");
     }
 }
