@@ -36,7 +36,7 @@ namespace PageObjectPattern.Pages
         {
             get
             {
-                return _browser.FindElement(By.Id("sb_form_go"));
+                return _browser.FindElement(By.XPath("//label[@for='sb_form_go']"));
             }
         }
        
