@@ -28,7 +28,11 @@ namespace HuddlePageObjectsAppDesignPattern.Core
             StartBrowser(browserType);
         }
 
-        public void Dispose() => _driver.Dispose();
+        public void Dispose()
+        {
+            _driver.Dispose();
+            GC.SuppressFinalize(this);
+        }
 
         public TPage Create<TPage>()
             where TPage : Page
