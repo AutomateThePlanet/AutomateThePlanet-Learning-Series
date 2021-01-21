@@ -28,7 +28,6 @@ namespace SimpleFactoryDesignPatternProxies
 
         public static IWebDriver CreateDriver(Browser browser)
         {
-
             string proxyUrl = ProxyService.GetProxyIp();
             var proxy = new Proxy
             {
@@ -36,7 +35,7 @@ namespace SimpleFactoryDesignPatternProxies
                 SslProxy = proxyUrl,
                 FtpProxy = proxyUrl,
             };
-         
+
             IWebDriver webDriver;
             switch (browser)
             {
@@ -48,10 +47,8 @@ namespace SimpleFactoryDesignPatternProxies
                     };
                     var chromeDriverService = ChromeDriverService.CreateDefaultService(AssemblyFolder);
                     webDriver = new ChromeDriver(chromeDriverService, chromeOptions);
-                    webDriver.Manage().Timeouts().PageLoad = 
-                        TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Chrome.PageLoadTimeout);
-                    webDriver.Manage().Timeouts().AsynchronousJavaScript = 
-                        TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Chrome.ScriptTimeout);
+                    webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Chrome.PageLoadTimeout);
+                    webDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Chrome.ScriptTimeout);
                     break;
                 case Browser.Firefox:
                     var firefoxOptions = new FirefoxOptions()
@@ -59,10 +56,8 @@ namespace SimpleFactoryDesignPatternProxies
                         Proxy = proxy
                     };
                     webDriver = new FirefoxDriver(Environment.CurrentDirectory, firefoxOptions);
-                    webDriver.Manage().Timeouts().PageLoad = 
-                        TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Firefox.PageLoadTimeout);
-                    webDriver.Manage().Timeouts().AsynchronousJavaScript = 
-                        TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Firefox.ScriptTimeout);
+                    webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Firefox.PageLoadTimeout);
+                    webDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Firefox.ScriptTimeout);
                     break;
                 case Browser.Edge:
                     var edgeOptions = new EdgeOptions()
@@ -70,10 +65,8 @@ namespace SimpleFactoryDesignPatternProxies
                         Proxy = proxy
                     };
                     webDriver = new EdgeDriver(Environment.CurrentDirectory, edgeOptions);
-                    webDriver.Manage().Timeouts().PageLoad = 
-                        TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Edge.PageLoadTimeout);
-                    webDriver.Manage().Timeouts().AsynchronousJavaScript = 
-                        TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Edge.ScriptTimeout);
+                    webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Edge.PageLoadTimeout);
+                    webDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().Edge.ScriptTimeout);
                     break;
                 case Browser.InternetExplorer:
                     var ieOptions = new InternetExplorerOptions()
@@ -81,10 +74,8 @@ namespace SimpleFactoryDesignPatternProxies
                         Proxy = proxy
                     };
                     webDriver = new InternetExplorerDriver(Environment.CurrentDirectory, ieOptions);
-                    webDriver.Manage().Timeouts().PageLoad = 
-                        TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().InternetExplorer.PageLoadTimeout);
-                    webDriver.Manage().Timeouts().AsynchronousJavaScript = 
-                        TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().InternetExplorer.ScriptTimeout);
+                    webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().InternetExplorer.PageLoadTimeout);
+                    webDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(ConfigurationService.Instance.GetWebSettings().InternetExplorer.ScriptTimeout);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(browser), browser, null);

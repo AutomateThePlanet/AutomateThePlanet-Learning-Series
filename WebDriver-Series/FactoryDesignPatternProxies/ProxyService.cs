@@ -47,7 +47,7 @@ namespace SimpleFactoryDesignPatternProxies
             {
                 driver.Navigate().GoToUrl("https://www.proxy-list.download/HTTPS");
                 driver.FindElement(By.Id("btn3")).Click();
-                _proxiesToCheck = new ConcurrentBag<string>(Clipboard.GetText().Split(Environment.NewLine).Where(x => !string.IsNullOrEmpty(x)).ToList());
+                _proxiesToCheck = new ConcurrentBag<string>(new Clipboard().GetText().Split(Environment.NewLine).Where(x => !string.IsNullOrEmpty(x)).ToList());
             }
         }
 
