@@ -18,7 +18,7 @@ namespace AdvancedPageObjectPattern
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
+        Chrome,
         NotSet
     }
 }

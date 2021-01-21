@@ -18,7 +18,7 @@ namespace AdvancedPageObjectPattern.Pages.BingMainPage
 {
     public class BingMainPageElementMap : BasePageElementMap
     {
-        public IWebElement SearchBox 
+        public IWebElement SearchBox
         {
             get
             {
@@ -26,14 +26,14 @@ namespace AdvancedPageObjectPattern.Pages.BingMainPage
             }
         }
 
-        public IWebElement GoButton 
+        public IWebElement GoButton
         {
             get
             {
                 return Browser.FindElement(By.XPath("//label[@for='sb_form_go']"));
             }
         }
-       
+
         public IWebElement ResultsCountDiv
         {
             get

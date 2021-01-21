@@ -19,7 +19,7 @@ namespace AdvancedPageObjectPattern
 {
     [TestClass]
     public class AdvancedBingTests
-    { 
+    {
         [TestInitialize]
         public void SetupTest()
         {
