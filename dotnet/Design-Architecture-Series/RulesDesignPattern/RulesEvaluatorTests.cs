@@ -32,7 +32,7 @@ namespace RulesDesignPattern
                 TotalPrice = 100,
                 CreditCardNumber = "378734493671000"
             };
-            
+
             var rulesEvaluator = new RulesEvaluator();
 
             rulesEvaluator.Eval(new PromotionalPurchaseRule(purchaseTestInput, () => PerformUiAssert()));
@@ -41,8 +41,8 @@ namespace RulesDesignPattern
             rulesEvaluator.OtherwiseEval(new CreditCardChargeRule<CreditCardChargeRuleRuleResult>(purchaseTestInput, 30));
             rulesEvaluator.OtherwiseEval(new CreditCardChargeRule<CreditCardChargeRuleAssertResult>(purchaseTestInput, 40));
             rulesEvaluator.OtherwiseEval(new CreditCardChargeRule(purchaseTestInput, 50, () => PerformUiAssert()));
-            rulesEvaluator.OtherwiseDo(() => Debug.WriteLine("Perform other UI actions"));          
-            
+            rulesEvaluator.OtherwiseDo(() => Debug.WriteLine("Perform other UI actions"));
+
             rulesEvaluator.EvaluateRulesChains();
         }
 
@@ -63,6 +63,7 @@ namespace RulesDesignPattern
             {
                 PerformUiAssert("Assert volume discount promotion amount. + additional UI actions");
             }
+
             if (!string.IsNullOrEmpty(purchaseTestInput.CreditCardNumber) &&
                 !purchaseTestInput.IsWiretransfer &&
                 !purchaseTestInput.IsPromotionalPurchase &&

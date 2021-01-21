@@ -26,7 +26,7 @@ namespace RulesDesignPattern
             _purchaseTestInput = purchaseTestInput;
             _totalPriceLowerBoundary = totalPriceLowerBoundary;
         }
-        
+
         public override IRuleResult Eval()
         {
             if (!string.IsNullOrEmpty(_purchaseTestInput.CreditCardNumber) &&
@@ -37,6 +37,7 @@ namespace RulesDesignPattern
                 RuleResult.IsSuccess = true;
                 return RuleResult;
             }
+
             return new RuleResult();
         }
     }

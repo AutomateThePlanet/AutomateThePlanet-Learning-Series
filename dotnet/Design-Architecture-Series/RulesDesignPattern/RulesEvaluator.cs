@@ -40,6 +40,7 @@ namespace RulesDesignPattern
             {
                 throw new ArgumentException("You cannot add ElseIf clause without If!");
             }
+
             _rules.Last().ElseRules.Add(new RulesChain(alternativeRule));
         }
 
@@ -49,6 +50,7 @@ namespace RulesDesignPattern
             {
                 throw new ArgumentException("You cannot add Else clause without If!");
             }
+
             _rules.Last().ElseRules.Add(new RulesChain(new NullRule(otherwiseAction), true));
         }
 

@@ -38,6 +38,7 @@ namespace RulesDesignPattern
                 RuleResult.IsSuccess = true;
                 return RuleResult;
             }
+
             return new TRuleResult();
         }
     }
