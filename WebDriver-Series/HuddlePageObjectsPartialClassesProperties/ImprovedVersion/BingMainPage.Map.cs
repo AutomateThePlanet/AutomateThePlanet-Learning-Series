@@ -25,7 +25,6 @@ namespace HuddlePageObjectsElementsStringProperties.ImprovedVersion
             }
         }
 
-
         public IWebElement GoButton
         {
             get
