@@ -27,9 +27,9 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core
                 var behavior =
                     UnityContainerFactory.GetContainer().Resolve(
                         definition.BehaviorType,
-                        new ResolverOverride[] 
-                        { 
-                            new ParameterOverride("definition", definition) 
+                        new ResolverOverride[]
+                        {
+                            new ParameterOverride("definition", definition)
                         }) as Behavior;
                 behavior.Execute();
             }

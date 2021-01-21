@@ -20,7 +20,6 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Pages.ItemPage
     {
         public static void ProductTitle(this ItemPage page, string expectedTitle)
         {
-            //Selenium Testing Tools Cookbook
             Assert.AreEqual<string>(expectedTitle, page.ProductTitle.Text);
         }
     }

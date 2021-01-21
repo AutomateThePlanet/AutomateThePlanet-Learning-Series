@@ -23,7 +23,7 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Pages.ItemPage
         public ItemPage(IWebDriver driver) : base(driver)
         {
         }
-        
+
         public override string Url
         {
             get
@@ -39,7 +39,6 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Pages.ItemPage
 
         public void Navigate(string part)
         {
-            ///Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743
             Open(part);
         }
     }

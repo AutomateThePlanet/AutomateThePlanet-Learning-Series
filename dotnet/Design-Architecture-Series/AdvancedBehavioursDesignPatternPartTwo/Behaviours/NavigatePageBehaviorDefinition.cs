@@ -18,8 +18,8 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 {
     public class NavigatePageBehaviorDefinition : BehaviorDefinition
     {
-        public NavigatePageBehaviorDefinition(string expectedUrl) : 
-            base(typeof(NavigatePageBehavior))
+        public NavigatePageBehaviorDefinition(string expectedUrl)
+            : base(typeof(NavigatePageBehavior))
         {
             ExpectedUrl = expectedUrl;
         }

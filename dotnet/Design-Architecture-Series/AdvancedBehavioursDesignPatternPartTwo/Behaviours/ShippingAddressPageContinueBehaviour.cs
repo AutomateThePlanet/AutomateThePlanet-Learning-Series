@@ -24,7 +24,7 @@ namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
 
         public ShippingAddressPageContinueBehaviour()
         {
-            _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
+            _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
         }
 
         protected override void PerformAct()
