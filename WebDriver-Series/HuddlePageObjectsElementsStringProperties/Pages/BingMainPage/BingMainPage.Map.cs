@@ -15,7 +15,6 @@ using OpenQA.Selenium;
 
 namespace HuddlePageObjectsElementsStringProperties
 {
-
     public partial class BingMainPage
     {
         // Normal Version
@@ -26,7 +25,6 @@ namespace HuddlePageObjectsElementsStringProperties
         ////            return this._driver.FindElement(By.Id("sb_form_q"));
         ////        }
         ////    }
-
 
         ////    public IWebElement GoButton
         ////    {
@@ -43,8 +41,7 @@ namespace HuddlePageObjectsElementsStringProperties
         ////            return this._driver.FindElement(By.Id("b_tween"));
         ////        }
         ////    }
-        
-            // String Properties Version
+        // String Properties Version
         public string SearchBox
         {
             get => _driver.FindElement(By.Id("sb_form_q")).Text;
@@ -55,7 +52,6 @@ namespace HuddlePageObjectsElementsStringProperties
                 element.SendKeys(value);
             }
         }
-
 
         public IWebElement GoButton => _driver.FindElement(By.Id("sb_form_go"));
 

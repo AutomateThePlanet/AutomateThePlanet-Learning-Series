@@ -29,7 +29,6 @@ namespace HuddlePageObjectsElementsStringProperties
         {
             _driver = new FirefoxDriver();
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-
         }
 
         [TestCleanup]
