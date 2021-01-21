@@ -31,6 +31,7 @@ namespace GenericPropertiesValidator
             {
                 throw new NullReferenceException("The actual date was null");
             }
+
             var expectedDelta = GetTimeSpanDeltaByType(deltaType, count);
             var totalSecondsDifference = Math.Abs(((DateTime)actualDate - (DateTime)expectedDate).TotalSeconds);
 

@@ -34,6 +34,7 @@ namespace GenericPropertiesValidator
                 {
                     instance = new K();
                 }
+
                 return instance;
             }
         }

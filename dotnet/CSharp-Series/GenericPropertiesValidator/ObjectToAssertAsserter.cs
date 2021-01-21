@@ -21,7 +21,7 @@ namespace GenericPropertiesValidator
             Assert(expected,
                         actual,
                         e => e.LastName,
-                        e => e.FirstName, 
+                        e => e.FirstName,
                         e => e.PoNumber);
         }
     }
