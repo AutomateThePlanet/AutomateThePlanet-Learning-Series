@@ -37,6 +37,7 @@ namespace ExecuteAndroidAppiumDocker
             appiumOptions.AddAdditionalCapability("enableVideo", true);
 
             var timeout = TimeSpan.FromSeconds(120);
+
             // Change with your Selenoid hub instance URL.
             _driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4444/wd/hub"), appiumOptions, timeout);
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(120);
