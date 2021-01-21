@@ -89,7 +89,6 @@ namespace GettingStartedAppiumAndroidWindows
                 .MoveTo(point.X + size.Width - 5, point.Y + size.Height - 5)
                 .Release()
                 .Perform();
-
         }
     }
 }
