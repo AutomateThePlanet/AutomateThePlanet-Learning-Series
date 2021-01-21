@@ -21,12 +21,9 @@ import pageobjectfluent.enums.*;
 import pageobjectfluent.pages.bingmainpage.BingMainPage;
 
 public class FluentBingTests {
-    private BingMainPage bingMainPage;
-
     @BeforeMethod
     public void testInit() {
         Driver.startBrowser();
-        bingMainPage = new BingMainPage();
     }
 
     @AfterMethod
@@ -36,8 +33,8 @@ public class FluentBingTests {
 
     @Test
     public void searchImageInBing_when_FluentPageObjectPatternUsed() {
-        bingMainPage
-                .navigate()
+        var bingMainPage = new BingMainPage();
+        bingMainPage.navigate()
                 .search("Automate The Planet")
                 .clickImages()
                 .clickImagesFilter()

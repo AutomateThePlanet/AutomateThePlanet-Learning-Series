@@ -58,7 +58,6 @@ public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAss
     public BingMainPage setSize(Size size) {
         waitForAsyncRefresh(elements().sizes());
         elements().sizes().click();
-        waitForAsyncRefresh(elements().sizesOption().get(size.ordinal()));
         elements().sizesOption().get(size.ordinal()).click();
         return this;
     }
@@ -66,7 +65,6 @@ public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAss
     public BingMainPage setColor(Color color) {
         waitForAsyncRefresh(elements().color());
         elements().color().click();
-        waitForAsyncRefresh(elements().colorOption().get(color.ordinal()));
         elements().colorOption().get(color.ordinal()).click();
         return this;
     }
@@ -74,7 +72,6 @@ public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAss
     public BingMainPage setType(Type type) {
         waitForAsyncRefresh(elements().type());
         elements().type().click();
-        waitForAsyncRefresh(elements().typeOption().get(type.ordinal()));
         elements().typeOption().get(type.ordinal()).click();
         return this;
     }
@@ -82,7 +79,6 @@ public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAss
     public BingMainPage setLayout(Layout layout) {
         waitForAsyncRefresh(elements().layout());
         elements().layout().click();
-        waitForAsyncRefresh(elements().layoutOption().get(layout.ordinal()));
         elements().layoutOption().get(layout.ordinal()).click();
         return this;
     }
@@ -90,7 +86,6 @@ public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAss
     public BingMainPage setPeople(People people) {
         waitForAsyncRefresh(elements().people());
         elements().people().click();
-        waitForAsyncRefresh(elements().peopleOption().get(people.ordinal()));
         elements().peopleOption().get(people.ordinal()).click();
         return this;
     }
@@ -98,7 +93,6 @@ public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAss
     public BingMainPage setDate(Date date) {
         waitForAsyncRefresh(elements().date());
         elements().date().click();
-        waitForAsyncRefresh(elements().dateOption().get(date.ordinal()));
         elements().dateOption().get(date.ordinal()).click();
         return this;
     }
@@ -106,7 +100,6 @@ public class BingMainPage extends BasePage<BingMainPageElements, BingMainPageAss
     public BingMainPage setLicense(License license) {
         waitForAsyncRefresh(elements().license());
         elements().license().click();
-        waitForAsyncRefresh(elements().licenseOption().get(license.ordinal()));
         elements().licenseOption().get(license.ordinal()).click();
         return this;
     }
