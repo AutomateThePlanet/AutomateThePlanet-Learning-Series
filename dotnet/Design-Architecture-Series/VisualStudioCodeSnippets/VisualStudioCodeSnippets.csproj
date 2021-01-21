@@ -121,36 +121,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HybridTestFramework.Core.Behaviours.Contracts\HybridTestFramework.Core.Behaviours.Contracts.csproj">
-      <Project>{041a4cd0-b9d1-4e4a-9dc3-6439c6ee510b}</Project>
-      <Name>HybridTestFramework.Core.Behaviours.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HybridTestFramework.Core.MSTest.Asserts\HybridTestFramework.Core.MSTest.Asserts.csproj">
-      <Project>{4b43d128-a267-4396-8c5b-d135edb27869}</Project>
-      <Name>HybridTestFramework.Core.MSTest.Asserts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HybridTestFramework.UITests.Core.Asserts\HybridTestFramework.Core.Asserts.csproj">
-      <Project>{7ff3f483-ba48-4f18-bc8d-61236425dd37}</Project>
-      <Name>HybridTestFramework.Core.Asserts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HybridTestFramework.UITests.Core.Behaviours\HybridTestFramework.UITests.Core.Behaviours.csproj">
-      <Project>{11376c1a-2f0f-4fcc-a6c7-7eb1daaa4f02}</Project>
-      <Name>HybridTestFramework.UITests.Core.Behaviours</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HybridTestFramework.UITests.Core.Utilities\HybridTestFramework.UITests.Core.Utilities.csproj">
-      <Project>{4799c486-623c-4718-a910-3a3157992e22}</Project>
-      <Name>HybridTestFramework.UITests.Core.Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HybridTestFramework.UITests.Core\HybridTestFramework.UITests.Core.csproj">
-      <Project>{4161286f-a88a-4770-ac78-9d687a3b2c27}</Project>
-      <Name>HybridTestFramework.UITests.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HybridTestFramework.UITests.Selenium\HybridTestFramework.UITests.Selenium.csproj">
-      <Project>{511861b7-5994-4cae-84d0-daa38ba5e9b0}</Project>
-      <Name>HybridTestFramework.UITests.Selenium</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="read-me14.txt" />
   </ItemGroup>
   <Choose>

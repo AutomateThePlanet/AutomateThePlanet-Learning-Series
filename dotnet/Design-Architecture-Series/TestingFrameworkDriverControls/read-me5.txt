@@ -1,3 +1,0 @@
-﻿Article: Create Hybrid Test Framework - Testing Framework Driver Controls
-URL:  http://automatetheplanet.com/hybrid-test-framework-testing-framework-driver-controls/
-Publish Date: 17.07.2016
