@@ -3,7 +3,7 @@
 namespace TestAutomationReportingReportPortal
 {
     [TestClass]
-    class CalculatorDivisionTests
+    internal class CalculatorDivisionTests
     {
         [TestMethod]
         public void Return4_WhenMultiply2And2()

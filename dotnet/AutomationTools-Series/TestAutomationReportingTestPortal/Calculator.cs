@@ -16,7 +16,6 @@
             }
 
             return num2 - num1;
-
         }
 
         public float Division(float num1, float num2) => num1 / num2;

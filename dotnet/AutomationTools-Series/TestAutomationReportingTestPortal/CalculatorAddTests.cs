@@ -3,7 +3,7 @@
 namespace TestAutomationReportingReportPortal
 {
     [TestClass]
-    class CalculatorAddTests
+    internal class CalculatorAddTests
     {
         [TestMethod]
         public void Return4_WhenAdd2And2()

@@ -9,7 +9,7 @@ namespace TestAutomationReportingAllure
     [AllureNUnit]
     [AllureSuite("CalculatorTests")]
     [AllureDisplayIgnored]
-    class CalculatorAddTests
+    internal class CalculatorAddTests
     {
         [Test(Description = "Add two integers and returns the sum")]
         [AllureTag("CI")]

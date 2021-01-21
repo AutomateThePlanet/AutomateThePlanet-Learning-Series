@@ -9,17 +9,17 @@ using System;
 
 namespace BenchmarkingAutomatedTesting
 {
-    //[InProcess]
+    ////[InProcess]
 
     [CsvExporter]
     [HtmlExporter]
-    [DisassemblyDiagnoser(printAsm: true, printSource: true)]
+    [DisassemblyDiagnoser(printSource: true)]
     [RyuJitX64Job]
     [MemoryDiagnoser]
     ////[EtwProfiler]
     public class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             ////_driver = new ChromeDriver(AssemblyFolder);
             ////var config = DefaultConfig.Instance.With(ConfigOptions.DisableOptimizationsValidator);

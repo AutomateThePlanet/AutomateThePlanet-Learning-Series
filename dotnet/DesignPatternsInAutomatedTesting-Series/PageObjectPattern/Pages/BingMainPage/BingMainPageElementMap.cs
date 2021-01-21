@@ -1,5 +1,5 @@
 ﻿// <copyright file="BingMainPageElementMap.cs" company="Automate The Planet Ltd.">
-// Copyright 2020 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -24,7 +24,7 @@ namespace PageObjectPattern.Pages
             _browser = browser;
         }
 
-        public IWebElement SearchBox 
+        public IWebElement SearchBox
         {
             get
             {
@@ -32,14 +32,14 @@ namespace PageObjectPattern.Pages
             }
         }
 
-        public IWebElement GoButton 
+        public IWebElement GoButton
         {
             get
             {
                 return _browser.FindElement(By.XPath("//label[@for='sb_form_go']"));
             }
         }
-       
+
         public IWebElement ResultsCountDiv
         {
             get

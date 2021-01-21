@@ -46,65 +46,69 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19. Null Object Design Patt
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20. Advanced Null Object Design Pattern", "20. Advanced Null Object Design Pattern", "{2F916E39-898B-4959-88C5-45B2F4796F04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjectPattern", "PageObjectPattern\PageObjectPattern.csproj", "{E2DAC66D-8902-44E7-B58A-F6F36F10E7F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageObjectPattern", "PageObjectPattern\PageObjectPattern.csproj", "{E2DAC66D-8902-44E7-B58A-F6F36F10E7F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverDesignPatternEventsDelegates", "ObserverDesignPatternEventsDelegates\ObserverDesignPatternEventsDelegates.csproj", "{8AE9436D-6FBC-4FC4-AB43-0D2362CC19F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverDesignPatternEventsDelegates", "ObserverDesignPatternEventsDelegates\ObserverDesignPatternEventsDelegates.csproj", "{8AE9436D-6FBC-4FC4-AB43-0D2362CC19F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverDesignPatternIObservableIObserver", "ObserverDesignPatternIObservableIObserver\ObserverDesignPatternIObservableIObserver.csproj", "{E6C9E85B-5B40-421A-917E-6560DA8F1F6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverDesignPatternIObservableIObserver", "ObserverDesignPatternIObservableIObserver\ObserverDesignPatternIObservableIObserver.csproj", "{E6C9E85B-5B40-421A-917E-6560DA8F1F6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecoratorDesignPattern", "DecoratorDesignPattern\DecoratorDesignPattern.csproj", "{23D9D3B5-F143-4636-AE81-05AA54B67206}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecoratorDesignPattern", "DecoratorDesignPattern\DecoratorDesignPattern.csproj", "{23D9D3B5-F143-4636-AE81-05AA54B67206}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjectsThatMakeCodeMoreMaintainable", "PageObjectsThatMakeCodeMoreMaintainable\PageObjectsThatMakeCodeMoreMaintainable.csproj", "{96238C7D-5D7F-4E23-B27B-CEE8701BFB2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageObjectsThatMakeCodeMoreMaintainable", "PageObjectsThatMakeCodeMoreMaintainable\PageObjectsThatMakeCodeMoreMaintainable.csproj", "{96238C7D-5D7F-4E23-B27B-CEE8701BFB2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImprovedFacadeDesignPattern", "ImprovedFacadeDesignPattern\ImprovedFacadeDesignPattern.csproj", "{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImprovedFacadeDesignPattern", "ImprovedFacadeDesignPattern\ImprovedFacadeDesignPattern.csproj", "{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternsMoreReliableMaintainableTests", "DesignPatternsMoreReliableMaintainableTests\DesignPatternsMoreReliableMaintainableTests.csproj", "{D6C345CE-4ED5-4183-8926-FDA4C3E216D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatternsMoreReliableMaintainableTests", "DesignPatternsMoreReliableMaintainableTests\DesignPatternsMoreReliableMaintainableTests.csproj", "{D6C345CE-4ED5-4183-8926-FDA4C3E216D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesDesignPattern", "RulesDesignPattern\RulesDesignPattern.csproj", "{8DBA9D92-C1A3-4119-A3FE-21EECBFF5547}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RulesDesignPattern", "RulesDesignPattern\RulesDesignPattern.csproj", "{8DBA9D92-C1A3-4119-A3FE-21EECBFF5547}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecificationDesignPattern", "SpecificationDesignPattern\SpecificationDesignPattern.csproj", "{9977A596-DC0C-48DE-BA07-7569F785CDDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecificationDesignPattern", "SpecificationDesignPattern\SpecificationDesignPattern.csproj", "{9977A596-DC0C-48DE-BA07-7569F785CDDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedSpecificationDesignPattern", "AdvancedSpecificationDesignPattern\AdvancedSpecificationDesignPattern.csproj", "{D5808084-B5C1-40AE-A719-86F8FE5236CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedSpecificationDesignPattern", "AdvancedSpecificationDesignPattern\AdvancedSpecificationDesignPattern.csproj", "{D5808084-B5C1-40AE-A719-86F8FE5236CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullObjectDesignPattern", "NullObjectDesignPattern\NullObjectDesignPattern.csproj", "{91855084-EE96-4142-B077-E21641510C11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NullObjectDesignPattern", "NullObjectDesignPattern\NullObjectDesignPattern.csproj", "{91855084-EE96-4142-B077-E21641510C11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedPageObjectPattern", "AdvancedPageObjectPattern\AdvancedPageObjectPattern.csproj", "{B71F29E4-72B9-4574-A541-5EBCB75DB015}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedPageObjectPattern", "AdvancedPageObjectPattern\AdvancedPageObjectPattern.csproj", "{B71F29E4-72B9-4574-A541-5EBCB75DB015}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedNullObjectDesignPattern", "AdvancedNullObjectDesignPattern\AdvancedNullObjectDesignPattern.csproj", "{8F2514CF-7A09-4B41-8D6C-540F5510EB57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedNullObjectDesignPattern", "AdvancedNullObjectDesignPattern\AdvancedNullObjectDesignPattern.csproj", "{8F2514CF-7A09-4B41-8D6C-540F5510EB57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacadeDesignPattern", "FacadeDesignPattern\FacadeDesignPattern.csproj", "{DD556336-0B90-40AC-A37A-69350AD818AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacadeDesignPattern", "FacadeDesignPattern\FacadeDesignPattern.csproj", "{DD556336-0B90-40AC-A37A-69350AD818AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonDesignPattern", "SingletonDesignPattern\SingletonDesignPattern.csproj", "{D30E4E7B-2FA2-4D72-B95E-FAE09C61DCFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingletonDesignPattern", "SingletonDesignPattern\SingletonDesignPattern.csproj", "{D30E4E7B-2FA2-4D72-B95E-FAE09C61DCFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentPageObjectPattern", "FluentPageObjectPattern\FluentPageObjectPattern.csproj", "{B807855A-54AF-4375-BF7A-4770ABE528C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentPageObjectPattern", "FluentPageObjectPattern\FluentPageObjectPattern.csproj", "{B807855A-54AF-4375-BF7A-4770ABE528C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCContainerPageObjectPattern", "IoCContainerPageObjectPattern\IoCContainerPageObjectPattern.csproj", "{54CC1029-406A-41F8-8106-A446CD8A5C34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoCContainerPageObjectPattern", "IoCContainerPageObjectPattern\IoCContainerPageObjectPattern.csproj", "{54CC1029-406A-41F8-8106-A446CD8A5C34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyDesignPattern", "StrategyDesignPattern\StrategyDesignPattern.csproj", "{0D5EFFD7-3780-428F-AE51-16F91C806EB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrategyDesignPattern", "StrategyDesignPattern\StrategyDesignPattern.csproj", "{0D5EFFD7-3780-428F-AE51-16F91C806EB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedStrategyDesignPattern", "AdvancedStrategyDesignPattern\AdvancedStrategyDesignPattern.csproj", "{D26D6A4D-5BF8-48F1-BA1C-AFE9477A0843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedStrategyDesignPattern", "AdvancedStrategyDesignPattern\AdvancedStrategyDesignPattern.csproj", "{D26D6A4D-5BF8-48F1-BA1C-AFE9477A0843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverDesignPatternClassicImplementation", "ObserverDesignPatternClassicImplementation\ObserverDesignPatternClassicImplementation.csproj", "{7B431CFE-EDC5-410B-81FE-7CC937972013}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverDesignPatternClassicImplementation", "ObserverDesignPatternClassicImplementation\ObserverDesignPatternClassicImplementation.csproj", "{7B431CFE-EDC5-410B-81FE-7CC937972013}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21. Behaviours Design Pattern", "21. Behaviours Design Pattern", "{58DB0604-A0BF-4942-B4F2-01B0ECA74494}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BehavioursDesignPattern", "BehavioursDesignPattern\BehavioursDesignPattern.csproj", "{6CB43C8F-F7A9-435C-921D-D2F053003F15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BehavioursDesignPattern", "BehavioursDesignPattern\BehavioursDesignPattern.csproj", "{6CB43C8F-F7A9-435C-921D-D2F053003F15}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "22. Advanced Behaviours Design Pattern Part 1", "22. Advanced Behaviours Design Pattern Part 1", "{678D5928-2199-45B4-B95D-5C1669C91322}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedBehavioursDesignPattern", "AdvancedBehavioursDesignPattern\AdvancedBehavioursDesignPattern.csproj", "{29C917B3-41F0-4EC6-82AC-6A54503433DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedBehavioursDesignPattern", "AdvancedBehavioursDesignPattern\AdvancedBehavioursDesignPattern.csproj", "{29C917B3-41F0-4EC6-82AC-6A54503433DC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "23. Advanced Behaviours Design Pattern Part 2", "23. Advanced Behaviours Design Pattern Part 2", "{BBFDF962-CEE1-4DAE-AFD1-AC47BD289614}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedBehavioursDesignPatternPartTwo", "AdvancedBehavioursDesignPatternPartTwo\AdvancedBehavioursDesignPatternPartTwo.csproj", "{9A0A60B4-AE87-4424-AD23-1BB732C014B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedBehavioursDesignPatternPartTwo", "AdvancedBehavioursDesignPatternPartTwo\AdvancedBehavioursDesignPatternPartTwo.csproj", "{9A0A60B4-AE87-4424-AD23-1BB732C014B5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hero's Journey to Perfect System Test's Design", "Hero's Journey to Perfect System Test's Design", "{F3BE854E-642D-4B99-AABC-BAFBABD57115}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerfectSystemTestsDesign", "PerfectSystemTestsDesign\PerfectSystemTestsDesign.csproj", "{ADE75661-42DB-4A1E-8D65-34EFE360F620}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerfectSystemTestsDesign", "PerfectSystemTestsDesign\PerfectSystemTestsDesign.csproj", "{ADE75661-42DB-4A1E-8D65-34EFE360F620}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{241E4022-C592-4B55-9772-BEF32B7057B3}"
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
+		..\..\LICENSE.txt = ..\..\LICENSE.txt
+		..\..\SharedAssemblyInfo.targets = ..\..\SharedAssemblyInfo.targets
+		..\..\stylecop.json = ..\..\stylecop.json
+		..\..\StyleCopeRules.ruleset = ..\..\StyleCopeRules.ruleset
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "24. Template Method Design Pattern", "24. Template Method Design Pattern", "{B7008ECC-8772-4C32-8E30-B43FCA2A90BA}"
@@ -139,9 +143,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "37. Memento Design Pattern"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "38. Service Locator Design Pattern", "38. Service Locator Design Pattern", "{F1F1A267-2C1F-49E2-AF14-38BBEB638F3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyDesignPattern", "ProxyDesignPattern\ProxyDesignPattern.csproj", "{F99C5996-FFCE-43E5-9F9C-E10F624DABA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProxyDesignPattern", "ProxyDesignPattern\ProxyDesignPattern.csproj", "{F99C5996-FFCE-43E5-9F9C-E10F624DABA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdapterDesignPattern", "AdapterDesignPattern\AdapterDesignPattern.csproj", "{D0E21FE9-0DA2-4680-9FF3-284A5204E517}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdapterDesignPattern", "AdapterDesignPattern\AdapterDesignPattern.csproj", "{D0E21FE9-0DA2-4680-9FF3-284A5204E517}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LazyLoadingDesignPattern", "LazyLoadingDesignPattern\LazyLoadingDesignPattern.csproj", "{9A758A4A-10D3-4035-A9D4-FC39A6DE05D6}"
 EndProject

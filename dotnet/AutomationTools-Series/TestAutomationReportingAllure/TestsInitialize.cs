@@ -15,7 +15,6 @@ namespace TestAutomationReportingAllure
             Environment.SetEnvironmentVariable("ALLURE_CONFIG", allureConfigPath);
         }
 
-
         public string GetAllureConfigPath()
         {
             string codeBase = Assembly.GetExecutingAssembly().CodeBase;

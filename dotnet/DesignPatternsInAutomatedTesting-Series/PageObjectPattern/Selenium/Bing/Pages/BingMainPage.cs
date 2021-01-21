@@ -1,5 +1,5 @@
 ﻿// <copyright file="BingMainPage.cs" company="Automate The Planet Ltd.">
-// Copyright 2020 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -13,7 +13,7 @@
 // <site>http://automatetheplanet.com/</site>
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace PageObjectPattern.Selenium.Bing.Pages
 {
@@ -39,7 +39,7 @@ namespace PageObjectPattern.Selenium.Bing.Pages
 
         public void Navigate()
         {
-            _driver.Navigate().GoToUrl(_url);            
+            _driver.Navigate().GoToUrl(_url);
         }
 
         public void Search(string textToType)

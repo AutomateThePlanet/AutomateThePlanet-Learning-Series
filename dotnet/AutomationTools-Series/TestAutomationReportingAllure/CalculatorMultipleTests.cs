@@ -8,7 +8,7 @@ namespace TestAutomationReportingAllure
     [AllureNUnit]
     [AllureSuite("CalculatorTests")]
     [AllureDisplayIgnored]
-    class CalculatorMultipleTests
+    internal class CalculatorMultipleTests
     {
         [Test(Description = "Performing Division on two float variables. ")]
         [AllureTag("CI")]

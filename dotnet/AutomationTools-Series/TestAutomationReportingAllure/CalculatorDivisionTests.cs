@@ -9,7 +9,7 @@ namespace TestAutomationReportingAllure
     [AllureNUnit]
     [AllureSuite("CalculatorTests")]
     [AllureDisplayIgnored]
-    class CalculatorDivisionTests
+    internal class CalculatorDivisionTests
     {
         [Test(Description = "Multiply two integers and returns the result")]
         [AllureTag("CI")]
