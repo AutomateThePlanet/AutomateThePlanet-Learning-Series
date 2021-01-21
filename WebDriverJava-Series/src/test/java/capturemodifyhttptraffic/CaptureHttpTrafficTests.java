@@ -21,42 +21,43 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
+import java.io.File;
+import java.io.IOException;
 
 public class CaptureHttpTrafficTests {
     private WebDriver driver;
     private BrowserMobProxyServer proxyServer;
 
     @BeforeClass
-    private static void classInit() {
+    private void classInit() {
+        proxyServer = new BrowserMobProxyServer();
+        proxyServer.start(18882);
+        proxyServer.newHar();
+
         WebDriverManager.chromedriver().setup();
     }
 
     @BeforeMethod
     public void testInit() {
-        proxyServer = new BrowserMobProxyServer();
-        proxyServer.start();
-
-        proxyServer.enableHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
-        proxyServer.newHar();
-        String proxyDetails = "127.0.0.1:" + proxyServer.getPort();
-        final Proxy proxyConfig = new Proxy()
-                .setHttpProxy(proxyDetails)
-                .setSslProxy(proxyDetails)
-                .setFtpProxy(proxyDetails);
-
-        final ChromeOptions options = new ChromeOptions();
-        options.setProxy(proxyConfig);
-        options.setAcceptInsecureCerts(true);
+        final var proxyConfig = new Proxy()
+                .setHttpProxy("127.0.0.1:18882")
+                .setSslProxy("127.0.0.1:18882")
+                .setFtpProxy("127.0.0.1:18882");
+        final var options = new ChromeOptions()
+                .setProxy(proxyConfig)
+                .setAcceptInsecureCerts(true);
         driver = new ChromeDriver(options);
     }
 
     @AfterMethod
     public void testCleanup() {
         driver.quit();
+    }
+
+    @AfterClass
+    public void classCleanup() {
         proxyServer.abort();
     }
 
