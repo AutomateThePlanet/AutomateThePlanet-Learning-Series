@@ -21,7 +21,7 @@ namespace AdvancedStrategyDesignPattern
 {
     [TestClass]
     public class AmazonPurchaseAdvancedPurchaseStrategyTests
-    { 
+    {
         [TestInitialize]
         public void SetupTest()
         {
