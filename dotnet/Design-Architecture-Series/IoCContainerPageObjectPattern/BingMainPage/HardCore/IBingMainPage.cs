@@ -20,7 +20,7 @@ namespace IoCContainerPageObjectPattern.BingMainPage.HardCore
     public interface IBingMainPage<TM, TV>
     : IPage<TM, TV>
         where TM : BasePageElementMap, new()
-        where TV : BasePageValidator<TM>, new() 
+        where TV : BasePageValidator<TM>, new()
     {
         void Search(string textToType);
 

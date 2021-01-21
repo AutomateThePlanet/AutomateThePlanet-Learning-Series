@@ -18,7 +18,7 @@ namespace IoCContainerPageObjectPattern.Core
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
+        Chrome,
         NotSet
     }
 }

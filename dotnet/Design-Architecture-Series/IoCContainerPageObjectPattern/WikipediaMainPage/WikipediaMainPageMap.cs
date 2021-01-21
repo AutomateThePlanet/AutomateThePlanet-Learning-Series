@@ -19,7 +19,7 @@ namespace IoCContainerPageObjectPattern.WikipediaMainPage
 {
     public class WikipediaMainPageMap : BasePageElementMap
     {
-        public IWebElement SearchBox 
+        public IWebElement SearchBox
         {
             get
             {
@@ -27,7 +27,7 @@ namespace IoCContainerPageObjectPattern.WikipediaMainPage
             }
         }
 
-        public IWebElement SearchButton 
+        public IWebElement SearchButton
         {
             get
             {

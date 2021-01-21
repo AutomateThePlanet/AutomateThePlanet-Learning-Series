@@ -18,7 +18,7 @@ namespace IoCContainerPageObjectPattern.WikipediaMainPage.HardCore
 {
     public interface IWikipediaMainPage<TM, TV> : IPage<TM, TV>
         where TM : BasePageElementMap, new()
-        where TV : BasePageValidator<TM>, new() 
+        where TV : BasePageValidator<TM>, new()
     {
         void Search(string textToType);
 

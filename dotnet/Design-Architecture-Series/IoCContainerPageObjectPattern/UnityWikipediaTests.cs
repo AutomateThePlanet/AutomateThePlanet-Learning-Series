@@ -14,10 +14,10 @@
 using System.Configuration;
 using IoCContainerPageObjectPattern.Core;
 using IoCContainerPageObjectPattern.WikipediaMainPage;
-using Microsoft.Practices.Unity.Configuration;
 using Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Unity.Lifetime;
+using Microsoft.Practices.Unity.Configuration;
 
 namespace IoCContainerPageObjectPattern
 {
@@ -26,7 +26,7 @@ namespace IoCContainerPageObjectPattern
     {
         private static readonly IUnityContainer PageFactory = new UnityContainer();
 
-        [AssemblyInitialize()]
+        [AssemblyInitialize]
         public static void MyTestInitialize(TestContext testContext)
         {
             var fileMap = new ExeConfigurationFileMap { ExeConfigFilename = "unity.config" };

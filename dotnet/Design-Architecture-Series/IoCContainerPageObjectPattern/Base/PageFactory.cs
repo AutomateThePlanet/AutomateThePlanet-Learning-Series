@@ -20,14 +20,14 @@ namespace IoCContainerPageObjectPattern.Base
 {
     public static class PageFactory
     {
-        private static readonly IUnityContainer Container; 
+        private static readonly IUnityContainer Container;
 
         static PageFactory()
         {
             var fileMap = new ExeConfigurationFileMap { ExeConfigFilename = "unity.config" };
             var configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
             var unitySection = (UnityConfigurationSection)configuration.GetSection("unity");
-            Container = new UnityContainer(); 
+            Container = new UnityContainer();
             Container.LoadConfiguration(unitySection);
         }
 

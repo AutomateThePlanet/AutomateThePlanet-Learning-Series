@@ -18,6 +18,6 @@ namespace IoCContainerPageObjectPattern.Enums
     {
         All,
         JustFaces,
-        HeadShoulders        
+        HeadShoulders
     }
 }
