@@ -22,7 +22,7 @@ namespace SpecificationDesignPattern.Pages.BingMain
         {
         }
 
-        public IWebElement SearchBox 
+        public IWebElement SearchBox
         {
             get
             {
@@ -30,14 +30,14 @@ namespace SpecificationDesignPattern.Pages.BingMain
             }
         }
 
-        public IWebElement GoButton 
+        public IWebElement GoButton
         {
             get
             {
                 return Driver.FindElement(By.Id("sb_form_go"));
             }
         }
-       
+
         public IWebElement ResultsCountDiv
         {
             get

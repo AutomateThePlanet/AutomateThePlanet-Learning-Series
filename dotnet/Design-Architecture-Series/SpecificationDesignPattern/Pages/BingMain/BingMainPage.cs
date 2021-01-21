@@ -37,7 +37,7 @@ namespace SpecificationDesignPattern.BingMain
             SearchBox.SendKeys(textToType);
             GoButton.Click();
         }
-    
+
         public int GetResultsCount()
         {
             var resultsCount = default(int);
