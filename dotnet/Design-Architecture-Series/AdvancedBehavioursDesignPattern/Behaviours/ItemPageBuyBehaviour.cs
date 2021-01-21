@@ -25,7 +25,7 @@ namespace AdvancedBehavioursDesignPattern.Behaviours
 
         public ItemPageBuyBehaviour()
         {
-            _itemPage = UnityContainerFactory.GetContainer().Resolve<ItemPage>(); 
+            _itemPage = UnityContainerFactory.GetContainer().Resolve<ItemPage>();
         }
 
         protected override void PerformAct()

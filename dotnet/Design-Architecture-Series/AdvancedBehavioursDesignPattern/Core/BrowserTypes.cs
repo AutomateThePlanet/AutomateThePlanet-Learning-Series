@@ -18,7 +18,7 @@ namespace AdvancedBehavioursDesignPattern.Core
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
+        Chrome,
         NotSet
     }
 }

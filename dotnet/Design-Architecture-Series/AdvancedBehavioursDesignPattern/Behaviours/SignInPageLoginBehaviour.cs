@@ -31,7 +31,7 @@ namespace AdvancedBehavioursDesignPattern.Behaviours
         public SignInPageLoginBehaviour(ClientLoginInfo clientLoginInfo)
         {
             _signInPage = UnityContainerFactory.GetContainer().Resolve<SignInPage>();
-            _shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
+            _shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
             _clientLoginInfo = clientLoginInfo;
         }
 

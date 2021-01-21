@@ -25,7 +25,7 @@ namespace AdvancedBehavioursDesignPattern.Behaviours
 
         public ShippingPaymentPageContinueBehaviour()
         {
-            _shippingPaymentPage = UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>(); 
+            _shippingPaymentPage = UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>();
         }
 
         protected override void PerformAct()

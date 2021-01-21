@@ -28,7 +28,7 @@ namespace AdvancedBehavioursDesignPattern.Behaviours
         public PreviewShoppingCartPageProceedBehaviour()
         {
             _previewShoppingCartPage = UnityContainerFactory.GetContainer().Resolve<PreviewShoppingCartPage>();
-            _signInPage = UnityContainerFactory.GetContainer().Resolve<SignInPage>(); 
+            _signInPage = UnityContainerFactory.GetContainer().Resolve<SignInPage>();
         }
 
         protected override void PerformAct()
