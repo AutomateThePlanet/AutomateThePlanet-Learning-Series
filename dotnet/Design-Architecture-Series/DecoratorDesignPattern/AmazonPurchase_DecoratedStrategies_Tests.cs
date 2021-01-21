@@ -21,7 +21,7 @@ namespace DecoratorDesignPattern
 {
     [TestClass]
     public class AmazonPurchaseDecoratedStrategiesTests
-    { 
+    {
         [TestInitialize]
         public void SetupTest()
         {

@@ -22,7 +22,7 @@ namespace DecoratorDesignPattern.Advanced.Strategies
     public class VatTaxOrderPurchaseStrategy : OrderPurchaseStrategyDecorator
     {
         private readonly VatTaxCalculationService _vatTaxCalculationService;
-        private decimal _vatTax;     
+        private decimal _vatTax;
 
         public VatTaxOrderPurchaseStrategy(OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, Data.ClientPurchaseInfo clientPurchaseInfo) : base(orderPurchaseStrategy, itemsPrice, clientPurchaseInfo)
         {

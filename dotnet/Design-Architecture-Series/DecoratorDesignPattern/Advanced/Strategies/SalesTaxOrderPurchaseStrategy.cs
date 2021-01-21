@@ -21,7 +21,7 @@ namespace DecoratorDesignPattern.Advanced.Strategies
     public class SalesTaxOrderPurchaseStrategy : OrderPurchaseStrategyDecorator
     {
         private readonly SalesTaxCalculationService _salesTaxCalculationService;
-        private decimal _salesTax;        
+        private decimal _salesTax;
 
         public SalesTaxOrderPurchaseStrategy(OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, Data.ClientPurchaseInfo clientPurchaseInfo) : base(orderPurchaseStrategy, itemsPrice, clientPurchaseInfo)
         {

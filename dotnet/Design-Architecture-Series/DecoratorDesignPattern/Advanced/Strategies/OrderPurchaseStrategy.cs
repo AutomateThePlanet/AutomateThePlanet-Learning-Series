@@ -14,7 +14,7 @@
 
 namespace DecoratorDesignPattern.Advanced.Strategies
 {
-    public abstract class OrderPurchaseStrategy 
+    public abstract class OrderPurchaseStrategy
     {
         public abstract decimal CalculateTotalPrice();
 

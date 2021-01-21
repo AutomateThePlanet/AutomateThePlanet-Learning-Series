@@ -18,7 +18,7 @@ namespace DecoratorDesignPattern.Core
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
+        Chrome,
         NotSet
     }
 }

@@ -21,7 +21,6 @@ namespace DecoratorDesignPattern.Pages.ItemPage
     {
         public void ProductTitle(string expectedTitle)
         {
-            //Selenium Testing Tools Cookbook
             Assert.AreEqual<string>(expectedTitle, Map.ProductTitle.Text);
         }
     }

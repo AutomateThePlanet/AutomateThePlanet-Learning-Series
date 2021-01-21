@@ -19,6 +19,7 @@ namespace DecoratorDesignPattern.Services
         public decimal Calculate(decimal price, Enums.States state, string zip)
         {
             var taxPrice = default(decimal);
+
             // Call Real Web Service to determine the Sales Tax.
             switch (state)
             {
