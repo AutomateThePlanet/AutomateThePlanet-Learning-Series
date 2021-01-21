@@ -26,8 +26,7 @@ namespace HeadlessTestsEdge
                     {
                         PerformTestOperations(driver);
                     }
-                }
-            );
+                });
         }
 
         [Test]
@@ -43,8 +42,7 @@ namespace HeadlessTestsEdge
                     {
                         PerformTestOperations(driver);
                     }
-                }
-            );
+                });
         }
 
         [Test]
@@ -65,8 +63,7 @@ namespace HeadlessTestsEdge
                     {
                         PerformTestOperations(driver);
                     }
-                }
-            );
+                });
         }
 
         [Test]
@@ -86,8 +83,7 @@ namespace HeadlessTestsEdge
                     {
                         PerformTestOperations(driver);
                     }
-                }
-            );
+                });
         }
 
         [Test]
@@ -105,8 +101,7 @@ namespace HeadlessTestsEdge
                     {
                         PerformTestOperations(driver);
                     }
-                }
-            );
+                });
         }
 
         [Test]
@@ -124,8 +119,7 @@ namespace HeadlessTestsEdge
                     {
                         PerformTestOperations(driver);
                     }
-                }
-            );
+                });
         }
 
         private void PerformTestOperations(IWebDriver driver)
@@ -205,6 +199,7 @@ namespace HeadlessTestsEdge
             {
                 actionToProfile();
             }
+
             watch.Stop();
             writer.WriteLine("Total: {0:0.00} ms ({1:N0} ticks) (over {2:N0} iterations)",
                 watch.ElapsedMilliseconds, watch.ElapsedTicks, iterations);
