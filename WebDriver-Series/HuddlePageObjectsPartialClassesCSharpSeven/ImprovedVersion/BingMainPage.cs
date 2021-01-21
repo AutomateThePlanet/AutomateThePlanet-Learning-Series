@@ -33,7 +33,6 @@ namespace HuddlePageObjectsPartialClassesCSharpSeven.ImprovedVersion
         // C# 7.0
         public BingMainPage(IWebDriver browser) => _driver = browser;
 
-
         // Prior C# 7.0
         ////public BingMainPage(WebDriverWait wait)
         ////{
