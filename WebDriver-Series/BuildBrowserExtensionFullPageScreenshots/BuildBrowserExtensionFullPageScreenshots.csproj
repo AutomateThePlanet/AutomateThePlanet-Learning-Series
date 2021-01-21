@@ -1,14 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <OutputType>Library</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Include="..\..\AutomateThePlanet.licenseheader">
-      <Link>AutomateThePlanet.licenseheader</Link>
-    </None>
-  </ItemGroup>
+  <Import Project="..\..\SharedAssemblyInfo.targets" />
   <ItemGroup>
     <Content Include="FullPageScreenshotsExtension-Chrome\background.js" />
     <Content Include="FullPageScreenshotsExtension-Chrome\contentScript.js" />
@@ -31,26 +22,27 @@
     <Content Include="readme-25.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="NUnit" Version="3.11.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
-    <PackageReference Include="Selenium.Chrome.WebDriver" Version="74.0.0" />
-    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.24.0" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.27.0" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver.MicrosoftWebDriver" Version="10.0.17134" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="3.12.0" />
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="Selenium.Chrome.WebDriver" Version="74.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.0" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
-  <PropertyGroup>
+  <!--<PropertyGroup>
     <PostBuildEvent>xcopy $(ProjectDir)FullPageScreenshotsExtension-Chrome\* $(ProjectDir)$(OutDir)FullPageScreenshotsExtension-Chrome\ /Y /I /E
 xcopy $(ProjectDir)FullPageScreenshotsExtension-Edge\* $(ProjectDir)$(OutDir)FullPageScreenshotsExtension-Edge\ /Y /I /E
 xcopy $(ProjectDir)FullPageScreenshotsExtension-Firefox\* $(ProjectDir)$(OutDir)FullPageScreenshotsExtension-Firefox\ /Y /I /E</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>rd /s /q "$(TargetDir)"</PreBuildEvent>
-  </PropertyGroup>
+  </PropertyGroup>-->
 </Project>

@@ -42,20 +42,14 @@ namespace BuildBrowserExtensionFullPageScreenshots
                 var fullPageImg = wait.Until(ExpectedConditions.ElementExists(By.Id("fullPageScreenshotId")));
                 var pngContent = fullPageImg.GetAttribute("src");
                 pngContent = pngContent.Replace("data:image/png;base64,", string.Empty);
-                byte[] data = Convert.FromBase64String(pngContent);
                 var tempFilePath = Path.GetTempFileName().Replace(".tmp", ".png");
-                Image image;
-                using (var ms = new MemoryStream(data))
-                {
-                    image = Image.FromStream(ms);
-                }
-                image.Save(tempFilePath, ImageFormat.Png);
+                File.WriteAllBytes(tempFilePath, Convert.FromBase64String(pngContent));
             }
         }
-        
+
         private string GetAssemblyDirectory()
         {
-            string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+            string codeBase = Assembly.GetExecutingAssembly().Location;
             var uri = new UriBuilder(codeBase);
             string path = Uri.UnescapeDataString(uri.Path);
             return Path.GetDirectoryName(path);
