@@ -1,3 +1,0 @@
-﻿Article: Create Video Recording Engine- Usage in Automated Tests
-URL:  http://automatetheplanet.com/video-recording-engine-automated-tests
-Publish Date: 21.08.2016

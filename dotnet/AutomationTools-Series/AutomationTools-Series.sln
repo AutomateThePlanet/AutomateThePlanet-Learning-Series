@@ -1,0 +1,134 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeProjectStatisticsCalculator", "CodeProjectStatisticsCalculator\CodeProjectStatisticsCalculator.csproj", "{2F8DE3EF-27D1-411B-9421-035B19EEFEB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. CodeProject Statistics Calculator", "03. CodeProject Statistics Calculator", "{A3C1FD06-0CC5-4BA3-A3B3-994F58A27C7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9A3FB51D-2D40-4352-AD8A-6C1269CEB0F1}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		..\..\LICENSE.txt = ..\..\LICENSE.txt
+		..\..\SharedAssemblyInfo.targets = ..\..\SharedAssemblyInfo.targets
+		..\..\stylecop.json = ..\..\stylecop.json
+		..\..\StyleCopeRules.ruleset = ..\..\StyleCopeRules.ruleset
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. Speed up Automated Tests Writing with Visual Studio Project Templates", "10. Speed up Automated Tests Writing with Visual Studio Project Templates", "{91395C3D-0C8C-4E4B-ACE1-F391A77E0FB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11. Speed up Automated Tests Writing with NET Core Project Templates", "11. Speed up Automated Tests Writing with NET Core Project Templates", "{8A81FA36-DBD9-4CF9-8309-41A09F4416F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12. Distribute VS Templates with VS Extension Installer", "12. Distribute VS Templates with VS Extension Installer", "{F4293F7A-5EE3-4DCC-AB19-7DED50FC7155}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriverTestsProject", "VisualStudioTestProjectTemplates\WebDriverTestsProject.csproj", "{172049BB-AC36-4FB6-8E91-B8334481A4ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriverTestsProject", "NetCoreTestProjectTemplates\WebDriverTestsProject.csproj", "{CE87A848-5645-4760-ABAA-BDE07E0FE307}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstallTemplates", "DistributeVsTemplatesInstaller\InstallTemplates.csproj", "{3A9E1DA6-096E-4DA5-8A70-2D48C4F34450}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13. Test Automation Reporting with Allure in .NET Projects", "13. Test Automation Reporting with Allure in .NET Projects", "{2916BEF5-9C75-4150-8C68-52EFB062E29F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14. Test Automation Reporting with Zafira in .NET Projects", "14. Test Automation Reporting with Zafira in .NET Projects", "{EFF80BDF-3859-475A-A47A-9F562D296698}"
+	ProjectSection(SolutionItems) = preProject
+		read-me14.txt = read-me14.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAutomationReportingAllure", "TestAutomationReportingAllure\TestAutomationReportingAllure.csproj", "{18FE269F-E430-430E-9C01-A1A959D83BEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15. Test Automation Reporting with ReportPortal in .NET Projects", "15. Test Automation Reporting with ReportPortal in .NET Projects", "{043FAF5F-37B9-4BAD-8CE8-3FB0CAFF1957}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAutomationReportingReportPortal", "TestAutomationReportingTestPortal\TestAutomationReportingReportPortal.csproj", "{5649BA62-595C-4D4F-A84E-B45FAF110BB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16. Software Management Automation in Automated Testing", "16. Software Management Automation in Automated Testing", "{12E05804-843E-4295-B3DD-C0E7D3E8E68D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftwareManagementAutomationWindows", "SofwareManagementAutomationWindows\SoftwareManagementAutomationWindows.csproj", "{4B7CF02F-A30E-4750-96E2-4FDFD1957869}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "17. Benchmarking in Automated Testing", "17. Benchmarking in Automated Testing", "{7523B1A6-0B24-4C63-B83F-722C33FA778D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchmarkingAutomatedTesting", "BenchmarkingAutomatedTesting\BenchmarkingAutomatedTesting.csproj", "{DBB5B32D-067E-43C2-A6BB-329BDE738F3F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jenkins-CSharp-Api", "Jenkins-CSharp-Api\Jenkins-CSharp-Api.csproj", "{7FDB8507-29A1-44AC-8E0B-976D6C529BC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18. Jenkins CSharp API", "18. Jenkins CSharp API", "{A6EBC5C8-0BAD-4167-B5D5-2D03C0D84758}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19. Conding Standards .editorConfig", "19. Conding Standards .editorConfig", "{67B7CC75-28BE-42E8-AF3A-267D0355962E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20. Coding Standards StyleCop", "20. Coding Standards StyleCop", "{C68B5F0C-5FF2-40E7-8EC5-C5B0DEBFB9BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingStandardsEditorConfig", "CodingStandardsEditorConfig\CodingStandardsEditorConfig.csproj", "{2D7EBF3D-C93E-4872-AC76-2A93E5EEF38F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingStandardsStyleCop", "CodingStandardsStyleCop\CodingStandardsStyleCop.csproj", "{011EC029-D145-4A6A-8C01-B40B68BC5A75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F8DE3EF-27D1-411B-9421-035B19EEFEB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8DE3EF-27D1-411B-9421-035B19EEFEB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8DE3EF-27D1-411B-9421-035B19EEFEB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8DE3EF-27D1-411B-9421-035B19EEFEB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172049BB-AC36-4FB6-8E91-B8334481A4ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172049BB-AC36-4FB6-8E91-B8334481A4ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172049BB-AC36-4FB6-8E91-B8334481A4ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172049BB-AC36-4FB6-8E91-B8334481A4ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE87A848-5645-4760-ABAA-BDE07E0FE307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE87A848-5645-4760-ABAA-BDE07E0FE307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE87A848-5645-4760-ABAA-BDE07E0FE307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE87A848-5645-4760-ABAA-BDE07E0FE307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A9E1DA6-096E-4DA5-8A70-2D48C4F34450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A9E1DA6-096E-4DA5-8A70-2D48C4F34450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A9E1DA6-096E-4DA5-8A70-2D48C4F34450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A9E1DA6-096E-4DA5-8A70-2D48C4F34450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18FE269F-E430-430E-9C01-A1A959D83BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18FE269F-E430-430E-9C01-A1A959D83BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18FE269F-E430-430E-9C01-A1A959D83BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18FE269F-E430-430E-9C01-A1A959D83BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5649BA62-595C-4D4F-A84E-B45FAF110BB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5649BA62-595C-4D4F-A84E-B45FAF110BB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5649BA62-595C-4D4F-A84E-B45FAF110BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5649BA62-595C-4D4F-A84E-B45FAF110BB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B7CF02F-A30E-4750-96E2-4FDFD1957869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B7CF02F-A30E-4750-96E2-4FDFD1957869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B7CF02F-A30E-4750-96E2-4FDFD1957869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B7CF02F-A30E-4750-96E2-4FDFD1957869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBB5B32D-067E-43C2-A6BB-329BDE738F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB5B32D-067E-43C2-A6BB-329BDE738F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB5B32D-067E-43C2-A6BB-329BDE738F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB5B32D-067E-43C2-A6BB-329BDE738F3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FDB8507-29A1-44AC-8E0B-976D6C529BC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FDB8507-29A1-44AC-8E0B-976D6C529BC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FDB8507-29A1-44AC-8E0B-976D6C529BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FDB8507-29A1-44AC-8E0B-976D6C529BC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D7EBF3D-C93E-4872-AC76-2A93E5EEF38F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D7EBF3D-C93E-4872-AC76-2A93E5EEF38F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D7EBF3D-C93E-4872-AC76-2A93E5EEF38F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D7EBF3D-C93E-4872-AC76-2A93E5EEF38F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{011EC029-D145-4A6A-8C01-B40B68BC5A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011EC029-D145-4A6A-8C01-B40B68BC5A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011EC029-D145-4A6A-8C01-B40B68BC5A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011EC029-D145-4A6A-8C01-B40B68BC5A75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2F8DE3EF-27D1-411B-9421-035B19EEFEB5} = {A3C1FD06-0CC5-4BA3-A3B3-994F58A27C7D}
+		{172049BB-AC36-4FB6-8E91-B8334481A4ED} = {91395C3D-0C8C-4E4B-ACE1-F391A77E0FB3}
+		{CE87A848-5645-4760-ABAA-BDE07E0FE307} = {8A81FA36-DBD9-4CF9-8309-41A09F4416F7}
+		{3A9E1DA6-096E-4DA5-8A70-2D48C4F34450} = {F4293F7A-5EE3-4DCC-AB19-7DED50FC7155}
+		{18FE269F-E430-430E-9C01-A1A959D83BEF} = {2916BEF5-9C75-4150-8C68-52EFB062E29F}
+		{5649BA62-595C-4D4F-A84E-B45FAF110BB7} = {043FAF5F-37B9-4BAD-8CE8-3FB0CAFF1957}
+		{4B7CF02F-A30E-4750-96E2-4FDFD1957869} = {12E05804-843E-4295-B3DD-C0E7D3E8E68D}
+		{DBB5B32D-067E-43C2-A6BB-329BDE738F3F} = {7523B1A6-0B24-4C63-B83F-722C33FA778D}
+		{7FDB8507-29A1-44AC-8E0B-976D6C529BC1} = {A6EBC5C8-0BAD-4167-B5D5-2D03C0D84758}
+		{2D7EBF3D-C93E-4872-AC76-2A93E5EEF38F} = {67B7CC75-28BE-42E8-AF3A-267D0355962E}
+		{011EC029-D145-4A6A-8C01-B40B68BC5A75} = {C68B5F0C-5FF2-40E7-8EC5-C5B0DEBFB9BF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46F17E2A-8CF2-4C6D-B068-9CCC6AC4A44B}
+	EndGlobalSection
+EndGlobal
