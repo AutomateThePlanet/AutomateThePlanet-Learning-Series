@@ -30,7 +30,7 @@ namespace GettingStartedAppiumAndroidMacCSharp
     public class AppiumTests
     {
         private static AndroidDriver<AndroidElement> _driver;
-        private static AppiumLocalService _appiumLocalService;
+        ////private static AppiumLocalService _appiumLocalService;
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
