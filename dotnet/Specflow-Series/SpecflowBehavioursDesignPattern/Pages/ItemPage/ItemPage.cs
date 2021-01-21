@@ -1,5 +1,5 @@
 ﻿// <copyright file="ItemPage.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -19,7 +19,8 @@ namespace SpecflowBehavioursDesignPattern.Pages.ItemPage
 {
     public partial class ItemPage : BasePage
     {
-        public ItemPage(IWebDriver driver) : base(driver)
+        public ItemPage(IWebDriver driver)
+            : base(driver)
         {
         }
 
@@ -38,7 +39,6 @@ namespace SpecflowBehavioursDesignPattern.Pages.ItemPage
 
         public void Navigate(string part)
         {
-            ///Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743
             Open(part);
         }
     }

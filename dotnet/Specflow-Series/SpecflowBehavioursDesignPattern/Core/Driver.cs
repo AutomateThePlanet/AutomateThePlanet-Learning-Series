@@ -1,5 +1,5 @@
 ﻿// <copyright file="Driver.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -33,6 +33,7 @@ namespace SpecflowBehavioursDesignPattern.Core
                 {
                     throw new NullReferenceException("The WebDriver browser instance was not initialized. You should first call the method Start.");
                 }
+
                 return _browser;
             }
             private set
@@ -49,6 +50,7 @@ namespace SpecflowBehavioursDesignPattern.Core
                 {
                     throw new NullReferenceException("The WebDriver browser wait instance was not initialized. You should first call the method Start.");
                 }
+
                 return _browserWait;
             }
             private set
@@ -69,6 +71,7 @@ namespace SpecflowBehavioursDesignPattern.Core
                 case BrowserTypes.Chrome:
                     break;
             }
+
             BrowserWait = new WebDriverWait(Browser, TimeSpan.FromSeconds(defaultTimeOut));
         }
 

@@ -1,5 +1,5 @@
 ﻿// <copyright file="PlaceOrderPage.Map.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -25,7 +25,7 @@ namespace SpecflowBehavioursDesignPattern.Pages.PlaceOrderPage
                 return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
             }
         }
-        
+
         public IWebElement PromotionalDiscountPrice
         {
             get
