@@ -44,6 +44,7 @@ namespace ObserverDesignPatternEventsDelegates.Behaviors
             {
                 result = classBrowserType;
             }
+
             return result;
         }
 
@@ -54,6 +55,7 @@ namespace ObserverDesignPatternEventsDelegates.Behaviors
             {
                 return executionBrowserAttribute.BrowserType;
             }
+
             return BrowserTypes.NotSet;
         }
 
@@ -64,6 +66,7 @@ namespace ObserverDesignPatternEventsDelegates.Behaviors
             {
                 return executionBrowserAttribute.BrowserType;
             }
+
             return BrowserTypes.NotSet;
         }
     }

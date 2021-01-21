@@ -17,7 +17,7 @@ namespace ObserverDesignPatternEventsDelegates
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
+        Chrome,
         NotSet
     }
 }

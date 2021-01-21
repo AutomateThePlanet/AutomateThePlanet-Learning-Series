@@ -24,7 +24,7 @@ namespace ObserverDesignPatternEventsDelegates.Pages
             _browser = browser;
         }
 
-        public IWebElement SearchBox 
+        public IWebElement SearchBox
         {
             get
             {
@@ -32,14 +32,14 @@ namespace ObserverDesignPatternEventsDelegates.Pages
             }
         }
 
-        public IWebElement GoButton 
+        public IWebElement GoButton
         {
             get
             {
                 return _browser.FindElement(By.Id("sb_form_go"));
             }
         }
-       
+
         public IWebElement ResultsCountDiv
         {
             get
