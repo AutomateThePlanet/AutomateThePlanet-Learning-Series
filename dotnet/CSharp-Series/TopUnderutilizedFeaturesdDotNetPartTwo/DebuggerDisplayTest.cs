@@ -15,23 +15,23 @@ using System.Diagnostics;
 
 namespace TopUnderutilizedFeaturesdDotNetPartTwo
 {
-    //[DebuggerDisplay("{DebuggerDisplay}")]
+    ////[DebuggerDisplay("{DebuggerDisplay}")]
     [DebuggerDisplay("Age {Age > 0 ? Age : 5}")]
     [DebuggerStepThroughAttribute]
     public class DebuggerDisplayTest
     {
-        private string squirrelFirstNameName;
-        private string squirrelLastNameName;
+        private string _squirrelFirstNameName;
+        private string _squirrelLastNameName;
 
-        public string SquirrelFirstNameName 
+        public string SquirrelFirstNameName
         {
             get
             {
-                return squirrelFirstNameName;
+                return _squirrelFirstNameName;
             }
             set
             {
-                squirrelFirstNameName = value;
+                _squirrelFirstNameName = value;
             }
         }
 
@@ -40,11 +40,11 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
         {
             get
             {
-                return squirrelLastNameName;
+                return _squirrelLastNameName;
             }
             set
             {
-                squirrelLastNameName = value;
+                _squirrelLastNameName = value;
             }
         }
 

@@ -30,13 +30,16 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
             var dateTimeVariable = DateTime.Today;
             dynamicVariable = (dynamic)dateTimeVariable;
             Console.WriteLine(dynamicVariable);
-            // The expression returns true unless dynamicVariable has the value null. 
+
+            // The expression returns true unless dynamicVariable has the value null.
             if (dynamicVariable is dynamic)
             {
                 Console.WriteLine("d variable is dynamic");
             }
+
             // dynamic and the as operator.
             dynamicVariable = i as dynamic;
+
             // throw RuntimeBinderException if the associated object doesn't have the specified method.
             // The code is still compiling successfully.
             Console.WriteLine(dynamicVariable.ToNow1);
@@ -57,9 +60,9 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
                       samplefootballLegendObject.FirstName,
                       samplefootballLegendObject.LastName,
                       samplefootballLegendObject.Team,
-                      samplefootballLegendObject.Salary)
-                      );
-             //draw funny pic in console generation code and other fynny code exaples
+                      samplefootballLegendObject.Salary));
+
+            // draw funny pic in console generation code and other fynny code exaples
             samplefootballLegendObject.Asstring();
         }
 
@@ -71,10 +74,13 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
             Console.WriteLine(yourSingle.GetValueOrDefault());
             yourSingle = null;
             Console.WriteLine(yourSingle.GetValueOrDefault());
+
             // assign different default value
             Console.WriteLine(yourSingle.GetValueOrDefault(-2.4f));
+
             // returns the same result as the above statement
             Console.WriteLine(yourSingle ?? -2.4f);
+
             // Use it to create protected dictionary get
             var names = new Dictionary<int, string>();
             names.Add(0, "Willy");
@@ -101,18 +107,19 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
         {
             // 5.#warning #error #line #region #endregion #pragma #warning Examples
             // 5.1. #warning
-            #if LIVE
-            #warning A day without sunshine is like, you know, night.
-            #endif
+#if LIVE
+#warning A day without sunshine is like, you know, night.
+#endif
             // 5.2. #error
             ////#error Deprecated code in this method.
             // 5.3. #line
-            #line 100 "Pandiculation"
+#line 100 "Pandiculation"
             int i;    // CS0168 on line 101
             int j;    // CS0168 on line 102
-            #line default
+#line default
             char c;   // CS0168 on line 288
             float f;  // CS0168 on line 289
+
             // 5.4. #region
             #region Thomas Sowell Quote
             Console.WriteLine("It takes considerable knowledge just to realize the extent of your own ignorance.");
@@ -180,15 +187,18 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
         {
             // 14. Flag Enum Attribute example
             var minionsNames = (Minions.Bob | Minions.Dave).ToString();
+
             // Displays 'Bob, Dave'
             Console.WriteLine(minionsNames);
             var allowedMinionsToParticipate = Minions.Dave | Minions.Kevin | Minions.Stuart;
+
             // To retrieve the distinct values in you property one can do this
             Console.WriteLine(allowedMinionsToParticipate);
             if ((allowedMinionsToParticipate & Minions.Dave) == Minions.Dave)
             {
                 Console.WriteLine("Dave is allowed to be a party animal!");
             }
+
             // In .NET 4 and later
             if (allowedMinionsToParticipate.HasFlag(Minions.Bob))
             {
@@ -200,22 +210,21 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
             }
         }
 
-        [TestMethod]
-        public void CodeDOMExample()
-        {
-            // 15. Dynamically Compile and Execute C# Code Examples
-            // 15.1 CodeDOM
-            var sourceCode = @"class HelloKittyPrinter
-                                {
-                                    public void Print()
-                                    {
-                                        System.Console.WriteLine(""Hello Hello Kitty!"");
-                                    }
-                                }";
-            var compiledAssembly = CompileSourceCodeDom(sourceCode);
-            ExecuteFromAssembly(compiledAssembly);
-          
-        }
+        ////[TestMethod]
+        ////public void CodeDOMExample()
+        ////{
+        ////    // 15. Dynamically Compile and Execute C# Code Examples
+        ////    // 15.1 CodeDOM
+        ////    var sourceCode = @"class HelloKittyPrinter
+        ////                        {
+        ////                            public void Print()
+        ////                            {
+        ////                                System.Console.WriteLine(""Hello Hello Kitty!"");
+        ////                            }
+        ////                        }";
+        ////    var compiledAssembly = CompileSourceCodeDom(sourceCode);
+        ////    ExecuteFromAssembly(compiledAssembly);
+        ////}
 
         [TestMethod]
         public void RoslynExample()
@@ -245,16 +254,16 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
         ////    }
         ////}
 
-        private static Assembly CompileSourceCodeDom(string sourceCode)
-        {
-            CodeDomProvider csharpCodeProvider = new CSharpCodeProvider();
-            var cp = new CompilerParameters();
-            cp.ReferencedAssemblies.Add("System.dll");
-            cp.GenerateExecutable = false;
-            var cr = csharpCodeProvider.CompileAssemblyFromSource(cp, sourceCode);
+        ////private static Assembly CompileSourceCodeDom(string sourceCode)
+        ////{
+        ////    CodeDomProvider csharpCodeProvider = new CSharpCodeProvider();
+        ////    var cp = new CompilerParameters();
+        ////    cp.ReferencedAssemblies.Add("System.dll");
+        ////    cp.GenerateExecutable = false;
+        ////    var cr = csharpCodeProvider.CompileAssemblyFromSource(cp, sourceCode);
 
-            return cr.CompiledAssembly;
-        }
+        ////    return cr.CompiledAssembly;
+        ////}
 
         private static void ExecuteFromAssembly(Assembly assembly)
         {

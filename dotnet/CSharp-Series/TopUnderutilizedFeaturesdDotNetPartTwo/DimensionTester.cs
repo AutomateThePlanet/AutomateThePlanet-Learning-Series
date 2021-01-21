@@ -26,6 +26,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
             while (currentDimensionInput.shouldPartyContinue)
             {
             }
+
             Console.WriteLine("Party ends :(");
         }
     }
