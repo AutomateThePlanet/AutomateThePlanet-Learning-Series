@@ -40,12 +40,12 @@ namespace FullPageScreenshotHtmlToCanvas
                 js.ExecuteScript(html2canvasJs);
                 string generateScreenshotJS = @"function genScreenshot () {
 	                                                var canvasImgContentDecoded;
-	                                                html2canvas(document.body, {
- 		                                                onrendered: function (canvas) {                                          
-		                                                 window.canvasImgContentDecoded = canvas.toDataURL(""image/png"");
-	                                                }});
+                                                    html2canvas(document.body).then(function(canvas) {
+                                                         window.canvasImgContentDecoded = canvas.toDataURL(""image/png"");
+                                                    });
                                                 }
                                                 genScreenshot();";
+
                 js.ExecuteScript(generateScreenshotJS);
 
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -65,20 +65,14 @@ namespace FullPageScreenshotHtmlToCanvas
                 wait.Until(wd => !string.IsNullOrEmpty((string)js.ExecuteScript("return canvasImgContentDecoded;")));
                 var pngContent = (string)js.ExecuteScript("return canvasImgContentDecoded;");
                 pngContent = pngContent.Replace("data:image/png;base64,", string.Empty);
-                byte[] data = Convert.FromBase64String(pngContent);
                 var tempFilePath = Path.GetTempFileName().Replace(".tmp", ".png");
-                Image image;
-                using (var ms = new MemoryStream(data))
-                {
-                    image = Image.FromStream(ms);
-                }
-                image.Save(tempFilePath, ImageFormat.Png);
+                File.WriteAllBytes(tempFilePath, Convert.FromBase64String(pngContent));
             }
         }
-        
+
         private string GetAssemblyDirectory()
         {
-            string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+            string codeBase = Assembly.GetExecutingAssembly().Location;
             var uri = new UriBuilder(codeBase);
             string path = Uri.UnescapeDataString(uri.Path);
             return Path.GetDirectoryName(path);
