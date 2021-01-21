@@ -1,22 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-
-    <IsPackable>false</IsPackable>
-
-    <RootNamespace>GettingStartedAppiumIOSMacOS</RootNamespace>
-  </PropertyGroup>
+  <Import Project="..\..\..\SharedAssemblyInfo.targets" />
 
   <ItemGroup>
-    <None Include="..\..\AutomateThePlanet.licenseheader" Link="AutomateThePlanet.licenseheader" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Appium.WebDriver" Version="4.0.0.6-beta" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.1.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.0.0-beta4" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.0.0-beta4" />
+    <PackageReference Include="Appium.WebDriver" Version="4.3.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,5 +23,4 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
 </Project>

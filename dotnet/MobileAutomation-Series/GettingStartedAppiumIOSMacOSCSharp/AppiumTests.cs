@@ -26,7 +26,7 @@ namespace GettingStartedAppiumIOSMacOS
     public class AppiumTests
     {
         private static IOSDriver<IOSElement> _driver;
-        private static AppiumLocalService _appiumLocalService;
+        ////private static AppiumLocalService _appiumLocalService;
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
