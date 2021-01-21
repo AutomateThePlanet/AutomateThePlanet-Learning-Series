@@ -18,6 +18,6 @@ namespace TestProjectPageObjectsFluentApi.Enums
     {
         All,
         JustFaces,
-        HeadShoulders        
+        HeadShoulders
     }
 }

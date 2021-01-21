@@ -13,11 +13,12 @@
 // <site>https://automatetheplanet.com/</site>
 
 using System;
-using HuddlePageObjectsPartialClassesFluentApi.Enums;
 using HuddlePageObjectsPartialClassesFluentApi.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using TestProjectPageObjectsFluentApi.Enums;
+using TestProjectPageObjectsFluentApi.Pages;
 
 namespace HuddlePageObjectsPartialClassesFluentApi
 {
