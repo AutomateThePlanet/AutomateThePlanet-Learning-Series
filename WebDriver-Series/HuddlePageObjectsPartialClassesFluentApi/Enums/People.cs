@@ -18,6 +18,6 @@ namespace HuddlePageObjectsPartialClassesFluentApi.Enums
     {
         All,
         JustFaces,
-        HeadShoulders        
+        HeadShoulders
     }
 }
