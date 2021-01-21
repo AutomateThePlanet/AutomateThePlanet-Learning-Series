@@ -44,6 +44,7 @@ namespace ObserverDesignPatternClassicImplementation
                 currentObserver.PreTestInit(context, memberInfo);
             }
         }
+
         public void PostTestInit(TestContext context, MemberInfo memberInfo)
         {
             foreach (var currentObserver in _testBehaviorObservers)

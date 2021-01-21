@@ -32,6 +32,7 @@ namespace ObserverDesignPatternClassicImplementation
                 {
                     throw new NullReferenceException("The WebDriver browser instance was not initialized. You should first call the method Start.");
                 }
+
                 return _browser;
             }
             private set
@@ -48,6 +49,7 @@ namespace ObserverDesignPatternClassicImplementation
                 {
                     throw new NullReferenceException("The WebDriver browser wait instance was not initialized. You should first call the method Start.");
                 }
+
                 return _browserWait;
             }
             private set
@@ -68,6 +70,7 @@ namespace ObserverDesignPatternClassicImplementation
                 case BrowserTypes.Chrome:
                     break;
             }
+
             BrowserWait = new WebDriverWait(Browser, TimeSpan.FromSeconds(defaultTimeOut));
         }
 

@@ -17,7 +17,7 @@ namespace ObserverDesignPatternClassicImplementation
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
+        Chrome,
         NotSet
     }
 }

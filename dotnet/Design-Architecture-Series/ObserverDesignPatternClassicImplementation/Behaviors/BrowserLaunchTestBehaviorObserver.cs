@@ -49,6 +49,7 @@ namespace ObserverDesignPatternClassicImplementation.Behaviors
             {
                 result = classBrowserType;
             }
+
             return result;
         }
 
@@ -59,6 +60,7 @@ namespace ObserverDesignPatternClassicImplementation.Behaviors
             {
                 return executionBrowserAttribute.BrowserType;
             }
+
             return BrowserTypes.NotSet;
         }
 
@@ -69,6 +71,7 @@ namespace ObserverDesignPatternClassicImplementation.Behaviors
             {
                 return executionBrowserAttribute.BrowserType;
             }
+
             return BrowserTypes.NotSet;
         }
     }

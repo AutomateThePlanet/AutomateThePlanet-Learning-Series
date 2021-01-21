@@ -33,7 +33,7 @@ namespace ObserverDesignPatternClassicImplementation
         }
 
         public string BaseUrl { get; set; }
-        
+
         public IWebDriver Browser { get; set; }
 
         public TestContext TestContext
@@ -82,7 +82,6 @@ namespace ObserverDesignPatternClassicImplementation
             _currentTestExecutionSubject.PreTestCleanup(TestContext, memberInfo);
             TestCleanup();
             _currentTestExecutionSubject.PostTestCleanup(TestContext, memberInfo);
-
         }
 
         public virtual void TestInit()
