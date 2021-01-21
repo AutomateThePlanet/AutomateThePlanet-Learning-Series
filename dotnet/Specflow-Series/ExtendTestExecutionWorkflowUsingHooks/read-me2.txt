@@ -1,3 +1,0 @@
-﻿Article: Advanced SpecFlow: Using Hooks to Extend Test Execution Workflow
-URL:  http://automatetheplanet.com/extend-test-execution-workflow-specflow-hooks
-Publish Date: 30.10.2016

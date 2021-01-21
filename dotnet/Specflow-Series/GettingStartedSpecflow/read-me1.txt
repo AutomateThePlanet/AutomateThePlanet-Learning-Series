@@ -1,3 +1,0 @@
-﻿Article: Getting Started with Specflow in 10 Minutes
-URL:  http://automatetheplanet.com/getting-started-specflow
-Publish Date: 23.10.2016

@@ -225,6 +225,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\..\StyleCopeRules.ruleset = ..\..\StyleCopeRules.ruleset
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SpecFlow", "SpecFlow", "{978F82E0-6406-4ED5-AB9D-82D14E628031}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Getting Started with Specflow in 10 Minutes", "1. Getting Started with Specflow in 10 Minutes", "{5914A97F-4718-4810-A354-CD4580B3A108}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Advanced SpecFlow Using Hooks to Extend Test Execution Workflow", "2. Advanced SpecFlow Using Hooks to Extend Test Execution Workflow", "{B1EFE055-74AA-4915-8F35-2E9242909CA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Advanced SpecFlow 4 Ways for Handling Parameters Properly", "3. Advanced SpecFlow 4 Ways for Handling Parameters Properly", "{439221B0-C647-4C8F-AC90-087D05266AE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Mixing Specflow with Behaviours Design Pattern", "4. Mixing Specflow with Behaviours Design Pattern", "{4E3B7D96-0487-4483-ACCB-CD7AC0B9B066}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GettingStartedSpecflow", "GettingStartedSpecflow\GettingStartedSpecflow.csproj", "{B5C2DEDA-661C-4F58-9150-CF37AE6FB7D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtendTestExecutionWorkflowUsingHooks", "ExtendTestExecutionWorkflowUsingHooks\ExtendTestExecutionWorkflowUsingHooks.csproj", "{5F2A1524-9F2A-4340-9345-D781171908ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HandlingParameters", "HandlingParameters\HandlingParameters.csproj", "{B1186B69-7BF7-47D8-9402-28A1B388351B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecflowBehavioursDesignPattern", "SpecflowBehavioursDesignPattern\SpecflowBehavioursDesignPattern.csproj", "{D33366FE-C5C1-4DF9-90A0-E670ABCCE848}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -427,6 +445,22 @@ Global
 		{880C912A-D32B-4B15-BF2C-2C8D0A33C144}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{880C912A-D32B-4B15-BF2C-2C8D0A33C144}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{880C912A-D32B-4B15-BF2C-2C8D0A33C144}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5C2DEDA-661C-4F58-9150-CF37AE6FB7D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C2DEDA-661C-4F58-9150-CF37AE6FB7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C2DEDA-661C-4F58-9150-CF37AE6FB7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C2DEDA-661C-4F58-9150-CF37AE6FB7D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F2A1524-9F2A-4340-9345-D781171908ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F2A1524-9F2A-4340-9345-D781171908ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F2A1524-9F2A-4340-9345-D781171908ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F2A1524-9F2A-4340-9345-D781171908ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1186B69-7BF7-47D8-9402-28A1B388351B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1186B69-7BF7-47D8-9402-28A1B388351B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1186B69-7BF7-47D8-9402-28A1B388351B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1186B69-7BF7-47D8-9402-28A1B388351B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D33366FE-C5C1-4DF9-90A0-E670ABCCE848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D33366FE-C5C1-4DF9-90A0-E670ABCCE848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D33366FE-C5C1-4DF9-90A0-E670ABCCE848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D33366FE-C5C1-4DF9-90A0-E670ABCCE848}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -494,6 +528,14 @@ Global
 		{42CF8A1C-ABC8-4F9F-810A-06CC7990A9BD} = {2EEBE382-4771-4E4C-ADA8-906A44F53013}
 		{01FF9190-0D22-425E-9A9A-3F08DB2642E9} = {42CF8A1C-ABC8-4F9F-810A-06CC7990A9BD}
 		{880C912A-D32B-4B15-BF2C-2C8D0A33C144} = {53D40F58-EFF0-48AC-B950-3D10255C933F}
+		{5914A97F-4718-4810-A354-CD4580B3A108} = {978F82E0-6406-4ED5-AB9D-82D14E628031}
+		{B1EFE055-74AA-4915-8F35-2E9242909CA6} = {978F82E0-6406-4ED5-AB9D-82D14E628031}
+		{439221B0-C647-4C8F-AC90-087D05266AE4} = {978F82E0-6406-4ED5-AB9D-82D14E628031}
+		{4E3B7D96-0487-4483-ACCB-CD7AC0B9B066} = {978F82E0-6406-4ED5-AB9D-82D14E628031}
+		{B5C2DEDA-661C-4F58-9150-CF37AE6FB7D3} = {5914A97F-4718-4810-A354-CD4580B3A108}
+		{5F2A1524-9F2A-4340-9345-D781171908ED} = {B1EFE055-74AA-4915-8F35-2E9242909CA6}
+		{B1186B69-7BF7-47D8-9402-28A1B388351B} = {439221B0-C647-4C8F-AC90-087D05266AE4}
+		{D33366FE-C5C1-4DF9-90A0-E670ABCCE848} = {4E3B7D96-0487-4483-ACCB-CD7AC0B9B066}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}

@@ -1,3 +1,0 @@
-﻿Article: Mixing Specflow with Behaviours Design Pattern
-URL:  http://automatetheplanet.com/specflow-behaviours
-Publish Date: 03.12.2016
