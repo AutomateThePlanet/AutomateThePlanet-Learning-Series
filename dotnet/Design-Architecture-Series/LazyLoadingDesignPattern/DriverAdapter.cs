@@ -30,8 +30,8 @@ namespace LazyLoadingDesignPattern
             _driver.Navigate().GoToUrl(url);
         }
 
-        public Uri Url 
-        { 
+        public Uri Url
+        {
             get => new Uri(_driver.Url);
             set => _driver.Url = value.ToString();
         }

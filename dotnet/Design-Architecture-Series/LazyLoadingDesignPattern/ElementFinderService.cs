@@ -14,7 +14,7 @@ using System;
 using System.Collections.Generic;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
+using SE = SeleniumExtras.WaitHelpers;
 
 namespace LazyLoadingDesignPattern
 {
@@ -31,12 +31,12 @@ namespace LazyLoadingDesignPattern
 
         public IWebElement Find(By by)
         {
-            return _webDriverWait.Until(ExpectedConditions.ElementExists(by));
+            return _webDriverWait.Until(SE.ExpectedConditions.ElementExists(by));
         }
 
         public IEnumerable<IWebElement> FindAll(By by)
         {
-            return _webDriverWait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(by));
+            return _webDriverWait.Until(SE.ExpectedConditions.PresenceOfAllElementsLocatedBy(by));
         }
     }
 }

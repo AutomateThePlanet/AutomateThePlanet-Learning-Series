@@ -66,17 +66,17 @@ namespace LazyLoadingDesignPattern
             viewCartButton.Click();
             couponCodeTextField.TypeText("happybirthday");
             applyCouponButton.Click();
-           
+
             Assert.AreEqual("Coupon code applied successfully.", messageAlert.Text);
-          
+
             quantityBox.TypeText("2");
             updateCart.Click();
             _driver.WaitForAjax();
-            
+
             Assert.AreEqual("114.00€", totalSpan.Text);
-           
+
             proceedToCheckout.Click();
-            
+
             billingFirstName.TypeText("Anton");
             billingLastName.TypeText("Angelov");
             billingCompany.TypeText("Space Flowers");
@@ -92,7 +92,7 @@ namespace LazyLoadingDesignPattern
             _driver.WaitForAjax();
             placeOrderButton.Click();
             _driver.WaitForAjax();
-           
+
             Assert.AreEqual("Order received", receivedMessage.Text);
         }
     }
