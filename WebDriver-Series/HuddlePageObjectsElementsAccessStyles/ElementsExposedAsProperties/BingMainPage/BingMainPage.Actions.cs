@@ -27,7 +27,7 @@ namespace HuddlePageObjectsElementsAccessStyles.ElementsExposedAsProperties
         }
 
         public void Navigate() => _driver.Navigate().GoToUrl(_url);
-        
+
         public void Search(string textToType)
         {
             Elements.SearchBox.Clear();

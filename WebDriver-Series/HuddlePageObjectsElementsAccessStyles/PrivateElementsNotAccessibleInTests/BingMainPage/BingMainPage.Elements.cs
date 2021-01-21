@@ -16,7 +16,6 @@ using OpenQA.Selenium;
 
 namespace HuddlePageObjectsElementsAccessStyles.PrivateElementsNotAccessibleInTests
 {
-
     public partial class BingMainPage
     {
         private IWebElement _searchBox => _driver.FindElement(By.Id("sb_form_q"));

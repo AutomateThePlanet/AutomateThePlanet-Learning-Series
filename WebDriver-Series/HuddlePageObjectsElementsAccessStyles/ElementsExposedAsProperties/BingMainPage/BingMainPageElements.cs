@@ -16,7 +16,6 @@ using OpenQA.Selenium;
 
 namespace HuddlePageObjectsElementsAccessStyles.ElementsExposedAsProperties
 {
-
     public class BingMainPageElements
     {
         private readonly IWebDriver _driver;

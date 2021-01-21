@@ -24,7 +24,7 @@ namespace HuddlePageObjectsElementsAccessStyles.ProtectedElementsNotAccessibleIn
         protected BingMainPage(IWebDriver browser) => Driver = browser;
 
         public void Navigate() => Driver.Navigate().GoToUrl(_url);
-        
+
         public void Search(string textToType)
         {
             SearchBox.Clear();
