@@ -39,53 +39,49 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14. Design Grid Control Aut
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15. Advanced Reuse Tactics for Grid Controls Automated Tests", "15. Advanced Reuse Tactics for Grid Controls Automated Tests", "{079FED77-7D65-4E26-84FF-7C4D8B4F9DEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedWebDriverTipsTricksPartTwo", "AdvancedWebDriverTipsTricksPartTwo\AdvancedWebDriverTipsTricksPartTwo.csproj", "{BEE6D32A-A7B7-470A-9801-F8A5AE3D8AD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedWebDriverTipsTricksPartTwo", "AdvancedWebDriverTipsTricksPartTwo\AdvancedWebDriverTipsTricksPartTwo.csproj", "{BEE6D32A-A7B7-470A-9801-F8A5AE3D8AD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedWebDriverTipsTricksPartThree", "AdvancedWebDriverTipsTricksPartThree\AdvancedWebDriverTipsTricksPartThree.csproj", "{12807D16-85A9-4B49-9061-0E15D79F016B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedWebDriverTipsTricksPartThree", "AdvancedWebDriverTipsTricksPartThree\AdvancedWebDriverTipsTricksPartThree.csproj", "{12807D16-85A9-4B49-9061-0E15D79F016B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignGridControlAutomatedTestsPartOne", "DesignGridControlAutomatedTestsPartOne\DesignGridControlAutomatedTestsPartOne.csproj", "{E053E1B2-3ABC-4D7C-801F-255260DE0927}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignGridControlAutomatedTestsPartOne", "DesignGridControlAutomatedTestsPartOne\DesignGridControlAutomatedTestsPartOne.csproj", "{E053E1B2-3ABC-4D7C-801F-255260DE0927}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignGridControlAutomatedTestsPartTwo", "DesignGridControlAutomatedTestsPartTwo\DesignGridControlAutomatedTestsPartTwo.csproj", "{A638D41B-EE9E-4F5D-A451-EE72B1903BE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignGridControlAutomatedTestsPartTwo", "DesignGridControlAutomatedTestsPartTwo\DesignGridControlAutomatedTestsPartTwo.csproj", "{A638D41B-EE9E-4F5D-A451-EE72B1903BE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignGridControlAutomatedTestsPartThree", "DesignGridControlAutomatedTestsPartThree\DesignGridControlAutomatedTestsPartThree.csproj", "{3E99C3F8-06C4-490B-BA7D-36B1BCBA06E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignGridControlAutomatedTestsPartThree", "DesignGridControlAutomatedTestsPartThree\DesignGridControlAutomatedTestsPartThree.csproj", "{3E99C3F8-06C4-490B-BA7D-36B1BCBA06E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedReuseTacticsGridControlsAutomatedTests", "AdvancedReuseTacticsGridControlsAutomatedTests\AdvancedReuseTacticsGridControlsAutomatedTests.csproj", "{9ECD8690-17B0-412B-AF6D-05E5CE4B19B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedReuseTacticsGridControlsAutomatedTests", "AdvancedReuseTacticsGridControlsAutomatedTests\AdvancedReuseTacticsGridControlsAutomatedTests.csproj", "{9ECD8690-17B0-412B-AF6D-05E5CE4B19B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MostUnderratedWebDriverLocatorXPath", "MostUnderratedWebDriverLocatorXPath\MostUnderratedWebDriverLocatorXPath.csproj", "{85335026-247B-46ED-A2A6-AAAE615284FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MostUnderratedWebDriverLocatorXPath", "MostUnderratedWebDriverLocatorXPath\MostUnderratedWebDriverLocatorXPath.csproj", "{85335026-247B-46ED-A2A6-AAAE615284FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverSeleniumTorIntegration", "WebDriverSeleniumTorIntegration\WebDriverSeleniumTorIntegration.csproj", "{131AA02E-06C4-4DB6-8B75-13ABFE0C72F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriverSeleniumTorIntegration", "WebDriverSeleniumTorIntegration\WebDriverSeleniumTorIntegration.csproj", "{131AA02E-06C4-4DB6-8B75-13ABFE0C72F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUrlRedirectsWebDriverHttpWebRequest", "TestUrlRedirectsWebDriverHttpWebRequest\TestUrlRedirectsWebDriverHttpWebRequest.csproj", "{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestUrlRedirectsWebDriverHttpWebRequest", "TestUrlRedirectsWebDriverHttpWebRequest\TestUrlRedirectsWebDriverHttpWebRequest.csproj", "{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout", "MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout\MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout.csproj", "{4020385F-C2BF-451E-B118-B7E4BC8930A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout", "MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout\MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout.csproj", "{4020385F-C2BF-451E-B118-B7E4BC8930A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedUpSeleniumTestsRamFactsMyths", "SpeedUpSeleniumTestsRamFactsMyths\SpeedUpSeleniumTestsRamFactsMyths.csproj", "{C9E9FCFA-4DDC-4A53-90BF-723C60AA165C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedUpSeleniumTestsRamFactsMyths", "SpeedUpSeleniumTestsRamFactsMyths\SpeedUpSeleniumTestsRamFactsMyths.csproj", "{C9E9FCFA-4DDC-4A53-90BF-723C60AA165C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomateTelerikKendoGridWebDriverJavaScript", "AutomateTelerikKendoGridWebDriverJavaScript\AutomateTelerikKendoGridWebDriverJavaScript.csproj", "{09F6304D-805B-4A92-82AF-24F6F297EF36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomateTelerikKendoGridWebDriverJavaScript", "AutomateTelerikKendoGridWebDriverJavaScript\AutomateTelerikKendoGridWebDriverJavaScript.csproj", "{09F6304D-805B-4A92-82AF-24F6F297EF36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedWebDriverTipsTricksPartOne", "AdvancedWebDriverTipsTricksPartOne\AdvancedWebDriverTipsTricksPartOne.csproj", "{72C27BC0-C747-45CF-998A-09989842F019}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedWebDriverTipsTricksPartOne", "AdvancedWebDriverTipsTricksPartOne\AdvancedWebDriverTipsTricksPartOne.csproj", "{72C27BC0-C747-45CF-998A-09989842F019}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonComponents", "CommonComponents", "{875B8A5D-165C-4FF6-8D55-DD08474228AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ui.Automation.Core.Controls", "Ui.Automation.Core.Controls\Ui.Automation.Core.Controls.csproj", "{0FCF9CA2-F3DF-4090-B9DB-6D2AB01EC094}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ui.Automation.Core.Controls", "Ui.Automation.Core.Controls\Ui.Automation.Core.Controls.csproj", "{0FCF9CA2-F3DF-4090-B9DB-6D2AB01EC094}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Huddle", "Huddle", "{BE6A56F4-A917-4E07-849B-37616836E1A4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Page Objects- Partial Classes FindsBy Attributes", "01. Page Objects- Partial Classes FindsBy Attributes", "{6D90459B-F297-45DF-A81F-B84D03DA41A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsPartialClassesFindsByAttributes", "ImprovedPageObjects\HuddlePageObjectsPartialClassesFindsByAttributes.csproj", "{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16. Use Selenium WebDriver UI Tests for Load Testing in the Cloud", "16. Use Selenium WebDriver UI Tests for Load Testing in the Cloud", "{0729514F-5710-437D-970D-9A5840E371A8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverCloudLoadTesting", "WebDriverCloudLoadTesting\WebDriverCloudLoadTesting.csproj", "{16001DE2-C8E9-4321-8110-D5835283B343}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuddlePageObjectsPartialClassesFindsByAttributes", "ImprovedPageObjects\HuddlePageObjectsPartialClassesFindsByAttributes.csproj", "{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "17. Enhanced WebDriver Tests with the New Improved CSharp 6.0", "17. Enhanced WebDriver Tests with the New Improved CSharp 6.0", "{A60B2F35-EF11-4628-9870-2A99442C6161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverTestsCSharpSix", "WebDriverTestsCSharpSix\WebDriverTestsCSharpSix.csproj", "{71EE5670-1113-4716-AEE2-645671D03F60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriverTestsCSharpSix", "WebDriverTestsCSharpSix\WebDriverTestsCSharpSix.csproj", "{71EE5670-1113-4716-AEE2-645671D03F60}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18. 5 Reasons You Should Use the Brand-New CSharp 7.0 in Your WebDriver Tests", "18. 5 Reasons You Should Use the Brand-New CSharp 7.0 in Your WebDriver Tests", "{0A59D995-A424-44AD-8800-99F3989059E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverCsharpSeven", "WebDriverCsharpSeven\WebDriverCsharpSeven.csproj", "{5E74BB21-7F89-468F-A8F0-3683A4172E22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriverCsharpSeven", "WebDriverCsharpSeven\WebDriverCsharpSeven.csproj", "{5E74BB21-7F89-468F-A8F0-3683A4172E22}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Page Objects- Partial Classes with Properties", "02. Page Objects- Partial Classes with Properties", "{E09EB29E-71F0-4153-96CF-DC5854E59B7E}"
 EndProject
@@ -111,19 +107,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsPageSectio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19. Most Exhaustive WebDriver Locators Cheat Sheet", "19. Most Exhaustive WebDriver Locators Cheat Sheet", "{9C7AFA9A-B3D5-4539-93CC-7B2A19A3FA95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocatorsCheatSheet", "LocatorsCheatSheet\LocatorsCheatSheet.csproj", "{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocatorsCheatSheet", "LocatorsCheatSheet\LocatorsCheatSheet.csproj", "{29B77DFF-A35E-41DF-BD4A-B52A2DDB3A47}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20. Execute UI Tests in the Cloud- Cross Browser Testing", "20. Execute UI Tests in the Cloud- Cross Browser Testing", "{6373C51E-AF03-4431-8FDB-2BFDC9AFD61B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecuteUiTestsCloudCrossBrowserTesting", "ExecuteUiTestsCloudCrossBrowserTesting\ExecuteUiTestsCloudCrossBrowserTesting.csproj", "{31C127B5-E501-4AFD-ABC6-8BFE4ECC5B5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExecuteUiTestsCloudCrossBrowserTesting", "ExecuteUiTestsCloudCrossBrowserTesting\ExecuteUiTestsCloudCrossBrowserTesting.csproj", "{31C127B5-E501-4AFD-ABC6-8BFE4ECC5B5B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "22. Execute UI Tests in the Cloud- BrowserStack", "22. Execute UI Tests in the Cloud- BrowserStack", "{CC86EE85-BD2B-4F65-9740-EE0FD4F60427}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecuteUiTestsCloudBrowserStack", "ExecuteUiTestsCloudBrowserStack\ExecuteUiTestsCloudBrowserStack.csproj", "{3DBCB7A8-5523-4F41-8E78-7F8E2DF8217A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExecuteUiTestsCloudBrowserStack", "ExecuteUiTestsCloudBrowserStack\ExecuteUiTestsCloudBrowserStack.csproj", "{3DBCB7A8-5523-4F41-8E78-7F8E2DF8217A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "23. Execute UI Tests in the Cloud- SauceLabs", "23. Execute UI Tests in the Cloud- SauceLabs", "{40A7B6A5-F3E1-4457-8D2A-74AD74735300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecuteUiTestsSauceLabs", "ExecuteUiTestsSauceLabs\ExecuteUiTestsSauceLabs.csproj", "{AA322464-1E28-4914-BED1-F286D6511A75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExecuteUiTestsSauceLabs", "ExecuteUiTestsSauceLabs\ExecuteUiTestsSauceLabs.csproj", "{AA322464-1E28-4914-BED1-F286D6511A75}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21. Selenium WebDriver + .NET Core 2.0- What Everyone Ought to Know", "21. Selenium WebDriver + .NET Core 2.0- What Everyone Ought to Know", "{541201EF-5897-4CFD-BDE8-5935A524B166}"
 EndProject
@@ -131,23 +127,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriverDotNetCore", "WebD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "24. Capture Full Page Screenshot Using WebDriver with HTML2Canvas.js", "24. Capture Full Page Screenshot Using WebDriver with HTML2Canvas.js", "{D6C0275E-1538-4B1F-8B05-75C44BEAF4B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullPageScreenshotHtmlToCanvas", "FullPageScreenshotHtmlToCanvas\FullPageScreenshotHtmlToCanvas.csproj", "{E68218BF-0D5A-4B2D-9875-F8C7E2737FF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullPageScreenshotHtmlToCanvas", "FullPageScreenshotHtmlToCanvas\FullPageScreenshotHtmlToCanvas.csproj", "{E68218BF-0D5A-4B2D-9875-F8C7E2737FF3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "25. Build Browser Extension for Full Page Screenshots and Use It in WebDriver Tests", "25. Build Browser Extension for Full Page Screenshots and Use It in WebDriver Tests", "{57963618-C9D6-4743-B1BC-54C0B04578A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildBrowserExtensionFullPageScreenshots", "BuildBrowserExtensionFullPageScreenshots\BuildBrowserExtensionFullPageScreenshots.csproj", "{3CF1B3CE-3646-4A20-A9FC-22E49E104A69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildBrowserExtensionFullPageScreenshots", "BuildBrowserExtensionFullPageScreenshots\BuildBrowserExtensionFullPageScreenshots.csproj", "{3CF1B3CE-3646-4A20-A9FC-22E49E104A69}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "26. Automate Windows Desktop Apps with WebDriver- WinAppDriver", "26. Automate Windows Desktop Apps with WebDriver- WinAppDriver", "{263BED32-64D8-4446-92AB-118E4E2B34C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStartedWinDriver", "GettingStartedWinDriver\GettingStartedWinDriver.csproj", "{9C427C18-4668-4B37-A8D4-310CC5DB5B8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GettingStartedWinDriver", "GettingStartedWinDriver\GettingStartedWinDriver.csproj", "{9C427C18-4668-4B37-A8D4-310CC5DB5B8C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "27. Windows WebDriver- WinAppDriver- Page Objects", "27. Windows WebDriver- WinAppDriver- Page Objects", "{26EFF10A-A757-4AD2-80F0-A8BFEE7A7F99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinAppDriverPageObjects", "WinAppDriverPageObjects\WinAppDriverPageObjects.csproj", "{C695688C-51FE-45B9-ABCD-593A28D53CC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinAppDriverPageObjects", "WinAppDriverPageObjects\WinAppDriverPageObjects.csproj", "{C695688C-51FE-45B9-ABCD-593A28D53CC1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "28. Headless Execution of WebDriver Tests- Chrome", "28. Headless Execution of WebDriver Tests- Chrome", "{1A399EE2-D259-4902-8A29-B1AA78983A99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadlessTestsChrome", "HeadlessTestsChrome\HeadlessTestsChrome.csproj", "{2AD69BC2-3420-411A-99D5-EF1143E55926}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeadlessTestsChrome", "HeadlessTestsChrome\HeadlessTestsChrome.csproj", "{2AD69BC2-3420-411A-99D5-EF1143E55926}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "29. Finish Him- Kill All the Drivers", "29. Finish Him- Kill All the Drivers", "{2F6491ED-5E5D-437C-A8A8-1355B63DB9AB}"
 EndProject
@@ -155,7 +151,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinishHimKillAllWebDrivers"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30. Headless Execution of WebDriver Tests- Firefox", "30. Headless Execution of WebDriver Tests- Firefox", "{4A1EC2D7-1B32-42DD-BB7B-439BA70E6251}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadlessTestsFirefox", "HeadlessTestsFirefox\HeadlessTestsFirefox.csproj", "{B10FBBD9-9CB0-41B7-B8ED-A5950EBE962C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeadlessTestsFirefox", "HeadlessTestsFirefox\HeadlessTestsFirefox.csproj", "{B10FBBD9-9CB0-41B7-B8ED-A5950EBE962C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07. Page Objects- Partial Classes Singleton", "07. Page Objects- Partial Classes Singleton", "{E78B108A-19C4-4F81-886F-09A13EEB52A9}"
 EndProject
@@ -175,7 +171,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuddlePageObjectsAppDesignP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "31. WebDriver- Capture and Modify HTTP Traffic", "31. WebDriver- Capture and Modify HTTP Traffic", "{DE6B56FE-C905-47F5-AA8E-9EBB999988F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureModifyHttpTraffic", "CaptureModifyHttpTraffic\CaptureModifyHttpTraffic.csproj", "{6294F3D1-D272-4CAC-837F-92ED65451EFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaptureModifyHttpTraffic", "CaptureModifyHttpTraffic\CaptureModifyHttpTraffic.csproj", "{6294F3D1-D272-4CAC-837F-92ED65451EFE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "32. Simple Factory Design Pattern- WebDriver Anonymous Browsing with Rotating Proxies", "32. Simple Factory Design Pattern- WebDriver Anonymous Browsing with Rotating Proxies", "{6B6A390A-181B-4D57-BDBF-6F38D2B89223}"
 EndProject
@@ -297,10 +293,6 @@ Global
 		{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{16001DE2-C8E9-4321-8110-D5835283B343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16001DE2-C8E9-4321-8110-D5835283B343}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16001DE2-C8E9-4321-8110-D5835283B343}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16001DE2-C8E9-4321-8110-D5835283B343}.Release|Any CPU.Build.0 = Release|Any CPU
 		{71EE5670-1113-4716-AEE2-645671D03F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{71EE5670-1113-4716-AEE2-645671D03F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71EE5670-1113-4716-AEE2-645671D03F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -458,7 +450,6 @@ Global
 		{0FCF9CA2-F3DF-4090-B9DB-6D2AB01EC094} = {875B8A5D-165C-4FF6-8D55-DD08474228AE}
 		{6D90459B-F297-45DF-A81F-B84D03DA41A6} = {D5E1B798-3F73-4EB0-A675-21EB232443FE}
 		{D0CAEAEE-FCD8-4A86-B059-B69C3289EED8} = {6D90459B-F297-45DF-A81F-B84D03DA41A6}
-		{16001DE2-C8E9-4321-8110-D5835283B343} = {0729514F-5710-437D-970D-9A5840E371A8}
 		{71EE5670-1113-4716-AEE2-645671D03F60} = {A60B2F35-EF11-4628-9870-2A99442C6161}
 		{5E74BB21-7F89-468F-A8F0-3683A4172E22} = {0A59D995-A424-44AD-8800-99F3989059E8}
 		{E09EB29E-71F0-4153-96CF-DC5854E59B7E} = {D5E1B798-3F73-4EB0-A675-21EB232443FE}
