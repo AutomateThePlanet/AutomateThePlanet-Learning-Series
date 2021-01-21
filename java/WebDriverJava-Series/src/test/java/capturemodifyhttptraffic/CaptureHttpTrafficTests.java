@@ -58,7 +58,7 @@ public class CaptureHttpTrafficTests {
 
     @AfterMethod
     public void testCleanup() {
-        //driver.quit();
+        driver.quit();
     }
 
     @Test
