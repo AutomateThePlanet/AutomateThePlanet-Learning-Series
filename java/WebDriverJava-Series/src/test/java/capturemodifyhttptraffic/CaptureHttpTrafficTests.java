@@ -15,16 +15,12 @@ package capturemodifyhttptraffic;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import net.lightbody.bmp.BrowserMobProxyServer;
-import net.lightbody.bmp.proxy.CaptureType;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
-import java.io.File;
-import java.io.IOException;
 
 public class CaptureHttpTrafficTests {
     private WebDriver driver;
