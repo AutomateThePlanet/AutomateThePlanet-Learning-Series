@@ -23,7 +23,7 @@ namespace FacadeDesignPattern
 {
     [TestClass]
     public class EbayPurchaseWithoutPurchaseFaceadeTests
-    { 
+    {
         [TestInitialize]
         public void SetupTest()
         {

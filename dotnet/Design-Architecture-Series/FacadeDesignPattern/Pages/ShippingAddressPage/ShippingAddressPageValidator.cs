@@ -20,7 +20,7 @@ namespace FacadeDesignPattern.Pages.ShippingAddressPage
     {
         public void Subtotal(string expectedSubtotal)
         {
-            //AU $168.00
+            // AU $168.00
             Assert.AreEqual<string>(expectedSubtotal, Map.Subtotal.Text);
         }
     }

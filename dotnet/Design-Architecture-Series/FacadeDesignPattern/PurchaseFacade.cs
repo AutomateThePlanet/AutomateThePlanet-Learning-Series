@@ -29,7 +29,7 @@ namespace PatternsInAutomatedTests.Advanced.Ebay
         private ShippingAddressPage _shippingAddressPage;
         private SignInPage _signInPage;
 
-        public ItemPage ItemPage 
+        public ItemPage ItemPage
         {
             get
             {
@@ -37,6 +37,7 @@ namespace PatternsInAutomatedTests.Advanced.Ebay
                 {
                     _itemPage = new ItemPage();
                 }
+
                 return _itemPage;
             }
         }
@@ -49,6 +50,7 @@ namespace PatternsInAutomatedTests.Advanced.Ebay
                 {
                     _signInPage = new SignInPage();
                 }
+
                 return _signInPage;
             }
         }
@@ -61,6 +63,7 @@ namespace PatternsInAutomatedTests.Advanced.Ebay
                 {
                     _checkoutPage = new CheckoutPage();
                 }
+
                 return _checkoutPage;
             }
         }
@@ -73,6 +76,7 @@ namespace PatternsInAutomatedTests.Advanced.Ebay
                 {
                     _shippingAddressPage = new ShippingAddressPage();
                 }
+
                 return _shippingAddressPage;
             }
         }

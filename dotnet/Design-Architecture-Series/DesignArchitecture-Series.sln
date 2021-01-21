@@ -8,9 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Advanced Page Object Pattern", "2. Advanced Page Object Pattern", "{2072D630-717C-4CE2-AFBF-C2477BC62B09}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Facade Design Pattern", "3. Facade Design Pattern", "{5E7E9B3B-C608-4E5F-AC35-0657C70B3D3B}"
-	ProjectSection(SolutionItems) = preProject
-		readme-3.txt = readme-3.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Singleton Design Pattern", "4. Singleton Design Pattern", "{A4C9D588-E57E-4806-A358-CB94B6F5971E}"
 EndProject

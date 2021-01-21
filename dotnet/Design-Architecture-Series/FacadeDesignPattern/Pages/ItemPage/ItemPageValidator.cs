@@ -21,7 +21,7 @@ namespace FacadeDesignPattern.Pages.ItemPage
     {
         public void Price(string expectedPrice)
         {
-            //AU $168.00
+            // AU $168.00
             Assert.AreEqual<string>(expectedPrice, Map.Price.Text);
         }
     }

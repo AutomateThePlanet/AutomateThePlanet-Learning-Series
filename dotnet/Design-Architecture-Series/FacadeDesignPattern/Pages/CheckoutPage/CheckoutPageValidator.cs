@@ -1,5 +1,4 @@
-﻿using FacadeDesignPattern.Core;
-// <copyright file="CheckoutPageValidator.cs" company="Automate The Planet Ltd.">
+﻿// <copyright file="CheckoutPageValidator.cs" company="Automate The Planet Ltd.">
 // Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -13,6 +12,7 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FacadeDesignPattern.Core;
 
 namespace FacadeDesignPattern.Pages.CheckoutPage
 {
@@ -20,7 +20,7 @@ namespace FacadeDesignPattern.Pages.CheckoutPage
     {
         public void Subtotal(string expectedSubtotal)
         {
-            //AU $168.00
+            // AU $168.00
             Assert.AreEqual<string>(expectedSubtotal, Map.TotalPrice.Text);
         }
     }
