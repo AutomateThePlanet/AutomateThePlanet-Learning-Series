@@ -28,6 +28,7 @@ namespace GetPropertyNamesUsingLambdaExpressions
             {
                 Console.WriteLine(cPropertyName);
             }
+
             var nameOfTheMethod = client.GetMemberName(c => c.ToString());
             Console.WriteLine(nameOfTheMethod);
         }

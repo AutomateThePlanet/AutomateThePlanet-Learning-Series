@@ -33,6 +33,5 @@ namespace GetPropertyNamesUsingLambdaExpressions
         {
             return string.Concat(FistName, " ", LastName);
         }
-
     }
 }

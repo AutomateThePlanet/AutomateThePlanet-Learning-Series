@@ -53,21 +53,21 @@ namespace GetPropertyNamesUsingLambdaExpressions
             if (expression is MemberExpression)
             {
                 // Reference type property or field
-                var memberExpression = (MemberExpression) expression;
+                var memberExpression = (MemberExpression)expression;
                 return memberExpression.Member.Name;
             }
 
             if (expression is MethodCallExpression)
             {
                 // Reference type method
-                var methodCallExpression = (MethodCallExpression) expression;
+                var methodCallExpression = (MethodCallExpression)expression;
                 return methodCallExpression.Method.Name;
             }
 
             if (expression is UnaryExpression)
             {
                 // Property, field of method returning value type
-                var unaryExpression = (UnaryExpression) expression;
+                var unaryExpression = (UnaryExpression)expression;
                 return GetMemberName(unaryExpression);
             }
 
@@ -78,11 +78,11 @@ namespace GetPropertyNamesUsingLambdaExpressions
         {
             if (unaryExpression.Operand is MethodCallExpression)
             {
-                var methodExpression = (MethodCallExpression) unaryExpression.Operand;
+                var methodExpression = (MethodCallExpression)unaryExpression.Operand;
                 return methodExpression.Method.Name;
             }
 
-            return ((MemberExpression) unaryExpression.Operand).Member.Name;
+            return ((MemberExpression)unaryExpression.Operand).Member.Name;
         }
     }
 }
