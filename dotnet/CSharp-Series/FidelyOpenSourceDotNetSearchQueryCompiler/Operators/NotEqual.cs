@@ -26,7 +26,7 @@ namespace Fidely.Framework.Compilation.Objects.Operators
     /// <typeparam name="T">The type of an elements in a collection that is filtered by a generated expression.</typeparam>
     public class NotEqual<T> : BaseBuiltInComparativeOperator<T>
     {
-        private readonly bool ignoreCase;
+        private readonly bool _ignoreCase;
 
         /// <summary>
         /// Initializes a new instance of this class.
@@ -54,7 +54,7 @@ namespace Fidely.Framework.Compilation.Objects.Operators
         /// <param name="description">The description of this operator.</param>
         public NotEqual(string symbol, bool ignoreCase, OperatorIndependency independency, string description) : base(symbol, independency, description)
         {
-            this.ignoreCase = ignoreCase;
+            _ignoreCase = ignoreCase;
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Fidely.Framework.Compilation.Objects.Operators
         /// <returns>The cloned instance.</returns>
         public override FidelyOperator Clone()
         {
-            return new NotEqual<T>(Symbol, ignoreCase, Independency, Description);
+            return new NotEqual<T>(Symbol, _ignoreCase, Independency, Description);
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Fidely.Framework.Compilation.Objects.Operators
                 var l = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(left.Expression, typeof(object)));
                 var r = Expression.Call(null, typeof(Convert).GetMethod("ToString", new Type[] { typeof(object) }), Expression.Convert(right.Expression, typeof(object)));
 
-                if (ignoreCase)
+                if (_ignoreCase)
                 {
                     var toLower = typeof(string).GetMethod("ToLower", BindingFlags.Instance | BindingFlags.Public, null, new Type[] { }, null);
                     return Expression.NotEqual(Expression.Call(l, toLower), Expression.Call(r, toLower));

@@ -30,7 +30,7 @@ namespace Fidely.Framework.Compilation.Objects.Operators
     /// <typeparam name="T">The type of an elements in a collection that is filtered by a generated expression.</typeparam>
     public abstract class BaseBuiltInComparativeOperator<T> : ComparativeOperator, IDescribable
     {
-        private readonly OperandBuilder builder;
+        private readonly OperandBuilder _builder;
 
         /// <summary>
         /// Initializes a new instance of this class.
@@ -48,7 +48,7 @@ namespace Fidely.Framework.Compilation.Objects.Operators
         /// <param name="description">The description of this operator.</param>
         protected BaseBuiltInComparativeOperator(string symbol, OperatorIndependency independency, string description) : base(symbol, independency)
         {
-            builder = new OperandBuilder();
+            _builder = new OperandBuilder();
 
             if (description == null)
             {
@@ -89,7 +89,7 @@ namespace Fidely.Framework.Compilation.Objects.Operators
                 {
                     if (property.CanRead && Attribute.GetCustomAttribute(property, typeof(NotEvaluateAttribute)) == null)
                     {
-                        operands.Add(builder.BuildUp(current, typeof(T).GetProperty(property.Name, BindingFlags.Instance | BindingFlags.Public)));
+                        operands.Add(_builder.BuildUp(current, typeof(T).GetProperty(property.Name, BindingFlags.Instance | BindingFlags.Public)));
                         Logger.Verbose("Generated an operand with '{0}' property.", property.Name);
                     }
                     else

@@ -35,16 +35,16 @@ namespace Fidely.Framework
     /// <typeparam name="T">The type of an elements in a collection that is filtered by a generated expression.</typeparam>
     public class SearchQueryCompiler<T> : IWarningNotifier
     {
-        private readonly EvaluatorCollection evaluators;
+        private readonly EvaluatorCollection _evaluators;
 
-        private readonly OperatorCollection operators;
+        private readonly OperatorCollection _operators;
 
-        private ComparativeOperator defaultComparativeOperator;
+        private ComparativeOperator _defaultComparativeOperator;
 
         internal SearchQueryCompiler()
         {
-            evaluators = new EvaluatorCollection();
-            operators = new OperatorCollection();
+            _evaluators = new EvaluatorCollection();
+            _operators = new OperatorCollection();
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Fidely.Framework
         {
             var instance = evaluator.Clone();
             instance.WarningNotifier = this;
-            evaluators.Add(instance);
+            _evaluators.Add(instance);
             Logger.Verbose("Registered an operand evaluator '{0}'.", instance.GetType().FullName);
         }
 
@@ -99,19 +99,19 @@ namespace Fidely.Framework
         {
             var instance = op.Clone();
             instance.WarningNotifier = this;
-            operators.Add(instance);
+            _operators.Add(instance);
             Logger.Verbose("Registered an operator '{0}' (symbol = {1}, independency = {2}).", instance.GetType().FullName, instance.Symbol, instance.Independency);
 
-            if (defaultComparativeOperator == null && instance is ComparativeOperator)
+            if (_defaultComparativeOperator == null && instance is ComparativeOperator)
             {
-                defaultComparativeOperator = (ComparativeOperator)instance;
+                _defaultComparativeOperator = (ComparativeOperator)instance;
                 Logger.Verbose("Registered an operator '{0}' as the default comparative operator.", instance.Symbol);
             }
         }
 
         private Expression<Func<T, bool>> Compile(IToken token)
         {
-            if (defaultComparativeOperator == null)
+            if (_defaultComparativeOperator == null)
             {
                 Logger.Error("The defualt comparative operator isn't registered.");
                 throw new InvalidOperationException("Failed to compile the secified search query because this compiler doesn't have comparative operator. You have to register a comparative operator at least one.");
@@ -125,7 +125,7 @@ namespace Fidely.Framework
 
             Logger.Info("STAGE 2: Building an abstract syntax tree.");
 
-            var analyzer = new SyntacticAnalyzer<T>(defaultComparativeOperator);
+            var analyzer = new SyntacticAnalyzer<T>(_defaultComparativeOperator);
             var root = analyzer.Parse(tokens);
 
             Logger.Info("STAGE 3: Compiling an abstract syntax tree.");
@@ -186,7 +186,7 @@ namespace Fidely.Framework
             else if (node.Value is OperandToken)
             {
                 Logger.Info("Evaluating the specified operand node '{0}'.", node.Value.Value);
-                foreach (var evaluator in evaluators)
+                foreach (var evaluator in _evaluators)
                 {
                     var result = evaluator.Evaluate(current, node.Value.Value);
                     if (result != null)
@@ -208,8 +208,8 @@ namespace Fidely.Framework
             var filters = new List<ITokenFilter>();
 
             filters.Add(new QuotedWordTokenizer());
-            filters.Add(new StrongLinkedWordTokenizer(operators.Where(o => o.Independency == OperatorIndependency.Strong)));
-            filters.Add(new WeakLinkedWordTokenizer(operators.Where(o => o.Independency == OperatorIndependency.Weak)));
+            filters.Add(new StrongLinkedWordTokenizer(_operators.Where(o => o.Independency == OperatorIndependency.Strong)));
+            filters.Add(new WeakLinkedWordTokenizer(_operators.Where(o => o.Independency == OperatorIndependency.Weak)));
             filters.Add(new ParenthesisFiller());
             filters.Add(new BlankOperandFiller());
             filters.Add(new LogicalAndFiller());

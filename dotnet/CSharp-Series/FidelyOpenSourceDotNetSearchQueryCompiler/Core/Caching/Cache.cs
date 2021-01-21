@@ -21,23 +21,23 @@ namespace Fidely.Framework.Caching
 {
     internal class Cache<TKey, TValue>
     {
-        private readonly int cacheSize;
+        private readonly int _cacheSize;
 
-        private readonly List<CacheItem<TKey, TValue>> items;
+        private readonly List<CacheItem<TKey, TValue>> _items;
 
         internal Cache(int cacheSize)
         {
             Logger.Info("Initializing cache (size = '{0}').", cacheSize);
 
-            this.cacheSize = (cacheSize > 0) ? cacheSize : 0;
-            items = new List<CacheItem<TKey, TValue>>();
+            _cacheSize = (cacheSize > 0) ? cacheSize : 0;
+            _items = new List<CacheItem<TKey, TValue>>();
         }
 
         internal TValue GetValue(TKey key)
         {
             Logger.Info("Fetching cached data with the specified key '{0}'.", key);
 
-            var item = items.FirstOrDefault(o => o.Key.Equals(key));
+            var item = _items.FirstOrDefault(o => o.Key.Equals(key));
             if (item == null)
             {
                 Logger.Info("The cached data with the specified key '{0}' wasn't found.", key);
@@ -53,15 +53,15 @@ namespace Fidely.Framework.Caching
         {
             Logger.Info("Caching data '{0}' with the specified key '{1}'.", value, key);
 
-            if (items.Count == cacheSize)
+            if (_items.Count == _cacheSize)
             {
-                items.Sort((x, y) => x.Hits.CompareTo(y.Hits));
-                items.RemoveRange(0, items.Count / 4);
+                _items.Sort((x, y) => x.Hits.CompareTo(y.Hits));
+                _items.RemoveRange(0, _items.Count / 4);
                 Logger.Verbose("Shrank cache.");
             }
 
             var cache = new CacheItem<TKey, TValue>(key, value);
-            items.Add(cache);
+            _items.Add(cache);
         }
     }
 }

@@ -36,14 +36,14 @@ namespace Fidely.Framework
             ClosedParenthesisToken.Symbol,
         };
 
-        private readonly List<FidelyOperator> items;
+        private readonly List<FidelyOperator> _items;
 
         /// <summary>
         /// Initializes a new instance of this class.
         /// </summary>
         public OperatorCollection()
         {
-            items = new List<FidelyOperator>();
+            _items = new List<FidelyOperator>();
         }
 
         /// <summary>
@@ -56,20 +56,23 @@ namespace Fidely.Framework
             {
                 throw new ArgumentNullException("item");
             }
+
             if (string.IsNullOrWhiteSpace(item.Symbol))
             {
                 throw new ArgumentException("Failed to register the specified operator because its symbol can't be null, empty or white space.", "item");
             }
-            if (BuiltInSymbols.Any(o => o.Equals(item.Symbol, stringComparison.OrdinalIgnoreCase)))
+
+            if (BuiltInSymbols.Any(o => o.Equals(item.Symbol, StringComparison.OrdinalIgnoreCase)))
             {
                 throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Failed to register the specified operator because its symbol '{0}' is the reserved symbol.", item.Symbol), "item");
             }
-            if (items.Any(o => o.Symbol.Equals(item.Symbol, stringComparison.OrdinalIgnoreCase)))
+
+            if (_items.Any(o => o.Symbol.Equals(item.Symbol, StringComparison.OrdinalIgnoreCase)))
             {
                 throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Failed to register the specified operator because its symbol '{0}' is already registered.", item.Symbol), "item");
             }
 
-            items.Add(item);
+            _items.Add(item);
         }
 
         /// <summary>
@@ -78,7 +81,7 @@ namespace Fidely.Framework
         /// <returns>The enumerator that iterates through the collection.</returns>
         public IEnumerator<FidelyOperator> GetEnumerator()
         {
-            return items.GetEnumerator();
+            return _items.GetEnumerator();
         }
 
         /// <summary>
@@ -87,7 +90,7 @@ namespace Fidely.Framework
         /// <returns>The enumerator that iterates through the collection.</returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return items.GetEnumerator();
+            return _items.GetEnumerator();
         }
     }
 }

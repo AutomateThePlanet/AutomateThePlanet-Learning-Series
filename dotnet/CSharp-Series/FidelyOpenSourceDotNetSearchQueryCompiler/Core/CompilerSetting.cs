@@ -87,7 +87,7 @@ namespace Fidely.Framework
             {
                 return describable.Description;
             }
-            
+
             var attribute = Attribute.GetCustomAttribute(op.GetType(), typeof(DescriptionAttribute)) as DescriptionAttribute;
             return (attribute != null) ? attribute.Description : "";
         }

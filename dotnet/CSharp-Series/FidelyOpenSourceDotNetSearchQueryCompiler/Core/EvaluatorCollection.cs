@@ -26,14 +26,14 @@ namespace Fidely.Framework
     /// </summary>
     public class EvaluatorCollection : IEnumerable<OperandEvaluator>
     {
-        private readonly List<OperandEvaluator> items;
+        private readonly List<OperandEvaluator> _items;
 
         /// <summary>
         /// Initializes a new instance of this class.
         /// </summary>
         public EvaluatorCollection()
         {
-            items = new List<OperandEvaluator>();
+            _items = new List<OperandEvaluator>();
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Fidely.Framework
                 throw new ArgumentNullException("item");
             }
 
-            items.Add(item);
+            _items.Add(item);
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Fidely.Framework
         /// <returns>The enumerator that iterates through the collection.</returns>
         public IEnumerator<OperandEvaluator> GetEnumerator()
         {
-            return items.GetEnumerator();
+            return _items.GetEnumerator();
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Fidely.Framework
         /// <returns>The enumerator that iterates through the collection.</returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return items.GetEnumerator();
+            return _items.GetEnumerator();
         }
     }
 }

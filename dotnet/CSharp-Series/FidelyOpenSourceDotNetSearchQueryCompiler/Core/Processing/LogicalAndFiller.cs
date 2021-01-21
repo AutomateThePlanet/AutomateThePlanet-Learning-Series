@@ -46,6 +46,7 @@ namespace Fidely.Framework.Processing
                     Logger.Verbose("Filled a logical and operator between '{0}' and '{1}'.", left, right);
                 }
             }
+
             result.Add(tokens.Last());
 
             Logger.Info(result);

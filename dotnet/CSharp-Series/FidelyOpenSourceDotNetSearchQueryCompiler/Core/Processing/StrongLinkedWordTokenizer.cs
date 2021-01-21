@@ -23,24 +23,24 @@ namespace Fidely.Framework.Processing
 {
     internal class StrongLinkedWordTokenizer : BaseTokenizer
     {
-        private readonly IDictionary<string, IToken> mappings;
+        private readonly IDictionary<string, IToken> _mappings;
 
         internal StrongLinkedWordTokenizer(IEnumerable<FidelyOperator> operators)
         {
-            mappings = new Dictionary<string, IToken>();
+            _mappings = new Dictionary<string, IToken>();
 
-            mappings.Add(OpenedParenthesisToken.Symbol, new OpenedParenthesisToken());
-            mappings.Add(ClosedParenthesisToken.Symbol, new ClosedParenthesisToken());
+            _mappings.Add(OpenedParenthesisToken.Symbol, new OpenedParenthesisToken());
+            _mappings.Add(ClosedParenthesisToken.Symbol, new ClosedParenthesisToken());
 
             foreach (var op in operators)
             {
                 if (op is ComparativeOperator)
                 {
-                    mappings.Add(op.Symbol, new ComparativeOperatorToken((ComparativeOperator)op));
+                    _mappings.Add(op.Symbol, new ComparativeOperatorToken((ComparativeOperator)op));
                 }
                 else
                 {
-                    mappings.Add(op.Symbol, new CalculatingOperatorToken((CalculatingOperator)op));
+                    _mappings.Add(op.Symbol, new CalculatingOperatorToken((CalculatingOperator)op));
                 }
             }
         }
@@ -59,22 +59,24 @@ namespace Fidely.Framework.Processing
             {
                 Logger.Verbose("Progressing tokenization (current index = '{0}', start index = '{1}').", current, startIndex);
 
-                foreach (var symbol in mappings.Keys.Where(o => o.Length <= value.Length - current).OrderByDescending(o => o.Length))
+                foreach (var symbol in _mappings.Keys.Where(o => o.Length <= value.Length - current).OrderByDescending(o => o.Length))
                 {
-                    if (value.Substring(current, symbol.Length).Equals(symbol, stringComparison.OrdinalIgnoreCase))
+                    if (value.Substring(current, symbol.Length).Equals(symbol, StringComparison.OrdinalIgnoreCase))
                     {
                         if (startIndex < current)
                         {
                             result.Add(new UncategorizedToken(value.Substring(startIndex, current - startIndex)));
                             Logger.Verbose("Extracted an uncategorized token '{0}'.", result.Last().Value);
                         }
+
                         current += symbol.Length - 1;
                         startIndex = current + 1;
-                        result.Add(mappings[symbol]);
+                        result.Add(_mappings[symbol]);
                         Logger.Verbose("Extracted an operand token '{0}'.", result.Last().Value);
                         break;
                     }
                 }
+
                 current++;
             }
 

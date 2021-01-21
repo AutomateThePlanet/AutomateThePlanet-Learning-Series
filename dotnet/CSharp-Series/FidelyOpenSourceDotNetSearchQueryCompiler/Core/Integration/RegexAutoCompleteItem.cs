@@ -23,9 +23,9 @@ namespace Fidely.Framework.Integration
     /// </summary>
     public class RegexAutoCompleteItem : IAutoCompleteItem
     {
-        private readonly Func<string, MatchingOption, bool> isMatchProcedure;
+        private readonly Func<string, MatchingOption, bool> _isMatchProcedure;
 
-        private readonly Func<string, MatchingOption, string> completeProcedure;
+        private readonly Func<string, MatchingOption, string> _completeProcedure;
 
         /// <summary>
         ///  Initializes a new instance of this class.
@@ -40,10 +40,12 @@ namespace Fidely.Framework.Integration
             {
                 throw new ArgumentNullException("displayName");
             }
+
             if (isMatchProcedure == null)
             {
                 throw new ArgumentNullException("isMatchProcedure");
             }
+
             if (completeProcedure == null)
             {
                 throw new ArgumentNullException("completeProcedure");
@@ -51,8 +53,8 @@ namespace Fidely.Framework.Integration
 
             DisplayName = displayName;
             Description = description ?? "";
-            this.isMatchProcedure = isMatchProcedure;
-            this.completeProcedure = completeProcedure;
+            _isMatchProcedure = isMatchProcedure;
+            _completeProcedure = completeProcedure;
         }
 
         /// <summary>
@@ -73,7 +75,7 @@ namespace Fidely.Framework.Integration
         /// <returns>True if the specified value can be completed by this item, otherwise false.</returns>
         public bool IsMatch(string value, MatchingOption matchingOption)
         {
-            return isMatchProcedure(value, matchingOption);
+            return _isMatchProcedure(value, matchingOption);
         }
 
         /// <summary>
@@ -84,7 +86,7 @@ namespace Fidely.Framework.Integration
         /// <returns>The completed value.</returns>
         public string Complete(string value, MatchingOption matchingOption)
         {
-            return completeProcedure(value, matchingOption);
+            return _completeProcedure(value, matchingOption);
         }
     }
 }

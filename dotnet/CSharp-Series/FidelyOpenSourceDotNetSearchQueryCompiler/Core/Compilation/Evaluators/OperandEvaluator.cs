@@ -24,21 +24,21 @@ namespace Fidely.Framework.Compilation.Evaluators
     /// </summary>
     public abstract class OperandEvaluator
     {
-        private readonly ICollection<IAutoCompleteItem> autocompleteItems;
+        private readonly ICollection<IAutoCompleteItem> _autocompleteItems;
 
         /// <summary>
         /// Initializes a new instance of this class.
         /// </summary>
         protected OperandEvaluator()
         {
-            autocompleteItems = new List<IAutoCompleteItem>();
+            _autocompleteItems = new List<IAutoCompleteItem>();
         }
 
         internal IEnumerable<IAutoCompleteItem> AutocompleteItems
         {
             get
             {
-                return autocompleteItems;
+                return _autocompleteItems;
             }
         }
 
@@ -64,7 +64,7 @@ namespace Fidely.Framework.Compilation.Evaluators
         /// <param name="item">The autocomplete item.</param>
         protected void Register(IAutoCompleteItem item)
         {
-            autocompleteItems.Add(item);
+            _autocompleteItems.Add(item);
         }
 
         /// <summary>

@@ -60,6 +60,7 @@ namespace Fidely.Framework.Integration
             {
                 throw new ArgumentNullException("value");
             }
+
             if (matchingOption == null)
             {
                 matchingOption = new MatchingOption();
@@ -71,7 +72,7 @@ namespace Fidely.Framework.Integration
             }
             else
             {
-                return DisplayName.ToUpperInvariant().StartsWith(value.ToUpperInvariant(), stringComparison.OrdinalIgnoreCase);
+                return DisplayName.ToUpperInvariant().StartsWith(value.ToUpperInvariant(), StringComparison.OrdinalIgnoreCase);
             }
         }
 

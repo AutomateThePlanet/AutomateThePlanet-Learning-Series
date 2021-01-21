@@ -23,11 +23,11 @@ namespace Fidely.Framework.Parsing
 {
     internal class SyntacticAnalyzer<T>
     {
-        private readonly ComparativeOperator defaultOperator;
+        private readonly ComparativeOperator _defaultOperator;
 
         internal SyntacticAnalyzer(ComparativeOperator defaultOperator)
         {
-            this.defaultOperator = defaultOperator;
+            _defaultOperator = defaultOperator;
         }
 
         public TreeNode Parse(IEnumerable<IToken> tokens)
@@ -57,6 +57,7 @@ namespace Fidely.Framework.Parsing
                         var node = BuildUpTreeNode((OperatorToken)stack.Pop(), left, right);
                         nodes.Push(node);
                     }
+
                     nodes.Peek().Freeze();
                     stack.Pop();
                 }
@@ -87,6 +88,7 @@ namespace Fidely.Framework.Parsing
                         var node = BuildUpTreeNode((OperatorToken)stack.Pop(), l, r);
                         nodes.Push(node);
                     }
+
                     stack.Push(token);
                 }
             }
@@ -152,8 +154,10 @@ namespace Fidely.Framework.Parsing
                         {
                             r = r.Right;
                         }
+
                         node.Left = r;
                     }
+
                     root = and;
                 }
                 else
@@ -177,6 +181,7 @@ namespace Fidely.Framework.Parsing
                         {
                             l = l.Left;
                         }
+
                         node.Right = l;
                     }
 
@@ -245,7 +250,7 @@ namespace Fidely.Framework.Parsing
 
         private TreeNode BuildUpDefaultComparativeNode(TreeNode node)
         {
-            var comparative = new TreeNode(new ComparativeOperatorToken(defaultOperator));
+            var comparative = new TreeNode(new ComparativeOperatorToken(_defaultOperator));
             comparative.Left = new TreeNode();
             comparative.Right = node;
             return comparative;

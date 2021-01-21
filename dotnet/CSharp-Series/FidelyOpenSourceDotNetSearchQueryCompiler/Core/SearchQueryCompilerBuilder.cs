@@ -42,6 +42,7 @@ namespace Fidely.Framework
                 {
                     instance = new SearchQueryCompilerBuilder();
                 }
+
                 return instance;
             }
         }

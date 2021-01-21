@@ -28,17 +28,16 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
     /// </summary>
     public abstract class BaseBuiltInEvaluator : OperandEvaluator
     {
-        private readonly IDictionary<string, PropertyInfo> mapping;
-
-        private OperandBuilder builder;
+        private readonly IDictionary<string, PropertyInfo> _mapping;
+        private OperandBuilder _builder;
 
         /// <summary>
         /// Initializes a new instance of this class.
         /// </summary>
         protected BaseBuiltInEvaluator()
         {
-            mapping = new Dictionary<string, PropertyInfo>();
-            builder = new OperandBuilder();
+            _mapping = new Dictionary<string, PropertyInfo>();
+            _builder = new OperandBuilder();
         }
 
         /// <summary>
@@ -55,13 +54,13 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
             }
 
             var propertyName = value.ToUpperInvariant();
-            if (!mapping.ContainsKey(propertyName))
+            if (!_mapping.ContainsKey(propertyName))
             {
                 return null;
             }
 
-            var property = mapping[propertyName];
-            return builder.BuildUp(current, property);
+            var property = _mapping[propertyName];
+            return _builder.BuildUp(current, property);
         }
 
         /// <summary>
@@ -71,11 +70,12 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
         public override OperandEvaluator Clone()
         {
             var instance = CreateInstance();
-            instance.builder = builder;
-            foreach (var key in mapping.Keys)
+            instance._builder = _builder;
+            foreach (var key in _mapping.Keys)
             {
-                instance.mapping.Add(key, mapping[key]);
+                instance._mapping.Add(key, _mapping[key]);
             }
+
             return instance;
         }
 
@@ -85,14 +85,14 @@ namespace Fidely.Framework.Compilation.Objects.Evaluators
         /// <param name="property">The property information.</param>
         protected void Register(PropertyInfo property)
         {
-            mapping[property.Name.ToUpperInvariant()] = property;
+            _mapping[property.Name.ToUpperInvariant()] = property;
 
             var description = Attribute.GetCustomAttribute(property, typeof(DescriptionAttribute)) as DescriptionAttribute;
             Register(new AutoCompleteItem(property.Name, (description != null) ? description.Description : ""));
 
             foreach (AliasAttribute alias in property.GetCustomAttributes(typeof(AliasAttribute), false))
             {
-                mapping[alias.Name.ToUpperInvariant()] = mapping[property.Name.ToUpperInvariant()];
+                _mapping[alias.Name.ToUpperInvariant()] = _mapping[property.Name.ToUpperInvariant()];
                 if (string.IsNullOrEmpty(alias.Description) && description != null)
                 {
                     Register(new AutoCompleteItem(alias.Name, description.Description));

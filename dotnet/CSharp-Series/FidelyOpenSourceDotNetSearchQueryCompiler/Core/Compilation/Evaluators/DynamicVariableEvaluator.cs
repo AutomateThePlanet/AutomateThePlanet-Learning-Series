@@ -26,9 +26,9 @@ namespace Fidely.Framework.Compilation.Evaluators
     /// </summary>
     public class DynamicVariableEvaluator : OperandEvaluator
     {
-        private readonly IOperandBuilder builder;
+        private readonly IOperandBuilder _builder;
 
-        private readonly Dictionary<Regex, Func<Match, object>> evaluators;
+        private readonly Dictionary<Regex, Func<Match, object>> _evaluators;
 
         /// <summary>
         /// Initializes a new instance of this class.
@@ -36,8 +36,8 @@ namespace Fidely.Framework.Compilation.Evaluators
         /// <param name="builder">The operand builder to build up a new operand from any object.</param>
         public DynamicVariableEvaluator(IOperandBuilder builder)
         {
-            this.builder = builder;
-            evaluators = new Dictionary<Regex, Func<Match, object>>();
+            _builder = builder;
+            _evaluators = new Dictionary<Regex, Func<Match, object>>();
         }
 
         /// <summary>
@@ -52,6 +52,7 @@ namespace Fidely.Framework.Compilation.Evaluators
             {
                 throw new ArgumentNullException("pattern");
             }
+
             RegisterVariable(new Regex(pattern, RegexOptions.Compiled), procedure, item);
         }
 
@@ -67,10 +68,12 @@ namespace Fidely.Framework.Compilation.Evaluators
             {
                 throw new ArgumentNullException("regex");
             }
+
             if (procedure == null)
             {
                 throw new ArgumentNullException("procedure");
             }
+
             if (item == null)
             {
                 throw new ArgumentNullException("item");
@@ -78,7 +81,7 @@ namespace Fidely.Framework.Compilation.Evaluators
 
             Logger.Verbose("Registered the specified pattern '{0}'.", regex.ToString());
 
-            evaluators[regex] = procedure;
+            _evaluators[regex] = procedure;
             Register(item);
         }
 
@@ -97,14 +100,14 @@ namespace Fidely.Framework.Compilation.Evaluators
                 throw new ArgumentNullException("value");
             }
 
-            foreach (var eval in evaluators)
+            foreach (var eval in _evaluators)
             {
                 var match = eval.Key.Match(value);
                 if (match.Success)
                 {
                     var result = eval.Value(match);
                     Logger.Verbose("Evaluated as '{0} : {1}'.", result.ToString(), result.GetType().FullName);
-                    return builder.BuildUp(result);
+                    return _builder.BuildUp(result);
                 }
             }
 
@@ -118,11 +121,12 @@ namespace Fidely.Framework.Compilation.Evaluators
         /// <returns>The cloned instance.</returns>
         public override OperandEvaluator Clone()
         {
-            var instance = new DynamicVariableEvaluator(builder);
-            foreach (var key in evaluators.Keys)
+            var instance = new DynamicVariableEvaluator(_builder);
+            foreach (var key in _evaluators.Keys)
             {
-                instance.evaluators.Add(key, evaluators[key]);
+                instance._evaluators.Add(key, _evaluators[key]);
             }
+
             return instance;
         }
     }

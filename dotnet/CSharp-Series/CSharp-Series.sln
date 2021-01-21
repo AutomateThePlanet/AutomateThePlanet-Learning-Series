@@ -3,14 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Series.EventLogOperations", "CSharp.Series.EventLogOperations\CSharp.Series.EventLogOperations.csproj", "{3C2F551C-DDE5-4DAF-B8F4-82915DAEB4B6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Series.Log4Net.Tests", "CSharp.Series.Log4Net.Tests\CSharp.Series.Log4Net.Tests.csproj", "{18A3C6E7-69CD-463B-BC7D-F5A12BAAFC21}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Series.NLog.Tests", "CSharp.Series.NLog.Tests\CSharp.Series.NLog.Tests.csproj", "{4CBCA26E-FD97-4B26-B310-039D5AF471DC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Series.NLog.UnitTests", "CSharp.Series.NLog.UnitTests\CSharp.Series.NLog.UnitTests.csproj", "{0CB14873-1D7F-47BE-9877-E2ABBC5E3D0B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuildTcpIPLogger", "MSBuildTcpIPLogger\MSBuildTcpIPLogger.csproj", "{56D09F38-4B41-49A0-86F3-0C871D7EC91A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplementCopyPaste", "ImplementCopyPaste\ImplementCopyPaste.csproj", "{82907095-BE7B-4EAF-9674-D3EC414260A2}"
@@ -34,8 +26,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeCodeCoverage", "TypeCodeCoverage\TypeCodeCoverage.csproj", "{84A48EB9-D16F-4F21-9BAE-1B106B94F26B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetPropertyNamesUsingLambdaExpressions", "GetPropertyNamesUsingLambdaExpressions\GetPropertyNamesUsingLambdaExpressions.csproj", "{F2F4B313-6E47-414E-B55A-28E02E4E1CC9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopWindowsEventLogTips", "TopWindowsEventLogTips\TopWindowsEventLogTips.csproj", "{4101FDB2-B5B3-4C44-9624-3E9BA7E40CE7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. MSBuild TCP IP Logger CSharp Code", "1. MSBuild TCP IP Logger CSharp Code", "{8AFF6B46-184F-4DB8-B0CC-7DA7B93F1BC4}"
 EndProject
@@ -86,30 +76,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21. Which Works Faster- Nul
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "22. Get Property Names Using Lambda Expressions in CSharp", "22. Get Property Names Using Lambda Expressions in CSharp", "{27AE1AAD-EDBF-446B-92E7-C19E6D487BC1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "23. Top 9 Windows Event Log Tips Using CSharp", "23. Top 9 Windows Event Log Tips Using CSharp", "{39B7A880-7E6B-474C-BBBC-CDD8BBCC488A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3C2F551C-DDE5-4DAF-B8F4-82915DAEB4B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C2F551C-DDE5-4DAF-B8F4-82915DAEB4B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C2F551C-DDE5-4DAF-B8F4-82915DAEB4B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C2F551C-DDE5-4DAF-B8F4-82915DAEB4B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{18A3C6E7-69CD-463B-BC7D-F5A12BAAFC21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18A3C6E7-69CD-463B-BC7D-F5A12BAAFC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18A3C6E7-69CD-463B-BC7D-F5A12BAAFC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18A3C6E7-69CD-463B-BC7D-F5A12BAAFC21}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CBCA26E-FD97-4B26-B310-039D5AF471DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CBCA26E-FD97-4B26-B310-039D5AF471DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CBCA26E-FD97-4B26-B310-039D5AF471DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CBCA26E-FD97-4B26-B310-039D5AF471DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CB14873-1D7F-47BE-9877-E2ABBC5E3D0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CB14873-1D7F-47BE-9877-E2ABBC5E3D0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CB14873-1D7F-47BE-9877-E2ABBC5E3D0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CB14873-1D7F-47BE-9877-E2ABBC5E3D0B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{56D09F38-4B41-49A0-86F3-0C871D7EC91A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{56D09F38-4B41-49A0-86F3-0C871D7EC91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56D09F38-4B41-49A0-86F3-0C871D7EC91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -158,19 +130,11 @@ Global
 		{F2F4B313-6E47-414E-B55A-28E02E4E1CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2F4B313-6E47-414E-B55A-28E02E4E1CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2F4B313-6E47-414E-B55A-28E02E4E1CC9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4101FDB2-B5B3-4C44-9624-3E9BA7E40CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4101FDB2-B5B3-4C44-9624-3E9BA7E40CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4101FDB2-B5B3-4C44-9624-3E9BA7E40CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4101FDB2-B5B3-4C44-9624-3E9BA7E40CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3C2F551C-DDE5-4DAF-B8F4-82915DAEB4B6} = {39B7A880-7E6B-474C-BBBC-CDD8BBCC488A}
-		{18A3C6E7-69CD-463B-BC7D-F5A12BAAFC21} = {39B7A880-7E6B-474C-BBBC-CDD8BBCC488A}
-		{4CBCA26E-FD97-4B26-B310-039D5AF471DC} = {39B7A880-7E6B-474C-BBBC-CDD8BBCC488A}
-		{0CB14873-1D7F-47BE-9877-E2ABBC5E3D0B} = {39B7A880-7E6B-474C-BBBC-CDD8BBCC488A}
 		{56D09F38-4B41-49A0-86F3-0C871D7EC91A} = {8AFF6B46-184F-4DB8-B0CC-7DA7B93F1BC4}
 		{82907095-BE7B-4EAF-9674-D3EC414260A2} = {772AC162-61C6-4F2D-85B7-953EA429EA69}
 		{2ED526C3-F932-4D39-B412-D8888A0CC2F8} = {00F2A94A-2CBF-4941-97C4-9F3F2F4E2357}
@@ -183,7 +147,6 @@ Global
 		{E2054110-FAEA-4952-B6B9-33A82610C6FD} = {E7C0E601-CEA5-493D-884D-B8D1ACEF5988}
 		{84A48EB9-D16F-4F21-9BAE-1B106B94F26B} = {3251711A-389D-419D-A4B8-73D7E600E334}
 		{F2F4B313-6E47-414E-B55A-28E02E4E1CC9} = {27AE1AAD-EDBF-446B-92E7-C19E6D487BC1}
-		{4101FDB2-B5B3-4C44-9624-3E9BA7E40CE7} = {39B7A880-7E6B-474C-BBBC-CDD8BBCC488A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {119F6707-2FAB-4CCB-AFFE-F1593113185C}

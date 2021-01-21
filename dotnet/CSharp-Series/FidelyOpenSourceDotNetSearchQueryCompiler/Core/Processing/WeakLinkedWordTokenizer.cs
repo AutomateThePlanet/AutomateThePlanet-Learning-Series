@@ -23,24 +23,24 @@ namespace Fidely.Framework.Processing
 {
     internal class WeakLinkedWordTokenizer : BaseTokenizer
     {
-        private readonly IDictionary<string, IToken> mappings;
+        private readonly IDictionary<string, IToken> _mappings;
 
         internal WeakLinkedWordTokenizer(IEnumerable<FidelyOperator> operators)
         {
-            mappings = new Dictionary<string, IToken>();
+            _mappings = new Dictionary<string, IToken>();
 
-            mappings.Add(LogicalAndOperatorToken.Symbol, new LogicalAndOperatorToken());
-            mappings.Add(LogicalOrOperatorToken.Symbol, new LogicalOrOperatorToken());
+            _mappings.Add(LogicalAndOperatorToken.Symbol, new LogicalAndOperatorToken());
+            _mappings.Add(LogicalOrOperatorToken.Symbol, new LogicalOrOperatorToken());
 
             foreach (var op in operators)
             {
                 if (op is ComparativeOperator)
                 {
-                    mappings.Add(op.Symbol, new ComparativeOperatorToken((ComparativeOperator)op));
+                    _mappings.Add(op.Symbol, new ComparativeOperatorToken((ComparativeOperator)op));
                 }
                 else
                 {
-                    mappings.Add(op.Symbol, new CalculatingOperatorToken((CalculatingOperator)op));
+                    _mappings.Add(op.Symbol, new CalculatingOperatorToken((CalculatingOperator)op));
                 }
             }
         }
@@ -59,15 +59,15 @@ namespace Fidely.Framework.Processing
             {
                 Logger.Verbose("Progressing tokenization (current index = '{0}', start index = '{1}').", current, startIndex);
 
-                if (Char.IsWhiteSpace(value[current]))
+                if (char.IsWhiteSpace(value[current]))
                 {
                     if (startIndex < current)
                     {
                         var operand = value.Substring(startIndex, current - startIndex);
-                        var symbol = mappings.Keys.FirstOrDefault(o => o.Equals(operand, stringComparison.OrdinalIgnoreCase));
+                        var symbol = _mappings.Keys.FirstOrDefault(o => o.Equals(operand, StringComparison.OrdinalIgnoreCase));
                         if (symbol != null)
                         {
-                            result.Add(mappings[symbol]);
+                            result.Add(_mappings[symbol]);
                             Logger.Verbose("Extracted an operator token '{0}'.", symbol);
                         }
                         else
@@ -76,8 +76,10 @@ namespace Fidely.Framework.Processing
                             Logger.Verbose("Extracted an operand token '{0}'.", result.Last().Value);
                         }
                     }
+
                     startIndex = current + 1;
                 }
+
                 current++;
             }
 
