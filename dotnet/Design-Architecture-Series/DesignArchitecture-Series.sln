@@ -32,8 +32,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12. Decorator Design Patter
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13. Page Objects That Make Code More Maintainable", "13. Page Objects That Make Code More Maintainable", "{F0390107-D10F-4402-95D9-B8145B704D2E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14. Improved Facade Design Pattern in Automated Testing v.2.0", "14. Improved Facade Design Pattern in Automated Testing v.2.0", "{1A2E2858-CC92-4749-A5E9-455CF555B88A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15. 3 Design Patterns for More Reliable and Maintainable UI Tests", "15. 3 Design Patterns for More Reliable and Maintainable UI Tests", "{668338FD-B2E2-4F4C-8762-CDB087DC0D08}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16. Rules Design Pattern", "16. Rules Design Pattern", "{32440FE3-BAA7-4C32-A32A-35B58C744366}"
@@ -55,8 +53,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecoratorDesignPattern", "DecoratorDesignPattern\DecoratorDesignPattern.csproj", "{23D9D3B5-F143-4636-AE81-05AA54B67206}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageObjectsThatMakeCodeMoreMaintainable", "PageObjectsThatMakeCodeMoreMaintainable\PageObjectsThatMakeCodeMoreMaintainable.csproj", "{96238C7D-5D7F-4E23-B27B-CEE8701BFB2A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImprovedFacadeDesignPattern", "ImprovedFacadeDesignPattern\ImprovedFacadeDesignPattern.csproj", "{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatternsMoreReliableMaintainableTests", "DesignPatternsMoreReliableMaintainableTests\DesignPatternsMoreReliableMaintainableTests.csproj", "{D6C345CE-4ED5-4183-8926-FDA4C3E216D6}"
 EndProject
@@ -181,10 +177,6 @@ Global
 		{96238C7D-5D7F-4E23-B27B-CEE8701BFB2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96238C7D-5D7F-4E23-B27B-CEE8701BFB2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96238C7D-5D7F-4E23-B27B-CEE8701BFB2A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D6C345CE-4ED5-4183-8926-FDA4C3E216D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6C345CE-4ED5-4183-8926-FDA4C3E216D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6C345CE-4ED5-4183-8926-FDA4C3E216D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -291,7 +283,6 @@ Global
 		{E6C9E85B-5B40-421A-917E-6560DA8F1F6E} = {E613FDCB-E16F-4A07-BEA8-0F84129D328D}
 		{23D9D3B5-F143-4636-AE81-05AA54B67206} = {E24707DD-491C-452D-A350-E804B7D71154}
 		{96238C7D-5D7F-4E23-B27B-CEE8701BFB2A} = {F0390107-D10F-4402-95D9-B8145B704D2E}
-		{EEB6EC5D-9E98-4A9C-8BC0-9050645397B4} = {1A2E2858-CC92-4749-A5E9-455CF555B88A}
 		{D6C345CE-4ED5-4183-8926-FDA4C3E216D6} = {668338FD-B2E2-4F4C-8762-CDB087DC0D08}
 		{8DBA9D92-C1A3-4119-A3FE-21EECBFF5547} = {32440FE3-BAA7-4C32-A32A-35B58C744366}
 		{9977A596-DC0C-48DE-BA07-7569F785CDDB} = {8A954674-D8DA-40C5-91D6-39DC25D217FD}
