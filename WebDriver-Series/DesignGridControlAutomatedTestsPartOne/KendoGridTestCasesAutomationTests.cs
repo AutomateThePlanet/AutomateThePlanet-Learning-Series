@@ -42,10 +42,9 @@ namespace DesignGridControlAutomatedTestsPartOne
             _driver.Quit();
         }
 
-        // ** OrderID Test Cases (Unique Identifier Type Column Test Cases) ** 
-        
-        #region OrderID Test Cases 
-        
+        // ** OrderID Test Cases (Unique Identifier Type Column Test Cases) **
+        #region OrderID Test Cases
+
         [TestMethod]
         public void OrderIdEqualToFilter()
         {
@@ -53,13 +52,13 @@ namespace DesignGridControlAutomatedTestsPartOne
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             var newItem = CreateNewItemInDb();
 
-            kendoGrid.Filter(OrderIdColumnName, FilterOperator.EqualTo, newItem.OrderId.ToString());           
+            kendoGrid.Filter(OrderIdColumnName, FilterOperator.EqualTo, newItem.OrderId.ToString());
             WaitForGridToLoad(1, kendoGrid);
             var items = kendoGrid.GetItems<GridItem>();
-        
+
             Assert.AreEqual(1, items.Count);
         }
-        
+
         [TestMethod]
         public void OrderIdGreaterThanOrEqualToFilter()
         {
@@ -68,9 +67,10 @@ namespace DesignGridControlAutomatedTestsPartOne
 
             // Create new item with unique ship name;
             var newItem = CreateNewItemInDb();
-            // Create second new item with the same unique shipping name 
+
+            // Create second new item with the same unique shipping name
             var secondNewItem = CreateNewItemInDb(newItem.ShipName);
-            
+
             // When we filter by the second unique column ShippingName, only one item will be displayed. Once we apply the second not equal to filter the grid should be empty.
             kendoGrid.Filter(
                 new GridFilter(OrderIdColumnName, FilterOperator.GreaterThanOrEqualTo, newItem.OrderId.ToString()),
@@ -82,121 +82,126 @@ namespace DesignGridControlAutomatedTestsPartOne
             Assert.AreEqual(newItem.OrderId, results.FirstOrDefault(x => x.ShipName == newItem.ShipName).OrderId);
             Assert.IsTrue(results.Count() == 2);
         }
-        
+
         [TestMethod]
         public void OrderIdGreaterThanFilter()
         {
             _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
-            
+
             // Create new item with unique ship name;
             var newItem = CreateNewItemInDb();
-            // Create second new item with the same unique shipping name 
+
+            // Create second new item with the same unique shipping name
             var secondNewItem = CreateNewItemInDb(newItem.ShipName);
-            
+
             // Filter by the smaller orderId but also by the second unique column in this case shipping name
             kendoGrid.Filter(
                 new GridFilter(OrderIdColumnName, FilterOperator.GreaterThan, newItem.OrderId.ToString()),
                 new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.ShipName));
             WaitForGridToLoadAtLeast(1, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
-            
+
             Assert.AreEqual(secondNewItem.OrderId, results.FirstOrDefault(x => x.ShipName == secondNewItem.ShipName).OrderId);
             Assert.IsTrue(results.Count() == 1);
         }
-        
+
         [TestMethod]
         public void OrderIdLessThanOrEqualToFilter()
         {
             _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
-            
+
             // Create new item with unique ship name;
             var newItem = CreateNewItemInDb();
-            // Create second new item with the same unique shipping name 
+
+            // Create second new item with the same unique shipping name
             var secondNewItem = CreateNewItemInDb(newItem.ShipName);
-            
+
             // Filter by the larger orderId but also by the second unique column in this case shipping name
             kendoGrid.Filter(
                 new GridFilter(OrderIdColumnName, FilterOperator.LessThanOrEqualTo, secondNewItem.OrderId.ToString()),
                 new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.ShipName));
             WaitForGridToLoadAtLeast(2, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
-            
+
             Assert.AreEqual(newItem.OrderId, results.FirstOrDefault(x => x.ShipName == newItem.ShipName).OrderId);
             Assert.AreEqual(secondNewItem.OrderId, results.Last(x => x.ShipName == secondNewItem.ShipName).OrderId);
             Assert.IsTrue(results.Count() == 2);
         }
-        
+
         [TestMethod]
         public void OrderIdLessThanFilter()
         {
             _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
-            
+
             // Create new item with unique ship name;
             var newItem = CreateNewItemInDb();
-            // Create second new item with the same unique shipping name 
+
+            // Create second new item with the same unique shipping name
             var secondNewItem = CreateNewItemInDb(newItem.ShipName);
-            
+
             // Filter by the larger orderId but also by the second unique column in this case shipping name
             kendoGrid.Filter(
                 new GridFilter(OrderIdColumnName, FilterOperator.LessThan, secondNewItem.OrderId.ToString()),
                 new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, secondNewItem.ShipName));
             WaitForGridToLoadAtLeast(1, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
-            
+
             Assert.AreEqual(newItem.OrderId, results.FirstOrDefault(x => x.ShipName == newItem.ShipName).OrderId);
             Assert.IsTrue(results.Count() == 1);
         }
-        
+
         [TestMethod]
         public void OrderIdNotEqualToFilter()
         {
             _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
-            
+
             // Create new item with unique ship name;
             var newItem = CreateNewItemInDb();
-            // Create second new item with the same unique shipping name 
+
+            // Create second new item with the same unique shipping name
             var secondNewItem = CreateNewItemInDb(newItem.ShipName);
-            
+
             // Filter by the larger orderId but also by the second unique column in this case shipping name
             kendoGrid.Filter(
                 new GridFilter(OrderIdColumnName, FilterOperator.NotEqualTo, secondNewItem.OrderId.ToString()),
                 new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, secondNewItem.ShipName));
             WaitForGridToLoadAtLeast(1, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
-            
+
             Assert.AreEqual(newItem.OrderId, results.FirstOrDefault(x => x.ShipName == newItem.ShipName).OrderId);
             Assert.IsTrue(results.Count() == 1);
         }
-        
+
         [TestMethod]
         public void OrderIdClearFilter()
         {
             _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
+
             // Create new item with unique ship name;
             var newItem = CreateNewItemInDb();
+
             // Make sure that we have at least 2 items if the grid is empty. The tests are designed to run against empty DB.
             var secondNewItem = CreateNewItemInDb(newItem.ShipName);
-            
+
             kendoGrid.Filter(OrderIdColumnName, FilterOperator.EqualTo, newItem.OrderId.ToString());
             WaitForGridToLoad(1, kendoGrid);
             kendoGrid.RemoveFilters();
-            
+
             WaitForGridToLoadAtLeast(1, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
             Assert.IsTrue(results.Count() > 1);
         }
 
         #endregion
-        
+
         // ** ShipName Test Cases) ** (Text Type Column Test Cases)
-        
         #region ShipName Test Cases
-        
+
         [TestMethod]
         public void ShipNameEqualToFilter()
         {
@@ -207,34 +212,35 @@ namespace DesignGridControlAutomatedTestsPartOne
             kendoGrid.Filter(ShipNameColumnName, FilterOperator.EqualTo, newItem.ShipName);
             WaitForGridToLoad(1, kendoGrid);
             var items = kendoGrid.GetItems<GridItem>();
-            
+
             Assert.AreEqual(1, items.Count);
         }
-        
+
         [TestMethod]
         public void ShipNameContainsFilter()
         {
             _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             var shipName = Guid.NewGuid().ToString();
+
             // Remove first and last letter
             shipName = shipName.TrimStart(shipName.First()).TrimEnd(shipName.Last());
-            var newItem = CreateNewItemInDb(shipName);          
+            var newItem = CreateNewItemInDb(shipName);
 
             kendoGrid.Filter(ShipNameColumnName, FilterOperator.Contains, newItem.ShipName);
             WaitForGridToLoad(1, kendoGrid);
             var items = kendoGrid.GetItems<GridItem>();
-            
+
             Assert.AreEqual(1, items.Count);
         }
-        
+
         [TestMethod]
         public void ShipNameEndsWithFilter()
         {
             _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
-            // Remove first letter 
+            // Remove first letter
             var shipName = Guid.NewGuid().ToString();
             shipName = shipName.TrimStart(shipName.First());
             var newItem = CreateNewItemInDb(shipName);
@@ -242,10 +248,10 @@ namespace DesignGridControlAutomatedTestsPartOne
             kendoGrid.Filter(ShipNameColumnName, FilterOperator.EndsWith, newItem.ShipName);
             WaitForGridToLoad(1, kendoGrid);
             var items = kendoGrid.GetItems<GridItem>();
-            
+
             Assert.AreEqual(1, items.Count);
         }
-        
+
         [TestMethod]
         public void ShipNameStartsWithFilter()
         {
@@ -260,51 +266,51 @@ namespace DesignGridControlAutomatedTestsPartOne
             kendoGrid.Filter(ShipNameColumnName, FilterOperator.StartsWith, newItem.ShipName);
             WaitForGridToLoad(1, kendoGrid);
             var items = kendoGrid.GetItems<GridItem>();
-            
+
             Assert.AreEqual(1, items.Count);
         }
-        
+
         [TestMethod]
         public void ShipNameNotEqualToFilter()
         {
             _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
-            
-            // Apply combined filter. First filter by ID and than by ship name (not equal filter). 
+
+            // Apply combined filter. First filter by ID and than by ship name (not equal filter).
             // After the first filter there is only one element when we apply the second we expect 0 elements.
             var newItem = CreateNewItemInDb();
-            
+
             kendoGrid.Filter(
                 new GridFilter(ShipNameColumnName, FilterOperator.NotEqualTo, newItem.ShipName),
                 new GridFilter(OrderIdColumnName, FilterOperator.EqualTo, newItem.OrderId.ToString()));
             WaitForGridToLoad(0, kendoGrid);
             var items = kendoGrid.GetItems<GridItem>();
-            
+
             Assert.AreEqual(0, items.Count);
         }
-        
+
         [TestMethod]
         public void ShipNameNotContainsFilter()
         {
             _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/filter-row");
-            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));            
-          
+            var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
+
             // Remove first and last letter
             var shipName = Guid.NewGuid().ToString();
             shipName = shipName.TrimStart(shipName.First()).TrimEnd(shipName.Last());
             var newItem = CreateNewItemInDb(shipName);
 
-            // Apply combined filter. First filter by ID and than by ship name (not equal filter). 
+            // Apply combined filter. First filter by ID and than by ship name (not equal filter).
             // After the first filter there is only one element when we apply the second we expect 0 elements.
             kendoGrid.Filter(
                 new GridFilter(ShipNameColumnName, FilterOperator.NotContains, newItem.ShipName),
                 new GridFilter(OrderIdColumnName, FilterOperator.EqualTo, newItem.OrderId.ToString()));
             WaitForGridToLoad(0, kendoGrid);
             var items = kendoGrid.GetItems<GridItem>();
-            
+
             Assert.AreEqual(0, items.Count);
         }
-        
+
         [TestMethod]
         public void ShipNameClearFilter()
         {
@@ -315,13 +321,14 @@ namespace DesignGridControlAutomatedTestsPartOne
             // Filter by GUID and we know we wait the grid to be empty
             kendoGrid.Filter(ShipNameColumnName, FilterOperator.StartsWith, Guid.NewGuid().ToString());
             WaitForGridToLoad(0, kendoGrid);
+
             // Remove all filters and we expect that the grid will contain at least 1 item.
             kendoGrid.RemoveFilters();
             WaitForGridToLoadAtLeast(1, kendoGrid);
         }
-        
-        #endregion      
-      
+
+        #endregion
+
         public void WaitForPageToLoad(int expectedPage, KendoGrid grid)
         {
             Until(() =>
@@ -340,7 +347,7 @@ namespace DesignGridControlAutomatedTestsPartOne
                     return expectedCount == items.Count;
                 });
         }
-            
+
         private void WaitForGridToLoadAtLeast(int expectedCount, KendoGrid grid)
         {
             Until(
@@ -350,7 +357,7 @@ namespace DesignGridControlAutomatedTestsPartOne
                     return items.Count >= expectedCount;
                 });
         }
-            
+
         private void Until(Func<bool> condition, int timeout = 10, string exceptionMessage = "Timeout exceeded.", int retryRateDelay = 50)
         {
             var start = DateTime.Now;
@@ -362,11 +369,11 @@ namespace DesignGridControlAutomatedTestsPartOne
                 {
                     throw new TimeoutException(exceptionMessage);
                 }
+
                 Thread.Sleep(retryRateDelay);
             }
         }
-            
-       
+
         private Order CreateNewItemInDb(string shipName = null)
         {
             // Replace it with service oriented call to your DB. Create real enity in DB.
