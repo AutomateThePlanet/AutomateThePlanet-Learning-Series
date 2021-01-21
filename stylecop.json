@@ -1,0 +1,10 @@
+{
+    "$schema":
+        "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+    "settings": {
+      "documentationRules": {
+        "companyName": "Automate The Planet Ltd.",
+        "copyrightText": "\"Licensed under the Apache License, Version 2.0 (the \"License\");\""
+      }
+    }
+}

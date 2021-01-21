@@ -1,0 +1,64 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+		<Configurations>Debug;Release;</Configurations>
+	</PropertyGroup>
+	<PropertyGroup>
+		<Version>2.2.0.0</Version>
+		<Authors>Automate The Planet Ltd.</Authors>
+		<Company>Automate The Planet Ltd.</Company>
+		<Product>Bellatrix Test Framework</Product>
+		<AssemblyVersion>2.2.0.0</AssemblyVersion>
+		<FileVersion>2.2.0.0</FileVersion>
+		<NeutralLanguage>en</NeutralLanguage>
+		<Copyright>Automate The Planet Ltd. 2021</Copyright>
+		<PackageReleaseNotes>
+			- Upgrade all projects to .NET 5
+		</PackageReleaseNotes>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageIcon>bellatrix_icon.png</PackageIcon>
+		<PackageProjectUrl>https://www.automatetheplanet.com/</PackageProjectUrl>
+		<PackageTags>UITests,SystemTests</PackageTags>
+		<Description>Taking Software Quality to New Heights</Description>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<CodeAnalysisRuleSet>../../../StyleCopeRules.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<IsPackable>false</IsPackable>
+		<RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+		<RunAnalyzers>true</RunAnalyzers>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<WarningsAsErrors />
+		<NoWarn>NU1701;NU1702;NU1705;NU1608;</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<Optimize>true</Optimize>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<IsPackable>false</IsPackable>
+		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+		<RunAnalyzers>false</RunAnalyzers>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<NoWarn>NU1701;NU1702;NU1705;NU1608;</NoWarn>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+		    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<AdditionalFiles Include="../../../stylecop.json" Link="stylecop.json" />
+		<None Include="../../../LICENSE.txt" Pack="true" PackagePath=""/>
+	</ItemGroup>
+</Project>

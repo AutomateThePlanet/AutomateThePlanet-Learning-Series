@@ -1,3 +1,0 @@
-﻿Article: Create Hybrid Test Framework- Abstract Unit Test Framework
-URL:  http://automatetheplanet.com/hybrid-test-framework-abstract-unit-test-framewrok/
-Publish Date: 01.10.2016

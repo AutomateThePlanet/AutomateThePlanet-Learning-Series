@@ -1,3 +1,0 @@
-﻿Article: Create Hybrid Test Framework - Work with Config Files
-URL:  https://automatetheplanet.com/hybrid-test-framework-config-files/
-Publish Date: 02.04.2017

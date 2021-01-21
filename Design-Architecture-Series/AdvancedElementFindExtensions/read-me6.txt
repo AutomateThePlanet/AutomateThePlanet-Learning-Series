@@ -1,3 +1,0 @@
-﻿Article: Create Hybrid Test Framework - Advanced Element Find Extensions
-URL:  http://automatetheplanet.com/hybrid-test-framework-advanced-element-find-extensions/
-Publish Date: 23.07.2016

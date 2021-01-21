@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\..\SharedAssemblyInfo.targets" />
+  <ItemGroup>
+    <Content Include="FullPageScreenshotsExtension-Chrome\background.js" />
+    <Content Include="FullPageScreenshotsExtension-Chrome\contentScript.js" />
+    <Content Include="FullPageScreenshotsExtension-Chrome\html2canvas.js" />
+    <Content Include="FullPageScreenshotsExtension-Chrome\icon.png" />
+    <Content Include="FullPageScreenshotsExtension-Chrome\popup.html" />
+    <Content Include="FullPageScreenshotsExtension-Edge\background.html" />
+    <Content Include="FullPageScreenshotsExtension-Edge\background.js" />
+    <Content Include="FullPageScreenshotsExtension-Edge\backgroundScriptsAPIBridge.js" />
+    <Content Include="FullPageScreenshotsExtension-Edge\contentScript.js" />
+    <Content Include="FullPageScreenshotsExtension-Edge\contentScriptsAPIBridge.js" />
+    <Content Include="FullPageScreenshotsExtension-Edge\html2canvas.js" />
+    <Content Include="FullPageScreenshotsExtension-Edge\icon.png" />
+    <Content Include="FullPageScreenshotsExtension-Edge\popup.html" />
+    <Content Include="FullPageScreenshotsExtension-Firefox\background.js" />
+    <Content Include="FullPageScreenshotsExtension-Firefox\contentScript.js" />
+    <Content Include="FullPageScreenshotsExtension-Firefox\html2canvas.js" />
+    <Content Include="FullPageScreenshotsExtension-Firefox\icon.png" />
+    <Content Include="FullPageScreenshotsExtension-Firefox\popup.html" />
+    <Content Include="readme-25.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.27.0" />
+    <PackageReference Include="Selenium.Support" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="3.12.0" />
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="88.0.4324.9600" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.0" />
+    <PackageReference Include="NUnit" Version="3.13.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <!--<PropertyGroup>
+    <PostBuildEvent>xcopy $(ProjectDir)FullPageScreenshotsExtension-Chrome\* $(ProjectDir)$(OutDir)FullPageScreenshotsExtension-Chrome\ /Y /I /E
+xcopy $(ProjectDir)FullPageScreenshotsExtension-Edge\* $(ProjectDir)$(OutDir)FullPageScreenshotsExtension-Edge\ /Y /I /E
+xcopy $(ProjectDir)FullPageScreenshotsExtension-Firefox\* $(ProjectDir)$(OutDir)FullPageScreenshotsExtension-Firefox\ /Y /I /E</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>rd /s /q "$(TargetDir)"</PreBuildEvent>
+  </PropertyGroup>-->
+</Project>
