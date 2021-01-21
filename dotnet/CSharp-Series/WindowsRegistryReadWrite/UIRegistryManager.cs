@@ -18,15 +18,15 @@ namespace WindowsRegistryReadWrite
     public class UIRegistryManager : BaseRegistryManager
     {
         private static UIRegistryManager instance;
-        private readonly string isWindowClosedFromXSubKeyName = "isWindowClosedFromX";
-        private readonly string themeRegistrySubKeyName = "theme";
-        private readonly string colorRegistrySubKeyName = "color";
-        private readonly string shouldOpenDropDownOnHoverRegistrySubKeyName = "shouldOpenDropDrownOnHover";
-        private readonly string titlePromptDialogRegistrySubKeyName = "titlePromptDialog";
-        private readonly string checkboxPromptDialogIsSubmittedRegistrySubKeyName = "checkboxPromptDialogIsSubmitted";
-        private readonly string checkedPropertiesPromptDialogRegistrySubKeyName = "checkedPropertiesPromptDialog";
-        private readonly string isCanceledtitlePromptDialogRegistrySubKeyName = "titlePromptDialogIsCanceled";
-        private readonly string titleTitlePromptDialogIsCanceledRegistrySubKeyName = "titleTitlePromptDialog";
+        private readonly string _isWindowClosedFromXSubKeyName = "isWindowClosedFromX";
+        private readonly string _themeRegistrySubKeyName = "theme";
+        private readonly string _colorRegistrySubKeyName = "color";
+        private readonly string _shouldOpenDropDownOnHoverRegistrySubKeyName = "shouldOpenDropDrownOnHover";
+        private readonly string _titlePromptDialogRegistrySubKeyName = "titlePromptDialog";
+        private readonly string _checkboxPromptDialogIsSubmittedRegistrySubKeyName = "checkboxPromptDialogIsSubmitted";
+        private readonly string _checkedPropertiesPromptDialogRegistrySubKeyName = "checkedPropertiesPromptDialog";
+        private readonly string _isCanceledtitlePromptDialogRegistrySubKeyName = "titlePromptDialogIsCanceled";
+        private readonly string _titleTitlePromptDialogIsCanceledRegistrySubKeyName = "titleTitlePromptDialog";
 
         public UIRegistryManager(string mainRegistrySubKey)
         {
@@ -42,79 +42,80 @@ namespace WindowsRegistryReadWrite
                     var mainRegistrySubKey = ConfigurationManager.AppSettings["mainUIRegistrySubKey"];
                     instance = new UIRegistryManager(mainRegistrySubKey);
                 }
+
                 return instance;
             }
         }
 
         public void WriteCurrentTheme(string theme)
         {
-            Write(GenerateMergedKey(themeRegistrySubKeyName), theme);
+            Write(GenerateMergedKey(_themeRegistrySubKeyName), theme);
         }
 
         public void WriteIsWindowClosedFromX(bool isWindowClosedFromX)
         {
-            Write(GenerateMergedKey(isWindowClosedFromXSubKeyName), isWindowClosedFromX);
+            Write(GenerateMergedKey(_isWindowClosedFromXSubKeyName), isWindowClosedFromX);
         }
 
         public void WriteIsCheckboxDialogSubmitted(bool isCheckboxDialogSubmitted)
         {
-            Write(GenerateMergedKey(checkboxPromptDialogIsSubmittedRegistrySubKeyName), isCheckboxDialogSubmitted);
+            Write(GenerateMergedKey(_checkboxPromptDialogIsSubmittedRegistrySubKeyName), isCheckboxDialogSubmitted);
         }
 
         public void WriteCheckedPropertiesToBeExported(string checkedPropertiesToBeExported)
         {
-            Write(GenerateMergedKey(checkedPropertiesPromptDialogRegistrySubKeyName), checkedPropertiesToBeExported);
+            Write(GenerateMergedKey(_checkedPropertiesPromptDialogRegistrySubKeyName), checkedPropertiesToBeExported);
         }
 
         public void WriteDropDownBehavior(bool shouldOpenDropDownOnHover)
         {
-            Write(GenerateMergedKey(shouldOpenDropDownOnHoverRegistrySubKeyName), shouldOpenDropDownOnHover);
+            Write(GenerateMergedKey(_shouldOpenDropDownOnHoverRegistrySubKeyName), shouldOpenDropDownOnHover);
         }
 
         public void WriteIsCanceledTitlePromtDialog(bool isCanceled)
         {
-            Write(GenerateMergedKey(titlePromptDialogRegistrySubKeyName, isCanceledtitlePromptDialogRegistrySubKeyName), isCanceled);
+            Write(GenerateMergedKey(_titlePromptDialogRegistrySubKeyName, _isCanceledtitlePromptDialogRegistrySubKeyName), isCanceled);
         }
 
         public void WriteTitleTitlePromtDialog(string title)
         {
-            Write(GenerateMergedKey(titlePromptDialogRegistrySubKeyName, titleTitlePromptDialogIsCanceledRegistrySubKeyName), title);
+            Write(GenerateMergedKey(_titlePromptDialogRegistrySubKeyName, _titleTitlePromptDialogIsCanceledRegistrySubKeyName), title);
         }
 
         public void WriteCurrentColors(byte red, byte green, byte blue)
         {
-            Write(GenerateMergedKey(colorRegistrySubKeyName), string.Format("{0}&{1}&{2}", red, green, blue));
+            Write(GenerateMergedKey(_colorRegistrySubKeyName), string.Format("{0}&{1}&{2}", red, green, blue));
         }
 
         public bool ReadIsWindowClosedFromX()
         {
-            return ReadBool(GenerateMergedKey(isWindowClosedFromXSubKeyName));
+            return ReadBool(GenerateMergedKey(_isWindowClosedFromXSubKeyName));
         }
 
         public bool ReadIsCheckboxDialogSubmitted()
         {
-            return ReadBool(GenerateMergedKey(checkboxPromptDialogIsSubmittedRegistrySubKeyName));
+            return ReadBool(GenerateMergedKey(_checkboxPromptDialogIsSubmittedRegistrySubKeyName));
         }
 
         public string ReadCheckedPropertiesToBeExported()
         {
-            return ReadStr(GenerateMergedKey(checkedPropertiesPromptDialogRegistrySubKeyName));
+            return ReadStr(GenerateMergedKey(_checkedPropertiesPromptDialogRegistrySubKeyName));
         }
 
         public string GetContentPromtDialog()
         {
-            return ReadStr(GenerateMergedKey(titlePromptDialogRegistrySubKeyName, titleTitlePromptDialogIsCanceledRegistrySubKeyName));
+            return ReadStr(GenerateMergedKey(_titlePromptDialogRegistrySubKeyName, _titleTitlePromptDialogIsCanceledRegistrySubKeyName));
         }
 
         public bool GetIsCanceledPromtDialog()
         {
-            return ReadBool(GenerateMergedKey(titlePromptDialogRegistrySubKeyName, isCanceledtitlePromptDialogRegistrySubKeyName));
+            return ReadBool(GenerateMergedKey(_titlePromptDialogRegistrySubKeyName, _isCanceledtitlePromptDialogRegistrySubKeyName));
         }
 
         public string[] GetColors()
         {
             string[] colorsStr = null;
-            var colors = ReadStr(GenerateMergedKey(colorRegistrySubKeyName));
+            var colors = ReadStr(GenerateMergedKey(_colorRegistrySubKeyName));
             if (!string.IsNullOrEmpty(colors))
             {
                 colorsStr = colors.Split('&');
@@ -125,12 +126,12 @@ namespace WindowsRegistryReadWrite
 
         public string GetTheme()
         {
-            return ReadStr(GenerateMergedKey(themeRegistrySubKeyName));
+            return ReadStr(GenerateMergedKey(_themeRegistrySubKeyName));
         }
 
         public bool GetDropDownBehavior()
         {
-            return ReadBool(GenerateMergedKey(shouldOpenDropDownOnHoverRegistrySubKeyName));
+            return ReadBool(GenerateMergedKey(_shouldOpenDropDownOnHoverRegistrySubKeyName));
         }
     }
 }

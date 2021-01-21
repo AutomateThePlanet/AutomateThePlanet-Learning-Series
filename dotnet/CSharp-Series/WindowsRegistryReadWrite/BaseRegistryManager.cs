@@ -25,7 +25,7 @@ namespace WindowsRegistryReadWrite
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         protected string MainRegistrySubKey;
 
-        protected void Write(string subKeys, Object value)
+        protected void Write(string subKeys, object value)
         {
             var subKeyNames = subKeys.Split('/');
             var registryKeys = new List<RegistryKey>();
@@ -44,15 +44,16 @@ namespace WindowsRegistryReadWrite
                 {
                     registryKeys.Last().SetValue(subKeyNames.Last(), value);
                 }
+
                 registryKeys.Add(currentRegistryKey);
             }
 
             CloseAllRegistryKeys(registryKeys);
         }
 
-        protected Object Read(string subKeys)
+        protected object Read(string subKeys)
         {
-            var result = default(Object);
+            var result = default(object);
 
             try
             {
@@ -69,6 +70,7 @@ namespace WindowsRegistryReadWrite
                     {
                         currentRegistryKey = registryKeys[i - 1].OpenSubKey(subKeyNames[i]);
                     }
+
                     registryKeys.Add(currentRegistryKey);
                     if (registryKeys.Last() != null && subKeyNames.Last() != null)
                     {

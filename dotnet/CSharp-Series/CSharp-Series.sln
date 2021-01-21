@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuildTcpIPLogger", "MSBuildTcpIPLogger\MSBuildTcpIPLogger.csproj", "{56D09F38-4B41-49A0-86F3-0C871D7EC91A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplementCopyPaste", "ImplementCopyPaste\ImplementCopyPaste.csproj", "{82907095-BE7B-4EAF-9674-D3EC414260A2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FidelyOpenSourceDotNetSearchQueryCompiler", "FidelyOpenSourceDotNetSearchQueryCompiler\FidelyOpenSourceDotNetSearchQueryCompiler.csproj", "{2ED526C3-F932-4D39-B412-D8888A0CC2F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsRegistryReadWrite", "WindowsRegistryReadWrite\WindowsRegistryReadWrite.csproj", "{C2B694FE-73CF-4270-917C-BF1291F6A281}"
@@ -28,8 +26,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetPropertyNamesUsingLambdaExpressions", "GetPropertyNamesUsingLambdaExpressions\GetPropertyNamesUsingLambdaExpressions.csproj", "{F2F4B313-6E47-414E-B55A-28E02E4E1CC9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. MSBuild TCP IP Logger CSharp Code", "1. MSBuild TCP IP Logger CSharp Code", "{8AFF6B46-184F-4DB8-B0CC-7DA7B93F1BC4}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Implement Copy Paste CSharp Code", "3. Implement Copy Paste CSharp Code", "{772AC162-61C6-4F2D-85B7-953EA429EA69}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Fidely Open Source .NET Search Query Compiler", "4. Fidely Open Source .NET Search Query Compiler", "{00F2A94A-2CBF-4941-97C4-9F3F2F4E2357}"
 EndProject
@@ -86,10 +82,6 @@ Global
 		{56D09F38-4B41-49A0-86F3-0C871D7EC91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56D09F38-4B41-49A0-86F3-0C871D7EC91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56D09F38-4B41-49A0-86F3-0C871D7EC91A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82907095-BE7B-4EAF-9674-D3EC414260A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82907095-BE7B-4EAF-9674-D3EC414260A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82907095-BE7B-4EAF-9674-D3EC414260A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82907095-BE7B-4EAF-9674-D3EC414260A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2ED526C3-F932-4D39-B412-D8888A0CC2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2ED526C3-F932-4D39-B412-D8888A0CC2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ED526C3-F932-4D39-B412-D8888A0CC2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -136,7 +128,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{56D09F38-4B41-49A0-86F3-0C871D7EC91A} = {8AFF6B46-184F-4DB8-B0CC-7DA7B93F1BC4}
-		{82907095-BE7B-4EAF-9674-D3EC414260A2} = {772AC162-61C6-4F2D-85B7-953EA429EA69}
 		{2ED526C3-F932-4D39-B412-D8888A0CC2F8} = {00F2A94A-2CBF-4941-97C4-9F3F2F4E2357}
 		{C2B694FE-73CF-4270-917C-BF1291F6A281} = {FF505E72-66B9-4191-A7D2-7F19F2C5ECDE}
 		{470EAA8B-B6B6-471E-AFB5-373DB74F4492} = {9C5F1342-2CA2-46E9-8071-7EF808584F6A}
