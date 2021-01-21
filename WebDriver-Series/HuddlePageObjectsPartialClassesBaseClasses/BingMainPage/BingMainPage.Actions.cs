@@ -25,7 +25,6 @@ namespace HuddlePageObjectsPartialClassesBaseClasses
 
         public override string Url => @"http://www.bing.com/";
 
-
         public void Search(string textToType)
         {
             SearchBox.Clear();
