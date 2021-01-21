@@ -24,15 +24,15 @@ namespace LocatorsCheatSheet
         private IWebDriver _driver;
 
         // Default FindsBy Locators
-        //[FindsBy(How = How.Id, Using = "userName")]
-        //[FindsBy(How = How.ClassName, Using = "panel other")]
-        //[FindsBy(How = How.CssSelector, Using = "#userName")]
-        //[FindsBy(How = How.LinkText, Using = "Automate The Planet")]
-        //[FindsBy(How = How.Name, Using = "webDriverCheatSheet")]
-        //[FindsBy(How = How.PartialLinkText, Using = "Automate")]
-        //[FindsBy(How = How.TagName, Using = "a")]
-        //[FindsBy(How = How.XPath, Using = "//*[@id='panel']/div/h1")]
-        //private IWebElement _myElement;
+        ////[FindsBy(How = How.Id, Using = "userName")]
+        ////[FindsBy(How = How.ClassName, Using = "panel other")]
+        ////[FindsBy(How = How.CssSelector, Using = "#userName")]
+        ////[FindsBy(How = How.LinkText, Using = "Automate The Planet")]
+        ////[FindsBy(How = How.Name, Using = "webDriverCheatSheet")]
+        ////[FindsBy(How = How.PartialLinkText, Using = "Automate")]
+        ////[FindsBy(How = How.TagName, Using = "a")]
+        ////[FindsBy(How = How.XPath, Using = "//*[@id='panel']/div/h1")]
+        ////private IWebElement _myElement;
 
         [SetUp]
         public void TestInit()
@@ -111,55 +111,54 @@ namespace LocatorsCheatSheet
             ////_driver.FindElement(By.CssSelector("panel other"));
 
             //// Element By Id
-            //ul#myUniqueId 
-            //#myUniqueId // do not specify element type
+            ////ul#myUniqueId
+            ////#myUniqueId // do not specify element type
 
-            ////Element by class
-            //ul.myForm  // specify element type
-            //.myForm.front // do not specify element type
-            //.myForm.front.down
+            //////Element by class
+            ////ul.myForm  // specify element type
+            ////.myForm.front // do not specify element type
+            ////.myForm.front.down
 
-            //ul#myUniqueId > li // direct child element
-            //ul#myUniqueId  li // sub child element
+            ////ul#myUniqueId > li // direct child element
+            ////ul#myUniqueId  li // sub child element
 
-            // Element by attribute
-            //ul[name = "automateName"][style = "style_name"] // ‘ul’ element with attributes name =‘automateName’ and style= ‘style name’
-            //ul[id = "myId"] // 'ul' element with id='myId'
-            //ul[@id] // elements with @attribute
-            //*[name='N'][value='v’] //elements with name N & specified value ‘v’
-            ////Element by pattern matching
-            //ul[id ^= "my"] // selects all elements with an attribute beginning with ‘my’
-            //ul[id$= "Id"] // selects all elements with an attribute ending with ‘Id’
-            //ul[id *= "Unique"] // selects all elements with an attribute containing the substring ‘Unique’
-            //ul[id ~= "Unique"] // selects all elements with an attribute containing the word ‘Unique’
+            //// Element by attribute
+            ////ul[name = "automateName"][style = "style_name"] // ‘ul’ element with attributes name =‘automateName’ and style= ‘style name’
+            ////ul[id = "myId"] // 'ul' element with id='myId'
+            ////ul[@id] // elements with @attribute
+            ////*[name='N'][value='v’] //elements with name N & specified value ‘v’
+            //////Element by pattern matching
+            ////ul[id ^= "my"] // selects all elements with an attribute beginning with ‘my’
+            ////ul[id$= "Id"] // selects all elements with an attribute ending with ‘Id’
+            ////ul[id *= "Unique"] // selects all elements with an attribute containing the substring ‘Unique’
+            ////ul[id ~= "Unique"] // selects all elements with an attribute containing the word ‘Unique’
 
-            //ul#myUniqueId  li:first-child //select first child element
-            //ul#myUniqueId  li:nth-of-type(1) //select first child element
+            ////ul#myUniqueId  li:first-child //select first child element
+            ////ul#myUniqueId  li:nth-of-type(1) //select first child element
 
-            //ul#myUniqueId  li:last-child //select last child element
-            //ul#myUniqueId  li:nth-of-type(3) //select last child element
+            ////ul#myUniqueId  li:last-child //select last child element
+            ////ul#myUniqueId  li:nth-of-type(3) //select last child element
 
-            //div > p //selects all <p> elements that are a direct descendant of a <div> element
-            //div + p //selects all <p> elements that are the next sibling of a <div> element (i.e.placed directly after)
-            //div ~p //selects all <p> elements that follow, and are siblings of <div> elements
+            ////div > p //selects all <p> elements that are a direct descendant of a <div> element
+            ////div + p //selects all <p> elements that are the next sibling of a <div> element (i.e.placed directly after)
+            ////div ~p //selects all <p> elements that follow, and are siblings of <div> elements
 
+            //// Pseudo-classes
+            ////a:link //selects all unvisited links
+            ////a:visited //selects all visited links
+            ////a:hover //selects links on mouse hover
+            ////input:active //selects every active <input> element
+            ////input:disabled //selects every disabled<input> element
+            ////input:enabled //selects every enabled<input> element
+            ////input:focus //selects the<input> element which has focus
+            ////p:lang(language) //selects all <p> elements with a lang attribute equal to ‘language’
+            ////input:read-only //selects < input > elements with the ‘readonly’ attribute specified
+            ////input:required //selects <input> elements with the ‘required’ attribute specified
+            ////input:checked //selects checkbox (or radio button) that is checked
 
-            // Pseudo-classes
-            //a:link //selects all unvisited links
-            //a:visited //selects all visited links
-            //a:hover //selects links on mouse hover
-            //input:active //selects every active <input> element
-            //input:disabled //selects every disabled<input> element
-            //input:enabled //selects every enabled<input> element
-            //input:focus //selects the<input> element which has focus
-            //p:lang(language) //selects all <p> elements with a lang attribute equal to ‘language’
-            //input:read-only //selects < input > elements with the ‘readonly’ attribute specified
-            //input:required //selects <input> elements with the ‘required’ attribute specified
-            //input:checked //selects checkbox (or radio button) that is checked
-
-            //form myForm.front + ul   // next Sibling
-            //a:contains('Log Out')   // anchor with inner text containing 'Log Out'
-            //a[href='url'] // anchor with target link 'url'
+            ////form myForm.front + ul   // next Sibling
+            ////a:contains('Log Out')   // anchor with inner text containing 'Log Out'
+            ////a[href='url'] // anchor with target link 'url'
             // #TestTable tr:nth-child(3) td:nth-child(2) //cell by row and column (e.g. 3rd row, 2nd column)
             // td:contains('t') ~td //cell immediately following cell containing 't'
         }
