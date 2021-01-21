@@ -47,7 +47,7 @@ namespace ExecuteUiTestsCloudCrossBrowserTesting
 
             options.AddAdditionalCapability("username", _username);
             options.AddAdditionalCapability("password", _authkey);
-            
+
             _driver = new RemoteWebDriver(new Uri("http://hub.crossbrowsertesting.com:80/wd/hub"), options);
         }
 
