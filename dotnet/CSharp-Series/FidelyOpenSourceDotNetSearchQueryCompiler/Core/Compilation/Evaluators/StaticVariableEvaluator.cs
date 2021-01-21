@@ -69,7 +69,7 @@ namespace Fidely.Framework.Compilation.Evaluators
 
             if (evaluators.ContainsKey(name.ToUpperInvariant()))
             {
-                var message = String.Format(CultureInfo.CurrentUICulture, "Failed to register the specified variable '{0}' because this variable is already registered.", name);
+                var message = string.Format(CultureInfo.CurrentUICulture, "Failed to register the specified variable '{0}' because this variable is already registered.", name);
                 throw new ArgumentException(message, "name");
             }
 

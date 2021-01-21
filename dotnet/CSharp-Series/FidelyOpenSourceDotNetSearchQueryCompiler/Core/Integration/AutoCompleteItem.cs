@@ -71,7 +71,7 @@ namespace Fidely.Framework.Integration
             }
             else
             {
-                return DisplayName.ToUpperInvariant().StartsWith(value.ToUpperInvariant(), StringComparison.OrdinalIgnoreCase);
+                return DisplayName.ToUpperInvariant().StartsWith(value.ToUpperInvariant(), stringComparison.OrdinalIgnoreCase);
             }
         }
 

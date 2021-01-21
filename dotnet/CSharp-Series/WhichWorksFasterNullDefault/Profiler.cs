@@ -1,5 +1,5 @@
 ﻿// <copyright file="Profiler.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -38,7 +38,7 @@ namespace WhichWorksFasterNullDefault
 
         public static string FormatProfileResults(long iterations, TimeSpan profileResults)
         {
-            var sb = new StringBuilder();
+            var sb = new stringBuilder();
             sb.AppendLine(string.Format("Total: {0:0.00} ms ({1:N0} ticks) (over {2:N0} iterations)",
               profileResults.TotalMilliseconds, profileResults.Ticks, iterations));
             var avgElapsedMillisecondsPerRun = profileResults.TotalMilliseconds / (double)iterations;

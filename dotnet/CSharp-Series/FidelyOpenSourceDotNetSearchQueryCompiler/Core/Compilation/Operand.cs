@@ -53,7 +53,7 @@ namespace Fidely.Framework.Compilation
         {
             var expression = (Expression != null) ? Expression.ToString() : "null";
             var type = (OperandType != null) ? OperandType.FullName : "null";
-            return String.Format(CultureInfo.CurrentUICulture, "{0}:{1}", expression, type);
+            return string.Format(CultureInfo.CurrentUICulture, "{0}:{1}", expression, type);
         }
     }
 }

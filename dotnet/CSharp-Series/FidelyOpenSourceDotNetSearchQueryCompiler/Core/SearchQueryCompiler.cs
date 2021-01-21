@@ -66,7 +66,7 @@ namespace Fidely.Framework
 
             query = (query != null) ? query.Trim() : "";
 
-            if (String.IsNullOrWhiteSpace(query))
+            if (string.IsNullOrWhiteSpace(query))
             {
                 var current = Expression.Parameter(typeof(T), "current");
                 Logger.Info("Generated the constant expression that represents 'true' because the specified query string is empty.", query);
@@ -221,7 +221,7 @@ namespace Fidely.Framework
         {
             if (WarningNotified != null)
             {
-                WarningNotified(this, new WarningNotifiedEventArgs(notifiedBy, symbol, String.Format(CultureInfo.CurrentCulture, format, args)));
+                WarningNotified(this, new WarningNotifiedEventArgs(notifiedBy, symbol, string.Format(CultureInfo.CurrentCulture, format, args)));
             }
         }
     }

@@ -1,5 +1,5 @@
 ﻿// <copyright file="MessageArgsMsTest.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -41,8 +41,8 @@ namespace MSBuildTcpIPLogger
 
         public string CreateTestList()
         {
-            TestListPath = String.Empty;
-            if (!String.IsNullOrEmpty(TestListContent))
+            TestListPath = string.Empty;
+            if (!string.IsNullOrEmpty(TestListContent))
             {
                 TestListPath = Path.GetTempFileName();
                 var sw = new StreamWriter(TestListPath, false, Encoding.UTF8);
@@ -53,6 +53,7 @@ namespace MSBuildTcpIPLogger
                 sw.WriteLine(TestListContent);
                 sw.Close();
             }
+
             return TestListPath;
         }
     }

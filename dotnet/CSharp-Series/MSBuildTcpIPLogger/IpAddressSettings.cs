@@ -1,5 +1,5 @@
 ﻿// <copyright file="IpAddressSettings.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -18,14 +18,14 @@ namespace MSBuildTcpIPLogger
 {
     public class IpAddressSettings
     {
-        public string IpString { get; set; }
+        public string Ipstring { get; set; }
         public int Port { get; set; }
 
         public IpAddressSettings(string ipAddress, string port)
         {
-            //IPAddress = IPAddress.Parse(ipAddress);
+            // IPAddress = IPAddress.Parse(ipAddress);
             Port = int.Parse(port);
-            IpString = ipAddress;
+            Ipstring = ipAddress;
         }
 
         public IpAddressSettings()
@@ -35,19 +35,20 @@ namespace MSBuildTcpIPLogger
         public IpAddressSettings(string wholeAddress)
         {
             var IpAddressA = wholeAddress.Split(':');
-            //IPAddress = IPAddress.Parse(IpAddressA[0]);
-            IpString = IpAddressA[0];
+
+            // IPAddress = IPAddress.Parse(IpAddressA[0]);
+            Ipstring = IpAddressA[0];
             Port = int.Parse(IpAddressA[1]);
         }
 
         public override string ToString()
         {
-            return String.Format("{0} {1}", IpString, Port);
+            return string.Format("{0} {1}", Ipstring, Port);
         }
 
         public IPAddress GetIPAddress()
         {
-            return IPAddress.Parse(IpString);
+            return IPAddress.Parse(Ipstring);
         }
     }
 }

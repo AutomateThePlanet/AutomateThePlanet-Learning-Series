@@ -51,7 +51,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
             samplefootballLegendObject.LastName = "Beckham-a";
             samplefootballLegendObject.Team = "Loko Mezdra";
             samplefootballLegendObject.Salary = 380.5m;
-            samplefootballLegendObject.AsString = new Action(
+            samplefootballLegendObject.Asstring = new Action(
                       () =>
                       Console.WriteLine("{0} {1} {2} {3}",
                       samplefootballLegendObject.FirstName,
@@ -60,7 +60,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
                       samplefootballLegendObject.Salary)
                       );
              //draw funny pic in console generation code and other fynny code exaples
-            samplefootballLegendObject.AsString();
+            samplefootballLegendObject.Asstring();
         }
 
         [TestMethod]
@@ -289,7 +289,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
         // 7. Execute VB code via C#
         ////private static string GetMacro(int macroId, int row, int endCol)
         ////{
-        ////    StringBuilder sb = new StringBuilder();
+        ////    stringBuilder sb = new stringBuilder();
         ////    string range = "ActiveSheet.Range(Cells(" + row + "," + 3 +
         ////        "), Cells(" + row + "," + (endCol + 3) + ")).Select";
         ////    sb.AppendLine("Sub Macro" + macroId + "()");
@@ -316,7 +316,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartTwo
         ////        MsoTriState.msoCTrue, left, top, width, height);
 
         ////    VBIDE.VBComponent module = workBook.VBProject.VBComponents.Add(VBIDE.vbext_ComponentType.vbext_ct_StdModule);
-        ////    module.CodeModule.AddFromString(GetMacro(macroId, currentRow, endCol));
+        ////    module.CodeModule.AddFromstring(GetMacro(macroId, currentRow, endCol));
         ////    button.OnAction = "Macro" + macroId;
 
         ////}

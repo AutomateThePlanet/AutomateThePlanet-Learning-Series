@@ -61,7 +61,7 @@ namespace Fidely.Framework.Processing
 
                 foreach (var symbol in mappings.Keys.Where(o => o.Length <= value.Length - current).OrderByDescending(o => o.Length))
                 {
-                    if (value.Substring(current, symbol.Length).Equals(symbol, StringComparison.OrdinalIgnoreCase))
+                    if (value.Substring(current, symbol.Length).Equals(symbol, stringComparison.OrdinalIgnoreCase))
                     {
                         if (startIndex < current)
                         {

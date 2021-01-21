@@ -1,5 +1,5 @@
 ﻿// <copyright file="ExamplesTests.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -78,7 +78,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
             Console.WriteLine("y now equals -1 because x was null => {0}", y);
             var i = TopUnderutilizedFeaturesdDotNetPartOne.DefaultValueOperatorExample.GetNullableInt() ?? default(int);
             Console.WriteLine("i equals now 0 because GetNullableInt() returned null => {0}", i);
-            var s = TopUnderutilizedFeaturesdDotNetPartOne.DefaultValueOperatorExample.GetStringValue();
+            var s = TopUnderutilizedFeaturesdDotNetPartOne.DefaultValueOperatorExample.GetstringValue();
             Console.WriteLine("Returns 'Unspecified' because s is null => {0}", s ?? "Unspecified");
         }       
 
@@ -98,13 +98,13 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
         public void BigIntegerExample()
         {
             // 8. BigInteger example
-            var positiveString = "91389681247993671255432112000000";
-            var negativeString = "-90315837410896312071002088037140000";
+            var positivestring = "91389681247993671255432112000000";
+            var negativestring = "-90315837410896312071002088037140000";
             BigInteger posBigInt = 0;
             BigInteger negBigInt = 0;
-            posBigInt = BigInteger.Parse(positiveString);
+            posBigInt = BigInteger.Parse(positivestring);
             Console.WriteLine(posBigInt);
-            negBigInt = BigInteger.Parse(negativeString);
+            negBigInt = BigInteger.Parse(negativestring);
             Console.WriteLine(negBigInt);
         }
 

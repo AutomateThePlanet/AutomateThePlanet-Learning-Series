@@ -750,10 +750,10 @@
           <xs:element name="dbPassword" minOccurs="0" maxOccurs="1" type="Layout" />
           <xs:element name="keepConnection" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="dbDatabase" minOccurs="0" maxOccurs="1" type="Layout" />
-          <xs:element name="connectionStringName" minOccurs="0" maxOccurs="1" type="xs:string" />
-          <xs:element name="connectionString" minOccurs="0" maxOccurs="1" type="Layout" />
+          <xs:element name="connectionstringName" minOccurs="0" maxOccurs="1" type="xs:string" />
+          <xs:element name="connectionstring" minOccurs="0" maxOccurs="1" type="Layout" />
           <xs:element name="dbHost" minOccurs="0" maxOccurs="1" type="Layout" />
-          <xs:element name="installConnectionString" minOccurs="0" maxOccurs="1" type="Layout" />
+          <xs:element name="installConnectionstring" minOccurs="0" maxOccurs="1" type="Layout" />
           <xs:element name="install-command" minOccurs="0" maxOccurs="unbounded" type="NLog.Targets.DatabaseCommandInfo" />
           <xs:element name="uninstall-command" minOccurs="0" maxOccurs="unbounded" type="NLog.Targets.DatabaseCommandInfo" />
           <xs:element name="optimizeBufferReuse" minOccurs="0" maxOccurs="1" type="xs:boolean" />
@@ -773,7 +773,7 @@
         </xs:attribute>
         <xs:attribute name="dbUserName" type="SimpleLayoutAttribute">
           <xs:annotation>
-            <xs:documentation>Database user name. If the ConnectionString is not provided this value will be used to construct the "User ID=" part of the connection string.</xs:documentation>
+            <xs:documentation>Database user name. If the Connectionstring is not provided this value will be used to construct the "User ID=" part of the connection string.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="dbProvider" type="xs:string">
@@ -783,7 +783,7 @@
         </xs:attribute>
         <xs:attribute name="dbPassword" type="SimpleLayoutAttribute">
           <xs:annotation>
-            <xs:documentation>Database password. If the ConnectionString is not provided this value will be used to construct the "Password=" part of the connection string.</xs:documentation>
+            <xs:documentation>Database password. If the Connectionstring is not provided this value will be used to construct the "Password=" part of the connection string.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="keepConnection" type="xs:boolean">
@@ -793,27 +793,27 @@
         </xs:attribute>
         <xs:attribute name="dbDatabase" type="SimpleLayoutAttribute">
           <xs:annotation>
-            <xs:documentation>Database name. If the ConnectionString is not provided this value will be used to construct the "Database=" part of the connection string.</xs:documentation>
+            <xs:documentation>Database name. If the Connectionstring is not provided this value will be used to construct the "Database=" part of the connection string.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="connectionStringName" type="xs:string">
+        <xs:attribute name="connectionstringName" type="xs:string">
           <xs:annotation>
-            <xs:documentation>Name of the connection string (as specified in &lt;connectionStrings&gt; configuration section.</xs:documentation>
+            <xs:documentation>Name of the connection string (as specified in &lt;connectionstrings&gt; configuration section.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="connectionString" type="SimpleLayoutAttribute">
+        <xs:attribute name="connectionstring" type="SimpleLayoutAttribute">
           <xs:annotation>
             <xs:documentation>Connection string. When provided, it overrides the values specified in DBHost, DBUserName, DBPassword, DBDatabase.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="dbHost" type="SimpleLayoutAttribute">
           <xs:annotation>
-            <xs:documentation>Database host name. If the ConnectionString is not provided this value will be used to construct the "Server=" part of the connection string.</xs:documentation>
+            <xs:documentation>Database host name. If the Connectionstring is not provided this value will be used to construct the "Server=" part of the connection string.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="installConnectionString" type="SimpleLayoutAttribute">
+        <xs:attribute name="installConnectionstring" type="SimpleLayoutAttribute">
           <xs:annotation>
-            <xs:documentation>Connection string using for installation and uninstallation. If not provided, regular ConnectionString is being used.</xs:documentation>
+            <xs:documentation>Connection string using for installation and uninstallation. If not provided, regular Connectionstring is being used.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="optimizeBufferReuse" type="xs:boolean">
@@ -844,7 +844,7 @@
   <xs:complexType name="NLog.Targets.DatabaseCommandInfo">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
       <xs:element name="commandType" minOccurs="0" maxOccurs="1" type="System.Data.CommandType" />
-      <xs:element name="connectionString" minOccurs="0" maxOccurs="1" type="Layout" />
+      <xs:element name="connectionstring" minOccurs="0" maxOccurs="1" type="Layout" />
       <xs:element name="ignoreFailures" minOccurs="0" maxOccurs="1" type="xs:boolean" />
       <xs:element name="parameter" minOccurs="0" maxOccurs="unbounded" type="NLog.Targets.DatabaseParameterInfo" />
       <xs:element name="text" minOccurs="0" maxOccurs="1" type="Layout" />
@@ -854,7 +854,7 @@
         <xs:documentation>Type of the command.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="connectionString" type="SimpleLayoutAttribute">
+    <xs:attribute name="connectionstring" type="SimpleLayoutAttribute">
       <xs:annotation>
         <xs:documentation>Connection string to run the command against. If not provided, connection string from the target is used.</xs:documentation>
       </xs:annotation>
@@ -2142,7 +2142,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="OutputDebugString">
+  <xs:complexType name="OutputDebugstring">
     <xs:complexContent>
       <xs:extension base="Target">
         <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -2822,7 +2822,7 @@
         </xs:attribute>
         <xs:attribute name="compareTo" type="xs:string">
           <xs:annotation>
-            <xs:documentation>String to compare the layout to.</xs:documentation>
+            <xs:documentation>string to compare the layout to.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="ignoreCase" type="xs:boolean">
@@ -2886,7 +2886,7 @@
         </xs:attribute>
         <xs:attribute name="compareTo" type="xs:string">
           <xs:annotation>
-            <xs:documentation>String to compare the layout to.</xs:documentation>
+            <xs:documentation>string to compare the layout to.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="ignoreCase" type="xs:boolean">

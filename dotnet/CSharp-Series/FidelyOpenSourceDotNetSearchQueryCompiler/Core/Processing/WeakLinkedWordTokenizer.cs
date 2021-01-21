@@ -64,7 +64,7 @@ namespace Fidely.Framework.Processing
                     if (startIndex < current)
                     {
                         var operand = value.Substring(startIndex, current - startIndex);
-                        var symbol = mappings.Keys.FirstOrDefault(o => o.Equals(operand, StringComparison.OrdinalIgnoreCase));
+                        var symbol = mappings.Keys.FirstOrDefault(o => o.Equals(operand, stringComparison.OrdinalIgnoreCase));
                         if (symbol != null)
                         {
                             result.Add(mappings[symbol]);

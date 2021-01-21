@@ -56,17 +56,17 @@ namespace Fidely.Framework
             {
                 throw new ArgumentNullException("item");
             }
-            if (String.IsNullOrWhiteSpace(item.Symbol))
+            if (string.IsNullOrWhiteSpace(item.Symbol))
             {
                 throw new ArgumentException("Failed to register the specified operator because its symbol can't be null, empty or white space.", "item");
             }
-            if (BuiltInSymbols.Any(o => o.Equals(item.Symbol, StringComparison.OrdinalIgnoreCase)))
+            if (BuiltInSymbols.Any(o => o.Equals(item.Symbol, stringComparison.OrdinalIgnoreCase)))
             {
-                throw new ArgumentException(String.Format(CultureInfo.CurrentUICulture, "Failed to register the specified operator because its symbol '{0}' is the reserved symbol.", item.Symbol), "item");
+                throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Failed to register the specified operator because its symbol '{0}' is the reserved symbol.", item.Symbol), "item");
             }
-            if (items.Any(o => o.Symbol.Equals(item.Symbol, StringComparison.OrdinalIgnoreCase)))
+            if (items.Any(o => o.Symbol.Equals(item.Symbol, stringComparison.OrdinalIgnoreCase)))
             {
-                throw new ArgumentException(String.Format(CultureInfo.CurrentUICulture, "Failed to register the specified operator because its symbol '{0}' is already registered.", item.Symbol), "item");
+                throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Failed to register the specified operator because its symbol '{0}' is already registered.", item.Symbol), "item");
             }
 
             items.Add(item);
