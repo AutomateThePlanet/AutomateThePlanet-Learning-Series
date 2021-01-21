@@ -19,7 +19,8 @@ namespace ExtendTestExecutionWorkflowUsingHooks.Pages
 {
     public partial class HomePage : BasePage
     {
-        public HomePage(IWebDriver driver) : base(driver)
+        public HomePage(IWebDriver driver)
+            : base(driver)
         {
         }
 

@@ -19,7 +19,8 @@ namespace ExtendTestExecutionWorkflowUsingHooks.Pages
 {
     public partial class KilowattHoursPage : BasePage
     {
-        public KilowattHoursPage(IWebDriver driver) : base(driver)
+        public KilowattHoursPage(IWebDriver driver)
+            : base(driver)
         {
         }
 

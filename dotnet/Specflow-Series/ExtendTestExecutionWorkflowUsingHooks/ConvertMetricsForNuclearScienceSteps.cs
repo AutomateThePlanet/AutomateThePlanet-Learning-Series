@@ -14,8 +14,8 @@
 
 using ExtendTestExecutionWorkflowUsingHooks.Base;
 using ExtendTestExecutionWorkflowUsingHooks.Pages;
-using Microsoft.Practices.Unity;
 using TechTalk.SpecFlow;
+using Unity;
 
 namespace ExtendTestExecutionWorkflowUsingHooks
 {
@@ -27,10 +27,8 @@ namespace ExtendTestExecutionWorkflowUsingHooks
 
         public ConvertMetricsForNuclearScienceSteps()
         {
-            _homePage = 
-                UnityContainerFactory.GetContainer().Resolve<HomePage>();
-            _kilowattHoursPage = 
-                UnityContainerFactory.GetContainer().Resolve<KilowattHoursPage>();
+            _homePage = UnityContainerFactory.GetContainer().Resolve<HomePage>();
+            _kilowattHoursPage = UnityContainerFactory.GetContainer().Resolve<KilowattHoursPage>();
         }
 
         ////[Given(@"web browser is opened")]

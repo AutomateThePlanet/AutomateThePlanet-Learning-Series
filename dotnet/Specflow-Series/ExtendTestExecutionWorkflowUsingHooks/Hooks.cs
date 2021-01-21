@@ -16,9 +16,10 @@ using System.Linq;
 using ExtendTestExecutionWorkflowUsingHooks.Base;
 using ExtendTestExecutionWorkflowUsingHooks.Core;
 using ExtendTestExecutionWorkflowUsingHooks.Pages;
-using Microsoft.Practices.Unity;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
+using Unity;
+using Unity.Lifetime;
 
 namespace ExtendTestExecutionWorkflowUsingHooks
 {
@@ -78,14 +79,14 @@ namespace ExtendTestExecutionWorkflowUsingHooks
         public static void LoginUser()
         {
             Console.WriteLine("Execute BeforeScenario- LoginUser");
-            // Login to your site.
+            //// Login to your site.
         }
 
         [AfterScenario(Order = 2)]
         public static void CloseBrowser()
         {
             Console.WriteLine("Execute AfterScenario- CloseBrowser");
-            // New Browser Instance for each test.
+            //// New Browser Instance for each test.
             ////Driver.StopBrowser();
         }
 
@@ -94,19 +95,19 @@ namespace ExtendTestExecutionWorkflowUsingHooks
         public static void LogoutUser()
         {
             Console.WriteLine("Execute AfterScenario- LogoutUser");
-            // Logout the user
-        }
-
-        [BeforeStep]
-        public void BeforeStep()
-        {
-            Console.WriteLine("BeforeStep- Start Timer");
+            //// Logout the user
         }
 
         [AfterStep]
         public static void AfterStep()
         {
             Console.WriteLine("BeforeStep- Log something in DB.");
+        }
+
+        [BeforeStep]
+        public void BeforeStep()
+        {
+            Console.WriteLine("BeforeStep- Start Timer");
         }
     }
 }

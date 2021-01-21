@@ -16,9 +16,10 @@ using System.Linq;
 using ExtendTestExecutionWorkflowUsingHooks.Base;
 using ExtendTestExecutionWorkflowUsingHooks.Core;
 using ExtendTestExecutionWorkflowUsingHooks.Pages;
-using Microsoft.Practices.Unity;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
+using Unity;
+using Unity.Lifetime;
 
 namespace ExtendTestExecutionWorkflowUsingHooks
 {
@@ -43,6 +44,6 @@ namespace ExtendTestExecutionWorkflowUsingHooks
         public static void CloseBrowser()
         {
             Driver.StopBrowser();
-        }       
+        }
     }
 }

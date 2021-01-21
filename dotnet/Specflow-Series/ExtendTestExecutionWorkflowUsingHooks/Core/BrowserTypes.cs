@@ -17,7 +17,7 @@ namespace ExtendTestExecutionWorkflowUsingHooks.Core
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
-        NotSet
+        Chrome,
+        NotSet,
     }
 }
