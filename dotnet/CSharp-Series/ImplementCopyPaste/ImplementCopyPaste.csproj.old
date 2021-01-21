@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{52CD4FA0-ED0E-40BB-898D-6233FEA8412F}</ProjectGuid>
+    <ProjectGuid>{82907095-BE7B-4EAF-9674-D3EC414260A2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReducedAutoMapper</RootNamespace>
-    <AssemblyName>ReducedAutoMapper</AssemblyName>
+    <RootNamespace>ImplementCopyPaste</RootNamespace>
+    <AssemblyName>ImplementCopyPaste</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -51,23 +51,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="FirstObject.cs" />
-    <Compile Include="MapFirstObject.cs" />
-    <Compile Include="ReducedAutoMapper.cs" />
-    <Compile Include="MapSecondObject.cs" />
-    <Compile Include="SecondObject.cs" />
-    <Compile Include="MapThirdObject.cs" />
-    <Compile Include="ThirdObject.cs" />
-    <Compile Include="ReducedAutoMapperTest.cs" />
+    <Compile Include="ClipBoardCommand.cs" />
+    <Compile Include="ClipBoardManager.cs" />
+    <Compile Include="ClipBoardTestCase.cs" />
+    <Compile Include="SerializationManager.cs" />
+    <Compile Include="TestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\AutomateThePlanet.licenseheader">
-      <Link>AutomateThePlanet.licenseheader</Link>
-    </None>
+    <None Include="ImplementCopyPaste.licenseheader" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="readme-18.txt" />
+    <Content Include="readme-3.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

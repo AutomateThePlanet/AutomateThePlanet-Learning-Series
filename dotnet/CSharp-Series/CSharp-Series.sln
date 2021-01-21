@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Series.EventLogOperations", "CSharp.Series.EventLogOperations\CSharp.Series.EventLogOperations.csproj", "{3C2F551C-DDE5-4DAF-B8F4-82915DAEB4B6}"
 EndProject
@@ -21,12 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FidelyOpenSourceDotNetSearc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsRegistryReadWrite", "WindowsRegistryReadWrite\WindowsRegistryReadWrite.csproj", "{C2B694FE-73CF-4270-917C-BF1291F6A281}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetAssemblyPropertiesWithoutLockingFile", "GetAssemblyPropertiesWithoutLockingFile\GetAssemblyPropertiesWithoutLockingFile.csproj", "{7E2F89AA-43A7-4520-B7A9-69539B5C2C3C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeAPIGettingStarted", "YouTubeAPIGettingStarted\YouTubeAPIGettingStarted.csproj", "{B8F01A5E-F5D5-404A-BAD7-1115025E301E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubePlaylistAPI", "YouTubePlaylistAPI\YouTubePlaylistAPI.csproj", "{0D355867-7C4F-44B5-8F4A-F58734F322C1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssertDateTimeRightWayMSTestNUnit", "AssertDateTimeRightWayMSTestNUnit\AssertDateTimeRightWayMSTestNUnit.csproj", "{470EAA8B-B6B6-471E-AFB5-373DB74F4492}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericPropertiesValidator", "GenericPropertiesValidator\GenericPropertiesValidator.csproj", "{081E0A41-AB1E-448A-99E5-73D4A8BF853F}"
@@ -34,8 +28,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopUnderutilizedFeaturesdDotNetPartOne", "TopUnderutilizedFeaturesdDotNetPartOne\TopUnderutilizedFeaturesdDotNetPartOne.csproj", "{14563EB7-CF6C-4A1E-AA1F-D5D5F29CEA8A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopUnderutilizedFeaturesdDotNetPartTwo", "TopUnderutilizedFeaturesdDotNetPartTwo\TopUnderutilizedFeaturesdDotNetPartTwo.csproj", "{E895EE97-5EEC-4EE1-99BC-C7665E1EC02C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReducedAutoMapper", "ReducedAutoMapper\ReducedAutoMapper.csproj", "{52CD4FA0-ED0E-40BB-898D-6233FEA8412F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeatTricksEffortlesslyFormattingCurrency", "NeatTricksEffortlesslyFormattingCurrency\NeatTricksEffortlesslyFormattingCurrency.csproj", "{F2FD4992-8AD3-44BE-A55B-0A3CA5CA6B43}"
 EndProject
@@ -57,16 +49,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Fidely Open Source .NET 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Windows Registry Read Write CSharp Code", "6. Windows Registry Read Write CSharp Code", "{FF505E72-66B9-4191-A7D2-7F19F2C5ECDE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Get Assembly Properties Without Locking File CSharp Code", "7. Get Assembly Properties Without Locking File CSharp Code", "{B6DAC5C7-03D9-4B79-9D5D-035BE36035C3}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Specify Assembly References Based On Build Configuration in Visual Studio", "5. Specify Assembly References Based On Build Configuration in Visual Studio", "{AB4515FB-712D-4A88-9E8A-7EE1236CABD8}"
 	ProjectSection(SolutionItems) = preProject
 		readme-5.txt = readme-5.txt
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. YouTube API Getting Started CSharp Code", "8. YouTube API Getting Started CSharp Code", "{A3BAC32C-7C43-44E7-BE73-B87FF52AC0FB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9. YouTube Playlists API CSharp Code", "9. YouTube Playlists API CSharp Code", "{F31E9BFD-F39B-41F0-AA45-BBB63F9742B2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. Assert DateTime the Right Way MSTest NUnit CSharp Code", "10. Assert DateTime the Right Way MSTest NUnit CSharp Code", "{9C5F1342-2CA2-46E9-8071-7EF808584F6A}"
 EndProject
@@ -95,8 +81,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16. Top 15 Underutilized Features of .NET", "16. Top 15 Underutilized Features of .NET", "{49CB8ABA-0056-4667-9426-303AECBA83EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "17. Types Of Code Coverage- Examples In CSharp", "17. Types Of Code Coverage- Examples In CSharp", "{3251711A-389D-419D-A4B8-73D7E600E334}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18. Reduced AutoMapper- Auto-Map Objects 180 Percents Faster", "18. Reduced AutoMapper- Auto-Map Objects 180 Percents Faster", "{AC50C362-DE9C-462B-9D9A-1B781CD19D0D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19. Neat Tricks for Effortlessly Formatting Currency in CSharp", "19. Neat Tricks for Effortlessly Formatting Currency in CSharp", "{A6B1E1A8-9AC5-4687-BD83-360D7365E71F}"
 EndProject
@@ -150,18 +134,6 @@ Global
 		{C2B694FE-73CF-4270-917C-BF1291F6A281}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2B694FE-73CF-4270-917C-BF1291F6A281}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2B694FE-73CF-4270-917C-BF1291F6A281}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7E2F89AA-43A7-4520-B7A9-69539B5C2C3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E2F89AA-43A7-4520-B7A9-69539B5C2C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E2F89AA-43A7-4520-B7A9-69539B5C2C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E2F89AA-43A7-4520-B7A9-69539B5C2C3C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8F01A5E-F5D5-404A-BAD7-1115025E301E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8F01A5E-F5D5-404A-BAD7-1115025E301E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8F01A5E-F5D5-404A-BAD7-1115025E301E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8F01A5E-F5D5-404A-BAD7-1115025E301E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D355867-7C4F-44B5-8F4A-F58734F322C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D355867-7C4F-44B5-8F4A-F58734F322C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D355867-7C4F-44B5-8F4A-F58734F322C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D355867-7C4F-44B5-8F4A-F58734F322C1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{470EAA8B-B6B6-471E-AFB5-373DB74F4492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{470EAA8B-B6B6-471E-AFB5-373DB74F4492}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{470EAA8B-B6B6-471E-AFB5-373DB74F4492}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -178,10 +150,6 @@ Global
 		{E895EE97-5EEC-4EE1-99BC-C7665E1EC02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E895EE97-5EEC-4EE1-99BC-C7665E1EC02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E895EE97-5EEC-4EE1-99BC-C7665E1EC02C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52CD4FA0-ED0E-40BB-898D-6233FEA8412F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52CD4FA0-ED0E-40BB-898D-6233FEA8412F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52CD4FA0-ED0E-40BB-898D-6233FEA8412F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52CD4FA0-ED0E-40BB-898D-6233FEA8412F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F2FD4992-8AD3-44BE-A55B-0A3CA5CA6B43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F2FD4992-8AD3-44BE-A55B-0A3CA5CA6B43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2FD4992-8AD3-44BE-A55B-0A3CA5CA6B43}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -216,18 +184,17 @@ Global
 		{82907095-BE7B-4EAF-9674-D3EC414260A2} = {772AC162-61C6-4F2D-85B7-953EA429EA69}
 		{2ED526C3-F932-4D39-B412-D8888A0CC2F8} = {00F2A94A-2CBF-4941-97C4-9F3F2F4E2357}
 		{C2B694FE-73CF-4270-917C-BF1291F6A281} = {FF505E72-66B9-4191-A7D2-7F19F2C5ECDE}
-		{7E2F89AA-43A7-4520-B7A9-69539B5C2C3C} = {B6DAC5C7-03D9-4B79-9D5D-035BE36035C3}
-		{B8F01A5E-F5D5-404A-BAD7-1115025E301E} = {A3BAC32C-7C43-44E7-BE73-B87FF52AC0FB}
-		{0D355867-7C4F-44B5-8F4A-F58734F322C1} = {F31E9BFD-F39B-41F0-AA45-BBB63F9742B2}
 		{470EAA8B-B6B6-471E-AFB5-373DB74F4492} = {9C5F1342-2CA2-46E9-8071-7EF808584F6A}
 		{081E0A41-AB1E-448A-99E5-73D4A8BF853F} = {8B074A34-2715-473D-9378-E2D0DC2C105E}
 		{14563EB7-CF6C-4A1E-AA1F-D5D5F29CEA8A} = {49CB8ABA-0056-4667-9426-303AECBA83EF}
 		{E895EE97-5EEC-4EE1-99BC-C7665E1EC02C} = {11C6922F-0376-44C8-A46C-D140AB227D09}
-		{52CD4FA0-ED0E-40BB-898D-6233FEA8412F} = {AC50C362-DE9C-462B-9D9A-1B781CD19D0D}
 		{F2FD4992-8AD3-44BE-A55B-0A3CA5CA6B43} = {A6B1E1A8-9AC5-4687-BD83-360D7365E71F}
 		{E2054110-FAEA-4952-B6B9-33A82610C6FD} = {E7C0E601-CEA5-493D-884D-B8D1ACEF5988}
 		{84A48EB9-D16F-4F21-9BAE-1B106B94F26B} = {3251711A-389D-419D-A4B8-73D7E600E334}
 		{F2F4B313-6E47-414E-B55A-28E02E4E1CC9} = {27AE1AAD-EDBF-446B-92E7-C19E6D487BC1}
 		{4101FDB2-B5B3-4C44-9624-3E9BA7E40CE7} = {39B7A880-7E6B-474C-BBBC-CDD8BBCC488A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {119F6707-2FAB-4CCB-AFFE-F1593113185C}
 	EndGlobalSection
 EndGlobal
