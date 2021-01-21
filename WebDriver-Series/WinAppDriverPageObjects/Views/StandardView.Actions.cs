@@ -16,7 +16,7 @@ namespace WinAppDriverPageObjects.Views
             ClickByDigit(num2);
             EqualsButton.Click();
         }
-        
+
         private void ClickByDigit(int digit)
         {
             switch (digit)

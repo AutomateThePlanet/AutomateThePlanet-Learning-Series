@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
+using OpenQA.Selenium.Remote;
 
 namespace GettingStartedWinDriver
 {
@@ -13,10 +14,10 @@ namespace GettingStartedWinDriver
         [SetUp]
         public void TestInit()
         {
-            var options = new AppiumOptions();
-            options.AddAdditionalOption("app", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
-            options.AddAdditionalOption("deviceName", "WindowsPC");
-            _driver =  new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), options);
+            var options = new DesiredCapabilities();
+            options.SetCapability("app", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
+            options.SetCapability("deviceName", "WindowsPC");
+            _driver = new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), options);
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
@@ -37,7 +38,7 @@ namespace GettingStartedWinDriver
             _driver.FindElementByName("Plus").Click();
             _driver.FindElementByName("Seven").Click();
             _driver.FindElementByName("Equals").Click();
-            
+
             var calculatorResult = GetCalculatorResultText();
             Assert.AreEqual("12", calculatorResult);
         }
