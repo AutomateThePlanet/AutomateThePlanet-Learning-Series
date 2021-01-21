@@ -1,5 +1,5 @@
 ﻿// <copyright file="ShoppingCartTests.cs" company="Automate The Planet Ltd.">
-// Copyright 2019 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -52,17 +52,17 @@ namespace HandlingTestEnvironmentsData.Second
             _shoppingCart.PurchaseItem("The Hitchhiker's Guide to the Galaxy", 22.2, new ClientInfo());
         }
 
-        // .NET Core does not support the DataSource attribute. If you try to access test data in this way in a .NET Core or UWP unit test project, 
+        // .NET Core does not support the DataSource attribute. If you try to access test data in this way in a .NET Core or UWP unit test project,
         // you'll see an error similar to "'TestContext' does not contain a definition for 'DataRow' and no accessible extension method 'DataRow'
         // accepting a first argument of type 'TestContext' could be found (are you missing a using directive or an assembly reference?)".
-        //[TestMethod]
-        //[DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TestsData.csv", "TestsData#csv", DataAccessMethod.Sequential)]
-        //public void Purchase_Book_DataDriven()
-        //{
-        //    string item = TestContext.DataRow["item"];          
-        //    int expectedPrice = int.Parse(this.TestContext.DataRow["itemPrice"]);
-        //    _shoppingCart = _shoppingCartFactory.CreateOldShoppingCart();
-        //    _shoppingCart.PurchaseItem(item, expectedPrice, new ClientInfo());
-        //}
+        ////[TestMethod]
+        ////[DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TestsData.csv", "TestsData#csv", DataAccessMethod.Sequential)]
+        ////public void Purchase_Book_DataDriven()
+        ////{
+        ////    string item = TestContext.DataRow["item"];
+        ////    int expectedPrice = int.Parse(this.TestContext.DataRow["itemPrice"]);
+        ////    _shoppingCart = _shoppingCartFactory.CreateOldShoppingCart();
+        ////    _shoppingCart.PurchaseItem(item, expectedPrice, new ClientInfo());
+        ////}
     }
 }
