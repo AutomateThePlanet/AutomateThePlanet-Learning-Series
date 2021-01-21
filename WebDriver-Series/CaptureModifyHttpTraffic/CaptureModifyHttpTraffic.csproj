@@ -1,26 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <OutputType>Library</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-  </PropertyGroup>
+  <Import Project="..\..\SharedAssemblyInfo.targets" />
   <ItemGroup>
-    <Content Include="readme-31.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="BrotliSharpLib" Version="0.3.3" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="NUnit" Version="3.11.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
-    <PackageReference Include="Portable.BouncyCastle" Version="1.8.5" />
-    <PackageReference Include="Selenium.Chrome.WebDriver" Version="74.0.0" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.27.0" />
+    <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="StreamExtended" Version="1.0.201" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.2" />
-    <PackageReference Include="Titanium.Web.Proxy" Version="3.0.907" />
+    <PackageReference Include="Selenium.Chrome.WebDriver" Version="74.0.0" />
+
+    <PackageReference Include="Titanium.Web.Proxy" Version="3.1.1344" />
+
+     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.0" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 </Project>

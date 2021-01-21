@@ -32,10 +32,8 @@ namespace CaptureModifyHttpTraffic
     {
         private IWebDriver _driver;
         private ProxyServer _proxyServer;
-        private readonly IDictionary<int, Proxy.Request> _requestsHistory = 
-            new ConcurrentDictionary<int, Proxy.Request>();
-        private readonly IDictionary<int, Proxy.Response> _responsesHistory = 
-            new ConcurrentDictionary<int, Proxy.Response>();
+        private readonly IDictionary<int, Proxy.Request> _requestsHistory = new ConcurrentDictionary<int, Proxy.Request>();
+        private readonly IDictionary<int, Proxy.Response> _responsesHistory = new ConcurrentDictionary<int, Proxy.Response>();
 
         [OneTimeSetUp]
         public void ClassInit()
@@ -69,9 +67,9 @@ namespace CaptureModifyHttpTraffic
                 FtpProxy = "http://localhost:18882"
             };
             var options = new ChromeOptions
-                          {
-                              Proxy = proxy
-                          };
+            {
+                Proxy = proxy
+            };
             _driver = new ChromeDriver(options);
         }
 
@@ -169,13 +167,13 @@ namespace CaptureModifyHttpTraffic
                 {
                     var method = e.HttpClient.Request.Method.ToUpper();
 
-                    if ((method == "POST" || method == "PUT" || method == "PATCH" || method == "GET"))
+                    if (method == "POST" || method == "PUT" || method == "PATCH" || method == "GET")
                     {
-                        //Get/Set request body bytes
+                        // Get/Set request body bytes
                         byte[] bodyBytes = e.GetRequestBody().Result;
                         e.SetRequestBody(bodyBytes);
 
-                        //Get/Set request body as string
+                        ////Get/Set request body as string
                         string bodyString = e.GetRequestBodyAsString().Result;
                         e.SetRequestBodyString(bodyString);
                     }

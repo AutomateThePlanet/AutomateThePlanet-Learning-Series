@@ -32,7 +32,6 @@ namespace CaptureModifyHttpTraffic
             return clientCert;
         }
 
-
         private static X509Certificate2 GenerateSelfSignedCertificate(string subjectName, string issuerName, AsymmetricKeyParameter issuerPrivKey)
         {
             const int keyStrength = 2048;
@@ -73,13 +72,12 @@ namespace CaptureModifyHttpTraffic
             subjectKeyPair = keyPairGenerator.GenerateKeyPair();
 
             certificateGenerator.SetPublicKey(subjectKeyPair.Public);
+
             // self-sign certificate
             var certificate = certificateGenerator.Generate(issuerPrivKey, random);
 
-
             // corresponding private key
             var info = PrivateKeyInfoFactory.CreatePrivateKeyInfo(subjectKeyPair.Private);
-
 
             // merge into X509Certificate2
             var x509 = new X509Certificate2(certificate.GetEncoded());
@@ -87,7 +85,7 @@ namespace CaptureModifyHttpTraffic
             var seq = (Asn1Sequence)Asn1Object.FromByteArray(info.GetDerEncoded());
             if (seq.Count != 9)
             {
-                //throw new PemException("malformed sequence in RSA private key");
+                ////throw new PemException("malformed sequence in RSA private key");
             }
 
             var rsa = RsaPrivateKeyStructure.GetInstance(seq);
@@ -96,7 +94,6 @@ namespace CaptureModifyHttpTraffic
 
             x509.PrivateKey = ToDotNetKey(rsaparams);
             return x509;
-
         }
 
         private static AsymmetricAlgorithm ToDotNetKey(RsaPrivateCrtKeyParameters privateKey)
@@ -175,7 +172,6 @@ namespace CaptureModifyHttpTraffic
             asymmetricKeyParameter = issuerKeyPair.Private;
 
             return x509;
-
         }
 
         private static bool AddCertToStore(X509Certificate2 cert, StoreName st, StoreLocation sl)
