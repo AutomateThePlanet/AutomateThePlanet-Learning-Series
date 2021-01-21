@@ -56,7 +56,7 @@ namespace SimpleFactoryDesignPatternReverseProxy
                 SslProxy = "localhost:18882",
                 FtpProxy = "localhost:18882",
             };
-         
+
             IWebDriver webDriver;
             switch (browser)
             {
@@ -115,6 +115,7 @@ namespace SimpleFactoryDesignPatternReverseProxy
         public void Dispose()
         {
             _proxyServer?.Dispose();
+            GC.SuppressFinalize(this);
         }
     }
 }
