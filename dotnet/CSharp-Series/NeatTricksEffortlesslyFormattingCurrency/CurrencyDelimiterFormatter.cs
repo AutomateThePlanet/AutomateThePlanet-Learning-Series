@@ -19,7 +19,7 @@ namespace NeatTricksEffortlesslyFormattingCurrency
     public static class CurrencyDelimiterFormatter
     {
         private static readonly CultureInfo usCultureInfo = CultureInfo.CreateSpecificCulture("en-US");
-        
+
         public static string ToStringUsDigitsFormatting(
             this double number,
             DigitsFormattingSettings digitsFormattingSettings = DigitsFormattingSettings.None,
@@ -29,7 +29,7 @@ namespace NeatTricksEffortlesslyFormattingCurrency
 
             return result;
         }
-        
+
         public static string ToStringUsDigitsFormatting(
             this decimal number,
             DigitsFormattingSettings digitsFormattingSettings = DigitsFormattingSettings.None,
@@ -61,10 +61,12 @@ namespace NeatTricksEffortlesslyFormattingCurrency
             {
                 formattedDigits = string.Concat("$", formattedDigits);
             }
+
             if (digitsFormattingSettings.HasFlag(DigitsFormattingSettings.PrefixMinus))
             {
                 formattedDigits = string.Concat("-", formattedDigits);
             }
+
             if (digitsFormattingSettings.HasFlag(DigitsFormattingSettings.SufixDollar))
             {
                 formattedDigits = string.Concat(formattedDigits, "$");
@@ -88,14 +90,17 @@ namespace NeatTricksEffortlesslyFormattingCurrency
             {
                 formattedDigits = string.Concat("$", formattedDigits);
             }
+
             if (digitsFormattingSettings.HasFlag(DigitsFormattingSettings.PrefixMinus))
             {
                 formattedDigits = string.Concat("-", formattedDigits);
             }
+
             if (digitsFormattingSettings.HasFlag(DigitsFormattingSettings.SufixDollar))
             {
                 formattedDigits = string.Concat(formattedDigits, "$");
             }
+
             return formattedDigits;
         }
     }
