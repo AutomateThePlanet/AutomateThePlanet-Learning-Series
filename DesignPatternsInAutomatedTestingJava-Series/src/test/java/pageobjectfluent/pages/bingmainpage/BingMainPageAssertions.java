@@ -17,10 +17,8 @@ import org.testng.Assert;
 import pageobjectfluent.core.BaseAssertions;
 
 public class BingMainPageAssertions extends BaseAssertions<BingMainPageElements> {
-    private final BingMainPage bingMainPage = new BingMainPage();
-
-    public BingMainPage resultsCountFluent(String expectedCount) {
+    public BingMainPageAssertions resultsCountFluent(String expectedCount) {
         Assert.assertTrue(elements().resultsCountDiv().getText().contains(expectedCount), "The results DIV doesn't contain the specified text.");
-        return bingMainPage;
+        return this;
     }
 }
