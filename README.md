@@ -1,6 +1,6 @@
-![](https://github.com/angelovstanton/AutomateThePlanet/blob/master/images/github-atp-new-logo.jpg)
+![](https://github.com/angelovstanton/AutomateThePlanet/blob/master/images/atp-logo.png)
 
-Welcome to the source code repository of Automate The Planet!
+Welcome to the source code repository of Automate The Planet Learning Series!
 
 **Please STAR the repository.**
 
@@ -62,3 +62,4 @@ For desktop modules you need to download [**WinAppDriver**](https://github.com/M
 
 For mobile modules you need to download and install [**Appium**](http://appium.io/). You need to make sure it is started before running any mobile tests.
 
+![](https://github.com/angelovstanton/AutomateThePlanet/blob/master/images/github-atp-new-logo.jpg)
