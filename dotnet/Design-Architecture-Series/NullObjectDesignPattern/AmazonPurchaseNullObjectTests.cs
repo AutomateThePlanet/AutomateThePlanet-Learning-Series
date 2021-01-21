@@ -26,7 +26,7 @@ namespace NullObjectDesignPattern
 {
     [TestClass]
     public class AmazonPurchaseNullObjectTests
-    { 
+    {
         [TestInitialize]
         public void SetupTest()
         {

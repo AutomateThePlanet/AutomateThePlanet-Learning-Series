@@ -25,7 +25,7 @@ namespace NullObjectDesignPattern.Pages.PlaceOrderPage
                 return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
             }
         }
-     
+
         public IWebElement PromotionalDiscountPrice
         {
             get
