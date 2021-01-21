@@ -33,8 +33,7 @@ namespace HeadlessTestsChrome
                     {
                         PerformTestOperations(driver);
                     }
-                }
-            );
+                });
         }
 
         [Test]
@@ -50,8 +49,7 @@ namespace HeadlessTestsChrome
                     {
                         PerformTestOperations(driver);
                     }
-                }
-            );
+                });
         }
 
         [Test]
@@ -67,8 +65,7 @@ namespace HeadlessTestsChrome
                     {
                         PerformTestOperations(driver);
                     }
-                }
-            );
+                });
         }
 
         [Test]
@@ -86,8 +83,7 @@ namespace HeadlessTestsChrome
                     {
                         PerformTestOperations(driver);
                     }
-                }
-            );
+                });
         }
 
         private void PerformTestOperations(IWebDriver driver)
@@ -165,6 +161,7 @@ namespace HeadlessTestsChrome
             {
                 actionToProfile();
             }
+
             watch.Stop();
             writer.WriteLine("Total: {0:0.00} ms ({1:N0} ticks) (over {2:N0} iterations)",
                 watch.ElapsedMilliseconds, watch.ElapsedTicks, iterations);
