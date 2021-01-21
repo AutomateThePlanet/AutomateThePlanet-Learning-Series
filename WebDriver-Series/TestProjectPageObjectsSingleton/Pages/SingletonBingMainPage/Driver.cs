@@ -31,6 +31,7 @@ namespace TestProjectPageObjectsSingleton.Pages.SingletonBingMainPage
             {
                 throw new NullReferenceException("The WebDriver browser instance was not initialized. You should first call the method Start.");
             }
+
             return _browser;
         }
 
@@ -45,6 +46,7 @@ namespace TestProjectPageObjectsSingleton.Pages.SingletonBingMainPage
             {
                 throw new NullReferenceException("The WebDriver browser wait instance was not initialized. You should first call the method Start.");
             }
+
             return _browserWait;
         }
 

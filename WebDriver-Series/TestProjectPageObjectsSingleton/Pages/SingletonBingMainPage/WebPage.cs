@@ -20,8 +20,7 @@ namespace TestProjectPageObjectsSingleton
     public abstract class WebPage<TPage>
         where TPage : new()
     {
-        private static readonly Lazy<TPage> _lazyPage 
-            = new Lazy<TPage>(() => new TPage());
+        private static readonly Lazy<TPage> _lazyPage = new Lazy<TPage>(() => new TPage());
 
         protected readonly IWebDriver WrappedDriver;
 
