@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
+using SE = SeleniumExtras.WaitHelpers;
 
 namespace AdapterDesignPattern
 {
@@ -37,8 +37,8 @@ namespace AdapterDesignPattern
             _driver.Navigate().GoToUrl(url);
         }
 
-        public Uri Url 
-        { 
+        public Uri Url
+        {
             get => new Uri(_driver.Url);
             set => _driver.Url = value.ToString();
         }
@@ -46,23 +46,23 @@ namespace AdapterDesignPattern
         public IElement FindElement(By locator)
         {
             IWebElement nativeElement =
-                _webDriverWait.Until(ExpectedConditions.ElementExists(locator));
+                _webDriverWait.Until(SE.ExpectedConditions.ElementExists(locator));
 
             return new ElementAdapter(_driver, nativeElement, locator);
         }
 
         public IEnumerable<IElement> FindElements(By locator)
         {
-            ReadOnlyCollection<IWebElement> nativeElements = 
-                _webDriverWait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(locator));
-             var elements = new List<IElement>();
-             foreach (var nativeElement in nativeElements)
-             {
-                 IElement element = new ElementAdapter(_driver, nativeElement, locator);
-                 elements.Add(element);
-             }
+            ReadOnlyCollection<IWebElement> nativeElements =
+                _webDriverWait.Until(SE.ExpectedConditions.PresenceOfAllElementsLocatedBy(locator));
+            var elements = new List<IElement>();
+            foreach (var nativeElement in nativeElements)
+            {
+                IElement element = new ElementAdapter(_driver, nativeElement, locator);
+                elements.Add(element);
+            }
 
-             return elements;
+            return elements;
         }
 
         public void WaitForAjax()
