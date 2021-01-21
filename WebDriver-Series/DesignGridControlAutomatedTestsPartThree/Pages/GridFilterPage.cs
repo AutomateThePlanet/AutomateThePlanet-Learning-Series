@@ -29,7 +29,7 @@ namespace DesignGridControlAutomatedTestsPartThree.Pages
             PageFactory.InitElements(driver, this);
         }
 
-        public KendoGrid Grid 
+        public KendoGrid Grid
         {
             get
             {
@@ -66,7 +66,7 @@ namespace DesignGridControlAutomatedTestsPartThree.Pages
 
         [FindsBy(How = How.XPath, Using = "//*[@id='grid']/div[3]/ul/li[11]/a")]
         public IWebElement PageOnTenthPositionButton { get; set; }
-        
+
         public void NavigateTo()
         {
             _driver.Navigate().GoToUrl(Url);

@@ -44,11 +44,10 @@ namespace DesignGridControlAutomatedTestsPartThree
         {
             _driver.Quit();
         }
-        
+
         // ** Paging Test Cases **
-        
         #region Paging Test Cases
-        
+
         [TestMethod]
         public void NavigateToFirstPage_GoToFirstPageButton()
         {
@@ -60,7 +59,7 @@ namespace DesignGridControlAutomatedTestsPartThree
             gridFilterPage.GoToFirstPageButton.Click();
             WaitForPageToLoad(targetPage, kendoGrid);
             var results = kendoGrid.GetItems<Order>();
-        
+
             Assert.AreEqual(_testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
             AssertPagerInfoLabel(gridFilterPage, targetPage, targetPage, _testPagingItems.Count());
         }
@@ -171,7 +170,7 @@ namespace DesignGridControlAutomatedTestsPartThree
             var gridFilterPage = new GridFilterPage(_driver);
             gridFilterPage.GoToFirstPageButton.Click();
             WaitForPageToLoad(targetPage, kendoGrid);
-        
+
             Assert.IsFalse(gridFilterPage.GoToFirstPageButton.Enabled);
         }
 
@@ -185,7 +184,7 @@ namespace DesignGridControlAutomatedTestsPartThree
             var gridFilterPage = new GridFilterPage(_driver);
             gridFilterPage.GoToFirstPageButton.Click();
             WaitForPageToLoad(targetPage, kendoGrid);
-        
+
             Assert.IsFalse(gridFilterPage.GoToPreviousPage.Enabled);
         }
 
@@ -199,7 +198,7 @@ namespace DesignGridControlAutomatedTestsPartThree
             var gridFilterPage = new GridFilterPage(_driver);
             gridFilterPage.GoToFirstPageButton.Click();
             WaitForPageToLoad(targetPage, kendoGrid);
-        
+
             Assert.IsFalse(gridFilterPage.PreviousMorePages.Displayed);
         }
 
@@ -244,9 +243,9 @@ namespace DesignGridControlAutomatedTestsPartThree
 
             Assert.IsFalse(gridFilterPage.PreviousMorePages.Enabled);
         }
-        
+
         #endregion
-            
+
         private void NavigateToGridInitialPage(KendoGrid kendoGrid, int initialPageNumber)
         {
             var gridFilterPage = new GridFilterPage(_driver);
@@ -258,13 +257,13 @@ namespace DesignGridControlAutomatedTestsPartThree
             WaitForPageToLoad(initialPageNumber, kendoGrid);
             AssertPagerInfoLabel(gridFilterPage, initialPageNumber, initialPageNumber, _testPagingItems.Count);
         }
-            
+
         private void AssertPagerInfoLabel(GridFilterPage page, int startItems, int endItems, int totalItems)
         {
             var expectedLabel = string.Format("{0} - {1} of {2} items", startItems, endItems, totalItems);
             Assert.AreEqual(expectedLabel, page.PagerInfoLabel.Text);
         }
-            
+
         public void WaitForPageToLoad(int expectedPage, KendoGrid grid)
         {
             Until(() =>
@@ -283,7 +282,7 @@ namespace DesignGridControlAutomatedTestsPartThree
                     return expectedCount == items.Count;
                 });
         }
-            
+
         private void Until(Func<bool> condition, int timeout = 10, string exceptionMessage = "Timeout exceeded.", int retryRateDelay = 50)
         {
             var start = DateTime.Now;
@@ -295,10 +294,11 @@ namespace DesignGridControlAutomatedTestsPartThree
                 {
                     throw new TimeoutException(exceptionMessage);
                 }
+
                 Thread.Sleep(retryRateDelay);
             }
         }
-            
+
         private void InitializeInvoicesForPaging()
         {
             var totalOrders = 11;
@@ -306,6 +306,7 @@ namespace DesignGridControlAutomatedTestsPartThree
             {
                 _uniqueShippingName = Guid.NewGuid().ToString();
             }
+
             _testPagingItems = new List<Order>();
             for (var i = 0; i < totalOrders; i++)
             {
@@ -313,7 +314,7 @@ namespace DesignGridControlAutomatedTestsPartThree
                 _testPagingItems.Add(newOrder);
             }
         }
-            
+
         private Order CreateNewItemInDb(string shipName = null)
         {
             // Replace it with service oriented call to your DB. Create real enity in DB.

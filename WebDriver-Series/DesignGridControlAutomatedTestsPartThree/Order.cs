@@ -22,7 +22,7 @@ namespace DesignGridControlAutomatedTestsPartThree
             if (!string.IsNullOrEmpty(shipName))
             {
                 ShipName = shipName;
-            }            
+            }
         }
 
         public Order()
