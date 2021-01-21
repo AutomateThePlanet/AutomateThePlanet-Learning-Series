@@ -21,6 +21,7 @@ namespace StrategyDesignPattern.Services
         public decimal Calculate(decimal price, States state, string zip)
         {
             var taxPrice = default(decimal);
+
             // Call Real Web Service to determine the Sales Tax.
             switch (state)
             {

@@ -21,6 +21,7 @@ namespace PatternsInAutomatedTests.Advanced.Strategy
         public decimal Calculate(decimal price, Countries country)
         {
             var taxPrice = default(decimal);
+
             // Call Real Web Service to determine the VAT Tax.
             switch (country)
             {

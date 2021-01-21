@@ -18,7 +18,7 @@ namespace StrategyDesignPattern.Core
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
+        Chrome,
         NotSet
     }
 }

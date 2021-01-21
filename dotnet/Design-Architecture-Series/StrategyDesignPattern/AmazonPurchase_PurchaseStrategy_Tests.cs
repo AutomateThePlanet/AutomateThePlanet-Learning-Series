@@ -22,7 +22,7 @@ namespace StrategyDesignPattern
 {
     [TestClass]
     public class AmazonPurchasePurchaseStrategyTests
-    { 
+    {
         [TestInitialize]
         public void SetupTest()
         {
