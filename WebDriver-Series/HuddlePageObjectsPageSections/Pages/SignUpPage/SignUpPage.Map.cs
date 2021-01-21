@@ -26,6 +26,5 @@ namespace HuddlePageObjectsPageSections.Pages
         public IWebElement Password => _driver.FindElement(By.Id("tbPassword"));
         public IWebElement LaunchButton => _driver.FindElement(By.Id("btnSubmit"));
         public SelectElement Country => new SelectElement(_driver.FindElement(By.Id("ddlCountry")));
-
     }
 }

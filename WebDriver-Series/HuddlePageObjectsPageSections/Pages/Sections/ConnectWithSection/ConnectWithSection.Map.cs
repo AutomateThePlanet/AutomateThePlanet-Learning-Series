@@ -21,6 +21,5 @@ namespace HuddlePageObjectsPageSections.Pages.Sections
         public IWebElement FacebookButton => _driver.FindElement(By.Id("Facebook"));
         public IWebElement LiveIdButton => _driver.FindElement(By.Id("LiveID"));
         public IWebElement YahooButton => _driver.FindElement(By.Id("Yahoo"));
-
     }
 }

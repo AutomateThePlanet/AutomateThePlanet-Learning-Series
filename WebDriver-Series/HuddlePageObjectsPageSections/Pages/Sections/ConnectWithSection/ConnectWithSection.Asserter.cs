@@ -21,6 +21,5 @@ namespace HuddlePageObjectsPageSections.Pages.Sections
         public void AssertFacebookButtonVisible() => Assert.IsTrue(FacebookButton.Displayed);
         public void AssertLiveIdButtonVisible() => Assert.IsTrue(LiveIdButton.Displayed);
         public void AssertYahooButtonVisible() => Assert.IsTrue(YahooButton.Displayed);
-
     }
 }
