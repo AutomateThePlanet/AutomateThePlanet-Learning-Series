@@ -18,7 +18,7 @@ namespace HuddlePageObjectsPartialClassesSingleton.SingletonBingMainPage
         private readonly string _url = @"http://www.bing.com/";
 
         public void Navigate() => WrappedDriver.Navigate().GoToUrl(_url);
-        
+
         public void Search(string textToType)
         {
             SearchBox.Clear();

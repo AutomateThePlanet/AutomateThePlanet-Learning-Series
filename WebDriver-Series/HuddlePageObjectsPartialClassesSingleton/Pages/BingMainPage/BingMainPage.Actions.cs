@@ -23,7 +23,7 @@ namespace HuddlePageObjectsPartialClassesSingleton
         public BingMainPage(IWebDriver browser) => _driver = browser;
 
         public void Navigate() => _driver.Navigate().GoToUrl(_url);
-        
+
         public void Search(string textToType)
         {
             SearchBox.Clear();

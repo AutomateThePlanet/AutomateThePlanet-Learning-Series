@@ -24,8 +24,7 @@ namespace HuddlePageObjectsPartialClassesSingleton
 
         protected readonly IWebDriver WrappedDriver;
 
-        protected WebPage() => 
-            WrappedDriver = Driver.Browser ?? throw new ArgumentNullException("The wrapped IWebDriver instance is not initialized.");
+        protected WebPage() => WrappedDriver = Driver.Browser ?? throw new ArgumentNullException("The wrapped IWebDriver instance is not initialized.");
 
         public static TPage Instance => _lazyPage.Value;
     }

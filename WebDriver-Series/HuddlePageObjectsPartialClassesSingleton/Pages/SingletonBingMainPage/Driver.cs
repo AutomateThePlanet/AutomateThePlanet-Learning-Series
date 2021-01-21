@@ -33,6 +33,7 @@ namespace HuddlePageObjectsPartialClassesSingleton.Pages.SingletonBingMainPage
                 {
                     throw new NullReferenceException("The WebDriver browser instance was not initialized. You should first call the method Start.");
                 }
+
                 return _browser;
             }
             private set => _browser = value;
@@ -46,6 +47,7 @@ namespace HuddlePageObjectsPartialClassesSingleton.Pages.SingletonBingMainPage
                 {
                     throw new NullReferenceException("The WebDriver browser wait instance was not initialized. You should first call the method Start.");
                 }
+
                 return _browserWait;
             }
             private set => _browserWait = value;
@@ -65,6 +67,7 @@ namespace HuddlePageObjectsPartialClassesSingleton.Pages.SingletonBingMainPage
                 default:
                     throw new ArgumentException("You need to set a valid browser type.");
             }
+
             BrowserWait = new WebDriverWait(Browser, TimeSpan.FromSeconds(defaultTimeOut));
         }
 

@@ -15,7 +15,6 @@ using OpenQA.Selenium;
 
 namespace HuddlePageObjectsPartialClassesSingleton
 {
-
     public partial class BingMainPage
     {
         public IWebElement SearchBox => _driver.FindElement(By.Id("sb_form_q"));
