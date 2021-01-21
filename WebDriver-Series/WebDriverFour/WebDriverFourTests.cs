@@ -75,7 +75,7 @@ namespace WebDriverFour
             {
                 Assert.IsTrue(e.Request.Url.EndsWith("jpg"));
             };
-            
+
             RequestPattern requestPattern = new RequestPattern();
             requestPattern.InterceptionStage = InterceptionStage.HeadersReceived;
             requestPattern.ResourceType = ResourceType.Image;
@@ -94,7 +94,6 @@ namespace WebDriverFour
             devToolssession.Network.SetBlockedURLs(blockedUrlSettings);
 
             devToolssession.Performance.Enable();
-            
 
             IWebElement imageTitle = _driver.FindElement(By.XPath("//h2[text()='Falcon 9']"));
             IWebElement falconSalesButton = _driver.FindElement(RelativeBy.WithTagName("span").Below(imageTitle));
