@@ -24,8 +24,10 @@ namespace TemplateMethodDesignPattern.Pages.ShippingAddress.First
         private readonly WebDriverWait _driverWait;
 
         public ShippingAddressPage(IWebDriver driver)
-            : base(driver) 
-            => _driverWait = new WebDriverWait(Driver, new System.TimeSpan(0, 0, 30));
+            : base(driver)
+        {
+            _driverWait = new WebDriverWait(Driver, new System.TimeSpan(0, 0, 30));
+        }
 
         protected override string Url => string.Empty;
 

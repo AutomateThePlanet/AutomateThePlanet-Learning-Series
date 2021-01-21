@@ -19,7 +19,7 @@ namespace TemplateMethodDesignPattern.Pages.SignIn.First
 {
     public partial class SignInPage : WebPage, ISignInPage
     {
-        public SignInPage(IWebDriver driver) 
+        public SignInPage(IWebDriver driver)
             : base(driver)
         {
         }

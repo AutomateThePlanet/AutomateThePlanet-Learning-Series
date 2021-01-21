@@ -20,7 +20,7 @@ namespace TemplateMethodDesignPattern.Pages.ShippingAddress.Second
     {
         public void AssertSubtotalAmount(double expectedSubtotal)
         {
-            //AU $168.00
+            // AU $168.00
             Assert.AreEqual(expectedSubtotal, GetSubtotalAmount());
         }
     }

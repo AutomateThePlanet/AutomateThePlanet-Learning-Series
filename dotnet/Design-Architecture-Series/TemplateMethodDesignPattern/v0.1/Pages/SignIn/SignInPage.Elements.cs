@@ -18,7 +18,6 @@ namespace TemplateMethodDesignPattern.Pages.SignIn.First
 {
     public partial class SignInPage
     {
-
         public IWebElement ContinueAsGuestButton => Driver.FindElement(By.Id("gtChk"));
     }
 }

@@ -19,7 +19,7 @@ namespace TemplateMethodDesignPattern.Pages.Checkout.First
 {
     public partial class CheckoutPage : WebPage, ICheckoutPage
     {
-        public CheckoutPage(IWebDriver driver) 
+        public CheckoutPage(IWebDriver driver)
             : base(driver)
         {
         }

@@ -20,7 +20,7 @@ namespace TemplateMethodDesignPattern.Pages.Item.First
     {
         public void AssertPrice(double expectedPrice)
         {
-            //AU $168.00
+            // AU $168.00
             Assert.AreEqual(expectedPrice, GetPrice());
         }
     }
