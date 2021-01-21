@@ -19,7 +19,7 @@ using OpenQA.Selenium.Firefox;
 namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv22
 {
     [TestClass]
-    public class BingTests 
+    public class BingTests
     {
         private BingMainPage _bingMainPage;
         private IWebDriver _driver;

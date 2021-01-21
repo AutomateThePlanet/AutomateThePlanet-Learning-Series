@@ -38,7 +38,7 @@ namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv22
             SearchBox.SendKeys(textToType);
             GoButton.Click();
         }
-    
+
         public int GetResultsCount()
         {
             var resultsCount = default(int);

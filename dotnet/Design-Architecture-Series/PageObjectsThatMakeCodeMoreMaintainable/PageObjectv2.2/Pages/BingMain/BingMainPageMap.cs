@@ -23,7 +23,7 @@ namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv22
         {
         }
 
-        public IWebElement SearchBox 
+        public IWebElement SearchBox
         {
             get
             {
@@ -31,14 +31,14 @@ namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv22
             }
         }
 
-        public IWebElement GoButton 
+        public IWebElement GoButton
         {
             get
             {
                 return Driver.FindElement(By.Id("sb_form_go"));
             }
         }
-       
+
         public IWebElement ResultsCountDiv
         {
             get

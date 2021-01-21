@@ -19,7 +19,7 @@ using OpenQA.Selenium.Firefox;
 namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv21
 {
     [TestClass]
-    public class BingTests 
+    public class BingTests
     {
         private BingMainPage _bingMainPage;
         private IWebDriver _driver;
@@ -43,8 +43,8 @@ namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv21
             _bingMainPage.Open();
             _bingMainPage.Map.FeelingLuckyButton.Click();
             _driver.Navigate().Back();
-            _bingMainPage.Search("Automate The Planet");            
-            _bingMainPage.AssertResultsCountIsAsExpected(264);           
+            _bingMainPage.Search("Automate The Planet");
+            _bingMainPage.AssertResultsCountIsAsExpected(264);
         }
     }
 }
