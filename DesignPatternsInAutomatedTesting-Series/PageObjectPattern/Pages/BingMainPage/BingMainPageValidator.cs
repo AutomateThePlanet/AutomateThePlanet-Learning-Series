@@ -35,7 +35,7 @@ namespace PageObjectPattern.Pages
 
         public void ResultsCount(string expectedCount)
         {
-            Assert.IsTrue(Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
+            Assert.IsTrue(Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contain the specified text.");
         }
     }
 }

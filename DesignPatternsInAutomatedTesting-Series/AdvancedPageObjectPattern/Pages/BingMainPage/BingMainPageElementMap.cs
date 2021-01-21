@@ -30,7 +30,7 @@ namespace AdvancedPageObjectPattern.Pages.BingMainPage
         {
             get
             {
-                return Browser.FindElement(By.Id("sb_form_go"));
+                return Browser.FindElement(By.XPath("//label[@for='sb_form_go']"));
             }
         }
        
