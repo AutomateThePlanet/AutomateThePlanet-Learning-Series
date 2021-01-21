@@ -26,11 +26,10 @@ namespace HandlingParameters.Base
         public BasePage(IWebDriver driver)
         {
             Driver = driver;
-            // wait 30 seconds.
             DriverWait = new WebDriverWait(driver, new TimeSpan(0, 0, 30));
         }
 
-        public virtual string Url 
+        public virtual string Url
         {
             get
             {
@@ -44,6 +43,7 @@ namespace HandlingParameters.Base
             {
                 throw new ArgumentException("The main URL cannot be null or empty.");
             }
+
             Driver.Navigate().GoToUrl(string.Concat(Url, part));
         }
     }

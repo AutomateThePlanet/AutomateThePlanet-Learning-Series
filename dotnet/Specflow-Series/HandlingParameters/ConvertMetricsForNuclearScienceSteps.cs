@@ -12,12 +12,12 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
+using System;
 using HandlingParameters.Pages.CelsiusFahrenheitPage;
 using HandlingParameters.Pages.HomePage;
 using HandlingParameters.Pages.SecondsToMinutesPage;
-using Microsoft.Practices.Unity;
-using System;
 using TechTalk.SpecFlow;
+using Unity;
 
 namespace HandlingParameters
 {

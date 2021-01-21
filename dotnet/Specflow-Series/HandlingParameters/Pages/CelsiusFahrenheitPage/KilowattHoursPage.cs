@@ -21,7 +21,8 @@ namespace HandlingParameters.Pages.CelsiusFahrenheitPage
 {
     public partial class KilowattHoursPage : BasePage
     {
-        public KilowattHoursPage(IWebDriver driver) : base(driver)
+        public KilowattHoursPage(IWebDriver driver)
+            : base(driver)
         {
         }
 
@@ -44,6 +45,7 @@ namespace HandlingParameters.Pages.CelsiusFahrenheitPage
                     Enum.GetName(typeof(Format), format);
                 new SelectElement(Format).SelectByText(formatText);
             }
+
             DriverWait.Until(drv => Answer != null);
         }
     }

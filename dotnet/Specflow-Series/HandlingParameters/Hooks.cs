@@ -16,9 +16,10 @@ using HandlingParameters.Core;
 using HandlingParameters.Pages.CelsiusFahrenheitPage;
 using HandlingParameters.Pages.HomePage;
 using HandlingParameters.Pages.SecondsToMinutesPage;
-using Microsoft.Practices.Unity;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
+using Unity;
+using Unity.Lifetime;
 
 namespace HandlingParameters
 {

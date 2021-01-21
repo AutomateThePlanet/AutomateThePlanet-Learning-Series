@@ -11,12 +11,12 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
+using System.Collections.Generic;
 using HandlingParameters.Base;
 using HandlingParameters.Pages.ItemPage;
-using Microsoft.Practices.Unity;
-using System.Collections.Generic;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using Unity;
 
 namespace HandlingParameters
 {

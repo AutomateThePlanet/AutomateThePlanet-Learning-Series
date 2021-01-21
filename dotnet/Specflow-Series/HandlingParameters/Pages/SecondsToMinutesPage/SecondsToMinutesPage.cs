@@ -19,7 +19,8 @@ namespace HandlingParameters.Pages.SecondsToMinutesPage
 {
     public partial class SecondsToMinutesPage : BasePage
     {
-        public SecondsToMinutesPage(IWebDriver driver) : base(driver)
+        public SecondsToMinutesPage(IWebDriver driver)
+            : base(driver)
         {
         }
 

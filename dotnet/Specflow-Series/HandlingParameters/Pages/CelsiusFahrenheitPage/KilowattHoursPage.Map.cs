@@ -40,7 +40,7 @@ namespace HandlingParameters.Pages.CelsiusFahrenheitPage
                 return Driver.FindElement(By.Id("format"));
             }
         }
-        
+
         public IWebElement KilowatHoursToNewtonMetersAnchor
         {
             get

@@ -17,6 +17,6 @@ namespace HandlingParameters.Pages.CelsiusFahrenheitPage
     public enum Format
     {
         Fractions,
-        Decimal
+        Decimal,
     }
 }

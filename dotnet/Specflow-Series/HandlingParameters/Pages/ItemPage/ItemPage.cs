@@ -19,7 +19,8 @@ namespace HandlingParameters.Pages.ItemPage
 {
     public partial class ItemPage : BasePage
     {
-        public ItemPage(IWebDriver driver) : base(driver)
+        public ItemPage(IWebDriver driver)
+            : base(driver)
         {
         }
 
@@ -38,7 +39,6 @@ namespace HandlingParameters.Pages.ItemPage
 
         public void Navigate(string part)
         {
-            ///Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743
             Open(part);
         }
     }

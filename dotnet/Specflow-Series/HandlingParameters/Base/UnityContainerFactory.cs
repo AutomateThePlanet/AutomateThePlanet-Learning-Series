@@ -12,14 +12,14 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-using Microsoft.Practices.Unity;
+using Unity;
 
 namespace HandlingParameters.Base
 {
     public static class UnityContainerFactory
     {
         private static IUnityContainer _unityContainer;
-        
+
         static UnityContainerFactory()
         {
             _unityContainer = new UnityContainer();

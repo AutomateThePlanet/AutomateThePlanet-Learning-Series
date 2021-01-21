@@ -18,7 +18,7 @@ namespace HandlingParameters.Core
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
-        NotSet
+        Chrome,
+        NotSet,
     }
 }
