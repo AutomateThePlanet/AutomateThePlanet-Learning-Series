@@ -20,9 +20,9 @@ namespace FinishHimKillAllWebDrivers.Pages
     {
         private readonly IWebDriver _driver;
         private readonly string _url = @"http://www.bing.com/";
-        
+
         public BingMainPage(IWebDriver browser) => _driver = browser;
-        
+
         public void Navigate() => _driver.Navigate().GoToUrl(_url);
 
         public void Search(string textToType)

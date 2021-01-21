@@ -20,7 +20,7 @@ namespace FinishHimKillAllWebDrivers
 {
     public static class DisposeDriverService
     {
-        private static readonly List<string> _processesToCheck = 
+        private static readonly List<string> _processesToCheck =
             new List<string>
             {
                 "opera",
@@ -28,10 +28,8 @@ namespace FinishHimKillAllWebDrivers
                 "firefox",
                 "ie",
                 "gecko",
-                "phantomjs",
                 "edge",
-                "microsoftwebdriver",
-                "webdriver"
+                "edgedriver",
             };
 
         public static DateTime? TestRunStartTime { get; set; }
