@@ -18,7 +18,6 @@ namespace WebDriverCsharpSeven.LocalFunctions
     public partial class ShippingAddressPage
     {
         private readonly IWebDriver _driver;
-        private readonly string _url = @"http://www.amazon.com/shippingPage";
 
         // Prior C# 7.0
         ////public ShippingAddressPage(IWebDriver browser)
@@ -30,7 +29,6 @@ namespace WebDriverCsharpSeven.LocalFunctions
         public ShippingAddressPage(IWebDriver driver) => _driver = driver;
 
         // some other actions
-
         private void FillAddressInfoInternal(ClientPurchaseInfo clientInfo)
         {
             Country = clientInfo.Country;

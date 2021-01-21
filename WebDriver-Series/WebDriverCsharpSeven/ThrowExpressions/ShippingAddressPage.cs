@@ -19,7 +19,6 @@ namespace WebDriverCsharpSeven.ThrowExpressions
     public partial class ShippingAddressPage
     {
         private readonly IWebDriver _driver;
-        private readonly string _url = @"http://www.amazon.com/shippingPage";
 
         // Prior C# 7.0
         ////public ShippingAddressPage(IWebDriver driver)

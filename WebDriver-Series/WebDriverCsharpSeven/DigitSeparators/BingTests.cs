@@ -27,6 +27,7 @@ namespace WebDriverCsharpSeven.DigitSeparators
         public void SetupTest()
         {
             _driver = new FirefoxDriver();
+
             // Prior C# 7.0
             ////driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(30000);
             // C# 7.0
@@ -45,6 +46,7 @@ namespace WebDriverCsharpSeven.DigitSeparators
             var bingMainPage = new BingMainPage(_driver);
             bingMainPage.Navigate();
             bingMainPage.Search("Automate The Planet");
+
             // Prior C# 7.0
             ////bingMainPage.AssertResultsCount(236000);
             // C# 7.0
