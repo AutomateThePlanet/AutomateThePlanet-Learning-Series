@@ -19,7 +19,7 @@ namespace FluentPageObjectPattern
 {
     [TestClass]
     public class FluentBingTests
-    { 
+    {
         [TestInitialize]
         public void SetupTest()
         {

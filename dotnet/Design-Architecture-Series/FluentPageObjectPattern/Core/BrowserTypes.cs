@@ -18,7 +18,7 @@ namespace FluentPageObjectPattern.Core
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
+        Chrome,
         NotSet
     }
 }

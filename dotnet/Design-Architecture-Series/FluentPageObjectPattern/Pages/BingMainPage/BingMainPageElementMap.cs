@@ -20,7 +20,7 @@ namespace FluentPageObjectPattern.Pages.BingMainPage
 {
     public class BingMainPageElementMap : BasePageElementMap
     {
-        public IWebElement SearchBox 
+        public IWebElement SearchBox
         {
             get
             {
@@ -28,14 +28,14 @@ namespace FluentPageObjectPattern.Pages.BingMainPage
             }
         }
 
-        public IWebElement GoButton 
+        public IWebElement GoButton
         {
             get
             {
                 return Browser.FindElement(By.Id("sb_form_go"));
             }
         }
-       
+
         public IWebElement ResultsCountDiv
         {
             get

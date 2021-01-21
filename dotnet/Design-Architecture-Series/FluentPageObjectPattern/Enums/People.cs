@@ -18,6 +18,6 @@ namespace FluentPageObjectPattern.Enums
     {
         All,
         JustFaces,
-        HeadShoulders        
+        HeadShoulders
     }
 }
