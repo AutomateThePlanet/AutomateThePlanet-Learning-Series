@@ -14,7 +14,7 @@ using System;
 using System.Collections.ObjectModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
+using EW = SeleniumExtras.WaitHelpers;
 
 namespace ProxyDesignPattern
 {
@@ -27,23 +27,23 @@ namespace ProxyDesignPattern
         {
             _driver = driver;
             var timeout = TimeSpan.FromSeconds(30);
-            var sleepInterval = TimeSpan.FromSeconds(2);
-            _webDriverWait = new WebDriverWait(new SystemClock(), _driver, timeout, sleepInterval);
+            _webDriverWait = new WebDriverWait(_driver, timeout);
         }
 
         public IWebElement FindElement(By @by)
         {
-            return _webDriverWait.Until(ExpectedConditions.ElementExists(@by));
+            return _webDriverWait.Until(EW.ExpectedConditions.ElementExists(@by));
         }
 
         public ReadOnlyCollection<IWebElement> FindElements(By @by)
         {
-            return _webDriverWait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(@by));
+            return _webDriverWait.Until(EW.ExpectedConditions.PresenceOfAllElementsLocatedBy(@by));
         }
 
         public void Dispose()
         {
             _driver.Dispose();
+            GC.SuppressFinalize(this);
         }
 
         public void Close()
@@ -71,8 +71,8 @@ namespace ProxyDesignPattern
             return _driver.SwitchTo();
         }
 
-        public string Url 
-        { 
+        public string Url
+        {
             get => _driver.Url;
             set => _driver.Url = value;
         }
