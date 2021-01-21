@@ -32,7 +32,7 @@ namespace WebDriverTestsDockerSelenoid
         public void SetupTest()
         {
             var driverOptions = new ChromeOptions();
-         
+
             var runName = GetType().Assembly.GetName().Name;
             var timestamp = $"{DateTime.Now:yyyyMMdd.HHmm}";
 
