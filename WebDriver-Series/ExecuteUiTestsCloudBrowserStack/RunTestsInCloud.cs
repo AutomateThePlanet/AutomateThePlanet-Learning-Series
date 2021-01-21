@@ -42,7 +42,7 @@ namespace ExecuteUiTestsCloudBrowserStack
             options.AddAdditionalCapability("browser_version", "65.0");
             options.AddAdditionalCapability("resolution", "1366x768");
             options.AddAdditionalCapability("browserstack.video", "false");
-            
+
             options.AddAdditionalCapability("build", "version1");
             options.AddAdditionalCapability("project", "AutomateThePlanet");
 
@@ -50,7 +50,8 @@ namespace ExecuteUiTestsCloudBrowserStack
             options.AddAdditionalCapability("browserstack.key", _authkey);
 
             _driver = new RemoteWebDriver(new Uri("http://hub-cloud.browserstack.com/wd/hub/"), options);
-            //_driver = new ChromeDriver();
+
+            ////_driver = new ChromeDriver();
             ////_driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
         }
 
