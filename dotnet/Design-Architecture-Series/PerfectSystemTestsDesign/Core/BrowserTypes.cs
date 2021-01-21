@@ -17,7 +17,7 @@ namespace PerfectSystemTestsDesign.Core
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
+        Chrome,
         NotSet
     }
 }

@@ -23,7 +23,7 @@ namespace PerfectSystemTestsDesign.Behaviours
 
         public ShippingPaymentPageContinueBehaviour()
         {
-            _shippingPaymentPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>(); 
+            _shippingPaymentPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>();
         }
 
         protected override void PerformAct()

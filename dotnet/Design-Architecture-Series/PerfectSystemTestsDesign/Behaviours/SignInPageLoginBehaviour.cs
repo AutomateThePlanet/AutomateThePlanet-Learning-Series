@@ -27,7 +27,7 @@ namespace PerfectSystemTestsDesign.Behaviours
         public SignInPageLoginBehaviour(Data.ClientLoginInfo clientLoginInfo)
         {
             _signInPage = Base.UnityContainerFactory.GetContainer().Resolve<SignInPage>();
-            _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>(); 
+            _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
             _clientLoginInfo = clientLoginInfo;
         }
 
