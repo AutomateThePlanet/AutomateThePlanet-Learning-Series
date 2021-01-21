@@ -31,14 +31,15 @@ namespace WhichWorksFasterNullDefault
             {
                 actionToProfile();
             }
+
             watch.Stop();
-          
+
             return watch.Elapsed;
         }
 
         public static string FormatProfileResults(long iterations, TimeSpan profileResults)
         {
-            var sb = new stringBuilder();
+            var sb = new StringBuilder();
             sb.AppendLine(string.Format("Total: {0:0.00} ms ({1:N0} ticks) (over {2:N0} iterations)",
               profileResults.TotalMilliseconds, profileResults.Ticks, iterations));
             var avgElapsedMillisecondsPerRun = profileResults.TotalMilliseconds / (double)iterations;
