@@ -15,28 +15,26 @@
 // 16.  Sort System Directives First
 
 // dotnet_sort_system_directives_first = false
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
 
 //// dotnet_sort_system_directives_first = true
-//using System;
-//using System.Collections.Generic;
-
-
+////using System;
+////using System.Collections.Generic;
 namespace CodingStandardsEditorConfig
 {
     public class SampleRulesCode
     {
-        delegate void SpaceshipFire(string fuelType);
+        private delegate void SpaceshipFire(string fuelType);
 
         public void TestMethod()
         {
             // 1. Indent Case Content
             bool isEarthRound = false;
-            
+
             // csharp_indent_block_contents = true
             if (isEarthRound)
             {
@@ -46,11 +44,10 @@ namespace CodingStandardsEditorConfig
             // csharp_indent_block_contents = false
             if (isEarthRound)
             {
-            var answerOfUniverse = 42;
+                var answerOfUniverse = 42;
             }
 
             // 2. Indent Block Contents
-
             var answerOfEverything = 42;
 
             // csharp_indent_case_contents = true
@@ -66,9 +63,9 @@ namespace CodingStandardsEditorConfig
             switch (answerOfEverything)
             {
                 case 42:
-                break;
+                    break;
                 case 13:
-                break;
+                    break;
             }
 
             // 3. Prefer Braces
@@ -80,7 +77,7 @@ namespace CodingStandardsEditorConfig
             }
 
             // csharp_prefer_braces = false:error
-            //if (isEarthRound)
+            ////if (isEarthRound)
             //    return;
 
             // 4. Space After Keywords in Control Flow Statements
@@ -95,11 +92,11 @@ namespace CodingStandardsEditorConfig
             }
 
             // csharp_space_after_keywords_in_control_flow_statements = false
-            if(isEarthRound)
+            if (isEarthRound)
             {
             }
 
-            while(isEarthRound)
+            while (isEarthRound)
             {
             }
 
@@ -121,15 +118,15 @@ namespace CodingStandardsEditorConfig
             // 12. Style Throw Expression
 
             // csharp_style_throw_expression = true:error
-            FuelType = fuelType ?? throw new ArgumentNullException(nameof(FuelType));
+            FuelType = _fuelType ?? throw new ArgumentNullException(nameof(FuelType));
 
             // csharp_style_throw_expression = false:error
-            if (fuelType == null)
+            if (_fuelType == null)
             {
-                throw new ArgumentNullException(nameof(fuelType));
+                throw new ArgumentNullException(nameof(_fuelType));
             }
 
-            this.FuelType = fuelType;
+            FuelType = _fuelType;
 
             // 13. Style var Elsewhere
 
@@ -153,7 +150,7 @@ namespace CodingStandardsEditorConfig
             var robots = new List<int>();
 
             // csharp_style_var_when_type_is_apparent = false:error
-            //List<int> robots = new List<int>();
+            ////List<int> robots = new List<int>();
 
             // 17. Style Coalesce Expression
 
@@ -170,71 +167,68 @@ namespace CodingStandardsEditorConfig
             var shieldsPower = new List<int> { 42, 13 };
 
             // dotnet_style_collection_initializer = false:error
-            //var shieldsPower = new List<int>();
-            //shieldsPower.Add(42);
-            //shieldsPower.Add(13);
+            ////var shieldsPower = new List<int>();
+            ////shieldsPower.Add(42);
+            ////shieldsPower.Add(13);
 
             // 19. Style null Propagation
-
             var spaceShipFactory = new SpaceShipFactory();
 
             // dotnet_style_null_propagation = true:error
             var smallSpaceShip = spaceShipFactory?.Build();
 
             // dotnet_style_null_propagation = false:error
-            //var smallSpaceShip = spaceShipFactory == null ? null : spaceShipFactory.Build();
+            ////var smallSpaceShip = spaceShipFactory == null ? null : spaceShipFactory.Build();
 
             // 20. Style Object Initializer
 
             // dotnet_style_object_initializer = true:error
             var bigSpaceShip = new SpaceShip
             {
-                Name = "Meissa"
+                Name = "Meissa",
             };
 
             // dotnet_style_object_initializer = false:error
-            //var bigSpaceShip = new SpaceShip();
-            //bigSpaceShip.Name = "Meissa";
+            ////var bigSpaceShip = new SpaceShip();
+            ////bigSpaceShip.Name = "Meissa";
 
             // 22. Prefer NOT to use this.
 
             //// dotnet_style_qualification_for_event = false:error
-            //FireRocket += OnFireRocket;
+            ////FireRocket += OnFireRocket;
             //// dotnet_style_qualification_for_field = false:error
-            //rocketSize = 42;
+            ////rocketSize = 42;
             //// dotnet_style_qualification_for_method = false:error
-            //FireRocket();
+            ////FireRocket();
             //// dotnet_style_qualification_for_property = false:error
-            //RocketSize = 42;
+            ////RocketSize = 42;
 
             //// dotnet_style_qualification_for_event = true:error
-            //this.FireRocket += OnFireRocket;
+            ////this.FireRocket += OnFireRocket;
             //// dotnet_style_qualification_for_field = true:error
-            //this.rocketSize = 42;
+            ////this.rocketSize = 42;
             //// dotnet_style_qualification_for_method = true:error
-            //this.FireRocket();
+            ////this.FireRocket();
             //// dotnet_style_qualification_for_property = true:error
-            //this.RocketSize = 42;
+            ////this.RocketSize = 42;
         }
 
         // 21. Style Predefined Type
 
         //// dotnet_style_predefined_type_for_member_access = true:error
-        //var ringSize = int.MinValue;
+        ////var ringSize = int.MinValue;
 
         //// dotnet_style_predefined_type_for_locals_parameters_members = true:error
-        //public void MeasureRingSize(int width)
-        //{
-        //}
+        ////public void MeasureRingSize(int width)
+        ////{
+        ////}
 
         //// dotnet_style_predefined_type_for_member_access = false:error
-        //var ringSize = Int32.MinValue;
+        ////var ringSize = Int32.MinValue;
         //// dot-net_style_predefined_type_for_locals_parameters_members = false:error
-        //public void MeasureRingSize(Int32 width)
-        //{
-        //}
-
-
+        ////public void MeasureRingSize(Int32 width)
+        ////{
+        ////}
         private int CalculateMoonSize()
         {
             throw new NotImplementedException();
@@ -242,25 +236,25 @@ namespace CodingStandardsEditorConfig
 
         // 7. Style Expression Bodied Accessors
         // csharp_style_expression_bodied_accessors = true:error
-        private int? fuelType;
+        private int? _fuelType;
         public int? FuelType
         {
-            get => this.fuelType;
-            set => this.fuelType = value;
+            get => _fuelType;
+            set => _fuelType = value;
         }
 
         // csharp_style_expression_bodied_accessors = false:error
-        private int fuelType1;
+        private int _fuelType1;
         public int FuelType1
         {
-            get { return this.fuelType1; }
-            set { this.fuelType1 = value; }
+            get { return _fuelType1; }
+            set { _fuelType1 = value; }
         }
 
         // 8. Style Expression Bodied Constructors
 
         // csharp_style_expression_bodied_constructors = true:error
-        //public SampleRulesCode() => FuelType1 = 100;
+        ////public SampleRulesCode() => FuelType1 = 100;
 
         // csharp_style_expression_bodied_constructors = false:error
         public SampleRulesCode()
@@ -274,10 +268,10 @@ namespace CodingStandardsEditorConfig
         public int this[int i] => 42;
 
         // csharp_style_expression_bodied_indexers = false:error
-        //public int this[int i]
-        //{
-        //    get { return 42; }
-        //}
+        ////public int this[int i]
+        ////{
+        ////    get { return 42; }
+        ////}
 
         // 10. Style Expression Bodied Methods
 
@@ -285,10 +279,10 @@ namespace CodingStandardsEditorConfig
         public int CalculateAnswerOfEverything() => 42;
 
         // csharp_style_expression_bodied_methods = false:error
-        //public int CalculateAnswerOfEverything()
-        //{
-        //    return 42;
-        //}
+        ////public int CalculateAnswerOfEverything()
+        ////{
+        ////    return 42;
+        ////}
 
         // 11. Style Expression Bodied Properties
 
@@ -300,19 +294,13 @@ namespace CodingStandardsEditorConfig
         {
             get { return 13; }
         }
-
-        
-
-
-        }
-
-        // 5. Space before Colon in Inheritance Clause
-
-        //// csharp_space_before_colon_in_inheritance_clause = true
-        //public class SpaceShipOne : Rocket
-
-        //// csharp_space_before_colon_in_inheritance_clause = false
-        //public class SpaceShipOne: Rocket
-
-
     }
+
+    // 5. Space before Colon in Inheritance Clause
+
+    //// csharp_space_before_colon_in_inheritance_clause = true
+    ////public class SpaceShipOne : Rocket
+
+    //// csharp_space_before_colon_in_inheritance_clause = false
+    ////public class SpaceShipOne: Rocket
+}

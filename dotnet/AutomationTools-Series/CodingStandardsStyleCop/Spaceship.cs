@@ -11,6 +11,7 @@ namespace CodingStandardsStyleCop
         public void NavigateToSpace()
         {
         }
+
         public bool HasFuel
         {
             get { return true; }
