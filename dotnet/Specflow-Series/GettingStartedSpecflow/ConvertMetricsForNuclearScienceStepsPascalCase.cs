@@ -26,31 +26,31 @@ namespace GettingStartedSpecflow
     ////    {
     ////        ScenarioContext.Current.Pending();
     ////    }
-        
+
     ////    [When]
     ////    public void WhenNavigateToEnergyAndPowerSection()
     ////    {
     ////        ScenarioContext.Current.Pending();
     ////    }
-        
+
     ////    [When]
     ////    public void WhenNavigateToKilowattHours()
     ////    {
     ////        ScenarioContext.Current.Pending();
     ////    }
-        
+
     ////    [When]
     ////    public void WhenChooseConversionsToNewtonMeters()
     ////    {
     ////        ScenarioContext.Current.Pending();
     ////    }
-        
+
     ////    [When]
     ////    public void WhenType_P0_KWh(int p0)
     ////    {
     ////        ScenarioContext.Current.Pending();
     ////    }
-        
+
     ////    [Then]
     ////    public void ThenAssertThat_P0_NmAreDisplayedAsAnswer(string p0)
     ////    {

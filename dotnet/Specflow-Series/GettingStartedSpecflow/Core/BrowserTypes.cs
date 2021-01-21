@@ -18,7 +18,7 @@ namespace GettingStartedSpecflow.Core
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
-        NotSet
+        Chrome,
+        NotSet,
     }
 }

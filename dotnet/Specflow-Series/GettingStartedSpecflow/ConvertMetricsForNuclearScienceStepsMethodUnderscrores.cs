@@ -16,44 +16,44 @@ using TechTalk.SpecFlow;
 
 namespace GettingStartedSpecflow
 {
-    // Specflow Auto-Generated Binding Steps with Method Name Underscore.
-    //[Binding]
-    //public class ConvertMetricsForNuclearScienceStepsMethodUnderscrores
-    //{
-    //    [When]
-    //    public void When_I_navigate_to_Metric_Conversions()
-    //    {
-    //        ScenarioContext.Current.Pending();
-    //    }
-        
-    //    [When]
-    //    public void When_navigate_to_Energy_and_power_section()
-    //    {
-    //        ScenarioContext.Current.Pending();
-    //    }
-        
-    //    [When]
-    //    public void When_navigate_to_Kilowatt_hours()
-    //    {
-    //        ScenarioContext.Current.Pending();
-    //    }
-        
-    //    [When]
-    //    public void When_choose_conversions_to_Newton_meters()
-    //    {
-    //        ScenarioContext.Current.Pending();
-    //    }
-        
-    //    [When]
-    //    public void When_type_P0_kWh(int p0)
-    //    {
-    //        ScenarioContext.Current.Pending();
-    //    }
-        
-    //    [Then]
-    //    public void Then_assert_that_P0_Nm_are_displayed_as_answer(string p1)
-    //    {
-    //        ScenarioContext.Current.Pending();
-    //    }
-    //}
+    //// Specflow Auto-Generated Binding Steps with Method Name Underscore.
+    ////[Binding]
+    ////public class ConvertMetricsForNuclearScienceStepsMethodUnderscrores
+    ////{
+    ////    [When]
+    ////    public void When_I_navigate_to_Metric_Conversions()
+    ////    {
+    ////        ScenarioContext.Current.Pending();
+    ////    }
+
+    ////    [When]
+    ////    public void When_navigate_to_Energy_and_power_section()
+    ////    {
+    ////        ScenarioContext.Current.Pending();
+    ////    }
+
+    ////    [When]
+    ////    public void When_navigate_to_Kilowatt_hours()
+    ////    {
+    ////        ScenarioContext.Current.Pending();
+    ////    }
+
+    ////    [When]
+    ////    public void When_choose_conversions_to_Newton_meters()
+    ////    {
+    ////        ScenarioContext.Current.Pending();
+    ////    }
+
+    ////    [When]
+    ////    public void When_type_P0_kWh(int p0)
+    ////    {
+    ////        ScenarioContext.Current.Pending();
+    ////    }
+
+    ////    [Then]
+    ////    public void Then_assert_that_P0_Nm_are_displayed_as_answer(string p1)
+    ////    {
+    ////        ScenarioContext.Current.Pending();
+    ////    }
+    //// }
 }
