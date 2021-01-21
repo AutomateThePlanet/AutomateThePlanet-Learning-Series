@@ -22,7 +22,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
             if (!string.IsNullOrEmpty(shipName))
             {
                 ShipName = shipName;
-            }            
+            }
         }
 
         public Order()

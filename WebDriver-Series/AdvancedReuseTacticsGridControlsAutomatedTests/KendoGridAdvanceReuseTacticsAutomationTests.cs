@@ -32,7 +32,6 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
         private GridTestCases.GridPagerAsserter _gridPagerAsserter;
 
         // TODO: Fix Pages URLs
-
         [TestInitialize]
         public void SetupTest()
         {
@@ -52,46 +51,45 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
             _driver.Quit();
         }
 
-        // ** OrderID Test Cases (Unique Identifier Type Column Test Cases) ** 
-        
-        #region OrderID Test Cases 
-        
+        // ** OrderID Test Cases (Unique Identifier Type Column Test Cases) **
+        #region OrderID Test Cases
+
         [TestMethod]
         public void OrderIdEqualToFilter()
         {
             _orderIdColumnAsserter.OrderIdEqualToFilter();
         }
-        
+
         [TestMethod]
         public void OrderIdGreaterThanOrEqualToFilter()
         {
             _orderIdColumnAsserter.OrderIdGreaterThanOrEqualToFilter();
         }
-        
+
         [TestMethod]
         public void OrderIdGreaterThanFilter()
         {
             _orderIdColumnAsserter.OrderIdGreaterThanFilter();
         }
-        
+
         [TestMethod]
         public void OrderIdLessThanOrEqualToFilter()
         {
             _orderIdColumnAsserter.OrderIdLessThanOrEqualToFilter();
         }
-        
+
         [TestMethod]
         public void OrderIdLessThanFilter()
         {
             _orderIdColumnAsserter.OrderIdLessThanFilter();
         }
-        
+
         [TestMethod]
         public void OrderIdNotEqualToFilter()
         {
             _orderIdColumnAsserter.OrderIdNotEqualToFilter();
         }
-        
+
         [TestMethod]
         public void OrderIdClearFilter()
         {
@@ -101,7 +99,6 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
         #endregion
 
         // ** OrderDate Test Cases ** (Date Type Column Test Cases)
-        
         #region OrderDate Test Cases
 
         [TestMethod]
@@ -157,97 +154,95 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
         {
             _orderDateColumnAsserter.OrderDateSortDesc();
         }
-        
+
         #endregion
-        
+
         // ** ShipName Test Cases) ** (Text Type Column Test Cases)
-        
         #region ShipName Test Cases
-        
+
         [TestMethod]
         public void ShipNameEqualToFilter()
         {
             _shipNameColumnAsserter.ShipNameEqualToFilter();
         }
-        
+
         [TestMethod]
         public void ShipNameContainsFilter()
         {
             _shipNameColumnAsserter.ShipNameContainsFilter();
         }
-        
+
         [TestMethod]
         public void ShipNameEndsWithFilter()
         {
             _shipNameColumnAsserter.ShipNameEndsWithFilter();
         }
-        
+
         [TestMethod]
         public void ShipNameStartsWithFilter()
         {
             _shipNameColumnAsserter.ShipNameStartsWithFilter();
         }
-        
+
         [TestMethod]
         public void ShipNameNotEqualToFilter()
         {
             _shipNameColumnAsserter.ShipNameNotEqualToFilter();
         }
-        
+
         [TestMethod]
         public void ShipNameNotContainsFilter()
         {
             _shipNameColumnAsserter.ShipNameNotContainsFilter();
         }
-        
+
         [TestMethod]
         public void ShipNameClearFilter()
         {
             _shipNameColumnAsserter.ShipNameClearFilter();
         }
-        
-        #endregion      
-        
-        // ** Freight Test Cases ** (Money Type Column Test Cases)
 
+        #endregion
+
+        // ** Freight Test Cases ** (Money Type Column Test Cases)
         #region Freight Test Cases
-        
+
         [TestMethod]
         public void FreightEqualToFilter()
         {
             _freightColumnAsserter.FreightEqualToFilter();
         }
-        
+
         [TestMethod]
         public void FreightGreaterThanOrEqualToFilter()
         {
             _freightColumnAsserter.FreightGreaterThanOrEqualToFilter();
         }
-        
+
         [TestMethod]
         public void FreightGreaterThanFilter()
         {
             _freightColumnAsserter.FreightGreaterThanFilter();
         }
-        
+
         [TestMethod]
         public void FreightLessThanOrEqualToFilter()
         {
             _freightColumnAsserter.FreightLessThanOrEqualToFilter();
         }
-        
+
         [TestMethod]
         public void FreightLessThanFilter()
         {
             _freightColumnAsserter.FreightLessThanFilter();
         }
-        
+
         [TestMethod]
         public void FreightNotEqualToFilter()
         {
             _freightColumnAsserter.FreightNotEqualToFilter();
         }
-        
+
         [TestMethod]
         public void FreightClearFilter()
         {
@@ -255,11 +250,10 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
         }
 
         #endregion
-        
+
         // ** Paging Test Cases **
-        
         #region Paging Test Cases
-        
+
         [TestMethod]
         public void NavigateToFirstPage_GoToFirstPageButton()
         {
@@ -337,7 +331,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
         {
             _gridPagerAsserter.NextMorePageButtonDisabled_WhenLastPageIsLoaded();
         }
-        
+
         #endregion
     }
 }

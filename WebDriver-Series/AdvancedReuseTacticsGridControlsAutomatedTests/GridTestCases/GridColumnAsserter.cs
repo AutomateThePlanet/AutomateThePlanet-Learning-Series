@@ -45,7 +45,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
                     return expectedCount == items.Count;
                 });
         }
-            
+
         protected void WaitForGridToLoadAtLeast(int expectedCount, KendoGrid grid)
         {
             Until(
@@ -55,7 +55,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
                     return items.Count >= expectedCount;
                 });
         }
-            
+
         protected void Until(Func<bool> condition, int timeout = 10, string exceptionMessage = "Timeout exceeded.", int retryRateDelay = 50)
         {
             var start = DateTime.Now;
@@ -67,10 +67,11 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
                 {
                     throw new TimeoutException(exceptionMessage);
                 }
+
                 Thread.Sleep(retryRateDelay);
             }
         }
-            
+
         protected List<Order> GetAllItemsFromDb()
         {
             // Create dummy orders. This logic should be replaced with service oriented call to your DB and get all items that are populated in the grid.
@@ -79,6 +80,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             {
                 orders.Add(new Order());
             }
+
             return orders;
         }
 
@@ -87,12 +89,12 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             // Replace it with service oriented call to your DB. Create real enity in DB.
             return new Order(shipName);
         }
-            
+
         protected void UpdateItemInDb(Order order)
         {
             // Replace it with service oriented call to your DB. Update the enity in the DB.
         }
-            
+
         protected int GetUniqueNumberValue()
         {
             var currentTime = DateTime.Now;

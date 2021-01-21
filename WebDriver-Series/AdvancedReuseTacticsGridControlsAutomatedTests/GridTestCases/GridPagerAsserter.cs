@@ -23,7 +23,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
     {
         private string _uniqueShippingName;
         private List<Order> _testPagingItems;
-        
+
         public GridPagerAsserter(Pages.IGridPage gridPage) : base(gridPage)
         {
         }
@@ -36,7 +36,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             GridPage.GoToFirstPageButton.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
             var results = GridPage.Grid.GetItems<Order>();
-        
+
             Assert.AreEqual(_testPagingItems[targetPage - 1].OrderId, results.First().OrderId);
             AssertPagerInfoLabel(targetPage, targetPage, _testPagingItems.Count());
         }
@@ -126,7 +126,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             var targetPage = 1;
             GridPage.GoToFirstPageButton.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
-        
+
             Assert.IsFalse(GridPage.GoToFirstPageButton.Enabled);
         }
 
@@ -137,7 +137,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             var targetPage = 1;
             GridPage.GoToFirstPageButton.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
-        
+
             Assert.IsFalse(GridPage.GoToPreviousPage.Enabled);
         }
 
@@ -148,7 +148,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             var targetPage = 1;
             GridPage.GoToFirstPageButton.Click();
             WaitForPageToLoad(targetPage, GridPage.Grid);
-        
+
             Assert.IsFalse(GridPage.PreviousMorePages.Displayed);
         }
 
@@ -195,7 +195,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             WaitForPageToLoad(initialPageNumber, GridPage.Grid);
             AssertPagerInfoLabel(initialPageNumber, initialPageNumber, _testPagingItems.Count);
         }
-            
+
         private void AssertPagerInfoLabel(int startItems, int endItems, int totalItems)
         {
             var expectedLabel = string.Format("{0} - {1} of {2} items", startItems, endItems, totalItems);
@@ -209,6 +209,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             {
                 _uniqueShippingName = Guid.NewGuid().ToString();
             }
+
             _testPagingItems = new List<Order>();
             for (var i = 0; i < totalOrders; i++)
             {

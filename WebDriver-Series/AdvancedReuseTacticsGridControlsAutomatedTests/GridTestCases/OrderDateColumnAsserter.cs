@@ -60,7 +60,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             secondNewItem.OrderDate = lastOrderDate.AddDays(2);
             UpdateItemInDb(secondNewItem);
 
-            // After we filter by the unique shipping name, two items will be displayed in the grid. 
+            // After we filter by the unique shipping name, two items will be displayed in the grid.
             // After we apply the date after filter only the second item should be visible in the grid.
             GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderDate, FilterOperator.NotEqualTo, newItem.OrderDate.ToString()),
@@ -87,7 +87,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             secondNewItem.OrderDate = lastOrderDate.AddDays(2);
             UpdateItemInDb(secondNewItem);
 
-            // After we filter by the unique shipping name, two items will be displayed in the grid. 
+            // After we filter by the unique shipping name, two items will be displayed in the grid.
             // After we apply the date after filter only the second item should be visible in the grid.
             GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderDate, FilterOperator.IsAfter, newItem.OrderDate.ToString()),
@@ -114,7 +114,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             secondNewItem.OrderDate = lastOrderDate.AddDays(2);
             UpdateItemInDb(secondNewItem);
 
-            // After we filter by the unique shipping name, two items will be displayed in the grid. 
+            // After we filter by the unique shipping name, two items will be displayed in the grid.
             // After we apply the date after filter only the second item should be visible in the grid.
             GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderDate, FilterOperator.IsAfterOrEqualTo, newItem.OrderDate.ToString()),
@@ -142,7 +142,7 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests.GridTestCases
             secondNewItem.OrderDate = lastOrderDate.AddDays(-2);
             UpdateItemInDb(secondNewItem);
 
-            // After we filter by the unique shipping name, two items will be displayed in the grid. 
+            // After we filter by the unique shipping name, two items will be displayed in the grid.
             // After we apply the date after filter only the second item should be visible in the grid.
             GridPage.Grid.Filter(
                 new GridFilter(GridColumns.OrderDate, FilterOperator.IsBefore, newItem.OrderDate.ToString()),
