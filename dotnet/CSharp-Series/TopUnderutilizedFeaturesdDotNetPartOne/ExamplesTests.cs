@@ -80,7 +80,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
             Console.WriteLine("i equals now 0 because GetNullableInt() returned null => {0}", i);
             var s = TopUnderutilizedFeaturesdDotNetPartOne.DefaultValueOperatorExample.GetstringValue();
             Console.WriteLine("Returns 'Unspecified' because s is null => {0}", s ?? "Unspecified");
-        }       
+        }
 
         [TestMethod]
         public void WeakReferenceExample()
@@ -116,7 +116,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
             var tr = __makeref(i);
             var t = __reftype(tr);
             Console.WriteLine(t.ToString());
-            var rv = __refvalue( tr,int);
+            var rv = __refvalue(tr, int);
             Console.WriteLine(rv);
             ArglistTest.DisplayNumbersOnConsole(__arglist(1, 2, 3, 5, 6));
         }
@@ -141,6 +141,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
             {
                 possibleException = ExceptionDispatchInfo.Capture(ex);
             }
+
             if (possibleException != null)
             {
                 possibleException.Throw();
@@ -155,12 +156,15 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
             try
             {
                 var i = int.Parse(s);
-                if (i == 42) Environment.FailFast("Special number entered");
+                if (i == 42)
+                {
+                    Environment.FailFast("Special number entered");
+                }
             }
             finally
             {
                 Console.WriteLine("Program complete.");
-            } 
+            }
         }
 
         [TestMethod]
@@ -187,14 +191,14 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
             // 14.1. Parallel For example
             var nums = Enumerable.Range(0, 1000000).ToArray();
             long total = 0;
+
             // Use type parameter to make subtotal a long, not an int
             Parallel.For<long>(0, nums.Length, () => 0, (j, loop, subtotal) =>
             {
                 subtotal += nums[j];
                 return subtotal;
             },
-                (x) => Interlocked.Add(ref total, x)
-            );
+                (x) => Interlocked.Add(ref total, x));
             Console.WriteLine("The total is {0:N0}", total);
         }
 
@@ -208,11 +212,12 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
                                         () => 0, // method to initialize the local variable
                 (j, loop, subtotal) => // method invoked by the loop on each iteration
                 {
-                    subtotal += j; //modify local variable 
+                    subtotal += j; // modify local variable
                     return subtotal; // value to be passed to next iteration
                 },
-                // Method to be executed when each partition has completed. 
-                // finalResult is the final value of subtotal for a particular partition.
+
+             // Method to be executed when each partition has completed.
+            // finalResult is the final value of subtotal for a particular partition.
             (finalResult) => Interlocked.Add(ref total, finalResult));
             Console.WriteLine("The total from Parallel.ForEach is {0:N0}", total);
         }
@@ -221,7 +226,7 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
         public void IsInfinityExample()
         {
             // 15. IsInfinity example
-            Console.WriteLine("IsInfinity(3.0 / 0) == {0}.", Double.IsInfinity(3.0 / 0) ? "true" : "false");
+            Console.WriteLine("IsInfinity(3.0 / 0) == {0}.", double.IsInfinity(3.0 / 0) ? "true" : "false");
         }
     }
 }

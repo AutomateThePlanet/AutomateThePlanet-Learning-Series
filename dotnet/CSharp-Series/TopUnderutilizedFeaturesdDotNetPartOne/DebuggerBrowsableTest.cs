@@ -20,10 +20,10 @@ namespace TopUnderutilizedFeaturesdDotNetPartOne
         private static string squirrelFirstNameName;
         private static string squirrelLastNameName;
 
-        // The following DebuggerBrowsableAttribute prevents the property following it 
+        // The following DebuggerBrowsableAttribute prevents the property following it
         // from appearing in the debug window for the class.
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public static string SquirrelFirstNameName 
+        public static string SquirrelFirstNameName
         {
             get
             {
