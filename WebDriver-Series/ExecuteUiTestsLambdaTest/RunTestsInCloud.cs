@@ -18,7 +18,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using System;
 using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
 
 namespace ExecuteUiTestsLambdaTest
 {
@@ -33,7 +32,6 @@ namespace ExecuteUiTestsLambdaTest
         public void SetupTest()
         {
             var desiredCapabilities = new DesiredCapabilities();
-         
             desiredCapabilities.SetCapability("build", "1.0");
             desiredCapabilities.SetCapability("browserName", "Chrome");
             desiredCapabilities.SetCapability("platform", "win8");
