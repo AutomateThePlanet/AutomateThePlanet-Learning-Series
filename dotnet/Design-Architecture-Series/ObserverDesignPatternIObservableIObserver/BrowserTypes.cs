@@ -17,7 +17,7 @@ namespace ObserverDesignPatternIObservableIObserver
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
+        Chrome,
         NotSet
     }
 }

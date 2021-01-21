@@ -22,7 +22,7 @@ namespace ObserverDesignPatternIObservableIObserver
         public TestContext TestContext { get; set; }
 
         public MemberInfo MemberInfo { get; set; }
-        
+
         public ExecutionPhases ExecutionPhase { get; set; }
 
         public ExecutionStatus(TestContext testContext, ExecutionPhases executionPhase) : this(testContext, null, executionPhase)

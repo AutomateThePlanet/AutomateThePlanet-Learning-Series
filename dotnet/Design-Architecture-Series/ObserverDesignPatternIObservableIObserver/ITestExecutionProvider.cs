@@ -23,7 +23,7 @@ namespace ObserverDesignPatternIObservableIObserver
         void PostTestInit(TestContext context, MemberInfo memberInfo);
 
         void PreTestCleanup(TestContext context, MemberInfo memberInfo);
-        
+
         void PostTestCleanup(TestContext context, MemberInfo memberInfo);
 
         void TestInstantiated(MemberInfo memberInfo);

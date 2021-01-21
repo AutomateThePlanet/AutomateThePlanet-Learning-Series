@@ -44,6 +44,7 @@ namespace ObserverDesignPatternIObservableIObserver.Behaviors
             {
                 result = classBrowserType;
             }
+
             return result;
         }
 
@@ -54,6 +55,7 @@ namespace ObserverDesignPatternIObservableIObserver.Behaviors
             {
                 return executionBrowserAttribute.BrowserType;
             }
+
             return BrowserTypes.NotSet;
         }
 
@@ -64,6 +66,7 @@ namespace ObserverDesignPatternIObservableIObserver.Behaviors
             {
                 return executionBrowserAttribute.BrowserType;
             }
+
             return BrowserTypes.NotSet;
         }
     }

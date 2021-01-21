@@ -59,6 +59,7 @@ namespace ObserverDesignPatternIObservableIObserver
             {
                 _testBehaviorObservers.Add(observer);
             }
+
             return new Unsubscriber<ExecutionStatus>(_testBehaviorObservers, observer);
         }
 
@@ -78,6 +79,8 @@ namespace ObserverDesignPatternIObservableIObserver
             }
 
             _testBehaviorObservers.Clear();
+
+            GC.SuppressFinalize(this);
         }
     }
 }
