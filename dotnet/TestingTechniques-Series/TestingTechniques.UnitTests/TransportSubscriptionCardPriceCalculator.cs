@@ -32,12 +32,12 @@ namespace TestingTechniques.UnitTests
 
             if (!isInteger)
             {
-                throw new ArgumentException("The age input should be an integer value between 0 - 122.");    
+                throw new ArgumentException("The age input should be an integer value between 0 - 122.");
             }
 
             if (age <= 0)
             {
-                throw new ArgumentException("The age should be greater than zero."); 
+                throw new ArgumentException("The age should be greater than zero.");
             }
             else if (age > 0 && age <= 5)
             {
@@ -57,7 +57,7 @@ namespace TestingTechniques.UnitTests
             }
             else
             {
-                throw new ArgumentException("The age should be smaller than 123."); 
+                throw new ArgumentException("The age should be smaller than 123.");
             }
 
             return subscriptionPrice;
