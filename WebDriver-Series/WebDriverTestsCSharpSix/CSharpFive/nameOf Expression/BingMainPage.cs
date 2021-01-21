@@ -48,16 +48,19 @@ namespace WebDriverTestsCSharpSix.CSharpFive.NameOfExpression
         {
             _driver.Navigate().GoToUrl(Url);
         }
+
         public void Login(string email, string password)
         {
             if (string.IsNullOrEmpty(email))
             {
                 throw new ArgumentException("Email cannot be null or empty.");
             }
+
             if (string.IsNullOrEmpty(password))
             {
                 throw new ArgumentException("Password cannot be null or empty.");
             }
+
             // login the user
         }
     }

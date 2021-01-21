@@ -47,21 +47,25 @@ namespace WebDriverTestsCSharpSix.CSharpFive.StaticUsingSyntax
             {
                 email = UniqueEmailGenerator.BuildUniqueEmailTimestamp();
             }
+
             user.Email = email;
             Email.SendKeys(email);
             if (string.IsNullOrEmpty(password))
             {
                 password = TimestampBuilder.GenerateUniqueText();
             }
+
             user.Pass = password;
             Pass.SendKeys(password);
             if (string.IsNullOrEmpty(userName))
             {
                 userName = TimestampBuilder.GenerateUniqueText();
             }
+
             user.UserName = userName;
             UserName.SendKeys(userName);
             RegisterButton.Click();
+
             return user;
         }
     }

@@ -56,10 +56,12 @@ namespace WebDriverTestsCSharpSix.CSharpSix.NameOfExpression
             {
                 throw new ArgumentException(nameof(email) + " cannot be null or empty.");
             }
+
             if (string.IsNullOrEmpty(password))
             {
                 throw new ArgumentException(nameof(password) + " cannot be null or empty.");
             }
+
             // login the user
         }
 
@@ -69,6 +71,7 @@ namespace WebDriverTestsCSharpSix.CSharpSix.NameOfExpression
             {
                 throw new ArgumentException(nameof(textToType) + "cannot be null or empty.");
             }
+
             SearchBox.Clear();
             SearchBox.SendKeys(textToType);
             GoButton.Click();

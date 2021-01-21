@@ -19,7 +19,6 @@ namespace WebDriverTestsCSharpSix.CSharpFive.NullConditionalOperator
     public partial class ShippingAddressPage
     {
         private readonly IWebDriver _driver;
-        private readonly string _url = @"http://www.amazon.com/shippingPage";
 
         public ShippingAddressPage(IWebDriver browser)
         {
@@ -27,8 +26,7 @@ namespace WebDriverTestsCSharpSix.CSharpFive.NullConditionalOperator
             PageFactory.InitElements(browser, this);
         }
 
-       // some other actions
-
+        // some other actions
         private void FillAddressInfoInternal(ClientPurchaseInfo clientInfo)
         {
             Country.SelectByText(clientInfo.Country);
