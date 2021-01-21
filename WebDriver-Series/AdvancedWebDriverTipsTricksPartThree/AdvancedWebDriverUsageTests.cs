@@ -41,10 +41,11 @@ namespace AdvancedWebDriverTipsTricksPartThree
         {
             _driver = new FirefoxDriver();
             _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
+
             // 10 Advanced WebDriver Tips and Tricks Part 3
             // 1. Start FirefoxDriver with plugins
             ////FirefoxProfile profile = new FirefoxProfile();
-            ////profile.AddExtension(@"C:\extensionsLocation\extension.xpi"); 
+            ////profile.AddExtension(@"C:\extensionsLocation\extension.xpi");
             ////IWebDriver driver = new FirefoxDriver(profile);
             // 2. Set HTTP proxy ChromeDriver
             ////ChromeOptions options = new ChromeOptions();
@@ -54,7 +55,7 @@ namespace AdvancedWebDriverTipsTricksPartThree
             ////proxy.HttpProxy =
             ////proxy.SslProxy = "127.0.0.1:3239";
             ////options.Proxy = proxy;
-            ////options.AddArgument("ignore-certificate-errors"); 
+            ////options.AddArgument("ignore-certificate-errors");
             ////IWebDriver driver = new ChromeDriver(options);
             // 3. Set HTTP proxy with authentication ChromeDriver
             ////ChromeOptions options = new ChromeOptions();
