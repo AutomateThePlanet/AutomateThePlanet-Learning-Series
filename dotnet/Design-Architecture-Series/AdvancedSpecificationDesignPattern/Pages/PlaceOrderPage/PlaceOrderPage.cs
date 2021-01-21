@@ -56,8 +56,8 @@ namespace AdvancedSpecificationDesignPattern.Pages.PlaceOrderPage
 
         ////public void ChoosePaymentMethod()
         ////{
-        ////    if (!string.IsNullOrEmpty(this.purchaseTestInput.CreditCardNumber) 
-        ////        && !this.purchaseTestInput.IsWiretransfer 
+        ////    if (!string.IsNullOrEmpty(this.purchaseTestInput.CreditCardNumber)
+        ////        && !this.purchaseTestInput.IsWiretransfer
         ////        && !(this.purchaseTestInput.IsPromotionalPurchase && this.purchaseTestInput.TotalPrice < 5)
         ////        && !(this.purchaseTestInput.TotalPrice == 0))
         ////    {

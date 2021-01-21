@@ -27,6 +27,7 @@ namespace AdvancedSpecificationDesignPattern.Specifications
             {
                 throw new ArgumentNullException();
             }
+
             _expression = expression;
         }
 
