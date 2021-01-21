@@ -34,14 +34,13 @@ public class CaptureHttpTrafficTests {
     private void classInit() {
         proxyServer = new BrowserMobProxyServer();
         proxyServer.start(18882);
-        proxyServer.newHar();
 
         WebDriverManager.chromedriver().setup();
     }
 
     @AfterClass
     public void classCleanup() {
-        proxyServer.abort();
+        proxyServer.stop();
     }
 
     @BeforeMethod
@@ -54,11 +53,12 @@ public class CaptureHttpTrafficTests {
                 .setProxy(proxyConfig)
                 .setAcceptInsecureCerts(true);
         driver = new ChromeDriver(options);
+        proxyServer.newHar();
     }
 
     @AfterMethod
     public void testCleanup() {
-        driver.quit();
+        //driver.quit();
     }
 
     @Test
