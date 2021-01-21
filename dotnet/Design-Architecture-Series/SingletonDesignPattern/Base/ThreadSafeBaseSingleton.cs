@@ -39,6 +39,7 @@ namespace SingletonDesignPattern.Base
                         }
                     }
                 }
+
                 return _instance;
             }
         }

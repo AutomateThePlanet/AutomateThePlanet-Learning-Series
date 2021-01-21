@@ -19,7 +19,7 @@ namespace SingletonDesignPattern
 {
     [TestClass]
     public class AdvancedBingSingletonTests
-    { 
+    {
         [TestInitialize]
         public void SetupTest()
         {

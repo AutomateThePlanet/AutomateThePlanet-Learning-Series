@@ -19,7 +19,7 @@ namespace SingletonDesignPattern.Pages.BingMainPageSingletonDerived
 {
     public class BingMainPageElementMap : BasePageElementMap
     {
-        public IWebElement SearchBox 
+        public IWebElement SearchBox
         {
             get
             {
@@ -27,14 +27,14 @@ namespace SingletonDesignPattern.Pages.BingMainPageSingletonDerived
             }
         }
 
-        public IWebElement GoButton 
+        public IWebElement GoButton
         {
             get
             {
                 return Browser.FindElement(By.Id("sb_form_go"));
             }
         }
-       
+
         public IWebElement ResultsCountDiv
         {
             get
