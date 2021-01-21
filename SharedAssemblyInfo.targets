@@ -24,7 +24,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<CodeAnalysisRuleSet>../../StyleCopeRules.ruleset</CodeAnalysisRuleSet>
+		<CodeAnalysisRuleSet>../../../StyleCopeRules.ruleset</CodeAnalysisRuleSet>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -58,7 +58,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<AdditionalFiles Include="../../stylecop.json" Link="stylecop.json" />
-		<None Include="../../LICENSE.txt" Pack="true" PackagePath=""/>
+		<AdditionalFiles Include="../../../stylecop.json" Link="stylecop.json" />
+		<None Include="../../../LICENSE.txt" Pack="true" PackagePath=""/>
 	</ItemGroup>
 </Project>

@@ -1,7 +1,0 @@
-﻿<mui:ModernWindow x:Class="TestCaseManagerApp.Views.PrompDialogRichTextBoxWindow"
-                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-                  Title="PrompDialog" Height="650" Width="800" ContentSource="/Views/PrompDialogRichTextBoxUserControl.xaml" WindowStartupLocation="CenterOwner" Closing="ModernWindow_Closing">
-
-</mui:ModernWindow>
