@@ -18,7 +18,7 @@ namespace AdvancedNullObjectDesignPattern.Core
     {
         Firefox,
         InternetExplorer,
-        Chrome, 
+        Chrome,
         NotSet
     }
 }

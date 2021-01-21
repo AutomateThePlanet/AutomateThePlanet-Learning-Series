@@ -69,8 +69,10 @@ namespace AdvancedNullObjectDesignPattern.Base
                 _purchasePromotionalCodeStrategy.AssertPromotionalCodeDiscount();
                 couponDiscount = _purchasePromotionalCodeStrategy.GetPromotionalCodeDiscountAmount();
             }
+
             var totalPrice = double.Parse(itemPrice);
             _placeOrderPage.AssertOrderTotalPrice(totalPrice, couponDiscount);
+
             // Some other actions...
             if (_purchasePromotionalCodeStrategy != null)
             {

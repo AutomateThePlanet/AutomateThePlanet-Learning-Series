@@ -28,6 +28,7 @@ namespace AdvancedNullObjectDesignPattern.SingletonStrategies
                 {
                     _instance = new NullPurchasePromotionalCodeStrategy();
                 }
+
                 return _instance;
             }
         }
