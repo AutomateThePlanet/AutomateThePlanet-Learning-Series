@@ -13,11 +13,11 @@
 // <site>http://automatetheplanet.com/</site>
 namespace TypeCodeCoverage
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
-        {
-        }
+        ////public static void Main(string[] args)
+        ////{
+        ////}
 
         ////private void PeformAction(int x, int y)
         ////{
@@ -42,7 +42,6 @@ namespace TypeCodeCoverage
         ////    }
         ////    this.DoSomething();
         ////}
-
 
         ////private void PeformAction(int x, int y, bool shouldExecute)
         ////{
@@ -101,7 +100,7 @@ namespace TypeCodeCoverage
         ////        System.Console.WriteLine(x + y);
         ////    }
         ////    this.DoSomething();
-        ////}      
+        ////}
 
         ////private void PeformAction(int x, int y)
         ////{
@@ -116,7 +115,7 @@ namespace TypeCodeCoverage
         ////    }
         ////    this.DoSomething();
         ////}
- 
+
         ////private void DoSomethingElse()
         ////{
         ////    // TODO: Implement this method
