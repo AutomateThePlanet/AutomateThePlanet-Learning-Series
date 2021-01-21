@@ -47,6 +47,7 @@ namespace BehavioursDesignPattern.Behaviours.Core
             {
                 _overridenBehavioursActions.Add(typeof(TТBehavior), new Dictionary<BehaviourActions, Action>());
             }
+
             if (!_overridenBehavioursActions[typeof(TТBehavior)].ContainsKey(behaviourAction))
             {
                 _overridenBehavioursActions[typeof(TТBehavior)].Add(behaviourAction, action);

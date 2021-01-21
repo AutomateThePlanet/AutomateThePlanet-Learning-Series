@@ -161,7 +161,8 @@ namespace BehavioursDesignPattern
             var behaviourEngine = new OverriddenActionsBehaviourEngine();
             behaviourEngine.ConfugureCustomBehaviour<SignInPageLoginBehaviour>(
                 BehaviourActions.PostAct,
-                () => {
+                () =>
+                {
                         // wait for different URL for this case.
                 });
             behaviourEngine.Execute(
@@ -203,7 +204,8 @@ namespace BehavioursDesignPattern
             var behaviourEngine = new UnityBehaviourEngine(Container);
             behaviourEngine.ConfugureCustomBehaviour<SignInPageLoginBehaviour>(
                 BehaviourActions.PostAct,
-                () => {
+                () =>
+                {
                         // wait for different URL for this case.
                 });
             behaviourEngine.Execute(
