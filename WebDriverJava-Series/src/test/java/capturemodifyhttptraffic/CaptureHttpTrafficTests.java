@@ -39,6 +39,11 @@ public class CaptureHttpTrafficTests {
         WebDriverManager.chromedriver().setup();
     }
 
+    @AfterClass
+    public void classCleanup() {
+        proxyServer.abort();
+    }
+
     @BeforeMethod
     public void testInit() {
         final var proxyConfig = new Proxy()
@@ -54,11 +59,6 @@ public class CaptureHttpTrafficTests {
     @AfterMethod
     public void testCleanup() {
         driver.quit();
-    }
-
-    @AfterClass
-    public void classCleanup() {
-        proxyServer.abort();
     }
 
     @Test
