@@ -12,7 +12,7 @@ extensions: .cs .cpp .h
 // limitations under the License.
 // </copyright>
 // <author>Anton Angelov</author>
-// <site>https://automatetheplanet.com/</site>
+// <site>https://bellatrix.solutions/</site>
 extensions:  .xml .config .xsd
 <!--
 Copyright %CurrentYear% Automate The Planet Ltd.

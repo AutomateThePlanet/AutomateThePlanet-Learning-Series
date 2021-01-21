@@ -1,5 +1,5 @@
 ﻿// <copyright file="AdvancedWebDriverUsageTests.cs" company="Automate The Planet Ltd.">
-// Copyright 2017 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -36,6 +36,7 @@ namespace AdvancedWebDriverTipsTricksPartTwo
             _driver = new FirefoxDriver();
             _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+
             // 10 Advanced WebDriver Tips and Tricks Part 2
             // 6. Change Firefox user agent
             ////FirefoxProfileManager profileManager = new FirefoxProfileManager();
@@ -64,7 +65,7 @@ namespace AdvancedWebDriverTipsTricksPartTwo
             ////DesiredCapabilities capability = DesiredCapabilities.InternetExplorer();
             ////Environment.SetEnvironmentVariable("webdriver.ie.driver", "C:\\Path\\To\\IEDriver.exe");
             ////capability.SetCapability(CapabilityType.AcceptSslCertificates, true);
-            ////driver = new RemoteWebDriver(capability);         
+            ////driver = new RemoteWebDriver(capability);
         }
 
         [TestCleanup]
@@ -89,7 +90,7 @@ namespace AdvancedWebDriverTipsTricksPartTwo
         {
             _driver.Navigate().GoToUrl(@"https://demos.telerik.com/aspnet-ajax/ajaxpanel/application-scenarios/file-upload/defaultcs.aspx");
             var element = _driver.FindElement(By.Id("ctl00_ContentPlaceholder1_RadUpload1file0"));
-            var filePath =  Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "WebDriver.xml");
+            var filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "WebDriver.xml");
             element.SendKeys(filePath);
         }
 

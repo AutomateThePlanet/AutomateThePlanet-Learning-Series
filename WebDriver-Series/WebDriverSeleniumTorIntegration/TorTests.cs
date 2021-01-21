@@ -1,5 +1,5 @@
 ﻿// <copyright file="TorTests.cs" company="Automate The Planet Ltd.">
-// Copyright 2017 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -24,7 +24,7 @@ using OpenQA.Selenium.Support.UI;
 namespace WebDriverSeleniumTorIntegration
 {
     [TestClass]
-    class TorTests
+    public class TorTests
     {
         public IWebDriver Driver { get; set; }
 
@@ -35,7 +35,8 @@ namespace WebDriverSeleniumTorIntegration
         [TestInitialize]
         public void SetupTest()
         {
-            var desktopPath  = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
             // You should set here the path to your Tor browser exe. Mine was installed on my desktop because of that I'm using the below path.
             var torBinaryPath = string.Concat(desktopPath, @"\Tor Browser\Browser\firefox.exe");
             var process = new Process();
@@ -83,6 +84,7 @@ namespace WebDriverSeleniumTorIntegration
                 var ip = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9151);
                 server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 server.Connect(ip);
+
                 // Please be sure that you have executed the part with the creation of an authentication hash, described in my article!
                 server.Send(Encoding.ASCII.GetBytes("AUTHENTICATE \"johnsmith\"" + Environment.NewLine));
                 var data = new byte[1024];

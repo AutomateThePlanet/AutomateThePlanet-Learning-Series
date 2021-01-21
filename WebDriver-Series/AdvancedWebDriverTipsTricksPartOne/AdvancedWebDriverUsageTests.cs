@@ -1,5 +1,5 @@
 ﻿// <copyright file="AdvancedWebDriverUsageTests.cs" company="Automate The Planet Ltd.">
-// Copyright 2017 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -101,7 +101,6 @@ namespace AdvancedWebDriverTipsTricksPartOne
             wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath("//*[@id='tve_editor']/div[2]/div[2]/div/div")));
         }
 
-        
         [TestMethod]
         public void GetHtmlSourceOfWebElement()
         {
@@ -181,7 +180,6 @@ namespace AdvancedWebDriverTipsTricksPartOne
             _driver.Manage().Window.Maximize();
         }
 
-      
         // 8. Wait AJAX call to complete using JQuery
         public void WaitForAjaxComplete(int maxSeconds)
         {
@@ -195,8 +193,10 @@ namespace AdvancedWebDriverTipsTricksPartOne
                 {
                     return;
                 }
+
                 Thread.Sleep(1000);
             }
+
             throw new Exception(string.Format("Timed out after {0} seconds", maxSeconds));
         }
 
@@ -218,15 +218,15 @@ namespace AdvancedWebDriverTipsTricksPartOne
         public void TakeScreenshotOfElement(IWebDriver driver, By by, string fileName)
         {
             // 1. Make screenshot of all screen
-            var screenshotDriver = driver as ITakesScreenshot;
-            var screenshot = screenshotDriver.GetScreenshot();
-            var bmpScreen = new Bitmap(new MemoryStream(screenshot.AsByteArray));
+            ////var screenshotDriver = driver as ITakesScreenshot;
+            ////var screenshot = screenshotDriver.GetScreenshot();
+            ////var bmpScreen = new Bitmap(new MemoryStream(screenshot.AsByteArray));
 
-            // 2. Get screenshot of specific element
-            var element = driver.FindElement(by);
-            var cropArea = new Rectangle(element.Location, element.Size);
-            var bitmap = bmpScreen.Clone(cropArea, bmpScreen.PixelFormat);
-            bitmap.Save(fileName);
+            ////// 2. Get screenshot of specific element
+            ////var element = driver.FindElement(by);
+            ////var cropArea = new Rectangle(element.Location, element.Size);
+            ////var bitmap = bmpScreen.Clone(cropArea, bmpScreen.PixelFormat);
+            ////bitmap.Save(fileName);
         }
     }
 }

@@ -219,6 +219,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProjectPageObjectsSingl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProjectPageObjectsFluentApi", "TestProjectPageObjectsFluentApi\TestProjectPageObjectsFluentApi.csproj", "{880C912A-D32B-4B15-BF2C-2C8D0A33C144}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DAE464C3-CD70-40C9-82A7-699D6B2CDC1D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		..\AutomateThePlanet.licenseheader = ..\AutomateThePlanet.licenseheader
+		..\LICENSE.md = ..\LICENSE.md
+		..\LICENSE.txt = ..\LICENSE.txt
+		..\SharedAssemblyInfo.targets = ..\SharedAssemblyInfo.targets
+		..\stylecop.json = ..\stylecop.json
+		..\StyleCopeRules.ruleset = ..\StyleCopeRules.ruleset
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

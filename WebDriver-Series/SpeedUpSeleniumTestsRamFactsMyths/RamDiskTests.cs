@@ -1,5 +1,5 @@
 ﻿// <copyright file="RamDiskTests.cs" company="Automate The Planet Ltd.">
-// Copyright 2017 Automate The Planet Ltd.
+// Copyright 2021 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -31,10 +31,10 @@ namespace SpeedUpSeleniumTestsRamFactsMyths
         [TestInitialize]
         public void SetupTest()
         {
-            //FirefoxProfileManager profileManager = new FirefoxProfileManager();
-            ////FirefoxProfile profile = profileManager.GetProfile("HARDDISKUSER");
-            //FirefoxProfile profile = profileManager.GetProfile("RAMUSER");
-            //this.driver = new FirefoxDriver(profile);
+            // FirefoxProfileManager profileManager = new FirefoxProfileManager();
+            // FirefoxProfile profile = profileManager.GetProfile("HARDDISKUSER");
+            // FirefoxProfile profile = profileManager.GetProfile("RAMUSER");
+            // this.driver = new FirefoxDriver(profile);
             ////this.driver = new FirefoxDriver();
 
             ////var options = new InternetExplorerOptions();
@@ -151,6 +151,7 @@ namespace SpeedUpSeleniumTestsRamFactsMyths
             {
                 actionToProfile();
             }
+
             watch.Stop();
             writer.WriteLine("Total: {0:0.00} ms ({1:N0} ticks) (over {2:N0} iterations)",
                 watch.ElapsedMilliseconds, watch.ElapsedTicks, iterations);
