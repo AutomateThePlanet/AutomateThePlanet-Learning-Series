@@ -33,8 +33,8 @@ public class FluentBingTests {
 
     @Test
     public void searchImageInBing_when_FluentPageObjectPatternUsed() {
-        new BingMainPage()
-                .navigate()
+        var bingMainPage = new BingMainPage();
+        bingMainPage.navigate()
                 .search("Automate The Planet")
                 .clickImages()
                 .clickImagesFilter()

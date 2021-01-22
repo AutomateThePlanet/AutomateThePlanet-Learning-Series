@@ -16,6 +16,7 @@ package facade.pages.bellatrixdemositempage;
 import facade.core.BaseElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class BellatrixDemoItemElements extends BaseElements {
     public WebElement addToCartButton() {
@@ -27,6 +28,8 @@ public class BellatrixDemoItemElements extends BaseElements {
     }
 
     public WebElement productPrice() {
+        String locator = "//div[@class='summary entry-summary']//ins//bdi";
+        browserWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
         return browser.findElement(By.xpath("//div[@class='summary entry-summary']//ins//bdi"));
     }
 
