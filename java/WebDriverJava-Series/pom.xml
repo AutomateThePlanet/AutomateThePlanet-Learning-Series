@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.automatetheplanet</groupId>
-    <artifactId>WebDriverJava-Series</artifactId>
+    <artifactId>webautomation-series</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
