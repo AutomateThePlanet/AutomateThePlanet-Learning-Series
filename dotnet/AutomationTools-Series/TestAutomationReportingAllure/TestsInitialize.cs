@@ -17,11 +17,10 @@ namespace TestAutomationReportingAllure
 
         public string GetAllureConfigPath()
         {
-            string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+            var codeBase = Assembly.GetExecutingAssembly().Location;
             var uri = new UriBuilder(codeBase);
-            string path = Uri.UnescapeDataString(uri.Path);
-            string assemblyPath = Path.GetDirectoryName(path);
-            return Path.Combine(assemblyPath, "allureConfig.json");
+            var path = Uri.UnescapeDataString(uri.Path);
+            return Path.Combine(path, "allureConfig.json");
         }
     }
 }
