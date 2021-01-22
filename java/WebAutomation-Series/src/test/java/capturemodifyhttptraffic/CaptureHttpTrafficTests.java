@@ -15,49 +15,46 @@ package capturemodifyhttptraffic;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import net.lightbody.bmp.BrowserMobProxyServer;
-import net.lightbody.bmp.proxy.CaptureType;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class CaptureHttpTrafficTests {
     private WebDriver driver;
     private BrowserMobProxyServer proxyServer;
 
     @BeforeClass
-    private static void classInit() {
+    private void classInit() {
+        proxyServer = new BrowserMobProxyServer();
+        proxyServer.start(18882);
+
         WebDriverManager.chromedriver().setup();
+    }
+
+    @AfterClass
+    public void classCleanup() {
+        proxyServer.stop();
     }
 
     @BeforeMethod
     public void testInit() {
-        proxyServer = new BrowserMobProxyServer();
-        proxyServer.start();
-
-        proxyServer.enableHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
-        proxyServer.newHar();
-        String proxyDetails = "127.0.0.1:" + proxyServer.getPort();
-        final Proxy proxyConfig = new Proxy()
-                .setHttpProxy(proxyDetails)
-                .setSslProxy(proxyDetails)
-                .setFtpProxy(proxyDetails);
-
-        final ChromeOptions options = new ChromeOptions();
-        options.setProxy(proxyConfig);
-        options.setAcceptInsecureCerts(true);
+        final var proxyConfig = new Proxy()
+                .setHttpProxy("127.0.0.1:18882")
+                .setSslProxy("127.0.0.1:18882")
+                .setFtpProxy("127.0.0.1:18882");
+        final var options = new ChromeOptions()
+                .setProxy(proxyConfig)
+                .setAcceptInsecureCerts(true);
         driver = new ChromeDriver(options);
+        proxyServer.newHar();
     }
 
     @AfterMethod
     public void testCleanup() {
         driver.quit();
-        proxyServer.abort();
     }
 
     @Test
@@ -90,9 +87,11 @@ public class CaptureHttpTrafficTests {
 
     private void assertNoErrorCodes() {
         var harEntries = proxyServer.getHar().getLog().getEntries();
-        boolean areTheErrorCodes = harEntries.stream().anyMatch(r -> r.getResponse().getStatus() > 400 && r.getResponse().getStatus() < 599);
+        boolean areThereErrorCodes = harEntries.stream().anyMatch(r
+                -> r.getResponse().getStatus() > 400
+                && r.getResponse().getStatus() < 599);
 
-        Assert.assertTrue(areTheErrorCodes);
+        Assert.assertFalse(areThereErrorCodes);
     }
 
     private void assertRequestMade(String url) {
@@ -104,7 +103,9 @@ public class CaptureHttpTrafficTests {
 
     private void assertNoLargeImagesRequested() {
         var harEntries = proxyServer.getHar().getLog().getEntries();
-        boolean areThereLargeImages = harEntries.stream().anyMatch(r -> r.getResponse().getContent().getMimeType().startsWith("image") && r.getResponse().getContent().getSize() > 40000);
+        boolean areThereLargeImages = harEntries.stream().anyMatch(r
+                -> r.getResponse().getContent().getMimeType().startsWith("image")
+                && r.getResponse().getContent().getSize() > 40000);
 
         Assert.assertFalse(areThereLargeImages);
     }
