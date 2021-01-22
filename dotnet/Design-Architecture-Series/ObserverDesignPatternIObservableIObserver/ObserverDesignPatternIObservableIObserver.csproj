@@ -2,13 +2,13 @@
   <Import Project="..\..\..\SharedAssemblyInfo.targets" />
 
   <ItemGroup>
-    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.27.0" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="*" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="88.0.4324.9600" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="*" />
 
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.1.2" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="*" />
+    <PackageReference Include="MSTest.TestAdapter" Version="*" />
+    <PackageReference Include="MSTest.TestFramework" Version="*" />
   </ItemGroup>
 </Project>
