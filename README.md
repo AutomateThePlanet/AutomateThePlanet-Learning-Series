@@ -47,7 +47,7 @@ Supported Code Editors
 ----------------------
 The recommended code editor for writing tests is Visual Studio 2019 or higher (preferably installed on Windows).
 
-NOTE: After the support for .NET Framework 5.0 and higher, Microsoft officially not support .NET Core development in older versions of Visual Studio 2015, 2017 and so on.
+NOTE: After the support for .NET Core/.NET 5.0 and higher, Microsoft officially does not support .NET Core development in older versions of Visual Studio 2015, 2017 and so on.
 
 ### Other Supported Editors: ###
 - Visual Studio Code
