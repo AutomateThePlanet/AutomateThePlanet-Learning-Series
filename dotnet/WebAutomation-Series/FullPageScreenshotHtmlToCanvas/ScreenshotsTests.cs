@@ -38,13 +38,14 @@ namespace FullPageScreenshotHtmlToCanvas
                 IJavaScriptExecutor js = driver;
                 var html2canvasJs = File.ReadAllText($"{GetAssemblyDirectory()}\\html2canvas.js");
                 js.ExecuteScript(html2canvasJs);
-                string generateScreenshotJS = @"function genScreenshot () {
-	                                                var canvasImgContentDecoded;
-                                                    html2canvas(document.body).then(function(canvas) {
-                                                         window.canvasImgContentDecoded = canvas.toDataURL(""image/png"");
-                                                    });
-                                                }
-                                                genScreenshot();";
+                string generateScreenshotJS =
+                    @"function genScreenshot () {
+	                        var canvasImgContentDecoded;
+                            html2canvas(document.body).then(function(canvas) {
+                                    window.canvasImgContentDecoded = canvas.toDataURL(""image/png"");
+                            });
+                        }
+                        genScreenshot();";
 
                 js.ExecuteScript(generateScreenshotJS);
 

@@ -14,8 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. WebDriver Selenium Tor 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Test URL Redirects with WebDriver and HttpWebRequest", "04. Test URL Redirects with WebDriver and HttpWebRequest", "{BE01D5B9-5072-4C37-9378-7E310354C1C4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Microsoft Edge WebDriver- What Everybody Ought to Know About", "05. Microsoft Edge WebDriver- What Everybody Ought to Know About", "{9BE3D20D-40CB-4C1A-A689-42A066D66DE9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06. Speed up Selenium Tests through RAM Facts and Myths", "06. Speed up Selenium Tests through RAM Facts and Myths", "{059A76F8-9555-4AF6-B768-44ABEE248CAA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07. Automate Telerik Kendo Grid with WebDriver and JavaScript", "07. Automate Telerik Kendo Grid with WebDriver and JavaScript", "{DD666112-9F80-4218-B544-69F9394CD683}"
@@ -56,8 +54,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriverSeleniumTorIntegration", "WebDriverSeleniumTorIntegration\WebDriverSeleniumTorIntegration.csproj", "{131AA02E-06C4-4DB6-8B75-13ABFE0C72F8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestUrlRedirectsWebDriverHttpWebRequest", "TestUrlRedirectsWebDriverHttpWebRequest\TestUrlRedirectsWebDriverHttpWebRequest.csproj", "{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout", "MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout\MicrosoftEdgeWebDriverWhatEverybodyOughtKnowAbout.csproj", "{4020385F-C2BF-451E-B118-B7E4BC8930A9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedUpSeleniumTestsRamFactsMyths", "SpeedUpSeleniumTestsRamFactsMyths\SpeedUpSeleniumTestsRamFactsMyths.csproj", "{C9E9FCFA-4DDC-4A53-90BF-723C60AA165C}"
 EndProject
@@ -121,7 +117,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "23. Execute UI Tests in the
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExecuteUiTestsSauceLabs", "ExecuteUiTestsSauceLabs\ExecuteUiTestsSauceLabs.csproj", "{AA322464-1E28-4914-BED1-F286D6511A75}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21. Selenium WebDriver + .NET Core 2.0- What Everyone Ought to Know", "21. Selenium WebDriver + .NET Core 2.0- What Everyone Ought to Know", "{541201EF-5897-4CFD-BDE8-5935A524B166}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21. Selenium WebDriver + .NET 5.0- What Everyone Ought to Know", "21. Selenium WebDriver + .NET 5.0- What Everyone Ought to Know", "{541201EF-5897-4CFD-BDE8-5935A524B166}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriverDotNetCore", "WebDriverDotNetCore\WebDriverDotNetCore.csproj", "{561A67B8-1D8D-4828-B1B7-0D7EFA6A8241}"
 EndProject
@@ -235,6 +231,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HandlingParameters", "Handl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecflowBehavioursDesignPattern", "SpecflowBehavioursDesignPattern\SpecflowBehavioursDesignPattern.csproj", "{D33366FE-C5C1-4DF9-90A0-E670ABCCE848}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Template Method Design Pattern", "Template Method Design Pattern", "{30AB0E35-1831-4847-A4CA-1C2DD65E9886}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Facade Design Pattern", "Facade Design Pattern", "{82D566F4-A05A-4932-ABD1-68E51432ED0A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProjectTemplateMethodDesignPattern", "TestProjectTemplateMethodDesignPattern\TestProjectTemplateMethodDesignPattern.csproj", "{66665645-798C-4648-930A-26C25564D070}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -277,10 +279,6 @@ Global
 		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4020385F-C2BF-451E-B118-B7E4BC8930A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4020385F-C2BF-451E-B118-B7E4BC8930A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4020385F-C2BF-451E-B118-B7E4BC8930A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4020385F-C2BF-451E-B118-B7E4BC8930A9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C9E9FCFA-4DDC-4A53-90BF-723C60AA165C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C9E9FCFA-4DDC-4A53-90BF-723C60AA165C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9E9FCFA-4DDC-4A53-90BF-723C60AA165C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -445,6 +443,10 @@ Global
 		{D33366FE-C5C1-4DF9-90A0-E670ABCCE848}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D33366FE-C5C1-4DF9-90A0-E670ABCCE848}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D33366FE-C5C1-4DF9-90A0-E670ABCCE848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66665645-798C-4648-930A-26C25564D070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66665645-798C-4648-930A-26C25564D070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66665645-798C-4648-930A-26C25564D070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66665645-798C-4648-930A-26C25564D070}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -459,7 +461,6 @@ Global
 		{85335026-247B-46ED-A2A6-AAAE615284FC} = {9581A39C-C842-4E83-B573-FC7A6437ECDB}
 		{131AA02E-06C4-4DB6-8B75-13ABFE0C72F8} = {EB810675-2136-41E0-A8D1-98726AC7365C}
 		{A5E718C5-B255-4A8B-84D6-EBCE761BAEC6} = {BE01D5B9-5072-4C37-9378-7E310354C1C4}
-		{4020385F-C2BF-451E-B118-B7E4BC8930A9} = {9BE3D20D-40CB-4C1A-A689-42A066D66DE9}
 		{C9E9FCFA-4DDC-4A53-90BF-723C60AA165C} = {059A76F8-9555-4AF6-B768-44ABEE248CAA}
 		{09F6304D-805B-4A92-82AF-24F6F297EF36} = {DD666112-9F80-4218-B544-69F9394CD683}
 		{72C27BC0-C747-45CF-998A-09989842F019} = {7EFD7458-6993-459F-8958-DB35B30D57B1}
@@ -518,6 +519,9 @@ Global
 		{5F2A1524-9F2A-4340-9345-D781171908ED} = {B1EFE055-74AA-4915-8F35-2E9242909CA6}
 		{B1186B69-7BF7-47D8-9402-28A1B388351B} = {439221B0-C647-4C8F-AC90-087D05266AE4}
 		{D33366FE-C5C1-4DF9-90A0-E670ABCCE848} = {4E3B7D96-0487-4483-ACCB-CD7AC0B9B066}
+		{30AB0E35-1831-4847-A4CA-1C2DD65E9886} = {2EEBE382-4771-4E4C-ADA8-906A44F53013}
+		{82D566F4-A05A-4932-ABD1-68E51432ED0A} = {2EEBE382-4771-4E4C-ADA8-906A44F53013}
+		{66665645-798C-4648-930A-26C25564D070} = {30AB0E35-1831-4847-A4CA-1C2DD65E9886}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}

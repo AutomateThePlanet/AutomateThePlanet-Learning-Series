@@ -19,7 +19,7 @@ using HuddlePageObjectsPartialClassesFluentApi.Pages;
 
 namespace TestProjectPageObjectsFluentApi.Pages
 {
-    public partial class BingMainPage
+    public class BingMainPage
     {
         private readonly IWebDriver _driver;
         private readonly BingMainPageElements _elements;
