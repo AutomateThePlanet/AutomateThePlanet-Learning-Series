@@ -29,11 +29,6 @@ namespace TestProjectTemplateMethodDesignPattern.Pages
             return Driver.FindElement(By.Id("sb_form_q"));
         }
 
-        public IWebElement GetGoButton()
-        {
-            return WaitToBeClickable(By.XPath("//input[@id='sb_form_go']"));
-        }
-
         public IWebElement GetResultsCountDiv()
         {
             return Driver.FindElement(By.Id("b_tween"));

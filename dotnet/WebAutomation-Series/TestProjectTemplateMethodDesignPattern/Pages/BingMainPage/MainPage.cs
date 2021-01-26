@@ -30,7 +30,6 @@ namespace TestProjectTemplateMethodDesignPattern.Pages
 
         protected override void WaitForPageLoad()
         {
-            ////WaitForAjax();
             WaitForElementToExists(By.Id("sb_form_q"));
         }
 
