@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\..\SharedAssemblyInfo.targets" />
   <ItemGroup>
     <!--<PackageReference Include="Microsoft.WinAppDriver.Appium.WebDriver" Version="1.0.1-Preview" />-->

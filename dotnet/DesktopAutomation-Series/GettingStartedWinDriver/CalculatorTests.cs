@@ -14,9 +14,9 @@ namespace GettingStartedWinDriver
         [SetUp]
         public void TestInit()
         {
-            var options = new DesiredCapabilities();
-            options.SetCapability("app", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
-            options.SetCapability("deviceName", "WindowsPC");
+            var options = new AppiumOptions();
+            options.AddAdditionalCapability("app", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
+            options.AddAdditionalCapability("deviceName", "WindowsPC");
             _driver = new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), options);
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }

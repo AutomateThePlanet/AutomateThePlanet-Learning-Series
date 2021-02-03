@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Automate Windows Desktop Apps with WebDriver- WinAppDriver", "1. Automate Windows Desktop Apps with WebDriver- WinAppDriver", "{263BED32-64D8-4446-92AB-118E4E2B34C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Windows WebDriver- WinAppDriver- Page Objects", "2. Windows WebDriver- WinAppDriver- Page Objects", "{26EFF10A-A757-4AD2-80F0-A8BFEE7A7F99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DAE464C3-CD70-40C9-82A7-699D6B2CDC1D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		..\..\LICENSE.txt = ..\..\LICENSE.txt
+		..\..\SharedAssemblyInfo.targets = ..\..\SharedAssemblyInfo.targets
+		..\..\stylecop.json = ..\..\stylecop.json
+		..\..\StyleCopeRules.ruleset = ..\..\StyleCopeRules.ruleset
+	EndProjectSection
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "GettingStartedWinDriver", "GettingStartedWinDriver\GettingStartedWinDriver.vbproj", "{76EE3E48-2264-4B59-83A8-956DEF9476BE}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WinAppDriverPageObjects", "WinAppDriverPageObjects\WinAppDriverPageObjects.vbproj", "{C1EE53D3-2EF7-426A-A6B6-3989909F945D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76EE3E48-2264-4B59-83A8-956DEF9476BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76EE3E48-2264-4B59-83A8-956DEF9476BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76EE3E48-2264-4B59-83A8-956DEF9476BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76EE3E48-2264-4B59-83A8-956DEF9476BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1EE53D3-2EF7-426A-A6B6-3989909F945D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1EE53D3-2EF7-426A-A6B6-3989909F945D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1EE53D3-2EF7-426A-A6B6-3989909F945D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1EE53D3-2EF7-426A-A6B6-3989909F945D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{76EE3E48-2264-4B59-83A8-956DEF9476BE} = {263BED32-64D8-4446-92AB-118E4E2B34C8}
+		{C1EE53D3-2EF7-426A-A6B6-3989909F945D} = {26EFF10A-A757-4AD2-80F0-A8BFEE7A7F99}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}
+	EndGlobalSection
+EndGlobal
