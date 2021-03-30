@@ -1,6 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\..\SharedAssemblyInfo.targets" />
 
+  <PropertyGroup>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Appium.WebDriver" Version="4.3.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="*" />
