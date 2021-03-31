@@ -11,13 +11,11 @@
  * limitations under the License.
  */
 
-package appiumandroidmac;
+package appiumios;
 
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.Activity;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.WaitOptions;
@@ -36,23 +34,21 @@ import java.time.Duration;
 import java.util.Objects;
 
 public class GestureTests {
-    private static AndroidDriver<AndroidElement> driver;
+    private static IOSDriver<IOSElement> driver;
 
     @BeforeClass
     public void classInit() throws URISyntaxException, MalformedURLException {
-        URL testAppUrl = getClass().getClassLoader().getResource("ApiDemos.apk");
+        URL testAppUrl = getClass().getClassLoader().getResource("TestApp.app.zip");
         File testAppFile = Paths.get(Objects.requireNonNull(testAppUrl).toURI()).toFile();
         String testAppPath = testAppFile.getAbsolutePath();
 
         var desiredCaps = new DesiredCapabilities();
-        desiredCaps.setCapability(MobileCapabilityType.DEVICE_NAME, "android25-test");
-        desiredCaps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.example.android.apis");
-        desiredCaps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        desiredCaps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.1");
-        desiredCaps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".view.Controls1");
+        desiredCaps.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 8");
+        desiredCaps.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
+        desiredCaps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "14.4");
         desiredCaps.setCapability(MobileCapabilityType.APP, testAppPath);
 
-        driver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCaps);
+        driver = new IOSDriver<IOSElement>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCaps);
         driver.closeApp();
     }
 
@@ -60,7 +56,6 @@ public class GestureTests {
     public void testInit() {
         if (driver != null) {
             driver.launchApp();
-            driver.startActivity(new Activity("com.example.android.apis", ".view.Controls1"));
         }
     }
 
@@ -71,15 +66,10 @@ public class GestureTests {
         }
     }
 
-    @AfterClass
-    public void classCleanup() {
-    }
-
     @Test
     public void swipeTest() {
-        driver.startActivity(new Activity("com.example.android.apis", ".graphics.FingerPaint"));
         TouchAction touchAction = new TouchAction(driver);
-        AndroidElement element = driver.findElementById("android:id/content");
+        var element = driver.findElementById("IntegerA");
         Point point = element.getLocation();
         Dimension size = element.getSize();
 
@@ -93,7 +83,7 @@ public class GestureTests {
     @Test
     public void moveToTest() {
         TouchAction touchAction = new TouchAction(driver);
-        AndroidElement element = driver.findElementById("android:id/content");
+        var element = driver.findElementById("IntegerA");
         Point point = element.getLocation();
 
         touchAction.moveTo(PointOption.point(point)).perform();
@@ -102,7 +92,7 @@ public class GestureTests {
     @Test
     public void tapTest() {
         TouchAction touchAction = new TouchAction(driver);
-        AndroidElement element = driver.findElementById("android:id/content");
+        var element = driver.findElementById("IntegerA");
         Point point = element.getLocation();
 
         touchAction.tap(TapOptions.tapOptions().withPosition(PointOption.point(point)).withTapsCount(2)).perform();

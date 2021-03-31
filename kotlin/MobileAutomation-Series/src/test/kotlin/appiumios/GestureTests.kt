@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-package appiumiosmac
+package appiumios
 
 import io.appium.java_client.PerformsTouchActions
 import io.appium.java_client.TouchAction

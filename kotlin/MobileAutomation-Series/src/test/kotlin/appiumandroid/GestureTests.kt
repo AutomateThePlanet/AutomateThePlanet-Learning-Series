@@ -11,28 +11,29 @@
  * limitations under the License.
  */
 
-package appiumandroidmac
+package appiumandroid
 
+import io.appium.java_client.PerformsTouchActions
+import io.appium.java_client.TouchAction
 import io.appium.java_client.android.Activity
 import io.appium.java_client.android.AndroidDriver
 import io.appium.java_client.android.AndroidElement
 import io.appium.java_client.remote.AndroidMobileCapabilityType
 import io.appium.java_client.remote.MobileCapabilityType
-import io.appium.java_client.service.local.AppiumDriverLocalService
-import io.appium.java_client.service.local.AppiumServiceBuilder
+import io.appium.java_client.touch.TapOptions
+import io.appium.java_client.touch.WaitOptions
+import io.appium.java_client.touch.offset.PointOption
 import org.openqa.selenium.remote.DesiredCapabilities
 import org.testng.annotations.*
 import java.net.URL
 import java.nio.file.Paths
+import java.time.Duration
 
-class AppiumTests {
+class GestureTests {
     private lateinit var driver: AndroidDriver<AndroidElement>
-    ////private lateinit var appiumLocalService: AppiumDriverLocalService
 
     @BeforeClass
     fun classInit() {
-        ////appiumLocalService = AppiumServiceBuilder().usingAnyFreePort().build()
-        ////appiumLocalService.start()
         val testAppUrl = javaClass.classLoader.getResource("ApiDemos.apk")
         val testAppFile = Paths.get((testAppUrl!!).toURI()).toFile()
         val testAppPath = testAppFile.absolutePath
@@ -45,7 +46,6 @@ class AppiumTests {
         desiredCaps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".view.Controls1")
         desiredCaps.setCapability(MobileCapabilityType.APP, testAppPath)
 
-        ////driver = AndroidDriver<AndroidElement>(appiumLocalService, desiredCaps)
         driver = AndroidDriver<AndroidElement>(URL("http://127.0.0.1:4723/wd/hub"), desiredCaps)
         driver.closeApp()
     }
@@ -61,40 +61,40 @@ class AppiumTests {
         driver.closeApp()
     }
 
-    @AfterClass
-    fun classCleanup() {
-        ////appiumLocalService.stop()
+
+    @Test
+    fun swipeTest() {
+        class PlatformTouchAction(performsTouchActions: PerformsTouchActions) : TouchAction<PlatformTouchAction>(performsTouchActions)
+        driver.startActivity(Activity("com.example.android.apis", ".graphics.FingerPaint"))
+        val touchAction = PlatformTouchAction(driver)
+        val element = driver.findElementById("android:id/content")
+        val point = element.location
+        val size = element.size
+
+        touchAction.press(PointOption.point(point.x + 5, point.y + 5))
+            .waitAction(WaitOptions.waitOptions(Duration.ofMillis(200)))
+            .moveTo(PointOption.point(point.x + size.width - 5, point.y + size.height - 5))
+            .release()
+            .perform()
     }
 
     @Test
-    fun locatingElementsTest() {
-        val button = driver.findElementById("com.example.android.apis:id/button")
-        button.click()
+    fun moveToTest() {
+        class PlatformTouchAction(performsTouchActions: PerformsTouchActions) : TouchAction<PlatformTouchAction>(performsTouchActions)
+        val touchAction = PlatformTouchAction(driver)
+        val element = driver.findElementById("android:id/content")
+        val point = element.location
 
-        val checkBox = driver.findElementByClassName("android.widget.CheckBox")
-        checkBox.click()
-
-        val secondButton = driver.findElementByXPath("//*[@resource-id='com.example.android.apis:id/button']")
-        secondButton.click()
-
-        val thirdButton = driver.findElementByAndroidUIAutomator("new UiSelector().textContains(\"BUTTO\");")
-        thirdButton.click()
+        touchAction.moveTo(PointOption.point(point)).perform()
     }
 
     @Test
-    fun locatingElementsInsideAnotherElementTest() {
-        val mainElement = driver.findElementById("android:id/content")
+    fun tapTest() {
+        class PlatformTouchAction(performsTouchActions: PerformsTouchActions) : TouchAction<PlatformTouchAction>(performsTouchActions)
+        val touchAction = PlatformTouchAction(driver)
+        val element = driver.findElementById("android:id/content")
+        val point = element.location
 
-        val button = mainElement.findElementById("com.example.android.apis:id/button")
-        button.click()
-
-        val checkBox = mainElement.findElementByClassName("android.widget.CheckBox")
-        checkBox.click()
-
-        val secondButton = mainElement.findElementByXPath("//*[@resource-id='com.example.android.apis:id/button']")
-        secondButton.click()
-
-        val thirdButton = mainElement.findElementByAndroidUIAutomator("new UiSelector().textContains(\"BUTTO\");")
-        thirdButton.click()
+        touchAction.tap(TapOptions.tapOptions().withPosition(PointOption.point(point)).withTapsCount(2)).perform()
     }
 }
