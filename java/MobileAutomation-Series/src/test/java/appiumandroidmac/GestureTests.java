@@ -82,6 +82,7 @@ public class GestureTests {
         AndroidElement element = driver.findElementById("android:id/content");
         Point point = element.getLocation();
         Dimension size = element.getSize();
+
         touchAction.press(PointOption.point(point.getX() + 5, point.getY() + 5))
                 .waitAction(WaitOptions.waitOptions(Duration.ofMillis(200)))
                 .moveTo(PointOption.point(point.getX() + size.getWidth() - 5, point.getY() + size.getHeight() - 5))
@@ -103,6 +104,7 @@ public class GestureTests {
         TouchAction touchAction = new TouchAction(driver);
         AndroidElement element = driver.findElementById("android:id/content");
         Point point = element.getLocation();
+
         touchAction.tap(TapOptions.tapOptions().withPosition(PointOption.point(point)).withTapsCount(2)).perform();
     }
 }
