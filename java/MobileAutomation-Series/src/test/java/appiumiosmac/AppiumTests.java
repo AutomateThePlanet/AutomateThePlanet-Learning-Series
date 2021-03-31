@@ -42,7 +42,7 @@ public class AppiumTests {
         String testAppPath = testAppFile.getAbsolutePath();
 
         var desiredCaps = new DesiredCapabilities();
-        desiredCaps.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 12 Pro Max");
+        desiredCaps.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 8");
         desiredCaps.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
         desiredCaps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "14.4");
         desiredCaps.setCapability(MobileCapabilityType.APP, testAppPath);
