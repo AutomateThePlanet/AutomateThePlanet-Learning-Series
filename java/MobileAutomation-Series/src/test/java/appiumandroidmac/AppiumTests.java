@@ -77,18 +77,16 @@ public class AppiumTests {
 
     @Test
     public void locatingElementsTest() {
-        var mainElement = driver.findElementById("android:id/content");
-
-        var button = mainElement.findElementById("com.example.android.apis:id/button");
+        var button = driver.findElementById("com.example.android.apis:id/button");
         button.click();
 
-        var checkBox = mainElement.findElementByClassName("android.widget.CheckBox");
+        var checkBox = driver.findElementByClassName("android.widget.CheckBox");
         checkBox.click();
 
-        var secondButton = mainElement.findElementByXPath("//*[@resource-id='com.example.android.apis:id/button']");
+        var secondButton = driver.findElementByXPath("//*[@resource-id='com.example.android.apis:id/button']");
         secondButton.click();
 
-        var thirdButton = mainElement.findElementByAndroidUIAutomator("new UiSelector().textContains(\"BUTTO\");");
+        var thirdButton = driver.findElementByAndroidUIAutomator("new UiSelector().textContains(\"BUTTO\");");
         thirdButton.click();
     }
 
