@@ -63,6 +63,7 @@ class GestureTests {
         val element = driver.findElementById("IntegerA")
         val point = element.location
         val size = element.size
+
         touchAction.press(PointOption.point(point.x + 5, point.y + 5))
             .waitAction(WaitOptions.waitOptions(Duration.ofMillis(200)))
             .moveTo(PointOption.point(point.x + size.width - 5, point.y + size.height - 5))
@@ -76,6 +77,7 @@ class GestureTests {
         val touchAction = PlatformTouchAction(driver)
         val element = driver.findElementById("IntegerA")
         val point = element.location
+
         touchAction.moveTo(PointOption.point(point)).perform()
     }
 
@@ -85,6 +87,7 @@ class GestureTests {
         val touchAction = PlatformTouchAction(driver)
         val element = driver.findElementById("IntegerA")
         val point = element.location
+
         touchAction.tap(TapOptions.tapOptions().withPosition(PointOption.point(point)).withTapsCount(2)).perform()
     }
 }
