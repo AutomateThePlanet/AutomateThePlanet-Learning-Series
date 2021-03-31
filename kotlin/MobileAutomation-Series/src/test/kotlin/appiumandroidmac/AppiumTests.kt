@@ -68,18 +68,16 @@ class AppiumTests {
 
     @Test
     fun locatingElementsTest() {
-        val mainElement = driver.findElementById("android:id/content")
-
-        val button = mainElement.findElementById("com.example.android.apis:id/button")
+        val button = driver.findElementById("com.example.android.apis:id/button")
         button.click()
 
-        val checkBox = mainElement.findElementByClassName("android.widget.CheckBox")
+        val checkBox = driver.findElementByClassName("android.widget.CheckBox")
         checkBox.click()
 
-        val secondButton = mainElement.findElementByXPath("//*[@resource-id='com.example.android.apis:id/button']")
+        val secondButton = driver.findElementByXPath("//*[@resource-id='com.example.android.apis:id/button']")
         secondButton.click()
 
-        val thirdButton = mainElement.findElementByAndroidUIAutomator("new UiSelector().textContains(\"BUTTO\");")
+        val thirdButton = driver.findElementByAndroidUIAutomator("new UiSelector().textContains(\"BUTTO\");")
         thirdButton.click()
     }
 
