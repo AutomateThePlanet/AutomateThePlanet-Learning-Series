@@ -52,14 +52,14 @@ public class AppiumTests {
         driver.closeApp();
     }
 
-    @BeforeTest
+    @BeforeMethod
     public void testInit() {
         if (driver != null) {
             driver.launchApp();
         }
     }
 
-    @AfterTest
+    @AfterMethod
     public void testCleanup() {
         if (driver != null) {
             driver.closeApp();
@@ -73,8 +73,8 @@ public class AppiumTests {
 
     @Test
     public void addTwoNumbersTest() {
-        var numberOne = driver.findElementById("IntegerA");
-        var numberTwo = driver.findElementById("IntegerB");
+        var numberOne = driver.findElementByName("IntegerA");
+        var numberTwo = driver.findElementByName("IntegerB");
         var compute = driver.findElementByName("ComputeSumButton");
         var answer = driver.findElementByName("Answer");
 

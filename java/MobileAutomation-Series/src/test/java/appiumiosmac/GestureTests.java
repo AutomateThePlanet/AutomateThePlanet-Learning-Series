@@ -40,7 +40,6 @@ import java.util.Objects;
 
 public class GestureTests {
     private static IOSDriver<IOSElement> driver;
-    ////private static AppiumDriverLocalService appiumLocalService;
 
     @BeforeClass
     public void classInit() throws URISyntaxException, MalformedURLException {
@@ -58,14 +57,14 @@ public class GestureTests {
         driver.closeApp();
     }
 
-    @BeforeTest
+    @BeforeMethod
     public void testInit() {
         if (driver != null) {
             driver.launchApp();
         }
     }
 
-    @AfterTest
+    @AfterMethod
     public void testCleanup() {
         if (driver != null) {
             driver.closeApp();

@@ -55,7 +55,7 @@ public class AppiumTests {
         driver.closeApp();
     }
 
-    @BeforeTest
+    @BeforeMethod
     public void testInit() {
         if (driver != null) {
             driver.launchApp();
@@ -63,7 +63,7 @@ public class AppiumTests {
         }
     }
 
-    @AfterTest
+    @AfterMethod
     public void testCleanup() {
         if (driver != null) {
             driver.closeApp();

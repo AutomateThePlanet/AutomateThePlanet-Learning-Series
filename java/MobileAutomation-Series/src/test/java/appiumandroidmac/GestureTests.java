@@ -56,7 +56,7 @@ public class GestureTests {
         driver.closeApp();
     }
 
-    @BeforeTest
+    @BeforeMethod
     public void testInit() {
         if (driver != null) {
             driver.launchApp();
@@ -64,7 +64,7 @@ public class GestureTests {
         }
     }
 
-    @AfterTest
+    @AfterMethod
     public void testCleanup() {
         if (driver != null) {
             driver.closeApp();
