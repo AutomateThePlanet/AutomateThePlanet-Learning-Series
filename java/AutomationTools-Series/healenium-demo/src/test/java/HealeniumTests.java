@@ -42,7 +42,7 @@ public class HealeniumTests {
     }
 
     @Test
-    public void assertFormSent_When_ValidInfoInput() throws InterruptedException {
+    public void assertFormSent_When_ValidInfoInput() {
         var localPage = new LocalPage(driver);
         localPage.navigate();
 
