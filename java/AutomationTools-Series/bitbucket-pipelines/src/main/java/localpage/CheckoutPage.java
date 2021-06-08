@@ -16,8 +16,6 @@ package localpage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-import java.net.URL;
-
 public class CheckoutPage {
     private final WebDriver driver;
     private final String url = "https://getbootstrap.com/docs/5.0/examples/checkout/";

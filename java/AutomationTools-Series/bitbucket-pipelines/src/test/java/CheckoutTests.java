@@ -12,8 +12,8 @@
  */
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import localpage.ClientInfo;
 import localpage.CheckoutPage;
+import localpage.ClientInfo;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
