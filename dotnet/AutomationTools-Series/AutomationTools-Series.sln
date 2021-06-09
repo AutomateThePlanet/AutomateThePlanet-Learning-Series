@@ -61,6 +61,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingStandardsEditorConfig
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingStandardsStyleCop", "CodingStandardsStyleCop\CodingStandardsStyleCop.csproj", "{011EC029-D145-4A6A-8C01-B40B68BC5A75}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21. Bitbucket Pipelines", "21. Bitbucket Pipelines", "{3A5093D0-055F-45EE-895E-8C93C8EF2DCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitbucketPipelines", "BitbucketPipelines\BitbucketPipelines.csproj", "{36F3F430-D12A-4BD0-AD29-28F5F0E46C7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,10 @@ Global
 		{011EC029-D145-4A6A-8C01-B40B68BC5A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{011EC029-D145-4A6A-8C01-B40B68BC5A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{011EC029-D145-4A6A-8C01-B40B68BC5A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36F3F430-D12A-4BD0-AD29-28F5F0E46C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F3F430-D12A-4BD0-AD29-28F5F0E46C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F3F430-D12A-4BD0-AD29-28F5F0E46C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F3F430-D12A-4BD0-AD29-28F5F0E46C7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +135,7 @@ Global
 		{7FDB8507-29A1-44AC-8E0B-976D6C529BC1} = {A6EBC5C8-0BAD-4167-B5D5-2D03C0D84758}
 		{2D7EBF3D-C93E-4872-AC76-2A93E5EEF38F} = {67B7CC75-28BE-42E8-AF3A-267D0355962E}
 		{011EC029-D145-4A6A-8C01-B40B68BC5A75} = {C68B5F0C-5FF2-40E7-8EC5-C5B0DEBFB9BF}
+		{36F3F430-D12A-4BD0-AD29-28F5F0E46C7F} = {3A5093D0-055F-45EE-895E-8C93C8EF2DCD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46F17E2A-8CF2-4C6D-B068-9CCC6AC4A44B}
