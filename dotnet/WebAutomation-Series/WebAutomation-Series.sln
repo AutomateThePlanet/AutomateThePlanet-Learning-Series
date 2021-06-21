@@ -239,6 +239,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProjectTemplateMethodDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProjectFacadeDesignPattern", "TestProjectFacadeDesignPattern\TestProjectFacadeDesignPattern.csproj", "{5CEEB788-D30B-4424-AD86-699643D5475B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40. Selenium NUnit All Web Technologies", "40. Selenium NUnit All Web Technologies", "{63E33DCB-A0E6-4AF8-84D0-F4089934E3D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "41. Selenium xUnit All Web Technologies", "41. Selenium xUnit All Web Technologies", "{BBF90B60-7D94-41C9-8E1F-85ABF7ECC1E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumNUnitAllWebTechnologies", "SeleniumNUnitAllWebTechnologies\SeleniumNUnitAllWebTechnologies.csproj", "{946F47A1-F31A-48B0-8935-8DC05F051863}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumXUnitAllWebTechnologies", "SeleniumXUnitAllWebTechnologies\SeleniumXUnitAllWebTechnologies.csproj", "{50CFF4FE-DC50-445F-810D-F1023658A4A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "42. Selenium MSTest All Web Technologies", "42. Selenium MSTest All Web Technologies", "{855E52E2-2E20-4312-8997-FE2FD493DD35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumMSTestAllWebTechnologies", "SeleniumMSTestAllWebTechnologies\SeleniumMSTestAllWebTechnologies.csproj", "{02D80A41-1241-415E-AD3B-D370463AB882}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -453,6 +465,18 @@ Global
 		{5CEEB788-D30B-4424-AD86-699643D5475B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CEEB788-D30B-4424-AD86-699643D5475B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CEEB788-D30B-4424-AD86-699643D5475B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{946F47A1-F31A-48B0-8935-8DC05F051863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{946F47A1-F31A-48B0-8935-8DC05F051863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{946F47A1-F31A-48B0-8935-8DC05F051863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{946F47A1-F31A-48B0-8935-8DC05F051863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50CFF4FE-DC50-445F-810D-F1023658A4A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CFF4FE-DC50-445F-810D-F1023658A4A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50CFF4FE-DC50-445F-810D-F1023658A4A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50CFF4FE-DC50-445F-810D-F1023658A4A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02D80A41-1241-415E-AD3B-D370463AB882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D80A41-1241-415E-AD3B-D370463AB882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D80A41-1241-415E-AD3B-D370463AB882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D80A41-1241-415E-AD3B-D370463AB882}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -529,6 +553,9 @@ Global
 		{82D566F4-A05A-4932-ABD1-68E51432ED0A} = {2EEBE382-4771-4E4C-ADA8-906A44F53013}
 		{66665645-798C-4648-930A-26C25564D070} = {30AB0E35-1831-4847-A4CA-1C2DD65E9886}
 		{5CEEB788-D30B-4424-AD86-699643D5475B} = {82D566F4-A05A-4932-ABD1-68E51432ED0A}
+		{946F47A1-F31A-48B0-8935-8DC05F051863} = {63E33DCB-A0E6-4AF8-84D0-F4089934E3D3}
+		{50CFF4FE-DC50-445F-810D-F1023658A4A7} = {BBF90B60-7D94-41C9-8E1F-85ABF7ECC1E3}
+		{02D80A41-1241-415E-AD3B-D370463AB882} = {855E52E2-2E20-4312-8997-FE2FD493DD35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}
