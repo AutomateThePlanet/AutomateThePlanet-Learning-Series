@@ -64,6 +64,18 @@ namespace SeleniumNUnitAllWebTechnologies
             AssertLeftItems(2);
         }
 
+        [Test]
+        public void VerifyTodoListCreatedSuccessfully_When_jQuery()
+        {
+            _driver.Navigate().GoToUrl("https://todomvc.com/");
+            OpenTechnologyApp("Vanilla ES6");
+            AddNewToDoItem("Clean the car");
+            AddNewToDoItem("Clean the house");
+            AddNewToDoItem("Buy Ketchup");
+            GetItemCheckBox("Buy Ketchup").Click();
+            AssertLeftItems(2);
+        }
+
         private void AssertLeftItems(int expectedCount)
         {
             var resultSpan = WaitAndFindElement(By.XPath("//footer/*/span | //footer/span"));

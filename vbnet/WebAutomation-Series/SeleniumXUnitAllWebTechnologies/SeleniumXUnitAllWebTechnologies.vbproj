@@ -2,11 +2,11 @@
 
   <Import Project="..\..\..\SharedAssemblyInfo.targets" />
   <ItemGroup>
-    <None Remove="readme-41.txt" />
+    <None Remove="readme-3.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="readme-41.txt" />
+    <Content Include="readme-3.txt" />
   </ItemGroup>
 
   <ItemGroup>

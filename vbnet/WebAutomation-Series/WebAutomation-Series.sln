@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DAE464C3-CD70-40C9-82A7-699D6B2CDC1D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		..\..\LICENSE.txt = ..\..\LICENSE.txt
+		..\..\SharedAssemblyInfo.targets = ..\..\SharedAssemblyInfo.targets
+		..\..\stylecop.json = ..\..\stylecop.json
+		..\..\StyleCopeRules.ruleset = ..\..\StyleCopeRules.ruleset
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Selenium NUnit All Web Technologies", "1. Selenium NUnit All Web Technologies", "{4607E141-8EB6-45D1-B651-DBA821FBCB3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Selenium MSTest All Web Technologies", "2. Selenium MSTest All Web Technologies", "{7079F12B-655D-4F3F-9DA4-3FFEA3B40C59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Selenium xUnit All Web Technologies", "3. Selenium xUnit All Web Technologies", "{944C60C4-E623-412E-BDE7-2E93446817A7}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SeleniumNUnitAllWebTechnologies", "SeleniumNUnitAllWebTechnologies\SeleniumNUnitAllWebTechnologies.vbproj", "{5F983881-8304-4765-B603-64FA4149F26C}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SeleniumMSTestAllWebTechnologies", "SeleniumMSTestAllWebTechnologies\SeleniumMSTestAllWebTechnologies.vbproj", "{0B913AA1-6DEA-40FF-A211-D5C0FC604790}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SeleniumXUnitAllWebTechnologies", "SeleniumXUnitAllWebTechnologies\SeleniumXUnitAllWebTechnologies.vbproj", "{F1189867-0CD3-47E1-97C2-1B187D040E45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F983881-8304-4765-B603-64FA4149F26C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F983881-8304-4765-B603-64FA4149F26C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F983881-8304-4765-B603-64FA4149F26C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F983881-8304-4765-B603-64FA4149F26C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B913AA1-6DEA-40FF-A211-D5C0FC604790}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B913AA1-6DEA-40FF-A211-D5C0FC604790}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B913AA1-6DEA-40FF-A211-D5C0FC604790}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B913AA1-6DEA-40FF-A211-D5C0FC604790}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1189867-0CD3-47E1-97C2-1B187D040E45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1189867-0CD3-47E1-97C2-1B187D040E45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1189867-0CD3-47E1-97C2-1B187D040E45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1189867-0CD3-47E1-97C2-1B187D040E45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5F983881-8304-4765-B603-64FA4149F26C} = {4607E141-8EB6-45D1-B651-DBA821FBCB3F}
+		{0B913AA1-6DEA-40FF-A211-D5C0FC604790} = {7079F12B-655D-4F3F-9DA4-3FFEA3B40C59}
+		{F1189867-0CD3-47E1-97C2-1B187D040E45} = {944C60C4-E623-412E-BDE7-2E93446817A7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}
+	EndGlobalSection
+EndGlobal
