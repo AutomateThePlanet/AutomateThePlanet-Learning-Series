@@ -60,6 +60,17 @@ Namespace SeleniumXUnitAllWebTechnologies
             AssertLeftItems(2)
         End Sub
 
+        <Fact>
+        Public Sub VerifyTodoListCreatedSuccessfully_When_jQuery()
+            _driver.Navigate().GoToUrl("https://todomvc.com/")
+            OpenTechnologyApp("jQuery")
+            AddNewToDoItem("Clean the car")
+            AddNewToDoItem("Clean the house")
+            AddNewToDoItem("Buy Ketchup")
+            GetItemCheckBox("Buy Ketchup").Click()
+            AssertLeftItems(2)
+        End Sub
+
         Private Sub AssertLeftItems(ByVal expectedCount As Integer)
             Dim resultSpan = WaitAndFindElement(By.XPath("//footer/*/span | //footer/span"))
 
