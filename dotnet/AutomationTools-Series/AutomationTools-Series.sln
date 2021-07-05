@@ -63,7 +63,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingStandardsStyleCop", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21. Bitbucket Pipelines", "21. Bitbucket Pipelines", "{3A5093D0-055F-45EE-895E-8C93C8EF2DCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitbucketPipelines", "BitbucketPipelines\BitbucketPipelines.csproj", "{36F3F430-D12A-4BD0-AD29-28F5F0E46C7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitbucketPipelines", "BitbucketPipelines\BitbucketPipelines.csproj", "{36F3F430-D12A-4BD0-AD29-28F5F0E46C7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "22. Github Actions", "22. Github Actions", "{919B1DE7-866C-4FC8-A69C-937E8517A700}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubActions", "GithubActions\GithubActions.csproj", "{C02611F8-610F-4321-9D3E-DD72EC71BECA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "23. WebDriver Google Lighthouse", "23. WebDriver Google Lighthouse", "{3B68F70B-F11D-4EF0-A31F-26F3D4137B3B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriverGoogleLighthouse", "WebDriverGoogleLighthouse\WebDriverGoogleLighthouse.csproj", "{279BB7F6-EE5C-48BC-9304-8390A8A2A618}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +127,14 @@ Global
 		{36F3F430-D12A-4BD0-AD29-28F5F0E46C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36F3F430-D12A-4BD0-AD29-28F5F0E46C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36F3F430-D12A-4BD0-AD29-28F5F0E46C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C02611F8-610F-4321-9D3E-DD72EC71BECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C02611F8-610F-4321-9D3E-DD72EC71BECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C02611F8-610F-4321-9D3E-DD72EC71BECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C02611F8-610F-4321-9D3E-DD72EC71BECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{279BB7F6-EE5C-48BC-9304-8390A8A2A618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{279BB7F6-EE5C-48BC-9304-8390A8A2A618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{279BB7F6-EE5C-48BC-9304-8390A8A2A618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{279BB7F6-EE5C-48BC-9304-8390A8A2A618}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +152,8 @@ Global
 		{2D7EBF3D-C93E-4872-AC76-2A93E5EEF38F} = {67B7CC75-28BE-42E8-AF3A-267D0355962E}
 		{011EC029-D145-4A6A-8C01-B40B68BC5A75} = {C68B5F0C-5FF2-40E7-8EC5-C5B0DEBFB9BF}
 		{36F3F430-D12A-4BD0-AD29-28F5F0E46C7F} = {3A5093D0-055F-45EE-895E-8C93C8EF2DCD}
+		{C02611F8-610F-4321-9D3E-DD72EC71BECA} = {919B1DE7-866C-4FC8-A69C-937E8517A700}
+		{279BB7F6-EE5C-48BC-9304-8390A8A2A618} = {3B68F70B-F11D-4EF0-A31F-26F3D4137B3B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46F17E2A-8CF2-4C6D-B068-9CCC6AC4A44B}
