@@ -23,7 +23,6 @@ using RestSharp.Extensions;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager.Helpers;
-using DevTools = OpenQA.Selenium.DevTools.V91;
 
 namespace WebDriverGoogleLighthouse
 {
@@ -31,32 +30,18 @@ namespace WebDriverGoogleLighthouse
     {
         private static ChromeDriver _driver;
         private static int freePort;
-        private static IDevToolsSession _devTools;
-        private static DevTools.DevToolsSessionDomains _devToolsSession;
 
         [SetUp]
         public void Setup()
         {
-            freePort = GetFreeTcpPort();
             new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
             var chromeDriverService = ChromeDriverService.CreateDefaultService();
             ChromeOptions options = new ChromeOptions();
-            options.AddAdditionalCapability(CapabilityType.EnableProfiling, true, true);
-            options.SetLoggingPreference("performance", LogLevel.All);
-            options.AddArgument("--disable-gpu");
-            options.AddArgument("--no-sandbox");
+            freePort = GetFreeTcpPort();
             options.AddArgument("--remote-debugging-address=0.0.0.0");
-            options.AddArgument("--remote-debugging-port=5333");
-            options.AddArguments("--disable-storage-reset");
-            options.AddArguments("--disable-storage-reset");
-            options.DebuggerAddress = $"127.0.0.1:{freePort}";
+            options.AddArgument($"--remote-debugging-port={freePort}");
             _driver = new ChromeDriver(chromeDriverService, options);
             _driver.Manage().Window.Maximize();
-
-            _devTools = _driver.GetDevToolsSession();
-            _devToolsSession = _devTools.GetVersionSpecificDomains<DevTools.DevToolsSessionDomains>();
-            _devToolsSession.Performance.Enable(new DevTools.Performance.EnableCommandSettings());
-            _devToolsSession.Network.Enable(new DevTools.Network.EnableCommandSettings());
         }
 
         [TearDown]
@@ -80,9 +65,6 @@ namespace WebDriverGoogleLighthouse
             var loginButton = _driver.FindElement(By.XPath("//button[@name='login']"));
             loginButton.Click();
 
-            IWebElement imageTitle = _driver.FindElement(By.XPath("//h2[text()='Falcon 9']"));
-            IWebElement falconSalesButton = _driver.FindElement(RelativeBy.WithTagName("span").Below(By.XPath("")).LeftOf(By.Id("")));
-
             WaitAndFindElement(By.LinkText("Orders"));
 
             ExecuteCommand($"lighthouse {_driver.Url} --output=json,html,csv --port={freePort}", true);
@@ -96,26 +78,6 @@ namespace WebDriverGoogleLighthouse
             Console.WriteLine($"{performanceReport.Audits.Interactive.Title} = {performanceReport.Audits.Interactive.DisplayValue}");
             Console.WriteLine($"{performanceReport.Audits.TotalBlockingTime.Title} = {performanceReport.Audits.TotalBlockingTime.DisplayValue}");
             Console.WriteLine($"{performanceReport.Audits.CumulativeLayoutShift.Title} = {performanceReport.Audits.CumulativeLayoutShift.DisplayValue}");
-
-            Console.WriteLine();
-            Console.WriteLine("Chrome Performance Metrics");
-            var logs = _driver.Manage().Logs.GetLog("performance");
-            for (int i = 0; i < logs.Count; i++)
-            {
-                Debug.WriteLine(logs[i].Message);
-            }
-
-            File.WriteAllLines("chromeMetrics.txt", logs.Select(m => m.Message));
-
-            Console.WriteLine();
-            Console.WriteLine("DevTools Performance Metrics");
-            var metrics = _devToolsSession.Performance.GetMetrics();
-            foreach (var metric in metrics.Result.Metrics)
-            {
-                Console.WriteLine($"{metric.Name} = {metric.Value}");
-            }
-
-            File.WriteAllLines("devToolsMetrics.txt", _devToolsSession.Performance.GetMetrics().Result.Metrics.Select(m => $"{m.Name} = {m.Value}"));
 
             VerifyNoJavaScriptErrorsAppeared();
         }
