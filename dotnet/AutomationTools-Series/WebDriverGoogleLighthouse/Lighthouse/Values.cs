@@ -7,24 +7,24 @@ namespace WebDriverGoogleLighthouse
         public double TimeInMs { get; set; }
 
         [JsonProperty("itemCount")]
-        public int ItemCount { get; set; }
+        public double ItemCount { get; set; }
 
         [JsonProperty("requestCount")]
-        public int RequestCount { get; set; }
+        public double RequestCount { get; set; }
 
         [JsonProperty("byteCount")]
-        public int ByteCount { get; set; }
+        public double ByteCount { get; set; }
 
         [JsonProperty("nodeCount")]
-        public int NodeCount { get; set; }
+        public double NodeCount { get; set; }
 
         [JsonProperty("totalBytes")]
-        public int TotalBytes { get; set; }
+        public double TotalBytes { get; set; }
 
         [JsonProperty("wastedMs")]
-        public int WastedMs { get; set; }
+        public double WastedMs { get; set; }
 
         [JsonProperty("wastedBytes")]
-        public int WastedBytes { get; set; }
+        public double WastedBytes { get; set; }
     }
 }

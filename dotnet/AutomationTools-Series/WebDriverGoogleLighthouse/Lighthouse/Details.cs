@@ -8,13 +8,13 @@ namespace WebDriverGoogleLighthouse
         public string Type { get; set; }
 
         [JsonProperty("scale")]
-        public int Scale { get; set; }
+        public double Scale { get; set; }
 
         [JsonProperty("items")]
         public List<Item> Items { get; set; }
 
         [JsonProperty("timing")]
-        public int Timing { get; set; }
+        public double Timing { get; set; }
 
         [JsonProperty("timestamp")]
         public long Timestamp { get; set; }
@@ -37,10 +37,10 @@ namespace WebDriverGoogleLighthouse
         [JsonProperty("screenshot")]
         public Screenshot Screenshot { get; set; }
 
-        [JsonProperty("nodes")]
-        public Nodes Nodes { get; set; }
+        ////[JsonProperty("nodes")]
+        ////public Nodes Nodes { get; set; }
 
         [JsonProperty("overallSavingsBytes")]
-        public int OverallSavingsBytes { get; set; }
+        public double OverallSavingsBytes { get; set; }
     }
 }

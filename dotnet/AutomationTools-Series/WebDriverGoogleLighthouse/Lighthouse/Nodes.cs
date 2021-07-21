@@ -7,9 +7,9 @@ namespace WebDriverGoogleLighthouse
         public string Name { get; set; }
 
         [JsonProperty("resourceBytes")]
-        public int ResourceBytes { get; set; }
+        public double ResourceBytes { get; set; }
 
         [JsonProperty("unusedBytes")]
-        public int? UnusedBytes { get; set; }
+        public double? UnusedBytes { get; set; }
     }
 }

@@ -10,10 +10,10 @@ namespace WebDriverGoogleLighthouse
         public string Url { get; set; }
 
         [JsonProperty("line")]
-        public int Line { get; set; }
+        public double Line { get; set; }
 
         [JsonProperty("column")]
-        public int Column { get; set; }
+        public double Column { get; set; }
 
         [JsonProperty("urlProvider")]
         public string UrlProvider { get; set; }

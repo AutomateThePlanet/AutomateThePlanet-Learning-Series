@@ -7,6 +7,6 @@ namespace WebDriverGoogleLighthouse
         public double WastedMs { get; set; }
 
         [JsonProperty("wastedBytes")]
-        public int WastedBytes { get; set; }
+        public double WastedBytes { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace WebDriverGoogleLighthouse
         public string ScoreDisplayMode { get; set; }
 
         [JsonProperty("numericValue")]
-        public int NumericValue { get; set; }
+        public double NumericValue { get; set; }
 
         [JsonProperty("numericUnit")]
         public string NumericUnit { get; set; }

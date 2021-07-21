@@ -4,21 +4,21 @@ namespace WebDriverGoogleLighthouse
     public class Throttling
     {
         [JsonProperty("rttMs")]
-        public int RttMs { get; set; }
+        public double RttMs { get; set; }
 
         [JsonProperty("throughputKbps")]
-        public int ThroughputKbps { get; set; }
+        public double ThroughputKbps { get; set; }
 
         [JsonProperty("requestLatencyMs")]
-        public int RequestLatencyMs { get; set; }
+        public double RequestLatencyMs { get; set; }
 
         [JsonProperty("downloadThroughputKbps")]
-        public int DownloadThroughputKbps { get; set; }
+        public double DownloadThroughputKbps { get; set; }
 
         [JsonProperty("uploadThroughputKbps")]
-        public int UploadThroughputKbps { get; set; }
+        public double UploadThroughputKbps { get; set; }
 
         [JsonProperty("cpuSlowdownMultiplier")]
-        public int CpuSlowdownMultiplier { get; set; }
+        public double CpuSlowdownMultiplier { get; set; }
     }
 }

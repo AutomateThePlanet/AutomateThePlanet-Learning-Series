@@ -10,7 +10,7 @@ namespace WebDriverGoogleLighthouse
         public bool Public { get; set; }
 
         [JsonProperty("max-age")]
-        public int MaxAge { get; set; }
+        public double MaxAge { get; set; }
 
         [JsonProperty("s-maxage")]
         public string SMaxage { get; set; }

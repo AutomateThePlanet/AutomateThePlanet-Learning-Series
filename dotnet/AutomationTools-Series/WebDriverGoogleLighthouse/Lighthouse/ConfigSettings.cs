@@ -8,10 +8,10 @@ namespace WebDriverGoogleLighthouse
         public List<string> Output { get; set; }
 
         [JsonProperty("maxWaitForFcp")]
-        public int MaxWaitForFcp { get; set; }
+        public double MaxWaitForFcp { get; set; }
 
         [JsonProperty("maxWaitForLoad")]
-        public int MaxWaitForLoad { get; set; }
+        public double MaxWaitForLoad { get; set; }
 
         [JsonProperty("formFactor")]
         public string FormFactor { get; set; }

@@ -4,21 +4,21 @@ namespace WebDriverGoogleLighthouse
     public class BoundingRect
     {
         [JsonProperty("top")]
-        public int Top { get; set; }
+        public double Top { get; set; }
 
         [JsonProperty("bottom")]
-        public int Bottom { get; set; }
+        public double Bottom { get; set; }
 
         [JsonProperty("left")]
-        public int Left { get; set; }
+        public double Left { get; set; }
 
         [JsonProperty("right")]
-        public int Right { get; set; }
+        public double Right { get; set; }
 
         [JsonProperty("width")]
-        public int Width { get; set; }
+        public double Width { get; set; }
 
         [JsonProperty("height")]
-        public int Height { get; set; }
+        public double Height { get; set; }
     }
 }

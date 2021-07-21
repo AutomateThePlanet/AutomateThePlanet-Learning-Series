@@ -16,6 +16,6 @@ namespace WebDriverGoogleLighthouse
         public double ResponseReceivedTime { get; set; }
 
         [JsonProperty("transferSize")]
-        public int TransferSize { get; set; }
+        public double TransferSize { get; set; }
     }
 }

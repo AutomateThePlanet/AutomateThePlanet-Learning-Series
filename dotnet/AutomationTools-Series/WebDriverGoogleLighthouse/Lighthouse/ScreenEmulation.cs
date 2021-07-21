@@ -7,13 +7,13 @@ namespace WebDriverGoogleLighthouse
         public bool Mobile { get; set; }
 
         [JsonProperty("width")]
-        public int Width { get; set; }
+        public double Width { get; set; }
 
         [JsonProperty("height")]
-        public int Height { get; set; }
+        public double Height { get; set; }
 
         [JsonProperty("deviceScaleFactor")]
-        public int DeviceScaleFactor { get; set; }
+        public double DeviceScaleFactor { get; set; }
 
         [JsonProperty("disabled")]
         public bool Disabled { get; set; }

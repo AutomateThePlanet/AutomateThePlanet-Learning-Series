@@ -8,7 +8,7 @@ namespace WebDriverGoogleLighthouse
         public string Id { get; set; }
 
         [JsonProperty("weight")]
-        public int Weight { get; set; }
+        public double Weight { get; set; }
 
         [JsonProperty("group")]
         public string Group { get; set; }

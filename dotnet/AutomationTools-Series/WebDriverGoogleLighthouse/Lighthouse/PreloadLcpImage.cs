@@ -13,13 +13,13 @@ namespace WebDriverGoogleLighthouse
         public string Description { get; set; }
 
         [JsonProperty("score")]
-        public int Score { get; set; }
+        public double Score { get; set; }
 
         [JsonProperty("scoreDisplayMode")]
         public string ScoreDisplayMode { get; set; }
 
         [JsonProperty("numericValue")]
-        public int NumericValue { get; set; }
+        public double NumericValue { get; set; }
 
         [JsonProperty("numericUnit")]
         public string NumericUnit { get; set; }

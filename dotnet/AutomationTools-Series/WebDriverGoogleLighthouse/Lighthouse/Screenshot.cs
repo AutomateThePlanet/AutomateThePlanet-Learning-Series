@@ -7,9 +7,9 @@ namespace WebDriverGoogleLighthouse
         public string Data { get; set; }
 
         [JsonProperty("width")]
-        public int Width { get; set; }
+        public double Width { get; set; }
 
         [JsonProperty("height")]
-        public int Height { get; set; }
+        public double Height { get; set; }
     }
 }
