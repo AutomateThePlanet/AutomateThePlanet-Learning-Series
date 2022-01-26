@@ -5,7 +5,6 @@ import kendogrid.components.FilterOperator;
 import kendogrid.components.GridFilter;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -25,7 +24,7 @@ public class FreightColumnAsserter extends GridColumnAsserter {
         newItem.setFreight(getUniqueNumberValue());
         updateItemInDb(newItem);
 
-        getGridPage().getGrid().filter(GridColumns.FREIGHT, FilterOperator.EqualTo, Double.toString(newItem.getFreight()));
+        getGridPage().getGrid().filter(GridColumns.FREIGHT, FilterOperator.EQUAL_TO, Double.toString(newItem.getFreight()));
         waitForGridToLoadAtLeast(1, getGridPage().getGrid());
         List<Order> results = getGridPage().getGrid().getItems();
 
@@ -47,7 +46,7 @@ public class FreightColumnAsserter extends GridColumnAsserter {
         secondNewItem.setFreight(BigDecimal.valueOf(newItem.getFreight() + 1).setScale(3, RoundingMode.HALF_UP).doubleValue());
         updateItemInDb(secondNewItem);
 
-        getGridPage().getGrid().filter(GridColumns.FREIGHT, FilterOperator.GreaterThanOrEqualTo, Double.toString(newItem.getFreight()));
+        getGridPage().getGrid().filter(GridColumns.FREIGHT, FilterOperator.GREATER_THAN_OR_EQUAL_TO, Double.toString(newItem.getFreight()));
         waitForGridToLoadAtLeast(2, getGridPage().getGrid());
         List<Order> results = getGridPage().getGrid().getItems();
 
@@ -72,7 +71,7 @@ public class FreightColumnAsserter extends GridColumnAsserter {
         secondNewItem.setFreight(BigDecimal.valueOf(newItem.getFreight() + 1).setScale(3, RoundingMode.HALF_UP).doubleValue());
         updateItemInDb(secondNewItem);
 
-        getGridPage().getGrid().filter(GridColumns.FREIGHT, FilterOperator.GreaterThan, Double.toString(newItem.getFreight()));
+        getGridPage().getGrid().filter(GridColumns.FREIGHT, FilterOperator.GREATER_THAN, Double.toString(newItem.getFreight()));
         waitForGridToLoadAtLeast(1, getGridPage().getGrid());
         List<Order> results = getGridPage().getGrid().getItems();
 
@@ -96,7 +95,7 @@ public class FreightColumnAsserter extends GridColumnAsserter {
         secondNewItem.setFreight(BigDecimal.valueOf(newItem.getFreight() - 0.01).setScale(3, RoundingMode.HALF_UP).doubleValue());
         updateItemInDb(secondNewItem);
 
-        getGridPage().getGrid().filter(GridColumns.FREIGHT, FilterOperator.LessThanOrEqualTo, Double.toString(newItem.getFreight()));
+        getGridPage().getGrid().filter(GridColumns.FREIGHT, FilterOperator.LESS_THAN_OR_EQUAL_TO, Double.toString(newItem.getFreight()));
         waitForGridToLoadAtLeast(2, getGridPage().getGrid());
         List<Order> results = getGridPage().getGrid().getItems();
 
@@ -121,7 +120,7 @@ public class FreightColumnAsserter extends GridColumnAsserter {
         secondNewItem.setFreight(BigDecimal.valueOf(newItem.getFreight() - 0.01).setScale(3, RoundingMode.HALF_UP).doubleValue());
         updateItemInDb(secondNewItem);
 
-        getGridPage().getGrid().filter(GridColumns.FREIGHT, FilterOperator.LessThan, Double.toString(newItem.getFreight()));
+        getGridPage().getGrid().filter(GridColumns.FREIGHT, FilterOperator.LESS_THAN, Double.toString(newItem.getFreight()));
         waitForGridToLoadAtLeast(1, getGridPage().getGrid());
         List<Order> results = getGridPage().getGrid().getItems();
 
@@ -140,8 +139,8 @@ public class FreightColumnAsserter extends GridColumnAsserter {
 
         // After we apply the orderId filter, only 1 item is displayed in the grid. When we apply the NotEqualTo filter this item will disappear.
         getGridPage().getGrid().filter(
-                new GridFilter(GridColumns.FREIGHT, FilterOperator.NotEqualTo, Double.toString(newItem.getFreight())),
-                new GridFilter(GridColumns.ORDER_ID, FilterOperator.EqualTo, newItem.getOrderId().toString()));
+                new GridFilter(GridColumns.FREIGHT, FilterOperator.NOT_EQUAL_TO, Double.toString(newItem.getFreight())),
+                new GridFilter(GridColumns.ORDER_ID, FilterOperator.EQUAL_TO, newItem.getOrderId().toString()));
         waitForGridToLoad(0, getGridPage().getGrid());
         List<Order> results = getGridPage().getGrid().getItems();
 
@@ -162,7 +161,7 @@ public class FreightColumnAsserter extends GridColumnAsserter {
         secondNewItem.setFreight(newItem.getFreight() + 1);
         updateItemInDb(secondNewItem);
 
-        getGridPage().getGrid().filter(GridColumns.FREIGHT, FilterOperator.EqualTo, Double.toString(newItem.getFreight()));
+        getGridPage().getGrid().filter(GridColumns.FREIGHT, FilterOperator.EQUAL_TO, Double.toString(newItem.getFreight()));
         waitForGridToLoad(1, getGridPage().getGrid());
         getGridPage().getGrid().removeFilters();
 

@@ -18,7 +18,7 @@ public class ShipNameColumnAsserter extends GridColumnAsserter {
         getGridPage().navigateTo();
         var newItem = createNewItemInDb();
 
-        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.EqualTo, newItem.getShipName());
+        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.EQUAL_TO, newItem.getShipName());
         waitForGridToLoad(1, getGridPage().getGrid());
         List<GridItem> items = getGridPage().getGrid().getItems();
 
@@ -33,7 +33,7 @@ public class ShipNameColumnAsserter extends GridColumnAsserter {
         shipName = removeLastChar(removeFirstChar(shipName));
         var newItem = createNewItemInDb(shipName);
 
-        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.Contains, newItem.getShipName());
+        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.CONTAINS, newItem.getShipName());
         waitForGridToLoad(1, getGridPage().getGrid());
         List<GridItem> items = getGridPage().getGrid().getItems();
 
@@ -48,7 +48,7 @@ public class ShipNameColumnAsserter extends GridColumnAsserter {
         shipName = removeFirstChar(shipName);
         var newItem = createNewItemInDb(shipName);
 
-        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.EndsWith, newItem.getShipName());
+        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.ENDS_WITH, newItem.getShipName());
         waitForGridToLoad(1, getGridPage().getGrid());
         List<GridItem> items = getGridPage().getGrid().getItems();
 
@@ -63,7 +63,7 @@ public class ShipNameColumnAsserter extends GridColumnAsserter {
         shipName = removeFirstChar(shipName);
         var newItem = createNewItemInDb(shipName);
 
-        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.StartsWith, newItem.getShipName());
+        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.STARTS_WITH, newItem.getShipName());
         waitForGridToLoad(1, getGridPage().getGrid());
         List<GridItem> items = getGridPage().getGrid().getItems();
 
@@ -78,8 +78,8 @@ public class ShipNameColumnAsserter extends GridColumnAsserter {
         var newItem = createNewItemInDb();
 
         getGridPage().getGrid().filter(
-                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.NotEqualTo, newItem.getShipName()),
-                new GridFilter(GridColumns.ORDER_ID, FilterOperator.EqualTo, newItem.getOrderId().toString()));
+                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.NOT_EQUAL_TO, newItem.getShipName()),
+                new GridFilter(GridColumns.ORDER_ID, FilterOperator.EQUAL_TO, newItem.getOrderId().toString()));
         waitForGridToLoad(0, getGridPage().getGrid());
         List<GridItem> items = getGridPage().getGrid().getItems();
 
@@ -97,8 +97,8 @@ public class ShipNameColumnAsserter extends GridColumnAsserter {
         // Apply combined filter. First filter by ID and than by ship name (not equal filter).
         // After the first filter there is only one element when we apply the second we expect 0 elements.
         getGridPage().getGrid().filter(
-                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.NotContains, newItem.getShipName()),
-                new GridFilter(GridColumns.ORDER_ID, FilterOperator.EqualTo, newItem.getOrderId().toString()));
+                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.NOT_CONTAINS, newItem.getShipName()),
+                new GridFilter(GridColumns.ORDER_ID, FilterOperator.EQUAL_TO, newItem.getOrderId().toString()));
         waitForGridToLoad(0, getGridPage().getGrid());
         List<GridItem> items = getGridPage().getGrid().getItems();
 
@@ -110,7 +110,7 @@ public class ShipNameColumnAsserter extends GridColumnAsserter {
         createNewItemInDb();
 
         // Filter by GUID and we know we wait the grid to be empty
-        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.StartsWith, UUID.randomUUID().toString());
+        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.STARTS_WITH, UUID.randomUUID().toString());
         waitForGridToLoad(0, getGridPage().getGrid());
 
         // Remove all filters and we expect that the grid will contain at least 1 item.

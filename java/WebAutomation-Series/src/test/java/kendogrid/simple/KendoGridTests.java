@@ -32,14 +32,13 @@ public class KendoGridTests {
     private final String OrderIdColumnName = "OrderID";
     private final String ShipNameColumnName = "ShipName";
 
-//    @BeforeClass
-//    public void classInit() {
-//        WebDriverManager.chromedriver().setup();
-//    }
+    @BeforeClass
+    public void classInit() {
+        WebDriverManager.chromedriver().setup();
+    }
 
     @BeforeTest
     public void testSetup() {
-        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -59,7 +58,7 @@ public class KendoGridTests {
 
     @Test
     public void filterContactName() throws Exception {
-        kendoGrid.filter("ContactName", FilterOperator.Contains, "Thomas");
+        kendoGrid.filter("ContactName", FilterOperator.CONTAINS, "Thomas");
         List<GridItem> items = kendoGrid.getItems();
 
         Assert.assertEquals(items.stream().count(), 1);

@@ -2,21 +2,14 @@ package kendogrid.reuse;
 
 import kendogrid.Order;
 import kendogrid.components.FilterOperator;
-import kendogrid.components.GridFilter;
-import kendogrid.components.KendoGrid;
-import kendogrid.components.SortType;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
-import java.time.LocalDateTime;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 public class GridPageAsserter extends GridColumnAsserter {
     private WebDriver driver;
@@ -175,7 +168,7 @@ public class GridPageAsserter extends GridColumnAsserter {
 
     private void navigateToGridInitialPage(int initialPageNumber) throws Exception {
         navigateToGridInitialPage(1);
-        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.EqualTo, uniqueShippingName);
+        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.EQUAL_TO, uniqueShippingName);
         getGridPage().getGrid().changePageSize(1);
         waitForGridToLoad(1, getGridPage().getGrid());
         getGridPage().getGrid().navigateToPage(initialPageNumber);

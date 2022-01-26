@@ -6,8 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
@@ -130,46 +128,46 @@ public class KendoGrid {
         var kendoFilterOperator = "";
         switch (filterOperator)
         {
-            case EqualTo:
+            case EQUAL_TO:
                 kendoFilterOperator = "eq";
                 break;
-            case NotEqualTo:
+            case NOT_EQUAL_TO:
                 kendoFilterOperator = "neq";
                 break;
-            case LessThan:
+            case LESS_THAN:
                 kendoFilterOperator = "lt";
                 break;
-            case LessThanOrEqualTo:
+            case LESS_THAN_OR_EQUAL_TO:
                 kendoFilterOperator = "lte";
                 break;
-            case GreaterThan:
+            case GREATER_THAN:
                 kendoFilterOperator = "gt";
                 break;
-            case GreaterThanOrEqualTo:
+            case GREATER_THAN_OR_EQUAL_TO:
                 kendoFilterOperator = "gte";
                 break;
-            case StartsWith:
+            case STARTS_WITH:
                 kendoFilterOperator = "startswith";
                 break;
-            case EndsWith:
+            case ENDS_WITH:
                 kendoFilterOperator = "endswith";
                 break;
-            case Contains:
+            case CONTAINS:
                 kendoFilterOperator = "contains";
                 break;
-            case NotContains:
+            case NOT_CONTAINS:
                 kendoFilterOperator = "doesnotcontain";
                 break;
-            case IsAfter:
+            case IS_AFTER:
                 kendoFilterOperator = "gt";
                 break;
-            case IsAfterOrEqualTo:
+            case IS_AFTER_OR_EQUAL_TO:
                 kendoFilterOperator = "gte";
                 break;
-            case IsBefore:
+            case IS_BEFORE:
                 kendoFilterOperator = "lt";
                 break;
-            case IsBeforeOrEqualTo:
+            case IS_BEFORE_OR_EQUAL_TO:
                 kendoFilterOperator = "lte";
                 break;
             default:
@@ -179,8 +177,7 @@ public class KendoGrid {
         return kendoFilterOperator;
     }
 
-    private void waitForAjax()
-    {
+    private void waitForAjax() {
         _wait.until(d -> (Boolean)((JavascriptExecutor)d).executeScript("return jQuery.active == 0"));
     }
 }

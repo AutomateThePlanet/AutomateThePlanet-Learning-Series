@@ -18,7 +18,6 @@ import kendogrid.Order;
 import kendogrid.components.*;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -28,15 +27,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.time.LocalDateTime;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 public class KendoGridTests {
     private WebDriver driver;
@@ -249,7 +243,7 @@ public class KendoGridTests {
     private void navigateToGridInitialPage(int initialPageNumber) throws Exception {
         driver.navigate().to("http://demos.telerik.com/kendo-ui/grid/filter-row");
         var kendoGrid = new KendoGrid(driver, driver.findElement(By.id("grid")));
-        kendoGrid.filter(ShipNameColumnName, FilterOperator.EqualTo, uniqueShippingName);
+        kendoGrid.filter(ShipNameColumnName, FilterOperator.EQUAL_TO, uniqueShippingName);
         kendoGrid.changePageSize(1);
         waitForGridToLoad(1, kendoGrid);
         kendoGrid.navigateToPage(initialPageNumber);

@@ -19,15 +19,8 @@ import kendogrid.components.FilterOperator;
 import kendogrid.components.GridFilter;
 import kendogrid.components.GridItem;
 import kendogrid.components.KendoGrid;
-import net.lightbody.bmp.BrowserMobProxyServer;
-import org.apache.tools.ant.util.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.firefox.ProfilesIni;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -35,14 +28,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import static java.lang.System.getProperty;
@@ -83,7 +69,7 @@ public class KendoGridTests {
     public void orderIdEqualToFilter() throws Exception {
         var newItem = CreateNewItemInDb();
 
-        kendoGrid.filter(OrderIdColumnName, FilterOperator.EqualTo, newItem.getOrderId());
+        kendoGrid.filter(OrderIdColumnName, FilterOperator.EQUAL_TO, newItem.getOrderId());
         waitForGridToLoad(1, kendoGrid);
         List<GridItem> items = kendoGrid.getItems();
 
@@ -100,8 +86,8 @@ public class KendoGridTests {
 
         // When we filter by the second unique column ShippingName, only one item will be displayed. Once we apply the second not equal to filter the grid should be empty.
         kendoGrid.filter(
-                new GridFilter(OrderIdColumnName, FilterOperator.GreaterThanOrEqualTo, newItem.getOrderId()),
-                new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.getShipName()));
+                new GridFilter(OrderIdColumnName, FilterOperator.GREATER_THAN_OR_EQUAL_TO, newItem.getOrderId()),
+                new GridFilter(ShipNameColumnName, FilterOperator.EQUAL_TO, newItem.getShipName()));
 
         waitForGridToLoadAtLeast(2, kendoGrid);
         List<Order> results = kendoGrid.getItems();
@@ -121,8 +107,8 @@ public class KendoGridTests {
 
         // Filter by the smaller orderId but also by the second unique column in this case shipping name
         kendoGrid.filter(
-                new GridFilter(OrderIdColumnName, FilterOperator.GreaterThan, newItem.getOrderId()),
-                new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.getShipName()));
+                new GridFilter(OrderIdColumnName, FilterOperator.GREATER_THAN, newItem.getOrderId()),
+                new GridFilter(ShipNameColumnName, FilterOperator.EQUAL_TO, newItem.getShipName()));
         waitForGridToLoadAtLeast(1, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -140,8 +126,8 @@ public class KendoGridTests {
 
         // Filter by the larger orderId but also by the second unique column in this case shipping name
         kendoGrid.filter(
-                new GridFilter(OrderIdColumnName, FilterOperator.LessThanOrEqualTo, secondNewItem.getOrderId()),
-                new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.getShipName()));
+                new GridFilter(OrderIdColumnName, FilterOperator.LESS_THAN_OR_EQUAL_TO, secondNewItem.getOrderId()),
+                new GridFilter(ShipNameColumnName, FilterOperator.EQUAL_TO, newItem.getShipName()));
         waitForGridToLoadAtLeast(2, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -160,8 +146,8 @@ public class KendoGridTests {
 
         // Filter by the larger orderId but also by the second unique column in this case shipping name
         kendoGrid.filter(
-                new GridFilter(OrderIdColumnName, FilterOperator.LessThan, secondNewItem.getOrderId()),
-                new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, secondNewItem.getShipName()));
+                new GridFilter(OrderIdColumnName, FilterOperator.LESS_THAN, secondNewItem.getOrderId()),
+                new GridFilter(ShipNameColumnName, FilterOperator.EQUAL_TO, secondNewItem.getShipName()));
         waitForGridToLoadAtLeast(1, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -179,8 +165,8 @@ public class KendoGridTests {
 
         // Filter by the larger orderId but also by the second unique column in this case shipping name
         kendoGrid.filter(
-                new GridFilter(OrderIdColumnName, FilterOperator.NotEqualTo, secondNewItem.getOrderId()),
-                new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, secondNewItem.getShipName()));
+                new GridFilter(OrderIdColumnName, FilterOperator.NOT_EQUAL_TO, secondNewItem.getOrderId()),
+                new GridFilter(ShipNameColumnName, FilterOperator.EQUAL_TO, secondNewItem.getShipName()));
         waitForGridToLoadAtLeast(1, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -196,7 +182,7 @@ public class KendoGridTests {
         // Make sure that we have at least 2 items if the grid is empty. The tests are designed to run against empty DB.
         var secondNewItem = CreateNewItemInDb(newItem.getShipName());
 
-        kendoGrid.filter(OrderIdColumnName, FilterOperator.EqualTo, newItem.getOrderId());
+        kendoGrid.filter(OrderIdColumnName, FilterOperator.EQUAL_TO, newItem.getOrderId());
         waitForGridToLoad(1, kendoGrid);
         kendoGrid.removeFilters();
 

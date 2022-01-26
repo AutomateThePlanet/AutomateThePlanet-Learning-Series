@@ -3,15 +3,10 @@ package kendogrid.reuse;
 import kendogrid.Order;
 import kendogrid.components.FilterOperator;
 import kendogrid.components.GridFilter;
-import kendogrid.components.KendoGrid;
 import kendogrid.components.SortType;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
@@ -32,7 +27,7 @@ public class OrderDateColumnAsserter extends GridColumnAsserter {
         newItem.setOrderDate(lastOrderDate.plusDays(1));
         updateItemInDb(newItem);
 
-        getGridPage().getGrid().filter(GridColumns.ORDER_DATE, FilterOperator.EqualTo, newItem.getOrderDate().toString());
+        getGridPage().getGrid().filter(GridColumns.ORDER_DATE, FilterOperator.EQUAL_TO, newItem.getOrderDate().toString());
         waitForGridToLoadAtLeast(1, getGridPage().getGrid());
         List<Order> results = getGridPage().getGrid().getItems();
 
@@ -57,8 +52,8 @@ public class OrderDateColumnAsserter extends GridColumnAsserter {
         // After we filter by the unique shipping name, two items will be displayed in the grid.
         // After we apply the date after filter only the second item should be visible in the grid.
         getGridPage().getGrid().filter(
-                new GridFilter(GridColumns.ORDER_DATE, FilterOperator.NotEqualTo, newItem.getOrderDate().toString()),
-                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.EqualTo, newItem.getShipName()));
+                new GridFilter(GridColumns.ORDER_DATE, FilterOperator.NOT_EQUAL_TO, newItem.getOrderDate().toString()),
+                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.EQUAL_TO, newItem.getShipName()));
         waitForGridToLoadAtLeast(1, getGridPage().getGrid());
         List<Order> results = getGridPage().getGrid().getItems();
 
@@ -83,8 +78,8 @@ public class OrderDateColumnAsserter extends GridColumnAsserter {
         // After we filter by the unique shipping name, two items will be displayed in the grid.
         // After we apply the date after filter only the second item should be visible in the grid.
         getGridPage().getGrid().filter(
-                new GridFilter(GridColumns.ORDER_DATE, FilterOperator.IsAfter, newItem.getOrderDate().toString()),
-                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.EqualTo, newItem.getShipName()));
+                new GridFilter(GridColumns.ORDER_DATE, FilterOperator.IS_AFTER, newItem.getOrderDate().toString()),
+                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.EQUAL_TO, newItem.getShipName()));
         waitForGridToLoadAtLeast(1, getGridPage().getGrid());
         List<Order> results = getGridPage().getGrid().getItems();
 
@@ -109,8 +104,8 @@ public class OrderDateColumnAsserter extends GridColumnAsserter {
         // After we filter by the unique shipping name, two items will be displayed in the grid.
         // After we apply the date after filter only the second item should be visible in the grid.
         getGridPage().getGrid().filter(
-                new GridFilter(GridColumns.ORDER_DATE, FilterOperator.IsAfterOrEqualTo, newItem.getOrderDate().toString()),
-                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.EqualTo, newItem.getShipName()));
+                new GridFilter(GridColumns.ORDER_DATE, FilterOperator.IS_AFTER_OR_EQUAL_TO, newItem.getOrderDate().toString()),
+                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.EQUAL_TO, newItem.getShipName()));
         waitForGridToLoadAtLeast(2, getGridPage().getGrid());
         List<Order> results = getGridPage().getGrid().getItems();
 
@@ -136,8 +131,8 @@ public class OrderDateColumnAsserter extends GridColumnAsserter {
         // After we filter by the unique shipping name, two items will be displayed in the grid.
         // After we apply the date after filter only the second item should be visible in the grid.
         getGridPage().getGrid().filter(
-                new GridFilter(GridColumns.ORDER_DATE, FilterOperator.IsBefore, newItem.getOrderDate().toString()),
-                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.EqualTo, newItem.getShipName()));
+                new GridFilter(GridColumns.ORDER_DATE, FilterOperator.IS_BEFORE, newItem.getOrderDate().toString()),
+                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.EQUAL_TO, newItem.getShipName()));
         waitForGridToLoadAtLeast(1, getGridPage().getGrid());
         List<Order> results = getGridPage().getGrid().getItems();
 
@@ -160,8 +155,8 @@ public class OrderDateColumnAsserter extends GridColumnAsserter {
         updateItemInDb(secondNewItem);
 
         getGridPage().getGrid().filter(
-                new GridFilter(GridColumns.ORDER_DATE, FilterOperator.IsBeforeOrEqualTo, newItem.getOrderDate().toString()),
-                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.EqualTo, newItem.getShipName()));
+                new GridFilter(GridColumns.ORDER_DATE, FilterOperator.IS_BEFORE_OR_EQUAL_TO, newItem.getOrderDate().toString()),
+                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.EQUAL_TO, newItem.getShipName()));
         waitForGridToLoadAtLeast(2, getGridPage().getGrid());
         List<Order> results = getGridPage().getGrid().getItems();
 
@@ -175,7 +170,7 @@ public class OrderDateColumnAsserter extends GridColumnAsserter {
 
         var newItem = createNewItemInDb();
 
-        getGridPage().getGrid().filter(GridColumns.ORDER_DATE, FilterOperator.IsAfter, LocalDateTime.MAX.toString());
+        getGridPage().getGrid().filter(GridColumns.ORDER_DATE, FilterOperator.IS_AFTER, LocalDateTime.MAX.toString());
         waitForGridToLoad(0, getGridPage().getGrid());
         getGridPage().getGrid().removeFilters();
 
@@ -196,7 +191,7 @@ public class OrderDateColumnAsserter extends GridColumnAsserter {
         secondNewItem.setOrderDate(lastOrderDate.plusDays(-2));
         updateItemInDb(secondNewItem);
 
-        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.EqualTo, newItem.getShipName());
+        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.EQUAL_TO, newItem.getShipName());
         waitForGridToLoadAtLeast(2, getGridPage().getGrid());
         getGridPage().getGrid().sort(GridColumns.ORDER_DATE, SortType.ASC);
         Thread.sleep(1000);
@@ -221,7 +216,7 @@ public class OrderDateColumnAsserter extends GridColumnAsserter {
         secondNewItem.setOrderDate(lastOrderDate.plusDays(-2));
         updateItemInDb(secondNewItem);
 
-        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.EqualTo, newItem.getShipName());
+        getGridPage().getGrid().filter(GridColumns.SHIP_NAME, FilterOperator.EQUAL_TO, newItem.getShipName());
         waitForGridToLoadAtLeast(2, getGridPage().getGrid());
         getGridPage().getGrid().sort(GridColumns.ORDER_DATE, SortType.DESC);
         Thread.sleep(1000);

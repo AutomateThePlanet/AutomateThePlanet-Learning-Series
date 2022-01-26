@@ -17,7 +17,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import kendogrid.Order;
 import kendogrid.components.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,8 +29,6 @@ import org.testng.annotations.Test;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDateTime;
-import java.time.temporal.Temporal;
-import java.time.temporal.TemporalUnit;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -81,7 +78,7 @@ public class KendoGridTests {
         newItem.setOrderDate(lastOrderDate.plusDays(1));
         updateItemInDb(newItem);
 
-        kendoGrid.filter(OrderDateColumnName, FilterOperator.EqualTo, newItem.getOrderDate().toString());
+        kendoGrid.filter(OrderDateColumnName, FilterOperator.EQUAL_TO, newItem.getOrderDate().toString());
         waitForGridToLoadAtLeast(1, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -105,8 +102,8 @@ public class KendoGridTests {
         // After we filter by the unique shipping name, two items will be displayed in the grid.
         // After we apply the date after filter only the second item should be visible in the grid.
         kendoGrid.filter(
-                new GridFilter(OrderDateColumnName, FilterOperator.NotEqualTo, newItem.getOrderDate().toString()),
-                new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.getShipName()));
+                new GridFilter(OrderDateColumnName, FilterOperator.NOT_EQUAL_TO, newItem.getOrderDate().toString()),
+                new GridFilter(ShipNameColumnName, FilterOperator.EQUAL_TO, newItem.getShipName()));
         waitForGridToLoadAtLeast(1, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -130,8 +127,8 @@ public class KendoGridTests {
         // After we filter by the unique shipping name, two items will be displayed in the grid.
         // After we apply the date after filter only the second item should be visible in the grid.
         kendoGrid.filter(
-                new GridFilter(OrderDateColumnName, FilterOperator.IsAfter, newItem.getOrderDate().toString()),
-                new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.getShipName()));
+                new GridFilter(OrderDateColumnName, FilterOperator.IS_AFTER, newItem.getOrderDate().toString()),
+                new GridFilter(ShipNameColumnName, FilterOperator.EQUAL_TO, newItem.getShipName()));
         waitForGridToLoadAtLeast(1, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -158,8 +155,8 @@ public class KendoGridTests {
         // After we filter by the unique shipping name, two items will be displayed in the grid.
         // After we apply the date after filter only the second item should be visible in the grid.
         kendoGrid.filter(
-                new GridFilter(OrderDateColumnName, FilterOperator.IsAfterOrEqualTo, newItem.getOrderDate().toString()),
-                new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.getShipName()));
+                new GridFilter(OrderDateColumnName, FilterOperator.IS_AFTER_OR_EQUAL_TO, newItem.getOrderDate().toString()),
+                new GridFilter(ShipNameColumnName, FilterOperator.EQUAL_TO, newItem.getShipName()));
         waitForGridToLoadAtLeast(2, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -187,8 +184,8 @@ public class KendoGridTests {
         // After we filter by the unique shipping name, two items will be displayed in the grid.
         // After we apply the date after filter only the second item should be visible in the grid.
         kendoGrid.filter(
-                new GridFilter(OrderDateColumnName, FilterOperator.IsBefore, newItem.getOrderDate().toString()),
-                new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.getShipName()));
+                new GridFilter(OrderDateColumnName, FilterOperator.IS_BEFORE, newItem.getOrderDate().toString()),
+                new GridFilter(ShipNameColumnName, FilterOperator.EQUAL_TO, newItem.getShipName()));
         waitForGridToLoadAtLeast(1, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -213,8 +210,8 @@ public class KendoGridTests {
         updateItemInDb(secondNewItem);
 
         kendoGrid.filter(
-                new GridFilter(OrderDateColumnName, FilterOperator.IsBeforeOrEqualTo, newItem.getOrderDate().toString()),
-                new GridFilter(ShipNameColumnName, FilterOperator.EqualTo, newItem.getShipName()));
+                new GridFilter(OrderDateColumnName, FilterOperator.IS_BEFORE_OR_EQUAL_TO, newItem.getOrderDate().toString()),
+                new GridFilter(ShipNameColumnName, FilterOperator.EQUAL_TO, newItem.getShipName()));
         waitForGridToLoadAtLeast(2, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -230,7 +227,7 @@ public class KendoGridTests {
 
         var newItem = createNewItemInDb();
 
-        kendoGrid.filter(OrderDateColumnName, FilterOperator.IsAfter, LocalDateTime.MAX.toString());
+        kendoGrid.filter(OrderDateColumnName, FilterOperator.IS_AFTER, LocalDateTime.MAX.toString());
         waitForGridToLoad(0, kendoGrid);
         kendoGrid.removeFilters();
 
@@ -253,7 +250,7 @@ public class KendoGridTests {
         secondNewItem.setOrderDate(lastOrderDate.plusDays(-2));
         updateItemInDb(secondNewItem);
 
-        kendoGrid.filter(ShipNameColumnName, FilterOperator.EqualTo, newItem.getShipName());
+        kendoGrid.filter(ShipNameColumnName, FilterOperator.EQUAL_TO, newItem.getShipName());
         waitForGridToLoadAtLeast(2, kendoGrid);
         kendoGrid.sort(OrderDateColumnName, SortType.ASC);
         Thread.sleep(1000);
@@ -280,7 +277,7 @@ public class KendoGridTests {
         secondNewItem.setOrderDate(lastOrderDate.plusDays(-2));
         updateItemInDb(secondNewItem);
 
-        kendoGrid.filter(ShipNameColumnName, FilterOperator.EqualTo, newItem.getShipName());
+        kendoGrid.filter(ShipNameColumnName, FilterOperator.EQUAL_TO, newItem.getShipName());
         waitForGridToLoadAtLeast(2, kendoGrid);
         kendoGrid.sort(OrderDateColumnName, SortType.DESC);
         Thread.sleep(1000);
@@ -301,7 +298,7 @@ public class KendoGridTests {
         newItem.setFreight(getUniqueNumberValue());
         updateItemInDb(newItem);
 
-        kendoGrid.filter(FreightColumnName, FilterOperator.EqualTo, Double.toString(newItem.getFreight()));
+        kendoGrid.filter(FreightColumnName, FilterOperator.EQUAL_TO, Double.toString(newItem.getFreight()));
         waitForGridToLoadAtLeast(1, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -325,7 +322,7 @@ public class KendoGridTests {
         secondNewItem.setFreight(BigDecimal.valueOf(newItem.getFreight() + 1).setScale(3, RoundingMode.HALF_UP).doubleValue());
         updateItemInDb(secondNewItem);
 
-        kendoGrid.filter(FreightColumnName, FilterOperator.GreaterThanOrEqualTo, Double.toString(newItem.getFreight()));
+        kendoGrid.filter(FreightColumnName, FilterOperator.GREATER_THAN_OR_EQUAL_TO, Double.toString(newItem.getFreight()));
         waitForGridToLoadAtLeast(2, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -352,7 +349,7 @@ public class KendoGridTests {
         secondNewItem.setFreight(BigDecimal.valueOf(newItem.getFreight() + 1).setScale(3, RoundingMode.HALF_UP).doubleValue());
         updateItemInDb(secondNewItem);
 
-        kendoGrid.filter(FreightColumnName, FilterOperator.GreaterThan, Double.toString(newItem.getFreight()));
+        kendoGrid.filter(FreightColumnName, FilterOperator.GREATER_THAN, Double.toString(newItem.getFreight()));
         waitForGridToLoadAtLeast(1, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -378,7 +375,7 @@ public class KendoGridTests {
         secondNewItem.setFreight(BigDecimal.valueOf(newItem.getFreight() - 0.01).setScale(3, RoundingMode.HALF_UP).doubleValue());
         updateItemInDb(secondNewItem);
 
-        kendoGrid.filter(FreightColumnName, FilterOperator.LessThanOrEqualTo, Double.toString(newItem.getFreight()));
+        kendoGrid.filter(FreightColumnName, FilterOperator.LESS_THAN_OR_EQUAL_TO, Double.toString(newItem.getFreight()));
         waitForGridToLoadAtLeast(2, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -405,7 +402,7 @@ public class KendoGridTests {
         secondNewItem.setFreight(BigDecimal.valueOf(newItem.getFreight() - 0.01).setScale(3, RoundingMode.HALF_UP).doubleValue());
         updateItemInDb(secondNewItem);
 
-        kendoGrid.filter(FreightColumnName, FilterOperator.LessThan, Double.toString(newItem.getFreight()));
+        kendoGrid.filter(FreightColumnName, FilterOperator.LESS_THAN, Double.toString(newItem.getFreight()));
         waitForGridToLoadAtLeast(1, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -426,8 +423,8 @@ public class KendoGridTests {
 
         // After we apply the orderId filter, only 1 item is displayed in the grid. When we apply the NotEqualTo filter this item will disappear.
         kendoGrid.filter(
-                new GridFilter(FreightColumnName, FilterOperator.NotEqualTo, Double.toString(newItem.getFreight())),
-                new GridFilter(OrderIdColumnName, FilterOperator.EqualTo, newItem.getOrderId().toString()));
+                new GridFilter(FreightColumnName, FilterOperator.NOT_EQUAL_TO, Double.toString(newItem.getFreight())),
+                new GridFilter(OrderIdColumnName, FilterOperator.EQUAL_TO, newItem.getOrderId().toString()));
         waitForGridToLoad(0, kendoGrid);
         List<Order> results = kendoGrid.getItems();
 
@@ -450,7 +447,7 @@ public class KendoGridTests {
         secondNewItem.setFreight(newItem.getFreight() + 1);
         updateItemInDb(secondNewItem);
 
-        kendoGrid.filter(FreightColumnName, FilterOperator.EqualTo, Double.toString(newItem.getFreight()));
+        kendoGrid.filter(FreightColumnName, FilterOperator.EQUAL_TO, Double.toString(newItem.getFreight()));
         waitForGridToLoad(1, kendoGrid);
         kendoGrid.removeFilters();
 
