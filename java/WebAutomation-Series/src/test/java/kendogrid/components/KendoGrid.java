@@ -6,7 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +26,7 @@ public class KendoGrid {
 
     public void removeFilters() {
         var jsToBeExecuted = getGridReference();
-        jsToBeExecuted = jsToBeExecuted.concat("grid.dataSource.filter([]);");
+        jsToBeExecuted = jsToBeExecuted + "grid.dataSource.filter([]);";
         driver.executeScript(jsToBeExecuted);
         waitForAjax();
     }
@@ -31,21 +34,21 @@ public class KendoGrid {
     public int totalNumberRows() {
         waitForAjax();
         var jsToBeExecuted = getGridReference();
-        jsToBeExecuted = jsToBeExecuted.concat("grid.dataSource.total();");
+        jsToBeExecuted = jsToBeExecuted + "grid.dataSource.total();";
         var jsResult = driver.executeScript(jsToBeExecuted);
         return Integer.parseInt(jsResult.toString());
     }
 
     public void reload() {
         var jsToBeExecuted = getGridReference();
-        jsToBeExecuted = jsToBeExecuted.concat("grid.dataSource.read();");
+        jsToBeExecuted = jsToBeExecuted + "grid.dataSource.read();";
         driver.executeScript(jsToBeExecuted);
         waitForAjax();
     }
 
-    public int getPageSizePageSize() {
+    public int getPageSize() {
         var jsToBeExecuted = getGridReference();
-        jsToBeExecuted = jsToBeExecuted.concat("return grid.dataSource.pageSize();");
+        jsToBeExecuted = jsToBeExecuted + "return grid.dataSource.pageSize();";
         var currentResponse = driver.executeScript(jsToBeExecuted);
         var pageSize = Integer.parseInt(currentResponse.toString());
         return pageSize;
@@ -53,20 +56,20 @@ public class KendoGrid {
 
     public void changePageSize(int newSize) {
         var jsToBeExecuted = getGridReference();
-        jsToBeExecuted = jsToBeExecuted.concat("grid.dataSource.pageSize(" + newSize + ");");
+        jsToBeExecuted = jsToBeExecuted + "grid.dataSource.pageSize(" + newSize + ");";
         driver.executeScript(jsToBeExecuted);
         waitForAjax();
     }
 
     public void navigateToPage(int pageNumber) {
         var jsToBeExecuted = getGridReference();
-        jsToBeExecuted = jsToBeExecuted.concat("grid.dataSource.page(" + pageNumber + ");");
+        jsToBeExecuted = jsToBeExecuted + "grid.dataSource.page(" + pageNumber + ");";
         driver.executeScript(jsToBeExecuted);
     }
 
     public void sort(String columnName, SortType sortType) {
         var jsToBeExecuted = getGridReference();
-        jsToBeExecuted = jsToBeExecuted.concat("grid.dataSource.sort({field: '" + columnName + "', dir: '" + sortType.toString().toLowerCase() + "'});");
+        jsToBeExecuted = jsToBeExecuted + "grid.dataSource.sort({field: '" + columnName + "', dir: '" + sortType.toString().toLowerCase() + "'});";
         driver.executeScript(jsToBeExecuted);
         waitForAjax();
     }
@@ -74,7 +77,7 @@ public class KendoGrid {
     public <T> List<T> getItems() {
         waitForAjax();
         var jsToBeExecuted = getGridReference();
-        jsToBeExecuted = jsToBeExecuted.concat("return JSON.stringify(grid.dataItems());");
+        jsToBeExecuted = jsToBeExecuted + "return JSON.stringify(grid.dataItems());";
         var jsResults = driver.executeScript(jsToBeExecuted);
 
         Gson gson = new Gson();
@@ -92,12 +95,11 @@ public class KendoGrid {
         sb.append(jsToBeExecuted);
         sb.append("grid.dataSource.filter({ logic: \"and\", filters: [");
         for (var currentFilter: gridFilters) {
-            LocalDateTime filterDateTime = LocalDateTime.parse(currentFilter.getFilterValue());
             var filterValueToBeApplied =  String.format("\"%s\"", currentFilter.getFilterValue());
             try {
-                LocalDateTime.parse(currentFilter.getFilterValue());
+                LocalDateTime filterDateTime = LocalDateTime.parse(currentFilter.getFilterValue());
                 filterValueToBeApplied = String.format("new Date(%s, %s, %s})", filterDateTime.getYear(), filterDateTime.getMonthValue() - 1, filterDateTime.getDayOfYear());
-            } catch (Exception ex) {
+            } catch (DateTimeParseException ex) {
                 // ignore
             }
 
@@ -112,7 +114,7 @@ public class KendoGrid {
 
     public int getCurrentPageNumber() {
         var jsToBeExecuted = getGridReference();
-        jsToBeExecuted = jsToBeExecuted.concat("return grid.dataSource.page();");
+        jsToBeExecuted = jsToBeExecuted + "return grid.dataSource.page();";
         var result = driver.executeScript(jsToBeExecuted);
         var pageNumber = Integer.parseInt(result.toString());
         return pageNumber;

@@ -101,10 +101,13 @@ public class GestureTests {
 
     @Test
     public void tapTest() {
-        TouchAction touchAction = new TouchAction(driver);
-        AndroidElement element = driver.findElementById("android:id/content");
+        var touchAction = new TouchAction(driver);
+        var element = driver.findElementById("android:id/content");
         Point point = element.getLocation();
 
-        touchAction.tap(TapOptions.tapOptions().withPosition(PointOption.point(point)).withTapsCount(2)).perform();
+        touchAction.tap(TapOptions.tapOptions()
+                .withPosition(PointOption.point(point))
+                .withTapsCount(2))
+                .perform();
     }
 }

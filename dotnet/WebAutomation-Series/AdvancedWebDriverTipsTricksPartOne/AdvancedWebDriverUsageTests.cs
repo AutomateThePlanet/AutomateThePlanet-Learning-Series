@@ -35,11 +35,16 @@ namespace AdvancedWebDriverTipsTricksPartOne
         public void SetupTest()
         {
             // 7. Use specific Firefox Profile
-            ////FirefoxProfileManager profileManager = new FirefoxProfileManager();
-            ////FirefoxProfile profile = profileManager.GetProfile("HARDDISKUSER");
-            ////this.driver = new FirefoxDriver(profile);
+            var profileManager = new FirefoxProfileManager();
+            FirefoxProfile profile = profileManager.GetProfile("HARDDISKUSER");
+            var firefoxOptions = new FirefoxOptions();
+            firefoxOptions.Profile = profile;
+            _driver = new FirefoxDriver(firefoxOptions);
+
             // 7.1. Set Chrome Options.
-            ////ChromeOptions options = new ChromeOptions();
+            ChromeOptions options = new ChromeOptions();
+            options.AcceptInsecureCertificates = true;
+            options.UnhandledPromptBehavior
             ////// set some options
             ////DesiredCapabilities dc = DesiredCapabilities.Chrome();
             ////dc.SetCapability(ChromeOptions.Capability, options);

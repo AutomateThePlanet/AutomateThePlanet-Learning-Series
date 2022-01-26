@@ -27,7 +27,7 @@ using Proxy = Titanium.Web.Proxy.Http;
 namespace BlackHoleProxyPattern
 {
     [TestClass]
-    public class CaptureHttpTrafficTests
+    public class BlackHolePatternTests
     {
         private static IWebDriver _driver;
         private static ProxyServer _proxyServer;

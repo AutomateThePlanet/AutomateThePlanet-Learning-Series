@@ -21,8 +21,8 @@ public class Order {
         orderDate = LocalDateTime.now();
     }
 
-    public int getOrderId() {
-        return orderId;
+    public String getOrderId() {
+        return Integer.toString(orderId);
     }
 
     public void setOrderId(int orderId) {
