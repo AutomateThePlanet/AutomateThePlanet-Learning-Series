@@ -2,7 +2,6 @@
   <Import Project="..\..\..\SharedAssemblyInfo.targets" />
 
   <ItemGroup>
-    <PackageReference Include="Selenium.Firefox.WebDriver" Version="*" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
@@ -10,6 +9,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="*" />
     <PackageReference Include="MSTest.TestAdapter" Version="*" />
     <PackageReference Include="MSTest.TestFramework" Version="*" />
+    <PackageReference Include="WebDriverManager" Version="2.12.3" />
   </ItemGroup>
 
   <ItemGroup>

@@ -20,6 +20,8 @@ using System;
 using System.Collections.Generic;
 using Ui.Automation.Core.Controls.Controls;
 using Ui.Automation.Core.Controls.Enums;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
 
 namespace DesignGridControlAutomatedTestsPartTwo
 {
@@ -31,6 +33,12 @@ namespace DesignGridControlAutomatedTestsPartTwo
         private const string ShipNameColumnName = @"ShipName";
         private const string FreightColumnName = @"Freight";
         private const string OrderDateColumnName = @"OrderDate";
+
+        [ClassInitialize]
+        public static void ClassInit(TestContext testContext)
+        {
+            new DriverManager().SetUpDriver(new ChromeConfig());
+        }
 
         [TestInitialize]
         public void SetupTest()

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\SharedAssemblyInfo.targets" />
+
+  <ItemGroup>
+    <None Remove="readme-43.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="readme-43.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="Microsoft.Edge.SeleniumTools" Version="3.141.2" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="*" />
+    <PackageReference Include="Selenium.Support" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="*" />
+
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.0" />
+    <PackageReference Include="NUnit" Version="*" />
+    <PackageReference Include="NUnit3TestAdapter" Version="*">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

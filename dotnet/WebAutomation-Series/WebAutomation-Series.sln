@@ -243,13 +243,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40. Selenium NUnit All Web 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "41. Selenium xUnit All Web Technologies", "41. Selenium xUnit All Web Technologies", "{BBF90B60-7D94-41C9-8E1F-85ABF7ECC1E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumNUnitAllWebTechnologies", "SeleniumNUnitAllWebTechnologies\SeleniumNUnitAllWebTechnologies.csproj", "{946F47A1-F31A-48B0-8935-8DC05F051863}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumNUnitAllWebTechnologies", "SeleniumNUnitAllWebTechnologies\SeleniumNUnitAllWebTechnologies.csproj", "{946F47A1-F31A-48B0-8935-8DC05F051863}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumXUnitAllWebTechnologies", "SeleniumXUnitAllWebTechnologies\SeleniumXUnitAllWebTechnologies.csproj", "{50CFF4FE-DC50-445F-810D-F1023658A4A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumXUnitAllWebTechnologies", "SeleniumXUnitAllWebTechnologies\SeleniumXUnitAllWebTechnologies.csproj", "{50CFF4FE-DC50-445F-810D-F1023658A4A7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "42. Selenium MSTest All Web Technologies", "42. Selenium MSTest All Web Technologies", "{855E52E2-2E20-4312-8997-FE2FD493DD35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumMSTestAllWebTechnologies", "SeleniumMSTestAllWebTechnologies\SeleniumMSTestAllWebTechnologies.csproj", "{02D80A41-1241-415E-AD3B-D370463AB882}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumMSTestAllWebTechnologies", "SeleniumMSTestAllWebTechnologies\SeleniumMSTestAllWebTechnologies.csproj", "{02D80A41-1241-415E-AD3B-D370463AB882}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "43. Advanced Web UI Components Automation", "43. Advanced Web UI Components Automation", "{62975C58-DF44-4395-9BF5-6D6519F83633}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedWebUIComponentsAutomation", "AdvancedWebUIComponentsAutomation\AdvancedWebUIComponentsAutomation.csproj", "{6180A85B-5171-48E7-BCA8-3619DFF9DBD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -477,6 +481,10 @@ Global
 		{02D80A41-1241-415E-AD3B-D370463AB882}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02D80A41-1241-415E-AD3B-D370463AB882}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02D80A41-1241-415E-AD3B-D370463AB882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6180A85B-5171-48E7-BCA8-3619DFF9DBD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6180A85B-5171-48E7-BCA8-3619DFF9DBD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6180A85B-5171-48E7-BCA8-3619DFF9DBD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6180A85B-5171-48E7-BCA8-3619DFF9DBD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -556,6 +564,7 @@ Global
 		{946F47A1-F31A-48B0-8935-8DC05F051863} = {63E33DCB-A0E6-4AF8-84D0-F4089934E3D3}
 		{50CFF4FE-DC50-445F-810D-F1023658A4A7} = {BBF90B60-7D94-41C9-8E1F-85ABF7ECC1E3}
 		{02D80A41-1241-415E-AD3B-D370463AB882} = {855E52E2-2E20-4312-8997-FE2FD493DD35}
+		{6180A85B-5171-48E7-BCA8-3619DFF9DBD4} = {62975C58-DF44-4395-9BF5-6D6519F83633}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AEE52C-5E93-4355-ADC6-475EDAAF52A7}

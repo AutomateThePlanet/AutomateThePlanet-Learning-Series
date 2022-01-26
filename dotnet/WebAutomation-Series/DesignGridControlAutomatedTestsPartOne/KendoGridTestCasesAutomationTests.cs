@@ -19,6 +19,9 @@ using OpenQA.Selenium.Firefox;
 using System;
 using Ui.Automation.Core.Controls.Controls;
 using Ui.Automation.Core.Controls.Enums;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
+using OpenQA.Selenium.Chrome;
 
 namespace DesignGridControlAutomatedTestsPartOne
 {
@@ -29,11 +32,21 @@ namespace DesignGridControlAutomatedTestsPartOne
         private const string OrderIdColumnName = @"OrderID";
         private const string ShipNameColumnName = @"ShipName";
 
+        [ClassInitialize]
+        public static void ClassInit(TestContext testContext)
+        {
+            new DriverManager().SetUpDriver(new ChromeConfig());
+        }
+
         [TestInitialize]
         public void SetupTest()
         {
-            _driver = new FirefoxDriver();
+            _driver = new ChromeDriver();
             _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(5);
+
+            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
+            var consentButton = _driver.FindElement(By.Id("onetrust-accept-btn-handler"));
+            consentButton.Click();
         }
 
         [TestCleanup]
@@ -48,7 +61,6 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void OrderIdEqualToFilter()
         {
-            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
             var newItem = CreateNewItemInDb();
 
@@ -62,7 +74,6 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void OrderIdGreaterThanOrEqualToFilter()
         {
-            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             // Create new item with unique ship name;
@@ -86,7 +97,6 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void OrderIdGreaterThanFilter()
         {
-            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             // Create new item with unique ship name;
@@ -109,7 +119,6 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void OrderIdLessThanOrEqualToFilter()
         {
-            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             // Create new item with unique ship name;
@@ -133,7 +142,6 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void OrderIdLessThanFilter()
         {
-            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             // Create new item with unique ship name;
@@ -156,7 +164,6 @@ namespace DesignGridControlAutomatedTestsPartOne
         [TestMethod]
         public void OrderIdNotEqualToFilter()
         {
-            _driver.Navigate().GoToUrl(@"http://demos.telerik.com/kendo-ui/grid/frozen-columns");
             var kendoGrid = new KendoGrid(_driver, _driver.FindElement(By.Id("grid")));
 
             // Create new item with unique ship name;

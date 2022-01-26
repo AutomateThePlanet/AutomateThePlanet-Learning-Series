@@ -14,6 +14,7 @@
 
 using Newtonsoft.Json;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,11 +26,13 @@ namespace Ui.Automation.Core.Controls.Controls
     {
         private readonly string _gridId;
         private readonly IJavaScriptExecutor _driver;
+        private readonly WebDriverWait _wait;
 
         public KendoGrid(IWebDriver driver, IWebElement gridDiv)
         {
             _gridId = gridDiv.GetAttribute("id");
             _driver = (IJavaScriptExecutor)driver;
+            _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
         }
 
         public void RemoveFilters()
@@ -37,12 +40,12 @@ namespace Ui.Automation.Core.Controls.Controls
             var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "grid.dataSource.filter([]);");
             _driver.ExecuteScript(jsToBeExecuted);
-            ////this.Driver.FullWaitUntilReady();
+            WaitForAjax();
         }
 
         public int TotalNumberRows()
         {
-            ////this.Driver.FullWaitUntilReady();
+            WaitForAjax();
             var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "grid.dataSource.total();");
             var jsResult = _driver.ExecuteScript(jsToBeExecuted);
@@ -54,7 +57,7 @@ namespace Ui.Automation.Core.Controls.Controls
             var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "grid.dataSource.read();");
             _driver.ExecuteScript(jsToBeExecuted);
-            ////this.Driver.FullWaitUntilReady();
+            WaitForAjax();
         }
 
         public int GetPageSize()
@@ -71,7 +74,7 @@ namespace Ui.Automation.Core.Controls.Controls
             var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "grid.dataSource.pageSize(", newSize, ");");
             _driver.ExecuteScript(jsToBeExecuted);
-            ////this.Driver.FullWaitUntilReady();
+            WaitForAjax();
         }
 
         public void NavigateToPage(int pageNumber)
@@ -86,12 +89,12 @@ namespace Ui.Automation.Core.Controls.Controls
             var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "grid.dataSource.sort({field: '", columnName, "', dir: '", sortType.ToString().ToLower(), "'});");
             _driver.ExecuteScript(jsToBeExecuted);
-            ////this.Driver.FullWaitUntilReady();
+            WaitForAjax();
         }
 
         public List<T> GetItems<T>() where T : class
         {
-            ////this.Driver.FullWaitUntilReady();
+            WaitForAjax();
             var jsToBeExecuted = GetGridReference();
             jsToBeExecuted = string.Concat(jsToBeExecuted, "return JSON.stringify(grid.dataItems());");
             var jsResults = _driver.ExecuteScript(jsToBeExecuted);
@@ -123,7 +126,7 @@ namespace Ui.Automation.Core.Controls.Controls
             sb.Append("] });");
             jsToBeExecuted = sb.ToString().Replace(",]", "]");
             _driver.ExecuteScript(jsToBeExecuted);
-            ////this.Driver.FullWaitUntilReady();
+            WaitForAjax();
         }
 
         public int GetCurrentPageNumber()
@@ -194,6 +197,11 @@ namespace Ui.Automation.Core.Controls.Controls
             }
 
             return kendoFilterOperator;
+        }
+
+        private void WaitForAjax()
+        {
+            _wait.Until(d => (bool)(d as IJavaScriptExecutor).ExecuteScript("return jQuery.active == 0"));
         }
     }
 }

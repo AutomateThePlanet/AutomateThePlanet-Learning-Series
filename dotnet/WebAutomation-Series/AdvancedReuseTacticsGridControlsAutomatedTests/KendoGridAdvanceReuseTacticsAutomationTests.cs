@@ -17,6 +17,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using WebDriver.Series.Tests.GridTestCases;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
 
 namespace AdvancedReuseTacticsGridControlsAutomatedTests
 {
@@ -30,6 +32,12 @@ namespace AdvancedReuseTacticsGridControlsAutomatedTests
         private GridTestCases.OrderIdColumnAsserter _orderIdColumnAsserter;
         private GridTestCases.ShipNameColumnAsserter _shipNameColumnAsserter;
         private GridTestCases.GridPagerAsserter _gridPagerAsserter;
+
+        [ClassInitialize]
+        public static void ClassInit(TestContext testContext)
+        {
+            new DriverManager().SetUpDriver(new ChromeConfig());
+        }
 
         // TODO: Fix Pages URLs
         [TestInitialize]

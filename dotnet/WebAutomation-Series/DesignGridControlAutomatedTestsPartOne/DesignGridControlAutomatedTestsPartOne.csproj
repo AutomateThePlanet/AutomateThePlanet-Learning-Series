@@ -11,6 +11,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="*" />
     <PackageReference Include="MSTest.TestAdapter" Version="*" />
     <PackageReference Include="MSTest.TestFramework" Version="*" />
+    <PackageReference Include="WebDriverManager" Version="2.12.3" />
   </ItemGroup>
 
   <ItemGroup>

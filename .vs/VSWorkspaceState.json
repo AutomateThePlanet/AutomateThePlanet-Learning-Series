@@ -4,12 +4,7 @@
     "\\MSTest.Console",
     "\\MSTest.Console\\MSTest.Console.Extended",
     "\\MSTest.Console\\MSTest.Console.Extended\\Infrastructure",
-    "\\MSTest.Console\\MSTest.Console.Extended\\Services",
-    "\\WebDriver-Series\\FinishHimKillAllWebDrivers",
-    "\\WebDriver-Series\\FinishHimKillAllWebDrivers\\Pages",
-    "\\WebDriver-Series\\FullPageScreenshotHtmlToCanvas",
-    "\\WebDriver-Series\\WebDriverCsharpSeven",
-    "\\WebDriver-Series\\WebDriverCsharpSeven\\DigitSeparators"
+    "\\MSTest.Console\\MSTest.Console.Extended\\Services"
   ],
   "SelectedNode": "\\MSTest.Console\\MSTest.Console.Extended\\Services\\TestExecutionService.cs",
   "PreviewInSolutionExplorer": false
