@@ -19,6 +19,7 @@ import kendogrid.components.FilterOperator;
 import kendogrid.components.GridFilter;
 import kendogrid.components.GridItem;
 import kendogrid.components.KendoGrid;
+import kendogrid.reuse.GridColumns;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,6 +30,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import static java.lang.System.getProperty;
@@ -67,7 +69,7 @@ public class KendoGridTests {
     // OrderID Test Cases (Unique Identifier Type Column Test Cases)/ OrderID Test Cases
     @Test
     public void orderIdEqualToFilter() throws Exception {
-        var newItem = CreateNewItemInDb();
+        var newItem = createNewItemInDb();
 
         kendoGrid.filter(OrderIdColumnName, FilterOperator.EQUAL_TO, newItem.getOrderId());
         waitForGridToLoad(1, kendoGrid);
@@ -79,10 +81,10 @@ public class KendoGridTests {
     @Test
     public void orderIdGreaterThanOrEqualToFilter() throws Exception {
         // Create new item with unique ship name;
-        var newItem = CreateNewItemInDb();
+        var newItem = createNewItemInDb();
 
         // Create second new item with the same unique shipping name
-        var secondNewItem = CreateNewItemInDb(newItem.getShipName());
+        var secondNewItem = createNewItemInDb(newItem.getShipName());
 
         // When we filter by the second unique column ShippingName, only one item will be displayed. Once we apply the second not equal to filter the grid should be empty.
         kendoGrid.filter(
@@ -100,10 +102,10 @@ public class KendoGridTests {
     @Test
     public void orderIdGreaterThanFilter() throws Exception {
         // Create new item with unique ship name;
-        var newItem = CreateNewItemInDb();
+        var newItem = createNewItemInDb();
 
         // Create second new item with the same unique shipping name
-        var secondNewItem = CreateNewItemInDb(newItem.getShipName());
+        var secondNewItem = createNewItemInDb(newItem.getShipName());
 
         // Filter by the smaller orderId but also by the second unique column in this case shipping name
         kendoGrid.filter(
@@ -119,10 +121,10 @@ public class KendoGridTests {
     @Test
     public void orderIdLessThanOrEqualToFilter() throws Exception {
         // Create new item with unique ship name;
-        var newItem = CreateNewItemInDb();
+        var newItem = createNewItemInDb();
 
         // Create second new item with the same unique shipping name
-        var secondNewItem = CreateNewItemInDb(newItem.getShipName());
+        var secondNewItem = createNewItemInDb(newItem.getShipName());
 
         // Filter by the larger orderId but also by the second unique column in this case shipping name
         kendoGrid.filter(
@@ -139,10 +141,10 @@ public class KendoGridTests {
     @Test
     public void orderIdLessThanFilter() throws Exception {
         // Create new item with unique ship name;
-        var newItem = CreateNewItemInDb();
+        var newItem = createNewItemInDb();
 
         // Create second new item with the same unique shipping name
-        var secondNewItem = CreateNewItemInDb(newItem.getShipName());
+        var secondNewItem = createNewItemInDb(newItem.getShipName());
 
         // Filter by the larger orderId but also by the second unique column in this case shipping name
         kendoGrid.filter(
@@ -158,10 +160,10 @@ public class KendoGridTests {
     @Test
     public void orderIdNotEqualToFilter() throws Exception {
         // Create new item with unique ship name;
-        var newItem = CreateNewItemInDb();
+        var newItem = createNewItemInDb();
 
         // Create second new item with the same unique shipping name
-        var secondNewItem = CreateNewItemInDb(newItem.getShipName());
+        var secondNewItem = createNewItemInDb(newItem.getShipName());
 
         // Filter by the larger orderId but also by the second unique column in this case shipping name
         kendoGrid.filter(
@@ -177,10 +179,10 @@ public class KendoGridTests {
     @Test
     public void orderIdClearFilter() throws Exception {
         // Create new item with unique ship name;
-        var newItem = CreateNewItemInDb();
+        var newItem = createNewItemInDb();
 
         // Make sure that we have at least 2 items if the grid is empty. The tests are designed to run against empty DB.
-        var secondNewItem = CreateNewItemInDb(newItem.getShipName());
+        var secondNewItem = createNewItemInDb(newItem.getShipName());
 
         kendoGrid.filter(OrderIdColumnName, FilterOperator.EQUAL_TO, newItem.getOrderId());
         waitForGridToLoad(1, kendoGrid);
@@ -190,6 +192,115 @@ public class KendoGridTests {
         List<Order> results = kendoGrid.getItems();
 
         Assert.assertTrue(results.stream().count() > 1);
+    }
+
+    // ship name tests
+    @Test
+    public void shipNameEqualToFilter() throws Exception {
+        var newItem = createNewItemInDb();
+
+        kendoGrid.filter(GridColumns.SHIP_NAME, FilterOperator.EQUAL_TO, newItem.getShipName());
+        waitForGridToLoad(1, kendoGrid);
+        List<GridItem> items = kendoGrid.getItems();
+
+        Assert.assertEquals(items.stream().count(), 1);
+    }
+
+    @Test
+    public void shipNameContainsFilter() throws Exception {
+        var shipName = UUID.randomUUID().toString();
+
+        // Remove first and last letter
+        shipName = removeLastChar(removeFirstChar(shipName));
+        var newItem = createNewItemInDb(shipName);
+
+        kendoGrid.filter(GridColumns.SHIP_NAME, FilterOperator.CONTAINS, newItem.getShipName());
+        waitForGridToLoad(1, kendoGrid);
+        List<GridItem> items = kendoGrid.getItems();
+
+        Assert.assertEquals(items.stream().count(), 1);
+    }
+
+    @Test
+    public void shipNameEndsWithFilter() throws Exception {
+        // Remove first letter
+        var shipName = UUID.randomUUID().toString();
+        shipName = removeFirstChar(shipName);
+        var newItem = createNewItemInDb(shipName);
+
+        kendoGrid.filter(GridColumns.SHIP_NAME, FilterOperator.ENDS_WITH, newItem.getShipName());
+        waitForGridToLoad(1, kendoGrid);
+        List<GridItem> items = kendoGrid.getItems();
+
+        Assert.assertEquals(items.stream().count(), 1);
+    }
+
+    @Test
+    public void shipNameStartsWithFilter() throws Exception {
+        // Remove last letter
+        var shipName = UUID.randomUUID().toString();
+        shipName = removeFirstChar(shipName);
+        var newItem = createNewItemInDb(shipName);
+
+        kendoGrid.filter(GridColumns.SHIP_NAME, FilterOperator.STARTS_WITH, newItem.getShipName());
+        waitForGridToLoad(1, kendoGrid);
+        List<GridItem> items = kendoGrid.getItems();
+
+        Assert.assertEquals(items.stream().count(), 1);
+    }
+
+    @Test
+    public void shipNameNotEqualToFilter() throws Exception {
+        // Apply combined filter. First filter by ID and than by ship name (not equal filter).
+        // After the first filter there is only one element when we apply the second we expect 0 elements.
+        var newItem = createNewItemInDb();
+
+        kendoGrid.filter(
+                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.NOT_EQUAL_TO, newItem.getShipName()),
+                new GridFilter(GridColumns.ORDER_ID, FilterOperator.EQUAL_TO, newItem.getOrderId().toString()));
+        waitForGridToLoad(0, kendoGrid);
+        List<GridItem> items = kendoGrid.getItems();
+
+        Assert.assertEquals(items.stream().count(), 0);
+    }
+
+    @Test
+    public void shipNameNotContainsFilter() throws Exception {
+        // Remove first and last letter
+        var shipName = UUID.randomUUID().toString();
+        shipName = removeLastChar(removeFirstChar(shipName));
+        var newItem = createNewItemInDb(shipName);
+
+        // Apply combined filter. First filter by ID and than by ship name (not equal filter).
+        // After the first filter there is only one element when we apply the second we expect 0 elements.
+        kendoGrid.filter(
+                new GridFilter(GridColumns.SHIP_NAME, FilterOperator.NOT_CONTAINS, newItem.getShipName()),
+                new GridFilter(GridColumns.ORDER_ID, FilterOperator.EQUAL_TO, newItem.getOrderId().toString()));
+        waitForGridToLoad(0, kendoGrid);
+        List<GridItem> items = kendoGrid.getItems();
+
+        Assert.assertEquals(items.stream().count(), 0);
+    }
+
+    @Test
+    public void shipNameClearFilter() throws Exception {
+        createNewItemInDb();
+
+        // Filter by GUID and we know we wait the grid to be empty
+        kendoGrid.filter(GridColumns.SHIP_NAME, FilterOperator.STARTS_WITH, UUID.randomUUID().toString());
+        waitForGridToLoad(0, kendoGrid);
+
+        // Remove all filters and we expect that the grid will contain at least 1 item.
+        kendoGrid.removeFilters();
+        waitForGridToLoadAtLeast(1, kendoGrid);
+    }
+
+    private String removeFirstChar(String s) {
+        return s.substring(1);
+    }
+
+    private String removeLastChar(String s) {
+        return s.substring(0, s.length() - 1);
     }
 
     private void waitUntilLoaded() {
@@ -235,12 +346,12 @@ public class KendoGridTests {
         });
     }
 
-    private Order CreateNewItemInDb(String shipName) {
+    private Order createNewItemInDb(String shipName) {
         // Replace it with service oriented call to your DB. Create real entity in DB.
         return new Order(shipName);
     }
 
-    private Order CreateNewItemInDb() {
+    private Order createNewItemInDb() {
         // Replace it with service oriented call to your DB. Create real entity in DB.
         return new Order("");
     }
