@@ -14,21 +14,20 @@ using BehavioursDesignPattern.Pages.ShippingAddressPage;
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-namespace BehavioursDesignPattern.Behaviours
+namespace BehavioursDesignPattern.Behaviours;
+
+public class ShippingAddressPageContinueBehaviour : Behaviour
 {
-    public class ShippingAddressPageContinueBehaviour : Behaviour
+    private readonly ShippingAddressPage _shippingAddressPage;
+
+    // This version is compatible only with UnityBehaviorEngine.
+    public ShippingAddressPageContinueBehaviour(ShippingAddressPage shippingAddressPage)
     {
-        private readonly ShippingAddressPage _shippingAddressPage;
+        _shippingAddressPage = shippingAddressPage;
+    }
 
-        // This version is compatible only with UnityBehaviorEngine.
-        public ShippingAddressPageContinueBehaviour(ShippingAddressPage shippingAddressPage)
-        {
-            _shippingAddressPage = shippingAddressPage;
-        }
-
-        public override void PerformAct()
-        {
-            _shippingAddressPage.ClickContinueButton();
-        }
+    public override void PerformAct()
+    {
+        _shippingAddressPage.ClickContinueButton();
     }
 }

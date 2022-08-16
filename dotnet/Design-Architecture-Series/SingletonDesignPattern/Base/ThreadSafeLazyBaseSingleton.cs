@@ -14,18 +14,17 @@
 
 using System;
 
-namespace SingletonDesignPattern.Base
+namespace SingletonDesignPattern.Base;
+
+public abstract class ThreadSafeLazyBaseSingleton<T>
+    where T : new()
 {
-    public abstract class ThreadSafeLazyBaseSingleton<T>
-        where T : new()
+    private static readonly Lazy<T> Lazy = new Lazy<T>(() => new T());
+    public static T Instance
     {
-        private static readonly Lazy<T> Lazy = new Lazy<T>(() => new T());
-        public static T Instance
+        get
         {
-            get
-            {
-                return Lazy.Value;
-            }
+            return Lazy.Value;
         }
     }
 }

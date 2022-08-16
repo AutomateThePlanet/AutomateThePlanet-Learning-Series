@@ -12,13 +12,12 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace FluentPageObjectPattern.Enums
+namespace FluentPageObjectPattern.Enums;
+
+public enum Layouts
 {
-    public enum Layouts
-    {
-        All,
-        Square,
-        Wide,
-        Tall
-    }
+    All,
+    Square,
+    Wide,
+    Tall
 }

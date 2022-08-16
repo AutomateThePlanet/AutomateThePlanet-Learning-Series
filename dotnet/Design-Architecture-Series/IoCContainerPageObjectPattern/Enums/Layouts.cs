@@ -12,13 +12,12 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace IoCContainerPageObjectPattern.Enums
+namespace IoCContainerPageObjectPattern.Enums;
+
+public enum Layouts
 {
-    public enum Layouts
-    {
-        All,
-        Square,
-        Wide,
-        Tall
-    }
+    All,
+    Square,
+    Wide,
+    Tall
 }

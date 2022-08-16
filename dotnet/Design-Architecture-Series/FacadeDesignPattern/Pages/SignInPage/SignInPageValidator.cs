@@ -12,9 +12,8 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace FacadeDesignPattern.Pages.SignInPage
+namespace FacadeDesignPattern.Pages.SignInPage;
+
+public class SignInPageValidator : Core.BasePageValidator<SignInPageMap>
 {
-    public class SignInPageValidator : Core.BasePageValidator<SignInPageMap>
-    {
-    }
 }

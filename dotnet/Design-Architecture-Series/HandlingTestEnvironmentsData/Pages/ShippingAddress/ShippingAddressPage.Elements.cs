@@ -15,46 +15,45 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace HandlingTestEnvironmentsData.Pages.ShippingAddress.Second
+namespace HandlingTestEnvironmentsData.Pages.ShippingAddress.Second;
+
+public partial class ShippingAddressPage
 {
-    public partial class ShippingAddressPage
+    public SelectElement CountryDropDown
     {
-        public SelectElement CountryDropDown
+        get
         {
-            get
-            {
-                _driverWait.Until(d => d.FindElement(By.Name("country")));
-                return new SelectElement(Driver.FindElement(By.Name("country")));
-            }
+            _driverWait.Until(d => d.FindElement(By.Name("country")));
+            return new SelectElement(Driver.FindElement(By.Name("country")));
         }
+    }
 
-        public IWebElement FirstName => Driver.FindElement(By.Id("firstName"));
+    public IWebElement FirstName => Driver.FindElement(By.Id("firstName"));
 
-        public IWebElement LastName => Driver.FindElement(By.Id("lastName"));
+    public IWebElement LastName => Driver.FindElement(By.Id("lastName"));
 
-        public IWebElement Address1 => Driver.FindElement(By.Id("address1"));
+    public IWebElement Address1 => Driver.FindElement(By.Id("address1"));
 
-        public IWebElement City => Driver.FindElement(By.Id("city"));
+    public IWebElement City => Driver.FindElement(By.Id("city"));
 
-        public IWebElement Zip => Driver.FindElement(By.Id("zip"));
+    public IWebElement Zip => Driver.FindElement(By.Id("zip"));
 
-        public IWebElement Phone => Driver.FindElement(By.Id("dayphone1"));
+    public IWebElement Phone => Driver.FindElement(By.Id("dayphone1"));
 
-        public IWebElement Email => Driver.FindElement(By.Id("email"));
+    public IWebElement Email => Driver.FindElement(By.Id("email"));
 
-        public IWebElement Subtotal => Driver.FindElement(By.Id("xo_tot_amt"));
+    public IWebElement Subtotal => Driver.FindElement(By.Id("xo_tot_amt"));
 
-        public IWebElement ContinueButton => Driver.FindElement(By.Id("but_address_continue"));
+    public IWebElement ContinueButton => Driver.FindElement(By.Id("but_address_continue"));
 
-        public void SwitchToShippingFrame()
-        {
-            WaitForLogo();
-            Driver.SwitchTo().Frame("shpFrame");
-        }
+    public void SwitchToShippingFrame()
+    {
+        WaitForLogo();
+        Driver.SwitchTo().Frame("shpFrame");
+    }
 
-        private void WaitForLogo()
-        {
-            _driverWait.Until(d => d.FindElement(By.Id("gh-logo")));
-        }
+    private void WaitForLogo()
+    {
+        _driverWait.Until(d => d.FindElement(By.Id("gh-logo")));
     }
 }

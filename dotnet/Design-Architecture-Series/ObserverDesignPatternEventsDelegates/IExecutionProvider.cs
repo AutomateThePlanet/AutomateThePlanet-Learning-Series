@@ -13,18 +13,17 @@
 // <site>http://automatetheplanet.com/</site>
 using System;
 
-namespace ObserverDesignPatternEventsDelegates
+namespace ObserverDesignPatternEventsDelegates;
+
+public interface IExecutionProvider
 {
-    public interface IExecutionProvider
-    {
-        event EventHandler<TestExecutionEventArgs> TestInstantiatedEvent;
+    event EventHandler<TestExecutionEventArgs> TestInstantiatedEvent;
 
-        event EventHandler<TestExecutionEventArgs> PreTestInitEvent;
+    event EventHandler<TestExecutionEventArgs> PreTestInitEvent;
 
-        event EventHandler<TestExecutionEventArgs> PostTestInitEvent;
+    event EventHandler<TestExecutionEventArgs> PostTestInitEvent;
 
-        event EventHandler<TestExecutionEventArgs> PreTestCleanupEvent;
+    event EventHandler<TestExecutionEventArgs> PreTestCleanupEvent;
 
-        event EventHandler<TestExecutionEventArgs> PostTestCleanupEvent;
-    }
+    event EventHandler<TestExecutionEventArgs> PostTestCleanupEvent;
 }

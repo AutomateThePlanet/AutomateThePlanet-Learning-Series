@@ -11,18 +11,17 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-namespace PerfectSystemTestsDesign.Behaviours.Core
+namespace PerfectSystemTestsDesign.Behaviours.Core;
+
+public abstract class WaitableActionBehaviour : IBehaviour
 {
-    public abstract class WaitableActionBehaviour : IBehaviour
+    public void Execute()
     {
-        public void Execute()
-        {
-            PerformAct();
-            PerformPostActWait();
-        }
-
-        protected abstract void PerformAct();
-
-        protected abstract void PerformPostActWait();
+        PerformAct();
+        PerformPostActWait();
     }
+
+    protected abstract void PerformAct();
+
+    protected abstract void PerformPostActWait();
 }

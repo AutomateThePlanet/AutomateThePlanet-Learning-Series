@@ -14,14 +14,13 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HandlingTestEnvironmentsData.Pages.Item.Second
+namespace HandlingTestEnvironmentsData.Pages.Item.Second;
+
+public partial class ItemPage
 {
-    public partial class ItemPage
+    public void AssertPrice(double expectedPrice)
     {
-        public void AssertPrice(double expectedPrice)
-        {
-            ////AU $168.00
-            Assert.AreEqual(expectedPrice, GetPrice());
-        }
+        ////AU $168.00
+        Assert.AreEqual(expectedPrice, GetPrice());
     }
 }

@@ -17,22 +17,21 @@ using StrategyDesignPattern.Data;
 using StrategyDesignPattern.Pages.PlaceOrderPage;
 using StrategyDesignPattern.Services;
 
-namespace StrategyDesignPattern.Strategies
+namespace StrategyDesignPattern.Strategies;
+
+public class GiftOrderValidationStrategy : IOrderValidationStrategy
 {
-    public class GiftOrderValidationStrategy : IOrderValidationStrategy
+    public GiftOrderValidationStrategy()
     {
-        public GiftOrderValidationStrategy()
-        {
-            GiftWrappingPriceCalculationService = new GiftWrappingPriceCalculationService();
-        }
+        GiftWrappingPriceCalculationService = new GiftWrappingPriceCalculationService();
+    }
 
-        public GiftWrappingPriceCalculationService GiftWrappingPriceCalculationService { get; set; }
+    public GiftWrappingPriceCalculationService GiftWrappingPriceCalculationService { get; set; }
 
-        public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
-        {
-            var giftWrapPrice = GiftWrappingPriceCalculationService.Calculate(clientPurchaseInfo.GiftWrapping);
+    public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
+    {
+        var giftWrapPrice = GiftWrappingPriceCalculationService.Calculate(clientPurchaseInfo.GiftWrapping);
 
-            PlaceOrderPage.Instance.Validate().GiftWrapPrice(giftWrapPrice.ToString());
-        }
+        PlaceOrderPage.Instance.Validate().GiftWrapPrice(giftWrapPrice.ToString());
     }
 }

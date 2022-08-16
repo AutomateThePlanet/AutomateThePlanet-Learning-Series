@@ -14,10 +14,9 @@
 
 using OpenQA.Selenium;
 
-namespace TemplateMethodDesignPattern.Pages.SignIn.Second
+namespace TemplateMethodDesignPattern.Pages.SignIn.Second;
+
+public partial class SignInPage
 {
-    public partial class SignInPage
-    {
-        public IWebElement ContinueAsGuestButton => Driver.FindElement(By.Id("gtChk"));
-    }
+    public IWebElement ContinueAsGuestButton => Driver.FindElement(By.Id("gtChk"));
 }

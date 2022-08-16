@@ -16,43 +16,42 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
-namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv22
+namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv22;
+
+[TestClass]
+public class BingTests
 {
-    [TestClass]
-    public class BingTests
+    private BingMainPage _bingMainPage;
+    private IWebDriver _driver;
+
+    [TestInitialize]
+    public void SetupTest()
     {
-        private BingMainPage _bingMainPage;
-        private IWebDriver _driver;
+        _driver = new FirefoxDriver();
+        _bingMainPage = new BingMainPage(_driver);
+    }
 
-        [TestInitialize]
-        public void SetupTest()
-        {
-            _driver = new FirefoxDriver();
-            _bingMainPage = new BingMainPage(_driver);
-        }
+    [TestCleanup]
+    public void TeardownTest()
+    {
+        _driver.Quit();
+    }
 
-        [TestCleanup]
-        public void TeardownTest()
-        {
-            _driver.Quit();
-        }
+    [TestMethod]
+    public void SearchForAutomateThePlanet()
+    {
+        _bingMainPage.Open();
+        _bingMainPage.Search("Automate The Planet");
+        _bingMainPage.AssertResultsCountIsAsExpected(264);
+    }
 
-        [TestMethod]
-        public void SearchForAutomateThePlanet()
-        {
-            _bingMainPage.Open();
-            _bingMainPage.Search("Automate The Planet");
-            _bingMainPage.AssertResultsCountIsAsExpected(264);
-        }
-
-        [TestMethod]
-        public void SearchForAutomateThePlanet_Second()
-        {
-            _bingMainPage.Open();
-            _bingMainPage.SearchBox.Clear();
-            _bingMainPage.SearchBox.SendKeys("Automate The Planet");
-            _bingMainPage.GoButton.Click();
-            _bingMainPage.AssertResultsCountIsAsExpected(264);
-        }
+    [TestMethod]
+    public void SearchForAutomateThePlanet_Second()
+    {
+        _bingMainPage.Open();
+        _bingMainPage.SearchBox.Clear();
+        _bingMainPage.SearchBox.SendKeys("Automate The Planet");
+        _bingMainPage.GoButton.Click();
+        _bingMainPage.AssertResultsCountIsAsExpected(264);
     }
 }

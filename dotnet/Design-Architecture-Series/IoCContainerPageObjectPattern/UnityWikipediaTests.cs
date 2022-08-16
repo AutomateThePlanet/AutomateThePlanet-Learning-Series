@@ -19,61 +19,60 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Unity.Lifetime;
 using Microsoft.Practices.Unity.Configuration;
 
-namespace IoCContainerPageObjectPattern
+namespace IoCContainerPageObjectPattern;
+
+[TestClass]
+public class UnityWikipediaTests
 {
-    [TestClass]
-    public class UnityWikipediaTests
+    private static readonly IUnityContainer PageFactory = new UnityContainer();
+
+    [AssemblyInitialize]
+    public static void MyTestInitialize(TestContext testContext)
     {
-        private static readonly IUnityContainer PageFactory = new UnityContainer();
+        var fileMap = new ExeConfigurationFileMap { ExeConfigFilename = "unity.config" };
+        var configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
+        var unitySection = (UnityConfigurationSection)configuration.GetSection("unity");
+        PageFactory.LoadConfiguration(unitySection);
 
-        [AssemblyInitialize]
-        public static void MyTestInitialize(TestContext testContext)
-        {
-            var fileMap = new ExeConfigurationFileMap { ExeConfigFilename = "unity.config" };
-            var configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
-            var unitySection = (UnityConfigurationSection)configuration.GetSection("unity");
-            PageFactory.LoadConfiguration(unitySection);
+        PageFactory.RegisterType<IWikipediaMainPage, WikipediaMainPage.WikipediaMainPage>(new ContainerControlledLifetimeManager());
+    }
 
-            PageFactory.RegisterType<IWikipediaMainPage, WikipediaMainPage.WikipediaMainPage>(new ContainerControlledLifetimeManager());
-        }
+    [TestInitialize]
+    public void SetupTest()
+    {
+        Driver.StartBrowser();
+    }
 
-        [TestInitialize]
-        public void SetupTest()
-        {
-            Driver.StartBrowser();
-        }
+    [TestCleanup]
+    public void TeardownTest()
+    {
+        Driver.StopBrowser();
+    }
 
-        [TestCleanup]
-        public void TeardownTest()
-        {
-            Driver.StopBrowser();
-        }
+    [TestMethod]
+    public void TestWikiContentsToggle()
+    {
+        var wikiPage = new WikipediaMainPage.WikipediaMainPage();
+        wikiPage.Navigate();
+        wikiPage.Search("Quality assurance");
+        wikiPage.Validate().ToogleLinkTextHide();
+        wikiPage.Validate().ContentsListVisible();
+        wikiPage.ToggleContents();
+        wikiPage.Validate().ToogleLinkTextShow();
+        wikiPage.Validate().ContentsListHidden();
+    }
 
-        [TestMethod]
-        public void TestWikiContentsToggle()
-        {
-            var wikiPage = new WikipediaMainPage.WikipediaMainPage();
-            wikiPage.Navigate();
-            wikiPage.Search("Quality assurance");
-            wikiPage.Validate().ToogleLinkTextHide();
-            wikiPage.Validate().ContentsListVisible();
-            wikiPage.ToggleContents();
-            wikiPage.Validate().ToogleLinkTextShow();
-            wikiPage.Validate().ContentsListHidden();
-        }
-
-        [TestMethod]
-        public void TestWikiContentsToggle_Unity()
-        {
-            ////var wikiPage = PageFactory.Get<IWikipediaMainPage>();
-            var wikiPage = PageFactory.Resolve<IWikipediaMainPage>();
-            wikiPage.Navigate();
-            wikiPage.Search("Quality assurance");
-            wikiPage.Validate().ToogleLinkTextHide();
-            wikiPage.Validate().ContentsListVisible();
-            wikiPage.ToggleContents();
-            wikiPage.Validate().ToogleLinkTextShow();
-            wikiPage.Validate().ContentsListHidden();
-        }
+    [TestMethod]
+    public void TestWikiContentsToggle_Unity()
+    {
+        ////var wikiPage = PageFactory.Get<IWikipediaMainPage>();
+        var wikiPage = PageFactory.Resolve<IWikipediaMainPage>();
+        wikiPage.Navigate();
+        wikiPage.Search("Quality assurance");
+        wikiPage.Validate().ToogleLinkTextHide();
+        wikiPage.Validate().ContentsListVisible();
+        wikiPage.ToggleContents();
+        wikiPage.Validate().ToogleLinkTextShow();
+        wikiPage.Validate().ContentsListHidden();
     }
 }

@@ -14,20 +14,19 @@
 
 using System;
 
-namespace BehavioursDesignPattern.Behaviours.Core
+namespace BehavioursDesignPattern.Behaviours.Core;
+
+public static class SimpleBehaviourEngine
 {
-    public static class SimpleBehaviourEngine
+    public static void Execute(params Type[] pageBehaviours)
     {
-        public static void Execute(params Type[] pageBehaviours)
+        foreach (var pageBehaviour in pageBehaviours)
         {
-            foreach (var pageBehaviour in pageBehaviours)
-            {
-                var currentbehaviour = Activator.CreateInstance(pageBehaviour) as Behaviour;
-                currentbehaviour.PerformPreActAsserts();
-                currentbehaviour.PerformAct();
-                currentbehaviour.PerformPostActAsserts();
-                currentbehaviour.PerformPostAct();
-            }
+            var currentbehaviour = Activator.CreateInstance(pageBehaviour) as Behaviour;
+            currentbehaviour.PerformPreActAsserts();
+            currentbehaviour.PerformAct();
+            currentbehaviour.PerformPostActAsserts();
+            currentbehaviour.PerformPostAct();
         }
     }
 }

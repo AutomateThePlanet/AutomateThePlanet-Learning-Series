@@ -15,24 +15,23 @@
 using DecoratorDesignPattern.Core;
 using OpenQA.Selenium;
 
-namespace DecoratorDesignPattern.Pages.ItemPage
-{
-    public class ItemPageMap : BasePageElementMap
-    {
-        public IWebElement AddToCartButton
-        {
-            get
-            {
-                return Browser.FindElement(By.Id("add-to-cart-button"));
-            }
-        }
+namespace DecoratorDesignPattern.Pages.ItemPage;
 
-        public IWebElement ProductTitle
+public class ItemPageMap : BasePageElementMap
+{
+    public IWebElement AddToCartButton
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("productTitle"));
-            }
+            return Browser.FindElement(By.Id("add-to-cart-button"));
+        }
+    }
+
+    public IWebElement ProductTitle
+    {
+        get
+        {
+            return Browser.FindElement(By.Id("productTitle"));
         }
     }
 }

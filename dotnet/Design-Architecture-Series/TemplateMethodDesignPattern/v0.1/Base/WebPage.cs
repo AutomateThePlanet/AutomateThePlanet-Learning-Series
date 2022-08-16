@@ -14,19 +14,18 @@
 
 using OpenQA.Selenium;
 
-namespace TemplateMethodDesignPattern.Base.First
+namespace TemplateMethodDesignPattern.Base.First;
+
+public abstract class WebPage
 {
-    public abstract class WebPage
+    protected IWebDriver Driver;
+
+    protected WebPage(IWebDriver driver) => Driver = driver;
+
+    protected abstract string Url { get; }
+
+    public virtual void Open(string part = "")
     {
-        protected IWebDriver Driver;
-
-        protected WebPage(IWebDriver driver) => Driver = driver;
-
-        protected abstract string Url { get; }
-
-        public virtual void Open(string part = "")
-        {
-            Driver.Navigate().GoToUrl(string.Concat(Url, part));
-        }
+        Driver.Navigate().GoToUrl(string.Concat(Url, part));
     }
 }

@@ -15,23 +15,22 @@ using Unity;
 using PerfectSystemTestsDesign.Behaviours.Core;
 using PerfectSystemTestsDesign.Pages.PlaceOrderPage;
 
-namespace PerfectSystemTestsDesign.Behaviours
+namespace PerfectSystemTestsDesign.Behaviours;
+
+public class PlaceOrderPageAssertFinalAmountsBehaviour : AssertBehaviour
 {
-    public class PlaceOrderPageAssertFinalAmountsBehaviour : AssertBehaviour
+    private readonly PlaceOrderPage _placeOrderPage;
+    private readonly string _itemPrice;
+
+    public PlaceOrderPageAssertFinalAmountsBehaviour(string itemPrice)
     {
-        private readonly PlaceOrderPage _placeOrderPage;
-        private readonly string _itemPrice;
+        _placeOrderPage = Base.UnityContainerFactory.GetContainer().Resolve<PlaceOrderPage>();
+        _itemPrice = itemPrice;
+    }
 
-        public PlaceOrderPageAssertFinalAmountsBehaviour(string itemPrice)
-        {
-            _placeOrderPage = Base.UnityContainerFactory.GetContainer().Resolve<PlaceOrderPage>();
-            _itemPrice = itemPrice;
-        }
-
-        protected override void Assert()
-        {
-            var totalPrice = double.Parse(_itemPrice);
-            _placeOrderPage.AssertOrderTotalPrice(totalPrice);
-        }
+    protected override void Assert()
+    {
+        var totalPrice = double.Parse(_itemPrice);
+        _placeOrderPage.AssertOrderTotalPrice(totalPrice);
     }
 }

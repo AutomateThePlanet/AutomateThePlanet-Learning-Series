@@ -15,26 +15,25 @@ using BehavioursDesignPattern.Pages.ShippingPaymentPage;
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-namespace BehavioursDesignPattern.Behaviours
+namespace BehavioursDesignPattern.Behaviours;
+
+public class ShippingAddressPageFillDifferentBillingBehaviour : Behaviour
 {
-    public class ShippingAddressPageFillDifferentBillingBehaviour : Behaviour
+    private readonly ShippingAddressPage _shippingAddressPage;
+    private readonly ShippingPaymentPage _shippingPaymentPage;
+
+    // This version is compatible only with UnityBehaviorEngine.
+    public ShippingAddressPageFillDifferentBillingBehaviour(ShippingAddressPage shippingAddressPage, ShippingPaymentPage shippingPaymentPage)
     {
-        private readonly ShippingAddressPage _shippingAddressPage;
-        private readonly ShippingPaymentPage _shippingPaymentPage;
+        _shippingAddressPage = shippingAddressPage;
+        _shippingPaymentPage = shippingPaymentPage;
+    }
 
-        // This version is compatible only with UnityBehaviorEngine.
-        public ShippingAddressPageFillDifferentBillingBehaviour(ShippingAddressPage shippingAddressPage, ShippingPaymentPage shippingPaymentPage)
-        {
-            _shippingAddressPage = shippingAddressPage;
-            _shippingPaymentPage = shippingPaymentPage;
-        }
-
-        public override void PerformAct()
-        {
-            _shippingAddressPage.ClickDifferentBillingCheckBox(PurchaseTestContext.ClientPurchaseInfo);
-            _shippingAddressPage.ClickContinueButton();
-            _shippingPaymentPage.ClickBottomContinueButton();
-            _shippingAddressPage.FillBillingInfo(PurchaseTestContext.ClientPurchaseInfo);
-        }
+    public override void PerformAct()
+    {
+        _shippingAddressPage.ClickDifferentBillingCheckBox(PurchaseTestContext.ClientPurchaseInfo);
+        _shippingAddressPage.ClickContinueButton();
+        _shippingPaymentPage.ClickBottomContinueButton();
+        _shippingAddressPage.FillBillingInfo(PurchaseTestContext.ClientPurchaseInfo);
     }
 }

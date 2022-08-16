@@ -16,27 +16,26 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SE = SeleniumExtras.WaitHelpers;
 
-namespace LazyLoadingDesignPattern
+namespace LazyLoadingDesignPattern;
+
+public class ElementFinderService
 {
-    public class ElementFinderService
+    private readonly WebDriverWait _webDriverWait;
+
+    public ElementFinderService(IWebDriver driver)
     {
-        private readonly WebDriverWait _webDriverWait;
+        var timeout = TimeSpan.FromSeconds(30);
+        var sleepInterval = TimeSpan.FromSeconds(2);
+        _webDriverWait = new WebDriverWait(new SystemClock(), driver, timeout, sleepInterval);
+    }
 
-        public ElementFinderService(IWebDriver driver)
-        {
-            var timeout = TimeSpan.FromSeconds(30);
-            var sleepInterval = TimeSpan.FromSeconds(2);
-            _webDriverWait = new WebDriverWait(new SystemClock(), driver, timeout, sleepInterval);
-        }
+    public IWebElement Find(By by)
+    {
+        return _webDriverWait.Until(SE.ExpectedConditions.ElementExists(by));
+    }
 
-        public IWebElement Find(By by)
-        {
-            return _webDriverWait.Until(SE.ExpectedConditions.ElementExists(by));
-        }
-
-        public IEnumerable<IWebElement> FindAll(By by)
-        {
-            return _webDriverWait.Until(SE.ExpectedConditions.PresenceOfAllElementsLocatedBy(by));
-        }
+    public IEnumerable<IWebElement> FindAll(By by)
+    {
+        return _webDriverWait.Until(SE.ExpectedConditions.PresenceOfAllElementsLocatedBy(by));
     }
 }

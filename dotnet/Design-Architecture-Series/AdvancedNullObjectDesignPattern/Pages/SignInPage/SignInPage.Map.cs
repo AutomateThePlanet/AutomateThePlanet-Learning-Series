@@ -14,32 +14,31 @@
 
 using OpenQA.Selenium;
 
-namespace AdvancedNullObjectDesignPattern.Pages.SignInPage
+namespace AdvancedNullObjectDesignPattern.Pages.SignInPage;
+
+public partial class SignInPage
 {
-    public partial class SignInPage
+    public IWebElement SignInButton
     {
-        public IWebElement SignInButton
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("signInSubmit-input"));
-            }
+            return Driver.FindElement(By.Id("signInSubmit-input"));
         }
+    }
 
-        public IWebElement PasswordInput
+    public IWebElement PasswordInput
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("ap_password"));
-            }
+            return Driver.FindElement(By.Id("ap_password"));
         }
+    }
 
-        public IWebElement EmailInput
+    public IWebElement EmailInput
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("ap_email"));
-            }
+            return Driver.FindElement(By.Id("ap_email"));
         }
     }
 }

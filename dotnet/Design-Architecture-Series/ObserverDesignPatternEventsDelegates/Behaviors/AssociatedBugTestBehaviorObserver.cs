@@ -16,28 +16,27 @@ using System.Reflection;
 using PatternsInAutomatedTests.Advanced.Observer.Advanced.DotNetEvents;
 using PatternsInAutomatedTests.Advanced.Observer.Attributes;
 
-namespace ObserverDesignPatternEventsDelegates.Behaviors
-{
-    public class AssociatedBugTestBehaviorObserver : BaseTestBehaviorObserver
-    {
-        protected override void PostTestCleanup(object sender, TestExecutionEventArgs e)
-        {
-            var bugId = TryGetBugId(e.MemberInfo);
-            if (bugId.HasValue)
-            {
-                Console.WriteLine(string.Format("The test '{0}' is associated with bug id: {1}", e.TestContext.TestName, bugId.Value));
-            }
-            else
-            {
-                Console.WriteLine(string.Format("The test '{0}' is not associated with any bug id.", e.TestContext.TestName));
-            }
-        }
+namespace ObserverDesignPatternEventsDelegates.Behaviors;
 
-        private int? TryGetBugId(MemberInfo memberInfo)
+public class AssociatedBugTestBehaviorObserver : BaseTestBehaviorObserver
+{
+    protected override void PostTestCleanup(object sender, TestExecutionEventArgs e)
+    {
+        var bugId = TryGetBugId(e.MemberInfo);
+        if (bugId.HasValue)
         {
-            var knownIssueAttribute = memberInfo.GetCustomAttribute<KnownIssueAttribute>(true);
-            var result = knownIssueAttribute == null ? null : (int?)knownIssueAttribute.BugId;
-            return result;
+            Console.WriteLine(string.Format("The test '{0}' is associated with bug id: {1}", e.TestContext.TestName, bugId.Value));
         }
+        else
+        {
+            Console.WriteLine(string.Format("The test '{0}' is not associated with any bug id.", e.TestContext.TestName));
+        }
+    }
+
+    private int? TryGetBugId(MemberInfo memberInfo)
+    {
+        var knownIssueAttribute = memberInfo.GetCustomAttribute<KnownIssueAttribute>(true);
+        var result = knownIssueAttribute == null ? null : (int?)knownIssueAttribute.BugId;
+        return result;
     }
 }

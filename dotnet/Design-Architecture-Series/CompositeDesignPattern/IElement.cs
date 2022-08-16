@@ -12,14 +12,13 @@
 // <author>Anton Angelov</author>
 using OpenQA.Selenium;
 
-namespace CompositeDesignPattern
+namespace CompositeDesignPattern;
+
+public interface IElement : IStyleAssertedElement
 {
-    public interface IElement : IStyleAssertedElement
-    {
-        By By { get; }
-        string Text { get; }
-        void TypeText(string text);
-        IElement CreateElement(By locator);
-        void Click();
-    }
+    By By { get; }
+    string Text { get; }
+    void TypeText(string text);
+    IElement CreateElement(By locator);
+    void Click();
 }

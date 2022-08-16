@@ -14,13 +14,12 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace NullObjectDesignPattern.Pages.ItemPage
+namespace NullObjectDesignPattern.Pages.ItemPage;
+
+public static class ItemPageAsserter
 {
-    public static class ItemPageAsserter
+    public static void ProductTitle(this ItemPage page, string expectedTitle)
     {
-        public static void ProductTitle(this ItemPage page, string expectedTitle)
-        {
-            Assert.AreEqual<string>(expectedTitle, page.ProductTitle.Text);
-        }
+        Assert.AreEqual<string>(expectedTitle, page.ProductTitle.Text);
     }
 }

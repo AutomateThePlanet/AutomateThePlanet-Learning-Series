@@ -13,29 +13,28 @@
 // <site>http://automatetheplanet.com/</site>
 using System;
 
-namespace RulesDesignPattern
+namespace RulesDesignPattern;
+
+public class RuleResult : IRuleResult
 {
-    public class RuleResult : IRuleResult
+    private readonly Delegate _actionToBeExecuted;
+
+    public RuleResult(Delegate actionToBeExecuted)
     {
-        private readonly Delegate _actionToBeExecuted;
+        _actionToBeExecuted = actionToBeExecuted;
+    }
 
-        public RuleResult(Delegate actionToBeExecuted)
+    public RuleResult()
+    {
+    }
+
+    public bool IsSuccess { get; set; }
+
+    public void Execute()
+    {
+        if (_actionToBeExecuted != null)
         {
-            _actionToBeExecuted = actionToBeExecuted;
-        }
-
-        public RuleResult()
-        {
-        }
-
-        public bool IsSuccess { get; set; }
-
-        public void Execute()
-        {
-            if (_actionToBeExecuted != null)
-            {
-                _actionToBeExecuted.DynamicInvoke();
-            }
+            _actionToBeExecuted.DynamicInvoke();
         }
     }
 }

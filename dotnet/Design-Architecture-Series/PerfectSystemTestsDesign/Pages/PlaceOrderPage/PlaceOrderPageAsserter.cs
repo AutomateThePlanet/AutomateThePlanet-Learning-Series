@@ -14,13 +14,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PerfectSystemTestsDesign.Pages.PlaceOrderPage;
 
-namespace PerfectSystemTestsDesign.Pages.PlaceOrderPage
+namespace PerfectSystemTestsDesign.Pages.PlaceOrderPage;
+
+public static class PlaceOrderPageAsserter
 {
-    public static class PlaceOrderPageAsserter
+    public static void AssertOrderTotalPrice(this PlaceOrderPage page, double totalPrice)
     {
-        public static void AssertOrderTotalPrice(this PlaceOrderPage page, double totalPrice)
-        {
-            Assert.AreEqual<string>(totalPrice.ToString(), page.TotalPrice.Text);
-        }
+        Assert.AreEqual<string>(totalPrice.ToString(), page.TotalPrice.Text);
     }
 }

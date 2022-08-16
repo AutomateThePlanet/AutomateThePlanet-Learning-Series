@@ -19,28 +19,27 @@ using StrategyDesignPattern.Pages.ShippingAddressPage;
 using StrategyDesignPattern.Pages.ShippingPaymentPage;
 using StrategyDesignPattern.Pages.SignInPage;
 
-namespace StrategyDesignPattern.Base
+namespace StrategyDesignPattern.Base;
+
+public class PurchaseContext
 {
-    public class PurchaseContext
+    private readonly IOrderValidationStrategy _orderValidationStrategy;
+
+    public PurchaseContext(IOrderValidationStrategy orderValidationStrategy)
     {
-        private readonly IOrderValidationStrategy _orderValidationStrategy;
+        _orderValidationStrategy = orderValidationStrategy;
+    }
 
-        public PurchaseContext(IOrderValidationStrategy orderValidationStrategy)
-        {
-            _orderValidationStrategy = orderValidationStrategy;
-        }
-
-        public void PurchaseItem(string itemUrl, string itemPrice, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
-        {
-            ItemPage.Instance.Navigate(itemUrl);
-            ItemPage.Instance.ClickBuyNowButton();
-            PreviewShoppingCartPage.Instance.ClickProceedToCheckoutButton();
-            SignInPage.Instance.Login(clientLoginInfo.Email, clientLoginInfo.Password);
-            ShippingAddressPage.Instance.FillShippingInfo(clientPurchaseInfo);
-            ShippingAddressPage.Instance.ClickContinueButton();
-            ShippingPaymentPage.Instance.ClickBottomContinueButton();
-            ShippingPaymentPage.Instance.ClickTopContinueButton();
-            _orderValidationStrategy.ValidateOrderSummary(itemPrice, clientPurchaseInfo);
-        }
+    public void PurchaseItem(string itemUrl, string itemPrice, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
+    {
+        ItemPage.Instance.Navigate(itemUrl);
+        ItemPage.Instance.ClickBuyNowButton();
+        PreviewShoppingCartPage.Instance.ClickProceedToCheckoutButton();
+        SignInPage.Instance.Login(clientLoginInfo.Email, clientLoginInfo.Password);
+        ShippingAddressPage.Instance.FillShippingInfo(clientPurchaseInfo);
+        ShippingAddressPage.Instance.ClickContinueButton();
+        ShippingPaymentPage.Instance.ClickBottomContinueButton();
+        ShippingPaymentPage.Instance.ClickTopContinueButton();
+        _orderValidationStrategy.ValidateOrderSummary(itemPrice, clientPurchaseInfo);
     }
 }

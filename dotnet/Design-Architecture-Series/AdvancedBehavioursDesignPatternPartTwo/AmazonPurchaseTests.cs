@@ -26,47 +26,46 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using Unity.Lifetime;
 
-namespace AdvancedBehavioursDesignPatternPartTwo
+namespace AdvancedBehavioursDesignPatternPartTwo;
+
+[TestClass]
+public class AmazonPurchaseTests
 {
-    [TestClass]
-    public class AmazonPurchaseTests
+    private static readonly IUnityContainer Container = new UnityContainer();
+
+    [TestInitialize]
+    public void SetupTest()
     {
-        private static readonly IUnityContainer Container = new UnityContainer();
+        Core.Driver.StartBrowser();
+        Container.RegisterType<ItemPage>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<PreviewShoppingCartPage>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<SignInPage>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<ShippingAddressPage>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<ShippingPaymentPage>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<PlaceOrderPage>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<ItemPageBuyBehaviour>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<ItemPageNavigationBehaviour>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<PlaceOrderPageAssertFinalAmountsBehaviour>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<PreviewShoppingCartPageProceedBehaviour>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<ShippingAddressPageContinueBehaviour>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<ShippingAddressPageFillDifferentBillingBehaviour>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<ShippingAddressPageFillShippingBehaviour>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<ShippingPaymentPageContinueBehaviour>(new ContainerControlledLifetimeManager());
+        Container.RegisterType<SignInPageLoginBehaviour>(new ContainerControlledLifetimeManager());
+        Container.RegisterInstance<IWebDriver>(Core.Driver.Browser);
+    }
 
-        [TestInitialize]
-        public void SetupTest()
-        {
-            Core.Driver.StartBrowser();
-            Container.RegisterType<ItemPage>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<PreviewShoppingCartPage>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<SignInPage>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<ShippingAddressPage>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<ShippingPaymentPage>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<PlaceOrderPage>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<ItemPageBuyBehaviour>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<ItemPageNavigationBehaviour>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<PlaceOrderPageAssertFinalAmountsBehaviour>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<PreviewShoppingCartPageProceedBehaviour>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<ShippingAddressPageContinueBehaviour>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<ShippingAddressPageFillDifferentBillingBehaviour>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<ShippingAddressPageFillShippingBehaviour>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<ShippingPaymentPageContinueBehaviour>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<SignInPageLoginBehaviour>(new ContainerControlledLifetimeManager());
-            Container.RegisterInstance<IWebDriver>(Core.Driver.Browser);
-        }
+    [TestCleanup]
+    public void TeardownTest()
+    {
+        Core.Driver.StopBrowser();
+    }
 
-        [TestCleanup]
-        public void TeardownTest()
-        {
-            Core.Driver.StopBrowser();
-        }
-
-        [TestMethod]
-        public void Purchase_SimpleBehaviourEngine()
-        {
-            var itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
-            BehaviorEngine.Execute(
-                new NavigatePageBehaviorDefinition(itemUrl));
-        }
+    [TestMethod]
+    public void Purchase_SimpleBehaviourEngine()
+    {
+        var itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
+        BehaviorEngine.Execute(
+            new NavigatePageBehaviorDefinition(itemUrl));
     }
 }

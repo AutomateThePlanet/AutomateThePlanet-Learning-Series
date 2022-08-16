@@ -12,14 +12,13 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace StrategyDesignPattern.Enums
+namespace StrategyDesignPattern.Enums;
+
+public enum GiftWrappingStyles
 {
-    public enum GiftWrappingStyles
-    {
-        Fancy,
-        Cheap,
-        UltraFancy,
-        Paper,
-        None
-    }
+    Fancy,
+    Cheap,
+    UltraFancy,
+    Paper,
+    None
 }

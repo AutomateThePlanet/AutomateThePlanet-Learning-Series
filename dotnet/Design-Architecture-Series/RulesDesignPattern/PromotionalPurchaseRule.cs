@@ -14,29 +14,28 @@
 using System;
 using RulesDesignPattern.Data;
 
-namespace RulesDesignPattern
+namespace RulesDesignPattern;
+
+public class PromotionalPurchaseRule : BaseRule
 {
-    public class PromotionalPurchaseRule : BaseRule
+    private readonly PurchaseTestInput _purchaseTestInput;
+
+    public PromotionalPurchaseRule(PurchaseTestInput purchaseTestInput, Action actionToBeExecuted) : base(actionToBeExecuted)
     {
-        private readonly PurchaseTestInput _purchaseTestInput;
+        _purchaseTestInput = purchaseTestInput;
+    }
 
-        public PromotionalPurchaseRule(PurchaseTestInput purchaseTestInput, Action actionToBeExecuted) : base(actionToBeExecuted)
+    public override IRuleResult Eval()
+    {
+        if (string.IsNullOrEmpty(_purchaseTestInput.CreditCardNumber) &&
+            !_purchaseTestInput.IsWiretransfer &&
+            _purchaseTestInput.IsPromotionalPurchase &&
+            _purchaseTestInput.TotalPrice == 0)
         {
-            _purchaseTestInput = purchaseTestInput;
+            RuleResult.IsSuccess = true;
+            return RuleResult;
         }
 
-        public override IRuleResult Eval()
-        {
-            if (string.IsNullOrEmpty(_purchaseTestInput.CreditCardNumber) &&
-                !_purchaseTestInput.IsWiretransfer &&
-                _purchaseTestInput.IsPromotionalPurchase &&
-                _purchaseTestInput.TotalPrice == 0)
-            {
-                RuleResult.IsSuccess = true;
-                return RuleResult;
-            }
-
-            return new RuleResult();
-        }
+        return new RuleResult();
     }
 }

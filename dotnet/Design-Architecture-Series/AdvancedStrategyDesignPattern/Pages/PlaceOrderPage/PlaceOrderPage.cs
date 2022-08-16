@@ -12,9 +12,8 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedStrategyDesignPattern.Pages.PlaceOrderPage
+namespace AdvancedStrategyDesignPattern.Pages.PlaceOrderPage;
+
+public class PlaceOrderPage : Core.BasePageSingleton<PlaceOrderPage, PlaceOrderPageMap, PlaceOrderPageValidator>
 {
-    public class PlaceOrderPage : Core.BasePageSingleton<PlaceOrderPage, PlaceOrderPageMap, PlaceOrderPageValidator>
-    {
-    }
 }

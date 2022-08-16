@@ -11,42 +11,41 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-namespace AdvancedNullObjectDesignPattern.ImmutableStrategies
+namespace AdvancedNullObjectDesignPattern.ImmutableStrategies;
+
+using Base;
+
+public abstract class BasePromotionalCodeStrategy : IPurchasePromotionalCodeStrategy
 {
-    using Base;
+    private static readonly NullPurchasePromotionalCodeStrategy _nullPurchasePromotionalCodeStrategy = new NullPurchasePromotionalCodeStrategy();
 
-    public abstract class BasePromotionalCodeStrategy : IPurchasePromotionalCodeStrategy
+    public static NullPurchasePromotionalCodeStrategy Null
     {
-        private static readonly NullPurchasePromotionalCodeStrategy _nullPurchasePromotionalCodeStrategy = new NullPurchasePromotionalCodeStrategy();
-
-        public static NullPurchasePromotionalCodeStrategy Null
+        get
         {
-            get
-            {
-                return _nullPurchasePromotionalCodeStrategy;
-            }
+            return _nullPurchasePromotionalCodeStrategy;
+        }
+    }
+
+    public abstract void AssertPromotionalCodeDiscount();
+
+    public abstract double GetPromotionalCodeDiscountAmount();
+
+    public abstract void ApplyPromotionalCode(string couponCode);
+
+    public class NullPurchasePromotionalCodeStrategy : BasePromotionalCodeStrategy
+    {
+        public override void AssertPromotionalCodeDiscount()
+        {
         }
 
-        public abstract void AssertPromotionalCodeDiscount();
-
-        public abstract double GetPromotionalCodeDiscountAmount();
-
-        public abstract void ApplyPromotionalCode(string couponCode);
-
-        public class NullPurchasePromotionalCodeStrategy : BasePromotionalCodeStrategy
+        public override double GetPromotionalCodeDiscountAmount()
         {
-            public override void AssertPromotionalCodeDiscount()
-            {
-            }
+            return 0;
+        }
 
-            public override double GetPromotionalCodeDiscountAmount()
-            {
-                return 0;
-            }
-
-            public override void ApplyPromotionalCode(string couponCode)
-            {
-            }
+        public override void ApplyPromotionalCode(string couponCode)
+        {
         }
     }
 }

@@ -15,22 +15,21 @@
 using OpenQA.Selenium;
 using PerfectSystemTestsDesign.Base;
 
-namespace PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage
+namespace PerfectSystemTestsDesign.Pages.PreviewShoppingCartPage;
+
+public partial class PreviewShoppingCartPage : BasePage
 {
-    public partial class PreviewShoppingCartPage : BasePage
+    public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
     {
-        public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
-        {
-        }
+    }
 
-        public void ClickProceedToCheckoutButton()
-        {
-            ProceedToCheckoutButton.Click();
-        }
+    public void ClickProceedToCheckoutButton()
+    {
+        ProceedToCheckoutButton.Click();
+    }
 
-        public void CheckOrderContainsGift()
-        {
-            ThisOrderContainsGiftCheckbox.Click();
-        }
+    public void CheckOrderContainsGift()
+    {
+        ThisOrderContainsGiftCheckbox.Click();
     }
 }

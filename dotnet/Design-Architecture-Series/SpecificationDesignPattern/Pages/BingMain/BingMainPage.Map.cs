@@ -15,32 +15,31 @@
 using System;
 using OpenQA.Selenium;
 
-namespace SpecificationDesignPattern.BingMain
+namespace SpecificationDesignPattern.BingMain;
+
+public partial class BingMainPage : Base.BasePage
 {
-    public partial class BingMainPage : Base.BasePage
+    public IWebElement SearchBox
     {
-        public IWebElement SearchBox
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("sb_form_q"));
-            }
+            return Driver.FindElement(By.Id("sb_form_q"));
         }
+    }
 
-        public IWebElement GoButton
+    public IWebElement GoButton
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("sb_form_go"));
-            }
+            return Driver.FindElement(By.Id("sb_form_go"));
         }
+    }
 
-        public IWebElement ResultsCountDiv
+    public IWebElement ResultsCountDiv
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("b_tween"));
-            }
+            return Driver.FindElement(By.Id("b_tween"));
         }
     }
 }

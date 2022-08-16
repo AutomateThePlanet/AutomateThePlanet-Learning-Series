@@ -15,22 +15,21 @@
 using System;
 using OpenQA.Selenium;
 
-namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv22.Base
+namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv22.Base;
+
+public abstract class BasePage
 {
-    public abstract class BasePage
+    protected IWebDriver Driver;
+
+    public BasePage(IWebDriver driver)
     {
-        protected IWebDriver Driver;
+        Driver = driver;
+    }
 
-        public BasePage(IWebDriver driver)
-        {
-            Driver = driver;
-        }
+    public abstract string Url { get; }
 
-        public abstract string Url { get; }
-
-        public virtual void Open(string part = "")
-        {
-            Driver.Navigate().GoToUrl(string.Concat(Url, part));
-        }
+    public virtual void Open(string part = "")
+    {
+        Driver.Navigate().GoToUrl(string.Concat(Url, part));
     }
 }

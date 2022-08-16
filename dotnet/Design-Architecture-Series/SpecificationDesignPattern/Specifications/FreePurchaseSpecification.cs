@@ -15,13 +15,12 @@
 using SpecificationDesignPattern.Data;
 using SpecificationDesignPattern.Specifications.Core;
 
-namespace SpecificationDesignPattern.Specifications
+namespace SpecificationDesignPattern.Specifications;
+
+public class FreePurchaseSpecification : Specification<PurchaseTestInput>
 {
-    public class FreePurchaseSpecification : Specification<PurchaseTestInput>
+    public override bool IsSatisfiedBy(PurchaseTestInput entity)
     {
-        public override bool IsSatisfiedBy(PurchaseTestInput entity)
-        {
-            return entity.TotalPrice == 0;
-        }
+        return entity.TotalPrice == 0;
     }
 }

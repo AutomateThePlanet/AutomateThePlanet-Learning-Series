@@ -12,12 +12,11 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace FluentPageObjectPattern.Enums
+namespace FluentPageObjectPattern.Enums;
+
+public enum People
 {
-    public enum People
-    {
-        All,
-        JustFaces,
-        HeadShoulders
-    }
+    All,
+    JustFaces,
+    HeadShoulders
 }

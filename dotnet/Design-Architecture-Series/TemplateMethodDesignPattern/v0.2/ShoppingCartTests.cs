@@ -18,33 +18,32 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
-namespace TemplateMethodDesignPattern.Second
+namespace TemplateMethodDesignPattern.Second;
+
+[TestClass]
+public class ShoppingCartTests
 {
-    [TestClass]
-    public class ShoppingCartTests
+    private ShoppingCartFactory _shoppingCartFactory;
+    private ShoppingCart _shoppingCart;
+    private IWebDriver _driver;
+
+    [TestInitialize]
+    public void SetupTest()
     {
-        private ShoppingCartFactory _shoppingCartFactory;
-        private ShoppingCart _shoppingCart;
-        private IWebDriver _driver;
+        _driver = new FirefoxDriver();
+        _shoppingCartFactory = new ShoppingCartFactory(_driver);
+    }
 
-        [TestInitialize]
-        public void SetupTest()
-        {
-            _driver = new FirefoxDriver();
-            _shoppingCartFactory = new ShoppingCartFactory(_driver);
-        }
+    [TestCleanup]
+    public void TeardownTest()
+    {
+        _driver.Quit();
+    }
 
-        [TestCleanup]
-        public void TeardownTest()
-        {
-            _driver.Quit();
-        }
-
-        [TestMethod]
-        public void Purchase_Book_Discounts()
-        {
-            _shoppingCart = _shoppingCartFactory.CreateOldShoppingCart();
-            _shoppingCart.PurchaseItem("The Hitchhiker's Guide to the Galaxy", 22.2, new ClientInfo());
-        }
+    [TestMethod]
+    public void Purchase_Book_Discounts()
+    {
+        _shoppingCart = _shoppingCartFactory.CreateOldShoppingCart();
+        _shoppingCart.PurchaseItem("The Hitchhiker's Guide to the Galaxy", 22.2, new ClientInfo());
     }
 }

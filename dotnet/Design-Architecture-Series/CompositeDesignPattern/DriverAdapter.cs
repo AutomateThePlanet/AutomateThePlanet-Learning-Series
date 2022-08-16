@@ -14,51 +14,50 @@ using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace CompositeDesignPattern
+namespace CompositeDesignPattern;
+
+public class DriverAdapter : IDriver
 {
-    public class DriverAdapter : IDriver
+    private readonly IWebDriver _driver;
+
+    public DriverAdapter(IWebDriver driver)
     {
-        private readonly IWebDriver _driver;
+        _driver = driver;
+    }
 
-        public DriverAdapter(IWebDriver driver)
-        {
-            _driver = driver;
-        }
+    public void GoToUrl(string url)
+    {
+        _driver.Navigate().GoToUrl(url);
+    }
 
-        public void GoToUrl(string url)
-        {
-            _driver.Navigate().GoToUrl(url);
-        }
+    public Uri Url
+    {
+        get => new Uri(_driver.Url);
+        set => _driver.Url = value.ToString();
+    }
 
-        public Uri Url
-        {
-            get => new Uri(_driver.Url);
-            set => _driver.Url = value.ToString();
-        }
+    public IElement Create(By locator)
+    {
+        return new ElementAdapter(_driver, locator);
+    }
 
-        public IElement Create(By locator)
-        {
-            return new ElementAdapter(_driver, locator);
-        }
+    public IElementsList CreateElements(By locator)
+    {
+        return new ElementsList(_driver, locator);
+    }
 
-        public IElementsList CreateElements(By locator)
-        {
-            return new ElementsList(_driver, locator);
-        }
+    public void WaitForAjax()
+    {
+        var timeout = TimeSpan.FromSeconds(30);
+        var sleepInterval = TimeSpan.FromSeconds(2);
+        var webDriverWait = new WebDriverWait(new SystemClock(), _driver, timeout, sleepInterval);
+        var js = (IJavaScriptExecutor)_driver;
+        webDriverWait.Until(wd => js.ExecuteScript("return jQuery.active").ToString() == "0");
+    }
 
-        public void WaitForAjax()
-        {
-            var timeout = TimeSpan.FromSeconds(30);
-            var sleepInterval = TimeSpan.FromSeconds(2);
-            var webDriverWait = new WebDriverWait(new SystemClock(), _driver, timeout, sleepInterval);
-            var js = (IJavaScriptExecutor)_driver;
-            webDriverWait.Until(wd => js.ExecuteScript("return jQuery.active").ToString() == "0");
-        }
-
-        public void Close()
-        {
-            _driver.Quit();
-            _driver.Dispose();
-        }
+    public void Close()
+    {
+        _driver.Quit();
+        _driver.Dispose();
     }
 }

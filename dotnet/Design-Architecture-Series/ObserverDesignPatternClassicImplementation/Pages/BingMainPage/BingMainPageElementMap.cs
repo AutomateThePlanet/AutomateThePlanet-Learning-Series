@@ -13,39 +13,38 @@
 // <site>http://automatetheplanet.com/</site>
 using OpenQA.Selenium;
 
-namespace ObserverDesignPatternClassicImplementation.Pages
+namespace ObserverDesignPatternClassicImplementation.Pages;
+
+public class BingMainPageElementMap
 {
-    public class BingMainPageElementMap
+    private readonly IWebDriver _browser;
+
+    public BingMainPageElementMap(IWebDriver browser)
     {
-        private readonly IWebDriver _browser;
+        _browser = browser;
+    }
 
-        public BingMainPageElementMap(IWebDriver browser)
+    public IWebElement SearchBox
+    {
+        get
         {
-            _browser = browser;
+            return _browser.FindElement(By.Id("sb_form_q"));
         }
+    }
 
-        public IWebElement SearchBox
+    public IWebElement GoButton
+    {
+        get
         {
-            get
-            {
-                return _browser.FindElement(By.Id("sb_form_q"));
-            }
+            return _browser.FindElement(By.Id("sb_form_go"));
         }
+    }
 
-        public IWebElement GoButton
+    public IWebElement ResultsCountDiv
+    {
+        get
         {
-            get
-            {
-                return _browser.FindElement(By.Id("sb_form_go"));
-            }
-        }
-
-        public IWebElement ResultsCountDiv
-        {
-            get
-            {
-                return _browser.FindElement(By.Id("b_tween"));
-            }
+            return _browser.FindElement(By.Id("b_tween"));
         }
     }
 }

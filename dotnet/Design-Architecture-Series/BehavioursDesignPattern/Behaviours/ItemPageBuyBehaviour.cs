@@ -15,21 +15,20 @@
 using BehavioursDesignPattern.Behaviours.Core;
 using BehavioursDesignPattern.Pages.ItemPage;
 
-namespace BehavioursDesignPattern.Behaviours
+namespace BehavioursDesignPattern.Behaviours;
+
+public class ItemPageBuyBehaviour : Behaviour
 {
-    public class ItemPageBuyBehaviour : Behaviour
+    private readonly ItemPage _itemPage;
+
+    // This version is compatible only with UnityBehaviorEngine.
+    public ItemPageBuyBehaviour(ItemPage itemPage)
     {
-        private readonly ItemPage _itemPage;
+        _itemPage = itemPage;
+    }
 
-        // This version is compatible only with UnityBehaviorEngine.
-        public ItemPageBuyBehaviour(ItemPage itemPage)
-        {
-            _itemPage = itemPage;
-        }
-
-        public override void PerformAct()
-        {
-            _itemPage.ClickBuyNowButton();
-        }
+    public override void PerformAct()
+    {
+        _itemPage.ClickBuyNowButton();
     }
 }

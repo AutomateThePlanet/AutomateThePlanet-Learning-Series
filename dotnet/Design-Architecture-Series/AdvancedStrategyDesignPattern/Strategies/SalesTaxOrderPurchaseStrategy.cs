@@ -19,32 +19,31 @@ using AdvancedStrategyDesignPattern.Enums;
 using AdvancedStrategyDesignPattern.Pages.PlaceOrderPage;
 using AdvancedStrategyDesignPattern.Services;
 
-namespace AdvancedStrategyDesignPattern.Strategies
+namespace AdvancedStrategyDesignPattern.Strategies;
+
+public class SalesTaxOrderPurchaseStrategy : IOrderPurchaseStrategy
 {
-    public class SalesTaxOrderPurchaseStrategy : IOrderPurchaseStrategy
+    public SalesTaxOrderPurchaseStrategy()
     {
-        public SalesTaxOrderPurchaseStrategy()
+        SalesTaxCalculationService = new SalesTaxCalculationService();
+    }
+
+    public SalesTaxCalculationService SalesTaxCalculationService { get; set; }
+
+    public void AssertOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
+    {
+        var currentState = (States)Enum.Parse(typeof(States), clientPurchaseInfo.ShippingInfo.State);
+        var currentItemPrice = decimal.Parse(itemsPrice);
+        var salesTax = SalesTaxCalculationService.Calculate(currentItemPrice, currentState, clientPurchaseInfo.ShippingInfo.Zip);
+
+        PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(salesTax.ToString());
+    }
+
+    public void ValidateClientPurchaseInfo(ClientPurchaseInfo clientPurchaseInfo)
+    {
+        if (!clientPurchaseInfo.ShippingInfo.Country.Equals("United States"))
         {
-            SalesTaxCalculationService = new SalesTaxCalculationService();
-        }
-
-        public SalesTaxCalculationService SalesTaxCalculationService { get; set; }
-
-        public void AssertOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
-        {
-            var currentState = (States)Enum.Parse(typeof(States), clientPurchaseInfo.ShippingInfo.State);
-            var currentItemPrice = decimal.Parse(itemsPrice);
-            var salesTax = SalesTaxCalculationService.Calculate(currentItemPrice, currentState, clientPurchaseInfo.ShippingInfo.Zip);
-
-            PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(salesTax.ToString());
-        }
-
-        public void ValidateClientPurchaseInfo(ClientPurchaseInfo clientPurchaseInfo)
-        {
-            if (!clientPurchaseInfo.ShippingInfo.Country.Equals("United States"))
-            {
-                throw new ArgumentException("If the NoTaxesOrderPurchaseStrategy is used, the country should be set to United States because otherwise no sales tax is going to be applied.");
-            }
+            throw new ArgumentException("If the NoTaxesOrderPurchaseStrategy is used, the country should be set to United States because otherwise no sales tax is going to be applied.");
         }
     }
 }

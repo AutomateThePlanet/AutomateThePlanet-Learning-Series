@@ -15,89 +15,88 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace NullObjectDesignPattern.Pages.ShippingAddressPage
+namespace NullObjectDesignPattern.Pages.ShippingAddressPage;
+
+public partial class ShippingAddressPage
 {
-    public partial class ShippingAddressPage
+    public SelectElement CountryDropDown
     {
-        public SelectElement CountryDropDown
+        get
         {
-            get
-            {
-                DriverWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("enterAddressCountryCode")); });
-                return new SelectElement(Driver.FindElement(By.Name("enterAddressCountryCode")));
-            }
+            DriverWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("enterAddressCountryCode")); });
+            return new SelectElement(Driver.FindElement(By.Name("enterAddressCountryCode")));
         }
+    }
 
-        public IWebElement FullNameInput
+    public IWebElement FullNameInput
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("enterAddressFullName"));
-            }
+            return Driver.FindElement(By.Id("enterAddressFullName"));
         }
+    }
 
-        public IWebElement Address1Input
+    public IWebElement Address1Input
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("enterAddressAddressLine1"));
-            }
+            return Driver.FindElement(By.Id("enterAddressAddressLine1"));
         }
+    }
 
-        public IWebElement CityInput
+    public IWebElement CityInput
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("enterAddressCity"));
-            }
+            return Driver.FindElement(By.Id("enterAddressCity"));
         }
+    }
 
-        public IWebElement ZipInput
+    public IWebElement ZipInput
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("enterAddressPostalCode"));
-            }
+            return Driver.FindElement(By.Id("enterAddressPostalCode"));
         }
+    }
 
-        public IWebElement PhoneInput
+    public IWebElement PhoneInput
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("enterAddressPhoneNumber"));
-            }
+            return Driver.FindElement(By.Id("enterAddressPhoneNumber"));
         }
+    }
 
-        public SelectElement DeliveryPreferenceDropDown
+    public SelectElement DeliveryPreferenceDropDown
+    {
+        get
         {
-            get
-            {
-                return new SelectElement(Driver.FindElement(By.Name("AddressType")));
-            }
+            return new SelectElement(Driver.FindElement(By.Name("AddressType")));
         }
+    }
 
-        public IWebElement ContinueButton
+    public IWebElement ContinueButton
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//input[@value='Continue']"));
-            }
+            return Driver.FindElement(By.XPath("//input[@value='Continue']"));
         }
+    }
 
-        public IWebElement ShipToThisAddress
+    public IWebElement ShipToThisAddress
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.CssSelector("input.a-button-text"));
-            }
+            return Driver.FindElement(By.CssSelector("input.a-button-text"));
         }
+    }
 
-        public IWebElement DifferemtFromBillingCheckbox
+    public IWebElement DifferemtFromBillingCheckbox
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("isBillingAddress"));
-            }
+            return Driver.FindElement(By.Id("isBillingAddress"));
         }
     }
 }

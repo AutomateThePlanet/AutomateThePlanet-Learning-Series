@@ -14,12 +14,11 @@
 
 using TemplateMethodDesignPattern.Base.First;
 
-namespace TemplateMethodDesignPattern.Pages.Item.First
+namespace TemplateMethodDesignPattern.Pages.Item.First;
+
+public interface IItemPage : IPage
 {
-    public interface IItemPage : IPage
-    {
-        void ClickBuyNowButton();
-        double GetPrice();
-        void AssertPrice(double expectedPrice);
-    }
+    void ClickBuyNowButton();
+    double GetPrice();
+    void AssertPrice(double expectedPrice);
 }

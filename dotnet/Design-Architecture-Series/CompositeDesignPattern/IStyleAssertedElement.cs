@@ -10,17 +10,16 @@
 // limitations under the License.
 // </copyright>
 // <author>Anton Angelov</author>
-namespace CompositeDesignPattern
+namespace CompositeDesignPattern;
+
+public interface IStyleAssertedElement
 {
-    public interface IStyleAssertedElement
-    {
-        void AssertBackgroundColor(string expectedBackgroundColor);
-        void AssertBorderColor(string expectedBorderColor);
-        void AssertColor(string expectedColor);
-        void AssertFontFamily(string expectedFontFamily);
-        void AssertFontWeight(string expectedFontWeight);
-        void AssertFontSize(string expectedFontSize);
-        void AssertTextAlign(string expectedTextAlign);
-        void AssertVerticalAlign(string expectedVerticalAlign);
-    }
+    void AssertBackgroundColor(string expectedBackgroundColor);
+    void AssertBorderColor(string expectedBorderColor);
+    void AssertColor(string expectedColor);
+    void AssertFontFamily(string expectedFontFamily);
+    void AssertFontWeight(string expectedFontWeight);
+    void AssertFontSize(string expectedFontSize);
+    void AssertTextAlign(string expectedTextAlign);
+    void AssertVerticalAlign(string expectedVerticalAlign);
 }

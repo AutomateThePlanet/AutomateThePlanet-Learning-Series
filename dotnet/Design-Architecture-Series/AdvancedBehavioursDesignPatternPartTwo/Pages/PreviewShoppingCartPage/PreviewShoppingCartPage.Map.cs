@@ -14,24 +14,23 @@
 
 using OpenQA.Selenium;
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Pages.PreviewShoppingCartPage
-{
-    public partial class PreviewShoppingCartPage
-    {
-        public IWebElement ProceedToCheckoutButton
-        {
-            get
-            {
-                return Driver.FindElement(By.Id("hlb-ptc-btn-native"));
-            }
-        }
+namespace AdvancedBehavioursDesignPatternPartTwo.Pages.PreviewShoppingCartPage;
 
-        public IWebElement ThisOrderContainsGiftCheckbox
+public partial class PreviewShoppingCartPage
+{
+    public IWebElement ProceedToCheckoutButton
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("sc-buy-box-gift-checkbox"));
-            }
+            return Driver.FindElement(By.Id("hlb-ptc-btn-native"));
+        }
+    }
+
+    public IWebElement ThisOrderContainsGiftCheckbox
+    {
+        get
+        {
+            return Driver.FindElement(By.Id("sc-buy-box-gift-checkbox"));
         }
     }
 }

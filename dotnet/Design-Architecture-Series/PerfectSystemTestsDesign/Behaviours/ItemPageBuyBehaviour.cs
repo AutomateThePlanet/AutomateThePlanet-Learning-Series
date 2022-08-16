@@ -15,20 +15,19 @@ using Unity;
 using PerfectSystemTestsDesign.Behaviours.Core;
 using PerfectSystemTestsDesign.Pages.ItemPage;
 
-namespace PerfectSystemTestsDesign.Behaviours
+namespace PerfectSystemTestsDesign.Behaviours;
+
+public class ItemPageBuyBehaviour : ActionBehaviour
 {
-    public class ItemPageBuyBehaviour : ActionBehaviour
+    private readonly ItemPage _itemPage;
+
+    public ItemPageBuyBehaviour()
     {
-        private readonly ItemPage _itemPage;
+        _itemPage = Base.UnityContainerFactory.GetContainer().Resolve<ItemPage>();
+    }
 
-        public ItemPageBuyBehaviour()
-        {
-            _itemPage = Base.UnityContainerFactory.GetContainer().Resolve<ItemPage>();
-        }
-
-        protected override void PerformAct()
-        {
-            _itemPage.ClickBuyNowButton();
-        }
+    protected override void PerformAct()
+    {
+        _itemPage.ClickBuyNowButton();
     }
 }

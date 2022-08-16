@@ -14,19 +14,18 @@
 
 using System;
 
-namespace StrategyDesignPattern.Core
-{
-    public abstract class ThreadSafeLazyBaseSingleton<T>
-        where T : new()
-    {
-        private static readonly Lazy<T> Lazy = new Lazy<T>(() => new T());
+namespace StrategyDesignPattern.Core;
 
-        public static T Instance
+public abstract class ThreadSafeLazyBaseSingleton<T>
+    where T : new()
+{
+    private static readonly Lazy<T> Lazy = new Lazy<T>(() => new T());
+
+    public static T Instance
+    {
+        get
         {
-            get
-            {
-                return Lazy.Value;
-            }
+            return Lazy.Value;
         }
     }
 }

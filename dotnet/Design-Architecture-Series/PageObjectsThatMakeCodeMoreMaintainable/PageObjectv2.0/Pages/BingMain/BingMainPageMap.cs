@@ -15,36 +15,35 @@
 using OpenQA.Selenium;
 using PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20.Base;
 
-namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20
+namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20;
+
+public class BingMainPageMap : BaseElementMap
 {
-    public class BingMainPageMap : BaseElementMap
+    public BingMainPageMap(IWebDriver driver) : base(driver)
     {
-        public BingMainPageMap(IWebDriver driver) : base(driver)
-        {
-        }
+    }
 
-        public IWebElement SearchBox
+    public IWebElement SearchBox
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("sb_form_q"));
-            }
+            return Driver.FindElement(By.Id("sb_form_q"));
         }
+    }
 
-        public IWebElement GoButton
+    public IWebElement GoButton
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("sb_form_go"));
-            }
+            return Driver.FindElement(By.Id("sb_form_go"));
         }
+    }
 
-        public IWebElement ResultsCountDiv
+    public IWebElement ResultsCountDiv
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("b_tween"));
-            }
+            return Driver.FindElement(By.Id("b_tween"));
         }
     }
 }

@@ -18,32 +18,31 @@ using DecoratorDesignPattern.Pages.ShippingAddressPage;
 using DecoratorDesignPattern.Pages.ShippingPaymentPage;
 using DecoratorDesignPattern.Pages.SignInPage;
 
-namespace DecoratorDesignPattern.Advanced.Base
+namespace DecoratorDesignPattern.Advanced.Base;
+
+public class PurchaseContext
 {
-    public class PurchaseContext
+    private readonly Strategies.OrderPurchaseStrategy _orderPurchaseStrategy;
+
+    public PurchaseContext(Strategies.OrderPurchaseStrategy orderPurchaseStrategy)
     {
-        private readonly Strategies.OrderPurchaseStrategy _orderPurchaseStrategy;
+        _orderPurchaseStrategy = orderPurchaseStrategy;
+    }
 
-        public PurchaseContext(Strategies.OrderPurchaseStrategy orderPurchaseStrategy)
-        {
-            _orderPurchaseStrategy = orderPurchaseStrategy;
-        }
-
-        public void PurchaseItem(string itemUrl, string itemPrice, Data.ClientLoginInfo clientLoginInfo, Data.ClientPurchaseInfo clientPurchaseInfo)
-        {
-            ItemPage.Instance.Navigate(itemUrl);
-            ItemPage.Instance.ClickBuyNowButton();
-            PreviewShoppingCartPage.Instance.ClickProceedToCheckoutButton();
-            SignInPage.Instance.Login(clientLoginInfo.Email, clientLoginInfo.Password);
-            ShippingAddressPage.Instance.FillShippingInfo(clientPurchaseInfo);
-            ShippingAddressPage.Instance.ClickDifferentBillingCheckBox(clientPurchaseInfo);
-            ShippingAddressPage.Instance.ClickContinueButton();
-            ShippingPaymentPage.Instance.ClickBottomContinueButton();
-            ShippingAddressPage.Instance.FillBillingInfo(clientPurchaseInfo);
-            ShippingAddressPage.Instance.ClickContinueButton();
-            ShippingPaymentPage.Instance.ClickTopContinueButton();
-            var expectedTotalPrice = _orderPurchaseStrategy.CalculateTotalPrice();
-            _orderPurchaseStrategy.ValidateOrderSummary(expectedTotalPrice);
-        }
+    public void PurchaseItem(string itemUrl, string itemPrice, Data.ClientLoginInfo clientLoginInfo, Data.ClientPurchaseInfo clientPurchaseInfo)
+    {
+        ItemPage.Instance.Navigate(itemUrl);
+        ItemPage.Instance.ClickBuyNowButton();
+        PreviewShoppingCartPage.Instance.ClickProceedToCheckoutButton();
+        SignInPage.Instance.Login(clientLoginInfo.Email, clientLoginInfo.Password);
+        ShippingAddressPage.Instance.FillShippingInfo(clientPurchaseInfo);
+        ShippingAddressPage.Instance.ClickDifferentBillingCheckBox(clientPurchaseInfo);
+        ShippingAddressPage.Instance.ClickContinueButton();
+        ShippingPaymentPage.Instance.ClickBottomContinueButton();
+        ShippingAddressPage.Instance.FillBillingInfo(clientPurchaseInfo);
+        ShippingAddressPage.Instance.ClickContinueButton();
+        ShippingPaymentPage.Instance.ClickTopContinueButton();
+        var expectedTotalPrice = _orderPurchaseStrategy.CalculateTotalPrice();
+        _orderPurchaseStrategy.ValidateOrderSummary(expectedTotalPrice);
     }
 }

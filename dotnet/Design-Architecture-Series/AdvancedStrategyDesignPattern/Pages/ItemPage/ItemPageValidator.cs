@@ -14,13 +14,12 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AdvancedStrategyDesignPattern.Pages.ItemPage
+namespace AdvancedStrategyDesignPattern.Pages.ItemPage;
+
+public class ItemPageValidator : Core.BasePageValidator<ItemPageMap>
 {
-    public class ItemPageValidator : Core.BasePageValidator<ItemPageMap>
+    public void ProductTitle(string expectedTitle)
     {
-        public void ProductTitle(string expectedTitle)
-        {
-            Assert.AreEqual<string>(expectedTitle, Map.ProductTitle.Text);
-        }
+        Assert.AreEqual<string>(expectedTitle, Map.ProductTitle.Text);
     }
 }

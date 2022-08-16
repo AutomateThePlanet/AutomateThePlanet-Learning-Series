@@ -14,24 +14,23 @@
 
 using AdvancedSpecificationDesignPattern.Data;
 
-namespace AdvancedSpecificationDesignPattern
+namespace AdvancedSpecificationDesignPattern;
+
+public class OrderTestContext
 {
-    public class OrderTestContext
+    public OrderTestContext(PurchaseTestInput purchaseTestInput, OrderTestContextConfigurator orderTestContextConfigurator)
     {
-        public OrderTestContext(PurchaseTestInput purchaseTestInput, OrderTestContextConfigurator orderTestContextConfigurator)
-        {
-            PurchaseTestInput = purchaseTestInput;
-            IsPromoCodePurchase = orderTestContextConfigurator.FreePurchaseSpecification.Or(orderTestContextConfigurator.PromotionalPurchaseSpecification).
+        PurchaseTestInput = purchaseTestInput;
+        IsPromoCodePurchase = orderTestContextConfigurator.FreePurchaseSpecification.Or(orderTestContextConfigurator.PromotionalPurchaseSpecification).
+        IsSatisfiedBy(purchaseTestInput);
+        IsCreditCardPurchase =
+            orderTestContextConfigurator.CreditCardSpecification.And(orderTestContextConfigurator.WiretransferSpecification.Not()).And(orderTestContextConfigurator.FreePurchaseSpecification.Not()).And(orderTestContextConfigurator.PromotionalPurchaseSpecification.Not()).
             IsSatisfiedBy(purchaseTestInput);
-            IsCreditCardPurchase =
-                orderTestContextConfigurator.CreditCardSpecification.And(orderTestContextConfigurator.WiretransferSpecification.Not()).And(orderTestContextConfigurator.FreePurchaseSpecification.Not()).And(orderTestContextConfigurator.PromotionalPurchaseSpecification.Not()).
-                IsSatisfiedBy(purchaseTestInput);
-        }
-
-        public PurchaseTestInput PurchaseTestInput { get; private set; }
-
-        public bool IsPromoCodePurchase { get; private set; }
-
-        public bool IsCreditCardPurchase { get; private set; }
     }
+
+    public PurchaseTestInput PurchaseTestInput { get; private set; }
+
+    public bool IsPromoCodePurchase { get; private set; }
+
+    public bool IsCreditCardPurchase { get; private set; }
 }

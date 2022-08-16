@@ -12,24 +12,23 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace HandlingTestEnvironmentsData.Data.Second
+namespace HandlingTestEnvironmentsData.Data.Second;
+
+public class ClientInfo
 {
-    public class ClientInfo
-    {
-        public string FirstName { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().FirstName;
+    public string FirstName { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().FirstName;
 
-        public string LastName { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().LastName;
+    public string LastName { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().LastName;
 
-        public string Country { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().Country;
+    public string Country { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().Country;
 
-        public string Address1 { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().Address1;
+    public string Address1 { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().Address1;
 
-        public string City { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().City;
+    public string City { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().City;
 
-        public string Phone { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().Phone;
+    public string Phone { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().Phone;
 
-        public string Zip { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().Zip;
+    public string Zip { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().Zip;
 
-        public string Email { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().Email;
-    }
+    public string Email { get; set; } = ConfigurationService.Instance.GetBillingInfoDefaultValues().Email;
 }

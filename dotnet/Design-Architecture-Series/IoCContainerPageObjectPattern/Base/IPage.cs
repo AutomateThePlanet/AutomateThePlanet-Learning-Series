@@ -14,14 +14,13 @@
 using System;
 using System.Linq;
 
-namespace IoCContainerPageObjectPattern.Base
-{
-    public interface IPage<TM, TV>
-        where TM : BasePageElementMap, new()
-        where TV : BasePageValidator<TM>, new()
-    {
-        TV Validate();
+namespace IoCContainerPageObjectPattern.Base;
 
-        void Navigate(string part = "");
-    }
+public interface IPage<TM, TV>
+    where TM : BasePageElementMap, new()
+    where TV : BasePageValidator<TM>, new()
+{
+    TV Validate();
+
+    void Navigate(string part = "");
 }

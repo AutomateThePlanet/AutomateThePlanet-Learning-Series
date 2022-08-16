@@ -17,90 +17,89 @@ using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RulesDesignPattern.Data;
 
-namespace RulesDesignPattern
+namespace RulesDesignPattern;
+
+[TestClass]
+public class RulesEvaluatorTests
 {
-    [TestClass]
-    public class RulesEvaluatorTests
+    [TestMethod]
+    public void TestRules()
     {
-        [TestMethod]
-        public void TestRules()
+        var purchaseTestInput = new PurchaseTestInput()
         {
-            var purchaseTestInput = new PurchaseTestInput()
-            {
-                IsWiretransfer = false,
-                IsPromotionalPurchase = false,
-                TotalPrice = 100,
-                CreditCardNumber = "378734493671000"
-            };
+            IsWiretransfer = false,
+            IsPromotionalPurchase = false,
+            TotalPrice = 100,
+            CreditCardNumber = "378734493671000"
+        };
 
-            var rulesEvaluator = new RulesEvaluator();
+        var rulesEvaluator = new RulesEvaluator();
 
-            rulesEvaluator.Eval(new PromotionalPurchaseRule(purchaseTestInput, () => PerformUiAssert()));
-            rulesEvaluator.Eval(new CreditCardChargeRule(purchaseTestInput, 20, () => PerformUiAssert()));
-            rulesEvaluator.OtherwiseEval(new PromotionalPurchaseRule(purchaseTestInput, () => PerformUiAssert()));
-            rulesEvaluator.OtherwiseEval(new CreditCardChargeRule<CreditCardChargeRuleRuleResult>(purchaseTestInput, 30));
-            rulesEvaluator.OtherwiseEval(new CreditCardChargeRule<CreditCardChargeRuleAssertResult>(purchaseTestInput, 40));
-            rulesEvaluator.OtherwiseEval(new CreditCardChargeRule(purchaseTestInput, 50, () => PerformUiAssert()));
-            rulesEvaluator.OtherwiseDo(() => Debug.WriteLine("Perform other UI actions"));
+        rulesEvaluator.Eval(new PromotionalPurchaseRule(purchaseTestInput, () => PerformUiAssert()));
+        rulesEvaluator.Eval(new CreditCardChargeRule(purchaseTestInput, 20, () => PerformUiAssert()));
+        rulesEvaluator.OtherwiseEval(new PromotionalPurchaseRule(purchaseTestInput, () => PerformUiAssert()));
+        rulesEvaluator.OtherwiseEval(new CreditCardChargeRule<CreditCardChargeRuleRuleResult>(purchaseTestInput, 30));
+        rulesEvaluator.OtherwiseEval(new CreditCardChargeRule<CreditCardChargeRuleAssertResult>(purchaseTestInput, 40));
+        rulesEvaluator.OtherwiseEval(new CreditCardChargeRule(purchaseTestInput, 50, () => PerformUiAssert()));
+        rulesEvaluator.OtherwiseDo(() => Debug.WriteLine("Perform other UI actions"));
 
-            rulesEvaluator.EvaluateRulesChains();
+        rulesEvaluator.EvaluateRulesChains();
+    }
+
+    [TestMethod]
+    public void TestRules_NormalConditions()
+    {
+        var purchaseTestInput = new PurchaseTestInput()
+        {
+            IsWiretransfer = false,
+            IsPromotionalPurchase = false,
+            TotalPrice = 100,
+            CreditCardNumber = "378734493671000"
+        };
+        if (string.IsNullOrEmpty(purchaseTestInput.CreditCardNumber) &&
+            !purchaseTestInput.IsWiretransfer &&
+            purchaseTestInput.IsPromotionalPurchase &&
+            purchaseTestInput.TotalPrice == 0)
+        {
+            PerformUiAssert("Assert volume discount promotion amount. + additional UI actions");
         }
 
-        [TestMethod]
-        public void TestRules_NormalConditions()
+        if (!string.IsNullOrEmpty(purchaseTestInput.CreditCardNumber) &&
+            !purchaseTestInput.IsWiretransfer &&
+            !purchaseTestInput.IsPromotionalPurchase &&
+            purchaseTestInput.TotalPrice > 20)
         {
-            var purchaseTestInput = new PurchaseTestInput()
-            {
-                IsWiretransfer = false,
-                IsPromotionalPurchase = false,
-                TotalPrice = 100,
-                CreditCardNumber = "378734493671000"
-            };
-            if (string.IsNullOrEmpty(purchaseTestInput.CreditCardNumber) &&
-                !purchaseTestInput.IsWiretransfer &&
-                purchaseTestInput.IsPromotionalPurchase &&
-                purchaseTestInput.TotalPrice == 0)
-            {
-                PerformUiAssert("Assert volume discount promotion amount. + additional UI actions");
-            }
-
-            if (!string.IsNullOrEmpty(purchaseTestInput.CreditCardNumber) &&
-                !purchaseTestInput.IsWiretransfer &&
-                !purchaseTestInput.IsPromotionalPurchase &&
-                purchaseTestInput.TotalPrice > 20)
-            {
-                PerformUiAssert("Assert that total amount label is over 20$ + additional UI actions");
-            }
-            else if (!string.IsNullOrEmpty(purchaseTestInput.CreditCardNumber) &&
-                     !purchaseTestInput.IsWiretransfer &&
-                     !purchaseTestInput.IsPromotionalPurchase &&
-                     purchaseTestInput.TotalPrice > 30)
-            {
-                Console.WriteLine("Assert that total amount label is over 30$ + additional UI actions");
-            }
-            else if (!string.IsNullOrEmpty(purchaseTestInput.CreditCardNumber) &&
-                     !purchaseTestInput.IsWiretransfer &&
-                     !purchaseTestInput.IsPromotionalPurchase &&
-                     purchaseTestInput.TotalPrice > 40)
-            {
-                Console.WriteLine("Assert that total amount label is over 40$ + additional UI actions");
-            }
-            else if (!string.IsNullOrEmpty(purchaseTestInput.CreditCardNumber) &&
-                     !purchaseTestInput.IsWiretransfer &&
-                     !purchaseTestInput.IsPromotionalPurchase &&
-                     purchaseTestInput.TotalPrice > 50)
-            {
-                PerformUiAssert("Assert that total amount label is over 50$ + additional UI actions");
-            }
-            else
-            {
-                Debug.WriteLine("Perform other UI actions");
-            }
+            PerformUiAssert("Assert that total amount label is over 20$ + additional UI actions");
         }
-
-        private void PerformUiAssert(string text = "Perform other UI actions")
+        else if (!string.IsNullOrEmpty(purchaseTestInput.CreditCardNumber) &&
+                 !purchaseTestInput.IsWiretransfer &&
+                 !purchaseTestInput.IsPromotionalPurchase &&
+                 purchaseTestInput.TotalPrice > 30)
         {
-            Debug.WriteLine(text);
+            Console.WriteLine("Assert that total amount label is over 30$ + additional UI actions");
         }
+        else if (!string.IsNullOrEmpty(purchaseTestInput.CreditCardNumber) &&
+                 !purchaseTestInput.IsWiretransfer &&
+                 !purchaseTestInput.IsPromotionalPurchase &&
+                 purchaseTestInput.TotalPrice > 40)
+        {
+            Console.WriteLine("Assert that total amount label is over 40$ + additional UI actions");
+        }
+        else if (!string.IsNullOrEmpty(purchaseTestInput.CreditCardNumber) &&
+                 !purchaseTestInput.IsWiretransfer &&
+                 !purchaseTestInput.IsPromotionalPurchase &&
+                 purchaseTestInput.TotalPrice > 50)
+        {
+            PerformUiAssert("Assert that total amount label is over 50$ + additional UI actions");
+        }
+        else
+        {
+            Debug.WriteLine("Perform other UI actions");
+        }
+    }
+
+    private void PerformUiAssert(string text = "Perform other UI actions")
+    {
+        Debug.WriteLine(text);
     }
 }

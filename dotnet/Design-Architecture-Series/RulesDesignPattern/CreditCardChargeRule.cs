@@ -14,31 +14,30 @@
 using System;
 using RulesDesignPattern.Data;
 
-namespace RulesDesignPattern
+namespace RulesDesignPattern;
+
+public class CreditCardChargeRule : BaseRule
 {
-    public class CreditCardChargeRule : BaseRule
+    private readonly PurchaseTestInput _purchaseTestInput;
+    private readonly decimal _totalPriceLowerBoundary;
+
+    public CreditCardChargeRule(PurchaseTestInput purchaseTestInput, decimal totalPriceLowerBoundary, Action actionToBeExecuted) : base(actionToBeExecuted)
     {
-        private readonly PurchaseTestInput _purchaseTestInput;
-        private readonly decimal _totalPriceLowerBoundary;
+        _purchaseTestInput = purchaseTestInput;
+        _totalPriceLowerBoundary = totalPriceLowerBoundary;
+    }
 
-        public CreditCardChargeRule(PurchaseTestInput purchaseTestInput, decimal totalPriceLowerBoundary, Action actionToBeExecuted) : base(actionToBeExecuted)
+    public override IRuleResult Eval()
+    {
+        if (!string.IsNullOrEmpty(_purchaseTestInput.CreditCardNumber) &&
+            !_purchaseTestInput.IsWiretransfer &&
+            !_purchaseTestInput.IsPromotionalPurchase &&
+            _purchaseTestInput.TotalPrice > _totalPriceLowerBoundary)
         {
-            _purchaseTestInput = purchaseTestInput;
-            _totalPriceLowerBoundary = totalPriceLowerBoundary;
+            RuleResult.IsSuccess = true;
+            return RuleResult;
         }
 
-        public override IRuleResult Eval()
-        {
-            if (!string.IsNullOrEmpty(_purchaseTestInput.CreditCardNumber) &&
-                !_purchaseTestInput.IsWiretransfer &&
-                !_purchaseTestInput.IsPromotionalPurchase &&
-                _purchaseTestInput.TotalPrice > _totalPriceLowerBoundary)
-            {
-                RuleResult.IsSuccess = true;
-                return RuleResult;
-            }
-
-            return new RuleResult();
-        }
+        return new RuleResult();
     }
 }

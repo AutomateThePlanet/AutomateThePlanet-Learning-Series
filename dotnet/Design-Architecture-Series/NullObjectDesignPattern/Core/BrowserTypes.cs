@@ -12,13 +12,12 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace NullObjectDesignPattern.Core
+namespace NullObjectDesignPattern.Core;
+
+public enum BrowserTypes
 {
-    public enum BrowserTypes
-    {
-        Firefox,
-        InternetExplorer,
-        Chrome,
-        NotSet
-    }
+    Firefox,
+    InternetExplorer,
+    Chrome,
+    NotSet
 }

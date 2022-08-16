@@ -14,16 +14,15 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AdvancedSpecificationDesignPattern.Pages.LinqPlaceOrderPage
+namespace AdvancedSpecificationDesignPattern.Pages.LinqPlaceOrderPage;
+
+public static class LinqPlaceOrderPageAsserter
 {
-    public static class LinqPlaceOrderPageAsserter
+    public static void AssertPromoCodeLabel(this PlaceOrderPage.PlaceOrderPage page, string promoCode)
     {
-        public static void AssertPromoCodeLabel(this PlaceOrderPage.PlaceOrderPage page, string promoCode)
+        if (!string.IsNullOrEmpty(promoCode) && page.IsPromoCodePurchase)
         {
-            if (!string.IsNullOrEmpty(promoCode) && page.IsPromoCodePurchase)
-            {
-                Assert.AreEqual<string>(page.PromotionalCode.Text, promoCode);
-            }
+            Assert.AreEqual<string>(page.PromotionalCode.Text, promoCode);
         }
     }
 }

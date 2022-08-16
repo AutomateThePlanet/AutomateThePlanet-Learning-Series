@@ -18,29 +18,28 @@ using AdvancedStrategyDesignPattern.Enums;
 using AdvancedStrategyDesignPattern.Pages.PlaceOrderPage;
 using PatternsInAutomatedTests.Advanced.Strategy;
 
-namespace AdvancedStrategyDesignPattern.Strategies
+namespace AdvancedStrategyDesignPattern.Strategies;
+
+public class VatTaxOrderPurchaseStrategy : IOrderPurchaseStrategy
 {
-    public class VatTaxOrderPurchaseStrategy : IOrderPurchaseStrategy
+    public VatTaxOrderPurchaseStrategy()
     {
-        public VatTaxOrderPurchaseStrategy()
-        {
-            VatTaxCalculationService = new VatTaxCalculationService();
-        }
+        VatTaxCalculationService = new VatTaxCalculationService();
+    }
 
-        public VatTaxCalculationService VatTaxCalculationService { get; set; }
+    public VatTaxCalculationService VatTaxCalculationService { get; set; }
 
-        public void AssertOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
-        {
-            var currentCountry = (Countries)Enum.Parse(typeof(Countries), clientPurchaseInfo.BillingInfo.Country);
-            var currentItemPrice = decimal.Parse(itemsPrice);
-            var vatTax = VatTaxCalculationService.Calculate(currentItemPrice, currentCountry);
+    public void AssertOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
+    {
+        var currentCountry = (Countries)Enum.Parse(typeof(Countries), clientPurchaseInfo.BillingInfo.Country);
+        var currentItemPrice = decimal.Parse(itemsPrice);
+        var vatTax = VatTaxCalculationService.Calculate(currentItemPrice, currentCountry);
 
-            PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(vatTax.ToString());
-        }
+        PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(vatTax.ToString());
+    }
 
-        public void ValidateClientPurchaseInfo(ClientPurchaseInfo clientPurchaseInfo)
-        {
-            // Throw a new Argument exection if the country is not part of the EU Union.
-        }
+    public void ValidateClientPurchaseInfo(ClientPurchaseInfo clientPurchaseInfo)
+    {
+        // Throw a new Argument exection if the country is not part of the EU Union.
     }
 }

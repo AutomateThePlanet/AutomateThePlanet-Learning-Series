@@ -13,32 +13,31 @@
 // <site>http://automatetheplanet.com/</site>
 using OpenQA.Selenium;
 
-namespace AdvancedBehavioursDesignPattern.Pages.PlaceOrderPage
+namespace AdvancedBehavioursDesignPattern.Pages.PlaceOrderPage;
+
+public partial class PlaceOrderPage
 {
-    public partial class PlaceOrderPage
+    public IWebElement TotalPrice
     {
-        public IWebElement TotalPrice
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
         }
+    }
 
-        public IWebElement PromotionalDiscountPrice
+    public IWebElement PromotionalDiscountPrice
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[5]/td[2]"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[5]/td[2]"));
         }
+    }
 
-        public IWebElement PromotionalCode
+    public IWebElement PromotionalCode
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("xocpnety_cnt"));
-            }
+            return Driver.FindElement(By.Id("xocpnety_cnt"));
         }
     }
 }

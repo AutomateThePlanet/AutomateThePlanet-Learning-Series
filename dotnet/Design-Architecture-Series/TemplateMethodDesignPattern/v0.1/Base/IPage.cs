@@ -12,10 +12,9 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace TemplateMethodDesignPattern.Base.First
+namespace TemplateMethodDesignPattern.Base.First;
+
+public interface IPage
 {
-    public interface IPage
-    {
-        void Open(string part = "");
-    }
+    void Open(string part = "");
 }

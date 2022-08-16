@@ -17,20 +17,19 @@ using AdvancedBehavioursDesignPattern.Behaviours.Core;
 using AdvancedBehavioursDesignPattern.Pages.ShippingPaymentPage;
 using Unity;
 
-namespace AdvancedBehavioursDesignPattern.Behaviours
+namespace AdvancedBehavioursDesignPattern.Behaviours;
+
+public class ShippingPaymentPageContinueBehaviour : ActionBehaviour
 {
-    public class ShippingPaymentPageContinueBehaviour : ActionBehaviour
+    private readonly ShippingPaymentPage _shippingPaymentPage;
+
+    public ShippingPaymentPageContinueBehaviour()
     {
-        private readonly ShippingPaymentPage _shippingPaymentPage;
+        _shippingPaymentPage = UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>();
+    }
 
-        public ShippingPaymentPageContinueBehaviour()
-        {
-            _shippingPaymentPage = UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>();
-        }
-
-        protected override void PerformAct()
-        {
-            _shippingPaymentPage.ClickTopContinueButton();
-        }
+    protected override void PerformAct()
+    {
+        _shippingPaymentPage.ClickTopContinueButton();
     }
 }

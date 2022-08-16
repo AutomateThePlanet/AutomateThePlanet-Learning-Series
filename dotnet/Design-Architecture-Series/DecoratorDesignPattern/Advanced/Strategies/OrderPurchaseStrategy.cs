@@ -12,12 +12,11 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace DecoratorDesignPattern.Advanced.Strategies
-{
-    public abstract class OrderPurchaseStrategy
-    {
-        public abstract decimal CalculateTotalPrice();
+namespace DecoratorDesignPattern.Advanced.Strategies;
 
-        public abstract void ValidateOrderSummary(decimal totalPrice);
-    }
+public abstract class OrderPurchaseStrategy
+{
+    public abstract decimal CalculateTotalPrice();
+
+    public abstract void ValidateOrderSummary(decimal totalPrice);
 }

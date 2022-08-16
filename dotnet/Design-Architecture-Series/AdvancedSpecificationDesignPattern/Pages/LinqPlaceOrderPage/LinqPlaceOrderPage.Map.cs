@@ -14,96 +14,95 @@
 
 using OpenQA.Selenium;
 
-namespace AdvancedSpecificationDesignPattern.Pages.LinqPlaceOrderPage
+namespace AdvancedSpecificationDesignPattern.Pages.LinqPlaceOrderPage;
+
+public partial class LinqPlaceOrderPage
 {
-    public partial class LinqPlaceOrderPage
+    public IWebElement TotalPrice
     {
-        public IWebElement TotalPrice
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
         }
+    }
 
-        public IWebElement EstimatedTaxPrice
+    public IWebElement EstimatedTaxPrice
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[5]/td[2]"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[5]/td[2]"));
         }
+    }
 
-        public IWebElement ItemsPrice
+    public IWebElement ItemsPrice
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[1]/td[2]"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[1]/td[2]"));
         }
+    }
 
-        public IWebElement TotalBeforeTaxPrice
+    public IWebElement TotalBeforeTaxPrice
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[4]/td[2]"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[4]/td[2]"));
         }
+    }
 
-        public IWebElement GiftWrapPrice
+    public IWebElement GiftWrapPrice
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
         }
+    }
 
-        public IWebElement ShippingTax
+    public IWebElement ShippingTax
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
         }
+    }
 
-        public IWebElement CreditCard
+    public IWebElement CreditCard
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id='creditCard']/table/tbody/tr[2]/td[2]"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id='creditCard']/table/tbody/tr[2]/td[2]"));
         }
+    }
 
-        public IWebElement SecurityNumber
+    public IWebElement SecurityNumber
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id='securityNumber']/table/tbody/tr[2]/td[2]"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id='securityNumber']/table/tbody/tr[2]/td[2]"));
         }
+    }
 
-        public IWebElement CreditCardOwner
+    public IWebElement CreditCardOwner
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id=creditCardOwner']/table/tbody/tr[2]/td[2]"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id=creditCardOwner']/table/tbody/tr[2]/td[2]"));
         }
+    }
 
-        public IWebElement Wiretransfer
+    public IWebElement Wiretransfer
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id=wiretransfer']/table/tbody/tr[2]/td[2]"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id=wiretransfer']/table/tbody/tr[2]/td[2]"));
         }
+    }
 
-        public IWebElement PromotionalCode
+    public IWebElement PromotionalCode
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id=promotionalCode']/table/tbody/tr[2]/td[2]"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id=promotionalCode']/table/tbody/tr[2]/td[2]"));
         }
     }
 }

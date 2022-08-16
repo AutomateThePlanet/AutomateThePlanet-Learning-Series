@@ -16,24 +16,23 @@ using System.Configuration;
 using Microsoft.Practices.Unity.Configuration;
 using Unity;
 
-namespace IoCContainerPageObjectPattern.Base
+namespace IoCContainerPageObjectPattern.Base;
+
+public static class PageFactory
 {
-    public static class PageFactory
+    private static readonly IUnityContainer Container;
+
+    static PageFactory()
     {
-        private static readonly IUnityContainer Container;
+        var fileMap = new ExeConfigurationFileMap { ExeConfigFilename = "unity.config" };
+        var configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
+        var unitySection = (UnityConfigurationSection)configuration.GetSection("unity");
+        Container = new UnityContainer();
+        Container.LoadConfiguration(unitySection);
+    }
 
-        static PageFactory()
-        {
-            var fileMap = new ExeConfigurationFileMap { ExeConfigFilename = "unity.config" };
-            var configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
-            var unitySection = (UnityConfigurationSection)configuration.GetSection("unity");
-            Container = new UnityContainer();
-            Container.LoadConfiguration(unitySection);
-        }
-
-        public static T Get<T>()
-        {
-            return Container.Resolve<T>();
-        }
+    public static T Get<T>()
+    {
+        return Container.Resolve<T>();
     }
 }

@@ -14,14 +14,13 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace NullObjectDesignPattern.Pages.PlaceOrderPage
+namespace NullObjectDesignPattern.Pages.PlaceOrderPage;
+
+public static class PlaceOrderPageAsserter
 {
-    public static class PlaceOrderPageAsserter
+    public static void AssertOrderTotalPrice(this PlaceOrderPage page, double totalPrice, double discountPrice)
     {
-        public static void AssertOrderTotalPrice(this PlaceOrderPage page, double totalPrice, double discountPrice)
-        {
-            var expectedTotalPrice = totalPrice - discountPrice;
-            Assert.AreEqual<string>(expectedTotalPrice.ToString(), page.TotalPrice.Text);
-        }
+        var expectedTotalPrice = totalPrice - discountPrice;
+        Assert.AreEqual<string>(expectedTotalPrice.ToString(), page.TotalPrice.Text);
     }
 }

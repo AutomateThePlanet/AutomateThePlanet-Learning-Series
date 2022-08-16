@@ -19,24 +19,23 @@ using StrategyDesignPattern.Enums;
 using StrategyDesignPattern.Pages.PlaceOrderPage;
 using StrategyDesignPattern.Services;
 
-namespace StrategyDesignPattern.Strategies
+namespace StrategyDesignPattern.Strategies;
+
+public class SalesTaxOrderValidationStrategy : IOrderValidationStrategy
 {
-    public class SalesTaxOrderValidationStrategy : IOrderValidationStrategy
+    public SalesTaxOrderValidationStrategy()
     {
-        public SalesTaxOrderValidationStrategy()
-        {
-            SalesTaxCalculationService = new SalesTaxCalculationService();
-        }
+        SalesTaxCalculationService = new SalesTaxCalculationService();
+    }
 
-        public SalesTaxCalculationService SalesTaxCalculationService { get; set; }
+    public SalesTaxCalculationService SalesTaxCalculationService { get; set; }
 
-        public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
-        {
-            var currentState = (States)Enum.Parse(typeof(States), clientPurchaseInfo.ShippingInfo.State);
-            var currentItemPrice = decimal.Parse(itemsPrice);
-            var salesTax = SalesTaxCalculationService.Calculate(currentItemPrice, currentState, clientPurchaseInfo.ShippingInfo.Zip);
+    public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
+    {
+        var currentState = (States)Enum.Parse(typeof(States), clientPurchaseInfo.ShippingInfo.State);
+        var currentItemPrice = decimal.Parse(itemsPrice);
+        var salesTax = SalesTaxCalculationService.Calculate(currentItemPrice, currentState, clientPurchaseInfo.ShippingInfo.Zip);
 
-            PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(salesTax.ToString());
-        }
+        PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(salesTax.ToString());
     }
 }

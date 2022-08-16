@@ -15,59 +15,58 @@
 using IoCContainerPageObjectPattern.Base;
 using IoCContainerPageObjectPattern.Enums;
 
-namespace IoCContainerPageObjectPattern.BingMainPage
+namespace IoCContainerPageObjectPattern.BingMainPage;
+
+public class BingMainPage : BasePage<BingMainPageElementMap, BingMainPageValidator>, IBingMainPage
 {
-    public class BingMainPage : BasePage<BingMainPageElementMap, BingMainPageValidator>, IBingMainPage
+    public BingMainPage() : base(@"http://www.bing.com/")
     {
-        public BingMainPage() : base(@"http://www.bing.com/")
-        {
-        }
+    }
 
-        public void Search(string textToType)
-        {
-            Map.SearchBox.Clear();
-            Map.SearchBox.SendKeys(textToType);
-            Map.GoButton.Click();
-        }
+    public void Search(string textToType)
+    {
+        Map.SearchBox.Clear();
+        Map.SearchBox.SendKeys(textToType);
+        Map.GoButton.Click();
+    }
 
-        public void ClickImages()
-        {
-            Map.ImagesLink.Click();
-        }
+    public void ClickImages()
+    {
+        Map.ImagesLink.Click();
+    }
 
-        public void SetSize(Sizes size)
-        {
-            Map.Sizes.SelectByIndex((int)size);
-        }
+    public void SetSize(Sizes size)
+    {
+        Map.Sizes.SelectByIndex((int)size);
+    }
 
-        public void SetColor(Colors color)
-        {
-            Map.Color.SelectByIndex((int)color);
-        }
+    public void SetColor(Colors color)
+    {
+        Map.Color.SelectByIndex((int)color);
+    }
 
-        public void SetTypes(Types type)
-        {
-            Map.Type.SelectByIndex((int)type);
-        }
+    public void SetTypes(Types type)
+    {
+        Map.Type.SelectByIndex((int)type);
+    }
 
-        public void SetLayout(Layouts layout)
-        {
-            Map.Layout.SelectByIndex((int)layout);
-        }
+    public void SetLayout(Layouts layout)
+    {
+        Map.Layout.SelectByIndex((int)layout);
+    }
 
-        public void SetPeople(People people)
-        {
-            Map.People.SelectByIndex((int)people);
-        }
+    public void SetPeople(People people)
+    {
+        Map.People.SelectByIndex((int)people);
+    }
 
-        public void SetDate(Dates date)
-        {
-            Map.Date.SelectByIndex((int)date);
-        }
+    public void SetDate(Dates date)
+    {
+        Map.Date.SelectByIndex((int)date);
+    }
 
-        public void SetLicense(Licenses license)
-        {
-            Map.License.SelectByIndex((int)license);
-        }
+    public void SetLicense(Licenses license)
+    {
+        Map.License.SelectByIndex((int)license);
     }
 }

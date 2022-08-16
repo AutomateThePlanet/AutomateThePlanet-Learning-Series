@@ -13,41 +13,40 @@
 // <site>http://automatetheplanet.com/</site>
 using OpenQA.Selenium;
 
-namespace PageObjectPattern.Pages
+namespace PageObjectPattern.Pages;
+
+public class BingMainPage
 {
-    public class BingMainPage
+    private readonly IWebDriver _browser;
+    private readonly string _url = @"http://www.bing.com/";
+
+    public BingMainPage(IWebDriver browser)
     {
-        private readonly IWebDriver _browser;
-        private readonly string _url = @"http://www.bing.com/";
+        _browser = browser;
+    }
 
-        public BingMainPage(IWebDriver browser)
+    protected BingMainPageElementMap Map
+    {
+        get
         {
-            _browser = browser;
+            return new BingMainPageElementMap(_browser);
         }
+    }
 
-        protected BingMainPageElementMap Map
-        {
-            get
-            {
-                return new BingMainPageElementMap(_browser);
-            }
-        }
+    public BingMainPageValidator Validate()
+    {
+        return new BingMainPageValidator(_browser);
+    }
 
-        public BingMainPageValidator Validate()
-        {
-            return new BingMainPageValidator(_browser);
-        }
+    public void Navigate()
+    {
+        _browser.Navigate().GoToUrl(_url);
+    }
 
-        public void Navigate()
-        {
-            _browser.Navigate().GoToUrl(_url);
-        }
-
-        public void Search(string textToType)
-        {
-            Map.SearchBox.Clear();
-            Map.SearchBox.SendKeys(textToType);
-            Map.GoButton.Click();
-        }
+    public void Search(string textToType)
+    {
+        Map.SearchBox.Clear();
+        Map.SearchBox.SendKeys(textToType);
+        Map.GoButton.Click();
     }
 }

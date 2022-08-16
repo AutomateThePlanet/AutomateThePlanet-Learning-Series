@@ -14,32 +14,31 @@
 
 using OpenQA.Selenium;
 
-namespace AdvancedPageObjectPattern.Pages.BingMainPage
+namespace AdvancedPageObjectPattern.Pages.BingMainPage;
+
+public class BingMainPageElementMap : BasePageElementMap
 {
-    public class BingMainPageElementMap : BasePageElementMap
+    public IWebElement SearchBox
     {
-        public IWebElement SearchBox
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("sb_form_q"));
-            }
+            return Browser.FindElement(By.Id("sb_form_q"));
         }
+    }
 
-        public IWebElement GoButton
+    public IWebElement GoButton
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.XPath("//label[@for='sb_form_go']"));
-            }
+            return Browser.FindElement(By.XPath("//label[@for='sb_form_go']"));
         }
+    }
 
-        public IWebElement ResultsCountDiv
+    public IWebElement ResultsCountDiv
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("b_tween"));
-            }
+            return Browser.FindElement(By.Id("b_tween"));
         }
     }
 }

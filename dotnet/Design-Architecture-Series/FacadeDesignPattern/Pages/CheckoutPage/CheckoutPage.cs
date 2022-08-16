@@ -14,9 +14,8 @@
 
 using FacadeDesignPattern.Core;
 
-namespace FacadeDesignPattern.Pages.CheckoutPage
+namespace FacadeDesignPattern.Pages.CheckoutPage;
+
+public class CheckoutPage : BasePage<CheckoutPageMap, CheckoutPageValidator>
 {
-    public class CheckoutPage : BasePage<CheckoutPageMap, CheckoutPageValidator>
-    {
-    }
 }

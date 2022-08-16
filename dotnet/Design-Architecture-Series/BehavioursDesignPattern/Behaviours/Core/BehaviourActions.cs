@@ -12,13 +12,12 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace BehavioursDesignPattern.Behaviours.Core
+namespace BehavioursDesignPattern.Behaviours.Core;
+
+public enum BehaviourActions
 {
-    public enum BehaviourActions
-    {
-        Act,
-        PreActAsserts,
-        PostActAsserts,
-        PostAct
-    }
+    Act,
+    PreActAsserts,
+    PostActAsserts,
+    PostAct
 }

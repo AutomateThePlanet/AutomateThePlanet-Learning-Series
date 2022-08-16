@@ -13,15 +13,14 @@
 // <site>http://automatetheplanet.com/</site>
 using System;
 
-namespace PatternsInAutomatedTests.Advanced.Observer.Attributes
-{
-    [AttributeUsage(AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
-    public class KnownIssueAttribute : Attribute
-    {
-        public KnownIssueAttribute()
-        {
-        }
+namespace PatternsInAutomatedTests.Advanced.Observer.Attributes;
 
-        public int BugId { get; set; }
+[AttributeUsage(AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
+public class KnownIssueAttribute : Attribute
+{
+    public KnownIssueAttribute()
+    {
     }
+
+    public int BugId { get; set; }
 }

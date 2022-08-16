@@ -16,30 +16,29 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ObserverDesignPatternClassicImplementation.Behaviors
+namespace ObserverDesignPatternClassicImplementation.Behaviors;
+
+public class OwnerTestBehaviorObserver : BaseTestBehaviorObserver
 {
-    public class OwnerTestBehaviorObserver : BaseTestBehaviorObserver
+    public OwnerTestBehaviorObserver(ITestExecutionSubject testExecutionSubject)
+        : base(testExecutionSubject)
     {
-        public OwnerTestBehaviorObserver(ITestExecutionSubject testExecutionSubject)
-            : base(testExecutionSubject)
-        {
-        }
+    }
 
-        public override void PreTestInit(TestContext context, MemberInfo memberInfo)
-        {
-            ThrowExceptionIfOwnerAttributeNotSet(memberInfo);
-        }
+    public override void PreTestInit(TestContext context, MemberInfo memberInfo)
+    {
+        ThrowExceptionIfOwnerAttributeNotSet(memberInfo);
+    }
 
-        private void ThrowExceptionIfOwnerAttributeNotSet(MemberInfo memberInfo)
+    private void ThrowExceptionIfOwnerAttributeNotSet(MemberInfo memberInfo)
+    {
+        try
         {
-            try
-            {
-                var ownerAttribute = memberInfo.GetCustomAttribute<OwnerAttribute>(true);
-            }
-            catch
-            {
-                throw new Exception("You have to set Owner of your test before you run it");
-            }
+            var ownerAttribute = memberInfo.GetCustomAttribute<OwnerAttribute>(true);
+        }
+        catch
+        {
+            throw new Exception("You have to set Owner of your test before you run it");
         }
     }
 }

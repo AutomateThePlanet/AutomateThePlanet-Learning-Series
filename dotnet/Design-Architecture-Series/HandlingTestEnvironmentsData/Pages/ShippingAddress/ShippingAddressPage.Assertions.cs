@@ -14,14 +14,13 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HandlingTestEnvironmentsData.Pages.ShippingAddress.Second
+namespace HandlingTestEnvironmentsData.Pages.ShippingAddress.Second;
+
+public partial class ShippingAddressPage
 {
-    public partial class ShippingAddressPage
+    public void AssertSubtotalAmount(double expectedSubtotal)
     {
-        public void AssertSubtotalAmount(double expectedSubtotal)
-        {
-            // AU $168.00
-            Assert.AreEqual(expectedSubtotal, GetSubtotalAmount());
-        }
+        // AU $168.00
+        Assert.AreEqual(expectedSubtotal, GetSubtotalAmount());
     }
 }

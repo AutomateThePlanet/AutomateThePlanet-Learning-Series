@@ -12,14 +12,13 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace FluentPageObjectPattern.Enums
+namespace FluentPageObjectPattern.Enums;
+
+public enum Dates
 {
-    public enum Dates
-    {
-        All,
-        Past24Hours,
-        PastWeek,
-        PastMonth,
-        PastYear
-    }
+    All,
+    Past24Hours,
+    PastWeek,
+    PastMonth,
+    PastYear
 }

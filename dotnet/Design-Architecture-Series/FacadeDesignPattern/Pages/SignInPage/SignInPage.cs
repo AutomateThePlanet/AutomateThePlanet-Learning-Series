@@ -14,17 +14,16 @@
 
 using FacadeDesignPattern.Core;
 
-namespace FacadeDesignPattern.Pages.SignInPage
-{
-    public class SignInPage : BasePage<SignInPageMap, SignInPageValidator>
-    {
-        public SignInPage() : base(@"http://www.ebay.com/")
-        {
-        }
+namespace FacadeDesignPattern.Pages.SignInPage;
 
-        public void ClickContinueAsGuestButton()
-        {
-            Map.ContinueAsGuestButton.Click();
-        }
+public class SignInPage : BasePage<SignInPageMap, SignInPageValidator>
+{
+    public SignInPage() : base(@"http://www.ebay.com/")
+    {
+    }
+
+    public void ClickContinueAsGuestButton()
+    {
+        Map.ContinueAsGuestButton.Click();
     }
 }

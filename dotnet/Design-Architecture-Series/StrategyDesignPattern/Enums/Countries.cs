@@ -12,15 +12,14 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace StrategyDesignPattern.Enums
+namespace StrategyDesignPattern.Enums;
+
+public enum Countries
 {
-    public enum Countries
-    {
-        Bulgaria,
-        UnitedStates,
-        Germany,
-        Austria,
-        France,
-        China
-    }
+    Bulgaria,
+    UnitedStates,
+    Germany,
+    Austria,
+    France,
+    China
 }

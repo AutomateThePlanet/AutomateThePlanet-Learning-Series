@@ -15,21 +15,20 @@
 using BehavioursDesignPattern.Behaviours.Core;
 using BehavioursDesignPattern.Pages.ShippingAddressPage;
 
-namespace BehavioursDesignPattern.Behaviours
+namespace BehavioursDesignPattern.Behaviours;
+
+public class ShippingAddressPageFillShippingBehaviour : Behaviour
 {
-    public class ShippingAddressPageFillShippingBehaviour : Behaviour
+    private readonly ShippingAddressPage _shippingAddressPage;
+
+    // This version is compatible only with UnityBehaviorEngine.
+    public ShippingAddressPageFillShippingBehaviour(ShippingAddressPage shippingAddressPage)
     {
-        private readonly ShippingAddressPage _shippingAddressPage;
+        _shippingAddressPage = shippingAddressPage;
+    }
 
-        // This version is compatible only with UnityBehaviorEngine.
-        public ShippingAddressPageFillShippingBehaviour(ShippingAddressPage shippingAddressPage)
-        {
-            _shippingAddressPage = shippingAddressPage;
-        }
-
-        public override void PerformAct()
-        {
-            _shippingAddressPage.FillShippingInfo(PurchaseTestContext.ClientPurchaseInfo);
-        }
+    public override void PerformAct()
+    {
+        _shippingAddressPage.FillShippingInfo(PurchaseTestContext.ClientPurchaseInfo);
     }
 }

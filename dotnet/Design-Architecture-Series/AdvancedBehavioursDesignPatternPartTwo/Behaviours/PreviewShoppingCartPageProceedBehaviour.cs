@@ -16,27 +16,26 @@ using AdvancedBehavioursDesignPatternPartTwo.Pages.PreviewShoppingCartPage;
 using AdvancedBehavioursDesignPatternPartTwo.Pages.SignInPage;
 using Unity;
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
+namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours;
+
+public class PreviewShoppingCartPageProceedBehaviour : Core.WaitableActionBehaviour
 {
-    public class PreviewShoppingCartPageProceedBehaviour : Core.WaitableActionBehaviour
+    private readonly PreviewShoppingCartPage _previewShoppingCartPage;
+    private readonly SignInPage _signInPage;
+
+    public PreviewShoppingCartPageProceedBehaviour()
     {
-        private readonly PreviewShoppingCartPage _previewShoppingCartPage;
-        private readonly SignInPage _signInPage;
+        _previewShoppingCartPage = Base.UnityContainerFactory.GetContainer().Resolve<PreviewShoppingCartPage>();
+        _signInPage = Base.UnityContainerFactory.GetContainer().Resolve<SignInPage>();
+    }
 
-        public PreviewShoppingCartPageProceedBehaviour()
-        {
-            _previewShoppingCartPage = Base.UnityContainerFactory.GetContainer().Resolve<PreviewShoppingCartPage>();
-            _signInPage = Base.UnityContainerFactory.GetContainer().Resolve<SignInPage>();
-        }
+    protected override void PerformAct()
+    {
+        _previewShoppingCartPage.ClickProceedToCheckoutButton();
+    }
 
-        protected override void PerformAct()
-        {
-            _previewShoppingCartPage.ClickProceedToCheckoutButton();
-        }
-
-        protected override void PerformPostActWait()
-        {
-            _signInPage.WaitForPageToLoad();
-        }
+    protected override void PerformPostActWait()
+    {
+        _signInPage.WaitForPageToLoad();
     }
 }

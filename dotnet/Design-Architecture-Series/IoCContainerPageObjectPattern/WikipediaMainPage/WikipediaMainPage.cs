@@ -14,24 +14,23 @@
 
 using IoCContainerPageObjectPattern.Base;
 
-namespace IoCContainerPageObjectPattern.WikipediaMainPage
+namespace IoCContainerPageObjectPattern.WikipediaMainPage;
+
+public class WikipediaMainPage : BasePage<WikipediaMainPageMap, WikipediaMainPageValidator>, IWikipediaMainPage
 {
-    public class WikipediaMainPage : BasePage<WikipediaMainPageMap, WikipediaMainPageValidator>, IWikipediaMainPage
+    public WikipediaMainPage() : base(@"https://en.wikipedia.org")
     {
-        public WikipediaMainPage() : base(@"https://en.wikipedia.org")
-        {
-        }
+    }
 
-        public void Search(string textToType)
-        {
-            Map.SearchBox.Clear();
-            Map.SearchBox.SendKeys(textToType);
-            Map.SearchBox.Click();
-        }
+    public void Search(string textToType)
+    {
+        Map.SearchBox.Clear();
+        Map.SearchBox.SendKeys(textToType);
+        Map.SearchBox.Click();
+    }
 
-        public void ToggleContents()
-        {
-            Map.ContentsToggleLink.Click();
-        }
+    public void ToggleContents()
+    {
+        Map.ContentsToggleLink.Click();
     }
 }

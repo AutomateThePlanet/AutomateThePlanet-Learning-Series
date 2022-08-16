@@ -16,85 +16,84 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using EW = SeleniumExtras.WaitHelpers;
 
-namespace ProxyDesignPattern
+namespace ProxyDesignPattern;
+
+public class WebDriverProxy : IWebDriver
 {
-    public class WebDriverProxy : IWebDriver
+    private readonly IWebDriver _driver;
+    private readonly WebDriverWait _webDriverWait;
+
+    public WebDriverProxy(IWebDriver driver)
     {
-        private readonly IWebDriver _driver;
-        private readonly WebDriverWait _webDriverWait;
+        _driver = driver;
+        var timeout = TimeSpan.FromSeconds(30);
+        _webDriverWait = new WebDriverWait(_driver, timeout);
+    }
 
-        public WebDriverProxy(IWebDriver driver)
-        {
-            _driver = driver;
-            var timeout = TimeSpan.FromSeconds(30);
-            _webDriverWait = new WebDriverWait(_driver, timeout);
-        }
+    public IWebElement FindElement(By @by)
+    {
+        return _webDriverWait.Until(EW.ExpectedConditions.ElementExists(@by));
+    }
 
-        public IWebElement FindElement(By @by)
-        {
-            return _webDriverWait.Until(EW.ExpectedConditions.ElementExists(@by));
-        }
+    public ReadOnlyCollection<IWebElement> FindElements(By @by)
+    {
+        return _webDriverWait.Until(EW.ExpectedConditions.PresenceOfAllElementsLocatedBy(@by));
+    }
 
-        public ReadOnlyCollection<IWebElement> FindElements(By @by)
-        {
-            return _webDriverWait.Until(EW.ExpectedConditions.PresenceOfAllElementsLocatedBy(@by));
-        }
+    public void Dispose()
+    {
+        _driver.Dispose();
+        GC.SuppressFinalize(this);
+    }
 
-        public void Dispose()
-        {
-            _driver.Dispose();
-            GC.SuppressFinalize(this);
-        }
+    public void Close()
+    {
+        _driver.Close();
+    }
 
-        public void Close()
-        {
-            _driver.Close();
-        }
+    public void Quit()
+    {
+        _driver.Quit();
+    }
 
-        public void Quit()
-        {
-            _driver.Quit();
-        }
+    public IOptions Manage()
+    {
+        return _driver.Manage();
+    }
 
-        public IOptions Manage()
-        {
-            return _driver.Manage();
-        }
+    public INavigation Navigate()
+    {
+        return _driver.Navigate();
+    }
 
-        public INavigation Navigate()
-        {
-            return _driver.Navigate();
-        }
+    public ITargetLocator SwitchTo()
+    {
+        return _driver.SwitchTo();
+    }
 
-        public ITargetLocator SwitchTo()
-        {
-            return _driver.SwitchTo();
-        }
+    public string Url
+    {
+        get => _driver.Url;
+        set => _driver.Url = value;
+    }
 
-        public string Url
-        {
-            get => _driver.Url;
-            set => _driver.Url = value;
-        }
+    public string Title
+    {
+        get => _driver.Title;
+    }
 
-        public string Title
-        {
-            get => _driver.Title;
-        }
+    public string PageSource
+    {
+        get => _driver.PageSource;
+    }
 
-        public string PageSource
-        {
-            get => _driver.PageSource;
-        }
+    public string CurrentWindowHandle
+    {
+        get => _driver.CurrentWindowHandle;
+    }
 
-        public string CurrentWindowHandle
-        {
-            get => _driver.CurrentWindowHandle;
-        }
-
-        public ReadOnlyCollection<string> WindowHandles
-        {
-            get => _driver.WindowHandles;
-        }
+    public ReadOnlyCollection<string> WindowHandles
+    {
+        get => _driver.WindowHandles;
     }
 }

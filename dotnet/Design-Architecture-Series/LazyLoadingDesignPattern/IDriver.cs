@@ -14,15 +14,14 @@ using System;
 using System.Collections.Generic;
 using OpenQA.Selenium;
 
-namespace LazyLoadingDesignPattern
+namespace LazyLoadingDesignPattern;
+
+public interface IDriver
 {
-    public interface IDriver
-    {
-        void GoToUrl(string url);
-        Uri Url { get; set; }
-        IElement Create(By locator);
-        IElementsList CreateElements(By locator);
-        void WaitForAjax();
-        void Close();
-    }
+    void GoToUrl(string url);
+    Uri Url { get; set; }
+    IElement Create(By locator);
+    IElementsList CreateElements(By locator);
+    void WaitForAjax();
+    void Close();
 }

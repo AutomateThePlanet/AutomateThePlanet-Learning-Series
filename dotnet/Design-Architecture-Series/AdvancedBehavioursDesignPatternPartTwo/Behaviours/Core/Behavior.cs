@@ -12,10 +12,9 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core
+namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core;
+
+public abstract class Behavior
 {
-    public abstract class Behavior
-    {
-        public abstract void Execute();
-    }
+    public abstract void Execute();
 }

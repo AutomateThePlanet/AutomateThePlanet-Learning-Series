@@ -14,32 +14,31 @@
 
 using System;
 
-namespace RulesDesignPattern
+namespace RulesDesignPattern;
+
+public abstract class BaseRule : IRule
 {
-    public abstract class BaseRule : IRule
+    protected readonly RuleResult RuleResult;
+
+    private readonly Action _actionToBeExecuted;
+
+    public BaseRule(Action actionToBeExecuted)
     {
-        protected readonly RuleResult RuleResult;
-
-        private readonly Action _actionToBeExecuted;
-
-        public BaseRule(Action actionToBeExecuted)
+        _actionToBeExecuted = actionToBeExecuted;
+        if (actionToBeExecuted != null)
         {
-            _actionToBeExecuted = actionToBeExecuted;
-            if (actionToBeExecuted != null)
-            {
-                RuleResult = new RuleResult(_actionToBeExecuted);
-            }
-            else
-            {
-                RuleResult = new RuleResult();
-            }
+            RuleResult = new RuleResult(_actionToBeExecuted);
         }
-
-        public BaseRule()
+        else
         {
             RuleResult = new RuleResult();
         }
-
-        public abstract IRuleResult Eval();
     }
+
+    public BaseRule()
+    {
+        RuleResult = new RuleResult();
+    }
+
+    public abstract IRuleResult Eval();
 }

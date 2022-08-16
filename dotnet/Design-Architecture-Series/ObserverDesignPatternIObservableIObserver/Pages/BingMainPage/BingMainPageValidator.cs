@@ -14,28 +14,27 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 
-namespace ObserverDesignPatternIObservableIObserver.Pages
+namespace ObserverDesignPatternIObservableIObserver.Pages;
+
+public class BingMainPageValidator
 {
-    public class BingMainPageValidator
+    private readonly IWebDriver _browser;
+
+    public BingMainPageValidator(IWebDriver browser)
     {
-        private readonly IWebDriver _browser;
+        _browser = browser;
+    }
 
-        public BingMainPageValidator(IWebDriver browser)
+    protected BingMainPageElementMap Map
+    {
+        get
         {
-            _browser = browser;
+            return new BingMainPageElementMap(_browser);
         }
+    }
 
-        protected BingMainPageElementMap Map
-        {
-            get
-            {
-                return new BingMainPageElementMap(_browser);
-            }
-        }
-
-        public void ResultsCount(string expectedCount)
-        {
-            Assert.IsTrue(Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
-        }
+    public void ResultsCount(string expectedCount)
+    {
+        Assert.IsTrue(Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
     }
 }

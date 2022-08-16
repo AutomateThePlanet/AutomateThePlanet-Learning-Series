@@ -16,28 +16,27 @@ using BehavioursDesignPattern.Behaviours.Core;
 using BehavioursDesignPattern.Pages.ShippingAddressPage;
 using BehavioursDesignPattern.Pages.SignInPage;
 
-namespace BehavioursDesignPattern.Behaviours
+namespace BehavioursDesignPattern.Behaviours;
+
+public class SignInPageLoginBehaviour : Behaviour
 {
-    public class SignInPageLoginBehaviour : Behaviour
+    private readonly SignInPage _signInPage;
+    private readonly ShippingAddressPage _shippingAddressPage;
+
+    public SignInPageLoginBehaviour(SignInPage signInPage, ShippingAddressPage shippingAddressPage)
     {
-        private readonly SignInPage _signInPage;
-        private readonly ShippingAddressPage _shippingAddressPage;
+        _signInPage = signInPage;
+        _shippingAddressPage = shippingAddressPage;
+    }
 
-        public SignInPageLoginBehaviour(SignInPage signInPage, ShippingAddressPage shippingAddressPage)
-        {
-            _signInPage = signInPage;
-            _shippingAddressPage = shippingAddressPage;
-        }
+    public override void PerformAct()
+    {
+        _signInPage.Login(
+            PurchaseTestContext.ClientLoginInfo.Email, PurchaseTestContext.ClientLoginInfo.Password);
+    }
 
-        public override void PerformAct()
-        {
-            _signInPage.Login(
-                PurchaseTestContext.ClientLoginInfo.Email, PurchaseTestContext.ClientLoginInfo.Password);
-        }
-
-        public override void PerformPostAct()
-        {
-            _shippingAddressPage.WaitForPageToLoad();
-        }
+    public override void PerformPostAct()
+    {
+        _shippingAddressPage.WaitForPageToLoad();
     }
 }

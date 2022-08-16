@@ -13,26 +13,25 @@
 // <site>http://automatetheplanet.com/</site>
 using System;
 
-namespace AdvancedNullObjectDesignPattern.ImmutableStrategies
+namespace AdvancedNullObjectDesignPattern.ImmutableStrategies;
+
+public class DbPurchasePromotionalCodeStrategy : BasePromotionalCodeStrategy
 {
-    public class DbPurchasePromotionalCodeStrategy : BasePromotionalCodeStrategy
+    public override void AssertPromotionalCodeDiscount()
     {
-        public override void AssertPromotionalCodeDiscount()
-        {
-            // TODO: Implement this method
-            throw new NotImplementedException();
-        }
+        // TODO: Implement this method
+        throw new NotImplementedException();
+    }
 
-        public override double GetPromotionalCodeDiscountAmount()
-        {
-            // TODO: Implement this method
-            throw new NotImplementedException();
-        }
+    public override double GetPromotionalCodeDiscountAmount()
+    {
+        // TODO: Implement this method
+        throw new NotImplementedException();
+    }
 
-        public override void ApplyPromotionalCode(string couponCode)
-        {
-            // TODO: Implement this method
-            throw new NotImplementedException();
-        }
+    public override void ApplyPromotionalCode(string couponCode)
+    {
+        // TODO: Implement this method
+        throw new NotImplementedException();
     }
 }

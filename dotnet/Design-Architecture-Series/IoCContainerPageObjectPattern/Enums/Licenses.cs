@@ -12,15 +12,14 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace IoCContainerPageObjectPattern.Enums
+namespace IoCContainerPageObjectPattern.Enums;
+
+public enum Licenses
 {
-    public enum Licenses
-    {
-        All,
-        PublicDomain,
-        FreeToShareAndUse,
-        FreeToShareAndUseCommercially,
-        FreeToModifyShareUse,
-        FreeToModifyShareUseCommercially
-    }
+    All,
+    PublicDomain,
+    FreeToShareAndUse,
+    FreeToShareAndUseCommercially,
+    FreeToModifyShareUse,
+    FreeToModifyShareUseCommercially
 }

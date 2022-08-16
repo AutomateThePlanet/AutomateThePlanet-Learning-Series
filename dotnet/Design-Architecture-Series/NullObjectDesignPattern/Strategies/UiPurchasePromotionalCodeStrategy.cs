@@ -16,32 +16,31 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NullObjectDesignPattern.Base;
 using NullObjectDesignPattern.Pages.PlaceOrderPage;
 
-namespace NullObjectDesignPattern.Strategies
+namespace NullObjectDesignPattern.Strategies;
+
+public class UiPurchasePromotionalCodeStrategy : IPurchasePromotionalCodeStrategy
 {
-    public class UiPurchasePromotionalCodeStrategy : IPurchasePromotionalCodeStrategy
+    private readonly PlaceOrderPage _placeOrderPage;
+    private readonly double _couponDiscountAmount;
+
+    public UiPurchasePromotionalCodeStrategy(PlaceOrderPage placeOrderPage, double couponDiscountAmount)
     {
-        private readonly PlaceOrderPage _placeOrderPage;
-        private readonly double _couponDiscountAmount;
+        _placeOrderPage = placeOrderPage;
+        _couponDiscountAmount = couponDiscountAmount;
+    }
 
-        public UiPurchasePromotionalCodeStrategy(PlaceOrderPage placeOrderPage, double couponDiscountAmount)
-        {
-            _placeOrderPage = placeOrderPage;
-            _couponDiscountAmount = couponDiscountAmount;
-        }
+    public void AssertPromotionalCodeDiscount()
+    {
+        Assert.AreEqual(_couponDiscountAmount.ToString(), _placeOrderPage.PromotionalDiscountPrice.Text);
+    }
 
-        public void AssertPromotionalCodeDiscount()
-        {
-            Assert.AreEqual(_couponDiscountAmount.ToString(), _placeOrderPage.PromotionalDiscountPrice.Text);
-        }
+    public double GetPromotionalCodeDiscountAmount()
+    {
+        return _couponDiscountAmount;
+    }
 
-        public double GetPromotionalCodeDiscountAmount()
-        {
-            return _couponDiscountAmount;
-        }
-
-        public void ApplyPromotionalCode(string couponCode)
-        {
-            _placeOrderPage.PromotionalCode.SendKeys(couponCode);
-        }
+    public void ApplyPromotionalCode(string couponCode)
+    {
+        _placeOrderPage.PromotionalCode.SendKeys(couponCode);
     }
 }

@@ -16,34 +16,33 @@ using System;
 using OpenQA.Selenium;
 using PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20.Base;
 
-namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20
+namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20;
+
+public class BingMainPage : BasePage<BingMainPageMap>, IBingMainPage
 {
-    public class BingMainPage : BasePage<BingMainPageMap>, IBingMainPage
+    public BingMainPage(IWebDriver driver) : base(driver, new BingMainPageMap(driver))
     {
-        public BingMainPage(IWebDriver driver) : base(driver, new BingMainPageMap(driver))
-        {
-        }
+    }
 
-        public override string Url
+    public override string Url
+    {
+        get
         {
-            get
-            {
-                return @"http://www.bing.com/";
-            }
+            return @"http://www.bing.com/";
         }
+    }
 
-        public void Search(string textToType)
-        {
-            Map.SearchBox.Clear();
-            Map.SearchBox.SendKeys(textToType);
-            Map.GoButton.Click();
-        }
+    public void Search(string textToType)
+    {
+        Map.SearchBox.Clear();
+        Map.SearchBox.SendKeys(textToType);
+        Map.GoButton.Click();
+    }
 
-        public int GetResultsCount()
-        {
-            var resultsCount = default(int);
-            resultsCount = int.Parse(Map.ResultsCountDiv.Text);
-            return resultsCount;
-        }
+    public int GetResultsCount()
+    {
+        var resultsCount = default(int);
+        resultsCount = int.Parse(Map.ResultsCountDiv.Text);
+        return resultsCount;
     }
 }

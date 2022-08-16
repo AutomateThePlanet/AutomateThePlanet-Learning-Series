@@ -16,65 +16,64 @@ using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ObserverDesignPatternClassicImplementation
+namespace ObserverDesignPatternClassicImplementation;
+
+public class MsTestExecutionSubject : ITestExecutionSubject
 {
-    public class MsTestExecutionSubject : ITestExecutionSubject
+    private readonly List<ITestBehaviorObserver> _testBehaviorObservers;
+
+    public MsTestExecutionSubject()
     {
-        private readonly List<ITestBehaviorObserver> _testBehaviorObservers;
+        _testBehaviorObservers = new List<ITestBehaviorObserver>();
+    }
 
-        public MsTestExecutionSubject()
+    public void Attach(ITestBehaviorObserver observer)
+    {
+        _testBehaviorObservers.Add(observer);
+    }
+
+    public void Detach(ITestBehaviorObserver observer)
+    {
+        _testBehaviorObservers.Remove(observer);
+    }
+
+    public void PreTestInit(TestContext context, MemberInfo memberInfo)
+    {
+        foreach (var currentObserver in _testBehaviorObservers)
         {
-            _testBehaviorObservers = new List<ITestBehaviorObserver>();
+            currentObserver.PreTestInit(context, memberInfo);
         }
+    }
 
-        public void Attach(ITestBehaviorObserver observer)
+    public void PostTestInit(TestContext context, MemberInfo memberInfo)
+    {
+        foreach (var currentObserver in _testBehaviorObservers)
         {
-            _testBehaviorObservers.Add(observer);
+            currentObserver.PostTestInit(context, memberInfo);
         }
+    }
 
-        public void Detach(ITestBehaviorObserver observer)
+    public void PreTestCleanup(TestContext context, MemberInfo memberInfo)
+    {
+        foreach (var currentObserver in _testBehaviorObservers)
         {
-            _testBehaviorObservers.Remove(observer);
+            currentObserver.PreTestCleanup(context, memberInfo);
         }
+    }
 
-        public void PreTestInit(TestContext context, MemberInfo memberInfo)
+    public void PostTestCleanup(TestContext context, MemberInfo memberInfo)
+    {
+        foreach (var currentObserver in _testBehaviorObservers)
         {
-            foreach (var currentObserver in _testBehaviorObservers)
-            {
-                currentObserver.PreTestInit(context, memberInfo);
-            }
+            currentObserver.PostTestCleanup(context, memberInfo);
         }
+    }
 
-        public void PostTestInit(TestContext context, MemberInfo memberInfo)
+    public void TestInstantiated(MemberInfo memberInfo)
+    {
+        foreach (var currentObserver in _testBehaviorObservers)
         {
-            foreach (var currentObserver in _testBehaviorObservers)
-            {
-                currentObserver.PostTestInit(context, memberInfo);
-            }
-        }
-
-        public void PreTestCleanup(TestContext context, MemberInfo memberInfo)
-        {
-            foreach (var currentObserver in _testBehaviorObservers)
-            {
-                currentObserver.PreTestCleanup(context, memberInfo);
-            }
-        }
-
-        public void PostTestCleanup(TestContext context, MemberInfo memberInfo)
-        {
-            foreach (var currentObserver in _testBehaviorObservers)
-            {
-                currentObserver.PostTestCleanup(context, memberInfo);
-            }
-        }
-
-        public void TestInstantiated(MemberInfo memberInfo)
-        {
-            foreach (var currentObserver in _testBehaviorObservers)
-            {
-                currentObserver.TestInstantiated(memberInfo);
-            }
+            currentObserver.TestInstantiated(memberInfo);
         }
     }
 }

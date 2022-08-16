@@ -14,32 +14,31 @@
 
 using OpenQA.Selenium;
 
-namespace StrategyDesignPattern.Pages.SignInPage
+namespace StrategyDesignPattern.Pages.SignInPage;
+
+public class SignInPageMap : Core.BasePageElementMap
 {
-    public class SignInPageMap : Core.BasePageElementMap
+    public IWebElement SignInButton
     {
-        public IWebElement SignInButton
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("signInSubmit-input"));
-            }
+            return Browser.FindElement(By.Id("signInSubmit-input"));
         }
+    }
 
-        public IWebElement PasswordInput
+    public IWebElement PasswordInput
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("ap_password"));
-            }
+            return Browser.FindElement(By.Id("ap_password"));
         }
+    }
 
-        public IWebElement EmailInput
+    public IWebElement EmailInput
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("ap_email"));
-            }
+            return Browser.FindElement(By.Id("ap_email"));
         }
     }
 }

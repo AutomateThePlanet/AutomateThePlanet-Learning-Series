@@ -14,16 +14,15 @@
 
 using BehavioursDesignPattern.Data;
 
-namespace BehavioursDesignPattern
+namespace BehavioursDesignPattern;
+
+public static class PurchaseTestContext
 {
-    public static class PurchaseTestContext
-    {
-        public static string ItemUrl { get; set; }
+    public static string ItemUrl { get; set; }
 
-        public static string ItemPrice { get; set; }
+    public static string ItemPrice { get; set; }
 
-        public static ClientLoginInfo ClientLoginInfo { get; set; }
+    public static ClientLoginInfo ClientLoginInfo { get; set; }
 
-        public static ClientPurchaseInfo ClientPurchaseInfo { get; set; }
-    }
+    public static ClientPurchaseInfo ClientPurchaseInfo { get; set; }
 }

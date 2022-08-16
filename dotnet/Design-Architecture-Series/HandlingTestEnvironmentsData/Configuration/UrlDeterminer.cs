@@ -14,23 +14,22 @@
 
 using Flurl;
 
-namespace HandlingTestEnvironmentsData
+namespace HandlingTestEnvironmentsData;
+
+public static class UrlDeterminer
 {
-    public static class UrlDeterminer
+    public static string GetEbayUrl(string urlPart)
     {
-        public static string GetEbayUrl(string urlPart)
-        {
-            return Url.Combine(ConfigurationService.Instance.GetUrlSettings().EbayUrl, urlPart).ToString();
-        }
+        return Url.Combine(ConfigurationService.Instance.GetUrlSettings().EbayUrl, urlPart).ToString();
+    }
 
-        public static string GetAmazonUrl(string urlPart)
-        {
-            return Url.Combine(ConfigurationService.Instance.GetUrlSettings().AmazonUrl, urlPart).ToString();
-        }
+    public static string GetAmazonUrl(string urlPart)
+    {
+        return Url.Combine(ConfigurationService.Instance.GetUrlSettings().AmazonUrl, urlPart).ToString();
+    }
 
-        public static string GetKindleUrl(string urlPart)
-        {
-            return Url.Combine(ConfigurationService.Instance.GetUrlSettings().KindleUrl, urlPart).ToString();
-        }
+    public static string GetKindleUrl(string urlPart)
+    {
+        return Url.Combine(ConfigurationService.Instance.GetUrlSettings().KindleUrl, urlPart).ToString();
     }
 }

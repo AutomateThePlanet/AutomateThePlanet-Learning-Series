@@ -19,24 +19,23 @@ using StrategyDesignPattern.Data;
 using StrategyDesignPattern.Enums;
 using StrategyDesignPattern.Pages.PlaceOrderPage;
 
-namespace StrategyDesignPattern.Strategies
+namespace StrategyDesignPattern.Strategies;
+
+public class VatTaxOrderValidationStrategy : IOrderValidationStrategy
 {
-    public class VatTaxOrderValidationStrategy : IOrderValidationStrategy
+    public VatTaxOrderValidationStrategy()
     {
-        public VatTaxOrderValidationStrategy()
-        {
-            VatTaxCalculationService = new VatTaxCalculationService();
-        }
+        VatTaxCalculationService = new VatTaxCalculationService();
+    }
 
-        public VatTaxCalculationService VatTaxCalculationService { get; set; }
+    public VatTaxCalculationService VatTaxCalculationService { get; set; }
 
-        public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
-        {
-            var currentCountry = (Countries)Enum.Parse(typeof(Countries), clientPurchaseInfo.BillingInfo.Country);
-            var currentItemPrice = decimal.Parse(itemsPrice);
-            var vatTax = VatTaxCalculationService.Calculate(currentItemPrice, currentCountry);
+    public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
+    {
+        var currentCountry = (Countries)Enum.Parse(typeof(Countries), clientPurchaseInfo.BillingInfo.Country);
+        var currentItemPrice = decimal.Parse(itemsPrice);
+        var vatTax = VatTaxCalculationService.Calculate(currentItemPrice, currentCountry);
 
-            PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(vatTax.ToString());
-        }
+        PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(vatTax.ToString());
     }
 }

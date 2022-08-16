@@ -15,20 +15,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ObserverDesignPatternClassicImplementation.Attributes;
 using ObserverDesignPatternClassicImplementation.Pages;
 
-namespace ObserverDesignPatternClassicImplementation
+namespace ObserverDesignPatternClassicImplementation;
+
+[TestClass]
+[ExecutionBrowser(BrowserTypes.Chrome)]
+public class BingTestsClassicObserver : BaseTest
 {
-    [TestClass]
-    [ExecutionBrowser(BrowserTypes.Chrome)]
-    public class BingTestsClassicObserver : BaseTest
+    [TestMethod]
+    [ExecutionBrowser(BrowserTypes.Firefox)]
+    public void SearchTextInBing_First_Observer()
     {
-        [TestMethod]
-        [ExecutionBrowser(BrowserTypes.Firefox)]
-        public void SearchTextInBing_First_Observer()
-        {
-            var bingMainPage = new BingMainPage(Driver.Browser);
-            bingMainPage.Navigate();
-            bingMainPage.Search("Automate The Planet");
-            bingMainPage.Validate().ResultsCount("30");
-        }
+        var bingMainPage = new BingMainPage(Driver.Browser);
+        bingMainPage.Navigate();
+        bingMainPage.Search("Automate The Planet");
+        bingMainPage.Validate().ResultsCount("30");
     }
 }

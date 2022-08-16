@@ -14,11 +14,10 @@
 
 using TemplateMethodDesignPattern.Base.First;
 
-namespace TemplateMethodDesignPattern.Pages.Checkout.First
+namespace TemplateMethodDesignPattern.Pages.Checkout.First;
+
+public interface ICheckoutPage : IPage
 {
-    public interface ICheckoutPage : IPage
-    {
-        double GetTotalPrice();
-        void AssertSubtotal(double expectedSubtotal);
-    }
+    double GetTotalPrice();
+    void AssertSubtotal(double expectedSubtotal);
 }

@@ -15,12 +15,11 @@
 using System;
 using System.Linq;
 
-namespace AdvancedStrategyDesignPattern.Data
-{
-    public class ClientLoginInfo
-    {
-        public string Email { get; set; }
+namespace AdvancedStrategyDesignPattern.Data;
 
-        public string Password { get; set; }
-    }
+public class ClientLoginInfo
+{
+    public string Email { get; set; }
+
+    public string Password { get; set; }
 }

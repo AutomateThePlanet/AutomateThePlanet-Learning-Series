@@ -12,34 +12,33 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>using FluentPageObjectPattern.Core;
 
-namespace FluentPageObjectPattern.Core
-{
-    public abstract class BaseFluentPageSingleton<TS, TM> : ThreadSafeNestedContructorsBaseSingleton<TS>
-        where TM : BasePageElementMap, new()
-        where TS : BaseFluentPageSingleton<TS, TM>
-    {
-        protected TM Map
-        {
-            get
-            {
-                return new TM();
-            }
-        }
+namespace FluentPageObjectPattern.Core;
 
-        protected void Navigate(string url = "")
+public abstract class BaseFluentPageSingleton<TS, TM> : ThreadSafeNestedContructorsBaseSingleton<TS>
+    where TM : BasePageElementMap, new()
+    where TS : BaseFluentPageSingleton<TS, TM>
+{
+    protected TM Map
+    {
+        get
         {
-            Driver.Browser.Navigate().GoToUrl(string.Concat(url));
+            return new TM();
         }
     }
 
-    public abstract class BaseFluentPageSingleton<TS, TM, TV> : BaseFluentPageSingleton<TS, TM>
-        where TM : BasePageElementMap, new()
-        where TS : BaseFluentPageSingleton<TS, TM, TV>
-        where TV : BasePageValidator<TS, TM, TV>, new()
+    protected void Navigate(string url = "")
     {
-        public TV Validate()
-        {
-            return new TV();
-        }
+        Driver.Browser.Navigate().GoToUrl(string.Concat(url));
+    }
+}
+
+public abstract class BaseFluentPageSingleton<TS, TM, TV> : BaseFluentPageSingleton<TS, TM>
+    where TM : BasePageElementMap, new()
+    where TS : BaseFluentPageSingleton<TS, TM, TV>
+    where TV : BasePageValidator<TS, TM, TV>, new()
+{
+    public TV Validate()
+    {
+        return new TV();
     }
 }

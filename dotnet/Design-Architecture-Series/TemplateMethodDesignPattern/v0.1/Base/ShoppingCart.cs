@@ -18,39 +18,38 @@ using TemplateMethodDesignPattern.Pages.Item.First;
 using TemplateMethodDesignPattern.Pages.ShippingAddress.First;
 using TemplateMethodDesignPattern.Pages.SignIn.First;
 
-namespace TemplateMethodDesignPattern.Base.First
+namespace TemplateMethodDesignPattern.Base.First;
+
+public class ShoppingCart
 {
-    public class ShoppingCart
+    private readonly IItemPage _itemPage;
+
+    private readonly ISignInPage _signInPage;
+
+    private readonly ICheckoutPage _checkoutPage;
+
+    private readonly IShippingAddressPage _shippingAddressPage;
+
+    public ShoppingCart(IItemPage itemPage,
+        ISignInPage signInPage,
+        ICheckoutPage checkoutPage,
+        IShippingAddressPage shippingAddressPage)
     {
-        private readonly IItemPage _itemPage;
+        _itemPage = itemPage;
+        _signInPage = signInPage;
+        _checkoutPage = checkoutPage;
+        _shippingAddressPage = shippingAddressPage;
+    }
 
-        private readonly ISignInPage _signInPage;
-
-        private readonly ICheckoutPage _checkoutPage;
-
-        private readonly IShippingAddressPage _shippingAddressPage;
-
-        public ShoppingCart(IItemPage itemPage,
-            ISignInPage signInPage,
-            ICheckoutPage checkoutPage,
-            IShippingAddressPage shippingAddressPage)
-        {
-            _itemPage = itemPage;
-            _signInPage = signInPage;
-            _checkoutPage = checkoutPage;
-            _shippingAddressPage = shippingAddressPage;
-        }
-
-        public void PurchaseItem(string item, double itemPrice, ClientInfo clientInfo)
-        {
-            _itemPage.Open(item);
-            _itemPage.AssertPrice(itemPrice);
-            _itemPage.ClickBuyNowButton();
-            _signInPage.ClickContinueAsGuestButton();
-            _shippingAddressPage.FillShippingInfo(clientInfo);
-            _shippingAddressPage.AssertSubtotalAmount(itemPrice);
-            _shippingAddressPage.ClickContinueButton();
-            _checkoutPage.AssertSubtotal(itemPrice);
-        }
+    public void PurchaseItem(string item, double itemPrice, ClientInfo clientInfo)
+    {
+        _itemPage.Open(item);
+        _itemPage.AssertPrice(itemPrice);
+        _itemPage.ClickBuyNowButton();
+        _signInPage.ClickContinueAsGuestButton();
+        _shippingAddressPage.FillShippingInfo(clientInfo);
+        _shippingAddressPage.AssertSubtotalAmount(itemPrice);
+        _shippingAddressPage.ClickContinueButton();
+        _checkoutPage.AssertSubtotal(itemPrice);
     }
 }

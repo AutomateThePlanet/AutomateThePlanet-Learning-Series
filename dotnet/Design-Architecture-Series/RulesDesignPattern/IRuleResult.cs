@@ -12,12 +12,11 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace RulesDesignPattern
-{
-    public interface IRuleResult
-    {
-        bool IsSuccess { get; set; }
+namespace RulesDesignPattern;
 
-        void Execute();
-    }
+public interface IRuleResult
+{
+    bool IsSuccess { get; set; }
+
+    void Execute();
 }

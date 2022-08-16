@@ -12,14 +12,13 @@
 // <author>Anton Angelov</author>
 using OpenQA.Selenium;
 
-namespace AdapterDesignPattern
+namespace AdapterDesignPattern;
+
+public interface IElement
 {
-    public interface IElement
-    {
-        By By { get; }
-        string Text { get; }
-        void TypeText(string text);
-        IElement FindElement(By locator);
-        void Click();
-    }
+    By By { get; }
+    string Text { get; }
+    void TypeText(string text);
+    IElement FindElement(By locator);
+    void Click();
 }

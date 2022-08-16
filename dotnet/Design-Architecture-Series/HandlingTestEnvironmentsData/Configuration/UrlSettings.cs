@@ -12,12 +12,11 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace HandlingTestEnvironmentsData
+namespace HandlingTestEnvironmentsData;
+
+public class UrlSettings
 {
-    public class UrlSettings
-    {
-        public string EbayUrl { get; set; }
-        public string KindleUrl { get; set; }
-        public string AmazonUrl { get; set; }
-    }
+    public string EbayUrl { get; set; }
+    public string KindleUrl { get; set; }
+    public string AmazonUrl { get; set; }
 }

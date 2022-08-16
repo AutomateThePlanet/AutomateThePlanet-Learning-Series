@@ -15,13 +15,12 @@
 using DecoratorDesignPattern.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DecoratorDesignPattern.Pages.ItemPage
+namespace DecoratorDesignPattern.Pages.ItemPage;
+
+public class ItemPageValidator : BasePageValidator<ItemPageMap>
 {
-    public class ItemPageValidator : BasePageValidator<ItemPageMap>
+    public void ProductTitle(string expectedTitle)
     {
-        public void ProductTitle(string expectedTitle)
-        {
-            Assert.AreEqual<string>(expectedTitle, Map.ProductTitle.Text);
-        }
+        Assert.AreEqual<string>(expectedTitle, Map.ProductTitle.Text);
     }
 }

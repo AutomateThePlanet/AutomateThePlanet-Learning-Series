@@ -14,20 +14,19 @@
 
 using Unity;
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Base
+namespace AdvancedBehavioursDesignPatternPartTwo.Base;
+
+public static class UnityContainerFactory
 {
-    public static class UnityContainerFactory
+    private static readonly IUnityContainer UnityContainer;
+
+    static UnityContainerFactory()
     {
-        private static readonly IUnityContainer UnityContainer;
+        UnityContainer = new UnityContainer();
+    }
 
-        static UnityContainerFactory()
-        {
-            UnityContainer = new UnityContainer();
-        }
-
-        public static IUnityContainer GetContainer()
-        {
-            return UnityContainer;
-        }
+    public static IUnityContainer GetContainer()
+    {
+        return UnityContainer;
     }
 }

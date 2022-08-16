@@ -14,10 +14,9 @@
 
 using OpenQA.Selenium;
 
-namespace TemplateMethodDesignPattern.Pages.Checkout.Second
+namespace TemplateMethodDesignPattern.Pages.Checkout.Second;
+
+public partial class CheckoutPage
 {
-    public partial class CheckoutPage
-    {
-        public IWebElement TotalPrice => Driver.FindElement(By.Id("xo_tot_amt"));
-    }
+    public IWebElement TotalPrice => Driver.FindElement(By.Id("xo_tot_amt"));
 }

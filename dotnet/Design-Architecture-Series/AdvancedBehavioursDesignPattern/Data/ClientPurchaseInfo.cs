@@ -12,20 +12,19 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedBehavioursDesignPattern.Data
+namespace AdvancedBehavioursDesignPattern.Data;
+
+public class ClientPurchaseInfo
 {
-    public class ClientPurchaseInfo
+    public ClientPurchaseInfo(ClientAddressInfo addressInfo)
     {
-        public ClientPurchaseInfo(ClientAddressInfo addressInfo)
-        {
-            BillingInfo = addressInfo;
-            ShippingInfo = addressInfo;
-        }
-
-        public ClientAddressInfo BillingInfo { get; set; }
-
-        public ClientAddressInfo ShippingInfo { get; set; }
-
-        public string CouponCode { get; set; }
+        BillingInfo = addressInfo;
+        ShippingInfo = addressInfo;
     }
+
+    public ClientAddressInfo BillingInfo { get; set; }
+
+    public ClientAddressInfo ShippingInfo { get; set; }
+
+    public string CouponCode { get; set; }
 }

@@ -14,20 +14,19 @@
 
 using OpenQA.Selenium;
 
-namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20.Base
+namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20.Base;
+
+public abstract class BaseElementMap
 {
-    public abstract class BaseElementMap
+    protected IWebDriver Driver;
+
+    public BaseElementMap(IWebDriver driver)
     {
-        protected IWebDriver Driver;
+        Driver = driver;
+    }
 
-        public BaseElementMap(IWebDriver driver)
-        {
-            Driver = driver;
-        }
-
-        public void SwitchToDefault()
-        {
-            Driver.SwitchTo().DefaultContent();
-        }
+    public void SwitchToDefault()
+    {
+        Driver.SwitchTo().DefaultContent();
     }
 }

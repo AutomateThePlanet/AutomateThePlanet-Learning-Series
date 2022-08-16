@@ -14,10 +14,9 @@
 
 using TemplateMethodDesignPattern.Base.First;
 
-namespace TemplateMethodDesignPattern.Pages.SignIn.First
+namespace TemplateMethodDesignPattern.Pages.SignIn.First;
+
+public interface ISignInPage : IPage
 {
-    public interface ISignInPage : IPage
-    {
-        void ClickContinueAsGuestButton();
-    }
+    void ClickContinueAsGuestButton();
 }

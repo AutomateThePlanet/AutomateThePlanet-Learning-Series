@@ -15,23 +15,22 @@
 using HandlingTestEnvironmentsData.Base.Second;
 using OpenQA.Selenium;
 
-namespace HandlingTestEnvironmentsData.Pages.Item.Second
+namespace HandlingTestEnvironmentsData.Pages.Item.Second;
+
+public partial class ItemPage : WebPage
 {
-    public partial class ItemPage : WebPage
+    public ItemPage(IWebDriver driver)
+        : base(driver)
     {
-        public ItemPage(IWebDriver driver)
-            : base(driver)
-        {
-        }
-
-        ////protected override string Url => "http://www.ebay.com/itm/";
-        protected override string Url => UrlDeterminer.GetEbayUrl("itm/");
-
-        public void ClickBuyNowButton()
-        {
-            BuyNowButton.Click();
-        }
-
-        public double GetPrice() => double.Parse(Price.Text);
     }
+
+    ////protected override string Url => "http://www.ebay.com/itm/";
+    protected override string Url => UrlDeterminer.GetEbayUrl("itm/");
+
+    public void ClickBuyNowButton()
+    {
+        BuyNowButton.Click();
+    }
+
+    public double GetPrice() => double.Parse(Price.Text);
 }

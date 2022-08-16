@@ -17,70 +17,69 @@ using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver.Enums;
 
-namespace ObserverDesignPatternIObservableIObserver
+namespace ObserverDesignPatternIObservableIObserver;
+
+public class MsTestExecutionProvider : IObservable<ExecutionStatus>, IDisposable, ITestExecutionProvider
 {
-    public class MsTestExecutionProvider : IObservable<ExecutionStatus>, IDisposable, ITestExecutionProvider
+    private readonly List<IObserver<ExecutionStatus>> _testBehaviorObservers;
+
+    public MsTestExecutionProvider()
     {
-        private readonly List<IObserver<ExecutionStatus>> _testBehaviorObservers;
+        _testBehaviorObservers = new List<IObserver<ExecutionStatus>>();
+    }
 
-        public MsTestExecutionProvider()
+    public void PreTestInit(TestContext context, MemberInfo memberInfo)
+    {
+        NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PreTestInit);
+    }
+
+    public void PostTestInit(TestContext context, MemberInfo memberInfo)
+    {
+        NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PostTestInit);
+    }
+
+    public void PreTestCleanup(TestContext context, MemberInfo memberInfo)
+    {
+        NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PreTestCleanup);
+    }
+
+    public void PostTestCleanup(TestContext context, MemberInfo memberInfo)
+    {
+        NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PostTestCleanup);
+    }
+
+    public void TestInstantiated(MemberInfo memberInfo)
+    {
+        NotifyObserversExecutionPhase(null, memberInfo, ExecutionPhases.TestInstantiated);
+    }
+
+    public IDisposable Subscribe(IObserver<ExecutionStatus> observer)
+    {
+        if (!_testBehaviorObservers.Contains(observer))
         {
-            _testBehaviorObservers = new List<IObserver<ExecutionStatus>>();
+            _testBehaviorObservers.Add(observer);
         }
 
-        public void PreTestInit(TestContext context, MemberInfo memberInfo)
+        return new Unsubscriber<ExecutionStatus>(_testBehaviorObservers, observer);
+    }
+
+    private void NotifyObserversExecutionPhase(TestContext context, MemberInfo memberInfo, ExecutionPhases executionPhase)
+    {
+        foreach (var currentObserver in _testBehaviorObservers)
         {
-            NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PreTestInit);
+            currentObserver.OnNext(new ExecutionStatus(context, memberInfo, executionPhase));
+        }
+    }
+
+    public void Dispose()
+    {
+        foreach (var currentObserver in _testBehaviorObservers)
+        {
+            currentObserver.OnCompleted();
         }
 
-        public void PostTestInit(TestContext context, MemberInfo memberInfo)
-        {
-            NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PostTestInit);
-        }
+        _testBehaviorObservers.Clear();
 
-        public void PreTestCleanup(TestContext context, MemberInfo memberInfo)
-        {
-            NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PreTestCleanup);
-        }
-
-        public void PostTestCleanup(TestContext context, MemberInfo memberInfo)
-        {
-            NotifyObserversExecutionPhase(context, memberInfo, ExecutionPhases.PostTestCleanup);
-        }
-
-        public void TestInstantiated(MemberInfo memberInfo)
-        {
-            NotifyObserversExecutionPhase(null, memberInfo, ExecutionPhases.TestInstantiated);
-        }
-
-        public IDisposable Subscribe(IObserver<ExecutionStatus> observer)
-        {
-            if (!_testBehaviorObservers.Contains(observer))
-            {
-                _testBehaviorObservers.Add(observer);
-            }
-
-            return new Unsubscriber<ExecutionStatus>(_testBehaviorObservers, observer);
-        }
-
-        private void NotifyObserversExecutionPhase(TestContext context, MemberInfo memberInfo, ExecutionPhases executionPhase)
-        {
-            foreach (var currentObserver in _testBehaviorObservers)
-            {
-                currentObserver.OnNext(new ExecutionStatus(context, memberInfo, executionPhase));
-            }
-        }
-
-        public void Dispose()
-        {
-            foreach (var currentObserver in _testBehaviorObservers)
-            {
-                currentObserver.OnCompleted();
-            }
-
-            _testBehaviorObservers.Clear();
-
-            GC.SuppressFinalize(this);
-        }
+        GC.SuppressFinalize(this);
     }
 }

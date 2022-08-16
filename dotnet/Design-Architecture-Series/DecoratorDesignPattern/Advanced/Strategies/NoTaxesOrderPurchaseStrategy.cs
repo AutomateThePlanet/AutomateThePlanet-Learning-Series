@@ -14,18 +14,17 @@
 
 using DecoratorDesignPattern.Pages.PlaceOrderPage;
 
-namespace DecoratorDesignPattern.Advanced.Strategies
-{
-    public class NoTaxesOrderPurchaseStrategy : OrderPurchaseStrategyDecorator
-    {
-        public NoTaxesOrderPurchaseStrategy(OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, Data.ClientPurchaseInfo clientPurchaseInfo) : base(orderPurchaseStrategy, itemsPrice, clientPurchaseInfo)
-        {
-        }
+namespace DecoratorDesignPattern.Advanced.Strategies;
 
-        public override void ValidateOrderSummary(decimal totalPrice)
-        {
-            OrderPurchaseStrategy.ValidateOrderSummary(totalPrice);
-            PlaceOrderPage.Instance.Validate().EstimatedTaxPrice("0.00");
-        }
+public class NoTaxesOrderPurchaseStrategy : OrderPurchaseStrategyDecorator
+{
+    public NoTaxesOrderPurchaseStrategy(OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, Data.ClientPurchaseInfo clientPurchaseInfo) : base(orderPurchaseStrategy, itemsPrice, clientPurchaseInfo)
+    {
+    }
+
+    public override void ValidateOrderSummary(decimal totalPrice)
+    {
+        OrderPurchaseStrategy.ValidateOrderSummary(totalPrice);
+        PlaceOrderPage.Instance.Validate().EstimatedTaxPrice("0.00");
     }
 }

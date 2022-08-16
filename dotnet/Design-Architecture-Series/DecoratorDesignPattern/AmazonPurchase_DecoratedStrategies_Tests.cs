@@ -17,61 +17,60 @@ using DecoratorDesignPattern.Core;
 using DecoratorDesignPattern.Data;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DecoratorDesignPattern
+namespace DecoratorDesignPattern;
+
+[TestClass]
+public class AmazonPurchaseDecoratedStrategiesTests
 {
-    [TestClass]
-    public class AmazonPurchaseDecoratedStrategiesTests
+    [TestInitialize]
+    public void SetupTest()
     {
-        [TestInitialize]
-        public void SetupTest()
-        {
-            Driver.StartBrowser();
-        }
+        Driver.StartBrowser();
+    }
 
-        [TestCleanup]
-        public void TeardownTest()
-        {
-            Driver.StopBrowser();
-        }
+    [TestCleanup]
+    public void TeardownTest()
+    {
+        Driver.StopBrowser();
+    }
 
-        [TestMethod]
-        public void Purchase_SeleniumTestingToolsCookbook_DecoratedStrategies()
+    [TestMethod]
+    public void Purchase_SeleniumTestingToolsCookbook_DecoratedStrategies()
+    {
+        var itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
+        var itemPrice = 40.49m;
+        var shippingInfo = new ClientAddressInfo()
         {
-            var itemUrl = "/Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743";
-            var itemPrice = 40.49m;
-            var shippingInfo = new ClientAddressInfo()
-            {
-                FullName = "John Smith",
-                Country = "United States",
-                Address1 = "950 Avenue of the Americas",
-                State = "Texas",
-                City = "Houston",
-                Zip = "77001",
-                Phone = "00164644885569"
-            };
-            var billingInfo = new ClientAddressInfo()
-            {
-                FullName = "Anton Angelov",
-                Country = "Bulgaria",
-                Address1 = "950 Avenue of the Americas",
-                City = "Sofia",
-                Zip = "1672",
-                Phone = "0894464647"
-            };
-            var clientPurchaseInfo = new ClientPurchaseInfo(billingInfo, shippingInfo)
-            {
-                GiftWrapping = Enums.GiftWrappingStyles.Fancy
-            };
-            var clientLoginInfo = new ClientLoginInfo()
-            {
-                Email = "g3984159@trbvm.com",
-                Password = "ASDFG_12345"
-            };
-            Advanced.Strategies.OrderPurchaseStrategy orderPurchaseStrategy = new Advanced.Strategies.TotalPriceOrderPurchaseStrategy(itemPrice);
-            orderPurchaseStrategy = new Advanced.Strategies.SalesTaxOrderPurchaseStrategy(orderPurchaseStrategy, itemPrice, clientPurchaseInfo);
-            orderPurchaseStrategy = new Advanced.Strategies.VatTaxOrderPurchaseStrategy(orderPurchaseStrategy, itemPrice, clientPurchaseInfo);
+            FullName = "John Smith",
+            Country = "United States",
+            Address1 = "950 Avenue of the Americas",
+            State = "Texas",
+            City = "Houston",
+            Zip = "77001",
+            Phone = "00164644885569"
+        };
+        var billingInfo = new ClientAddressInfo()
+        {
+            FullName = "Anton Angelov",
+            Country = "Bulgaria",
+            Address1 = "950 Avenue of the Americas",
+            City = "Sofia",
+            Zip = "1672",
+            Phone = "0894464647"
+        };
+        var clientPurchaseInfo = new ClientPurchaseInfo(billingInfo, shippingInfo)
+        {
+            GiftWrapping = Enums.GiftWrappingStyles.Fancy
+        };
+        var clientLoginInfo = new ClientLoginInfo()
+        {
+            Email = "g3984159@trbvm.com",
+            Password = "ASDFG_12345"
+        };
+        Advanced.Strategies.OrderPurchaseStrategy orderPurchaseStrategy = new Advanced.Strategies.TotalPriceOrderPurchaseStrategy(itemPrice);
+        orderPurchaseStrategy = new Advanced.Strategies.SalesTaxOrderPurchaseStrategy(orderPurchaseStrategy, itemPrice, clientPurchaseInfo);
+        orderPurchaseStrategy = new Advanced.Strategies.VatTaxOrderPurchaseStrategy(orderPurchaseStrategy, itemPrice, clientPurchaseInfo);
 
-            new PurchaseContext(orderPurchaseStrategy).PurchaseItem(itemUrl, itemPrice.ToString(), clientLoginInfo, clientPurchaseInfo);
-        }
+        new PurchaseContext(orderPurchaseStrategy).PurchaseItem(itemUrl, itemPrice.ToString(), clientLoginInfo, clientPurchaseInfo);
     }
 }

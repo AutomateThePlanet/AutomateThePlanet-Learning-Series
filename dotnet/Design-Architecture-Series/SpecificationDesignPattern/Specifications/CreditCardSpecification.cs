@@ -15,20 +15,19 @@
 using SpecificationDesignPattern.Data;
 using SpecificationDesignPattern.Specifications.Core;
 
-namespace SpecificationDesignPattern.Specifications
+namespace SpecificationDesignPattern.Specifications;
+
+public class CreditCardSpecification : Specification<PurchaseTestInput>
 {
-    public class CreditCardSpecification : Specification<PurchaseTestInput>
+    private readonly PurchaseTestInput _purchaseTestInput;
+
+    public CreditCardSpecification(PurchaseTestInput purchaseTestInput)
     {
-        private readonly PurchaseTestInput _purchaseTestInput;
+        _purchaseTestInput = purchaseTestInput;
+    }
 
-        public CreditCardSpecification(PurchaseTestInput purchaseTestInput)
-        {
-            _purchaseTestInput = purchaseTestInput;
-        }
-
-        public override bool IsSatisfiedBy(PurchaseTestInput entity)
-        {
-            return !string.IsNullOrEmpty(_purchaseTestInput.CreditCardNumber);
-        }
+    public override bool IsSatisfiedBy(PurchaseTestInput entity)
+    {
+        return !string.IsNullOrEmpty(_purchaseTestInput.CreditCardNumber);
     }
 }

@@ -17,48 +17,47 @@ using AdvancedSpecificationDesignPattern.Specifications;
 using AdvancedSpecificationDesignPattern.Specifications.Core;
 using OpenQA.Selenium;
 
-namespace AdvancedSpecificationDesignPattern.Pages.LinqPlaceOrderPage
+namespace AdvancedSpecificationDesignPattern.Pages.LinqPlaceOrderPage;
+
+public partial class LinqPlaceOrderPage : BasePage
 {
-    public partial class LinqPlaceOrderPage : BasePage
+    private readonly PurchaseTestInput _purchaseTestInput;
+    private readonly ISpecification<PurchaseTestInput> _promotionalPurchaseSpecification;
+    private readonly ISpecification<PurchaseTestInput> _creditCardSpecification;
+    private readonly ISpecification<PurchaseTestInput> _wiretransferSpecification;
+    private readonly ISpecification<PurchaseTestInput> _freePurchaseSpecification;
+
+    public LinqPlaceOrderPage(IWebDriver driver, PurchaseTestInput purchaseTestInput) : base(driver)
     {
-        private readonly PurchaseTestInput _purchaseTestInput;
-        private readonly ISpecification<PurchaseTestInput> _promotionalPurchaseSpecification;
-        private readonly ISpecification<PurchaseTestInput> _creditCardSpecification;
-        private readonly ISpecification<PurchaseTestInput> _wiretransferSpecification;
-        private readonly ISpecification<PurchaseTestInput> _freePurchaseSpecification;
+        _purchaseTestInput = purchaseTestInput;
+        _creditCardSpecification = new ExpressionSpecification<PurchaseTestInput>(x => !string.IsNullOrEmpty(x.CreditCardNumber));
+        _freePurchaseSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.TotalPrice == 0);
+        _wiretransferSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.IsWiretransfer);
+        _promotionalPurchaseSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.IsPromotionalPurchase && x.TotalPrice < 5);
+    }
 
-        public LinqPlaceOrderPage(IWebDriver driver, PurchaseTestInput purchaseTestInput) : base(driver)
+    public override string Url
+    {
+        get
         {
-            _purchaseTestInput = purchaseTestInput;
-            _creditCardSpecification = new ExpressionSpecification<PurchaseTestInput>(x => !string.IsNullOrEmpty(x.CreditCardNumber));
-            _freePurchaseSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.TotalPrice == 0);
-            _wiretransferSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.IsWiretransfer);
-            _promotionalPurchaseSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.IsPromotionalPurchase && x.TotalPrice < 5);
+            return @"http://www.bing.com/";
         }
+    }
 
-        public override string Url
+    public void ChoosePaymentMethod()
+    {
+        if (_creditCardSpecification.
+        And(_wiretransferSpecification.Not()).
+        And(_freePurchaseSpecification.Not()).
+        And(_promotionalPurchaseSpecification.Not()).
+        IsSatisfiedBy(_purchaseTestInput))
         {
-            get
-            {
-                return @"http://www.bing.com/";
-            }
+            CreditCard.SendKeys("371449635398431");
+            SecurityNumber.SendKeys("1234");
         }
-
-        public void ChoosePaymentMethod()
+        else
         {
-            if (_creditCardSpecification.
-            And(_wiretransferSpecification.Not()).
-            And(_freePurchaseSpecification.Not()).
-            And(_promotionalPurchaseSpecification.Not()).
-            IsSatisfiedBy(_purchaseTestInput))
-            {
-                CreditCard.SendKeys("371449635398431");
-                SecurityNumber.SendKeys("1234");
-            }
-            else
-            {
-                Wiretransfer.SendKeys("pathToFile");
-            }
+            Wiretransfer.SendKeys("pathToFile");
         }
     }
 }

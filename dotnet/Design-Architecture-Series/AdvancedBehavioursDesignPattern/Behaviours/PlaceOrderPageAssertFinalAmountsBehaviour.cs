@@ -17,23 +17,22 @@ using AdvancedBehavioursDesignPattern.Behaviours.Core;
 using AdvancedBehavioursDesignPattern.Pages.PlaceOrderPage;
 using Unity;
 
-namespace AdvancedBehavioursDesignPattern.Behaviours
+namespace AdvancedBehavioursDesignPattern.Behaviours;
+
+public class PlaceOrderPageAssertFinalAmountsBehaviour : AssertBehaviour
 {
-    public class PlaceOrderPageAssertFinalAmountsBehaviour : AssertBehaviour
+    private readonly PlaceOrderPage _placeOrderPage;
+    private readonly string _itemPrice;
+
+    public PlaceOrderPageAssertFinalAmountsBehaviour(string itemPrice)
     {
-        private readonly PlaceOrderPage _placeOrderPage;
-        private readonly string _itemPrice;
+        _placeOrderPage = UnityContainerFactory.GetContainer().Resolve<PlaceOrderPage>();
+        _itemPrice = itemPrice;
+    }
 
-        public PlaceOrderPageAssertFinalAmountsBehaviour(string itemPrice)
-        {
-            _placeOrderPage = UnityContainerFactory.GetContainer().Resolve<PlaceOrderPage>();
-            _itemPrice = itemPrice;
-        }
-
-        protected override void Assert()
-        {
-            var totalPrice = double.Parse(_itemPrice);
-            _placeOrderPage.AssertOrderTotalPrice(totalPrice);
-        }
+    protected override void Assert()
+    {
+        var totalPrice = double.Parse(_itemPrice);
+        _placeOrderPage.AssertOrderTotalPrice(totalPrice);
     }
 }

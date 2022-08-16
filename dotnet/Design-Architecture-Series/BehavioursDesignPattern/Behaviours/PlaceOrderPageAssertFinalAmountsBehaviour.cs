@@ -14,22 +14,21 @@ using BehavioursDesignPattern.Pages.PlaceOrderPage;
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-namespace BehavioursDesignPattern.Behaviours
+namespace BehavioursDesignPattern.Behaviours;
+
+public class PlaceOrderPageAssertFinalAmountsBehaviour : Behaviour
 {
-    public class PlaceOrderPageAssertFinalAmountsBehaviour : Behaviour
+    private readonly PlaceOrderPage _placeOrderPage;
+
+    // This version is compatible only with UnityBehaviorEngine.
+    public PlaceOrderPageAssertFinalAmountsBehaviour(PlaceOrderPage placeOrderPage)
     {
-        private readonly PlaceOrderPage _placeOrderPage;
+        _placeOrderPage = placeOrderPage;
+    }
 
-        // This version is compatible only with UnityBehaviorEngine.
-        public PlaceOrderPageAssertFinalAmountsBehaviour(PlaceOrderPage placeOrderPage)
-        {
-            _placeOrderPage = placeOrderPage;
-        }
-
-        public override void PerformAct()
-        {
-            var totalPrice = double.Parse(PurchaseTestContext.ItemPrice);
-            _placeOrderPage.AssertOrderTotalPrice(totalPrice);
-        }
+    public override void PerformAct()
+    {
+        var totalPrice = double.Parse(PurchaseTestContext.ItemPrice);
+        _placeOrderPage.AssertOrderTotalPrice(totalPrice);
     }
 }

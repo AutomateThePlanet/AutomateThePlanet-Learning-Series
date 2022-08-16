@@ -16,13 +16,12 @@ using StrategyDesignPattern.Base;
 using StrategyDesignPattern.Data;
 using StrategyDesignPattern.Pages.PlaceOrderPage;
 
-namespace StrategyDesignPattern.Strategies
+namespace StrategyDesignPattern.Strategies;
+
+internal class NoTaxesOrderValidationStrategy : IOrderValidationStrategy
 {
-    internal class NoTaxesOrderValidationStrategy : IOrderValidationStrategy
+    public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
     {
-        public void ValidateOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
-        {
-            PlaceOrderPage.Instance.Validate().EstimatedTaxPrice("0.00");
-        }
+        PlaceOrderPage.Instance.Validate().EstimatedTaxPrice("0.00");
     }
 }

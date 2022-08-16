@@ -16,96 +16,95 @@ using FluentPageObjectPattern.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace FluentPageObjectPattern.Pages.BingMainPage
+namespace FluentPageObjectPattern.Pages.BingMainPage;
+
+public class BingMainPageElementMap : BasePageElementMap
 {
-    public class BingMainPageElementMap : BasePageElementMap
+    public IWebElement SearchBox
     {
-        public IWebElement SearchBox
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("sb_form_q"));
-            }
+            return Browser.FindElement(By.Id("sb_form_q"));
         }
+    }
 
-        public IWebElement GoButton
+    public IWebElement GoButton
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("sb_form_go"));
-            }
+            return Browser.FindElement(By.Id("sb_form_go"));
         }
+    }
 
-        public IWebElement ResultsCountDiv
+    public IWebElement ResultsCountDiv
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("b_tween"));
-            }
+            return Browser.FindElement(By.Id("b_tween"));
         }
+    }
 
-        public IWebElement ImagesLink
+    public IWebElement ImagesLink
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.LinkText("Images"));
-            }
+            return Browser.FindElement(By.LinkText("Images"));
         }
+    }
 
-        public SelectElement Sizes
+    public SelectElement Sizes
+    {
+        get
         {
-            get
-            {
-                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Size']")));
-            }
+            return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Size']")));
         }
+    }
 
-        public SelectElement Color
+    public SelectElement Color
+    {
+        get
         {
-            get
-            {
-                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Color']")));
-            }
+            return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Color']")));
         }
+    }
 
-        public SelectElement Type
+    public SelectElement Type
+    {
+        get
         {
-            get
-            {
-                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Type']")));
-            }
+            return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Type']")));
         }
+    }
 
-        public SelectElement Layout
+    public SelectElement Layout
+    {
+        get
         {
-            get
-            {
-                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Layout']")));
-            }
+            return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Layout']")));
         }
+    }
 
-        public SelectElement People
+    public SelectElement People
+    {
+        get
         {
-            get
-            {
-                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'People']")));
-            }
+            return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'People']")));
         }
+    }
 
-        public SelectElement Date
+    public SelectElement Date
+    {
+        get
         {
-            get
-            {
-                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Date']")));
-            }
+            return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'Date']")));
         }
+    }
 
-        public SelectElement License
+    public SelectElement License
+    {
+        get
         {
-            get
-            {
-                return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'License']")));
-            }
+            return new SelectElement(Browser.FindElement(By.XPath("//div/ul/li/span/span[text() = 'License']")));
         }
     }
 }

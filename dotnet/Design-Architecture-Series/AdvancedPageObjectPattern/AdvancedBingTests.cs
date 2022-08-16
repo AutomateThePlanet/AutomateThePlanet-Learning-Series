@@ -15,30 +15,29 @@
 using AdvancedPageObjectPattern.Pages.BingMainPage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AdvancedPageObjectPattern
+namespace AdvancedPageObjectPattern;
+
+[TestClass]
+public class AdvancedBingTests
 {
-    [TestClass]
-    public class AdvancedBingTests
+    [TestInitialize]
+    public void SetupTest()
     {
-        [TestInitialize]
-        public void SetupTest()
-        {
-            Driver.StartBrowser();
-        }
+        Driver.StartBrowser();
+    }
 
-        [TestCleanup]
-        public void TeardownTest()
-        {
-            Driver.StopBrowser();
-        }
+    [TestCleanup]
+    public void TeardownTest()
+    {
+        Driver.StopBrowser();
+    }
 
-        [TestMethod]
-        public void SearchTextInBing_Advanced_PageObjectPattern()
-        {
-            var bingMainPage = new BingMainPage();
-            bingMainPage.Navigate();
-            bingMainPage.Search("Automate The Planet");
-            bingMainPage.Validate().ResultsCount(",000 Results");
-        }
+    [TestMethod]
+    public void SearchTextInBing_Advanced_PageObjectPattern()
+    {
+        var bingMainPage = new BingMainPage();
+        bingMainPage.Navigate();
+        bingMainPage.Search("Automate The Planet");
+        bingMainPage.Validate().ResultsCount(",000 Results");
     }
 }

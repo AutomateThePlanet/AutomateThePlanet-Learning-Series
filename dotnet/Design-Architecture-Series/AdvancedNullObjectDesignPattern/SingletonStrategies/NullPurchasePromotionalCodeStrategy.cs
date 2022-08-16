@@ -14,36 +14,35 @@
 using System;
 using AdvancedNullObjectDesignPattern.Base;
 
-namespace AdvancedNullObjectDesignPattern.SingletonStrategies
+namespace AdvancedNullObjectDesignPattern.SingletonStrategies;
+
+public class NullPurchasePromotionalCodeStrategy : IPurchasePromotionalCodeStrategy
 {
-    public class NullPurchasePromotionalCodeStrategy : IPurchasePromotionalCodeStrategy
+    private static NullPurchasePromotionalCodeStrategy _instance;
+
+    public static NullPurchasePromotionalCodeStrategy Null
     {
-        private static NullPurchasePromotionalCodeStrategy _instance;
-
-        public static NullPurchasePromotionalCodeStrategy Null
+        get
         {
-            get
+            if (_instance == null)
             {
-                if (_instance == null)
-                {
-                    _instance = new NullPurchasePromotionalCodeStrategy();
-                }
-
-                return _instance;
+                _instance = new NullPurchasePromotionalCodeStrategy();
             }
-        }
 
-        public void AssertPromotionalCodeDiscount()
-        {
+            return _instance;
         }
+    }
 
-        public double GetPromotionalCodeDiscountAmount()
-        {
-            return 0;
-        }
+    public void AssertPromotionalCodeDiscount()
+    {
+    }
 
-        public void ApplyPromotionalCode(string couponCode)
-        {
-        }
+    public double GetPromotionalCodeDiscountAmount()
+    {
+        return 0;
+    }
+
+    public void ApplyPromotionalCode(string couponCode)
+    {
     }
 }

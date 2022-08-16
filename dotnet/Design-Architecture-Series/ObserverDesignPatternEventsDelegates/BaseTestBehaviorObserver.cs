@@ -14,46 +14,45 @@
 using ObserverDesignPatternEventsDelegates;
 using PatternsInAutomatedTests.Advanced.Observer.Advanced.DotNetEvents;
 
-namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.DotNetEvents
+namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.DotNetEvents;
+
+public class BaseTestBehaviorObserver
 {
-    public class BaseTestBehaviorObserver
+    public void Subscribe(IExecutionProvider provider)
     {
-        public void Subscribe(IExecutionProvider provider)
-        {
-            provider.TestInstantiatedEvent += TestInstantiated;
-            provider.PreTestInitEvent += PreTestInit;
-            provider.PostTestInitEvent += PostTestInit;
-            provider.PreTestCleanupEvent += PreTestCleanup;
-            provider.PostTestCleanupEvent += PostTestCleanup;
-        }
+        provider.TestInstantiatedEvent += TestInstantiated;
+        provider.PreTestInitEvent += PreTestInit;
+        provider.PostTestInitEvent += PostTestInit;
+        provider.PreTestCleanupEvent += PreTestCleanup;
+        provider.PostTestCleanupEvent += PostTestCleanup;
+    }
 
-        public void Unsubscribe(IExecutionProvider provider)
-        {
-            provider.TestInstantiatedEvent -= TestInstantiated;
-            provider.PreTestInitEvent -= PreTestInit;
-            provider.PostTestInitEvent -= PostTestInit;
-            provider.PreTestCleanupEvent -= PreTestCleanup;
-            provider.PostTestCleanupEvent -= PostTestCleanup;
-        }
+    public void Unsubscribe(IExecutionProvider provider)
+    {
+        provider.TestInstantiatedEvent -= TestInstantiated;
+        provider.PreTestInitEvent -= PreTestInit;
+        provider.PostTestInitEvent -= PostTestInit;
+        provider.PreTestCleanupEvent -= PreTestCleanup;
+        provider.PostTestCleanupEvent -= PostTestCleanup;
+    }
 
-        protected virtual void TestInstantiated(object sender, TestExecutionEventArgs e)
-        {
-        }
+    protected virtual void TestInstantiated(object sender, TestExecutionEventArgs e)
+    {
+    }
 
-        protected virtual void PreTestInit(object sender, TestExecutionEventArgs e)
-        {
-        }
+    protected virtual void PreTestInit(object sender, TestExecutionEventArgs e)
+    {
+    }
 
-        protected virtual void PostTestInit(object sender, TestExecutionEventArgs e)
-        {
-        }
+    protected virtual void PostTestInit(object sender, TestExecutionEventArgs e)
+    {
+    }
 
-        protected virtual void PreTestCleanup(object sender, TestExecutionEventArgs e)
-        {
-        }
+    protected virtual void PreTestCleanup(object sender, TestExecutionEventArgs e)
+    {
+    }
 
-        protected virtual void PostTestCleanup(object sender, TestExecutionEventArgs e)
-        {
-        }
+    protected virtual void PostTestCleanup(object sender, TestExecutionEventArgs e)
+    {
     }
 }

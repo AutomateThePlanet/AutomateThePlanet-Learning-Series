@@ -15,14 +15,13 @@
 using FacadeDesignPattern.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace FacadeDesignPattern.Pages.ItemPage
+namespace FacadeDesignPattern.Pages.ItemPage;
+
+public class ItemPageValidator : BasePageValidator<ItemPageMap>
 {
-    public class ItemPageValidator : BasePageValidator<ItemPageMap>
+    public void Price(string expectedPrice)
     {
-        public void Price(string expectedPrice)
-        {
-            // AU $168.00
-            Assert.AreEqual<string>(expectedPrice, Map.Price.Text);
-        }
+        // AU $168.00
+        Assert.AreEqual<string>(expectedPrice, Map.Price.Text);
     }
 }

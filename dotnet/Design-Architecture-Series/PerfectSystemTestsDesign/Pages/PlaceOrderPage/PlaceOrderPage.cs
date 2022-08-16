@@ -14,12 +14,11 @@
 using OpenQA.Selenium;
 using PerfectSystemTestsDesign.Base;
 
-namespace PerfectSystemTestsDesign.Pages.PlaceOrderPage
+namespace PerfectSystemTestsDesign.Pages.PlaceOrderPage;
+
+public partial class PlaceOrderPage : BasePage
 {
-    public partial class PlaceOrderPage : BasePage
+    public PlaceOrderPage(IWebDriver driver) : base(driver)
     {
-        public PlaceOrderPage(IWebDriver driver) : base(driver)
-        {
-        }
     }
 }

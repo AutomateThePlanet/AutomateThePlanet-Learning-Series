@@ -15,22 +15,21 @@ using Unity;
 using PerfectSystemTestsDesign.Behaviours.Core;
 using PerfectSystemTestsDesign.Pages.ItemPage;
 
-namespace PerfectSystemTestsDesign.Behaviours
+namespace PerfectSystemTestsDesign.Behaviours;
+
+public class ItemPageNavigationBehaviour : ActionBehaviour
 {
-    public class ItemPageNavigationBehaviour : ActionBehaviour
+    private readonly ItemPage _itemPage;
+    private readonly string _itemUrl;
+
+    public ItemPageNavigationBehaviour(string itemUrl)
     {
-        private readonly ItemPage _itemPage;
-        private readonly string _itemUrl;
+        _itemPage = Base.UnityContainerFactory.GetContainer().Resolve<ItemPage>();
+        _itemUrl = itemUrl;
+    }
 
-        public ItemPageNavigationBehaviour(string itemUrl)
-        {
-            _itemPage = Base.UnityContainerFactory.GetContainer().Resolve<ItemPage>();
-            _itemUrl = itemUrl;
-        }
-
-        protected override void PerformAct()
-        {
-            _itemPage.Navigate(_itemUrl);
-        }
+    protected override void PerformAct()
+    {
+        _itemPage.Navigate(_itemUrl);
     }
 }

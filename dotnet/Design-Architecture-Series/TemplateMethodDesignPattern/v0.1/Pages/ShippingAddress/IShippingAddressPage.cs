@@ -15,13 +15,12 @@
 using TemplateMethodDesignPattern.Base.First;
 using TemplateMethodDesignPattern.Data.First;
 
-namespace TemplateMethodDesignPattern.Pages.ShippingAddress.First
+namespace TemplateMethodDesignPattern.Pages.ShippingAddress.First;
+
+public interface IShippingAddressPage : IPage
 {
-    public interface IShippingAddressPage : IPage
-    {
-        void FillShippingInfo(ClientInfo clientInfo);
-        void ClickContinueButton();
-        double GetSubtotalAmount();
-        void AssertSubtotalAmount(double expectedSubtotal);
-    }
+    void FillShippingInfo(ClientInfo clientInfo);
+    void ClickContinueButton();
+    double GetSubtotalAmount();
+    void AssertSubtotalAmount(double expectedSubtotal);
 }

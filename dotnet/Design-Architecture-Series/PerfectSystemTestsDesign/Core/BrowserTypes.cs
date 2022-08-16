@@ -11,13 +11,12 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-namespace PerfectSystemTestsDesign.Core
+namespace PerfectSystemTestsDesign.Core;
+
+public enum BrowserTypes
 {
-    public enum BrowserTypes
-    {
-        Firefox,
-        InternetExplorer,
-        Chrome,
-        NotSet
-    }
+    Firefox,
+    InternetExplorer,
+    Chrome,
+    NotSet
 }

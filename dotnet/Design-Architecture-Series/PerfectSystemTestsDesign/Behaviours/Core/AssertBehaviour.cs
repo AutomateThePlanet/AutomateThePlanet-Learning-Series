@@ -11,15 +11,14 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-namespace PerfectSystemTestsDesign.Behaviours.Core
-{
-    public abstract class AssertBehaviour : IBehaviour
-    {
-        public void Execute()
-        {
-            Assert();
-        }
+namespace PerfectSystemTestsDesign.Behaviours.Core;
 
-        protected abstract void Assert();
+public abstract class AssertBehaviour : IBehaviour
+{
+    public void Execute()
+    {
+        Assert();
     }
+
+    protected abstract void Assert();
 }

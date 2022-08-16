@@ -12,22 +12,21 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace StrategyDesignPattern.Enums
+namespace StrategyDesignPattern.Enums;
+
+public enum States
 {
-    public enum States
-    {
-        Arizona,
-        Illinois,
-        Massachusetts,
-        NorthCarolina,
-        Virginia,
-        California,
-        Washington,
-        Nevada,
-        Pennsylvania,
-        NewJersey,
-        Tennessee,
-        Wisconsin,
-        Texas
-    }
+    Arizona,
+    Illinois,
+    Massachusetts,
+    NorthCarolina,
+    Virginia,
+    California,
+    Washington,
+    Nevada,
+    Pennsylvania,
+    NewJersey,
+    Tennessee,
+    Wisconsin,
+    Texas
 }

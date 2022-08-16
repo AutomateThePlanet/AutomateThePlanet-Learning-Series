@@ -14,12 +14,11 @@
 
 using OpenQA.Selenium;
 
-namespace TemplateMethodDesignPattern.Pages.Item.Second
-{
-    public partial class ItemPage
-    {
-        public IWebElement BuyNowButton => Driver.FindElement(By.Id("binBtn_btn"));
+namespace TemplateMethodDesignPattern.Pages.Item.Second;
 
-        public IWebElement Price => Driver.FindElement(By.Id("prcIsum"));
-    }
+public partial class ItemPage
+{
+    public IWebElement BuyNowButton => Driver.FindElement(By.Id("binBtn_btn"));
+
+    public IWebElement Price => Driver.FindElement(By.Id("prcIsum"));
 }

@@ -11,16 +11,15 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-namespace PerfectSystemTestsDesign.Behaviours.Core
+namespace PerfectSystemTestsDesign.Behaviours.Core;
+
+public static class BehaviourExecutor
 {
-    public static class BehaviourExecutor
+    public static void Execute(params IBehaviour[] behaviours)
     {
-        public static void Execute(params IBehaviour[] behaviours)
+        foreach (var behaviour in behaviours)
         {
-            foreach (var behaviour in behaviours)
-            {
-                behaviour.Execute();
-            }
+            behaviour.Execute();
         }
     }
 }

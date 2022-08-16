@@ -14,24 +14,23 @@
 
 using OpenQA.Selenium;
 
-namespace AdvancedStrategyDesignPattern.Pages.ItemPage
-{
-    public class ItemPageMap : Core.BasePageElementMap
-    {
-        public IWebElement AddToCartButton
-        {
-            get
-            {
-                return Browser.FindElement(By.Id("add-to-cart-button"));
-            }
-        }
+namespace AdvancedStrategyDesignPattern.Pages.ItemPage;
 
-        public IWebElement ProductTitle
+public class ItemPageMap : Core.BasePageElementMap
+{
+    public IWebElement AddToCartButton
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("productTitle"));
-            }
+            return Browser.FindElement(By.Id("add-to-cart-button"));
+        }
+    }
+
+    public IWebElement ProductTitle
+    {
+        get
+        {
+            return Browser.FindElement(By.Id("productTitle"));
         }
     }
 }

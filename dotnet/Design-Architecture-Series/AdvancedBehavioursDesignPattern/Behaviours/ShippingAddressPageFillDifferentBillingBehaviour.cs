@@ -19,27 +19,26 @@ using AdvancedBehavioursDesignPattern.Pages.ShippingAddressPage;
 using AdvancedBehavioursDesignPattern.Pages.ShippingPaymentPage;
 using Unity;
 
-namespace AdvancedBehavioursDesignPattern.Behaviours
+namespace AdvancedBehavioursDesignPattern.Behaviours;
+
+public class ShippingAddressPageFillDifferentBillingBehaviour : ActionBehaviour
 {
-    public class ShippingAddressPageFillDifferentBillingBehaviour : ActionBehaviour
+    private readonly ShippingAddressPage _shippingAddressPage;
+    private readonly ShippingPaymentPage _shippingPaymentPage;
+    private readonly ClientPurchaseInfo _clientPurchaseInfo;
+
+    public ShippingAddressPageFillDifferentBillingBehaviour(ClientPurchaseInfo clientPurchaseInfo)
     {
-        private readonly ShippingAddressPage _shippingAddressPage;
-        private readonly ShippingPaymentPage _shippingPaymentPage;
-        private readonly ClientPurchaseInfo _clientPurchaseInfo;
+        _shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
+        _shippingPaymentPage = UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>();
+        _clientPurchaseInfo = clientPurchaseInfo;
+    }
 
-        public ShippingAddressPageFillDifferentBillingBehaviour(ClientPurchaseInfo clientPurchaseInfo)
-        {
-            _shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
-            _shippingPaymentPage = UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>();
-            _clientPurchaseInfo = clientPurchaseInfo;
-        }
-
-        protected override void PerformAct()
-        {
-            _shippingAddressPage.ClickDifferentBillingCheckBox(_clientPurchaseInfo);
-            _shippingAddressPage.ClickContinueButton();
-            _shippingPaymentPage.ClickBottomContinueButton();
-            _shippingAddressPage.FillBillingInfo(_clientPurchaseInfo);
-        }
+    protected override void PerformAct()
+    {
+        _shippingAddressPage.ClickDifferentBillingCheckBox(_clientPurchaseInfo);
+        _shippingAddressPage.ClickContinueButton();
+        _shippingPaymentPage.ClickBottomContinueButton();
+        _shippingAddressPage.FillBillingInfo(_clientPurchaseInfo);
     }
 }

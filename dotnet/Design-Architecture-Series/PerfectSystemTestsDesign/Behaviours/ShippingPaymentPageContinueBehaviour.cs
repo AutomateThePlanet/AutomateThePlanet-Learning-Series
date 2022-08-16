@@ -15,20 +15,19 @@ using Unity;
 using PerfectSystemTestsDesign.Behaviours.Core;
 using PerfectSystemTestsDesign.Pages.ShippingPaymentPage;
 
-namespace PerfectSystemTestsDesign.Behaviours
+namespace PerfectSystemTestsDesign.Behaviours;
+
+public class ShippingPaymentPageContinueBehaviour : ActionBehaviour
 {
-    public class ShippingPaymentPageContinueBehaviour : ActionBehaviour
+    private readonly ShippingPaymentPage _shippingPaymentPage;
+
+    public ShippingPaymentPageContinueBehaviour()
     {
-        private readonly ShippingPaymentPage _shippingPaymentPage;
+        _shippingPaymentPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>();
+    }
 
-        public ShippingPaymentPageContinueBehaviour()
-        {
-            _shippingPaymentPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingPaymentPage>();
-        }
-
-        protected override void PerformAct()
-        {
-            _shippingPaymentPage.ClickTopContinueButton();
-        }
+    protected override void PerformAct()
+    {
+        _shippingPaymentPage.ClickTopContinueButton();
     }
 }

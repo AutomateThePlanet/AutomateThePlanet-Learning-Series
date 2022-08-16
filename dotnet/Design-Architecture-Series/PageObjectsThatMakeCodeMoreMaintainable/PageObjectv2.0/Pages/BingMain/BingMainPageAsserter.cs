@@ -14,13 +14,12 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20
+namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20;
+
+public static class BingMainPageAsserter
 {
-    public static class BingMainPageAsserter
+    public static void AssertResultsCountIsAsExpected(this IBingMainPage page, int expectedCount)
     {
-        public static void AssertResultsCountIsAsExpected(this IBingMainPage page, int expectedCount)
-        {
-            Assert.AreEqual(page.GetResultsCount(), expectedCount, "The results count is not as expected.");
-        }
+        Assert.AreEqual(page.GetResultsCount(), expectedCount, "The results count is not as expected.");
     }
 }

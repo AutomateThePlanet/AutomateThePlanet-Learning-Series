@@ -15,32 +15,31 @@
 using DecoratorDesignPattern.Core;
 using OpenQA.Selenium;
 
-namespace DecoratorDesignPattern.Pages.SignInPage
+namespace DecoratorDesignPattern.Pages.SignInPage;
+
+public class SignInPageMap : BasePageElementMap
 {
-    public class SignInPageMap : BasePageElementMap
+    public IWebElement SignInButton
     {
-        public IWebElement SignInButton
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("signInSubmit-input"));
-            }
+            return Browser.FindElement(By.Id("signInSubmit-input"));
         }
+    }
 
-        public IWebElement PasswordInput
+    public IWebElement PasswordInput
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("ap_password"));
-            }
+            return Browser.FindElement(By.Id("ap_password"));
         }
+    }
 
-        public IWebElement EmailInput
+    public IWebElement EmailInput
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("ap_email"));
-            }
+            return Browser.FindElement(By.Id("ap_email"));
         }
     }
 }

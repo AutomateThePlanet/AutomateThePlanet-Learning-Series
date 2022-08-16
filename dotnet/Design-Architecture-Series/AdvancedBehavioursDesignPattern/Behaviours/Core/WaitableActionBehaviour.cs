@@ -12,18 +12,17 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedBehavioursDesignPattern.Behaviours.Core
+namespace AdvancedBehavioursDesignPattern.Behaviours.Core;
+
+public abstract class WaitableActionBehaviour : IBehaviour
 {
-    public abstract class WaitableActionBehaviour : IBehaviour
+    public void Execute()
     {
-        public void Execute()
-        {
-            PerformAct();
-            PerformPostActWait();
-        }
-
-        protected abstract void PerformAct();
-
-        protected abstract void PerformPostActWait();
+        PerformAct();
+        PerformPostActWait();
     }
+
+    protected abstract void PerformAct();
+
+    protected abstract void PerformPostActWait();
 }

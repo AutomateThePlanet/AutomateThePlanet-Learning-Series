@@ -13,17 +13,16 @@
 // <site>http://automatetheplanet.com/</site>using FacadeDesignPattern.Core;
 using FacadeDesignPattern.Core;
 
-namespace FacadeDesignPattern.Pages.ItemPage
-{
-    public class ItemPage : BasePage<ItemPageMap, ItemPageValidator>
-    {
-        public ItemPage() : base("http://www.ebay.com/itm/")
-        {
-        }
+namespace FacadeDesignPattern.Pages.ItemPage;
 
-        public void ClickBuyNowButton()
-        {
-            Map.BuyNowButton.Click();
-        }
+public class ItemPage : BasePage<ItemPageMap, ItemPageValidator>
+{
+    public ItemPage() : base("http://www.ebay.com/itm/")
+    {
+    }
+
+    public void ClickBuyNowButton()
+    {
+        Map.BuyNowButton.Click();
     }
 }

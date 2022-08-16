@@ -11,13 +11,12 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-namespace PerfectSystemTestsDesign.Behaviours.Core
+namespace PerfectSystemTestsDesign.Behaviours.Core;
+
+public enum BehaviourActions
 {
-    public enum BehaviourActions
-    {
-        Act,
-        PreActAsserts,
-        PostActAsserts,
-        PostAct
-    }
+    Act,
+    PreActAsserts,
+    PostActAsserts,
+    PostAct
 }

@@ -16,21 +16,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RulesDesignPattern
+namespace RulesDesignPattern;
+
+public class RulesChain
 {
-    public class RulesChain
+    public RulesChain(IRule mainRule, bool isLastInChain = false)
     {
-        public RulesChain(IRule mainRule, bool isLastInChain = false)
-        {
-            IsLastInChain = isLastInChain;
-            ElseRules = new List<RulesChain>();
-            Rule = mainRule;
-        }
-
-        public IRule Rule { get; set; }
-
-        public List<RulesChain> ElseRules { get; set; }
-
-        public bool IsLastInChain { get; set; }
+        IsLastInChain = isLastInChain;
+        ElseRules = new List<RulesChain>();
+        Rule = mainRule;
     }
+
+    public IRule Rule { get; set; }
+
+    public List<RulesChain> ElseRules { get; set; }
+
+    public bool IsLastInChain { get; set; }
 }

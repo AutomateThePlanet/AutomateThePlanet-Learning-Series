@@ -15,13 +15,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SingletonDesignPattern.Core;
 
-namespace SingletonDesignPattern.Pages.BingMainPageSingletonBuiltIn
+namespace SingletonDesignPattern.Pages.BingMainPageSingletonBuiltIn;
+
+public class BingMainPageValidator : BasePageValidator<BingMainPageElementMap>
 {
-    public class BingMainPageValidator : BasePageValidator<BingMainPageElementMap>
+    public void ResultsCount(string expectedCount)
     {
-        public void ResultsCount(string expectedCount)
-        {
-            Assert.IsTrue(Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
-        }
+        Assert.IsTrue(Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
     }
 }

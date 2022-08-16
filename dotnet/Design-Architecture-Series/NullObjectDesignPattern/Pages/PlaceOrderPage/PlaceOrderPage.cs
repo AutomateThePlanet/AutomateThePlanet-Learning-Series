@@ -15,12 +15,11 @@
 using NullObjectDesignPattern.Base;
 using OpenQA.Selenium;
 
-namespace NullObjectDesignPattern.Pages.PlaceOrderPage
+namespace NullObjectDesignPattern.Pages.PlaceOrderPage;
+
+public partial class PlaceOrderPage : BasePage
 {
-    public partial class PlaceOrderPage : BasePage
+    public PlaceOrderPage(IWebDriver driver) : base(driver)
     {
-        public PlaceOrderPage(IWebDriver driver) : base(driver)
-        {
-        }
     }
 }

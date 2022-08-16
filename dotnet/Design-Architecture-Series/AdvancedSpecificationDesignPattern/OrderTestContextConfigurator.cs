@@ -16,24 +16,23 @@ using AdvancedSpecificationDesignPattern.Data;
 using AdvancedSpecificationDesignPattern.Specifications;
 using AdvancedSpecificationDesignPattern.Specifications.Core;
 
-namespace AdvancedSpecificationDesignPattern
+namespace AdvancedSpecificationDesignPattern;
+
+public class OrderTestContextConfigurator
 {
-    public class OrderTestContextConfigurator
+    public OrderTestContextConfigurator()
     {
-        public OrderTestContextConfigurator()
-        {
-            CreditCardSpecification = new ExpressionSpecification<PurchaseTestInput>(x => !string.IsNullOrEmpty(x.CreditCardNumber));
-            FreePurchaseSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.TotalPrice == 0);
-            WiretransferSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.IsWiretransfer);
-            PromotionalPurchaseSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.IsPromotionalPurchase && x.TotalPrice < 5);
-        }
-
-        public ISpecification<PurchaseTestInput> PromotionalPurchaseSpecification { get; private set; }
-
-        public ISpecification<PurchaseTestInput> CreditCardSpecification { get; private set; }
-
-        public ISpecification<PurchaseTestInput> WiretransferSpecification { get; private set; }
-
-        public ISpecification<PurchaseTestInput> FreePurchaseSpecification { get; private set; }
+        CreditCardSpecification = new ExpressionSpecification<PurchaseTestInput>(x => !string.IsNullOrEmpty(x.CreditCardNumber));
+        FreePurchaseSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.TotalPrice == 0);
+        WiretransferSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.IsWiretransfer);
+        PromotionalPurchaseSpecification = new ExpressionSpecification<PurchaseTestInput>(x => x.IsPromotionalPurchase && x.TotalPrice < 5);
     }
+
+    public ISpecification<PurchaseTestInput> PromotionalPurchaseSpecification { get; private set; }
+
+    public ISpecification<PurchaseTestInput> CreditCardSpecification { get; private set; }
+
+    public ISpecification<PurchaseTestInput> WiretransferSpecification { get; private set; }
+
+    public ISpecification<PurchaseTestInput> FreePurchaseSpecification { get; private set; }
 }

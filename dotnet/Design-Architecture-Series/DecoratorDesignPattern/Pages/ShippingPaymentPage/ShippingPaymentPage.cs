@@ -14,18 +14,17 @@
 
 using DecoratorDesignPattern.Core;
 
-namespace DecoratorDesignPattern.Pages.ShippingPaymentPage
-{
-    public class ShippingPaymentPage : BasePageSingleton<ShippingPaymentPage, ShippingPaymentPageMap>
-    {
-        public void ClickBottomContinueButton()
-        {
-            Map.BottomContinueButton.Click();
-        }
+namespace DecoratorDesignPattern.Pages.ShippingPaymentPage;
 
-        public void ClickTopContinueButton()
-        {
-            Map.TopContinueButton.Click();
-        }
+public class ShippingPaymentPage : BasePageSingleton<ShippingPaymentPage, ShippingPaymentPageMap>
+{
+    public void ClickBottomContinueButton()
+    {
+        Map.BottomContinueButton.Click();
+    }
+
+    public void ClickTopContinueButton()
+    {
+        Map.TopContinueButton.Click();
     }
 }

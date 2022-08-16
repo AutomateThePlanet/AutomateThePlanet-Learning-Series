@@ -14,12 +14,11 @@
 
 using AdvancedStrategyDesignPattern.Data;
 
-namespace AdvancedStrategyDesignPattern.Base
-{
-    public interface IOrderPurchaseStrategy
-    {
-        void AssertOrderSummary(string itemPrice, ClientPurchaseInfo clientPurchaseInfo);
+namespace AdvancedStrategyDesignPattern.Base;
 
-        void ValidateClientPurchaseInfo(ClientPurchaseInfo clientPurchaseInfo);
-    }
+public interface IOrderPurchaseStrategy
+{
+    void AssertOrderSummary(string itemPrice, ClientPurchaseInfo clientPurchaseInfo);
+
+    void ValidateClientPurchaseInfo(ClientPurchaseInfo clientPurchaseInfo);
 }

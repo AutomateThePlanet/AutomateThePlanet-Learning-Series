@@ -15,89 +15,88 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage
+namespace AdvancedStrategyDesignPattern.Pages.ShippingAddressPage;
+
+public class ShippingAddressPageMap : Core.BasePageElementMap
 {
-    public class ShippingAddressPageMap : Core.BasePageElementMap
+    public SelectElement CountryDropDown
     {
-        public SelectElement CountryDropDown
+        get
         {
-            get
-            {
-                BrowserWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("enterAddressCountryCode")); });
-                return new SelectElement(Browser.FindElement(By.Name("enterAddressCountryCode")));
-            }
+            BrowserWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("enterAddressCountryCode")); });
+            return new SelectElement(Browser.FindElement(By.Name("enterAddressCountryCode")));
         }
+    }
 
-        public IWebElement FullNameInput
+    public IWebElement FullNameInput
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("enterAddressFullName"));
-            }
+            return Browser.FindElement(By.Id("enterAddressFullName"));
         }
+    }
 
-        public IWebElement Address1Input
+    public IWebElement Address1Input
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("enterAddressAddressLine1"));
-            }
+            return Browser.FindElement(By.Id("enterAddressAddressLine1"));
         }
+    }
 
-        public IWebElement CityInput
+    public IWebElement CityInput
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("enterAddressCity"));
-            }
+            return Browser.FindElement(By.Id("enterAddressCity"));
         }
+    }
 
-        public IWebElement ZipInput
+    public IWebElement ZipInput
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("enterAddressPostalCode"));
-            }
+            return Browser.FindElement(By.Id("enterAddressPostalCode"));
         }
+    }
 
-        public IWebElement PhoneInput
+    public IWebElement PhoneInput
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("enterAddressPhoneNumber"));
-            }
+            return Browser.FindElement(By.Id("enterAddressPhoneNumber"));
         }
+    }
 
-        public SelectElement DeliveryPreferenceDropDown
+    public SelectElement DeliveryPreferenceDropDown
+    {
+        get
         {
-            get
-            {
-                return new SelectElement(Browser.FindElement(By.Name("AddressType")));
-            }
+            return new SelectElement(Browser.FindElement(By.Name("AddressType")));
         }
+    }
 
-        public IWebElement ContinueButton
+    public IWebElement ContinueButton
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.XPath("//input[@value='Continue']"));
-            }
+            return Browser.FindElement(By.XPath("//input[@value='Continue']"));
         }
+    }
 
-        public IWebElement ShipToThisAddress
+    public IWebElement ShipToThisAddress
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.CssSelector("input.a-button-text"));
-            }
+            return Browser.FindElement(By.CssSelector("input.a-button-text"));
         }
+    }
 
-        public IWebElement DifferemtFromBillingCheckbox
+    public IWebElement DifferemtFromBillingCheckbox
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("isBillingAddress"));
-            }
+            return Browser.FindElement(By.Id("isBillingAddress"));
         }
     }
 }

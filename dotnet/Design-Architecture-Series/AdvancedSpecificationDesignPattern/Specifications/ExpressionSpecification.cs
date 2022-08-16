@@ -15,25 +15,24 @@
 using System;
 using AdvancedSpecificationDesignPattern.Specifications.Core;
 
-namespace AdvancedSpecificationDesignPattern.Specifications
+namespace AdvancedSpecificationDesignPattern.Specifications;
+
+public class ExpressionSpecification<TEntity> : Specification<TEntity>
 {
-    public class ExpressionSpecification<TEntity> : Specification<TEntity>
+    private readonly Func<TEntity, bool> _expression;
+
+    public ExpressionSpecification(Func<TEntity, bool> expression)
     {
-        private readonly Func<TEntity, bool> _expression;
-
-        public ExpressionSpecification(Func<TEntity, bool> expression)
+        if (expression == null)
         {
-            if (expression == null)
-            {
-                throw new ArgumentNullException();
-            }
-
-            _expression = expression;
+            throw new ArgumentNullException();
         }
 
-        public override bool IsSatisfiedBy(TEntity entity)
-        {
-            return _expression(entity);
-        }
+        _expression = expression;
+    }
+
+    public override bool IsSatisfiedBy(TEntity entity)
+    {
+        return _expression(entity);
     }
 }

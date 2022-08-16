@@ -16,35 +16,34 @@ using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace NullObjectDesignPattern.Base
+namespace NullObjectDesignPattern.Base;
+
+public abstract class BasePage
 {
-    public abstract class BasePage
+    protected IWebDriver Driver;
+    protected WebDriverWait DriverWait;
+
+    public BasePage(IWebDriver driver)
     {
-        protected IWebDriver Driver;
-        protected WebDriverWait DriverWait;
+        Driver = driver;
+        DriverWait = new WebDriverWait(driver, new TimeSpan(0, 0, 30));
+    }
 
-        public BasePage(IWebDriver driver)
+    public virtual string Url
+    {
+        get
         {
-            Driver = driver;
-            DriverWait = new WebDriverWait(driver, new TimeSpan(0, 0, 30));
+            return string.Empty;
+        }
+    }
+
+    public virtual void Open(string part = "")
+    {
+        if (string.IsNullOrEmpty(Url))
+        {
+            throw new ArgumentException("The main URL cannot be null or empty.");
         }
 
-        public virtual string Url
-        {
-            get
-            {
-                return string.Empty;
-            }
-        }
-
-        public virtual void Open(string part = "")
-        {
-            if (string.IsNullOrEmpty(Url))
-            {
-                throw new ArgumentException("The main URL cannot be null or empty.");
-            }
-
-            Driver.Navigate().GoToUrl(string.Concat(Url, part));
-        }
+        Driver.Navigate().GoToUrl(string.Concat(Url, part));
     }
 }

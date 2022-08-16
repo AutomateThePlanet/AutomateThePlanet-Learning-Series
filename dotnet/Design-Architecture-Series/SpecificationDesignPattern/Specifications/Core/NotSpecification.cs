@@ -12,20 +12,19 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace SpecificationDesignPattern.Specifications.Core
+namespace SpecificationDesignPattern.Specifications.Core;
+
+public class NotSpecification<TEntity> : Specification<TEntity>
 {
-    public class NotSpecification<TEntity> : Specification<TEntity>
+    private readonly ISpecification<TEntity> _specification;
+
+    public NotSpecification(ISpecification<TEntity> specification)
     {
-        private readonly ISpecification<TEntity> _specification;
+        _specification = specification;
+    }
 
-        public NotSpecification(ISpecification<TEntity> specification)
-        {
-            _specification = specification;
-        }
-
-        public override bool IsSatisfiedBy(TEntity entity)
-        {
-            return !_specification.IsSatisfiedBy(entity);
-        }
+    public override bool IsSatisfiedBy(TEntity entity)
+    {
+        return !_specification.IsSatisfiedBy(entity);
     }
 }

@@ -13,20 +13,19 @@
 // <site>http://automatetheplanet.com/</site>
 using Unity;
 
-namespace PerfectSystemTestsDesign.Base
+namespace PerfectSystemTestsDesign.Base;
+
+public static class UnityContainerFactory
 {
-    public static class UnityContainerFactory
+    private static readonly IUnityContainer _unityContainer;
+
+    static UnityContainerFactory()
     {
-        private static readonly IUnityContainer _unityContainer;
+        _unityContainer = new UnityContainer();
+    }
 
-        static UnityContainerFactory()
-        {
-            _unityContainer = new UnityContainer();
-        }
-
-        public static IUnityContainer GetContainer()
-        {
-            return _unityContainer;
-        }
+    public static IUnityContainer GetContainer()
+    {
+        return _unityContainer;
     }
 }

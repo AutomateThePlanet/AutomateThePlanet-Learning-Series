@@ -20,29 +20,28 @@ using AdvancedBehavioursDesignPattern.Pages.SignInPage;
 using Unity;
 using AdvancedBehavioursDesignPattern.Data;
 
-namespace AdvancedBehavioursDesignPattern.Behaviours
+namespace AdvancedBehavioursDesignPattern.Behaviours;
+
+public class SignInPageLoginBehaviour : WaitableActionBehaviour
 {
-    public class SignInPageLoginBehaviour : WaitableActionBehaviour
+    private readonly SignInPage _signInPage;
+    private readonly ShippingAddressPage _shippingAddressPage;
+    private readonly ClientLoginInfo _clientLoginInfo;
+
+    public SignInPageLoginBehaviour(ClientLoginInfo clientLoginInfo)
     {
-        private readonly SignInPage _signInPage;
-        private readonly ShippingAddressPage _shippingAddressPage;
-        private readonly ClientLoginInfo _clientLoginInfo;
+        _signInPage = UnityContainerFactory.GetContainer().Resolve<SignInPage>();
+        _shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
+        _clientLoginInfo = clientLoginInfo;
+    }
 
-        public SignInPageLoginBehaviour(ClientLoginInfo clientLoginInfo)
-        {
-            _signInPage = UnityContainerFactory.GetContainer().Resolve<SignInPage>();
-            _shippingAddressPage = UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
-            _clientLoginInfo = clientLoginInfo;
-        }
+    protected override void PerformPostActWait()
+    {
+        _shippingAddressPage.WaitForPageToLoad();
+    }
 
-        protected override void PerformPostActWait()
-        {
-            _shippingAddressPage.WaitForPageToLoad();
-        }
-
-        protected override void PerformAct()
-        {
-            _signInPage.Login(_clientLoginInfo.Email, _clientLoginInfo.Password);
-        }
+    protected override void PerformAct()
+    {
+        _signInPage.Login(_clientLoginInfo.Email, _clientLoginInfo.Password);
     }
 }

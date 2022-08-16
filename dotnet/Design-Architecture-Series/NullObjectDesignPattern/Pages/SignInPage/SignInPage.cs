@@ -15,19 +15,18 @@
 using NullObjectDesignPattern.Base;
 using OpenQA.Selenium;
 
-namespace NullObjectDesignPattern.Pages.SignInPage
-{
-    public partial class SignInPage : BasePage
-    {
-        public SignInPage(IWebDriver driver) : base(driver)
-        {
-        }
+namespace NullObjectDesignPattern.Pages.SignInPage;
 
-        public void Login(string email, string password)
-        {
-            EmailInput.SendKeys(email);
-            PasswordInput.SendKeys(password);
-            SignInButton.Click();
-        }
+public partial class SignInPage : BasePage
+{
+    public SignInPage(IWebDriver driver) : base(driver)
+    {
+    }
+
+    public void Login(string email, string password)
+    {
+        EmailInput.SendKeys(email);
+        PasswordInput.SendKeys(password);
+        SignInButton.Click();
     }
 }

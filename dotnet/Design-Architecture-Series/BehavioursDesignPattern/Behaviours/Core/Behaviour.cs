@@ -12,24 +12,23 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace BehavioursDesignPattern.Behaviours.Core
+namespace BehavioursDesignPattern.Behaviours.Core;
+
+public class Behaviour : IBehaviour
 {
-    public class Behaviour : IBehaviour
+    public virtual void PerformAct()
     {
-        public virtual void PerformAct()
-        {
-        }
+    }
 
-        public virtual void PerformPostAct()
-        {
-        }
+    public virtual void PerformPostAct()
+    {
+    }
 
-        public virtual void PerformPostActAsserts()
-        {
-        }
+    public virtual void PerformPostActAsserts()
+    {
+    }
 
-        public virtual void PerformPreActAsserts()
-        {
-        }
+    public virtual void PerformPreActAsserts()
+    {
     }
 }

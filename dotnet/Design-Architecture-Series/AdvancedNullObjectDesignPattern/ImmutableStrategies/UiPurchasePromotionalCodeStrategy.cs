@@ -15,32 +15,31 @@ using System;
 using AdvancedNullObjectDesignPattern.Pages.PlaceOrderPage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AdvancedNullObjectDesignPattern.ImmutableStrategies
+namespace AdvancedNullObjectDesignPattern.ImmutableStrategies;
+
+public class UiPurchasePromotionalCodeStrategy : BasePromotionalCodeStrategy
 {
-    public class UiPurchasePromotionalCodeStrategy : BasePromotionalCodeStrategy
+    private readonly PlaceOrderPage _placeOrderPage;
+    private readonly double _couponDiscountAmount;
+
+    public UiPurchasePromotionalCodeStrategy(PlaceOrderPage placeOrderPage, double couponDiscountAmount)
     {
-        private readonly PlaceOrderPage _placeOrderPage;
-        private readonly double _couponDiscountAmount;
+        _placeOrderPage = placeOrderPage;
+        _couponDiscountAmount = couponDiscountAmount;
+    }
 
-        public UiPurchasePromotionalCodeStrategy(PlaceOrderPage placeOrderPage, double couponDiscountAmount)
-        {
-            _placeOrderPage = placeOrderPage;
-            _couponDiscountAmount = couponDiscountAmount;
-        }
+    public override void AssertPromotionalCodeDiscount()
+    {
+        Assert.AreEqual(_couponDiscountAmount.ToString(), _placeOrderPage.PromotionalDiscountPrice.Text);
+    }
 
-        public override void AssertPromotionalCodeDiscount()
-        {
-            Assert.AreEqual(_couponDiscountAmount.ToString(), _placeOrderPage.PromotionalDiscountPrice.Text);
-        }
+    public override double GetPromotionalCodeDiscountAmount()
+    {
+        return _couponDiscountAmount;
+    }
 
-        public override double GetPromotionalCodeDiscountAmount()
-        {
-            return _couponDiscountAmount;
-        }
-
-        public override void ApplyPromotionalCode(string couponCode)
-        {
-            _placeOrderPage.PromotionalCode.SendKeys(couponCode);
-        }
+    public override void ApplyPromotionalCode(string couponCode)
+    {
+        _placeOrderPage.PromotionalCode.SendKeys(couponCode);
     }
 }

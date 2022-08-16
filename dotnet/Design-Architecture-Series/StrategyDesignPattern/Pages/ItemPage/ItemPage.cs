@@ -12,23 +12,22 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace StrategyDesignPattern.Pages.ItemPage
+namespace StrategyDesignPattern.Pages.ItemPage;
+
+public class ItemPage : Core.BasePageSingleton<ItemPage, ItemPageMap, ItemPageValidator>
 {
-    public class ItemPage : Core.BasePageSingleton<ItemPage, ItemPageMap, ItemPageValidator>
+    public ItemPage()
     {
-        public ItemPage()
-        {
-        }
+    }
 
-        public void ClickBuyNowButton()
-        {
-            Map.AddToCartButton.Click();
-        }
+    public void ClickBuyNowButton()
+    {
+        Map.AddToCartButton.Click();
+    }
 
-        public override void Navigate(string part)
-        {
-            ///Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743
-            base.Navigate(string.Concat(@"http://www.amazon.com/", part));
-        }
+    public override void Navigate(string part)
+    {
+        ///Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743
+        base.Navigate(string.Concat(@"http://www.amazon.com/", part));
     }
 }

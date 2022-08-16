@@ -16,100 +16,99 @@ using FacadeDesignPattern.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace FacadeDesignPattern.Pages.ShippingAddressPage
+namespace FacadeDesignPattern.Pages.ShippingAddressPage;
+
+public class ShippingAddressPageMap : BasePageElementMap
 {
-    public class ShippingAddressPageMap : BasePageElementMap
+    public SelectElement CountryDropDown
     {
-        public SelectElement CountryDropDown
+        get
         {
-            get
-            {
-                BrowserWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("country")); });
-                return new SelectElement(Browser.FindElement(By.Name("country")));
-            }
+            BrowserWait.Until<IWebElement>((d) => { return d.FindElement(By.Name("country")); });
+            return new SelectElement(Browser.FindElement(By.Name("country")));
         }
+    }
 
-        public IWebElement FirstName
+    public IWebElement FirstName
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("firstName"));
-            }
+            return Browser.FindElement(By.Id("firstName"));
         }
+    }
 
-        public IWebElement LastName
+    public IWebElement LastName
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("lastName"));
-            }
+            return Browser.FindElement(By.Id("lastName"));
         }
+    }
 
-        public IWebElement Address1
+    public IWebElement Address1
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("address1"));
-            }
+            return Browser.FindElement(By.Id("address1"));
         }
+    }
 
-        public IWebElement City
+    public IWebElement City
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("city"));
-            }
+            return Browser.FindElement(By.Id("city"));
         }
+    }
 
-        public IWebElement Zip
+    public IWebElement Zip
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("zip"));
-            }
+            return Browser.FindElement(By.Id("zip"));
         }
+    }
 
-        public IWebElement Phone
+    public IWebElement Phone
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("dayphone1"));
-            }
+            return Browser.FindElement(By.Id("dayphone1"));
         }
+    }
 
-        public IWebElement Email
+    public IWebElement Email
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("email"));
-            }
+            return Browser.FindElement(By.Id("email"));
         }
+    }
 
-        public IWebElement Subtotal
+    public IWebElement Subtotal
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("xo_tot_amt"));
-            }
+            return Browser.FindElement(By.Id("xo_tot_amt"));
         }
+    }
 
-        public IWebElement ContinueButton
+    public IWebElement ContinueButton
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("but_address_continue"));
-            }
+            return Browser.FindElement(By.Id("but_address_continue"));
         }
+    }
 
-        public void SwitchToShippingFrame()
-        {
-            WaitForLogo();
-            Browser.SwitchTo().Frame("shpFrame");
-        }
+    public void SwitchToShippingFrame()
+    {
+        WaitForLogo();
+        Browser.SwitchTo().Frame("shpFrame");
+    }
 
-        private void WaitForLogo()
-        {
-            BrowserWait.Until<IWebElement>((d) => { return d.FindElement(By.Id("gh-logo")); });
-        }
+    private void WaitForLogo()
+    {
+        BrowserWait.Until<IWebElement>((d) => { return d.FindElement(By.Id("gh-logo")); });
     }
 }

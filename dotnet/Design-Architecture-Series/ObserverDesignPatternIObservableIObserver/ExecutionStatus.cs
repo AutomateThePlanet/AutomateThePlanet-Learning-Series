@@ -15,25 +15,24 @@ using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver.Enums;
 
-namespace ObserverDesignPatternIObservableIObserver
+namespace ObserverDesignPatternIObservableIObserver;
+
+public class ExecutionStatus
 {
-    public class ExecutionStatus
+    public TestContext TestContext { get; set; }
+
+    public MemberInfo MemberInfo { get; set; }
+
+    public ExecutionPhases ExecutionPhase { get; set; }
+
+    public ExecutionStatus(TestContext testContext, ExecutionPhases executionPhase) : this(testContext, null, executionPhase)
     {
-        public TestContext TestContext { get; set; }
+    }
 
-        public MemberInfo MemberInfo { get; set; }
-
-        public ExecutionPhases ExecutionPhase { get; set; }
-
-        public ExecutionStatus(TestContext testContext, ExecutionPhases executionPhase) : this(testContext, null, executionPhase)
-        {
-        }
-
-        public ExecutionStatus(TestContext testContext, MemberInfo memberInfo, ExecutionPhases executionPhase)
-        {
-            TestContext = testContext;
-            MemberInfo = memberInfo;
-            ExecutionPhase = executionPhase;
-        }
+    public ExecutionStatus(TestContext testContext, MemberInfo memberInfo, ExecutionPhases executionPhase)
+    {
+        TestContext = testContext;
+        MemberInfo = memberInfo;
+        ExecutionPhase = executionPhase;
     }
 }

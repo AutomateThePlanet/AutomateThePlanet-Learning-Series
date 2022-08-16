@@ -16,20 +16,19 @@ using System;
 using AdvancedSpecificationDesignPattern.Data;
 using AdvancedSpecificationDesignPattern.Specifications.Core;
 
-namespace AdvancedSpecificationDesignPattern.Specifications
+namespace AdvancedSpecificationDesignPattern.Specifications;
+
+public class PromotionalPurchaseSpecification : Specification<PurchaseTestInput>
 {
-    public class PromotionalPurchaseSpecification : Specification<PurchaseTestInput>
+    private readonly PurchaseTestInput _purchaseTestInput;
+
+    public PromotionalPurchaseSpecification(PurchaseTestInput purchaseTestInput)
     {
-        private readonly PurchaseTestInput _purchaseTestInput;
+        _purchaseTestInput = purchaseTestInput;
+    }
 
-        public PromotionalPurchaseSpecification(PurchaseTestInput purchaseTestInput)
-        {
-            _purchaseTestInput = purchaseTestInput;
-        }
-
-        public override bool IsSatisfiedBy(PurchaseTestInput entity)
-        {
-            return _purchaseTestInput.IsPromotionalPurchase && _purchaseTestInput.TotalPrice < 5;
-        }
+    public override bool IsSatisfiedBy(PurchaseTestInput entity)
+    {
+        return _purchaseTestInput.IsPromotionalPurchase && _purchaseTestInput.TotalPrice < 5;
     }
 }

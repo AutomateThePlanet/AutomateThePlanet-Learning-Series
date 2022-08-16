@@ -15,51 +15,50 @@ using System;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ObserverDesignPatternEventsDelegates
+namespace ObserverDesignPatternEventsDelegates;
+
+public class MsTestExecutionProvider : IExecutionProvider
 {
-    public class MsTestExecutionProvider : IExecutionProvider
+    public event EventHandler<TestExecutionEventArgs> TestInstantiatedEvent;
+
+    public event EventHandler<TestExecutionEventArgs> PreTestInitEvent;
+
+    public event EventHandler<TestExecutionEventArgs> PostTestInitEvent;
+
+    public event EventHandler<TestExecutionEventArgs> PreTestCleanupEvent;
+
+    public event EventHandler<TestExecutionEventArgs> PostTestCleanupEvent;
+
+    public void PreTestInit(TestContext context, MemberInfo memberInfo)
     {
-        public event EventHandler<TestExecutionEventArgs> TestInstantiatedEvent;
+        RaiseTestEvent(PreTestInitEvent, context, memberInfo);
+    }
 
-        public event EventHandler<TestExecutionEventArgs> PreTestInitEvent;
+    public void PostTestInit(TestContext context, MemberInfo memberInfo)
+    {
+        RaiseTestEvent(PostTestInitEvent, context, memberInfo);
+    }
 
-        public event EventHandler<TestExecutionEventArgs> PostTestInitEvent;
+    public void PreTestCleanup(TestContext context, MemberInfo memberInfo)
+    {
+        RaiseTestEvent(PreTestCleanupEvent, context, memberInfo);
+    }
 
-        public event EventHandler<TestExecutionEventArgs> PreTestCleanupEvent;
+    public void PostTestCleanup(TestContext context, MemberInfo memberInfo)
+    {
+        RaiseTestEvent(PostTestCleanupEvent, context, memberInfo);
+    }
 
-        public event EventHandler<TestExecutionEventArgs> PostTestCleanupEvent;
+    public void TestInstantiated(MemberInfo memberInfo)
+    {
+        RaiseTestEvent(TestInstantiatedEvent, null, memberInfo);
+    }
 
-        public void PreTestInit(TestContext context, MemberInfo memberInfo)
+    private void RaiseTestEvent(EventHandler<TestExecutionEventArgs> eventHandler, TestContext testContext, MemberInfo memberInfo)
+    {
+        if (eventHandler != null)
         {
-            RaiseTestEvent(PreTestInitEvent, context, memberInfo);
-        }
-
-        public void PostTestInit(TestContext context, MemberInfo memberInfo)
-        {
-            RaiseTestEvent(PostTestInitEvent, context, memberInfo);
-        }
-
-        public void PreTestCleanup(TestContext context, MemberInfo memberInfo)
-        {
-            RaiseTestEvent(PreTestCleanupEvent, context, memberInfo);
-        }
-
-        public void PostTestCleanup(TestContext context, MemberInfo memberInfo)
-        {
-            RaiseTestEvent(PostTestCleanupEvent, context, memberInfo);
-        }
-
-        public void TestInstantiated(MemberInfo memberInfo)
-        {
-            RaiseTestEvent(TestInstantiatedEvent, null, memberInfo);
-        }
-
-        private void RaiseTestEvent(EventHandler<TestExecutionEventArgs> eventHandler, TestContext testContext, MemberInfo memberInfo)
-        {
-            if (eventHandler != null)
-            {
-                eventHandler(this, new TestExecutionEventArgs(testContext, memberInfo));
-            }
+            eventHandler(this, new TestExecutionEventArgs(testContext, memberInfo));
         }
     }
 }

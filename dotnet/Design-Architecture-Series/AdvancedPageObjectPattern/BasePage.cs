@@ -12,67 +12,66 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedPageObjectPattern
+namespace AdvancedPageObjectPattern;
+
+public class BasePage<TM>
+    where TM : BasePageElementMap, new()
 {
-    public class BasePage<TM>
-        where TM : BasePageElementMap, new()
+    protected readonly string Url;
+
+    private static BasePage<TM> _instance;
+
+    public BasePage(string url)
     {
-        protected readonly string Url;
+        Url = url;
+    }
 
-        private static BasePage<TM> _instance;
+    public BasePage()
+    {
+        Url = null;
+    }
 
-        public BasePage(string url)
+    public static BasePage<TM> Instance
+    {
+        get
         {
-            Url = url;
-        }
-
-        public BasePage()
-        {
-            Url = null;
-        }
-
-        public static BasePage<TM> Instance
-        {
-            get
+            if (_instance == null)
             {
-                if (_instance == null)
-                {
-                    _instance = new BasePage<TM>();
-                }
-
-                return _instance;
+                _instance = new BasePage<TM>();
             }
-        }
 
-        protected TM Map
-        {
-            get
-            {
-                return new TM();
-            }
-        }
-
-        public virtual void Navigate(string part = "")
-        {
-            Driver.Browser.Navigate().GoToUrl(string.Concat(Url, part));
+            return _instance;
         }
     }
 
-    public class BasePage<TM, TV> : BasePage<TM>
-        where TM : BasePageElementMap, new()
-        where TV : BasePageValidator<TM>, new()
+    protected TM Map
     {
-        public BasePage(string url) : base(url)
+        get
         {
+            return new TM();
         }
+    }
 
-        public BasePage()
-        {
-        }
+    public virtual void Navigate(string part = "")
+    {
+        Driver.Browser.Navigate().GoToUrl(string.Concat(Url, part));
+    }
+}
 
-        public TV Validate()
-        {
-            return new TV();
-        }
+public class BasePage<TM, TV> : BasePage<TM>
+    where TM : BasePageElementMap, new()
+    where TV : BasePageValidator<TM>, new()
+{
+    public BasePage(string url) : base(url)
+    {
+    }
+
+    public BasePage()
+    {
+    }
+
+    public TV Validate()
+    {
+        return new TV();
     }
 }

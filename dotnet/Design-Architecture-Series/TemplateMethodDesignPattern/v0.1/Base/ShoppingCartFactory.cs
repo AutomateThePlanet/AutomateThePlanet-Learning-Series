@@ -18,25 +18,24 @@ using TemplateMethodDesignPattern.Pages.ShippingAddress.First;
 using TemplateMethodDesignPattern.Pages.SignIn.First;
 using OpenQA.Selenium;
 
-namespace TemplateMethodDesignPattern.Base.First
+namespace TemplateMethodDesignPattern.Base.First;
+
+public class ShoppingCartFactory : IFactory<ShoppingCart>
 {
-    public class ShoppingCartFactory : IFactory<ShoppingCart>
+    private readonly IWebDriver _driver;
+
+    public ShoppingCartFactory(IWebDriver driver)
     {
-        private readonly IWebDriver _driver;
+        _driver = driver;
+    }
 
-        public ShoppingCartFactory(IWebDriver driver)
-        {
-            _driver = driver;
-        }
-
-        public ShoppingCart Create()
-        {
-            var itemPage = new ItemPage(_driver);
-            var signInPage = new SignInPage(_driver);
-            var checkoutPage = new CheckoutPage(_driver);
-            var shippingAddressPage = new ShippingAddressPage(_driver);
-            var purchaseFacade = new ShoppingCart(itemPage, signInPage, checkoutPage, shippingAddressPage);
-            return purchaseFacade;
-        }
+    public ShoppingCart Create()
+    {
+        var itemPage = new ItemPage(_driver);
+        var signInPage = new SignInPage(_driver);
+        var checkoutPage = new CheckoutPage(_driver);
+        var shippingAddressPage = new ShippingAddressPage(_driver);
+        var purchaseFacade = new ShoppingCart(itemPage, signInPage, checkoutPage, shippingAddressPage);
+        return purchaseFacade;
     }
 }

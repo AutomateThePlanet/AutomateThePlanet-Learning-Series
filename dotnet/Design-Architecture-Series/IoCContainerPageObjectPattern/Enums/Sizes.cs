@@ -12,14 +12,13 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace IoCContainerPageObjectPattern.Enums
+namespace IoCContainerPageObjectPattern.Enums;
+
+public enum Sizes
 {
-    public enum Sizes
-    {
-        All,
-        Small,
-        Medium,
-        Large,
-        ExtraLarge
-    }
+    All,
+    Small,
+    Medium,
+    Large,
+    ExtraLarge
 }

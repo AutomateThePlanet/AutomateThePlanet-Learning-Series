@@ -15,27 +15,26 @@
 using FacadeDesignPattern.Core;
 using FacadeDesignPattern.Data;
 
-namespace FacadeDesignPattern.Pages.ShippingAddressPage
-{
-    public class ShippingAddressPage : BasePage<ShippingAddressPageMap, ShippingAddressPageValidator>
-    {
-        public void ClickContinueButton()
-        {
-            Map.ContinueButton.Click();
-        }
+namespace FacadeDesignPattern.Pages.ShippingAddressPage;
 
-        public void FillShippingInfo(ClientInfo clientInfo)
-        {
-            Map.SwitchToShippingFrame();
-            Map.CountryDropDown.SelectByText(clientInfo.Country);
-            Map.FirstName.SendKeys(clientInfo.FirstName);
-            Map.LastName.SendKeys(clientInfo.LastName);
-            Map.Address1.SendKeys(clientInfo.Address1);
-            Map.City.SendKeys(clientInfo.City);
-            Map.Zip.SendKeys(clientInfo.Zip);
-            Map.Phone.SendKeys(clientInfo.Phone);
-            Map.Email.SendKeys(clientInfo.Email);
-            Map.SwitchToDefault();
-        }
+public class ShippingAddressPage : BasePage<ShippingAddressPageMap, ShippingAddressPageValidator>
+{
+    public void ClickContinueButton()
+    {
+        Map.ContinueButton.Click();
+    }
+
+    public void FillShippingInfo(ClientInfo clientInfo)
+    {
+        Map.SwitchToShippingFrame();
+        Map.CountryDropDown.SelectByText(clientInfo.Country);
+        Map.FirstName.SendKeys(clientInfo.FirstName);
+        Map.LastName.SendKeys(clientInfo.LastName);
+        Map.Address1.SendKeys(clientInfo.Address1);
+        Map.City.SendKeys(clientInfo.City);
+        Map.Zip.SendKeys(clientInfo.Zip);
+        Map.Phone.SendKeys(clientInfo.Phone);
+        Map.Email.SendKeys(clientInfo.Email);
+        Map.SwitchToDefault();
     }
 }

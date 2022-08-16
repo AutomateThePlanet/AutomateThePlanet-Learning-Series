@@ -15,14 +15,13 @@
 using FluentPageObjectPattern.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace FluentPageObjectPattern.Pages.BingMainPage
+namespace FluentPageObjectPattern.Pages.BingMainPage;
+
+public class BingMainPageValidator : BasePageValidator<BingMainPage, BingMainPageElementMap, BingMainPageValidator>
 {
-    public class BingMainPageValidator : BasePageValidator<BingMainPage, BingMainPageElementMap, BingMainPageValidator>
+    public BingMainPage ResultsCount(string expectedCount)
     {
-        public BingMainPage ResultsCount(string expectedCount)
-        {
-            Assert.IsTrue(Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
-            return PageInstance;
-        }
+        Assert.IsTrue(Map.ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contains the specified text.");
+        return PageInstance;
     }
 }

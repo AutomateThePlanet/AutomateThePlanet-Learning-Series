@@ -14,15 +14,14 @@
 
 using DecoratorDesignPattern.Core;
 
-namespace DecoratorDesignPattern.Pages.SignInPage
+namespace DecoratorDesignPattern.Pages.SignInPage;
+
+public class SignInPage : BasePageSingleton<SignInPage, SignInPageMap>
 {
-    public class SignInPage : BasePageSingleton<SignInPage, SignInPageMap>
+    public void Login(string email, string password)
     {
-        public void Login(string email, string password)
-        {
-            Map.EmailInput.SendKeys(email);
-            Map.PasswordInput.SendKeys(password);
-            Map.SignInButton.Click();
-        }
+        Map.EmailInput.SendKeys(email);
+        Map.PasswordInput.SendKeys(password);
+        Map.SignInButton.Click();
     }
 }

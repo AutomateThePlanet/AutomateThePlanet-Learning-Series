@@ -20,77 +20,76 @@ using FacadeDesignPattern.Pages.ItemPage;
 using FacadeDesignPattern.Pages.ShippingAddressPage;
 using FacadeDesignPattern.Pages.SignInPage;
 
-namespace PatternsInAutomatedTests.Advanced.Ebay
+namespace PatternsInAutomatedTests.Advanced.Ebay;
+
+public class PurchaseFacade
 {
-    public class PurchaseFacade
+    private ItemPage _itemPage;
+    private CheckoutPage _checkoutPage;
+    private ShippingAddressPage _shippingAddressPage;
+    private SignInPage _signInPage;
+
+    public ItemPage ItemPage
     {
-        private ItemPage _itemPage;
-        private CheckoutPage _checkoutPage;
-        private ShippingAddressPage _shippingAddressPage;
-        private SignInPage _signInPage;
-
-        public ItemPage ItemPage
+        get
         {
-            get
+            if (_itemPage == null)
             {
-                if (_itemPage == null)
-                {
-                    _itemPage = new ItemPage();
-                }
-
-                return _itemPage;
+                _itemPage = new ItemPage();
             }
-        }
 
-        public SignInPage SignInPage
+            return _itemPage;
+        }
+    }
+
+    public SignInPage SignInPage
+    {
+        get
         {
-            get
+            if (_signInPage == null)
             {
-                if (_signInPage == null)
-                {
-                    _signInPage = new SignInPage();
-                }
-
-                return _signInPage;
+                _signInPage = new SignInPage();
             }
-        }
 
-        public CheckoutPage CheckoutPage
+            return _signInPage;
+        }
+    }
+
+    public CheckoutPage CheckoutPage
+    {
+        get
         {
-            get
+            if (_checkoutPage == null)
             {
-                if (_checkoutPage == null)
-                {
-                    _checkoutPage = new CheckoutPage();
-                }
-
-                return _checkoutPage;
+                _checkoutPage = new CheckoutPage();
             }
-        }
 
-        public ShippingAddressPage ShippingAddressPage
+            return _checkoutPage;
+        }
+    }
+
+    public ShippingAddressPage ShippingAddressPage
+    {
+        get
         {
-            get
+            if (_shippingAddressPage == null)
             {
-                if (_shippingAddressPage == null)
-                {
-                    _shippingAddressPage = new ShippingAddressPage();
-                }
-
-                return _shippingAddressPage;
+                _shippingAddressPage = new ShippingAddressPage();
             }
-        }
 
-        public void PurchaseItem(string item, string itemPrice, ClientInfo clientInfo)
-        {
-            ItemPage.Navigate(item);
-            ItemPage.Validate().Price(itemPrice);
-            ItemPage.ClickBuyNowButton();
-            SignInPage.ClickContinueAsGuestButton();
-            ShippingAddressPage.FillShippingInfo(clientInfo);
-            ShippingAddressPage.Validate().Subtotal(itemPrice);
-            ShippingAddressPage.ClickContinueButton();
-            CheckoutPage.Validate().Subtotal(itemPrice);
+            return _shippingAddressPage;
         }
+    }
+
+    public void PurchaseItem(string item, string itemPrice, ClientInfo clientInfo)
+    {
+        ItemPage.Navigate(item);
+        ItemPage.Validate().Price(itemPrice);
+        ItemPage.ClickBuyNowButton();
+        SignInPage.ClickContinueAsGuestButton();
+        ShippingAddressPage.FillShippingInfo(clientInfo);
+        ShippingAddressPage.Validate().Subtotal(itemPrice);
+        ShippingAddressPage.ClickContinueButton();
+        CheckoutPage.Validate().Subtotal(itemPrice);
     }
 }

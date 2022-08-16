@@ -17,68 +17,67 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace HandlingTestEnvironmentsData
+namespace HandlingTestEnvironmentsData;
+
+public sealed class ConfigurationService
 {
-    public sealed class ConfigurationService
+    private static ConfigurationService _instance;
+
+    public ConfigurationService() => Root = InitializeConfiguration();
+
+    public static ConfigurationService Instance
     {
-        private static ConfigurationService _instance;
-
-        public ConfigurationService() => Root = InitializeConfiguration();
-
-        public static ConfigurationService Instance
+        get
         {
-            get
+            if (_instance == null)
             {
-                if (_instance == null)
-                {
-                    _instance = new ConfigurationService();
-                }
-
-                return _instance;
-            }
-        }
-
-        public IConfigurationRoot Root { get; }
-
-        public BillingInfoDefaultValues GetBillingInfoDefaultValues()
-        {
-            var result = ConfigurationService.Instance.Root.GetSection("billingInfoDefaultValues").Get<BillingInfoDefaultValues>();
-
-            if (result == null)
-            {
-                throw new ConfigurationNotFoundException(typeof(BillingInfoDefaultValues).ToString());
+                _instance = new ConfigurationService();
             }
 
-            return result;
+            return _instance;
         }
+    }
 
-        public UrlSettings GetUrlSettings()
+    public IConfigurationRoot Root { get; }
+
+    public BillingInfoDefaultValues GetBillingInfoDefaultValues()
+    {
+        var result = ConfigurationService.Instance.Root.GetSection("billingInfoDefaultValues").Get<BillingInfoDefaultValues>();
+
+        if (result == null)
         {
-            var result = ConfigurationService.Instance.Root.GetSection("urlSettings").Get<UrlSettings>();
-
-            if (result == null)
-            {
-                throw new ConfigurationNotFoundException(typeof(UrlSettings).ToString());
-            }
-
-            return result;
+            throw new ConfigurationNotFoundException(typeof(BillingInfoDefaultValues).ToString());
         }
 
-        public WebSettings GetWebSettings()
-         => ConfigurationService.Instance.Root.GetSection("webSettings").Get<WebSettings>();
+        return result;
+    }
 
-        private IConfigurationRoot InitializeConfiguration()
+    public UrlSettings GetUrlSettings()
+    {
+        var result = ConfigurationService.Instance.Root.GetSection("urlSettings").Get<UrlSettings>();
+
+        if (result == null)
         {
-            var filesInExecutionDir = Directory.GetFiles(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            var settingsFile =
-                filesInExecutionDir.FirstOrDefault(x => x.Contains("testFrameworkSettings") && x.EndsWith(".json"));
-            var builder = new ConfigurationBuilder();
-            if (settingsFile != null)
-            {
-                builder.AddJsonFile(settingsFile, optional: true, reloadOnChange: true);
-            }
-
-            return builder.Build();
+            throw new ConfigurationNotFoundException(typeof(UrlSettings).ToString());
         }
+
+        return result;
+    }
+
+    public WebSettings GetWebSettings()
+     => ConfigurationService.Instance.Root.GetSection("webSettings").Get<WebSettings>();
+
+    private IConfigurationRoot InitializeConfiguration()
+    {
+        var filesInExecutionDir = Directory.GetFiles(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+        var settingsFile =
+            filesInExecutionDir.FirstOrDefault(x => x.Contains("testFrameworkSettings") && x.EndsWith(".json"));
+        var builder = new ConfigurationBuilder();
+        if (settingsFile != null)
+        {
+            builder.AddJsonFile(settingsFile, optional: true, reloadOnChange: true);
+        }
+
+        return builder.Build();
     }
 }

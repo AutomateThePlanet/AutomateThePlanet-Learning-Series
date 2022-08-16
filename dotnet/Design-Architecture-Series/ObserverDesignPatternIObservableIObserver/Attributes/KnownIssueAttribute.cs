@@ -13,15 +13,14 @@
 // <site>http://automatetheplanet.com/</site>
 using System;
 
-namespace ObserverDesignPatternIObservableIObserver.Attributes
-{
-    [AttributeUsage(AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
-    public class KnownIssueAttribute : Attribute
-    {
-        public KnownIssueAttribute()
-        {
-        }
+namespace ObserverDesignPatternIObservableIObserver.Attributes;
 
-        public int BugId { get; set; }
+[AttributeUsage(AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
+public class KnownIssueAttribute : Attribute
+{
+    public KnownIssueAttribute()
+    {
     }
+
+    public int BugId { get; set; }
 }

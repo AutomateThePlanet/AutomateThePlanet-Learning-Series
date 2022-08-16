@@ -15,22 +15,21 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace FluentPageObjectPattern.Core
+namespace FluentPageObjectPattern.Core;
+
+public class BasePageElementMap
 {
-    public class BasePageElementMap
+    protected IWebDriver Browser;
+    protected WebDriverWait BrowserWait;
+
+    public BasePageElementMap()
     {
-        protected IWebDriver Browser;
-        protected WebDriverWait BrowserWait;
+        Browser = Driver.Browser;
+        BrowserWait = Driver.BrowserWait;
+    }
 
-        public BasePageElementMap()
-        {
-            Browser = Driver.Browser;
-            BrowserWait = Driver.BrowserWait;
-        }
-
-        public void SwitchToDefault()
-        {
-            Browser.SwitchTo().DefaultContent();
-        }
+    public void SwitchToDefault()
+    {
+        Browser.SwitchTo().DefaultContent();
     }
 }

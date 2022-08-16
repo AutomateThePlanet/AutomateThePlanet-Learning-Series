@@ -15,34 +15,33 @@
 using System;
 using OpenQA.Selenium;
 
-namespace SpecificationDesignPattern.BingMain
+namespace SpecificationDesignPattern.BingMain;
+
+public partial class BingMainPage : Base.BasePage
 {
-    public partial class BingMainPage : Base.BasePage
+    public BingMainPage(IWebDriver driver) : base(driver)
     {
-        public BingMainPage(IWebDriver driver) : base(driver)
-        {
-        }
+    }
 
-        public override string Url
+    public override string Url
+    {
+        get
         {
-            get
-            {
-                return @"http://www.bing.com/";
-            }
+            return @"http://www.bing.com/";
         }
+    }
 
-        public void Search(string textToType)
-        {
-            SearchBox.Clear();
-            SearchBox.SendKeys(textToType);
-            GoButton.Click();
-        }
+    public void Search(string textToType)
+    {
+        SearchBox.Clear();
+        SearchBox.SendKeys(textToType);
+        GoButton.Click();
+    }
 
-        public int GetResultsCount()
-        {
-            var resultsCount = default(int);
-            resultsCount = int.Parse(ResultsCountDiv.Text);
-            return resultsCount;
-        }
+    public int GetResultsCount()
+    {
+        var resultsCount = default(int);
+        resultsCount = int.Parse(ResultsCountDiv.Text);
+        return resultsCount;
     }
 }

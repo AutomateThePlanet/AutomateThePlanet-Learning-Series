@@ -17,20 +17,19 @@ using AdvancedBehavioursDesignPattern.Base;
 using AdvancedBehavioursDesignPattern.Pages.ItemPage;
 using Unity;
 
-namespace AdvancedBehavioursDesignPattern.Behaviours
+namespace AdvancedBehavioursDesignPattern.Behaviours;
+
+public class ItemPageBuyBehaviour : ActionBehaviour
 {
-    public class ItemPageBuyBehaviour : ActionBehaviour
+    private readonly ItemPage _itemPage;
+
+    public ItemPageBuyBehaviour()
     {
-        private readonly ItemPage _itemPage;
+        _itemPage = UnityContainerFactory.GetContainer().Resolve<ItemPage>();
+    }
 
-        public ItemPageBuyBehaviour()
-        {
-            _itemPage = UnityContainerFactory.GetContainer().Resolve<ItemPage>();
-        }
-
-        protected override void PerformAct()
-        {
-            _itemPage.ClickBuyNowButton();
-        }
+    protected override void PerformAct()
+    {
+        _itemPage.ClickBuyNowButton();
     }
 }

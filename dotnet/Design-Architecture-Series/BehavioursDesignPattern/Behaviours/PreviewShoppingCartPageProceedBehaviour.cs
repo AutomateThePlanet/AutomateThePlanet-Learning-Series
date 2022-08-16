@@ -15,28 +15,27 @@ using BehavioursDesignPattern.Pages.SignInPage;
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-namespace BehavioursDesignPattern.Behaviours
+namespace BehavioursDesignPattern.Behaviours;
+
+public class PreviewShoppingCartPageProceedBehaviour : Behaviour
 {
-    public class PreviewShoppingCartPageProceedBehaviour : Behaviour
+    private readonly PreviewShoppingCartPage _previewShoppingCartPage;
+    private readonly SignInPage _signInPage;
+
+    // This version is compatible only with UnityBehaviorEngine.
+    public PreviewShoppingCartPageProceedBehaviour(PreviewShoppingCartPage previewShoppingCartPage, SignInPage signInPage)
     {
-        private readonly PreviewShoppingCartPage _previewShoppingCartPage;
-        private readonly SignInPage _signInPage;
+        _previewShoppingCartPage = previewShoppingCartPage;
+        _signInPage = signInPage;
+    }
 
-        // This version is compatible only with UnityBehaviorEngine.
-        public PreviewShoppingCartPageProceedBehaviour(PreviewShoppingCartPage previewShoppingCartPage, SignInPage signInPage)
-        {
-            _previewShoppingCartPage = previewShoppingCartPage;
-            _signInPage = signInPage;
-        }
+    public override void PerformAct()
+    {
+        _previewShoppingCartPage.ClickProceedToCheckoutButton();
+    }
 
-        public override void PerformAct()
-        {
-            _previewShoppingCartPage.ClickProceedToCheckoutButton();
-        }
-
-        public override void PerformPostAct()
-        {
-            _signInPage.WaitForPageToLoad();
-        }
+    public override void PerformPostAct()
+    {
+        _signInPage.WaitForPageToLoad();
     }
 }

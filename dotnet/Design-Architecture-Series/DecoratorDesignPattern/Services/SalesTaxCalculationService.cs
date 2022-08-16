@@ -12,50 +12,49 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace DecoratorDesignPattern.Services
+namespace DecoratorDesignPattern.Services;
+
+public class SalesTaxCalculationService
 {
-    public class SalesTaxCalculationService
+    public decimal Calculate(decimal price, Enums.States state, string zip)
     {
-        public decimal Calculate(decimal price, Enums.States state, string zip)
+        var taxPrice = default(decimal);
+
+        // Call Real Web Service to determine the Sales Tax.
+        switch (state)
         {
-            var taxPrice = default(decimal);
-
-            // Call Real Web Service to determine the Sales Tax.
-            switch (state)
-            {
-                case Enums.States.Arizona:
-                    taxPrice = CalculateTaxPriceInternal(price, 7.125, zip);
-                    break;
-                case Enums.States.Illinois:
-                    taxPrice = CalculateTaxPriceInternal(price, 3.75, zip);
-                    break;
-                case Enums.States.Massachusetts:
-                    taxPrice = CalculateTaxPriceInternal(price, 6.25, zip);
-                    break;
-                case Enums.States.California:
-                    taxPrice = CalculateTaxPriceInternal(price, 2.50, zip);
-                    break;
-                case Enums.States.Washington:
-                    taxPrice = CalculateTaxPriceInternal(price, 3.10, zip);
-                    break;
-                case Enums.States.NewJersey:
-                    taxPrice = CalculateTaxPriceInternal(price, 7.00, zip);
-                    break;
-                case Enums.States.Texas:
-                    taxPrice = CalculateTaxPriceInternal(price, 8.15, zip);
-                    break;
-                default:
-                    taxPrice = 0;
-                    break;
-            }
-
-            return taxPrice;
+            case Enums.States.Arizona:
+                taxPrice = CalculateTaxPriceInternal(price, 7.125, zip);
+                break;
+            case Enums.States.Illinois:
+                taxPrice = CalculateTaxPriceInternal(price, 3.75, zip);
+                break;
+            case Enums.States.Massachusetts:
+                taxPrice = CalculateTaxPriceInternal(price, 6.25, zip);
+                break;
+            case Enums.States.California:
+                taxPrice = CalculateTaxPriceInternal(price, 2.50, zip);
+                break;
+            case Enums.States.Washington:
+                taxPrice = CalculateTaxPriceInternal(price, 3.10, zip);
+                break;
+            case Enums.States.NewJersey:
+                taxPrice = CalculateTaxPriceInternal(price, 7.00, zip);
+                break;
+            case Enums.States.Texas:
+                taxPrice = CalculateTaxPriceInternal(price, 8.15, zip);
+                break;
+            default:
+                taxPrice = 0;
+                break;
         }
 
-        private static decimal CalculateTaxPriceInternal(decimal price, double percent, string zip)
-        {
-            var taxPrice = price / (decimal)percent;
-            return taxPrice;
-        }
+        return taxPrice;
+    }
+
+    private static decimal CalculateTaxPriceInternal(decimal price, double percent, string zip)
+    {
+        var taxPrice = price / (decimal)percent;
+        return taxPrice;
     }
 }

@@ -16,22 +16,21 @@ using AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core;
 using AdvancedBehavioursDesignPatternPartTwo.Pages.ShippingAddressPage;
 using Unity;
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
+namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours;
+
+public class ShippingAddressPageFillShippingBehaviour : ActionBehaviour
 {
-    public class ShippingAddressPageFillShippingBehaviour : ActionBehaviour
+    private readonly ShippingAddressPage _shippingAddressPage;
+    private readonly Data.ClientPurchaseInfo _clientPurchaseInfo;
+
+    public ShippingAddressPageFillShippingBehaviour(Data.ClientPurchaseInfo clientPurchaseInfo)
     {
-        private readonly ShippingAddressPage _shippingAddressPage;
-        private readonly Data.ClientPurchaseInfo _clientPurchaseInfo;
+        _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
+        _clientPurchaseInfo = clientPurchaseInfo;
+    }
 
-        public ShippingAddressPageFillShippingBehaviour(Data.ClientPurchaseInfo clientPurchaseInfo)
-        {
-            _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
-            _clientPurchaseInfo = clientPurchaseInfo;
-        }
-
-        protected override void PerformAct()
-        {
-            _shippingAddressPage.FillShippingInfo(_clientPurchaseInfo);
-        }
+    protected override void PerformAct()
+    {
+        _shippingAddressPage.FillShippingInfo(_clientPurchaseInfo);
     }
 }

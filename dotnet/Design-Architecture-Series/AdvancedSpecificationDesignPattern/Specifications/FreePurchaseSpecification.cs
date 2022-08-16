@@ -15,13 +15,12 @@
 using AdvancedSpecificationDesignPattern.Data;
 using AdvancedSpecificationDesignPattern.Specifications.Core;
 
-namespace AdvancedSpecificationDesignPattern.Specifications
+namespace AdvancedSpecificationDesignPattern.Specifications;
+
+public class FreePurchaseSpecification : Specification<PurchaseTestInput>
 {
-    public class FreePurchaseSpecification : Specification<PurchaseTestInput>
+    public override bool IsSatisfiedBy(PurchaseTestInput entity)
     {
-        public override bool IsSatisfiedBy(PurchaseTestInput entity)
-        {
-            return entity.TotalPrice == 0;
-        }
+        return entity.TotalPrice == 0;
     }
 }

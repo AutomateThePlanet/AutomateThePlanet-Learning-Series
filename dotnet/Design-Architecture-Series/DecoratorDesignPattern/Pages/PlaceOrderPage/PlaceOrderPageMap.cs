@@ -15,56 +15,55 @@
 using DecoratorDesignPattern.Core;
 using OpenQA.Selenium;
 
-namespace DecoratorDesignPattern.Pages.PlaceOrderPage
+namespace DecoratorDesignPattern.Pages.PlaceOrderPage;
+
+public class PlaceOrderPageMap : BasePageElementMap
 {
-    public class PlaceOrderPageMap : BasePageElementMap
+    public IWebElement TotalPrice
     {
-        public IWebElement TotalPrice
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
-            }
+            return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[7]/td[2]/strong"));
         }
+    }
 
-        public IWebElement EstimatedTaxPrice
+    public IWebElement EstimatedTaxPrice
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[5]/td[2]"));
-            }
+            return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[5]/td[2]"));
         }
+    }
 
-        public IWebElement ItemsPrice
+    public IWebElement ItemsPrice
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[1]/td[2]"));
-            }
+            return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[1]/td[2]"));
         }
+    }
 
-        public IWebElement TotalBeforeTaxPrice
+    public IWebElement TotalBeforeTaxPrice
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[4]/td[2]"));
-            }
+            return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[4]/td[2]"));
         }
+    }
 
-        public IWebElement GiftWrapPrice
+    public IWebElement GiftWrapPrice
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
-            }
+            return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
         }
+    }
 
-        public IWebElement ShippingTax
+    public IWebElement ShippingTax
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
-            }
+            return Browser.FindElement(By.XPath("//*[@id='subtotals-marketplace-table']/table/tbody/tr[2]/td[2]"));
         }
     }
 }

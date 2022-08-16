@@ -12,36 +12,35 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace DecoratorDesignPattern.Services
+namespace DecoratorDesignPattern.Services;
+
+public class GiftWrappingPriceCalculationService
 {
-    public class GiftWrappingPriceCalculationService
+    public decimal Calculate(Enums.GiftWrappingStyles giftWrappingStyle)
     {
-        public decimal Calculate(Enums.GiftWrappingStyles giftWrappingStyle)
+        var giftWrappingPrice = default(decimal);
+
+        // Call Real Web Service to determine the Gift Wrapping Tax.
+        switch (giftWrappingStyle)
         {
-            var giftWrappingPrice = default(decimal);
-
-            // Call Real Web Service to determine the Gift Wrapping Tax.
-            switch (giftWrappingStyle)
-            {
-                case Enums.GiftWrappingStyles.Fancy:
-                    giftWrappingPrice = 10.5M;
-                    break;
-                case Enums.GiftWrappingStyles.Cheap:
-                    giftWrappingPrice = 1.5M;
-                    break;
-                case Enums.GiftWrappingStyles.UltraFancy:
-                    giftWrappingPrice = 30.2M;
-                    break;
-                case Enums.GiftWrappingStyles.Paper:
-                    giftWrappingPrice = 0.2M;
-                    break;
-                case Enums.GiftWrappingStyles.None:
-                default:
-                    giftWrappingPrice = 0.0M;
-                    break;
-            }
-
-            return giftWrappingPrice;
+            case Enums.GiftWrappingStyles.Fancy:
+                giftWrappingPrice = 10.5M;
+                break;
+            case Enums.GiftWrappingStyles.Cheap:
+                giftWrappingPrice = 1.5M;
+                break;
+            case Enums.GiftWrappingStyles.UltraFancy:
+                giftWrappingPrice = 30.2M;
+                break;
+            case Enums.GiftWrappingStyles.Paper:
+                giftWrappingPrice = 0.2M;
+                break;
+            case Enums.GiftWrappingStyles.None:
+            default:
+                giftWrappingPrice = 0.0M;
+                break;
         }
+
+        return giftWrappingPrice;
     }
 }

@@ -16,23 +16,22 @@ using AdvancedBehavioursDesignPatternPartTwo.Base;
 using Unity;
 using Unity.Resolution;
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core
+namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core;
+
+public static class BehaviorEngine
 {
-    public static class BehaviorEngine
+    public static void Execute(params BehaviorDefinition[] behaviorDefinitions)
     {
-        public static void Execute(params BehaviorDefinition[] behaviorDefinitions)
+        foreach (var definition in behaviorDefinitions)
         {
-            foreach (var definition in behaviorDefinitions)
-            {
-                var behavior =
-                    UnityContainerFactory.GetContainer().Resolve(
-                        definition.BehaviorType,
-                        new ResolverOverride[]
-                        {
-                            new ParameterOverride("definition", definition)
-                        }) as Behavior;
-                behavior.Execute();
-            }
+            var behavior =
+                UnityContainerFactory.GetContainer().Resolve(
+                    definition.BehaviorType,
+                    new ResolverOverride[]
+                    {
+                        new ParameterOverride("definition", definition)
+                    }) as Behavior;
+            behavior.Execute();
         }
     }
 }

@@ -14,10 +14,9 @@
 
 using StrategyDesignPattern.Data;
 
-namespace StrategyDesignPattern.Base
+namespace StrategyDesignPattern.Base;
+
+public interface IOrderValidationStrategy
 {
-    public interface IOrderValidationStrategy
-    {
-        void ValidateOrderSummary(string itemPrice, ClientPurchaseInfo clientPurchaseInfo);
-    }
+    void ValidateOrderSummary(string itemPrice, ClientPurchaseInfo clientPurchaseInfo);
 }

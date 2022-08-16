@@ -16,73 +16,72 @@ using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver.Enums;
 
-namespace ObserverDesignPatternIObservableIObserver
+namespace ObserverDesignPatternIObservableIObserver;
+
+public class BaseTestBehaviorObserver : IObserver<ExecutionStatus>
 {
-    public class BaseTestBehaviorObserver : IObserver<ExecutionStatus>
+    private IDisposable _cancellation;
+
+    public virtual void Subscribe(IObservable<ExecutionStatus> provider)
     {
-        private IDisposable _cancellation;
+        _cancellation = provider.Subscribe(this);
+    }
 
-        public virtual void Subscribe(IObservable<ExecutionStatus> provider)
-        {
-            _cancellation = provider.Subscribe(this);
-        }
+    public virtual void Unsubscribe()
+    {
+        _cancellation.Dispose();
+    }
 
-        public virtual void Unsubscribe()
+    public void OnNext(ExecutionStatus currentExecutionStatus)
+    {
+        switch (currentExecutionStatus.ExecutionPhase)
         {
-            _cancellation.Dispose();
+            case ExecutionPhases.TestInstantiated:
+                TestInstantiated(currentExecutionStatus.MemberInfo);
+                break;
+            case ExecutionPhases.PreTestInit:
+                PreTestInit(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
+                break;
+            case ExecutionPhases.PostTestInit:
+                PostTestInit(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
+                break;
+            case ExecutionPhases.PreTestCleanup:
+                PreTestCleanup(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
+                break;
+            case ExecutionPhases.PostTestCleanup:
+                PostTestCleanup(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
+                break;
+            default:
+                break;
         }
+    }
 
-        public void OnNext(ExecutionStatus currentExecutionStatus)
-        {
-            switch (currentExecutionStatus.ExecutionPhase)
-            {
-                case ExecutionPhases.TestInstantiated:
-                    TestInstantiated(currentExecutionStatus.MemberInfo);
-                    break;
-                case ExecutionPhases.PreTestInit:
-                    PreTestInit(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
-                    break;
-                case ExecutionPhases.PostTestInit:
-                    PostTestInit(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
-                    break;
-                case ExecutionPhases.PreTestCleanup:
-                    PreTestCleanup(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
-                    break;
-                case ExecutionPhases.PostTestCleanup:
-                    PostTestCleanup(currentExecutionStatus.TestContext, currentExecutionStatus.MemberInfo);
-                    break;
-                default:
-                    break;
-            }
-        }
+    public virtual void OnError(Exception e)
+    {
+        Console.WriteLine("The following exception occurred: {0}", e.Message);
+    }
 
-        public virtual void OnError(Exception e)
-        {
-            Console.WriteLine("The following exception occurred: {0}", e.Message);
-        }
+    public virtual void OnCompleted()
+    {
+    }
 
-        public virtual void OnCompleted()
-        {
-        }
+    protected virtual void PreTestInit(TestContext context, MemberInfo memberInfo)
+    {
+    }
 
-        protected virtual void PreTestInit(TestContext context, MemberInfo memberInfo)
-        {
-        }
+    protected virtual void PostTestInit(TestContext context, MemberInfo memberInfo)
+    {
+    }
 
-        protected virtual void PostTestInit(TestContext context, MemberInfo memberInfo)
-        {
-        }
+    protected virtual void PreTestCleanup(TestContext context, MemberInfo memberInfo)
+    {
+    }
 
-        protected virtual void PreTestCleanup(TestContext context, MemberInfo memberInfo)
-        {
-        }
+    protected virtual void PostTestCleanup(TestContext context, MemberInfo memberInfo)
+    {
+    }
 
-        protected virtual void PostTestCleanup(TestContext context, MemberInfo memberInfo)
-        {
-        }
-
-        protected virtual void TestInstantiated(MemberInfo memberInfo)
-        {
-        }
+    protected virtual void TestInstantiated(MemberInfo memberInfo)
+    {
     }
 }

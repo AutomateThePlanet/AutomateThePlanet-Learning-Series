@@ -15,30 +15,29 @@
 using IoCContainerPageObjectPattern.Base;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace IoCContainerPageObjectPattern.WikipediaMainPage
+namespace IoCContainerPageObjectPattern.WikipediaMainPage;
+
+public class WikipediaMainPageValidator : BasePageValidator<WikipediaMainPageMap>
 {
-    public class WikipediaMainPageValidator : BasePageValidator<WikipediaMainPageMap>
+    public void ToogleLinkTextShow()
     {
-        public void ToogleLinkTextShow()
-        {
-            Assert.AreEqual<string>("show", Map.ContentsToggleLink.Text, "The contents toggle button text was not as expected.");
-        }
+        Assert.AreEqual<string>("show", Map.ContentsToggleLink.Text, "The contents toggle button text was not as expected.");
+    }
 
-        public void ToogleLinkTextHide()
-        {
-            Assert.AreEqual<string>("hide", Map.ContentsToggleLink.Text, "The contents toggle button text was not as expected.");
-        }
+    public void ToogleLinkTextHide()
+    {
+        Assert.AreEqual<string>("hide", Map.ContentsToggleLink.Text, "The contents toggle button text was not as expected.");
+    }
 
-        public void ContentsListHidden()
-        {
-            var contentsListStyle = Map.ContentsList.GetAttribute("style");
-            Assert.AreEqual<string>("display: none;", contentsListStyle, "The contents list is still visible.");
-        }
+    public void ContentsListHidden()
+    {
+        var contentsListStyle = Map.ContentsList.GetAttribute("style");
+        Assert.AreEqual<string>("display: none;", contentsListStyle, "The contents list is still visible.");
+    }
 
-        public void ContentsListVisible()
-        {
-            var contentsListStyle = Map.ContentsList.GetAttribute("style");
-            Assert.AreEqual<string>("display: block;", contentsListStyle, "The contents list is still invisible.");
-        }
+    public void ContentsListVisible()
+    {
+        var contentsListStyle = Map.ContentsList.GetAttribute("style");
+        Assert.AreEqual<string>("display: block;", contentsListStyle, "The contents list is still invisible.");
     }
 }

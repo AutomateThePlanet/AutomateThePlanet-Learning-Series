@@ -14,23 +14,22 @@
 
 using System;
 
-namespace HandlingTestEnvironmentsData
+namespace HandlingTestEnvironmentsData;
+
+[Serializable]
+public class ConfigurationNotFoundException : Exception
 {
-    [Serializable]
-    public class ConfigurationNotFoundException : Exception
+    public ConfigurationNotFoundException()
     {
-        public ConfigurationNotFoundException()
-        {
-        }
+    }
 
-        public ConfigurationNotFoundException(string configurationType)
-            : base($"Configuration section for {configurationType} was not found. Please add the section.")
-        {
-        }
+    public ConfigurationNotFoundException(string configurationType)
+        : base($"Configuration section for {configurationType} was not found. Please add the section.")
+    {
+    }
 
-        public ConfigurationNotFoundException(string message, Exception inner)
-            : base(message, inner)
-        {
-        }
+    public ConfigurationNotFoundException(string message, Exception inner)
+        : base(message, inner)
+    {
     }
 }

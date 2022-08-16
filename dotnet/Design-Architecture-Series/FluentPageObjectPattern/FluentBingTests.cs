@@ -15,39 +15,38 @@
 using FluentPageObjectPattern.Enums;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace FluentPageObjectPattern
+namespace FluentPageObjectPattern;
+
+[TestClass]
+public class FluentBingTests
 {
-    [TestClass]
-    public class FluentBingTests
+    [TestInitialize]
+    public void SetupTest()
     {
-        [TestInitialize]
-        public void SetupTest()
-        {
-            Core.Driver.StartBrowser();
-        }
+        Core.Driver.StartBrowser();
+    }
 
-        [TestCleanup]
-        public void TeardownTest()
-        {
-            Core.Driver.StopBrowser();
-        }
+    [TestCleanup]
+    public void TeardownTest()
+    {
+        Core.Driver.StopBrowser();
+    }
 
-        [TestMethod]
-        public void SearchForImageFuent()
-        {
-            Pages
-                                   .BingMainPage
-                                   .BingMainPage
-                                   .Instance
-                                   .Navigate()
-                                   .Search("facebook")
-                                   .ClickImages()
-                                   .SetSize(Sizes.Large)
-                                   .SetColor(Colors.BlackWhite)
-                                   .SetTypes(Types.Clipart)
-                                   .SetPeople(People.All)
-                                   .SetDate(Dates.PastYear)
-                                   .SetLicense(Licenses.All);
-        }
+    [TestMethod]
+    public void SearchForImageFuent()
+    {
+        Pages
+                               .BingMainPage
+                               .BingMainPage
+                               .Instance
+                               .Navigate()
+                               .Search("facebook")
+                               .ClickImages()
+                               .SetSize(Sizes.Large)
+                               .SetColor(Colors.BlackWhite)
+                               .SetTypes(Types.Clipart)
+                               .SetPeople(People.All)
+                               .SetDate(Dates.PastYear)
+                               .SetLicense(Licenses.All);
     }
 }

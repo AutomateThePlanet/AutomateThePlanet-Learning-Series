@@ -12,15 +12,14 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedBehavioursDesignPattern.Behaviours.Core
-{
-    public abstract class AssertBehaviour : IBehaviour
-    {
-        public void Execute()
-        {
-            Assert();
-        }
+namespace AdvancedBehavioursDesignPattern.Behaviours.Core;
 
-        protected abstract void Assert();
+public abstract class AssertBehaviour : IBehaviour
+{
+    public void Execute()
+    {
+        Assert();
     }
+
+    protected abstract void Assert();
 }

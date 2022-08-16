@@ -14,29 +14,28 @@
 
 using HandlingTestEnvironmentsData.Data.Second;
 
-namespace HandlingTestEnvironmentsData.Base.Second
-{
-    public abstract class ShoppingCart
-    {
-        public void PurchaseItem(string item, double itemPrice, ClientInfo clientInfo)
-        {
-            OpenItem(item);
-            AssertPrice(itemPrice);
-            ClickBuyNowButton();
-            ClickContinueAsGuestButton();
-            FillShippingInfo(clientInfo);
-            AssertSubtotalAmount(itemPrice);
-            ClickContinueButton();
-            AssertSubtotal(itemPrice);
-        }
+namespace HandlingTestEnvironmentsData.Base.Second;
 
-        protected abstract void OpenItem(string item);
-        protected abstract void AssertPrice(double itemPrice);
-        protected abstract void ClickBuyNowButton();
-        protected abstract void ClickContinueAsGuestButton();
-        protected abstract void FillShippingInfo(ClientInfo clientInfo);
-        protected abstract void AssertSubtotalAmount(double itemPrice);
-        protected abstract void ClickContinueButton();
-        protected abstract void AssertSubtotal(double itemPrice);
+public abstract class ShoppingCart
+{
+    public void PurchaseItem(string item, double itemPrice, ClientInfo clientInfo)
+    {
+        OpenItem(item);
+        AssertPrice(itemPrice);
+        ClickBuyNowButton();
+        ClickContinueAsGuestButton();
+        FillShippingInfo(clientInfo);
+        AssertSubtotalAmount(itemPrice);
+        ClickContinueButton();
+        AssertSubtotal(itemPrice);
     }
+
+    protected abstract void OpenItem(string item);
+    protected abstract void AssertPrice(double itemPrice);
+    protected abstract void ClickBuyNowButton();
+    protected abstract void ClickContinueAsGuestButton();
+    protected abstract void FillShippingInfo(ClientInfo clientInfo);
+    protected abstract void AssertSubtotalAmount(double itemPrice);
+    protected abstract void ClickContinueButton();
+    protected abstract void AssertSubtotal(double itemPrice);
 }

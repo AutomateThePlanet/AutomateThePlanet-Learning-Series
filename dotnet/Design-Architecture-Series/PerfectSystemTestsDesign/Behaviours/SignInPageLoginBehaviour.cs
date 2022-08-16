@@ -16,29 +16,28 @@ using Unity;
 using PerfectSystemTestsDesign.Pages.ShippingAddressPage;
 using PerfectSystemTestsDesign.Pages.SignInPage;
 
-namespace PerfectSystemTestsDesign.Behaviours
+namespace PerfectSystemTestsDesign.Behaviours;
+
+public class SignInPageLoginBehaviour : Core.WaitableActionBehaviour
 {
-    public class SignInPageLoginBehaviour : Core.WaitableActionBehaviour
+    private readonly SignInPage _signInPage;
+    private readonly ShippingAddressPage _shippingAddressPage;
+    private readonly Data.ClientLoginInfo _clientLoginInfo;
+
+    public SignInPageLoginBehaviour(Data.ClientLoginInfo clientLoginInfo)
     {
-        private readonly SignInPage _signInPage;
-        private readonly ShippingAddressPage _shippingAddressPage;
-        private readonly Data.ClientLoginInfo _clientLoginInfo;
+        _signInPage = Base.UnityContainerFactory.GetContainer().Resolve<SignInPage>();
+        _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
+        _clientLoginInfo = clientLoginInfo;
+    }
 
-        public SignInPageLoginBehaviour(Data.ClientLoginInfo clientLoginInfo)
-        {
-            _signInPage = Base.UnityContainerFactory.GetContainer().Resolve<SignInPage>();
-            _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
-            _clientLoginInfo = clientLoginInfo;
-        }
+    protected override void PerformPostActWait()
+    {
+        _shippingAddressPage.WaitForPageToLoad();
+    }
 
-        protected override void PerformPostActWait()
-        {
-            _shippingAddressPage.WaitForPageToLoad();
-        }
-
-        protected override void PerformAct()
-        {
-            _signInPage.Login(_clientLoginInfo.Email, _clientLoginInfo.Password);
-        }
+    protected override void PerformAct()
+    {
+        _signInPage.Login(_clientLoginInfo.Email, _clientLoginInfo.Password);
     }
 }

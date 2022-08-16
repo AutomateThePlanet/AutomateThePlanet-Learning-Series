@@ -14,10 +14,9 @@
 
 using OpenQA.Selenium;
 
-namespace HandlingTestEnvironmentsData.Pages.Checkout.Second
+namespace HandlingTestEnvironmentsData.Pages.Checkout.Second;
+
+public partial class CheckoutPage
 {
-    public partial class CheckoutPage
-    {
-        public IWebElement TotalPrice => Driver.FindElement(By.Id("xo_tot_amt"));
-    }
+    public IWebElement TotalPrice => Driver.FindElement(By.Id("xo_tot_amt"));
 }

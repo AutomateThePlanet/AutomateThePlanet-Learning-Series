@@ -15,24 +15,23 @@
 using AdvancedBehavioursDesignPattern.Base;
 using OpenQA.Selenium;
 
-namespace AdvancedBehavioursDesignPattern.Pages.SignInPage
+namespace AdvancedBehavioursDesignPattern.Pages.SignInPage;
+
+public partial class SignInPage : BasePage
 {
-    public partial class SignInPage : BasePage
+    public SignInPage(IWebDriver driver) : base(driver)
     {
-        public SignInPage(IWebDriver driver) : base(driver)
-        {
-        }
+    }
 
-        public void Login(string email, string password)
-        {
-            EmailInput.SendKeys(email);
-            PasswordInput.SendKeys(password);
-            SignInButton.Click();
-        }
+    public void Login(string email, string password)
+    {
+        EmailInput.SendKeys(email);
+        PasswordInput.SendKeys(password);
+        SignInButton.Click();
+    }
 
-        public void WaitForPageToLoad()
-        {
-            // wait for a specific element to show up.
-        }
+    public void WaitForPageToLoad()
+    {
+        // wait for a specific element to show up.
     }
 }

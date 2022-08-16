@@ -12,16 +12,15 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace SpecificationDesignPattern.Specifications.Core
+namespace SpecificationDesignPattern.Specifications.Core;
+
+public interface ISpecification<TEntity>
 {
-    public interface ISpecification<TEntity>
-    {
-        bool IsSatisfiedBy(TEntity entity);
+    bool IsSatisfiedBy(TEntity entity);
 
-        ISpecification<TEntity> And(ISpecification<TEntity> other);
+    ISpecification<TEntity> And(ISpecification<TEntity> other);
 
-        ISpecification<TEntity> Or(ISpecification<TEntity> other);
+    ISpecification<TEntity> Or(ISpecification<TEntity> other);
 
-        ISpecification<TEntity> Not();
-    }
+    ISpecification<TEntity> Not();
 }

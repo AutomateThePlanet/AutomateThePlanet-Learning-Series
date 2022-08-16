@@ -19,50 +19,49 @@ using AdvancedStrategyDesignPattern.Pages.ShippingAddressPage;
 using AdvancedStrategyDesignPattern.Pages.ShippingPaymentPage;
 using AdvancedStrategyDesignPattern.Pages.SignInPage;
 
-namespace AdvancedStrategyDesignPattern.Base
+namespace AdvancedStrategyDesignPattern.Base;
+
+public class PurchaseContext
 {
-    public class PurchaseContext
+    private readonly IOrderPurchaseStrategy[] _orderpurchaseStrategies;
+
+    public PurchaseContext(params IOrderPurchaseStrategy[] orderpurchaseStrategies)
     {
-        private readonly IOrderPurchaseStrategy[] _orderpurchaseStrategies;
+        _orderpurchaseStrategies = orderpurchaseStrategies;
+    }
 
-        public PurchaseContext(params IOrderPurchaseStrategy[] orderpurchaseStrategies)
+    public void PurchaseItem(string itemUrl, string itemPrice, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
+    {
+        ValidateClientPurchaseInfo(clientPurchaseInfo);
+
+        ItemPage.Instance.Navigate(itemUrl);
+        ItemPage.Instance.ClickBuyNowButton();
+        PreviewShoppingCartPage.Instance.ClickProceedToCheckoutButton();
+        SignInPage.Instance.Login(clientLoginInfo.Email, clientLoginInfo.Password);
+        ShippingAddressPage.Instance.FillShippingInfo(clientPurchaseInfo);
+        ShippingAddressPage.Instance.ClickDifferentBillingCheckBox(clientPurchaseInfo);
+        ShippingAddressPage.Instance.ClickContinueButton();
+        ShippingPaymentPage.Instance.ClickBottomContinueButton();
+        ShippingAddressPage.Instance.FillBillingInfo(clientPurchaseInfo);
+        ShippingAddressPage.Instance.ClickContinueButton();
+        ShippingPaymentPage.Instance.ClickTopContinueButton();
+
+        ValidateOrderSummary(itemPrice, clientPurchaseInfo);
+    }
+
+    public void ValidateClientPurchaseInfo(ClientPurchaseInfo clientPurchaseInfo)
+    {
+        foreach (var currentStrategy in _orderpurchaseStrategies)
         {
-            _orderpurchaseStrategies = orderpurchaseStrategies;
+            currentStrategy.ValidateClientPurchaseInfo(clientPurchaseInfo);
         }
+    }
 
-        public void PurchaseItem(string itemUrl, string itemPrice, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
+    public void ValidateOrderSummary(string itemPrice, ClientPurchaseInfo clientPurchaseInfo)
+    {
+        foreach (var currentStrategy in _orderpurchaseStrategies)
         {
-            ValidateClientPurchaseInfo(clientPurchaseInfo);
-
-            ItemPage.Instance.Navigate(itemUrl);
-            ItemPage.Instance.ClickBuyNowButton();
-            PreviewShoppingCartPage.Instance.ClickProceedToCheckoutButton();
-            SignInPage.Instance.Login(clientLoginInfo.Email, clientLoginInfo.Password);
-            ShippingAddressPage.Instance.FillShippingInfo(clientPurchaseInfo);
-            ShippingAddressPage.Instance.ClickDifferentBillingCheckBox(clientPurchaseInfo);
-            ShippingAddressPage.Instance.ClickContinueButton();
-            ShippingPaymentPage.Instance.ClickBottomContinueButton();
-            ShippingAddressPage.Instance.FillBillingInfo(clientPurchaseInfo);
-            ShippingAddressPage.Instance.ClickContinueButton();
-            ShippingPaymentPage.Instance.ClickTopContinueButton();
-
-            ValidateOrderSummary(itemPrice, clientPurchaseInfo);
-        }
-
-        public void ValidateClientPurchaseInfo(ClientPurchaseInfo clientPurchaseInfo)
-        {
-            foreach (var currentStrategy in _orderpurchaseStrategies)
-            {
-                currentStrategy.ValidateClientPurchaseInfo(clientPurchaseInfo);
-            }
-        }
-
-        public void ValidateOrderSummary(string itemPrice, ClientPurchaseInfo clientPurchaseInfo)
-        {
-            foreach (var currentStrategy in _orderpurchaseStrategies)
-            {
-                currentStrategy.AssertOrderSummary(itemPrice, clientPurchaseInfo);
-            }
+            currentStrategy.AssertOrderSummary(itemPrice, clientPurchaseInfo);
         }
     }
 }

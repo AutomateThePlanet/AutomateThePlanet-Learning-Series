@@ -16,58 +16,57 @@ using System.Reflection;
 using PatternsInAutomatedTests.Advanced.Observer.Advanced.DotNetEvents;
 using ObserverDesignPatternClassicImplementation.Attributes;
 
-namespace ObserverDesignPatternEventsDelegates.Behaviors
+namespace ObserverDesignPatternEventsDelegates.Behaviors;
+
+public class BrowserLaunchTestBehaviorObserver : BaseTestBehaviorObserver
 {
-    public class BrowserLaunchTestBehaviorObserver : BaseTestBehaviorObserver
+    protected override void PreTestInit(object sender, TestExecutionEventArgs e)
     {
-        protected override void PreTestInit(object sender, TestExecutionEventArgs e)
+        var browserType = GetExecutionBrowser(e.MemberInfo);
+        Driver.StartBrowser(browserType);
+    }
+
+    protected override void PostTestCleanup(object sender, TestExecutionEventArgs e)
+    {
+        Driver.StopBrowser();
+    }
+
+    private BrowserTypes GetExecutionBrowser(MemberInfo memberInfo)
+    {
+        var result = BrowserTypes.Firefox;
+        var classBrowserType = GetExecutionBrowserClassLevel(memberInfo.DeclaringType);
+        var methodBrowserType = GetExecutionBrowserMethodLevel(memberInfo);
+        if (methodBrowserType != BrowserTypes.NotSet)
         {
-            var browserType = GetExecutionBrowser(e.MemberInfo);
-            Driver.StartBrowser(browserType);
+            result = methodBrowserType;
+        }
+        else if (classBrowserType != BrowserTypes.NotSet)
+        {
+            result = classBrowserType;
         }
 
-        protected override void PostTestCleanup(object sender, TestExecutionEventArgs e)
+        return result;
+    }
+
+    private BrowserTypes GetExecutionBrowserMethodLevel(MemberInfo memberInfo)
+    {
+        var executionBrowserAttribute = memberInfo.GetCustomAttribute<ExecutionBrowserAttribute>(true);
+        if (executionBrowserAttribute != null)
         {
-            Driver.StopBrowser();
+            return executionBrowserAttribute.BrowserType;
         }
 
-        private BrowserTypes GetExecutionBrowser(MemberInfo memberInfo)
-        {
-            var result = BrowserTypes.Firefox;
-            var classBrowserType = GetExecutionBrowserClassLevel(memberInfo.DeclaringType);
-            var methodBrowserType = GetExecutionBrowserMethodLevel(memberInfo);
-            if (methodBrowserType != BrowserTypes.NotSet)
-            {
-                result = methodBrowserType;
-            }
-            else if (classBrowserType != BrowserTypes.NotSet)
-            {
-                result = classBrowserType;
-            }
+        return BrowserTypes.NotSet;
+    }
 
-            return result;
+    private BrowserTypes GetExecutionBrowserClassLevel(Type type)
+    {
+        var executionBrowserAttribute = type.GetCustomAttribute<ExecutionBrowserAttribute>(true);
+        if (executionBrowserAttribute != null)
+        {
+            return executionBrowserAttribute.BrowserType;
         }
 
-        private BrowserTypes GetExecutionBrowserMethodLevel(MemberInfo memberInfo)
-        {
-            var executionBrowserAttribute = memberInfo.GetCustomAttribute<ExecutionBrowserAttribute>(true);
-            if (executionBrowserAttribute != null)
-            {
-                return executionBrowserAttribute.BrowserType;
-            }
-
-            return BrowserTypes.NotSet;
-        }
-
-        private BrowserTypes GetExecutionBrowserClassLevel(Type type)
-        {
-            var executionBrowserAttribute = type.GetCustomAttribute<ExecutionBrowserAttribute>(true);
-            if (executionBrowserAttribute != null)
-            {
-                return executionBrowserAttribute.BrowserType;
-            }
-
-            return BrowserTypes.NotSet;
-        }
+        return BrowserTypes.NotSet;
     }
 }

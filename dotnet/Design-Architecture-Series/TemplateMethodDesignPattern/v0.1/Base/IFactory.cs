@@ -12,10 +12,9 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace TemplateMethodDesignPattern.Base.First
+namespace TemplateMethodDesignPattern.Base.First;
+
+public interface IFactory<T>
 {
-    public interface IFactory<T>
-    {
-        T Create();
-    }
+    T Create();
 }

@@ -12,25 +12,24 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace SpecificationDesignPattern.Specifications.Core
+namespace SpecificationDesignPattern.Specifications.Core;
+
+public abstract class Specification<TEntity> : ISpecification<TEntity>
 {
-    public abstract class Specification<TEntity> : ISpecification<TEntity>
+    public abstract bool IsSatisfiedBy(TEntity entity);
+
+    public ISpecification<TEntity> And(ISpecification<TEntity> other)
     {
-        public abstract bool IsSatisfiedBy(TEntity entity);
+        return new AndSpecification<TEntity>(this, other);
+    }
 
-        public ISpecification<TEntity> And(ISpecification<TEntity> other)
-        {
-            return new AndSpecification<TEntity>(this, other);
-        }
+    public ISpecification<TEntity> Or(ISpecification<TEntity> other)
+    {
+        return new OrSpecification<TEntity>(this, other);
+    }
 
-        public ISpecification<TEntity> Or(ISpecification<TEntity> other)
-        {
-            return new OrSpecification<TEntity>(this, other);
-        }
-
-        public ISpecification<TEntity> Not()
-        {
-            return new NotSpecification<TEntity>(this);
-        }
+    public ISpecification<TEntity> Not()
+    {
+        return new NotSpecification<TEntity>(this);
     }
 }

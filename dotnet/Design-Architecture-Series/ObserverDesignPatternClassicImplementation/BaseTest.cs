@@ -16,93 +16,92 @@ using ObserverDesignPatternClassicImplementation.Behaviors;
 using OpenQA.Selenium;
 using System.Reflection;
 
-namespace ObserverDesignPatternClassicImplementation
+namespace ObserverDesignPatternClassicImplementation;
+
+[TestClass]
+public class BaseTest
 {
-    [TestClass]
-    public class BaseTest
+    private readonly ITestExecutionSubject _currentTestExecutionSubject;
+    private TestContext _testContextInstance;
+
+    public BaseTest()
     {
-        private readonly ITestExecutionSubject _currentTestExecutionSubject;
-        private TestContext _testContextInstance;
+        _currentTestExecutionSubject = new MsTestExecutionSubject();
+        InitializeTestExecutionBehaviorObservers(_currentTestExecutionSubject);
+        var memberInfo = MethodBase.GetCurrentMethod();
+        _currentTestExecutionSubject.TestInstantiated(memberInfo);
+    }
 
-        public BaseTest()
+    public string BaseUrl { get; set; }
+
+    public IWebDriver Browser { get; set; }
+
+    public TestContext TestContext
+    {
+        get
         {
-            _currentTestExecutionSubject = new MsTestExecutionSubject();
-            InitializeTestExecutionBehaviorObservers(_currentTestExecutionSubject);
-            var memberInfo = MethodBase.GetCurrentMethod();
-            _currentTestExecutionSubject.TestInstantiated(memberInfo);
+            return _testContextInstance;
         }
-
-        public string BaseUrl { get; set; }
-
-        public IWebDriver Browser { get; set; }
-
-        public TestContext TestContext
+        set
         {
-            get
-            {
-                return _testContextInstance;
-            }
-            set
-            {
-                _testContextInstance = value;
-            }
+            _testContextInstance = value;
         }
+    }
 
-        public string TestName
+    public string TestName
+    {
+        get
         {
-            get
-            {
-                return TestContext.TestName;
-            }
+            return TestContext.TestName;
         }
+    }
 
-        [ClassInitialize]
-        public static void OnClassInitialize(TestContext context)
-        {
-        }
+    [ClassInitialize]
+    public static void OnClassInitialize(TestContext context)
+    {
+    }
 
-        [ClassCleanup]
-        public static void OnClassCleanup()
-        {
-        }
+    [ClassCleanup]
+    public static void OnClassCleanup()
+    {
+    }
 
-        [TestInitialize]
-        public void CoreTestInit()
-        {
-            var memberInfo = GetCurrentExecutionMethodInfo();
-            _currentTestExecutionSubject.PreTestInit(TestContext, memberInfo);
-            TestInit();
-            _currentTestExecutionSubject.PostTestInit(TestContext, memberInfo);
-        }
+    [TestInitialize]
+    public void CoreTestInit()
+    {
+        var memberInfo = GetCurrentExecutionMethodInfo();
+        _currentTestExecutionSubject.PreTestInit(TestContext, memberInfo);
+        TestInit();
+        _currentTestExecutionSubject.PostTestInit(TestContext, memberInfo);
+    }
 
-        [TestCleanup]
-        public void CoreTestCleanup()
-        {
-            var memberInfo = GetCurrentExecutionMethodInfo();
-            _currentTestExecutionSubject.PreTestCleanup(TestContext, memberInfo);
-            TestCleanup();
-            _currentTestExecutionSubject.PostTestCleanup(TestContext, memberInfo);
-        }
+    [TestCleanup]
+    public void CoreTestCleanup()
+    {
+        var memberInfo = GetCurrentExecutionMethodInfo();
+        _currentTestExecutionSubject.PreTestCleanup(TestContext, memberInfo);
+        TestCleanup();
+        _currentTestExecutionSubject.PostTestCleanup(TestContext, memberInfo);
+    }
 
-        public virtual void TestInit()
-        {
-        }
+    public virtual void TestInit()
+    {
+    }
 
-        public virtual void TestCleanup()
-        {
-        }
+    public virtual void TestCleanup()
+    {
+    }
 
-        private MethodInfo GetCurrentExecutionMethodInfo()
-        {
-            var memberInfo = GetType().GetMethod(TestContext.TestName);
-            return memberInfo;
-        }
+    private MethodInfo GetCurrentExecutionMethodInfo()
+    {
+        var memberInfo = GetType().GetMethod(TestContext.TestName);
+        return memberInfo;
+    }
 
-        private void InitializeTestExecutionBehaviorObservers(ITestExecutionSubject currentTestExecutionSubject)
-        {
-            new AssociatedBugTestBehaviorObserver(currentTestExecutionSubject);
-            new BrowserLaunchTestBehaviorObserver(currentTestExecutionSubject);
-            new OwnerTestBehaviorObserver(currentTestExecutionSubject);
-        }
+    private void InitializeTestExecutionBehaviorObservers(ITestExecutionSubject currentTestExecutionSubject)
+    {
+        new AssociatedBugTestBehaviorObserver(currentTestExecutionSubject);
+        new BrowserLaunchTestBehaviorObserver(currentTestExecutionSubject);
+        new OwnerTestBehaviorObserver(currentTestExecutionSubject);
     }
 }

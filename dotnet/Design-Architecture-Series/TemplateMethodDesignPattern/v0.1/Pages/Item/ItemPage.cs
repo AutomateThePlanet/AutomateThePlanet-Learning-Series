@@ -15,22 +15,21 @@
 using TemplateMethodDesignPattern.Base.First;
 using OpenQA.Selenium;
 
-namespace TemplateMethodDesignPattern.Pages.Item.First
+namespace TemplateMethodDesignPattern.Pages.Item.First;
+
+public partial class ItemPage : WebPage, IItemPage
 {
-    public partial class ItemPage : WebPage, IItemPage
+    public ItemPage(IWebDriver driver)
+        : base(driver)
     {
-        public ItemPage(IWebDriver driver)
-            : base(driver)
-        {
-        }
-
-        protected override string Url => "http://www.ebay.com/itm/";
-
-        public void ClickBuyNowButton()
-        {
-            BuyNowButton.Click();
-        }
-
-        public double GetPrice() => double.Parse(Price.Text);
     }
+
+    protected override string Url => "http://www.ebay.com/itm/";
+
+    public void ClickBuyNowButton()
+    {
+        BuyNowButton.Click();
+    }
+
+    public double GetPrice() => double.Parse(Price.Text);
 }

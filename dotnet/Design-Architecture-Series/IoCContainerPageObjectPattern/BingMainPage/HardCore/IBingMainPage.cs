@@ -15,29 +15,28 @@
 using IoCContainerPageObjectPattern.Base;
 using IoCContainerPageObjectPattern.Enums;
 
-namespace IoCContainerPageObjectPattern.BingMainPage.HardCore
+namespace IoCContainerPageObjectPattern.BingMainPage.HardCore;
+
+public interface IBingMainPage<TM, TV>
+: IPage<TM, TV>
+    where TM : BasePageElementMap, new()
+    where TV : BasePageValidator<TM>, new()
 {
-    public interface IBingMainPage<TM, TV>
-    : IPage<TM, TV>
-        where TM : BasePageElementMap, new()
-        where TV : BasePageValidator<TM>, new()
-    {
-        void Search(string textToType);
+    void Search(string textToType);
 
-        void ClickImages();
+    void ClickImages();
 
-        void SetSize(Sizes size);
+    void SetSize(Sizes size);
 
-        void SetColor(Colors color);
+    void SetColor(Colors color);
 
-        void SetTypes(Types type);
+    void SetTypes(Types type);
 
-        void SetLayout(Layouts layout);
+    void SetLayout(Layouts layout);
 
-        void SetPeople(People people);
+    void SetPeople(People people);
 
-        void SetDate(Dates date);
+    void SetDate(Dates date);
 
-        void SetLicense(Licenses license);
-    }
+    void SetLicense(Licenses license);
 }

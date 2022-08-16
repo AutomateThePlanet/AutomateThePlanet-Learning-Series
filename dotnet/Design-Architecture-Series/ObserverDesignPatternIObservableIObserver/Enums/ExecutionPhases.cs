@@ -11,14 +11,13 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver.Enums
+namespace PatternsInAutomatedTests.Advanced.Observer.Advanced.ObservableObserver.Enums;
+
+public enum ExecutionPhases
 {
-    public enum ExecutionPhases
-    {
-        TestInstantiated,
-        PreTestInit,
-        PostTestInit,
-        PreTestCleanup,
-        PostTestCleanup
-    }
+    TestInstantiated,
+    PreTestInit,
+    PostTestInit,
+    PreTestCleanup,
+    PostTestCleanup
 }

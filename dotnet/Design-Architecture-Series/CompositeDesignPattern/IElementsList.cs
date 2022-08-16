@@ -13,12 +13,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace CompositeDesignPattern
+namespace CompositeDesignPattern;
+
+public interface IElementsList : IEnumerable<IElement>, IStyleAssertedElement
 {
-    public interface IElementsList : IEnumerable<IElement>, IStyleAssertedElement
-    {
-        IElement this[int i] { get; }
-        int Count();
-        void ForEach(Action<IElement> action);
-    }
+    IElement this[int i] { get; }
+    int Count();
+    void ForEach(Action<IElement> action);
 }

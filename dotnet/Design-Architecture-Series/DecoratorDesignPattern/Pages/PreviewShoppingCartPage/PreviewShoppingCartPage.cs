@@ -14,18 +14,17 @@
 
 using DecoratorDesignPattern.Core;
 
-namespace DecoratorDesignPattern.Pages.PreviewShoppingCartPage
-{
-    public class PreviewShoppingCartPage : BasePageSingleton<PreviewShoppingCartPage, PreviewShoppingCartPageMap>
-    {
-        public void ClickProceedToCheckoutButton()
-        {
-            Map.ProceedToCheckoutButton.Click();
-        }
+namespace DecoratorDesignPattern.Pages.PreviewShoppingCartPage;
 
-        public void CheckOrderContainsGift()
-        {
-            Map.ThisOrderContainsGiftCheckbox.Click();
-        }
+public class PreviewShoppingCartPage : BasePageSingleton<PreviewShoppingCartPage, PreviewShoppingCartPageMap>
+{
+    public void ClickProceedToCheckoutButton()
+    {
+        Map.ProceedToCheckoutButton.Click();
+    }
+
+    public void CheckOrderContainsGift()
+    {
+        Map.ThisOrderContainsGiftCheckbox.Click();
     }
 }

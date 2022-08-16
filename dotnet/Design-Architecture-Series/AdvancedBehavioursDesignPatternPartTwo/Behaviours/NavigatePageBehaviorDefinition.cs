@@ -14,16 +14,15 @@
 
 using AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core;
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
-{
-    public class NavigatePageBehaviorDefinition : BehaviorDefinition
-    {
-        public NavigatePageBehaviorDefinition(string expectedUrl)
-            : base(typeof(NavigatePageBehavior))
-        {
-            ExpectedUrl = expectedUrl;
-        }
+namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours;
 
-        internal string ExpectedUrl { get; private set; }
+public class NavigatePageBehaviorDefinition : BehaviorDefinition
+{
+    public NavigatePageBehaviorDefinition(string expectedUrl)
+        : base(typeof(NavigatePageBehavior))
+    {
+        ExpectedUrl = expectedUrl;
     }
+
+    internal string ExpectedUrl { get; private set; }
 }

@@ -14,9 +14,8 @@
 
 using DecoratorDesignPattern.Core;
 
-namespace DecoratorDesignPattern.Pages.PlaceOrderPage
+namespace DecoratorDesignPattern.Pages.PlaceOrderPage;
+
+public class PlaceOrderPage : BasePageSingleton<PlaceOrderPage, PlaceOrderPageMap, PlaceOrderPageValidator>
 {
-    public class PlaceOrderPage : BasePageSingleton<PlaceOrderPage, PlaceOrderPageMap, PlaceOrderPageValidator>
-    {
-    }
 }

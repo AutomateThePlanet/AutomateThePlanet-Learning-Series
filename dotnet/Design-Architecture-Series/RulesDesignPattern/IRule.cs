@@ -14,10 +14,9 @@
 
 using System;
 
-namespace RulesDesignPattern
+namespace RulesDesignPattern;
+
+public interface IRule
 {
-    public interface IRule
-    {
-        IRuleResult Eval();
-    }
+    IRuleResult Eval();
 }

@@ -12,12 +12,11 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace IoCContainerPageObjectPattern.Enums
+namespace IoCContainerPageObjectPattern.Enums;
+
+public enum People
 {
-    public enum People
-    {
-        All,
-        JustFaces,
-        HeadShoulders
-    }
+    All,
+    JustFaces,
+    HeadShoulders
 }

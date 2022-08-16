@@ -12,18 +12,17 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedStrategyDesignPattern.Pages.ShippingPaymentPage
-{
-    public class ShippingPaymentPage : Core.BasePageSingleton<ShippingPaymentPage, ShippingPaymentPageMap>
-    {
-        public void ClickBottomContinueButton()
-        {
-            Map.BottomContinueButton.Click();
-        }
+namespace AdvancedStrategyDesignPattern.Pages.ShippingPaymentPage;
 
-        public void ClickTopContinueButton()
-        {
-            Map.TopContinueButton.Click();
-        }
+public class ShippingPaymentPage : Core.BasePageSingleton<ShippingPaymentPage, ShippingPaymentPageMap>
+{
+    public void ClickBottomContinueButton()
+    {
+        Map.BottomContinueButton.Click();
+    }
+
+    public void ClickTopContinueButton()
+    {
+        Map.TopContinueButton.Click();
     }
 }

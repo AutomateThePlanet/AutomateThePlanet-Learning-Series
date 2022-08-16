@@ -12,42 +12,41 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core
+namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core;
+
+public class WaitableAssertableActionBehaviour : IBehaviour
 {
-    public class WaitableAssertableActionBehaviour : IBehaviour
+    public void Execute()
     {
-        public void Execute()
-        {
-            PerformPreActWait();
-            PerformPreActAssert();
-            PerformAct();
-            PerformPostActAssert();
-            PerformPostActWait();
-            PerformPostActWaitAssert();
-        }
+        PerformPreActWait();
+        PerformPreActAssert();
+        PerformAct();
+        PerformPostActAssert();
+        PerformPostActWait();
+        PerformPostActWaitAssert();
+    }
 
-        protected virtual void PerformPreActWait()
-        {
-        }
+    protected virtual void PerformPreActWait()
+    {
+    }
 
-        protected virtual void PerformPreActAssert()
-        {
-        }
+    protected virtual void PerformPreActAssert()
+    {
+    }
 
-        protected virtual void PerformAct()
-        {
-        }
+    protected virtual void PerformAct()
+    {
+    }
 
-        protected virtual void PerformPostActAssert()
-        {
-        }
+    protected virtual void PerformPostActAssert()
+    {
+    }
 
-        protected virtual void PerformPostActWait()
-        {
-        }
+    protected virtual void PerformPostActWait()
+    {
+    }
 
-        protected virtual void PerformPostActWaitAssert()
-        {
-        }
+    protected virtual void PerformPostActWaitAssert()
+    {
     }
 }

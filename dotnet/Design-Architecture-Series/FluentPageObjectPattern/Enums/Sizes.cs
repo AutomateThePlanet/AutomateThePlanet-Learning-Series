@@ -12,14 +12,13 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace FluentPageObjectPattern.Enums
+namespace FluentPageObjectPattern.Enums;
+
+public enum Sizes
 {
-    public enum Sizes
-    {
-        All,
-        Small,
-        Medium,
-        Large,
-        ExtraLarge
-    }
+    All,
+    Small,
+    Medium,
+    Large,
+    ExtraLarge
 }

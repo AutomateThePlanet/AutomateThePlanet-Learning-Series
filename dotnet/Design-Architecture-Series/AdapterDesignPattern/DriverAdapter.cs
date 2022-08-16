@@ -17,64 +17,63 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SE = SeleniumExtras.WaitHelpers;
 
-namespace AdapterDesignPattern
+namespace AdapterDesignPattern;
+
+public class DriverAdapter : IDriver
 {
-    public class DriverAdapter : IDriver
+    private readonly IWebDriver _driver;
+    private readonly WebDriverWait _webDriverWait;
+
+    public DriverAdapter(IWebDriver driver)
     {
-        private readonly IWebDriver _driver;
-        private readonly WebDriverWait _webDriverWait;
+        _driver = driver;
+        var timeout = TimeSpan.FromSeconds(30);
+        var sleepInterval = TimeSpan.FromSeconds(2);
+        _webDriverWait = new WebDriverWait(new SystemClock(), _driver, timeout, sleepInterval);
+    }
 
-        public DriverAdapter(IWebDriver driver)
+    public void GoToUrl(string url)
+    {
+        _driver.Navigate().GoToUrl(url);
+    }
+
+    public Uri Url
+    {
+        get => new Uri(_driver.Url);
+        set => _driver.Url = value.ToString();
+    }
+
+    public IElement FindElement(By locator)
+    {
+        IWebElement nativeElement =
+            _webDriverWait.Until(SE.ExpectedConditions.ElementExists(locator));
+
+        return new ElementAdapter(_driver, nativeElement, locator);
+    }
+
+    public IEnumerable<IElement> FindElements(By locator)
+    {
+        ReadOnlyCollection<IWebElement> nativeElements =
+            _webDriverWait.Until(SE.ExpectedConditions.PresenceOfAllElementsLocatedBy(locator));
+        var elements = new List<IElement>();
+        foreach (var nativeElement in nativeElements)
         {
-            _driver = driver;
-            var timeout = TimeSpan.FromSeconds(30);
-            var sleepInterval = TimeSpan.FromSeconds(2);
-            _webDriverWait = new WebDriverWait(new SystemClock(), _driver, timeout, sleepInterval);
+            IElement element = new ElementAdapter(_driver, nativeElement, locator);
+            elements.Add(element);
         }
 
-        public void GoToUrl(string url)
-        {
-            _driver.Navigate().GoToUrl(url);
-        }
+        return elements;
+    }
 
-        public Uri Url
-        {
-            get => new Uri(_driver.Url);
-            set => _driver.Url = value.ToString();
-        }
+    public void WaitForAjax()
+    {
+        var js = (IJavaScriptExecutor)_driver;
+        _webDriverWait.Until(wd => js.ExecuteScript("return jQuery.active").ToString() == "0");
+    }
 
-        public IElement FindElement(By locator)
-        {
-            IWebElement nativeElement =
-                _webDriverWait.Until(SE.ExpectedConditions.ElementExists(locator));
-
-            return new ElementAdapter(_driver, nativeElement, locator);
-        }
-
-        public IEnumerable<IElement> FindElements(By locator)
-        {
-            ReadOnlyCollection<IWebElement> nativeElements =
-                _webDriverWait.Until(SE.ExpectedConditions.PresenceOfAllElementsLocatedBy(locator));
-            var elements = new List<IElement>();
-            foreach (var nativeElement in nativeElements)
-            {
-                IElement element = new ElementAdapter(_driver, nativeElement, locator);
-                elements.Add(element);
-            }
-
-            return elements;
-        }
-
-        public void WaitForAjax()
-        {
-            var js = (IJavaScriptExecutor)_driver;
-            _webDriverWait.Until(wd => js.ExecuteScript("return jQuery.active").ToString() == "0");
-        }
-
-        public void Close()
-        {
-            _driver.Quit();
-            _driver.Dispose();
-        }
+    public void Close()
+    {
+        _driver.Quit();
+        _driver.Dispose();
     }
 }

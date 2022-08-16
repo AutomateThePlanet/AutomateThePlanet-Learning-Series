@@ -16,22 +16,21 @@ using AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core;
 using AdvancedBehavioursDesignPatternPartTwo.Pages.ItemPage;
 using Unity;
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
+namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours;
+
+public class ItemPageNavigationBehaviour : ActionBehaviour
 {
-    public class ItemPageNavigationBehaviour : ActionBehaviour
+    private readonly ItemPage _itemPage;
+    private readonly string _itemUrl;
+
+    public ItemPageNavigationBehaviour(string itemUrl)
     {
-        private readonly ItemPage _itemPage;
-        private readonly string _itemUrl;
+        _itemPage = Base.UnityContainerFactory.GetContainer().Resolve<ItemPage>();
+        _itemUrl = itemUrl;
+    }
 
-        public ItemPageNavigationBehaviour(string itemUrl)
-        {
-            _itemPage = Base.UnityContainerFactory.GetContainer().Resolve<ItemPage>();
-            _itemUrl = itemUrl;
-        }
-
-        protected override void PerformAct()
-        {
-            _itemPage.Navigate(_itemUrl);
-        }
+    protected override void PerformAct()
+    {
+        _itemPage.Navigate(_itemUrl);
     }
 }

@@ -17,71 +17,70 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
-namespace SingletonDesignPattern.Core
+namespace SingletonDesignPattern.Core;
+
+public static class Driver
 {
-    public static class Driver
+    private static WebDriverWait _browserWait;
+
+    private static IWebDriver _browser;
+
+    public static IWebDriver Browser
     {
-        private static WebDriverWait _browserWait;
-
-        private static IWebDriver _browser;
-
-        public static IWebDriver Browser
+        get
         {
-            get
+            if (_browser == null)
             {
-                if (_browser == null)
-                {
-                    throw new NullReferenceException("The WebDriver browser instance was not initialized. You should first call the method Start.");
-                }
+                throw new NullReferenceException("The WebDriver browser instance was not initialized. You should first call the method Start.");
+            }
 
-                return _browser;
-            }
-            private set
+            return _browser;
+        }
+        private set
+        {
+            _browser = value;
+        }
+    }
+
+    public static WebDriverWait BrowserWait
+    {
+        get
+        {
+            if (_browserWait == null || _browser == null)
             {
-                _browser = value;
+                throw new NullReferenceException("The WebDriver browser wait instance was not initialized. You should first call the method Start.");
             }
+
+            return _browserWait;
+        }
+        private set
+        {
+            _browserWait = value;
+        }
+    }
+
+    public static void StartBrowser(BrowserTypes browserType = BrowserTypes.Firefox, int defaultTimeOut = 30)
+    {
+        switch (browserType)
+        {
+            case BrowserTypes.Firefox:
+                Browser = new FirefoxDriver();
+                break;
+            case BrowserTypes.InternetExplorer:
+                break;
+            case BrowserTypes.Chrome:
+                break;
+            default:
+                break;
         }
 
-        public static WebDriverWait BrowserWait
-        {
-            get
-            {
-                if (_browserWait == null || _browser == null)
-                {
-                    throw new NullReferenceException("The WebDriver browser wait instance was not initialized. You should first call the method Start.");
-                }
+        BrowserWait = new WebDriverWait(Browser, TimeSpan.FromSeconds(defaultTimeOut));
+    }
 
-                return _browserWait;
-            }
-            private set
-            {
-                _browserWait = value;
-            }
-        }
-
-        public static void StartBrowser(BrowserTypes browserType = BrowserTypes.Firefox, int defaultTimeOut = 30)
-        {
-            switch (browserType)
-            {
-                case BrowserTypes.Firefox:
-                    Browser = new FirefoxDriver();
-                    break;
-                case BrowserTypes.InternetExplorer:
-                    break;
-                case BrowserTypes.Chrome:
-                    break;
-                default:
-                    break;
-            }
-
-            BrowserWait = new WebDriverWait(Browser, TimeSpan.FromSeconds(defaultTimeOut));
-        }
-
-        public static void StopBrowser()
-        {
-            Browser.Quit();
-            Browser = null;
-            BrowserWait = null;
-        }
+    public static void StopBrowser()
+    {
+        Browser.Quit();
+        Browser = null;
+        BrowserWait = null;
     }
 }

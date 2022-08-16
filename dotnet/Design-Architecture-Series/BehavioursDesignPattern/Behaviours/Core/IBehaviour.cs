@@ -12,16 +12,15 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace BehavioursDesignPattern.Behaviours.Core
+namespace BehavioursDesignPattern.Behaviours.Core;
+
+public interface IBehaviour
 {
-    public interface IBehaviour
-    {
-        void PerformAct();
+    void PerformAct();
 
-        void PerformPostAct();
+    void PerformPostAct();
 
-        void PerformPostActAsserts();
+    void PerformPostActAsserts();
 
-        void PerformPreActAsserts();
-    }
+    void PerformPreActAsserts();
 }

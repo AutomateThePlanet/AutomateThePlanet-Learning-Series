@@ -16,48 +16,47 @@ using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium;
 
-namespace LazyLoadingDesignPattern
+namespace LazyLoadingDesignPattern;
+
+public class ElementsList : IElementsList
 {
-    public class ElementsList : IElementsList
+    private readonly By _by;
+    private readonly ElementFinderService _elementFinder;
+    private readonly IWebDriver _driver;
+
+    public ElementsList(IWebDriver driver, By by)
     {
-        private readonly By _by;
-        private readonly ElementFinderService _elementFinder;
-        private readonly IWebDriver _driver;
+        _by = by;
+        _elementFinder = new ElementFinderService(driver);
+        _driver = driver;
+    }
 
-        public ElementsList(IWebDriver driver, By by)
+    public IElement this[int i] => GetAndWaitWebDriverElements().ElementAt(i);
+
+    public IEnumerator<IElement> GetEnumerator() => GetAndWaitWebDriverElements().GetEnumerator();
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+    public int Count()
+    {
+        return _elementFinder.FindAll(_by).Count();
+    }
+
+    public void ForEach(Action<IElement> action)
+    {
+        foreach (var element in this)
         {
-            _by = by;
-            _elementFinder = new ElementFinderService(driver);
-            _driver = driver;
+            action(element);
         }
+    }
 
-        public IElement this[int i] => GetAndWaitWebDriverElements().ElementAt(i);
-
-        public IEnumerator<IElement> GetEnumerator() => GetAndWaitWebDriverElements().GetEnumerator();
-
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-
-        public int Count()
+    private IEnumerable<IElement> GetAndWaitWebDriverElements()
+    {
+        var nativeElements = _elementFinder.FindAll(_by);
+        foreach (var nativeElement in nativeElements)
         {
-            return _elementFinder.FindAll(_by).Count();
-        }
-
-        public void ForEach(Action<IElement> action)
-        {
-            foreach (var element in this)
-            {
-                action(element);
-            }
-        }
-
-        private IEnumerable<IElement> GetAndWaitWebDriverElements()
-        {
-            var nativeElements = _elementFinder.FindAll(_by);
-            foreach (var nativeElement in nativeElements)
-            {
-                IElement element = new ElementAdapter(_driver, _by);
-                yield return element;
-            }
+            IElement element = new ElementAdapter(_driver, _by);
+            yield return element;
         }
     }
 }

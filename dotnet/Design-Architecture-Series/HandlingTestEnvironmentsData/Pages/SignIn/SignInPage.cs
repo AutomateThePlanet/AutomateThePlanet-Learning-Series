@@ -15,20 +15,19 @@
 using HandlingTestEnvironmentsData.Base.Second;
 using OpenQA.Selenium;
 
-namespace HandlingTestEnvironmentsData.Pages.SignIn.Second
+namespace HandlingTestEnvironmentsData.Pages.SignIn.Second;
+
+public partial class SignInPage : WebPage
 {
-    public partial class SignInPage : WebPage
+    public SignInPage(IWebDriver driver)
+        : base(driver)
     {
-        public SignInPage(IWebDriver driver)
-            : base(driver)
-        {
-        }
+    }
 
-        protected override string Url => string.Empty;
+    protected override string Url => string.Empty;
 
-        public void ClickContinueAsGuestButton()
-        {
-            ContinueAsGuestButton.Click();
-        }
+    public void ClickContinueAsGuestButton()
+    {
+        ContinueAsGuestButton.Click();
     }
 }

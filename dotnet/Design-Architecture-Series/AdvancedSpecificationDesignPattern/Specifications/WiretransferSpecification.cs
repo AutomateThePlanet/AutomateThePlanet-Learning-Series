@@ -16,20 +16,19 @@ using System;
 using AdvancedSpecificationDesignPattern.Data;
 using AdvancedSpecificationDesignPattern.Specifications.Core;
 
-namespace AdvancedSpecificationDesignPattern.Specifications
+namespace AdvancedSpecificationDesignPattern.Specifications;
+
+public class WiretransferSpecification : Specification<PurchaseTestInput>
 {
-    public class WiretransferSpecification : Specification<PurchaseTestInput>
+    private readonly PurchaseTestInput _purchaseTestInput;
+
+    public WiretransferSpecification(PurchaseTestInput purchaseTestInput)
     {
-        private readonly PurchaseTestInput _purchaseTestInput;
+        _purchaseTestInput = purchaseTestInput;
+    }
 
-        public WiretransferSpecification(PurchaseTestInput purchaseTestInput)
-        {
-            _purchaseTestInput = purchaseTestInput;
-        }
-
-        public override bool IsSatisfiedBy(PurchaseTestInput entity)
-        {
-            return _purchaseTestInput.IsWiretransfer;
-        }
+    public override bool IsSatisfiedBy(PurchaseTestInput entity)
+    {
+        return _purchaseTestInput.IsWiretransfer;
     }
 }

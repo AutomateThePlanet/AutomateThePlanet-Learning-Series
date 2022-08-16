@@ -16,25 +16,24 @@ using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PatternsInAutomatedTests.Advanced.Observer.Advanced.DotNetEvents;
 
-namespace ObserverDesignPatternEventsDelegates.Behaviors
-{
-    public class OwnerTestBehaviorObserver : BaseTestBehaviorObserver
-    {
-        protected override void PreTestInit(object sender, TestExecutionEventArgs e)
-        {
-            ThrowExceptionIfOwnerAttributeNotSet(e.MemberInfo);
-        }
+namespace ObserverDesignPatternEventsDelegates.Behaviors;
 
-        private void ThrowExceptionIfOwnerAttributeNotSet(MemberInfo memberInfo)
+public class OwnerTestBehaviorObserver : BaseTestBehaviorObserver
+{
+    protected override void PreTestInit(object sender, TestExecutionEventArgs e)
+    {
+        ThrowExceptionIfOwnerAttributeNotSet(e.MemberInfo);
+    }
+
+    private void ThrowExceptionIfOwnerAttributeNotSet(MemberInfo memberInfo)
+    {
+        try
         {
-            try
-            {
-                memberInfo.GetCustomAttribute<OwnerAttribute>(true);
-            }
-            catch
-            {
-                throw new Exception("You have to set Owner of your test before you run it");
-            }
+            memberInfo.GetCustomAttribute<OwnerAttribute>(true);
+        }
+        catch
+        {
+            throw new Exception("You have to set Owner of your test before you run it");
         }
     }
 }

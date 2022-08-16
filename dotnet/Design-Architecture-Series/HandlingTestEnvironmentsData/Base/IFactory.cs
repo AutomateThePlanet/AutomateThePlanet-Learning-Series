@@ -12,10 +12,9 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace HandlingTestEnvironmentsData.Base.Second
+namespace HandlingTestEnvironmentsData.Base.Second;
+
+public interface IFactory<T>
 {
-    public interface IFactory<T>
-    {
-        T Create();
-    }
+    T Create();
 }

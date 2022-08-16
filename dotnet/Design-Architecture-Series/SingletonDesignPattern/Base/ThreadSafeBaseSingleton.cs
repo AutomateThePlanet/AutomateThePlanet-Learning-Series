@@ -12,36 +12,35 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace SingletonDesignPattern.Base
+namespace SingletonDesignPattern.Base;
+
+public abstract class ThreadSafeBaseSingleton<T>
+    where T : new()
 {
-    public abstract class ThreadSafeBaseSingleton<T>
-        where T : new()
+    private static readonly object LockObject = new object();
+
+    private static T _instance;
+
+    private ThreadSafeBaseSingleton()
     {
-        private static readonly object LockObject = new object();
+    }
 
-        private static T _instance;
-
-        private ThreadSafeBaseSingleton()
+    public static T Instance
+    {
+        get
         {
-        }
-
-        public static T Instance
-        {
-            get
+            if (_instance == null)
             {
-                if (_instance == null)
+                lock (LockObject)
                 {
-                    lock (LockObject)
+                    if (_instance == null)
                     {
-                        if (_instance == null)
-                        {
-                            _instance = new T();
-                        }
+                        _instance = new T();
                     }
                 }
-
-                return _instance;
             }
+
+            return _instance;
         }
     }
 }

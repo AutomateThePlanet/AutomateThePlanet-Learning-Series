@@ -12,16 +12,15 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedSpecificationDesignPattern.Data
+namespace AdvancedSpecificationDesignPattern.Data;
+
+public class PurchaseTestInput
 {
-    public class PurchaseTestInput
-    {
-        public bool IsWiretransfer { get; set; }
+    public bool IsWiretransfer { get; set; }
 
-        public bool IsPromotionalPurchase { get; set; }
+    public bool IsPromotionalPurchase { get; set; }
 
-        public string CreditCardNumber { get; set; }
+    public string CreditCardNumber { get; set; }
 
-        public decimal TotalPrice { get; set; }
-    }
+    public decimal TotalPrice { get; set; }
 }

@@ -15,20 +15,19 @@
 using AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core;
 using System;
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
+namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours;
+
+public class NavigatePageBehavior : ActionBehaviour
 {
-    public class NavigatePageBehavior : ActionBehaviour
+    private readonly string _expectedUrl;
+
+    public NavigatePageBehavior(NavigatePageBehaviorDefinition definition)
     {
-        private readonly string _expectedUrl;
+        _expectedUrl = definition.ExpectedUrl;
+    }
 
-        public NavigatePageBehavior(NavigatePageBehaviorDefinition definition)
-        {
-            _expectedUrl = definition.ExpectedUrl;
-        }
-
-        protected override void PerformAct()
-        {
-            Console.WriteLine(_expectedUrl);
-        }
+    protected override void PerformAct()
+    {
+        Console.WriteLine(_expectedUrl);
     }
 }

@@ -12,15 +12,14 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace StrategyDesignPattern.Pages.SignInPage
+namespace StrategyDesignPattern.Pages.SignInPage;
+
+public class SignInPage : Core.BasePageSingleton<SignInPage, SignInPageMap>
 {
-    public class SignInPage : Core.BasePageSingleton<SignInPage, SignInPageMap>
+    public void Login(string email, string password)
     {
-        public void Login(string email, string password)
-        {
-            Map.EmailInput.SendKeys(email);
-            Map.PasswordInput.SendKeys(password);
-            Map.SignInButton.Click();
-        }
+        Map.EmailInput.SendKeys(email);
+        Map.PasswordInput.SendKeys(password);
+        Map.SignInButton.Click();
     }
 }

@@ -15,22 +15,21 @@
 using AdvancedBehavioursDesignPattern.Base;
 using OpenQA.Selenium;
 
-namespace AdvancedBehavioursDesignPattern.Pages.PreviewShoppingCartPage
+namespace AdvancedBehavioursDesignPattern.Pages.PreviewShoppingCartPage;
+
+public partial class PreviewShoppingCartPage : BasePage
 {
-    public partial class PreviewShoppingCartPage : BasePage
+    public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
     {
-        public PreviewShoppingCartPage(IWebDriver driver) : base(driver)
-        {
-        }
+    }
 
-        public void ClickProceedToCheckoutButton()
-        {
-            ProceedToCheckoutButton.Click();
-        }
+    public void ClickProceedToCheckoutButton()
+    {
+        ProceedToCheckoutButton.Click();
+    }
 
-        public void CheckOrderContainsGift()
-        {
-            ThisOrderContainsGiftCheckbox.Click();
-        }
+    public void CheckOrderContainsGift()
+    {
+        ThisOrderContainsGiftCheckbox.Click();
     }
 }

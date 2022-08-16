@@ -15,21 +15,20 @@
 using BehavioursDesignPattern.Behaviours.Core;
 using BehavioursDesignPattern.Pages.ItemPage;
 
-namespace BehavioursDesignPattern.Behaviours
+namespace BehavioursDesignPattern.Behaviours;
+
+public class ItemPageNavigationBehaviour : Behaviour
 {
-    public class ItemPageNavigationBehaviour : Behaviour
+    private readonly ItemPage _itemPage;
+
+    // This version is compatible only with UnityBehaviorEngine.
+    public ItemPageNavigationBehaviour(ItemPage itemPage)
     {
-        private readonly ItemPage _itemPage;
+        _itemPage = itemPage;
+    }
 
-        // This version is compatible only with UnityBehaviorEngine.
-        public ItemPageNavigationBehaviour(ItemPage itemPage)
-        {
-            _itemPage = itemPage;
-        }
-
-        public override void PerformAct()
-        {
-            _itemPage.Navigate(PurchaseTestContext.ItemUrl);
-        }
+    public override void PerformAct()
+    {
+        _itemPage.Navigate(PurchaseTestContext.ItemUrl);
     }
 }

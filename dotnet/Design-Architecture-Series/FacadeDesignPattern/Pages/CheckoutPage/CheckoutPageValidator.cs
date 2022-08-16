@@ -14,14 +14,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FacadeDesignPattern.Core;
 
-namespace FacadeDesignPattern.Pages.CheckoutPage
+namespace FacadeDesignPattern.Pages.CheckoutPage;
+
+public class CheckoutPageValidator : BasePageValidator<CheckoutPageMap>
 {
-    public class CheckoutPageValidator : BasePageValidator<CheckoutPageMap>
+    public void Subtotal(string expectedSubtotal)
     {
-        public void Subtotal(string expectedSubtotal)
-        {
-            // AU $168.00
-            Assert.AreEqual<string>(expectedSubtotal, Map.TotalPrice.Text);
-        }
+        // AU $168.00
+        Assert.AreEqual<string>(expectedSubtotal, Map.TotalPrice.Text);
     }
 }

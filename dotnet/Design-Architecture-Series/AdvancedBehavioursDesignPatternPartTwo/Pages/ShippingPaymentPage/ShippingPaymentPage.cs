@@ -15,22 +15,21 @@
 using AdvancedBehavioursDesignPatternPartTwo.Base;
 using OpenQA.Selenium;
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Pages.ShippingPaymentPage
+namespace AdvancedBehavioursDesignPatternPartTwo.Pages.ShippingPaymentPage;
+
+public partial class ShippingPaymentPage : BasePage
 {
-    public partial class ShippingPaymentPage : BasePage
+    public ShippingPaymentPage(IWebDriver driver) : base(driver)
     {
-        public ShippingPaymentPage(IWebDriver driver) : base(driver)
-        {
-        }
+    }
 
-        public void ClickBottomContinueButton()
-        {
-            BottomContinueButton.Click();
-        }
+    public void ClickBottomContinueButton()
+    {
+        BottomContinueButton.Click();
+    }
 
-        public void ClickTopContinueButton()
-        {
-            TopContinueButton.Click();
-        }
+    public void ClickTopContinueButton()
+    {
+        TopContinueButton.Click();
     }
 }

@@ -14,15 +14,14 @@
 
 using System;
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core
-{
-    public abstract class BehaviorDefinition
-    {
-        public BehaviorDefinition(Type behaviorType)
-        {
-            BehaviorType = behaviorType;
-        }
+namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core;
 
-        internal Type BehaviorType { get; private set; }
+public abstract class BehaviorDefinition
+{
+    public BehaviorDefinition(Type behaviorType)
+    {
+        BehaviorType = behaviorType;
     }
+
+    internal Type BehaviorType { get; private set; }
 }

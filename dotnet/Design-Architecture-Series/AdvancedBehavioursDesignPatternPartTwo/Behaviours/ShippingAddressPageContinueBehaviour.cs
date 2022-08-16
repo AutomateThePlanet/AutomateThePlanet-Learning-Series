@@ -16,20 +16,19 @@ using AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core;
 using AdvancedBehavioursDesignPatternPartTwo.Pages.ShippingAddressPage;
 using Unity;
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours
+namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours;
+
+public class ShippingAddressPageContinueBehaviour : ActionBehaviour
 {
-    public class ShippingAddressPageContinueBehaviour : ActionBehaviour
+    private readonly ShippingAddressPage _shippingAddressPage;
+
+    public ShippingAddressPageContinueBehaviour()
     {
-        private readonly ShippingAddressPage _shippingAddressPage;
+        _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
+    }
 
-        public ShippingAddressPageContinueBehaviour()
-        {
-            _shippingAddressPage = Base.UnityContainerFactory.GetContainer().Resolve<ShippingAddressPage>();
-        }
-
-        protected override void PerformAct()
-        {
-            _shippingAddressPage.ClickContinueButton();
-        }
+    protected override void PerformAct()
+    {
+        _shippingAddressPage.ClickContinueButton();
     }
 }

@@ -12,22 +12,21 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedSpecificationDesignPattern.Specifications.Core
+namespace AdvancedSpecificationDesignPattern.Specifications.Core;
+
+public class OrSpecification<TEntity> : Specification<TEntity>
 {
-    public class OrSpecification<TEntity> : Specification<TEntity>
+    private readonly ISpecification<TEntity> _leftSpecification;
+    private readonly ISpecification<TEntity> _rightSpecification;
+
+    public OrSpecification(ISpecification<TEntity> leftSpecification, ISpecification<TEntity> rightSpecification)
     {
-        private readonly ISpecification<TEntity> _leftSpecification;
-        private readonly ISpecification<TEntity> _rightSpecification;
+        _leftSpecification = leftSpecification;
+        _rightSpecification = rightSpecification;
+    }
 
-        public OrSpecification(ISpecification<TEntity> leftSpecification, ISpecification<TEntity> rightSpecification)
-        {
-            _leftSpecification = leftSpecification;
-            _rightSpecification = rightSpecification;
-        }
-
-        public override bool IsSatisfiedBy(TEntity entity)
-        {
-            return _leftSpecification.IsSatisfiedBy(entity) || _rightSpecification.IsSatisfiedBy(entity);
-        }
+    public override bool IsSatisfiedBy(TEntity entity)
+    {
+        return _leftSpecification.IsSatisfiedBy(entity) || _rightSpecification.IsSatisfiedBy(entity);
     }
 }

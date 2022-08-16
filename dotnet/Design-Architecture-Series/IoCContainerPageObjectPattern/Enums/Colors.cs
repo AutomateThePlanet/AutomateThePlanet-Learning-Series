@@ -12,16 +12,15 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace IoCContainerPageObjectPattern.Enums
+namespace IoCContainerPageObjectPattern.Enums;
+
+public enum Colors
 {
-    public enum Colors
-    {
-        All,
-        ColorOnly,
-        BlackWhite,
-        Red,
-        Orange,
-        Yellow,
-        Green
-    }
+    All,
+    ColorOnly,
+    BlackWhite,
+    Red,
+    Orange,
+    Yellow,
+    Green
 }

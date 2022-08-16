@@ -14,24 +14,23 @@
 
 using OpenQA.Selenium;
 
-namespace BehavioursDesignPattern.Pages.ItemPage
-{
-    public partial class ItemPage
-    {
-        public IWebElement AddToCartButton
-        {
-            get
-            {
-                return Driver.FindElement(By.Id("add-to-cart-button"));
-            }
-        }
+namespace BehavioursDesignPattern.Pages.ItemPage;
 
-        public IWebElement ProductTitle
+public partial class ItemPage
+{
+    public IWebElement AddToCartButton
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("productTitle"));
-            }
+            return Driver.FindElement(By.Id("add-to-cart-button"));
+        }
+    }
+
+    public IWebElement ProductTitle
+    {
+        get
+        {
+            return Driver.FindElement(By.Id("productTitle"));
         }
     }
 }

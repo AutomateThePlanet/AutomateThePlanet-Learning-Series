@@ -18,32 +18,31 @@ using TemplateMethodDesignPattern.Pages.ShippingAddress.Second;
 using TemplateMethodDesignPattern.Pages.SignIn.Second;
 using OpenQA.Selenium;
 
-namespace TemplateMethodDesignPattern.Base.Second
+namespace TemplateMethodDesignPattern.Base.Second;
+
+public class ShoppingCartFactory
 {
-    public class ShoppingCartFactory
+    private readonly IWebDriver _driver;
+
+    public ShoppingCartFactory(IWebDriver driver) => _driver = driver;
+
+    public ShoppingCart CreateOldShoppingCart()
     {
-        private readonly IWebDriver _driver;
+        var itemPage = new ItemPage(_driver);
+        var signInPage = new SignInPage(_driver);
+        var checkoutPage = new CheckoutPage(_driver);
+        var shippingAddressPage = new ShippingAddressPage(_driver);
+        var oldShoppingCart = new OldShoppingCart(itemPage, signInPage, checkoutPage, shippingAddressPage);
+        return oldShoppingCart;
+    }
 
-        public ShoppingCartFactory(IWebDriver driver) => _driver = driver;
-
-        public ShoppingCart CreateOldShoppingCart()
-        {
-            var itemPage = new ItemPage(_driver);
-            var signInPage = new SignInPage(_driver);
-            var checkoutPage = new CheckoutPage(_driver);
-            var shippingAddressPage = new ShippingAddressPage(_driver);
-            var oldShoppingCart = new OldShoppingCart(itemPage, signInPage, checkoutPage, shippingAddressPage);
-            return oldShoppingCart;
-        }
-
-        public ShoppingCart CreateNewShoppingCart()
-        {
-            var itemPage = new ItemPage(_driver);
-            var signInPage = new SignInPage(_driver);
-            var checkoutPage = new CheckoutPage(_driver);
-            var shippingAddressPage = new ShippingAddressPage(_driver);
-            var oldShoppingCart = new OldShoppingCart(itemPage, signInPage, checkoutPage, shippingAddressPage);
-            return oldShoppingCart;
-        }
+    public ShoppingCart CreateNewShoppingCart()
+    {
+        var itemPage = new ItemPage(_driver);
+        var signInPage = new SignInPage(_driver);
+        var checkoutPage = new CheckoutPage(_driver);
+        var shippingAddressPage = new ShippingAddressPage(_driver);
+        var oldShoppingCart = new OldShoppingCart(itemPage, signInPage, checkoutPage, shippingAddressPage);
+        return oldShoppingCart;
     }
 }

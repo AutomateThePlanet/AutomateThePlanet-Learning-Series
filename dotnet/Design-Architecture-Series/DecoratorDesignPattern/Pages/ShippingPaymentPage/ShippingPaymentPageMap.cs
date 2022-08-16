@@ -15,24 +15,23 @@
 using DecoratorDesignPattern.Core;
 using OpenQA.Selenium;
 
-namespace DecoratorDesignPattern.Pages.ShippingPaymentPage
-{
-    public class ShippingPaymentPageMap : BasePageElementMap
-    {
-        public IWebElement BottomContinueButton
-        {
-            get
-            {
-                return Browser.FindElement(By.XPath("//*[@id='shippingOptionFormId']/div[3]/div/div/span[1]/span/input"));
-            }
-        }
+namespace DecoratorDesignPattern.Pages.ShippingPaymentPage;
 
-        public IWebElement TopContinueButton
+public class ShippingPaymentPageMap : BasePageElementMap
+{
+    public IWebElement BottomContinueButton
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("continue-top"));
-            }
+            return Browser.FindElement(By.XPath("//*[@id='shippingOptionFormId']/div[3]/div/div/span[1]/span/input"));
+        }
+    }
+
+    public IWebElement TopContinueButton
+    {
+        get
+        {
+            return Browser.FindElement(By.Id("continue-top"));
         }
     }
 }

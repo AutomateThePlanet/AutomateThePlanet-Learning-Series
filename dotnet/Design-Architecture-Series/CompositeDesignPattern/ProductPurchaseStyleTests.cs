@@ -14,70 +14,69 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace CompositeDesignPattern
+namespace CompositeDesignPattern;
+
+ [TestClass]
+public class ProductPurchaseStyleTests
 {
-     [TestClass]
-    public class ProductPurchaseStyleTests
+    private IDriver _driver;
+
+    [TestInitialize]
+    public void TestInitialize()
     {
-        private IDriver _driver;
+        _driver = new DriverAdapter(new ChromeDriver());
+    }
 
-        [TestInitialize]
-        public void TestInitialize()
+    [TestCleanup]
+    public void TestCleanup()
+    {
+        _driver.Close();
+    }
+
+    [TestMethod]
+    public void VerifyStylesOfAddToCartButton()
+    {
+        _driver.GoToUrl("http://demos.bellatrix.solutions/");
+
+        var falcon0AddToCartButton = _driver.Create(By.CssSelector("[data-product_id*='28']"));
+
+        falcon0AddToCartButton.AssertFontSize("14px");
+        falcon0AddToCartButton.AssertFontWeight("600");
+    }
+
+    [TestMethod]
+    public void VerifyStylesOfAddToCartButtons_Version1()
+    {
+        _driver.GoToUrl("http://demos.bellatrix.solutions/");
+
+        var addToCartButtons = _driver.CreateElements(By.XPath("//a[contains(text(),'Add to cart')]"));
+
+        foreach (var addToCartButton in addToCartButtons)
         {
-            _driver = new DriverAdapter(new ChromeDriver());
+            addToCartButton.AssertFontSize("14px");
+            addToCartButton.AssertFontWeight("600");
         }
+    }
 
-        [TestCleanup]
-        public void TestCleanup()
-        {
-            _driver.Close();
-        }
+    [TestMethod]
+    public void VerifyStylesOfAddToCartButtons_Version2()
+    {
+        _driver.GoToUrl("http://demos.bellatrix.solutions/");
 
-        [TestMethod]
-        public void VerifyStylesOfAddToCartButton()
-        {
-            _driver.GoToUrl("http://demos.bellatrix.solutions/");
+        var addToCartButtons = _driver.CreateElements(By.XPath("//a[contains(text(),'Add to cart')]"));
 
-            var falcon0AddToCartButton = _driver.Create(By.CssSelector("[data-product_id*='28']"));
+        addToCartButtons.ForEach(e => e.AssertFontSize("14px"));
+        addToCartButtons.ForEach(e => e.AssertFontWeight("600"));
+    }
 
-            falcon0AddToCartButton.AssertFontSize("14px");
-            falcon0AddToCartButton.AssertFontWeight("600");
-        }
+    [TestMethod]
+    public void VerifyStylesOfAddToCartButtons_Version3()
+    {
+        _driver.GoToUrl("http://demos.bellatrix.solutions/");
 
-        [TestMethod]
-        public void VerifyStylesOfAddToCartButtons_Version1()
-        {
-            _driver.GoToUrl("http://demos.bellatrix.solutions/");
+        var addToCartButtons = _driver.CreateElements(By.XPath("//a[contains(text(),'Add to cart')]"));
 
-            var addToCartButtons = _driver.CreateElements(By.XPath("//a[contains(text(),'Add to cart')]"));
-
-            foreach (var addToCartButton in addToCartButtons)
-            {
-                addToCartButton.AssertFontSize("14px");
-                addToCartButton.AssertFontWeight("600");
-            }
-        }
-
-        [TestMethod]
-        public void VerifyStylesOfAddToCartButtons_Version2()
-        {
-            _driver.GoToUrl("http://demos.bellatrix.solutions/");
-
-            var addToCartButtons = _driver.CreateElements(By.XPath("//a[contains(text(),'Add to cart')]"));
-
-            addToCartButtons.ForEach(e => e.AssertFontSize("14px"));
-            addToCartButtons.ForEach(e => e.AssertFontWeight("600"));
-        }
-
-        [TestMethod]
-        public void VerifyStylesOfAddToCartButtons_Version3()
-        {
-            _driver.GoToUrl("http://demos.bellatrix.solutions/");
-
-            var addToCartButtons = _driver.CreateElements(By.XPath("//a[contains(text(),'Add to cart')]"));
-
-            addToCartButtons.AssertFontSize("14px");
-            addToCartButtons.AssertFontWeight("600");
-        }
+        addToCartButtons.AssertFontSize("14px");
+        addToCartButtons.AssertFontWeight("600");
     }
 }

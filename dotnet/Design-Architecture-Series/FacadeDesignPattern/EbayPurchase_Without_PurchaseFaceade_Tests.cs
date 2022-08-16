@@ -19,83 +19,82 @@ using FacadeDesignPattern.Pages.ShippingAddressPage;
 using FacadeDesignPattern.Pages.SignInPage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace FacadeDesignPattern
+namespace FacadeDesignPattern;
+
+[TestClass]
+public class EbayPurchaseWithoutPurchaseFaceadeTests
 {
-    [TestClass]
-    public class EbayPurchaseWithoutPurchaseFaceadeTests
+    [TestInitialize]
+    public void SetupTest()
     {
-        [TestInitialize]
-        public void SetupTest()
+        Core.Driver.StartBrowser();
+    }
+
+    [TestCleanup]
+    public void TeardownTest()
+    {
+        Core.Driver.StopBrowser();
+    }
+
+    [TestMethod]
+    public void Purchase_Casio_GShock()
+    {
+        var itemUrl = "Casio-G-Shock-Standard-GA-100-1A2-Mens-Watch-Brand-New-/161209550414?pt=LH_DefaultDomain_15&hash=item2588d6864e";
+        var itemPrice = "AU $168.00";
+        var currentClientInfo = new ClientInfo()
         {
-            Core.Driver.StartBrowser();
-        }
+            FirstName = "Anton",
+            LastName = "Angelov",
+            Country = "Bulgaria",
+            Address1 = "33 Alexander Malinov Blvd.",
+            City = "Sofia",
+            Zip = "1729",
+            Phone = "0035964644885",
+            Email = "aangelov@yahoo.com"
+        };
+        var itemPage = new ItemPage();
+        var checkoutPage = new CheckoutPage();
+        var shippingAddressPage = new ShippingAddressPage();
+        var signInPage = new SignInPage();
 
-        [TestCleanup]
-        public void TeardownTest()
+        itemPage.Navigate(itemUrl);
+        itemPage.Validate().Price(itemPrice);
+        itemPage.ClickBuyNowButton();
+        signInPage.ClickContinueAsGuestButton();
+        shippingAddressPage.FillShippingInfo(currentClientInfo);
+        shippingAddressPage.Validate().Subtotal(itemPrice);
+        shippingAddressPage.ClickContinueButton();
+        checkoutPage.Validate().Subtotal(itemPrice);
+    }
+
+    [TestMethod]
+    public void Purchase_WhiteOpticalKeyboard()
+    {
+        var itemUrl = "Wireless-White-2-4G-Optical-Keyboard-and-Mouse-USB-Receiver-Kit-For-PC-/360649772948?pt=LH_DefaultDomain_2&hash=item53f866cf94";
+        var itemPrice = "C $20.86";
+        var currentClientInfo = new ClientInfo()
         {
-            Core.Driver.StopBrowser();
-        }
+            FirstName = "Anton",
+            LastName = "Angelov",
+            Country = "Bulgaria",
+            Address1 = "33 Alexander Malinov Blvd.",
+            City = "Stara Zagora",
+            Zip = "6000",
+            Phone = "0035964644885",
+            Email = "aangelov@yahoo.com"
+        };
+        var itemPage = new ItemPage();
+        var checkoutPage = new CheckoutPage();
+        var shippingAddressPage = new ShippingAddressPage();
+        var signInPage = new SignInPage();
 
-        [TestMethod]
-        public void Purchase_Casio_GShock()
-        {
-            var itemUrl = "Casio-G-Shock-Standard-GA-100-1A2-Mens-Watch-Brand-New-/161209550414?pt=LH_DefaultDomain_15&hash=item2588d6864e";
-            var itemPrice = "AU $168.00";
-            var currentClientInfo = new ClientInfo()
-            {
-                FirstName = "Anton",
-                LastName = "Angelov",
-                Country = "Bulgaria",
-                Address1 = "33 Alexander Malinov Blvd.",
-                City = "Sofia",
-                Zip = "1729",
-                Phone = "0035964644885",
-                Email = "aangelov@yahoo.com"
-            };
-            var itemPage = new ItemPage();
-            var checkoutPage = new CheckoutPage();
-            var shippingAddressPage = new ShippingAddressPage();
-            var signInPage = new SignInPage();
-
-            itemPage.Navigate(itemUrl);
-            itemPage.Validate().Price(itemPrice);
-            itemPage.ClickBuyNowButton();
-            signInPage.ClickContinueAsGuestButton();
-            shippingAddressPage.FillShippingInfo(currentClientInfo);
-            shippingAddressPage.Validate().Subtotal(itemPrice);
-            shippingAddressPage.ClickContinueButton();
-            checkoutPage.Validate().Subtotal(itemPrice);
-        }
-
-        [TestMethod]
-        public void Purchase_WhiteOpticalKeyboard()
-        {
-            var itemUrl = "Wireless-White-2-4G-Optical-Keyboard-and-Mouse-USB-Receiver-Kit-For-PC-/360649772948?pt=LH_DefaultDomain_2&hash=item53f866cf94";
-            var itemPrice = "C $20.86";
-            var currentClientInfo = new ClientInfo()
-            {
-                FirstName = "Anton",
-                LastName = "Angelov",
-                Country = "Bulgaria",
-                Address1 = "33 Alexander Malinov Blvd.",
-                City = "Stara Zagora",
-                Zip = "6000",
-                Phone = "0035964644885",
-                Email = "aangelov@yahoo.com"
-            };
-            var itemPage = new ItemPage();
-            var checkoutPage = new CheckoutPage();
-            var shippingAddressPage = new ShippingAddressPage();
-            var signInPage = new SignInPage();
-
-            itemPage.Navigate(itemUrl);
-            itemPage.Validate().Price(itemPrice);
-            itemPage.ClickBuyNowButton();
-            signInPage.ClickContinueAsGuestButton();
-            shippingAddressPage.FillShippingInfo(currentClientInfo);
-            shippingAddressPage.Validate().Subtotal(itemPrice);
-            shippingAddressPage.ClickContinueButton();
-            checkoutPage.Validate().Subtotal(itemPrice);
-        }
+        itemPage.Navigate(itemUrl);
+        itemPage.Validate().Price(itemPrice);
+        itemPage.ClickBuyNowButton();
+        signInPage.ClickContinueAsGuestButton();
+        shippingAddressPage.FillShippingInfo(currentClientInfo);
+        shippingAddressPage.Validate().Subtotal(itemPrice);
+        shippingAddressPage.ClickContinueButton();
+        checkoutPage.Validate().Subtotal(itemPrice);
     }
 }

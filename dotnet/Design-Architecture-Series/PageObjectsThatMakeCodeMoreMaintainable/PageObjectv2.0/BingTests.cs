@@ -16,33 +16,32 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
-namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20
+namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20;
+
+[TestClass]
+public class BingTests
 {
-    [TestClass]
-    public class BingTests
+    private IBingMainPage _bingMainPage;
+    private IWebDriver _driver;
+
+    [TestInitialize]
+    public void SetupTest()
     {
-        private IBingMainPage _bingMainPage;
-        private IWebDriver _driver;
+        _driver = new FirefoxDriver();
+        _bingMainPage = new BingMainPage(_driver);
+    }
 
-        [TestInitialize]
-        public void SetupTest()
-        {
-            _driver = new FirefoxDriver();
-            _bingMainPage = new BingMainPage(_driver);
-        }
+    [TestCleanup]
+    public void TeardownTest()
+    {
+        _driver.Quit();
+    }
 
-        [TestCleanup]
-        public void TeardownTest()
-        {
-            _driver.Quit();
-        }
-
-        [TestMethod]
-        public void SearchForAutomateThePlanet()
-        {
-            _bingMainPage.Open();
-            _bingMainPage.Search("Automate The Planet");
-            _bingMainPage.AssertResultsCountIsAsExpected(264);
-        }
+    [TestMethod]
+    public void SearchForAutomateThePlanet()
+    {
+        _bingMainPage.Open();
+        _bingMainPage.Search("Automate The Planet");
+        _bingMainPage.AssertResultsCountIsAsExpected(264);
     }
 }

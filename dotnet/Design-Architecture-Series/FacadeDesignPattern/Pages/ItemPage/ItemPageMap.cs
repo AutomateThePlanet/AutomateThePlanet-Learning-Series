@@ -14,24 +14,23 @@
 
 using OpenQA.Selenium;
 
-namespace FacadeDesignPattern.Pages.ItemPage
-{
-    public class ItemPageMap : Core.BasePageElementMap
-    {
-        public IWebElement BuyNowButton
-        {
-            get
-            {
-                return Browser.FindElement(By.Id("binBtn_btn"));
-            }
-        }
+namespace FacadeDesignPattern.Pages.ItemPage;
 
-        public IWebElement Price
+public class ItemPageMap : Core.BasePageElementMap
+{
+    public IWebElement BuyNowButton
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("prcIsum"));
-            }
+            return Browser.FindElement(By.Id("binBtn_btn"));
+        }
+    }
+
+    public IWebElement Price
+    {
+        get
+        {
+            return Browser.FindElement(By.Id("prcIsum"));
         }
     }
 }

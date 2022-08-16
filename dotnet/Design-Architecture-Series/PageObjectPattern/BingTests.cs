@@ -18,43 +18,42 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using PageObjectPattern.Selenium.Bing.Pages;
 
-namespace PageObjectPattern
+namespace PageObjectPattern;
+
+[TestClass]
+public class BingTests
 {
-    [TestClass]
-    public class BingTests
+    public IWebDriver Driver { get; set; }
+    public WebDriverWait Wait { get; set; }
+
+    [TestInitialize]
+    public void SetupTest()
     {
-        public IWebDriver Driver { get; set; }
-        public WebDriverWait Wait { get; set; }
+        Driver = new FirefoxDriver();
+        Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
+    }
 
-        [TestInitialize]
-        public void SetupTest()
-        {
-            Driver = new FirefoxDriver();
-            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
-        }
+    [TestCleanup]
+    public void TeardownTest()
+    {
+        Driver.Quit();
+    }
 
-        [TestCleanup]
-        public void TeardownTest()
-        {
-            Driver.Quit();
-        }
+    [TestMethod]
+    public void SearchTextInBing_First()
+    {
+        var bingMainPage = new BingMainPage(Driver);
+        bingMainPage.Navigate();
+        bingMainPage.Search("Automate The Planet");
+        bingMainPage.ValidateResultsCount(",000 Results");
+    }
 
-        [TestMethod]
-        public void SearchTextInBing_First()
-        {
-            var bingMainPage = new BingMainPage(Driver);
-            bingMainPage.Navigate();
-            bingMainPage.Search("Automate The Planet");
-            bingMainPage.ValidateResultsCount(",000 Results");
-        }
-
-        [TestMethod]
-        public void SearchTextInBing_Second()
-        {
-            var bingMainPage = new Pages.BingMainPage(Driver);
-            bingMainPage.Navigate();
-            bingMainPage.Search("Automate The Planet");
-            bingMainPage.Validate().ResultsCount(",000 Results");
-        }
+    [TestMethod]
+    public void SearchTextInBing_Second()
+    {
+        var bingMainPage = new Pages.BingMainPage(Driver);
+        bingMainPage.Navigate();
+        bingMainPage.Search("Automate The Planet");
+        bingMainPage.Validate().ResultsCount(",000 Results");
     }
 }

@@ -15,33 +15,32 @@ using System;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ObserverDesignPatternEventsDelegates
+namespace ObserverDesignPatternEventsDelegates;
+
+public class TestExecutionEventArgs : EventArgs
 {
-    public class TestExecutionEventArgs : EventArgs
+    private readonly TestContext _testContext;
+    private readonly MemberInfo _memberInfo;
+
+    public TestExecutionEventArgs(TestContext context, MemberInfo memberInfo)
     {
-        private readonly TestContext _testContext;
-        private readonly MemberInfo _memberInfo;
+        _testContext = context;
+        _memberInfo = memberInfo;
+    }
 
-        public TestExecutionEventArgs(TestContext context, MemberInfo memberInfo)
+    public MemberInfo MemberInfo
+    {
+        get
         {
-            _testContext = context;
-            _memberInfo = memberInfo;
+            return _memberInfo;
         }
+    }
 
-        public MemberInfo MemberInfo
+    public TestContext TestContext
+    {
+        get
         {
-            get
-            {
-                return _memberInfo;
-            }
-        }
-
-        public TestContext TestContext
-        {
-            get
-            {
-                return _testContext;
-            }
+            return _testContext;
         }
     }
 }

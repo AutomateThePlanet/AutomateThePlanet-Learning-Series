@@ -17,83 +17,82 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ObserverDesignPatternEventsDelegates.Behaviors;
 using OpenQA.Selenium;
 
-namespace ObserverDesignPatternEventsDelegates
+namespace ObserverDesignPatternEventsDelegates;
+
+[TestClass]
+public class BaseTest
 {
-    [TestClass]
-    public class BaseTest
+    private readonly MsTestExecutionProvider _currentTestExecutionProvider;
+    private TestContext _testContextInstance;
+
+    public BaseTest()
     {
-        private readonly MsTestExecutionProvider _currentTestExecutionProvider;
-        private TestContext _testContextInstance;
+        _currentTestExecutionProvider = new MsTestExecutionProvider();
+        InitializeTestExecutionBehaviorObservers(_currentTestExecutionProvider);
+        var memberInfo = MethodBase.GetCurrentMethod();
+        _currentTestExecutionProvider.TestInstantiated(memberInfo);
+    }
 
-        public BaseTest()
+    public string BaseUrl { get; set; }
+
+    public IWebDriver Browser { get; set; }
+
+    public TestContext TestContext
+    {
+        get
         {
-            _currentTestExecutionProvider = new MsTestExecutionProvider();
-            InitializeTestExecutionBehaviorObservers(_currentTestExecutionProvider);
-            var memberInfo = MethodBase.GetCurrentMethod();
-            _currentTestExecutionProvider.TestInstantiated(memberInfo);
+            return _testContextInstance;
         }
-
-        public string BaseUrl { get; set; }
-
-        public IWebDriver Browser { get; set; }
-
-        public TestContext TestContext
+        set
         {
-            get
-            {
-                return _testContextInstance;
-            }
-            set
-            {
-                _testContextInstance = value;
-            }
+            _testContextInstance = value;
         }
+    }
 
-        public string TestName
+    public string TestName
+    {
+        get
         {
-            get
-            {
-                return TestContext.TestName;
-            }
+            return TestContext.TestName;
         }
+    }
 
-        [TestInitialize]
-        public void CoreTestInit()
-        {
-            var memberInfo = GetCurrentExecutionMethodInfo();
-            _currentTestExecutionProvider.PreTestInit(TestContext, memberInfo);
-            TestInit();
-            _currentTestExecutionProvider.PostTestInit(TestContext, memberInfo);
-        }
+    [TestInitialize]
+    public void CoreTestInit()
+    {
+        var memberInfo = GetCurrentExecutionMethodInfo();
+        _currentTestExecutionProvider.PreTestInit(TestContext, memberInfo);
+        TestInit();
+        _currentTestExecutionProvider.PostTestInit(TestContext, memberInfo);
+    }
 
-        [TestCleanup]
-        public void CoreTestCleanup()
-        {
-            var memberInfo = GetCurrentExecutionMethodInfo();
-            _currentTestExecutionProvider.PreTestCleanup(TestContext, memberInfo);
-            TestCleanup();
-            _currentTestExecutionProvider.PostTestCleanup(TestContext, memberInfo);
-        }
+    [TestCleanup]
+    public void CoreTestCleanup()
+    {
+        var memberInfo = GetCurrentExecutionMethodInfo();
+        _currentTestExecutionProvider.PreTestCleanup(TestContext, memberInfo);
+        TestCleanup();
+        _currentTestExecutionProvider.PostTestCleanup(TestContext, memberInfo);
+    }
 
-        public virtual void TestInit()
-        {
-        }
+    public virtual void TestInit()
+    {
+    }
 
-        public virtual void TestCleanup()
-        {
-        }
+    public virtual void TestCleanup()
+    {
+    }
 
-        private MethodInfo GetCurrentExecutionMethodInfo()
-        {
-            var memberInfo = GetType().GetMethod(TestContext.TestName);
-            return memberInfo;
-        }
+    private MethodInfo GetCurrentExecutionMethodInfo()
+    {
+        var memberInfo = GetType().GetMethod(TestContext.TestName);
+        return memberInfo;
+    }
 
-        private void InitializeTestExecutionBehaviorObservers(MsTestExecutionProvider currentTestExecutionProvider)
-        {
-            new AssociatedBugTestBehaviorObserver().Subscribe(currentTestExecutionProvider);
-            new BrowserLaunchTestBehaviorObserver().Subscribe(currentTestExecutionProvider);
-            new OwnerTestBehaviorObserver().Subscribe(currentTestExecutionProvider);
-        }
+    private void InitializeTestExecutionBehaviorObservers(MsTestExecutionProvider currentTestExecutionProvider)
+    {
+        new AssociatedBugTestBehaviorObserver().Subscribe(currentTestExecutionProvider);
+        new BrowserLaunchTestBehaviorObserver().Subscribe(currentTestExecutionProvider);
+        new OwnerTestBehaviorObserver().Subscribe(currentTestExecutionProvider);
     }
 }

@@ -15,16 +15,15 @@
 using FacadeDesignPattern.Core;
 using OpenQA.Selenium;
 
-namespace FacadeDesignPattern.Pages.CheckoutPage
+namespace FacadeDesignPattern.Pages.CheckoutPage;
+
+public class CheckoutPageMap : BasePageElementMap
 {
-    public class CheckoutPageMap : BasePageElementMap
+    public IWebElement TotalPrice
     {
-        public IWebElement TotalPrice
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("xo_tot_amt"));
-            }
+            return Browser.FindElement(By.Id("xo_tot_amt"));
         }
     }
 }

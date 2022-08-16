@@ -13,16 +13,15 @@
 // <site>http://automatetheplanet.com/</site>
 using System;
 
-namespace ObserverDesignPatternClassicImplementation.Attributes
-{
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
-    public class ExecutionBrowserAttribute : Attribute
-    {
-        public ExecutionBrowserAttribute(BrowserTypes browser)
-        {
-            BrowserType = browser;
-        }
+namespace ObserverDesignPatternClassicImplementation.Attributes;
 
-        public BrowserTypes BrowserType { get; set; }
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
+public class ExecutionBrowserAttribute : Attribute
+{
+    public ExecutionBrowserAttribute(BrowserTypes browser)
+    {
+        BrowserType = browser;
     }
+
+    public BrowserTypes BrowserType { get; set; }
 }

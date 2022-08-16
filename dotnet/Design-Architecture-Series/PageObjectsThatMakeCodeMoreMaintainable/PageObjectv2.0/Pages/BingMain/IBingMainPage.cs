@@ -14,12 +14,11 @@
 
 using PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20.Base;
 
-namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20
-{
-    public interface IBingMainPage : IPage
-    {
-        void Search(string textToType);
+namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20;
 
-        int GetResultsCount();
-    }
+public interface IBingMainPage : IPage
+{
+    void Search(string textToType);
+
+    int GetResultsCount();
 }

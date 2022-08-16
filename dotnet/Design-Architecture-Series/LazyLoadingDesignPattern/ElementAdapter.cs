@@ -14,60 +14,59 @@ using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace LazyLoadingDesignPattern
+namespace LazyLoadingDesignPattern;
+
+public class ElementAdapter : IElement
 {
-    public class ElementAdapter : IElement
+    private readonly IWebDriver _driver;
+    private readonly ElementFinderService _elementFinder;
+
+    public ElementAdapter(IWebDriver driver, By by)
     {
-        private readonly IWebDriver _driver;
-        private readonly ElementFinderService _elementFinder;
+        _driver = driver;
+        By = by;
+        _elementFinder = new ElementFinderService(driver);
+    }
 
-        public ElementAdapter(IWebDriver driver, By by)
-        {
-            _driver = driver;
-            By = by;
-            _elementFinder = new ElementFinderService(driver);
-        }
+    public IWebElement NativeWebElement
+    {
+        get => _elementFinder.Find(By);
+    }
 
-        public IWebElement NativeWebElement
-        {
-            get => _elementFinder.Find(By);
-        }
+    public By By { get; }
 
-        public By By { get; }
+    public string Text => NativeWebElement?.Text;
 
-        public string Text => NativeWebElement?.Text;
+    public bool? Enabled => NativeWebElement?.Enabled;
 
-        public bool? Enabled => NativeWebElement?.Enabled;
+    public bool? Displayed => NativeWebElement?.Displayed;
 
-        public bool? Displayed => NativeWebElement?.Displayed;
+    public void Click()
+    {
+        WaitToBeClickable(By);
+        NativeWebElement?.Click();
+    }
 
-        public void Click()
-        {
-            WaitToBeClickable(By);
-            NativeWebElement?.Click();
-        }
+    public IElement CreateElement(By locator)
+    {
+        return new ElementAdapter(_driver, locator);
+    }
 
-        public IElement CreateElement(By locator)
-        {
-            return new ElementAdapter(_driver, locator);
-        }
+    public IElementsList CreateElements(By locator)
+    {
+        return new ElementsList(_driver, locator);
+    }
 
-        public IElementsList CreateElements(By locator)
-        {
-            return new ElementsList(_driver, locator);
-        }
+    public void TypeText(string text)
+    {
+        var webElement = NativeWebElement;
+        webElement?.Clear();
+        webElement?.SendKeys(text);
+    }
 
-        public void TypeText(string text)
-        {
-            var webElement = NativeWebElement;
-            webElement?.Clear();
-            webElement?.SendKeys(text);
-        }
-
-        private void WaitToBeClickable(By by)
-        {
-            var webDriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
-            webDriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(by));
-        }
+    private void WaitToBeClickable(By by)
+    {
+        var webDriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
+        webDriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(by));
     }
 }

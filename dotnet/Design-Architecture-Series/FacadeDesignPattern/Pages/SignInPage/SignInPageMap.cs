@@ -14,16 +14,15 @@
 
 using OpenQA.Selenium;
 
-namespace FacadeDesignPattern.Pages.SignInPage
+namespace FacadeDesignPattern.Pages.SignInPage;
+
+public class SignInPageMap : Core.BasePageElementMap
 {
-    public class SignInPageMap : Core.BasePageElementMap
+    public IWebElement ContinueAsGuestButton
     {
-        public IWebElement ContinueAsGuestButton
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("gtChk"));
-            }
+            return Browser.FindElement(By.Id("gtChk"));
         }
     }
 }

@@ -15,53 +15,52 @@
 using System;
 using System.Reflection;
 
-namespace SingletonDesignPattern.Base
+namespace SingletonDesignPattern.Base;
+
+public abstract class ThreadSafeNestedContructorsBaseSingleton<T>
 {
-    public abstract class ThreadSafeNestedContructorsBaseSingleton<T>
+    public static T Instance
     {
-        public static T Instance
+        get
         {
-            get
-            {
-                return SingletonFactory.Instance;
-            }
+            return SingletonFactory.Instance;
+        }
+    }
+
+    internal static class SingletonFactory
+    {
+        internal static T Instance;
+
+        static SingletonFactory()
+        {
+            CreateInstance(typeof(T));
         }
 
-        internal static class SingletonFactory
+        public static T CreateInstance(Type type)
         {
-            internal static T Instance;
+            var ctorsPublic = type.GetConstructors(BindingFlags.Instance | BindingFlags.Public);
 
-            static SingletonFactory()
+            if (ctorsPublic.Length > 0)
             {
-                CreateInstance(typeof(T));
+                throw new Exception(string.Concat(type.FullName, " has one or more public constructors so the property cannot be enforced."));
             }
 
-            public static T CreateInstance(Type type)
+            var nonPublicConstructor =
+                type.GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic, null, new Type[0], new ParameterModifier[0]);
+
+            if (nonPublicConstructor == null)
             {
-                var ctorsPublic = type.GetConstructors(BindingFlags.Instance | BindingFlags.Public);
+                throw new Exception(string.Concat(type.FullName, " does not have a private/protected constructor so the property cannot be enforced."));
+            }
 
-                if (ctorsPublic.Length > 0)
-                {
-                    throw new Exception(string.Concat(type.FullName, " has one or more public constructors so the property cannot be enforced."));
-                }
-
-                var nonPublicConstructor =
-                    type.GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic, null, new Type[0], new ParameterModifier[0]);
-
-                if (nonPublicConstructor == null)
-                {
-                    throw new Exception(string.Concat(type.FullName, " does not have a private/protected constructor so the property cannot be enforced."));
-                }
-
-                try
-                {
-                    return Instance = (T)nonPublicConstructor.Invoke(new object[0]);
-                }
-                catch (Exception e)
-                {
-                    throw new Exception(
-                        string.Concat("The Singleton could not be constructed. Check if ", type.FullName, " has a default constructor."), e);
-                }
+            try
+            {
+                return Instance = (T)nonPublicConstructor.Invoke(new object[0]);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(
+                    string.Concat("The Singleton could not be constructed. Check if ", type.FullName, " has a default constructor."), e);
             }
         }
     }

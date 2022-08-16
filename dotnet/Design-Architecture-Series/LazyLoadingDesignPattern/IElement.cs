@@ -12,17 +12,16 @@
 // <author>Anton Angelov</author>
 using OpenQA.Selenium;
 
-namespace LazyLoadingDesignPattern
+namespace LazyLoadingDesignPattern;
+
+public interface IElement
 {
-    public interface IElement
-    {
-        By By { get; }
-        string Text { get; }
-        bool? Enabled { get; }
-        bool? Displayed { get; }
-        void TypeText(string text);
-        IElement CreateElement(By locator);
-        IElementsList CreateElements(By locator);
-        void Click();
-    }
+    By By { get; }
+    string Text { get; }
+    bool? Enabled { get; }
+    bool? Displayed { get; }
+    void TypeText(string text);
+    IElement CreateElement(By locator);
+    IElementsList CreateElements(By locator);
+    void Click();
 }

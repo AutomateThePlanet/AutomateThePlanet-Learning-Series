@@ -12,24 +12,23 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace TemplateMethodDesignPattern.Data.Second
+namespace TemplateMethodDesignPattern.Data.Second;
+
+public class ClientInfo
 {
-    public class ClientInfo
-    {
-        public string FirstName { get; set; }
+    public string FirstName { get; set; }
 
-        public string LastName { get; set; }
+    public string LastName { get; set; }
 
-        public string Country { get; set; }
+    public string Country { get; set; }
 
-        public string Address1 { get; set; }
+    public string Address1 { get; set; }
 
-        public string City { get; set; }
+    public string City { get; set; }
 
-        public string Phone { get; set; }
+    public string Phone { get; set; }
 
-        public string Zip { get; set; }
+    public string Zip { get; set; }
 
-        public string Email { get; set; }
-    }
+    public string Email { get; set; }
 }

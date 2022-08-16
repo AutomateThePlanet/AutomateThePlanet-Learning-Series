@@ -18,33 +18,32 @@ using TemplateMethodDesignPattern.Pages.Item.Second;
 using TemplateMethodDesignPattern.Pages.ShippingAddress.Second;
 using TemplateMethodDesignPattern.Pages.SignIn.Second;
 
-namespace TemplateMethodDesignPattern.Base.Second
+namespace TemplateMethodDesignPattern.Base.Second;
+
+public class OldShoppingCart : ShoppingCart
 {
-    public class OldShoppingCart : ShoppingCart
+    private readonly ItemPage _itemPage;
+
+    private readonly SignInPage _signInPage;
+
+    private readonly CheckoutPage _checkoutPage;
+
+    private readonly ShippingAddressPage _shippingAddressPage;
+
+    public OldShoppingCart(ItemPage itemPage, SignInPage signInPage, CheckoutPage checkoutPage, ShippingAddressPage shippingAddressPage)
     {
-        private readonly ItemPage _itemPage;
-
-        private readonly SignInPage _signInPage;
-
-        private readonly CheckoutPage _checkoutPage;
-
-        private readonly ShippingAddressPage _shippingAddressPage;
-
-        public OldShoppingCart(ItemPage itemPage, SignInPage signInPage, CheckoutPage checkoutPage, ShippingAddressPage shippingAddressPage)
-        {
-            _itemPage = itemPage;
-            _signInPage = signInPage;
-            _checkoutPage = checkoutPage;
-            _shippingAddressPage = shippingAddressPage;
-        }
-
-        protected override void AssertPrice(double itemPrice) => _itemPage.AssertPrice(itemPrice);
-        protected override void AssertSubtotal(double itemPrice) => _checkoutPage.AssertSubtotal(itemPrice);
-        protected override void AssertSubtotalAmount(double itemPrice) => _shippingAddressPage.AssertSubtotalAmount(itemPrice);
-        protected override void ClickBuyNowButton() => _itemPage.ClickBuyNowButton();
-        protected override void ClickContinueAsGuestButton() => _signInPage.ClickContinueAsGuestButton();
-        protected override void ClickContinueButton() => _shippingAddressPage.ClickContinueButton();
-        protected override void FillShippingInfo(ClientInfo clientInfo) => _shippingAddressPage.FillShippingInfo(clientInfo);
-        protected override void OpenItem(string item) => _itemPage.Open(item);
+        _itemPage = itemPage;
+        _signInPage = signInPage;
+        _checkoutPage = checkoutPage;
+        _shippingAddressPage = shippingAddressPage;
     }
+
+    protected override void AssertPrice(double itemPrice) => _itemPage.AssertPrice(itemPrice);
+    protected override void AssertSubtotal(double itemPrice) => _checkoutPage.AssertSubtotal(itemPrice);
+    protected override void AssertSubtotalAmount(double itemPrice) => _shippingAddressPage.AssertSubtotalAmount(itemPrice);
+    protected override void ClickBuyNowButton() => _itemPage.ClickBuyNowButton();
+    protected override void ClickContinueAsGuestButton() => _signInPage.ClickContinueAsGuestButton();
+    protected override void ClickContinueButton() => _shippingAddressPage.ClickContinueButton();
+    protected override void FillShippingInfo(ClientInfo clientInfo) => _shippingAddressPage.FillShippingInfo(clientInfo);
+    protected override void OpenItem(string item) => _itemPage.Open(item);
 }

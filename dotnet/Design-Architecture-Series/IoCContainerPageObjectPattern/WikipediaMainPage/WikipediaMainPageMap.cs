@@ -15,40 +15,39 @@
 using IoCContainerPageObjectPattern.Base;
 using OpenQA.Selenium;
 
-namespace IoCContainerPageObjectPattern.WikipediaMainPage
+namespace IoCContainerPageObjectPattern.WikipediaMainPage;
+
+public class WikipediaMainPageMap : BasePageElementMap
 {
-    public class WikipediaMainPageMap : BasePageElementMap
+    public IWebElement SearchBox
     {
-        public IWebElement SearchBox
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("searchInput"));
-            }
+            return Browser.FindElement(By.Id("searchInput"));
         }
+    }
 
-        public IWebElement SearchButton
+    public IWebElement SearchButton
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("searchButton"));
-            }
+            return Browser.FindElement(By.Id("searchButton"));
         }
+    }
 
-        public IWebElement ContentsToggleLink
+    public IWebElement ContentsToggleLink
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("togglelink"));
-            }
+            return Browser.FindElement(By.Id("togglelink"));
         }
+    }
 
-        public IWebElement ContentsList
+    public IWebElement ContentsList
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.XPath("//*[@id='toc']/ul"));
-            }
+            return Browser.FindElement(By.XPath("//*[@id='toc']/ul"));
         }
     }
 }

@@ -15,20 +15,19 @@
 using System;
 using SpecificationDesignPattern.Data;
 
-namespace SpecificationDesignPattern.Specifications
+namespace SpecificationDesignPattern.Specifications;
+
+public class WiretransferSpecification : Core.Specification<PurchaseTestInput>
 {
-    public class WiretransferSpecification : Core.Specification<PurchaseTestInput>
+    private readonly PurchaseTestInput _purchaseTestInput;
+
+    public WiretransferSpecification(PurchaseTestInput purchaseTestInput)
     {
-        private readonly PurchaseTestInput _purchaseTestInput;
+        _purchaseTestInput = purchaseTestInput;
+    }
 
-        public WiretransferSpecification(PurchaseTestInput purchaseTestInput)
-        {
-            _purchaseTestInput = purchaseTestInput;
-        }
-
-        public override bool IsSatisfiedBy(PurchaseTestInput entity)
-        {
-            return _purchaseTestInput.IsWiretransfer;
-        }
+    public override bool IsSatisfiedBy(PurchaseTestInput entity)
+    {
+        return _purchaseTestInput.IsWiretransfer;
     }
 }

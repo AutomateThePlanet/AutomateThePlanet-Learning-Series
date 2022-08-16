@@ -15,26 +15,25 @@
 using System;
 using NullObjectDesignPattern.Base;
 
-namespace NullObjectDesignPattern.Strategies
+namespace NullObjectDesignPattern.Strategies;
+
+public class WebServicePurchasePromotionalCodeStrategy : IPurchasePromotionalCodeStrategy
 {
-    public class WebServicePurchasePromotionalCodeStrategy : IPurchasePromotionalCodeStrategy
+    public void AssertPromotionalCodeDiscount()
     {
-        public void AssertPromotionalCodeDiscount()
-        {
-            // TODO: Implement this method
-            throw new NotImplementedException();
-        }
+        // TODO: Implement this method
+        throw new NotImplementedException();
+    }
 
-        public double GetPromotionalCodeDiscountAmount()
-        {
-            // TODO: Implement this method
-            throw new NotImplementedException();
-        }
+    public double GetPromotionalCodeDiscountAmount()
+    {
+        // TODO: Implement this method
+        throw new NotImplementedException();
+    }
 
-        public void ApplyPromotionalCode(string couponCode)
-        {
-            // TODO: Implement this method
-            throw new NotImplementedException();
-        }
+    public void ApplyPromotionalCode(string couponCode)
+    {
+        // TODO: Implement this method
+        throw new NotImplementedException();
     }
 }

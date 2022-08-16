@@ -14,30 +14,29 @@
 
 using IoCContainerPageObjectPattern.Enums;
 
-namespace IoCContainerPageObjectPattern.BingMainPage
+namespace IoCContainerPageObjectPattern.BingMainPage;
+
+public interface IBingMainPage
 {
-    public interface IBingMainPage
-    {
-        void Navigate(string part = "");
+    void Navigate(string part = "");
 
-        BingMainPageValidator Validate();
+    BingMainPageValidator Validate();
 
-        void Search(string textToType);
+    void Search(string textToType);
 
-        void ClickImages();
+    void ClickImages();
 
-        void SetSize(Sizes size);
+    void SetSize(Sizes size);
 
-        void SetColor(Colors color);
+    void SetColor(Colors color);
 
-        void SetTypes(Types type);
+    void SetTypes(Types type);
 
-        void SetLayout(Layouts layout);
+    void SetLayout(Layouts layout);
 
-        void SetPeople(People people);
+    void SetPeople(People people);
 
-        void SetDate(Dates date);
+    void SetDate(Dates date);
 
-        void SetLicense(Licenses license);
-    }
+    void SetLicense(Licenses license);
 }

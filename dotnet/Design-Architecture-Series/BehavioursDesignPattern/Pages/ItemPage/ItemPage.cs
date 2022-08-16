@@ -16,31 +16,30 @@ using System;
 using BehavioursDesignPattern.Base;
 using OpenQA.Selenium;
 
-namespace BehavioursDesignPattern.Pages.ItemPage
+namespace BehavioursDesignPattern.Pages.ItemPage;
+
+public partial class ItemPage : BasePage
 {
-    public partial class ItemPage : BasePage
+    public ItemPage(IWebDriver driver) : base(driver)
     {
-        public ItemPage(IWebDriver driver) : base(driver)
-        {
-        }
+    }
 
-        public override string Url
+    public override string Url
+    {
+        get
         {
-            get
-            {
-                return "http://www.amazon.com/";
-            }
+            return "http://www.amazon.com/";
         }
+    }
 
-        public void ClickBuyNowButton()
-        {
-            AddToCartButton.Click();
-        }
+    public void ClickBuyNowButton()
+    {
+        AddToCartButton.Click();
+    }
 
-        public void Navigate(string part)
-        {
-            ///Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743
-            Open(part);
-        }
+    public void Navigate(string part)
+    {
+        ///Selenium-Testing-Cookbook-Gundecha-Unmesh/dp/1849515743
+        Open(part);
     }
 }

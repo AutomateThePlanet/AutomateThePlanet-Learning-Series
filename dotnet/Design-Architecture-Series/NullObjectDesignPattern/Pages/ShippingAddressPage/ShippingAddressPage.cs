@@ -16,49 +16,48 @@ using NullObjectDesignPattern.Base;
 using NullObjectDesignPattern.Data;
 using OpenQA.Selenium;
 
-namespace NullObjectDesignPattern.Pages.ShippingAddressPage
+namespace NullObjectDesignPattern.Pages.ShippingAddressPage;
+
+public partial class ShippingAddressPage : BasePage
 {
-    public partial class ShippingAddressPage : BasePage
+    public ShippingAddressPage(IWebDriver driver) : base(driver)
     {
-        public ShippingAddressPage(IWebDriver driver) : base(driver)
-        {
-        }
+    }
 
-        public void ClickContinueButton()
-        {
-            ContinueButton.Click();
-        }
+    public void ClickContinueButton()
+    {
+        ContinueButton.Click();
+    }
 
-        public void FillShippingInfo(ClientPurchaseInfo clientInfo)
+    public void FillShippingInfo(ClientPurchaseInfo clientInfo)
+    {
+        FillAddressInfoInternal(clientInfo);
+    }
+
+    public void ClickDifferentBillingCheckBox(ClientPurchaseInfo clientInfo)
+    {
+        if (clientInfo.BillingInfo != null)
+        {
+            DifferemtFromBillingCheckbox.Click();
+        }
+    }
+
+    public void FillBillingInfo(ClientPurchaseInfo clientInfo)
+    {
+        if (clientInfo.BillingInfo != null)
         {
             FillAddressInfoInternal(clientInfo);
         }
+    }
 
-        public void ClickDifferentBillingCheckBox(ClientPurchaseInfo clientInfo)
-        {
-            if (clientInfo.BillingInfo != null)
-            {
-                DifferemtFromBillingCheckbox.Click();
-            }
-        }
-
-        public void FillBillingInfo(ClientPurchaseInfo clientInfo)
-        {
-            if (clientInfo.BillingInfo != null)
-            {
-                FillAddressInfoInternal(clientInfo);
-            }
-        }
-
-        private void FillAddressInfoInternal(ClientPurchaseInfo clientInfo)
-        {
-            CountryDropDown.SelectByText(clientInfo.ShippingInfo.Country);
-            FullNameInput.SendKeys(clientInfo.ShippingInfo.FullName);
-            Address1Input.SendKeys(clientInfo.ShippingInfo.Address1);
-            CityInput.SendKeys(clientInfo.ShippingInfo.City);
-            ZipInput.SendKeys(clientInfo.ShippingInfo.Zip);
-            PhoneInput.SendKeys(clientInfo.ShippingInfo.Phone);
-            ShipToThisAddress.Click();
-        }
+    private void FillAddressInfoInternal(ClientPurchaseInfo clientInfo)
+    {
+        CountryDropDown.SelectByText(clientInfo.ShippingInfo.Country);
+        FullNameInput.SendKeys(clientInfo.ShippingInfo.FullName);
+        Address1Input.SendKeys(clientInfo.ShippingInfo.Address1);
+        CityInput.SendKeys(clientInfo.ShippingInfo.City);
+        ZipInput.SendKeys(clientInfo.ShippingInfo.Zip);
+        PhoneInput.SendKeys(clientInfo.ShippingInfo.Phone);
+        ShipToThisAddress.Click();
     }
 }

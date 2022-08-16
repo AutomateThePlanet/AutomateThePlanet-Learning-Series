@@ -12,17 +12,16 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedPageObjectPattern
+namespace AdvancedPageObjectPattern;
+
+public class BasePageValidator<TM>
+    where TM : BasePageElementMap, new()
 {
-    public class BasePageValidator<TM>
-        where TM : BasePageElementMap, new()
+    protected TM Map
     {
-        protected TM Map
+        get
         {
-            get
-            {
-                return new TM();
-            }
+            return new TM();
         }
     }
 }

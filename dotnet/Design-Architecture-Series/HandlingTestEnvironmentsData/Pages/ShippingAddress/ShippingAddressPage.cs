@@ -17,37 +17,36 @@ using HandlingTestEnvironmentsData.Data.Second;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace HandlingTestEnvironmentsData.Pages.ShippingAddress.Second
+namespace HandlingTestEnvironmentsData.Pages.ShippingAddress.Second;
+
+public partial class ShippingAddressPage : WebPage
 {
-    public partial class ShippingAddressPage : WebPage
+    private readonly WebDriverWait _driverWait;
+
+    public ShippingAddressPage(IWebDriver driver)
+        : base(driver)
+        => _driverWait = new WebDriverWait(Driver, new System.TimeSpan(0, 0, 30));
+
+    protected override string Url => string.Empty;
+
+    public void ClickContinueButton()
     {
-        private readonly WebDriverWait _driverWait;
-
-        public ShippingAddressPage(IWebDriver driver)
-            : base(driver)
-            => _driverWait = new WebDriverWait(Driver, new System.TimeSpan(0, 0, 30));
-
-        protected override string Url => string.Empty;
-
-        public void ClickContinueButton()
-        {
-            ContinueButton.Click();
-        }
-
-        public void FillShippingInfo(ClientInfo clientInfo)
-        {
-            SwitchToShippingFrame();
-            CountryDropDown.SelectByText(clientInfo.Country);
-            FirstName.SendKeys(clientInfo.FirstName);
-            LastName.SendKeys(clientInfo.LastName);
-            Address1.SendKeys(clientInfo.Address1);
-            City.SendKeys(clientInfo.City);
-            Zip.SendKeys(clientInfo.Zip);
-            Phone.SendKeys(clientInfo.Phone);
-            Email.SendKeys(clientInfo.Email);
-            Driver.SwitchTo().DefaultContent();
-        }
-
-        public double GetSubtotalAmount() => double.Parse(Subtotal.Text);
+        ContinueButton.Click();
     }
+
+    public void FillShippingInfo(ClientInfo clientInfo)
+    {
+        SwitchToShippingFrame();
+        CountryDropDown.SelectByText(clientInfo.Country);
+        FirstName.SendKeys(clientInfo.FirstName);
+        LastName.SendKeys(clientInfo.LastName);
+        Address1.SendKeys(clientInfo.Address1);
+        City.SendKeys(clientInfo.City);
+        Zip.SendKeys(clientInfo.Zip);
+        Phone.SendKeys(clientInfo.Phone);
+        Email.SendKeys(clientInfo.Email);
+        Driver.SwitchTo().DefaultContent();
+    }
+
+    public double GetSubtotalAmount() => double.Parse(Subtotal.Text);
 }

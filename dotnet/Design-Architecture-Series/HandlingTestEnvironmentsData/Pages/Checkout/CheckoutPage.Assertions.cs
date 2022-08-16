@@ -14,13 +14,12 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HandlingTestEnvironmentsData.Pages.Checkout.Second
+namespace HandlingTestEnvironmentsData.Pages.Checkout.Second;
+
+public partial class CheckoutPage
 {
-    public partial class CheckoutPage
+    public void AssertSubtotal(double expectedSubtotal)
     {
-        public void AssertSubtotal(double expectedSubtotal)
-        {
-            Assert.AreEqual(expectedSubtotal, GetTotalPrice());
-        }
+        Assert.AreEqual(expectedSubtotal, GetTotalPrice());
     }
 }

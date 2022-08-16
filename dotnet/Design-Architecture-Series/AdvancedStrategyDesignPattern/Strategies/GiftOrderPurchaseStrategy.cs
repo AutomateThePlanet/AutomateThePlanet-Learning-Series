@@ -19,30 +19,29 @@ using AdvancedStrategyDesignPattern.Enums;
 using AdvancedStrategyDesignPattern.Pages.PlaceOrderPage;
 using AdvancedStrategyDesignPattern.Services;
 
-namespace AdvancedStrategyDesignPattern.Strategies
+namespace AdvancedStrategyDesignPattern.Strategies;
+
+public class GiftOrderPurchaseStrategy : IOrderPurchaseStrategy
 {
-    public class GiftOrderPurchaseStrategy : IOrderPurchaseStrategy
+    public GiftOrderPurchaseStrategy()
     {
-        public GiftOrderPurchaseStrategy()
+        GiftWrappingPriceCalculationService = new GiftWrappingPriceCalculationService();
+    }
+
+    public GiftWrappingPriceCalculationService GiftWrappingPriceCalculationService { get; set; }
+
+    public void AssertOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
+    {
+        var giftWrapPrice = GiftWrappingPriceCalculationService.Calculate(clientPurchaseInfo.GiftWrapping);
+
+        PlaceOrderPage.Instance.Validate().GiftWrapPrice(giftWrapPrice.ToString());
+    }
+
+    public void ValidateClientPurchaseInfo(ClientPurchaseInfo clientPurchaseInfo)
+    {
+        if (clientPurchaseInfo.GiftWrapping.Equals(GiftWrappingStyles.None))
         {
-            GiftWrappingPriceCalculationService = new GiftWrappingPriceCalculationService();
-        }
-
-        public GiftWrappingPriceCalculationService GiftWrappingPriceCalculationService { get; set; }
-
-        public void AssertOrderSummary(string itemsPrice, ClientPurchaseInfo clientPurchaseInfo)
-        {
-            var giftWrapPrice = GiftWrappingPriceCalculationService.Calculate(clientPurchaseInfo.GiftWrapping);
-
-            PlaceOrderPage.Instance.Validate().GiftWrapPrice(giftWrapPrice.ToString());
-        }
-
-        public void ValidateClientPurchaseInfo(ClientPurchaseInfo clientPurchaseInfo)
-        {
-            if (clientPurchaseInfo.GiftWrapping.Equals(GiftWrappingStyles.None))
-            {
-                throw new ArgumentException("The gift wrapping style cannot be set to None if the GiftOrderPurchaseStrategy should be executed.");
-            }
+            throw new ArgumentException("The gift wrapping style cannot be set to None if the GiftOrderPurchaseStrategy should be executed.");
         }
     }
 }

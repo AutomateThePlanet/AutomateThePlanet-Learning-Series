@@ -14,32 +14,31 @@
 
 using OpenQA.Selenium;
 
-namespace StrategyDesignPattern.Pages.PreviewShoppingCartPage
+namespace StrategyDesignPattern.Pages.PreviewShoppingCartPage;
+
+public class PreviewShoppingCartPageMap : Core.BasePageElementMap
 {
-    public class PreviewShoppingCartPageMap : Core.BasePageElementMap
+    public IWebElement ProceedToCheckoutButton
     {
-        public IWebElement ProceedToCheckoutButton
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("hlb-ptc-btn-native"));
-            }
+            return Browser.FindElement(By.Id("hlb-ptc-btn-native"));
         }
+    }
 
-        public IWebElement EditYourCartButton
+    public IWebElement EditYourCartButton
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("a-autoid-0-announce"));
-            }
+            return Browser.FindElement(By.Id("a-autoid-0-announce"));
         }
+    }
 
-        public IWebElement ThisOrderContainsGiftCheckbox
+    public IWebElement ThisOrderContainsGiftCheckbox
+    {
+        get
         {
-            get
-            {
-                return Browser.FindElement(By.Id("sc-buy-box-gift-checkbox"));
-            }
+            return Browser.FindElement(By.Id("sc-buy-box-gift-checkbox"));
         }
     }
 }

@@ -12,14 +12,13 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace StrategyDesignPattern.Services
+namespace StrategyDesignPattern.Services;
+
+public class ShippingCostsCalculationService
 {
-    public class ShippingCostsCalculationService
+    public decimal Calculate(string country, string state, string address1, string zip)
     {
-        public decimal Calculate(string country, string state, string address1, string zip)
-        {
-            // Call real WebSerive to calculate the shipping costs.
-            return 4.98M;
-        }
+        // Call real WebSerive to calculate the shipping costs.
+        return 4.98M;
     }
 }

@@ -20,38 +20,37 @@ using AdvancedStrategyDesignPattern.Pages.ShippingAddressPage;
 using AdvancedStrategyDesignPattern.Pages.ShippingPaymentPage;
 using AdvancedStrategyDesignPattern.Pages.SignInPage;
 
-namespace AdvancedStrategyDesignPattern.Base
+namespace AdvancedStrategyDesignPattern.Base;
+
+public class PurchaseFacade
 {
-    public class PurchaseFacade
+    public void PurchaseItemSalesTax(string itemUrl, string itemPrice, string taxAmount, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
     {
-        public void PurchaseItemSalesTax(string itemUrl, string itemPrice, string taxAmount, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
-        {
-            PurchaseItemInternal(itemUrl, clientLoginInfo, clientPurchaseInfo);
-            PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(taxAmount);
-        }
+        PurchaseItemInternal(itemUrl, clientLoginInfo, clientPurchaseInfo);
+        PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(taxAmount);
+    }
 
-        public void PurchaseItemGiftWrapping(string itemUrl, string itemPrice, string giftWrapTax, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
-        {
-            PurchaseItemInternal(itemUrl, clientLoginInfo, clientPurchaseInfo);
-            PlaceOrderPage.Instance.Validate().GiftWrapPrice(giftWrapTax);
-        }
+    public void PurchaseItemGiftWrapping(string itemUrl, string itemPrice, string giftWrapTax, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
+    {
+        PurchaseItemInternal(itemUrl, clientLoginInfo, clientPurchaseInfo);
+        PlaceOrderPage.Instance.Validate().GiftWrapPrice(giftWrapTax);
+    }
 
-        public void PurchaseItemShippingTax(string itemUrl, string itemPrice, string shippingTax, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
-        {
-            PurchaseItemInternal(itemUrl, clientLoginInfo, clientPurchaseInfo);
-            PlaceOrderPage.Instance.Validate().ShippingTaxPrice(shippingTax);
-        }
+    public void PurchaseItemShippingTax(string itemUrl, string itemPrice, string shippingTax, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
+    {
+        PurchaseItemInternal(itemUrl, clientLoginInfo, clientPurchaseInfo);
+        PlaceOrderPage.Instance.Validate().ShippingTaxPrice(shippingTax);
+    }
 
-        private void PurchaseItemInternal(string itemUrl, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
-        {
-            ItemPage.Instance.Navigate(itemUrl);
-            ItemPage.Instance.ClickBuyNowButton();
-            PreviewShoppingCartPage.Instance.ClickProceedToCheckoutButton();
-            SignInPage.Instance.Login(clientLoginInfo.Email, clientLoginInfo.Password);
-            ShippingAddressPage.Instance.FillShippingInfo(clientPurchaseInfo);
-            ShippingAddressPage.Instance.ClickContinueButton();
-            ShippingPaymentPage.Instance.ClickBottomContinueButton();
-            ShippingPaymentPage.Instance.ClickTopContinueButton();
-        }
+    private void PurchaseItemInternal(string itemUrl, ClientLoginInfo clientLoginInfo, ClientPurchaseInfo clientPurchaseInfo)
+    {
+        ItemPage.Instance.Navigate(itemUrl);
+        ItemPage.Instance.ClickBuyNowButton();
+        PreviewShoppingCartPage.Instance.ClickProceedToCheckoutButton();
+        SignInPage.Instance.Login(clientLoginInfo.Email, clientLoginInfo.Password);
+        ShippingAddressPage.Instance.FillShippingInfo(clientPurchaseInfo);
+        ShippingAddressPage.Instance.ClickContinueButton();
+        ShippingPaymentPage.Instance.ClickBottomContinueButton();
+        ShippingPaymentPage.Instance.ClickTopContinueButton();
     }
 }

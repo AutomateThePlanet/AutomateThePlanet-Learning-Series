@@ -12,10 +12,9 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20.Base
+namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv20.Base;
+
+public interface IPage
 {
-    public interface IPage
-    {
-        void Open(string part = "");
-    }
+    void Open(string part = "");
 }

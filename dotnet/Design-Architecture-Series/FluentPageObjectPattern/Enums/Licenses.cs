@@ -12,15 +12,14 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace FluentPageObjectPattern.Enums
+namespace FluentPageObjectPattern.Enums;
+
+public enum Licenses
 {
-    public enum Licenses
-    {
-        All,
-        PublicDomain,
-        FreeToShareAndUse,
-        FreeToShareAndUseCommercially,
-        FreeToModifyShareUse,
-        FreeToModifyShareUseCommercially
-    }
+    All,
+    PublicDomain,
+    FreeToShareAndUse,
+    FreeToShareAndUseCommercially,
+    FreeToModifyShareUse,
+    FreeToModifyShareUseCommercially
 }

@@ -14,14 +14,13 @@
 
 using IoCContainerPageObjectPattern.Base;
 
-namespace IoCContainerPageObjectPattern.WikipediaMainPage.HardCore
-{
-    public interface IWikipediaMainPage<TM, TV> : IPage<TM, TV>
-        where TM : BasePageElementMap, new()
-        where TV : BasePageValidator<TM>, new()
-    {
-        void Search(string textToType);
+namespace IoCContainerPageObjectPattern.WikipediaMainPage.HardCore;
 
-        void ToggleContents();
-    }
+public interface IWikipediaMainPage<TM, TV> : IPage<TM, TV>
+    where TM : BasePageElementMap, new()
+    where TV : BasePageValidator<TM>, new()
+{
+    void Search(string textToType);
+
+    void ToggleContents();
 }

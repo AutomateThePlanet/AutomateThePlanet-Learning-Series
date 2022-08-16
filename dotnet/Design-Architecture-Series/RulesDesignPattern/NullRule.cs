@@ -12,18 +12,17 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace RulesDesignPattern
-{
-    public class NullRule : BaseRule
-    {
-        public NullRule(System.Action actionToBeExecuted) : base(actionToBeExecuted)
-        {
-        }
+namespace RulesDesignPattern;
 
-        public override IRuleResult Eval()
-        {
-            RuleResult.IsSuccess = true;
-            return RuleResult;
-        }
+public class NullRule : BaseRule
+{
+    public NullRule(System.Action actionToBeExecuted) : base(actionToBeExecuted)
+    {
+    }
+
+    public override IRuleResult Eval()
+    {
+        RuleResult.IsSuccess = true;
+        return RuleResult;
     }
 }

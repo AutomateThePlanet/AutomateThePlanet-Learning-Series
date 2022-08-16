@@ -15,21 +15,20 @@
 using System;
 using NullObjectDesignPattern.Base;
 
-namespace NullObjectDesignPattern.Strategies
+namespace NullObjectDesignPattern.Strategies;
+
+public class NullPurchasePromotionalCodeStrategy : IPurchasePromotionalCodeStrategy
 {
-    public class NullPurchasePromotionalCodeStrategy : IPurchasePromotionalCodeStrategy
+    public void AssertPromotionalCodeDiscount()
     {
-        public void AssertPromotionalCodeDiscount()
-        {
-        }
+    }
 
-        public double GetPromotionalCodeDiscountAmount()
-        {
-            return 0;
-        }
+    public double GetPromotionalCodeDiscountAmount()
+    {
+        return 0;
+    }
 
-        public void ApplyPromotionalCode(string couponCode)
-        {
-        }
+    public void ApplyPromotionalCode(string couponCode)
+    {
     }
 }

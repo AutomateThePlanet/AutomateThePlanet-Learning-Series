@@ -14,24 +14,23 @@
 
 using OpenQA.Selenium;
 
-namespace BehavioursDesignPattern.Pages.ShippingPaymentPage
-{
-    public partial class ShippingPaymentPage
-    {
-        public IWebElement BottomContinueButton
-        {
-            get
-            {
-                return Driver.FindElement(By.XPath("//*[@id='shippingOptionFormId']/div[3]/div/div/span[1]/span/input"));
-            }
-        }
+namespace BehavioursDesignPattern.Pages.ShippingPaymentPage;
 
-        public IWebElement TopContinueButton
+public partial class ShippingPaymentPage
+{
+    public IWebElement BottomContinueButton
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("continue-top"));
-            }
+            return Driver.FindElement(By.XPath("//*[@id='shippingOptionFormId']/div[3]/div/div/span[1]/span/input"));
+        }
+    }
+
+    public IWebElement TopContinueButton
+    {
+        get
+        {
+            return Driver.FindElement(By.Id("continue-top"));
         }
     }
 }

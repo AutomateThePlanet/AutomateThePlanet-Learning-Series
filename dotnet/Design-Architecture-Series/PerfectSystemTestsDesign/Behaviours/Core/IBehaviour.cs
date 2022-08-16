@@ -11,10 +11,9 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-namespace PerfectSystemTestsDesign.Behaviours.Core
+namespace PerfectSystemTestsDesign.Behaviours.Core;
+
+public interface IBehaviour
 {
-    public interface IBehaviour
-    {
-        void Execute();
-    }
+    void Execute();
 }

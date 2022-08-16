@@ -15,12 +15,11 @@
 using AdvancedBehavioursDesignPattern.Base;
 using OpenQA.Selenium;
 
-namespace AdvancedBehavioursDesignPattern.Pages.PlaceOrderPage
+namespace AdvancedBehavioursDesignPattern.Pages.PlaceOrderPage;
+
+public partial class PlaceOrderPage : BasePage
 {
-    public partial class PlaceOrderPage : BasePage
+    public PlaceOrderPage(IWebDriver driver) : base(driver)
     {
-        public PlaceOrderPage(IWebDriver driver) : base(driver)
-        {
-        }
     }
 }

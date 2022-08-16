@@ -11,15 +11,14 @@
 // </copyright>
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
-namespace PerfectSystemTestsDesign.Behaviours.Core
-{
-    public abstract class ActionBehaviour : IBehaviour
-    {
-        public void Execute()
-        {
-            PerformAct();
-        }
+namespace PerfectSystemTestsDesign.Behaviours.Core;
 
-        protected abstract void PerformAct();
+public abstract class ActionBehaviour : IBehaviour
+{
+    public void Execute()
+    {
+        PerformAct();
     }
+
+    protected abstract void PerformAct();
 }

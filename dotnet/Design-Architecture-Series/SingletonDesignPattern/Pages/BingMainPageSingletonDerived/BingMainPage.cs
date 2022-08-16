@@ -14,19 +14,18 @@
 
 using SingletonDesignPattern.Core;
 
-namespace SingletonDesignPattern.Pages.BingMainPageSingletonDerived
-{
-    public class BingMainPage : BasePageSingletonDerived<BingMainPage, BingMainPageElementMap, BingMainPageValidator>
-    {
-        private BingMainPage()
-        {
-        }
+namespace SingletonDesignPattern.Pages.BingMainPageSingletonDerived;
 
-        public void Search(string textToType)
-        {
-            Map.SearchBox.Clear();
-            Map.SearchBox.SendKeys(textToType);
-            Map.GoButton.Click();
-        }
+public class BingMainPage : BasePageSingletonDerived<BingMainPage, BingMainPageElementMap, BingMainPageValidator>
+{
+    private BingMainPage()
+    {
+    }
+
+    public void Search(string textToType)
+    {
+        Map.SearchBox.Clear();
+        Map.SearchBox.SendKeys(textToType);
+        Map.GoButton.Click();
     }
 }

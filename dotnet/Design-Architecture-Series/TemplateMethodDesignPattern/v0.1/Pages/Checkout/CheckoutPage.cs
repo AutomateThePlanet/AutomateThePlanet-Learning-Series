@@ -15,23 +15,22 @@
 using TemplateMethodDesignPattern.Base.First;
 using OpenQA.Selenium;
 
-namespace TemplateMethodDesignPattern.Pages.Checkout.First
+namespace TemplateMethodDesignPattern.Pages.Checkout.First;
+
+public partial class CheckoutPage : WebPage, ICheckoutPage
 {
-    public partial class CheckoutPage : WebPage, ICheckoutPage
+    public CheckoutPage(IWebDriver driver)
+        : base(driver)
     {
-        public CheckoutPage(IWebDriver driver)
-            : base(driver)
-        {
-        }
+    }
 
-        protected override string Url => string.Empty;
+    protected override string Url => string.Empty;
 
-        public double GetTotalPrice()
-        {
-            var totalPriceText = TotalPrice.Text;
-            var result = double.Parse(totalPriceText);
+    public double GetTotalPrice()
+    {
+        var totalPriceText = TotalPrice.Text;
+        var result = double.Parse(totalPriceText);
 
-            return result;
-        }
+        return result;
     }
 }

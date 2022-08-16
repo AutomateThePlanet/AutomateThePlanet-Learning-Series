@@ -12,16 +12,15 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace IoCContainerPageObjectPattern.WikipediaMainPage
+namespace IoCContainerPageObjectPattern.WikipediaMainPage;
+
+public interface IWikipediaMainPage
 {
-    public interface IWikipediaMainPage
-    {
-        void Navigate(string part = "");
+    void Navigate(string part = "");
 
-        WikipediaMainPageValidator Validate();
+    WikipediaMainPageValidator Validate();
 
-        void Search(string textToType);
+    void Search(string textToType);
 
-        void ToggleContents();
-    }
+    void ToggleContents();
 }

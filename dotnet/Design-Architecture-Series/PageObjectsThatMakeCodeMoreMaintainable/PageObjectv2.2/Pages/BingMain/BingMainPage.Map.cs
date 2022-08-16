@@ -16,32 +16,31 @@ using System;
 using OpenQA.Selenium;
 using PageObjectsThatMakeCodeMoreMaintainable.PageObjectv22.Base;
 
-namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv22
+namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv22;
+
+public partial class BingMainPage : BasePage
 {
-    public partial class BingMainPage : BasePage
+    public IWebElement SearchBox
     {
-        public IWebElement SearchBox
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("sb_form_q"));
-            }
+            return Driver.FindElement(By.Id("sb_form_q"));
         }
+    }
 
-        public IWebElement GoButton
+    public IWebElement GoButton
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("sb_form_go"));
-            }
+            return Driver.FindElement(By.Id("sb_form_go"));
         }
+    }
 
-        public IWebElement ResultsCountDiv
+    public IWebElement ResultsCountDiv
+    {
+        get
         {
-            get
-            {
-                return Driver.FindElement(By.Id("b_tween"));
-            }
+            return Driver.FindElement(By.Id("b_tween"));
         }
     }
 }

@@ -15,21 +15,20 @@
 using BehavioursDesignPattern.Behaviours.Core;
 using BehavioursDesignPattern.Pages.ShippingPaymentPage;
 
-namespace BehavioursDesignPattern.Behaviours
+namespace BehavioursDesignPattern.Behaviours;
+
+public class ShippingPaymentPageContinueBehaviour : Behaviour
 {
-    public class ShippingPaymentPageContinueBehaviour : Behaviour
+    private readonly ShippingPaymentPage _shippingPaymentPage;
+
+    // This version is compatible only with UnityBehaviorEngine.
+    public ShippingPaymentPageContinueBehaviour(ShippingPaymentPage shippingPaymentPage)
     {
-        private readonly ShippingPaymentPage _shippingPaymentPage;
+        _shippingPaymentPage = shippingPaymentPage;
+    }
 
-        // This version is compatible only with UnityBehaviorEngine.
-        public ShippingPaymentPageContinueBehaviour(ShippingPaymentPage shippingPaymentPage)
-        {
-            _shippingPaymentPage = shippingPaymentPage;
-        }
-
-        public override void PerformAct()
-        {
-            _shippingPaymentPage.ClickTopContinueButton();
-        }
+    public override void PerformAct()
+    {
+        _shippingPaymentPage.ClickTopContinueButton();
     }
 }

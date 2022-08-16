@@ -15,26 +15,25 @@
 using System;
 using OpenQA.Selenium;
 
-namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv21.Base
+namespace PageObjectsThatMakeCodeMoreMaintainable.PageObjectv21.Base;
+
+public abstract class BasePage<TMap>
+    where TMap : BaseElementMap
 {
-    public abstract class BasePage<TMap>
-        where TMap : BaseElementMap
+    protected IWebDriver Driver;
+
+    public BasePage(IWebDriver driver, TMap map)
     {
-        protected IWebDriver Driver;
+        Driver = driver;
+        Map = map;
+    }
 
-        public BasePage(IWebDriver driver, TMap map)
-        {
-            Driver = driver;
-            Map = map;
-        }
+    public TMap Map { get; private set; }
 
-        public TMap Map { get; private set; }
+    public abstract string Url { get; }
 
-        public abstract string Url { get; }
-
-        public virtual void Open(string part = "")
-        {
-            Driver.Navigate().GoToUrl(string.Concat(Url, part));
-        }
+    public virtual void Open(string part = "")
+    {
+        Driver.Navigate().GoToUrl(string.Concat(Url, part));
     }
 }

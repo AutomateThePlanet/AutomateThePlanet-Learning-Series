@@ -12,13 +12,12 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedPageObjectPattern
+namespace AdvancedPageObjectPattern;
+
+public enum BrowserTypes
 {
-    public enum BrowserTypes
-    {
-        Firefox,
-        InternetExplorer,
-        Chrome,
-        NotSet
-    }
+    Firefox,
+    InternetExplorer,
+    Chrome,
+    NotSet
 }

@@ -13,12 +13,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace LazyLoadingDesignPattern
+namespace LazyLoadingDesignPattern;
+
+public interface IElementsList : IEnumerable<IElement>
 {
-    public interface IElementsList : IEnumerable<IElement>
-    {
-        IElement this[int i] { get; }
-        int Count();
-        void ForEach(Action<IElement> action);
-    }
+    IElement this[int i] { get; }
+    int Count();
+    void ForEach(Action<IElement> action);
 }

@@ -12,12 +12,11 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace BehavioursDesignPattern.Data
-{
-    public class ClientLoginInfo
-    {
-        public string Email { get; set; }
+namespace BehavioursDesignPattern.Data;
 
-        public string Password { get; set; }
-    }
+public class ClientLoginInfo
+{
+    public string Email { get; set; }
+
+    public string Password { get; set; }
 }

@@ -15,43 +15,42 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace PageObjectPattern.Selenium.Bing.Pages
+namespace PageObjectPattern.Selenium.Bing.Pages;
+
+public class BingMainPage
 {
-    public class BingMainPage
+    private readonly IWebDriver _driver;
+    private readonly string _url = @"http://www.bing.com/";
+
+    public BingMainPage(IWebDriver browser)
     {
-        private readonly IWebDriver _driver;
-        private readonly string _url = @"http://www.bing.com/";
+        _driver = browser;
+        PageFactory.InitElements(browser, this);
+    }
 
-        public BingMainPage(IWebDriver browser)
-        {
-            _driver = browser;
-            PageFactory.InitElements(browser, this);
-        }
+    [FindsBy(How = How.Id, Using = "sb_form_q")]
+    public IWebElement SearchBox { get; set; }
 
-        [FindsBy(How = How.Id, Using = "sb_form_q")]
-        public IWebElement SearchBox { get; set; }
+    [FindsBy(How = How.XPath, Using = "//label[@for='sb_form_go']")]
+    public IWebElement GoButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//label[@for='sb_form_go']")]
-        public IWebElement GoButton { get; set; }
+    [FindsBy(How = How.Id, Using = "b_tween")]
+    public IWebElement ResultsCountDiv { get; set; }
 
-        [FindsBy(How = How.Id, Using = "b_tween")]
-        public IWebElement ResultsCountDiv { get; set; }
+    public void Navigate()
+    {
+        _driver.Navigate().GoToUrl(_url);
+    }
 
-        public void Navigate()
-        {
-            _driver.Navigate().GoToUrl(_url);
-        }
+    public void Search(string textToType)
+    {
+        SearchBox.Clear();
+        SearchBox.SendKeys(textToType);
+        GoButton.Click();
+    }
 
-        public void Search(string textToType)
-        {
-            SearchBox.Clear();
-            SearchBox.SendKeys(textToType);
-            GoButton.Click();
-        }
-
-        public void ValidateResultsCount(string expectedCount)
-        {
-            Assert.IsTrue(ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contain the specified text.");
-        }
+    public void ValidateResultsCount(string expectedCount)
+    {
+        Assert.IsTrue(ResultsCountDiv.Text.Contains(expectedCount), "The results DIV doesn't contain the specified text.");
     }
 }

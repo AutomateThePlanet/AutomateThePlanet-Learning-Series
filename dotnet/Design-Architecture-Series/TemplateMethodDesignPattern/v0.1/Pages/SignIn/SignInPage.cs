@@ -15,20 +15,19 @@
 using TemplateMethodDesignPattern.Base.First;
 using OpenQA.Selenium;
 
-namespace TemplateMethodDesignPattern.Pages.SignIn.First
+namespace TemplateMethodDesignPattern.Pages.SignIn.First;
+
+public partial class SignInPage : WebPage, ISignInPage
 {
-    public partial class SignInPage : WebPage, ISignInPage
+    public SignInPage(IWebDriver driver)
+        : base(driver)
     {
-        public SignInPage(IWebDriver driver)
-            : base(driver)
-        {
-        }
+    }
 
-        protected override string Url => string.Empty;
+    protected override string Url => string.Empty;
 
-        public void ClickContinueAsGuestButton()
-        {
-            ContinueAsGuestButton.Click();
-        }
+    public void ClickContinueAsGuestButton()
+    {
+        ContinueAsGuestButton.Click();
     }
 }

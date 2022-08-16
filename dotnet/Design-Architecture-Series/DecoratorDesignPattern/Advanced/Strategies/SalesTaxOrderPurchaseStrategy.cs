@@ -16,31 +16,30 @@ using System;
 using DecoratorDesignPattern.Pages.PlaceOrderPage;
 using DecoratorDesignPattern.Services;
 
-namespace DecoratorDesignPattern.Advanced.Strategies
+namespace DecoratorDesignPattern.Advanced.Strategies;
+
+public class SalesTaxOrderPurchaseStrategy : OrderPurchaseStrategyDecorator
 {
-    public class SalesTaxOrderPurchaseStrategy : OrderPurchaseStrategyDecorator
+    private readonly SalesTaxCalculationService _salesTaxCalculationService;
+    private decimal _salesTax;
+
+    public SalesTaxOrderPurchaseStrategy(OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, Data.ClientPurchaseInfo clientPurchaseInfo) : base(orderPurchaseStrategy, itemsPrice, clientPurchaseInfo)
     {
-        private readonly SalesTaxCalculationService _salesTaxCalculationService;
-        private decimal _salesTax;
+        _salesTaxCalculationService = new SalesTaxCalculationService();
+    }
 
-        public SalesTaxOrderPurchaseStrategy(OrderPurchaseStrategy orderPurchaseStrategy, decimal itemsPrice, Data.ClientPurchaseInfo clientPurchaseInfo) : base(orderPurchaseStrategy, itemsPrice, clientPurchaseInfo)
-        {
-            _salesTaxCalculationService = new SalesTaxCalculationService();
-        }
+    public SalesTaxCalculationService SalesTaxCalculationService { get; set; }
 
-        public SalesTaxCalculationService SalesTaxCalculationService { get; set; }
+    public override decimal CalculateTotalPrice()
+    {
+        var currentState = (Enums.States)Enum.Parse(typeof(Enums.States), ClientPurchaseInfo.ShippingInfo.State);
+        _salesTax = _salesTaxCalculationService.Calculate(ItemsPrice, currentState, ClientPurchaseInfo.ShippingInfo.Zip);
+        return OrderPurchaseStrategy.CalculateTotalPrice() + _salesTax;
+    }
 
-        public override decimal CalculateTotalPrice()
-        {
-            var currentState = (Enums.States)Enum.Parse(typeof(Enums.States), ClientPurchaseInfo.ShippingInfo.State);
-            _salesTax = _salesTaxCalculationService.Calculate(ItemsPrice, currentState, ClientPurchaseInfo.ShippingInfo.Zip);
-            return OrderPurchaseStrategy.CalculateTotalPrice() + _salesTax;
-        }
-
-        public override void ValidateOrderSummary(decimal totalPrice)
-        {
-            OrderPurchaseStrategy.ValidateOrderSummary(totalPrice);
-            PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(_salesTax.ToString());
-        }
+    public override void ValidateOrderSummary(decimal totalPrice)
+    {
+        OrderPurchaseStrategy.ValidateOrderSummary(totalPrice);
+        PlaceOrderPage.Instance.Validate().EstimatedTaxPrice(_salesTax.ToString());
     }
 }

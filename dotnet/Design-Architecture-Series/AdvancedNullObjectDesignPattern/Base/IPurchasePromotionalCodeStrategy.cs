@@ -12,14 +12,13 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedNullObjectDesignPattern.Base
+namespace AdvancedNullObjectDesignPattern.Base;
+
+public interface IPurchasePromotionalCodeStrategy
 {
-    public interface IPurchasePromotionalCodeStrategy
-    {
-        void AssertPromotionalCodeDiscount();
+    void AssertPromotionalCodeDiscount();
 
-        double GetPromotionalCodeDiscountAmount();
+    double GetPromotionalCodeDiscountAmount();
 
-        void ApplyPromotionalCode(string couponCode);
-    }
+    void ApplyPromotionalCode(string couponCode);
 }

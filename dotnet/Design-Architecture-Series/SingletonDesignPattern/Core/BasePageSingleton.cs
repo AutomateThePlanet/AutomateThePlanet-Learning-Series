@@ -14,38 +14,37 @@
 
 using SingletonDesignPattern.Base;
 
-namespace SingletonDesignPattern.Core
+namespace SingletonDesignPattern.Core;
+
+public abstract class BasePageSingleton<TS, TM> : ThreadSafeLazyBaseSingleton<TS>
+    where TM : BasePageElementMap, new()
+    where TS : BasePageSingleton<TS, TM>, new()
 {
-    public abstract class BasePageSingleton<TS, TM> : ThreadSafeLazyBaseSingleton<TS>
-        where TM : BasePageElementMap, new()
-        where TS : BasePageSingleton<TS, TM>, new()
+    public BasePageSingleton()
     {
-        public BasePageSingleton()
-        {
-        }
+    }
 
-        protected TM Map
+    protected TM Map
+    {
+        get
         {
-            get
-            {
-                return new TM();
-            }
-        }
-
-        public virtual void Navigate(string url = "")
-        {
-            Driver.Browser.Navigate().GoToUrl(string.Concat(url));
+            return new TM();
         }
     }
 
-    public abstract class BasePageSingleton<TS, TM, TV> : BasePageSingleton<TS, TM>
-        where TM : BasePageElementMap, new()
-        where TV : BasePageValidator<TM>, new()
-        where TS : BasePageSingleton<TS, TM, TV>, new()
+    public virtual void Navigate(string url = "")
     {
-        public TV Validate()
-        {
-            return new TV();
-        }
+        Driver.Browser.Navigate().GoToUrl(string.Concat(url));
+    }
+}
+
+public abstract class BasePageSingleton<TS, TM, TV> : BasePageSingleton<TS, TM>
+    where TM : BasePageElementMap, new()
+    where TV : BasePageValidator<TM>, new()
+    where TS : BasePageSingleton<TS, TM, TV>, new()
+{
+    public TV Validate()
+    {
+        return new TV();
     }
 }

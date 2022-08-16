@@ -14,52 +14,51 @@
 
 using IoCContainerPageObjectPattern.Core;
 
-namespace IoCContainerPageObjectPattern.Base
+namespace IoCContainerPageObjectPattern.Base;
+
+public class BasePage<TM>
+    where TM : BasePageElementMap, new()
 {
-    public class BasePage<TM>
-        where TM : BasePageElementMap, new()
+    protected readonly string Url;
+
+    public BasePage(string url)
     {
-        protected readonly string Url;
+        Url = url;
+    }
 
-        public BasePage(string url)
-        {
-            Url = url;
-        }
+    public BasePage()
+    {
+        Url = null;
+    }
 
-        public BasePage()
+    protected TM Map
+    {
+        get
         {
-            Url = null;
-        }
-
-        protected TM Map
-        {
-            get
-            {
-                return new TM();
-            }
-        }
-
-        public virtual void Navigate(string part = "")
-        {
-            Driver.Browser.Navigate().GoToUrl(string.Concat(Url, part));
+            return new TM();
         }
     }
 
-    public class BasePage<TM, TV> : BasePage<TM>
-        where TM : BasePageElementMap, new()
-        where TV : BasePageValidator<TM>, new()
+    public virtual void Navigate(string part = "")
     {
-        public BasePage(string url) : base(url)
-        {
-        }
+        Driver.Browser.Navigate().GoToUrl(string.Concat(Url, part));
+    }
+}
 
-        public BasePage()
-        {
-        }
+public class BasePage<TM, TV> : BasePage<TM>
+    where TM : BasePageElementMap, new()
+    where TV : BasePageValidator<TM>, new()
+{
+    public BasePage(string url) : base(url)
+    {
+    }
 
-        public TV Validate()
-        {
-            return new TV();
-        }
+    public BasePage()
+    {
+    }
+
+    public TV Validate()
+    {
+        return new TV();
     }
 }

@@ -12,15 +12,14 @@
 // <author>Anton Angelov</author>
 // <site>http://automatetheplanet.com/</site>
 
-namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core
-{
-    public abstract class ActionBehaviour : IBehaviour
-    {
-        public void Execute()
-        {
-            PerformAct();
-        }
+namespace AdvancedBehavioursDesignPatternPartTwo.Behaviours.Core;
 
-        protected abstract void PerformAct();
+public abstract class ActionBehaviour : IBehaviour
+{
+    public void Execute()
+    {
+        PerformAct();
     }
+
+    protected abstract void PerformAct();
 }

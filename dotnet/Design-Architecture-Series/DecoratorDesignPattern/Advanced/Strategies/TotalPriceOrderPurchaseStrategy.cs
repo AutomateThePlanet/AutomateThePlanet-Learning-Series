@@ -14,25 +14,24 @@
 
 using DecoratorDesignPattern.Pages.PlaceOrderPage;
 
-namespace DecoratorDesignPattern.Advanced.Strategies
+namespace DecoratorDesignPattern.Advanced.Strategies;
+
+public class TotalPriceOrderPurchaseStrategy : OrderPurchaseStrategy
 {
-    public class TotalPriceOrderPurchaseStrategy : OrderPurchaseStrategy
+    private readonly decimal _itemsPrice;
+
+    public TotalPriceOrderPurchaseStrategy(decimal itemsPrice)
     {
-        private readonly decimal _itemsPrice;
+        _itemsPrice = itemsPrice;
+    }
 
-        public TotalPriceOrderPurchaseStrategy(decimal itemsPrice)
-        {
-            _itemsPrice = itemsPrice;
-        }
+    public override decimal CalculateTotalPrice()
+    {
+        return _itemsPrice;
+    }
 
-        public override decimal CalculateTotalPrice()
-        {
-            return _itemsPrice;
-        }
-
-        public override void ValidateOrderSummary(decimal totalPrice)
-        {
-            PlaceOrderPage.Instance.Validate().OrderTotalPrice(totalPrice.ToString());
-        }
+    public override void ValidateOrderSummary(decimal totalPrice)
+    {
+        PlaceOrderPage.Instance.Validate().OrderTotalPrice(totalPrice.ToString());
     }
 }
