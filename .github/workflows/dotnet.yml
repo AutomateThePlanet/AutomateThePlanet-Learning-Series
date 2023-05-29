@@ -19,7 +19,7 @@ jobs:
       - name: Change Folder
         run: cd dotnet/AutomationTools-Series/GithubActions/
       - name: Test
-        run: dotnet GithubActions.csproj --configuration Release --logger "trx;LogFileName=testresults.trx" --results-directory ./TestResults
+        run: dotnet test GithubActions.csproj --configuration Release --logger "trx;LogFileName=testresults.trx" --results-directory ./TestResults
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
         with:
