@@ -1,0 +1,28 @@
+name: WebDriver C# Project Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.x'  # Specify the desired .NET version
+
+      - name: Build and test
+        run: dotnet test AutomateThePlanet/AutomateThePlanet-Learning-Series/tree/master/dotnet/AutomationTools-Series/GithubActions/GithubActions.csproj --configuration Release --logger "trx;LogFileName=testresults.trx" --results-directory ./TestResults
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        with:
+          testResultsPath: '**/TestResults/*.trx'
