@@ -17,7 +17,7 @@ jobs:
           dotnet-version: '5.x'  # Specify the desired .NET version
 
       - name: Build and test
-        run: dotnet test AutomateThePlanet/AutomateThePlanet-Learning-Series/tree/master/dotnet/AutomationTools-Series/GithubActions/GithubActions.csproj --configuration Release --logger "trx;LogFileName=testresults.trx" --results-directory ./TestResults
+        run: dotnet test /dotnet/AutomationTools-Series/GithubActions/GithubActions.csproj --configuration Release --logger "trx;LogFileName=testresults.trx" --results-directory ./TestResults
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
