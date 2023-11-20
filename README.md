@@ -18,12 +18,14 @@ This way, you will have a **bookmark for easier access** and you will **show app
 - [Mobile Automation Series](https://github.com/AutomateThePlanet/AutomateThePlanet-Learning-Series/tree/master/dotnet/MobileAutomation-Series "Mobile Automation Series")
 - [Desktop Automation Series](https://github.com/AutomateThePlanet/AutomateThePlanet-Learning-Series/tree/master/dotnet/DesktopAutomation-Series "Desktop Automation Series")
 - [Automation Tools Series](https://github.com/AutomateThePlanet/AutomateThePlanet-Learning-Series/tree/master/dotnet/AutomationTools-Series "Automation Tools Series")
-- [Development Series](https://github.com/angelovstanton/AutomateThePlanet/tree/master/CSharp-Series "Development Series")
+- [Development Series](https://github.com/AutomateThePlanet/AutomateThePlanet-Learning-Series/tree/master/dotnet/Development-Series "Development Series")
 
 # Java Series #
 
-- [Design & Architecture Series](https://github.com/AutomateThePlanet/AutomateThePlanet-Learning-Series/tree/master/java/DesignPatternsInAutomatedTestingJava-Series "Design & Architecture Series")
-- [Web Automation Series](https://github.com/AutomateThePlanet/AutomateThePlanet-Learning-Series/tree/master/java/WebDriverJava-Series "Web Automation Series")
+- [Design & Architecture Series](https://github.com/AutomateThePlanet/AutomateThePlanet-Learning-Series/tree/master/java/Design-Architecture-Series "Design & Architecture Series")
+- [Web Automation Series](https://github.com/AutomateThePlanet/AutomateThePlanet-Learning-Series/tree/master/java/WebAutomation-Series "Web Automation Series")
+- [Mobile Automation Series](https://github.com/AutomateThePlanet/AutomateThePlanet-Learning-Series/tree/master/java/MobileAutomation-Series "Mobile Automation Series")
+- [Automation Tools Series](https://github.com/AutomateThePlanet/AutomateThePlanet-Learning-Series/tree/master/java/AutomationTools-Series "Automation Tools Series")
 
 Under each folder, you will find a separate solution file. Every article from the series has its folder and an info file. To run the examples from particular series you need only its folder.
 
