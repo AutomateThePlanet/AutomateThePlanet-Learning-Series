@@ -54,6 +54,7 @@ namespace SoftwareManagementAutomationWindows
                         throw new InvalidOperationException("To use BELLATRIX.MachineAutomation please start Visual Studio in Administrative Mode.", e);
                     }
                 }
+
             }
         }
     }

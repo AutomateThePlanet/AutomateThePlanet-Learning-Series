@@ -21,73 +21,72 @@ using OpenQA.Selenium.Appium.Service;
 using System;
 using System.IO;
 
-namespace GettingStartedAppiumAndroidWindows
+namespace GettingStartedAppiumAndroidWindows;
+
+[TestClass]
+public class HybridAppTests
 {
-    [TestClass]
-    public class HybridAppTests
+    private static AndroidDriver<AppiumWebElement> _driver;
+    private static AppiumLocalService _appiumLocalService;
+
+    [ClassInitialize]
+    public static void ClassInitialize(TestContext context)
     {
-        private static AndroidDriver<AppiumWebElement> _driver;
-        private static AppiumLocalService _appiumLocalService;
+        _appiumLocalService = new AppiumServiceBuilder().UsingAnyFreePort().Build();
+        _appiumLocalService.Start();
+        string testAppPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "selendroid-test-app-0.10.0.apk");
+        var appiumOptions = new AppiumOptions();
+        appiumOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
+        appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
+        appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "7.1");
+        appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, "io.selendroid.testapp");
+        appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, "HomeScreenActivity");
 
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext context)
+        _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, appiumOptions);
+        _driver.CloseApp();
+    }
+
+    [TestInitialize]
+    public void TestInitialize()
+    {
+        if (_driver != null)
         {
-            _appiumLocalService = new AppiumServiceBuilder().UsingAnyFreePort().Build();
-            _appiumLocalService.Start();
-            string testAppPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "selendroid-test-app-0.10.0.apk");
-            var appiumOptions = new AppiumOptions();
-            appiumOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
-            appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
-            appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "7.1");
-            appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, "io.selendroid.testapp");
-            appiumOptions.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, "HomeScreenActivity");
+            _driver.LaunchApp();
+        }
+    }
 
-            _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, appiumOptions);
+    [TestCleanup]
+    public void TestCleanup()
+    {
+        if (_driver != null)
+        {
             _driver.CloseApp();
         }
+    }
 
-        [TestInitialize]
-        public void TestInitialize()
+    [ClassCleanup]
+    public static void ClassCleanup()
+    {
+        _appiumLocalService.Dispose();
+    }
+
+    [TestMethod]
+    public void WebViewTestCase()
+    {
+        var webButton = _driver.FindElementById("io.selendroid.testapp:id/buttonStartWebview");
+        webButton.Click();
+
+        var contexts = ((IContextAware)_driver).Contexts;
+        for (int i = 0; i < contexts.Count; i++)
         {
-            if (_driver != null)
+            if (contexts[i].Contains("WEBVIEW"))
             {
-                _driver.LaunchApp();
+                ((IContextAware)_driver).Context = contexts[i];
+                break;
             }
         }
 
-        [TestCleanup]
-        public void TestCleanup()
-        {
-            if (_driver != null)
-            {
-                _driver.CloseApp();
-            }
-        }
-
-        [ClassCleanup]
-        public static void ClassCleanup()
-        {
-            _appiumLocalService.Dispose();
-        }
-
-        [TestMethod]
-        public void WebViewTestCase()
-        {
-            var webButton = _driver.FindElementById("io.selendroid.testapp:id/buttonStartWebview");
-            webButton.Click();
-
-            var contexts = ((IContextAware)_driver).Contexts;
-            for (int i = 0; i < contexts.Count; i++)
-            {
-                if (contexts[i].Contains("WEBVIEW"))
-                {
-                    ((IContextAware)_driver).Context = contexts[i];
-                    break;
-                }
-            }
-
-            var sendMeYourNameButton = _driver.FindElement(By.XPath("/html/body/form/div/input[2]"));
-            sendMeYourNameButton.Click();
-        }
+        var sendMeYourNameButton = _driver.FindElement(By.XPath("/html/body/form/div/input[2]"));
+        sendMeYourNameButton.Click();
     }
 }

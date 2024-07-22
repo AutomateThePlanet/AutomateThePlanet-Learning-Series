@@ -1,5 +1,5 @@
-﻿// <copyright file="ArticlesPage.Map.cs" company="Automate The Planet Ltd.">
-// Copyright 2016 Automate The Planet Ltd.
+﻿// <copyright file="$safeitemname$.Asserter.cs" company="Automate The Planet Ltd.">
+// Copyright 2023 Automate The Planet Ltd.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -10,31 +10,14 @@
 // limitations under the License.
 // </copyright>
 // <author>Anton Angelov</author>
-// <site>http://automatetheplanet.com/</site>
+// <site>https://automatetheplanet.com/</site>
+using NUnit;
 
-using OpenQA.Selenium;
-using System.Collections.ObjectModel;
-
-namespace CodeProjectStatisticsCalculator.Pages.ItemPage
+namespace $rootnamespace$;
+public partial class $safeitemname$
 {
-    public partial class ArticlesPage
+    public void AssertSomething()
     {
-        public ReadOnlyCollection<IWebElement> ArticlesRows
-        {
-            get
-            {
-                return Driver.FindElements(By.XPath("//tr[contains(@id,'CAR_MainArticleRow')]"));
-            }
-        }
-
-        public IWebElement GetArticleStatisticsElement(IWebElement articleRow)
-        {
-            return articleRow.FindElement(By.CssSelector("div[id$='CAR_SbD']"));
-        }
-
-        public IWebElement GetArticleTitleElement(IWebElement articleRow)
-        {
-            return articleRow.FindElement(By.CssSelector("a[id$='CAR_Title']"));
-        }
+        Assert.IsTrue(true);
     }
 }
